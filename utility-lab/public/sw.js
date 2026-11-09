@@ -1,5 +1,5 @@
 // Cache only this app's assets. No analytics, polling, or third-party requests.
-const CACHE = "utility-lab-v3";
+const CACHE = "utility-lab-v6";
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
@@ -14,8 +14,9 @@ self.addEventListener("install", (event) => {
         "/",
         "/icon.svg",
         "/manifest.webmanifest",
-        "/fonts/inter-latin.woff2",
+        "/fonts/manrope-latin.woff2",
         "/maps/mirage.svg",
+        "/maps/mirage-light.svg",
         ...assets,
       ]);
     })(),
@@ -38,6 +39,20 @@ self.addEventListener("activate", (event) => {
   );
 });
 self.addEventListener("message", (event) => {
+  if (event.data?.type === "CACHE_ART" && Array.isArray(event.data.urls)) {
+    const urls = event.data.urls.filter(
+      (url) =>
+        typeof url === "string" &&
+        /^\/art\/(launch-pixel|pixel-smoke)\.png$/.test(url),
+    );
+    event.waitUntil(
+      caches
+        .open(CACHE)
+        .then((cache) => cache.addAll(urls))
+        .catch(() => {}),
+    );
+    return;
+  }
   if (event.data?.type !== "CACHE_MAP" || typeof event.data.url !== "string")
     return;
   const url = new URL(event.data.url, self.location.origin);
@@ -74,7 +89,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   if (
-    !/^\/(assets|maps|map-thumbnails|fonts|icons)\//.test(url.pathname) &&
+    !/^\/(assets|maps|map-thumbnails|fonts|icons|art)\//.test(url.pathname) &&
     !["/icon.svg", "/manifest.webmanifest"].includes(url.pathname)
   )
     return;

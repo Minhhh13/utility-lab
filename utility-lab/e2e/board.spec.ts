@@ -6,7 +6,7 @@ test("edit, recover, save, switch map floors, and transfer a tactic", async ({
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
-  await page.goto("/");
+  await page.goto("/#board");
   const canvas = page.locator("svg.tb-map");
   await expect(page.getByLabel("Strategy name", { exact: true })).toHaveValue(
     "A site execute",
@@ -15,6 +15,9 @@ test("edit, recover, save, switch map floors, and transfer a tactic", async ({
   await page.getByRole("button", { name: "T player (T)", exact: true }).click();
   await canvas.press("Enter");
   await expect(canvas).toHaveAttribute("aria-label", /13 objects/);
+  await page
+    .getByRole("button", { name: "Open round plan", exact: true })
+    .click();
   await expect(
     page.getByLabel("Selected object X position", { exact: true }),
   ).toHaveValue("500");
@@ -63,11 +66,13 @@ test("edit, recover, save, switch map floors, and transfer a tactic", async ({
     "Browser checked split",
   );
   await expect(canvas).toHaveAttribute("aria-label", /14 objects/);
+  await page.getByRole("button", { name: "Change map", exact: true }).click();
   await page
     .getByRole("button", { name: "Nuke Active Duty", exact: true })
     .click();
   await page.getByRole("button", { name: "Lower", exact: true }).click();
   await expect(canvas.locator("image")).toHaveAttribute("href", /nuke_lower/);
+  await page.getByRole("button", { name: "Change map", exact: true }).click();
   await page
     .getByRole("button", { name: "Mirage Active Duty", exact: true })
     .click();
@@ -109,17 +114,14 @@ test("phone controls, map drawer and loaded actions fit at 390px and 320px", asy
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
-  await expect(page.locator(".app-sidebar")).toHaveAttribute("inert", "");
-  await page
-    .getByRole("button", { name: "Open map navigation", exact: true })
-    .click();
+  await page.goto("/#board");
+  await page.getByRole("button", { name: "Change map", exact: true }).click();
   await expect(page.getByLabel("Search maps", { exact: true })).toBeFocused();
   await page.getByLabel("Search maps", { exact: true }).fill("Nuke");
   await page
     .getByRole("button", { name: "Nuke Active Duty", exact: true })
     .click();
-  await expect(page.locator(".app-sidebar")).toHaveAttribute("inert", "");
+  await expect(page.locator(".map-dialog")).not.toBeVisible();
   await page
     .getByRole("button", { name: "Open round plan", exact: true })
     .click();
@@ -146,14 +148,12 @@ test("phone controls, map drawer and loaded actions fit at 390px and 320px", asy
   );
   const actionBounds = await page.locator(".tb-title-actions").boundingBox();
   expect(actionBounds!.x + actionBounds!.width).toBeLessThanOrEqual(320);
-  const tools = await page
-    .locator(".tb-tool")
-    .evaluateAll((items) =>
-      items.map((el) => ({
-        w: el.getBoundingClientRect().width,
-        h: el.getBoundingClientRect().height,
-      })),
-    );
+  const tools = await page.locator(".tb-tool").evaluateAll((items) =>
+    items.map((el) => ({
+      w: el.getBoundingClientRect().width,
+      h: el.getBoundingClientRect().height,
+    })),
+  );
   expect(tools.every((item) => item.w >= 44 && item.h >= 44)).toBeTruthy();
   await page.setViewportSize({ width: 390, height: 844 });
   await page
@@ -175,21 +175,19 @@ test("production shell and default map reopen offline after initial installation
   page,
   context,
 }) => {
-  await page.goto("/");
+  await page.goto("/#board");
   await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
   await expect(page.getByLabel("Strategy name", { exact: true })).toHaveValue(
     "A site execute",
   );
   expect(
     await page.evaluate(async () =>
-      Boolean(await caches.match("/maps/mirage.svg")),
+      Boolean(await caches.match("/maps/mirage-light.svg")),
     ),
   ).toBeTruthy();
   await context.setOffline(true);
   await page.reload();
-  await expect(
-    page.getByRole("heading", { name: "Tactic board", exact: true }),
-  ).toBeVisible();
+  await expect(page.locator(".tactic-board")).toBeVisible();
   await expect(page.getByLabel("Strategy name", { exact: true })).toHaveValue(
     "A site execute",
   );
@@ -199,8 +197,8 @@ test("production shell and default map reopen offline after initial installation
 test("desktop draft has no overflow and no broken local artwork", async ({
   page,
 }) => {
-  await page.goto("/");
-  await page.getByRole("heading", { name: "Mirage", exact: true }).waitFor();
+  await page.goto("/#board");
+  await page.getByRole("button", { name: "Change map", exact: true }).waitFor();
   await page.locator(".tb-map image").waitFor();
   await page.evaluate(() => document.fonts.ready);
   await expect(page.locator(".tb-draft-status")).toHaveText(

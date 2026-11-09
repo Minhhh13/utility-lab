@@ -40,6 +40,11 @@ import {
   ZoomIn,
   ZoomOut,
   Maximize,
+  PanelRightClose,
+  PanelRightOpen,
+  Plus,
+  Settings2,
+  UsersRound,
 } from "lucide-react";
 import type { GameMap } from "./maps";
 import {
@@ -66,6 +71,7 @@ import {
   type XY,
 } from "./board-model";
 import "./tactic-board.css";
+import UtilityIcon, { type UtilityKind } from "./UtilityIcon";
 
 type Tool = "select" | "erase" | ObjectKind;
 type Gesture = {
@@ -75,7 +81,14 @@ type Gesture = {
   original: BoardHistory;
   objectId: string;
 };
-type Props = { map: GameMap; onNotify: (message: string) => void };
+type Props = {
+  map: GameMap;
+  onNotify: (message: string) => void;
+  onOpenMaps: () => void;
+  compact: boolean;
+  theme: "light" | "dark";
+  openedTactic?: SavedTactic;
+};
 const SAVED_KEY = "utility-lab:tactics:v1";
 const draftKey = (map: string, level: string) =>
   `utility-lab:draft:v1:${map}:${level}`;
@@ -85,15 +98,15 @@ const imageKey = (map: string, level: string) =>
 // It is deliberately separate from durable saves and never reports itself as a saved tactic.
 const sessionDrafts = new Map<string, BoardPlan>();
 const colors: Record<ObjectKind, string> = {
-  t: "#e6c986",
-  ct: "#91b9ed",
-  route: "#d1ef83",
-  pen: "#edf0e9",
-  smoke: "#d1ef83",
-  flash: "#eed69a",
-  molotov: "#f59a83",
-  he: "#c4a7ed",
-  text: "#edf0e9",
+  t: "var(--marker-t,#e6c986)",
+  ct: "var(--marker-ct,#91b9ed)",
+  route: "var(--marker-route,#a8c3ff)",
+  pen: "var(--marker-pen,#edf0e9)",
+  smoke: "var(--marker-smoke,#8ad6cb)",
+  flash: "var(--marker-flash,#eed69a)",
+  molotov: "var(--marker-molotov,#f59a83)",
+  he: "var(--marker-he,#c4a7ed)",
+  text: "var(--marker-text,#edf0e9)",
 };
 const toolItems = [
   { id: "select", label: "Select / move", key: "V", icon: MousePointer2 },
@@ -258,7 +271,7 @@ function ObjectDrawing({
           width={Math.max(50, (object.label?.length || 9) * 12.6 + 16)}
           height="36"
           rx="5"
-          fill="#101615"
+          fill="var(--canvas)"
           fillOpacity=".9"
         />
         <text
@@ -266,7 +279,7 @@ function ObjectDrawing({
           y="0"
           fill={color}
           fontSize="22"
-          fontFamily="Arial, sans-serif"
+          fontFamily="Manrope, Arial, sans-serif"
           fontWeight="600"
           stroke="none"
         >
@@ -300,50 +313,60 @@ function ObjectDrawing({
           height="38"
           rx="8"
           fill={color}
-          stroke="#101615"
+          stroke="var(--canvas)"
           strokeWidth="3"
         />
       ) : object.kind === "flash" ? (
         <path
           d="M0 -25 L25 0 L0 25 L-25 0 Z"
-          fill="#28281c"
+          fill="var(--canvas)"
           stroke={color}
           strokeWidth="3"
         />
       ) : object.kind === "molotov" ? (
         <path
           d="M0 -26 L25 19 L-25 19 Z"
-          fill="#32241f"
+          fill="var(--canvas)"
           stroke={color}
           strokeWidth="3"
         />
       ) : object.kind === "he" ? (
         <path
           d="M-11 -21 L11 -21 L24 0 L11 21 L-11 21 L-24 0 Z"
-          fill="#2c2435"
+          fill="var(--canvas)"
           stroke={color}
           strokeWidth="3"
         />
       ) : (
         <circle
           r={isPlayer ? 21 : 24}
-          fill={isPlayer ? color : "#283322"}
-          stroke={isPlayer ? "#101615" : color}
+          fill={isPlayer ? color : "var(--canvas)"}
+          stroke={isPlayer ? "var(--canvas)" : color}
           strokeWidth="3"
           strokeDasharray={object.kind === "smoke" ? "6 3" : undefined}
         />
       )}
-      <text
-        y={object.kind === "molotov" ? 7 : 6}
-        textAnchor="middle"
-        fill={isPlayer ? "#111815" : color}
-        fontFamily="Arial, sans-serif"
-        fontSize={isPlayer ? 17 : 18}
-        fontWeight="700"
-        pointerEvents="none"
-      >
-        {code}
-      </text>
+      {isPlayer ? (
+        <text
+          y={object.kind === "molotov" ? 7 : 6}
+          textAnchor="middle"
+          fill={isPlayer ? "var(--marker-ink,#142026)" : color}
+          fontFamily="Manrope, Arial, sans-serif"
+          fontSize={isPlayer ? 17 : 18}
+          fontWeight="700"
+          pointerEvents="none"
+        >
+          {code}
+        </text>
+      ) : (
+        <UtilityIcon
+          type={object.kind as UtilityKind}
+          size={35}
+          x={-17.5}
+          y={-17.5}
+          style={{ color, pointerEvents: "none" }}
+        />
+      )}
       {object.label && (
         <g pointerEvents="none">
           <rect
@@ -352,15 +375,15 @@ function ObjectDrawing({
             width={object.label.length * 10.6 + 14}
             height="25"
             rx="4"
-            fill="#101615"
+            fill="var(--canvas)"
             fillOpacity=".94"
           />
           <text
             y="48"
             textAnchor="middle"
-            fill="#edf0e9"
+            fill="var(--text)"
             fontSize="18"
-            fontFamily="Arial, sans-serif"
+            fontFamily="Manrope, Arial, sans-serif"
           >
             {object.label}
           </text>
@@ -394,7 +417,7 @@ function Selection({ object }: { object: BoardObject }) {
         height={Math.max(height, 16)}
         rx="5"
         fill="none"
-        stroke="#edf0e9"
+        stroke="var(--accent)"
         strokeWidth="1.7"
         strokeDasharray="5 5"
       />
@@ -408,18 +431,29 @@ function Selection({ object }: { object: BoardObject }) {
           y={cy - 4}
           width="8"
           height="8"
-          fill="#edf0e9"
+          fill="var(--text)"
         />
       ))}
     </g>
   );
 }
 
-export default function TacticBoard({ map, onNotify }: Props) {
-  const [levelId, setLevelId] = useState(map.levels[0]?.id || "main");
+export default function TacticBoard({
+  map,
+  onNotify,
+  onOpenMaps,
+  compact,
+  theme,
+  openedTactic,
+}: Props) {
+  const [levelId, setLevelId] = useState(
+    openedTactic?.plan.levelId || map.levels[0]?.id || "main",
+  );
   const level = map.levels.find((item) => item.id === levelId) || map.levels[0];
   const [history, setHistory] = useState(() =>
-    historyFor(initialPlan(map.id, levelId, map.id === "mirage")),
+    historyFor(
+      openedTactic?.plan || initialPlan(map.id, levelId, map.id === "mirage"),
+    ),
   );
   const plan = history.present;
   const [tool, setTool] = useState<Tool>("select");
@@ -428,8 +462,12 @@ export default function TacticBoard({ map, onNotify }: Props) {
   const [saved, setSaved] = useState<SavedTactic[]>(() =>
     validateSavedTactics(storedJson(SAVED_KEY)),
   );
-  const [loadedId, setLoadedId] = useState<string | null>(null);
-  const [selectedSavedId, setSelectedSavedId] = useState("");
+  const [loadedId, setLoadedId] = useState<string | null>(
+    openedTactic?.id || null,
+  );
+  const [selectedSavedId, setSelectedSavedId] = useState(
+    openedTactic?.id || "",
+  );
   const [draftStatus, setDraftStatus] = useState<"saving" | "saved" | "error">(
     "saved",
   );
@@ -441,11 +479,13 @@ export default function TacticBoard({ map, onNotify }: Props) {
   const [exporting, setExporting] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [inspectorOpen, setInspectorOpen] = useState(false);
+  const [inspectorTab, setInspectorTab] = useState<"plan" | "objects">("plan");
   const notify = useRef(onNotify);
   notify.current = onNotify;
   const svgRef = useRef<SVGSVGElement>(null),
     importRef = useRef<HTMLInputElement>(null),
     imageRef = useRef<HTMLInputElement>(null);
+  const planToggleRef = useRef<HTMLButtonElement>(null);
   const historyRef = useRef(history);
   historyRef.current = history;
   const gesture = useRef<Gesture | null>(null);
@@ -455,7 +495,12 @@ export default function TacticBoard({ map, onNotify }: Props) {
   sessionDrafts.set(latest.current.key, plan);
   const uniqueId = useId().replace(/:/g, ""),
     arrowId = `route-arrow-${uniqueId}`;
-  const image = customImage || level?.image || "";
+  const originalImage = level?.image || "";
+  const image =
+    customImage ||
+    (theme === "light" && originalImage.endsWith(".svg")
+      ? originalImage.replace(".svg", "-light.svg")
+      : originalImage);
   const visibleSaved = saved.filter(
     (item) => item.plan.mapId === map.id && item.plan.levelId === levelId,
   );
@@ -566,6 +611,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
       objects: [...current.objects, object],
     }));
     setSelectedId(object.id);
+    setInspectorTab("plan");
     if (kind === "text") setInspectorOpen(true);
   }
   function canvasPoint(event: ReactPointerEvent<SVGSVGElement>): XY {
@@ -586,6 +632,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
         ?.getAttribute("data-object-id");
     if (tool === "select") {
       setSelectedId(objectId || null);
+      if (objectId) setInspectorTab("plan");
       if (objectId) {
         gesture.current = {
           pointerId: event.pointerId,
@@ -633,6 +680,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
         },
       }));
       setSelectedId(object.id);
+      setInspectorTab("plan");
       event.currentTarget.setPointerCapture(event.pointerId);
       return;
     }
@@ -1028,6 +1076,20 @@ export default function TacticBoard({ map, onNotify }: Props) {
       clone
         .querySelectorAll("[data-selection]")
         .forEach((item) => item.remove());
+      const currentStyle = getComputedStyle(svgRef.current);
+      clone.querySelectorAll("[fill],[stroke]").forEach((element) => {
+        for (const attribute of ["fill", "stroke"]) {
+          const value = element.getAttribute(attribute);
+          const match = value?.match(/^var\((--[a-z-]+)(?:,([^)]*))?\)$/);
+          if (match)
+            element.setAttribute(
+              attribute,
+              currentStyle.getPropertyValue(match[1]).trim() ||
+                match[2] ||
+                "#24313b",
+            );
+        }
+      });
       const radar = clone.querySelector("image");
       if (radar && image) {
         if (image.startsWith("data:")) radar.setAttribute("href", image);
@@ -1057,9 +1119,11 @@ export default function TacticBoard({ map, onNotify }: Props) {
           "PNG export is unavailable in this browser. Use JSON export.",
         );
       context.drawImage(img, 0, 0);
-      context.fillStyle = "#101615";
+      context.fillStyle =
+        currentStyle.getPropertyValue("--canvas").trim() || "#171d21";
       context.fillRect(0, 1544, 1600, 56);
-      context.fillStyle = "#edf0e9";
+      context.fillStyle =
+        currentStyle.getPropertyValue("--text").trim() || "#edf0e9";
       context.font = "20px Arial";
       context.fillText(`${map.name} · ${plan.name}`, 24, 1579, 1500);
       const output = await new Promise<Blob>((resolve, reject) =>
@@ -1085,13 +1149,50 @@ export default function TacticBoard({ map, onNotify }: Props) {
   }
 
   const activeTool = toolItems.find((item) => item.id === tool)!;
+  const toolGroups = [
+    ["select", "route", "pen", "text", "erase"],
+    ["t", "ct"],
+    ["smoke", "flash", "molotov", "he"],
+  ];
+  const players = plan.objects.filter(
+    (object) => object.kind === (plan.side === "T" ? "t" : "ct"),
+  );
+  const utilityCount = plan.objects.filter((object) =>
+    ["smoke", "flash", "molotov", "he"].includes(object.kind),
+  ).length;
+  const thumb = (
+    map.levels[0]?.radarImage ||
+    map.levels[0]?.image ||
+    ""
+  ).replace("/maps/", "/map-thumbnails/");
   return (
     <section
-      className="tactic-board"
+      className={
+        "tactic-board" +
+        (inspectorOpen ? " has-inspector" : "") +
+        (compact ? " is-overlay" : "")
+      }
       aria-label="Tactic editor"
       onKeyDown={keyboard}
     >
       <header className="tb-titlebar">
+        <button
+          className="tb-map-picker"
+          onClick={onOpenMaps}
+          aria-label="Change map"
+        >
+          {thumb && (
+            <span className="tb-map-picker-preview">
+              <img src={thumb} alt="" />
+            </span>
+          )}
+          <span className="tb-map-picker-name">
+            {map.name}
+            <small>{map.mode}</small>
+          </span>
+          <ChevronDown size={15} />
+        </button>
+        <span className="tb-document-divider" />
         <div className="tb-title-block">
           <input
             className="tb-title-input"
@@ -1106,15 +1207,17 @@ export default function TacticBoard({ map, onNotify }: Props) {
             }
           />
           <span
-            className={`tb-draft-status ${draftStatus === "error" ? "is-error" : ""}`}
+            className={
+              "tb-draft-status" + (draftStatus === "error" ? " is-error" : "")
+            }
             aria-live="polite"
           >
             {draftStatus === "saved" ? (
-              <Check size={12} />
+              <Check size={13} />
             ) : draftStatus === "saving" ? (
               <span className="tb-status-dot" />
             ) : (
-              <CircleDot size={12} />
+              <CircleDot size={13} />
             )}
             {draftStatus === "saved"
               ? "Saved on this device"
@@ -1124,21 +1227,13 @@ export default function TacticBoard({ map, onNotify }: Props) {
           </span>
         </div>
         <div className="tb-title-actions">
-          <button
-            className="tb-icon-button tb-mobile-inspector"
-            aria-label={inspectorOpen ? "Close round plan" : "Open round plan"}
-            aria-expanded={inspectorOpen}
-            onClick={() => setInspectorOpen(!inspectorOpen)}
-          >
-            <FolderOpen size={18} />
-          </button>
           <button className="tb-button tb-new-button" onClick={newTactic}>
-            <FilePlus2 size={16} />
+            <Plus size={17} />
             <span>New</span>
           </button>
           <details className="tb-export">
             <summary className="tb-button">
-              <Download size={16} />
+              <Download size={17} />
               <span>Export</span>
               <ChevronDown size={13} />
             </summary>
@@ -1151,7 +1246,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
                     ?.removeAttribute("open");
                 }}
               >
-                <ArrowDownToLine size={16} />
+                <ArrowDownToLine size={17} />
                 Export tactic JSON
               </button>
               <button
@@ -1164,9 +1259,9 @@ export default function TacticBoard({ map, onNotify }: Props) {
                 }}
               >
                 {exporting ? (
-                  <LoaderCircle size={16} />
+                  <LoaderCircle size={17} />
                 ) : (
-                  <Download size={16} />
+                  <Download size={17} />
                 )}
                 Export board PNG
               </button>
@@ -1178,7 +1273,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
                     ?.removeAttribute("open");
                 }}
               >
-                <ArrowUpFromLine size={16} />
+                <ArrowUpFromLine size={17} />
                 Import tactic JSON
               </button>
               <button
@@ -1189,13 +1284,29 @@ export default function TacticBoard({ map, onNotify }: Props) {
                     ?.removeAttribute("open");
                 }}
               >
-                <Copy size={16} />
+                <Copy size={17} />
                 Make a copy
               </button>
             </div>
           </details>
+          <button
+            ref={planToggleRef}
+            className={
+              "tb-button tb-plan-toggle" + (inspectorOpen ? " is-active" : "")
+            }
+            aria-label={inspectorOpen ? "Close round plan" : "Open round plan"}
+            aria-expanded={inspectorOpen}
+            onClick={() => setInspectorOpen(!inspectorOpen)}
+          >
+            {inspectorOpen ? (
+              <PanelRightClose size={18} />
+            ) : (
+              <PanelRightOpen size={18} />
+            )}
+            <span>Plan</span>
+          </button>
           <button className="tb-button tb-primary" onClick={saveTactic}>
-            <Save size={16} />
+            <Save size={17} />
             <span>{loadedId ? "Update tactic" : "Save tactic"}</span>
           </button>
         </div>
@@ -1204,7 +1315,23 @@ export default function TacticBoard({ map, onNotify }: Props) {
         <div className="tb-canvas-area">
           <div className="tb-canvas-top">
             <div className="tb-levels" role="group" aria-label="Map level">
-              {map.levels.length > 1 ? (
+              {map.levels.length > 4 ? (
+                <label className="tb-level-select">
+                  <LayersLabel />
+                  <select
+                    aria-label="Map level"
+                    value={levelId}
+                    onChange={(event) => switchLevel(event.target.value)}
+                  >
+                    {map.levels.map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.name}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown size={14} />
+                </label>
+              ) : map.levels.length > 1 ? (
                 map.levels.map((item) => (
                   <button
                     key={item.id}
@@ -1216,7 +1343,10 @@ export default function TacticBoard({ map, onNotify }: Props) {
                   </button>
                 ))
               ) : (
-                <span>{level?.name || "Main level"}</span>
+                <span className="tb-level-single">
+                  <span className="tb-live-dot" />
+                  {level?.name || "Overview"}
+                </span>
               )}
             </div>
             <div className="tb-history">
@@ -1227,7 +1357,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
                 title="Undo (Ctrl / ⌘ Z)"
                 aria-label="Undo"
               >
-                <Undo2 size={17} />
+                <Undo2 size={18} />
               </button>
               <button
                 className="tb-icon-button"
@@ -1236,7 +1366,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
                 title="Redo (Ctrl / ⌘ Shift Z)"
                 aria-label="Redo"
               >
-                <Redo2 size={17} />
+                <Redo2 size={18} />
               </button>
               <span className="tb-divider" />
               <button
@@ -1254,35 +1384,33 @@ export default function TacticBoard({ map, onNotify }: Props) {
                 title="Clear board (undoable)"
                 aria-label="Clear board"
               >
-                <Trash2 size={16} />
+                <Trash2 size={17} />
               </button>
             </div>
-          </div>
-          <div className="tb-toolbox" role="group" aria-label="Drawing tools">
-            {toolItems.map(({ id, label, key, icon: Icon }, index) => (
-              <button
-                key={id}
-                className={`tb-tool ${tool === id ? "is-active" : ""} ${[1, 5, 10].includes(index) ? "tb-tool-section" : ""}`}
-                aria-label={`${label} (${key})`}
-                aria-pressed={tool === id}
-                title={`${label} (${key})`}
-                data-tooltip={`${label} (${key})`}
-                onClick={() => chooseTool(id)}
-              >
-                <Icon size={19} strokeWidth={1.7} />
-                {id === "t" || id === "ct" ? (
-                  <span className={`tb-team-dot ${id}`} />
-                ) : null}
-              </button>
-            ))}
           </div>
           <div className="tb-map-stage">
             <svg
               ref={svgRef}
-              className={`tb-map tb-cursor-${tool}`}
-              viewBox={`${500 - 500 / zoom} ${500 - 500 / zoom} ${1000 / zoom} ${1000 / zoom}`}
+              className={"tb-map tb-cursor-" + tool}
+              viewBox={
+                500 -
+                500 / zoom +
+                " " +
+                (500 - 500 / zoom) +
+                " " +
+                1000 / zoom +
+                " " +
+                1000 / zoom
+              }
               role="img"
-              aria-label={`${map.name} ${level?.name || ""} tactic canvas. ${plan.objects.length} objects. Select a tool and click to place, or press Enter to place at center. Arrow keys move the selected object.`}
+              aria-label={
+                map.name +
+                " " +
+                (level?.name || "") +
+                " tactic canvas. " +
+                plan.objects.length +
+                " objects. Select a tool and click to place, or press Enter to place at center. Arrow keys move the selected object."
+              }
               tabIndex={0}
               onPointerDown={pointerDown}
               onPointerMove={pointerMove}
@@ -1293,26 +1421,25 @@ export default function TacticBoard({ map, onNotify }: Props) {
               <defs>
                 <marker
                   id={arrowId}
-                  viewBox="0 0 10 10"
+                  markerWidth="10"
+                  markerHeight="10"
                   refX="8"
                   refY="5"
-                  markerWidth="5"
-                  markerHeight="5"
-                  orient="auto-start-reverse"
+                  orient="auto"
+                  markerUnits="userSpaceOnUse"
                 >
-                  <path d="M0 0 L10 5 L0 10 Z" fill="#d1ef83" />
+                  <path d="M0 0 L10 5 L0 10 Z" fill={colors.route} />
                 </marker>
               </defs>
-              <rect width="1000" height="1000" fill="#141a19" />
+              <rect width="1000" height="1000" fill="var(--canvas)" />
               {image && !mapFailed && (
                 <image
+                  data-raster={image.endsWith(".png") ? "true" : undefined}
                   href={image}
-                  x="0"
-                  y="0"
                   width="1000"
                   height="1000"
                   preserveAspectRatio="xMidYMid meet"
-                  pointerEvents="none"
+                  onLoad={() => setMapFailed(false)}
                   onError={() => setMapFailed(true)}
                 />
               )}
@@ -1327,15 +1454,13 @@ export default function TacticBoard({ map, onNotify }: Props) {
             </svg>
             {(!image || mapFailed) && (
               <div className="tb-missing-map">
-                <ImagePlus size={27} />
+                <ImagePlus size={30} />
                 <h3>
                   {mapFailed
                     ? "Map image could not load"
                     : "Add this map’s radar"}
                 </h3>
-                <p>
-                  Upload your own PNG, JPEG, or WebP to plan on the real layout.
-                </p>
+                <p>Upload a PNG, JPEG, or WebP to plan on the real layout.</p>
                 <button
                   className="tb-button"
                   onClick={() => imageRef.current?.click()}
@@ -1346,17 +1471,89 @@ export default function TacticBoard({ map, onNotify }: Props) {
               </div>
             )}
           </div>
+          <div className="tb-canvas-legend" aria-label="Map marker legend">
+            <span>
+              <i className="tb-legend-t" />T players
+            </span>
+            <span>
+              <i className="tb-legend-ct" />
+              CT players
+            </span>
+            <span>
+              <i className="tb-legend-utility" />
+              Utility
+            </span>
+          </div>
+          <div className="tb-toolbox" role="group" aria-label="Drawing tools">
+            {toolGroups.map((group, index) => (
+              <div
+                className="tb-tool-group"
+                role="group"
+                aria-label={["Drawing", "Players", "Utility"][index]}
+                key={index}
+              >
+                {group.map((id) => {
+                  const item = toolItems.find((entry) => entry.id === id)!;
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      className={
+                        "tb-tool" +
+                        (["smoke", "flash", "molotov", "he"].includes(item.id)
+                          ? " tb-utility-tool"
+                          : "") +
+                        (tool === item.id ? " is-active" : "")
+                      }
+                      aria-label={item.label + " (" + item.key + ")"}
+                      aria-pressed={tool === item.id}
+                      title={item.label + " (" + item.key + ")"}
+                      data-tooltip={item.label + " · " + item.key}
+                      onClick={() => chooseTool(item.id)}
+                    >
+                      {["smoke", "flash", "molotov", "he"].includes(item.id) ? (
+                        <>
+                          <UtilityIcon
+                            type={item.id as UtilityKind}
+                            size={25}
+                          />
+                          <span className="tb-tool-label">
+                            {
+                              {
+                                smoke: "Smoke",
+                                flash: "Flash",
+                                molotov: "Molly",
+                                he: "HE",
+                              }[item.id as UtilityKind]
+                            }
+                          </span>
+                        </>
+                      ) : (
+                        <Icon size={20} strokeWidth={1.8} />
+                      )}
+                      {item.id === "t" || item.id === "ct" ? (
+                        <span className={"tb-team-dot " + item.id} />
+                      ) : null}
+                    </button>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
           <div className="tb-canvas-bottom">
             <div className="tb-canvas-hint">
-              <span className="tb-hint-dot" />
-              {tool === "select"
-                ? "Select and drag to move"
-                : tool === "erase"
-                  ? "Click an object to erase it"
-                  : tool === "route" || tool === "pen"
-                    ? "Click and drag to draw"
-                    : `Click to place ${activeTool.label.toLowerCase()}`}
-              <span className="tb-keyboard-hint"> · Arrow keys to nudge</span>
+              <MousePointer2 size={14} />
+              <span>
+                {tool === "select"
+                  ? "Select and drag to move"
+                  : tool === "erase"
+                    ? "Click an object to erase"
+                    : tool === "route" || tool === "pen"
+                      ? "Drag to draw " +
+                        (tool === "route" ? "a route" : "on the map")
+                      : "Click to place " + activeTool.label.toLowerCase()}
+              </span>
+              <kbd>{activeTool.key}</kbd>
             </div>
             <div className="tb-zoom">
               <button
@@ -1365,7 +1562,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
                 disabled={zoom <= 0.75}
                 onClick={() => setZoom((value) => Math.max(0.75, value - 0.25))}
               >
-                <ZoomOut size={16} />
+                <ZoomOut size={18} />
               </button>
               <button
                 className="tb-zoom-value"
@@ -1380,19 +1577,20 @@ export default function TacticBoard({ map, onNotify }: Props) {
                 disabled={zoom >= 2}
                 onClick={() => setZoom((value) => Math.min(2, value + 0.25))}
               >
-                <ZoomIn size={16} />
+                <ZoomIn size={18} />
               </button>
+              <span className="tb-divider" />
               <button
                 className="tb-icon-button tb-reset-zoom"
                 aria-label="Fit map"
                 onClick={() => setZoom(1)}
               >
-                <Maximize size={15} />
+                <Maximize size={17} />
               </button>
             </div>
           </div>
           {map.credit && (
-            <span className="tb-map-credit">
+            <div className="tb-map-credit">
               {map.credit.includes("setpos.gg") ? (
                 <a href="https://setpos.gg" target="_blank" rel="noreferrer">
                   Minimaps by setpos.gg
@@ -1400,391 +1598,553 @@ export default function TacticBoard({ map, onNotify }: Props) {
               ) : (
                 map.credit
               )}
-            </span>
+            </div>
           )}
         </div>
         <aside
-          className={`tb-inspector ${inspectorOpen ? "is-open" : ""}`}
+          className={"tb-inspector" + (inspectorOpen ? " is-open" : "")}
           aria-label="Round plan"
+          inert={!inspectorOpen}
         >
           <div className="tb-inspector-heading">
-            <h2>Round plan</h2>
+            <div>
+              <h2>Round plan</h2>
+              <span>
+                {players.length} {plan.side} players · {utilityCount} utility
+              </span>
+            </div>
             <button
-              className="tb-icon-button tb-mobile-inspector"
+              className="tb-icon-button"
               aria-label="Close round plan"
-              onClick={() => setInspectorOpen(false)}
+              onClick={() => {
+                setInspectorOpen(false);
+                planToggleRef.current?.focus();
+              }}
             >
-              <X size={17} />
+              <PanelRightClose size={19} />
             </button>
-            <span className="tb-round-count">
-              {plan.objects.length} objects
-            </span>
           </div>
-          {plan.illustrative && (
-            <div className="tb-example-note">
-              <span>Editable example</span>
-              <p>
-                Illustrative positions and timings. Validate this execute in a
-                practice server.
-              </p>
-            </div>
-          )}
-          <div className="tb-inspector-section">
-            <label className="tb-field-label">Playing side</label>
-            <div
-              className="tb-side-toggle"
-              role="group"
-              aria-label="Playing side"
+          <div
+            className="tb-inspector-tabs"
+            role="tablist"
+            aria-label="Round plan sections"
+            onKeyDown={(event) => {
+              if (
+                !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)
+              )
+                return;
+              event.preventDefault();
+              const next =
+                event.key === "Home"
+                  ? "plan"
+                  : event.key === "End"
+                    ? "objects"
+                    : inspectorTab === "plan"
+                      ? "objects"
+                      : "plan";
+              setInspectorTab(next);
+              event.currentTarget
+                .querySelectorAll<HTMLButtonElement>('[role="tab"]')
+                [next === "plan" ? 0 : 1]?.focus();
+            }}
+          >
+            <button
+              role="tab"
+              id={uniqueId + "-plan-tab"}
+              tabIndex={inspectorTab === "plan" ? 0 : -1}
+              aria-controls={uniqueId + "-inspector-panel"}
+              aria-selected={inspectorTab === "plan"}
+              onClick={() => setInspectorTab("plan")}
             >
-              <button
-                className={plan.side === "T" ? "is-active is-t" : ""}
-                aria-pressed={plan.side === "T"}
-                onClick={() =>
-                  changePlan((current) => ({ ...current, side: "T" }))
-                }
-              >
-                <UserRound size={14} />
-                Terrorist <span>T</span>
-              </button>
-              <button
-                className={plan.side === "CT" ? "is-active is-ct" : ""}
-                aria-pressed={plan.side === "CT"}
-                onClick={() =>
-                  changePlan((current) => ({ ...current, side: "CT" }))
-                }
-              >
-                <Shield size={14} />
-                Counter <span>CT</span>
-              </button>
-            </div>
+              Plan
+            </button>
+            <button
+              role="tab"
+              id={uniqueId + "-objects-tab"}
+              tabIndex={inspectorTab === "objects" ? 0 : -1}
+              aria-controls={uniqueId + "-inspector-panel"}
+              aria-selected={inspectorTab === "objects"}
+              onClick={() => setInspectorTab("objects")}
+            >
+              Objects <span>{plan.objects.length}</span>
+            </button>
           </div>
-          <div className="tb-inspector-section">
-            <label className="tb-field-label" htmlFor={`${uniqueId}-notes`}>
-              Tactic notes <Pencil size={12} />
-            </label>
-            <textarea
-              id={`${uniqueId}-notes`}
-              className="tb-notes"
-              value={plan.notes}
-              maxLength={8000}
-              placeholder="Call the play. Who takes first contact? When does the utility land?"
-              onChange={(event) =>
-                changePlan((current) => ({
-                  ...current,
-                  notes: event.target.value,
-                }))
-              }
-              rows={4}
-            />
-          </div>
-          {selected && (
-            <div className="tb-inspector-section tb-selection-editor">
-              <div className="tb-field-label">
-                Selected object{" "}
-                <button
-                  className="tb-icon-button"
-                  aria-label="Delete selected object"
-                  title="Delete selected object"
-                  onClick={removeSelected}
-                >
-                  <Trash2 size={13} />
-                </button>
-              </div>
-              <p className="tb-selected-name">{objectLabel(selected)}</p>
-              <label
-                className="tb-small-label"
-                htmlFor={`${uniqueId}-object-label`}
-              >
-                Label
-              </label>
-              <input
-                id={`${uniqueId}-object-label`}
-                className="tb-input"
-                value={selected.label || ""}
-                maxLength={80}
-                placeholder={
-                  selected.kind === "text"
-                    ? "Text on the map"
-                    : "Optional callout"
-                }
-                onChange={(event) =>
-                  changeObject(selected.id, (object) => ({
-                    ...object,
-                    label: event.target.value,
-                  }))
-                }
-              />
-              {(selected.kind === "t" || selected.kind === "ct") && (
-                <label className="tb-number-label">
-                  Player number
-                  <input
-                    className="tb-input"
-                    type="number"
-                    min="1"
-                    max="99"
-                    value={selected.number || 1}
-                    onChange={(event) => {
-                      const value = Number(event.target.value);
-                      if (Number.isInteger(value) && value >= 1 && value <= 99)
-                        changeObject(selected.id, (object) => ({
-                          ...object,
-                          number: value,
-                        }));
-                    }}
-                  />
-                </label>
-              )}
-              <span className="tb-small-label tb-position-label">
-                Position on map (0–1000)
-              </span>
-              <div className="tb-position-grid">
-                {(["x", "y"] as const).map((axis) => (
-                  <label key={axis}>
-                    {axis.toUpperCase()}
-                    <input
-                      className="tb-input"
-                      type="number"
-                      min="0"
-                      max="1000"
-                      step="5"
-                      aria-label={`Selected object ${axis.toUpperCase()} position`}
-                      value={Math.round(
-                        (selected.points?.[0] || selected)[axis],
-                      )}
-                      onChange={(event) => {
-                        const value = Number(event.target.value);
-                        if (Number.isFinite(value))
-                          changeObject(selected.id, (object) =>
-                            translated(
-                              object,
-                              axis === "x"
-                                ? clamp(value) -
-                                    (object.points?.[0] || object).x
-                                : 0,
-                              axis === "y"
-                                ? clamp(value) -
-                                    (object.points?.[0] || object).y
-                                : 0,
-                            ),
-                          );
-                      }}
-                    />
-                  </label>
-                ))}
-              </div>
-              {selected.kind === "route" && selected.points && (
-                <fieldset className="tb-route-endpoints">
-                  <legend>Route endpoints</legend>
-                  {(["start", "end"] as const).map((endpoint) => (
-                    <div className="tb-endpoint-row" key={endpoint}>
-                      <span>{endpoint === "start" ? "Start" : "End"}</span>
-                      <div className="tb-position-grid">
-                        {(["x", "y"] as const).map((axis) => (
-                          <label key={axis}>
-                            {axis.toUpperCase()}
-                            <input
-                              className="tb-input"
-                              type="number"
-                              min="0"
-                              max="1000"
-                              step="5"
-                              aria-label={`Route ${endpoint} ${axis.toUpperCase()} position`}
-                              value={Math.round(
-                                selected.points![
-                                  endpoint === "start"
-                                    ? 0
-                                    : selected.points!.length - 1
-                                ][axis],
-                              )}
-                              onChange={(event) => {
-                                const value = Number(event.target.value);
-                                if (Number.isFinite(value))
-                                  changeObject(selected.id, (object) =>
-                                    endpointChanged(
-                                      object,
-                                      endpoint,
-                                      axis,
-                                      value,
-                                    ),
-                                  );
-                              }}
-                            />
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </fieldset>
-              )}
-              <div
-                className="tb-nudge-controls"
-                role="group"
-                aria-label="Move selected object without dragging"
-              >
-                {[
-                  { label: "left", x: -10, y: 0, icon: ArrowLeft },
-                  { label: "up", x: 0, y: -10, icon: ArrowUp },
-                  { label: "down", x: 0, y: 10, icon: ArrowDown },
-                  { label: "right", x: 10, y: 0, icon: ArrowRight },
-                ].map(({ label, x, y, icon: Icon }) => (
-                  <button
-                    key={label}
-                    className="tb-icon-button"
-                    title={`Move ${label} by 10 map units`}
-                    aria-label={`Move selected object ${label}`}
-                    onClick={() =>
-                      changeObject(selected.id, (object) =>
-                        translated(object, x, y),
-                      )
-                    }
-                  >
-                    <Icon size={15} />
-                  </button>
-                ))}
-              </div>
-              <span className="tb-selection-help">
-                Arrow keys move · Shift moves farther · Delete removes
-              </span>
-            </div>
-          )}
-          <div className="tb-inspector-section tb-objects-section">
-            <div className="tb-field-label">
-              On the board <span>{plan.objects.length}</span>
-            </div>
-            {plan.objects.length ? (
-              <div
-                className="tb-object-list"
-                role="list"
-                aria-label="Board objects"
-              >
-                {plan.objects.map((object) => (
-                  <div key={object.id} role="listitem">
-                    <button
-                      className={`tb-object-row ${selectedId === object.id ? "is-selected" : ""}`}
-                      onClick={() => {
-                        setSelectedId(object.id);
-                        setTool("select");
-                      }}
-                      aria-pressed={selectedId === object.id}
-                    >
-                      <span
-                        className={`tb-object-mark tb-mark-${object.kind}`}
-                        style={{ color: colors[object.kind] }}
-                      >
-                        {object.kind === "t" || object.kind === "ct" ? (
-                          `${object.kind === "t" ? "T" : "C"}${object.number || 1}`
-                        ) : object.kind === "route" ? (
-                          <MoveUpRight size={13} />
-                        ) : object.kind === "pen" ? (
-                          <Pencil size={12} />
-                        ) : object.kind === "text" ? (
-                          <Type size={12} />
-                        ) : (
-                          object.kind[0].toUpperCase()
-                        )}
-                      </span>
-                      <span>{objectLabel(object)}</span>
-                      <span className="tb-object-select-dot" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="tb-empty-objects">
-                <p>Your next round starts here.</p>
-                <span>
-                  Choose a player or utility from the toolbar, then click the
-                  map to place it.
-                </span>
-              </div>
-            )}
-            {tool !== "select" && tool !== "erase" && (
-              <button
-                className="tb-button tb-place-center"
-                onClick={() => addObject(tool)}
-              >
+          {tool !== "select" && tool !== "erase" && (
+            <div className="tb-quick-add">
+              <button className="tb-button" onClick={() => addObject(tool)}>
+                <Plus size={15} />
                 Place {activeTool.label.toLowerCase()} at center
               </button>
-            )}
-          </div>
-          <div className="tb-inspector-section tb-saved-section">
-            <label className="tb-field-label" htmlFor={`${uniqueId}-saved`}>
-              Saved tactics <span>{visibleSaved.length}</span>
-            </label>
-            <div className="tb-load-row">
-              <select
-                id={`${uniqueId}-saved`}
-                className="tb-input"
-                value={selectedSavedId}
-                onChange={(event) => setSelectedSavedId(event.target.value)}
-              >
-                <option value="">
-                  {visibleSaved.length
-                    ? "Choose a tactic…"
-                    : "No saved tactics yet"}
-                </option>
-                {visibleSaved.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.plan.name}
-                  </option>
-                ))}
-              </select>
-              <button
-                className="tb-icon-button"
-                disabled={!selectedSavedId}
-                aria-label="Load selected saved tactic"
-                title="Load tactic (undoable)"
-                onClick={loadTactic}
-              >
-                <FolderOpen size={16} />
-              </button>
-              <button
-                className="tb-icon-button"
-                disabled={!selectedSavedId}
-                aria-label="Delete selected saved tactic"
-                onClick={deleteTactic}
-              >
-                <Trash2 size={15} />
-              </button>
             </div>
-            <span className="tb-local-note">
-              Stored in this browser. Export a copy to move devices.
-            </span>
+          )}
+          <div
+            className="tb-inspector-scroll"
+            role="tabpanel"
+            id={uniqueId + "-inspector-panel"}
+            aria-labelledby={
+              uniqueId +
+              (inspectorTab === "plan" ? "-plan-tab" : "-objects-tab")
+            }
+          >
+            {inspectorTab === "plan" && (
+              <>
+                {selected && (
+                  <div className="tb-inspector-section tb-selection-editor">
+                    <div className="tb-field-label">
+                      Selected object{" "}
+                      <button
+                        className="tb-icon-button"
+                        aria-label="Delete selected object"
+                        title="Delete selected object"
+                        onClick={removeSelected}
+                      >
+                        <Trash2 size={13} />
+                      </button>
+                    </div>
+                    <p className="tb-selected-name">{objectLabel(selected)}</p>
+                    <label
+                      className="tb-small-label"
+                      htmlFor={`${uniqueId}-object-label`}
+                    >
+                      Label
+                    </label>
+                    <input
+                      id={`${uniqueId}-object-label`}
+                      className="tb-input"
+                      value={selected.label || ""}
+                      maxLength={80}
+                      placeholder={
+                        selected.kind === "text"
+                          ? "Text on the map"
+                          : "Optional callout"
+                      }
+                      onChange={(event) =>
+                        changeObject(selected.id, (object) => ({
+                          ...object,
+                          label: event.target.value,
+                        }))
+                      }
+                    />
+                    {(selected.kind === "t" || selected.kind === "ct") && (
+                      <label className="tb-number-label">
+                        Player number
+                        <input
+                          className="tb-input"
+                          type="number"
+                          min="1"
+                          max="99"
+                          value={selected.number || 1}
+                          onChange={(event) => {
+                            const value = Number(event.target.value);
+                            if (
+                              Number.isInteger(value) &&
+                              value >= 1 &&
+                              value <= 99
+                            )
+                              changeObject(selected.id, (object) => ({
+                                ...object,
+                                number: value,
+                              }));
+                          }}
+                        />
+                      </label>
+                    )}
+                    <span className="tb-small-label tb-position-label">
+                      Position on map (0–1000)
+                    </span>
+                    <div className="tb-position-grid">
+                      {(["x", "y"] as const).map((axis) => (
+                        <label key={axis}>
+                          {axis.toUpperCase()}
+                          <input
+                            className="tb-input"
+                            type="number"
+                            min="0"
+                            max="1000"
+                            step="5"
+                            aria-label={`Selected object ${axis.toUpperCase()} position`}
+                            value={Math.round(
+                              (selected.points?.[0] || selected)[axis],
+                            )}
+                            onChange={(event) => {
+                              const value = Number(event.target.value);
+                              if (Number.isFinite(value))
+                                changeObject(selected.id, (object) =>
+                                  translated(
+                                    object,
+                                    axis === "x"
+                                      ? clamp(value) -
+                                          (object.points?.[0] || object).x
+                                      : 0,
+                                    axis === "y"
+                                      ? clamp(value) -
+                                          (object.points?.[0] || object).y
+                                      : 0,
+                                  ),
+                                );
+                            }}
+                          />
+                        </label>
+                      ))}
+                    </div>
+                    {selected.kind === "route" && selected.points && (
+                      <fieldset className="tb-route-endpoints">
+                        <legend>Route endpoints</legend>
+                        {(["start", "end"] as const).map((endpoint) => (
+                          <div className="tb-endpoint-row" key={endpoint}>
+                            <span>
+                              {endpoint === "start" ? "Start" : "End"}
+                            </span>
+                            <div className="tb-position-grid">
+                              {(["x", "y"] as const).map((axis) => (
+                                <label key={axis}>
+                                  {axis.toUpperCase()}
+                                  <input
+                                    className="tb-input"
+                                    type="number"
+                                    min="0"
+                                    max="1000"
+                                    step="5"
+                                    aria-label={`Route ${endpoint} ${axis.toUpperCase()} position`}
+                                    value={Math.round(
+                                      selected.points![
+                                        endpoint === "start"
+                                          ? 0
+                                          : selected.points!.length - 1
+                                      ][axis],
+                                    )}
+                                    onChange={(event) => {
+                                      const value = Number(event.target.value);
+                                      if (Number.isFinite(value))
+                                        changeObject(selected.id, (object) =>
+                                          endpointChanged(
+                                            object,
+                                            endpoint,
+                                            axis,
+                                            value,
+                                          ),
+                                        );
+                                    }}
+                                  />
+                                </label>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </fieldset>
+                    )}
+                    <div
+                      className="tb-nudge-controls"
+                      role="group"
+                      aria-label="Move selected object without dragging"
+                    >
+                      {[
+                        { label: "left", x: -10, y: 0, icon: ArrowLeft },
+                        { label: "up", x: 0, y: -10, icon: ArrowUp },
+                        { label: "down", x: 0, y: 10, icon: ArrowDown },
+                        { label: "right", x: 10, y: 0, icon: ArrowRight },
+                      ].map(({ label, x, y, icon: Icon }) => (
+                        <button
+                          key={label}
+                          className="tb-icon-button"
+                          title={`Move ${label} by 10 map units`}
+                          aria-label={`Move selected object ${label}`}
+                          onClick={() =>
+                            changeObject(selected.id, (object) =>
+                              translated(object, x, y),
+                            )
+                          }
+                        >
+                          <Icon size={15} />
+                        </button>
+                      ))}
+                    </div>
+                    <span className="tb-selection-help">
+                      Arrow keys move · Shift moves farther · Delete removes
+                    </span>
+                  </div>
+                )}
+
+                <div className="tb-inspector-section tb-team-section">
+                  <div className="tb-field-label">
+                    Playing side
+                    <UsersRound size={16} />
+                  </div>
+                  <div
+                    className="tb-side-toggle"
+                    role="group"
+                    aria-label="Playing side"
+                  >
+                    <button
+                      className={plan.side === "T" ? "is-active is-t" : ""}
+                      aria-pressed={plan.side === "T"}
+                      onClick={() =>
+                        changePlan((current) => ({ ...current, side: "T" }))
+                      }
+                    >
+                      <UserRound size={16} />T side
+                      <span>
+                        {
+                          plan.objects.filter((object) => object.kind === "t")
+                            .length
+                        }
+                      </span>
+                    </button>
+                    <button
+                      className={plan.side === "CT" ? "is-active is-ct" : ""}
+                      aria-pressed={plan.side === "CT"}
+                      onClick={() =>
+                        changePlan((current) => ({ ...current, side: "CT" }))
+                      }
+                    >
+                      <Shield size={16} />
+                      CT side
+                      <span>
+                        {
+                          plan.objects.filter((object) => object.kind === "ct")
+                            .length
+                        }
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    className={
+                      "tb-roster " + (plan.side === "T" ? "is-t" : "is-ct")
+                    }
+                  >
+                    {players.map((player) => (
+                      <button
+                        key={player.id}
+                        aria-label={"Select " + objectLabel(player)}
+                        title={objectLabel(player)}
+                        onClick={() => {
+                          setSelectedId(player.id);
+                          setTool("select");
+                        }}
+                      >
+                        {plan.side}
+                        {player.number}
+                      </button>
+                    ))}
+                    {players.length < 5 &&
+                      Array.from({ length: 5 - players.length }, (_, index) => (
+                        <button
+                          className="tb-empty-player"
+                          key={"empty-" + index}
+                          onClick={() =>
+                            addObject(plan.side === "T" ? "t" : "ct")
+                          }
+                          aria-label={"Add " + plan.side + " player"}
+                        >
+                          <Plus size={17} />
+                        </button>
+                      ))}
+                  </div>
+                </div>
+                <div className="tb-inspector-section tb-notes-section">
+                  <label
+                    className="tb-field-label"
+                    htmlFor={uniqueId + "-notes"}
+                  >
+                    Tactic notes
+                    <Pencil size={15} />
+                  </label>
+                  <textarea
+                    id={uniqueId + "-notes"}
+                    className="tb-notes"
+                    aria-label="Tactic notes"
+                    value={plan.notes}
+                    maxLength={8000}
+                    placeholder="Add the calls, timings, and roles for this round…"
+                    onChange={(event) =>
+                      changePlan((current) => ({
+                        ...current,
+                        notes: event.target.value,
+                      }))
+                    }
+                    rows={5}
+                  />
+                  {plan.illustrative && (
+                    <p className="tb-example-note">
+                      <CircleDot size={13} />
+                      <span>
+                        Editable example. Validate positions in practice.
+                      </span>
+                    </p>
+                  )}
+                </div>
+                <details className="tb-inspector-disclosure tb-saved-section">
+                  <summary>
+                    <FolderOpen size={17} />
+                    <span>Saved tactics</span>
+                    <span className="tb-disclosure-count">
+                      {visibleSaved.length}
+                    </span>
+                    <ChevronDown size={15} />
+                  </summary>
+                  <div className="tb-disclosure-content">
+                    <label
+                      className="tb-small-label"
+                      htmlFor={uniqueId + "-saved"}
+                    >
+                      Choose a saved tactic
+                    </label>
+                    <div className="tb-load-row">
+                      <select
+                        id={uniqueId + "-saved"}
+                        className="tb-input"
+                        value={selectedSavedId}
+                        onChange={(event) =>
+                          setSelectedSavedId(event.target.value)
+                        }
+                      >
+                        <option value="">
+                          {visibleSaved.length
+                            ? "Choose a tactic…"
+                            : "No saved tactics yet"}
+                        </option>
+                        {visibleSaved.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.plan.name}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        className="tb-icon-button"
+                        disabled={!selectedSavedId}
+                        aria-label="Load selected saved tactic"
+                        title="Load tactic (undoable)"
+                        onClick={loadTactic}
+                      >
+                        <FolderOpen size={17} />
+                      </button>
+                      <button
+                        className="tb-icon-button"
+                        disabled={!selectedSavedId}
+                        aria-label="Delete selected saved tactic"
+                        onClick={deleteTactic}
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
+                    <p className="tb-local-note">
+                      Saved in this browser. Export to move devices.
+                    </p>
+                  </div>
+                </details>
+                <details className="tb-inspector-disclosure tb-map-settings">
+                  <summary>
+                    <Settings2 size={17} />
+                    <span>Map settings</span>
+                    <ChevronDown size={15} />
+                  </summary>
+                  <div className="tb-disclosure-content">
+                    {map.note && <p className="tb-local-note">{map.note}</p>}
+                    <button
+                      className="tb-button"
+                      onClick={() => imageRef.current?.click()}
+                      disabled={uploading}
+                    >
+                      <ImagePlus size={17} />
+                      {uploading
+                        ? "Loading radar…"
+                        : customImage
+                          ? "Replace custom radar"
+                          : "Upload custom radar"}
+                    </button>
+                    {customImage && (
+                      <button
+                        className="tb-text-button"
+                        onClick={() => {
+                          if (
+                            !window.confirm(
+                              "Restore the supplied radar? Your custom image will be removed from this device.",
+                            )
+                          )
+                            return;
+                          try {
+                            localStorage.removeItem(imageKey(map.id, levelId));
+                            setCustomImage("");
+                            setMapFailed(false);
+                          } catch {
+                            notify.current(
+                              "Could not remove the saved custom radar.",
+                            );
+                          }
+                        }}
+                      >
+                        Restore original radar
+                      </button>
+                    )}
+                  </div>
+                </details>
+              </>
+            )}
+            {inspectorTab === "objects" && (
+              <div className="tb-inspector-section tb-objects-section">
+                <div className="tb-field-label">
+                  On the board<span>{plan.objects.length}</span>
+                </div>
+                {plan.objects.length ? (
+                  <div
+                    className="tb-object-list"
+                    role="list"
+                    aria-label="Board objects"
+                  >
+                    {plan.objects.map((object) => (
+                      <div key={object.id} role="listitem">
+                        <button
+                          className={
+                            "tb-object-row" +
+                            (selectedId === object.id ? " is-selected" : "")
+                          }
+                          onClick={() => {
+                            setSelectedId(object.id);
+                            setInspectorTab("plan");
+                            setTool("select");
+                            setInspectorTab("plan");
+                          }}
+                          aria-pressed={selectedId === object.id}
+                        >
+                          <span
+                            className={"tb-object-mark tb-mark-" + object.kind}
+                            style={{ color: colors[object.kind] }}
+                          >
+                            {object.kind === "t" || object.kind === "ct" ? (
+                              (object.kind === "t" ? "T" : "C") +
+                              (object.number || 1)
+                            ) : object.kind === "route" ? (
+                              <MoveUpRight size={15} />
+                            ) : object.kind === "pen" ? (
+                              <Pencil size={15} />
+                            ) : object.kind === "text" ? (
+                              <Type size={15} />
+                            ) : (
+                              object.kind[0].toUpperCase()
+                            )}
+                          </span>
+                          <span>{objectLabel(object)}</span>
+                          <ChevronDown size={14} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="tb-empty-objects">
+                    <MousePointer2 size={25} />
+                    <h3>Make the first move.</h3>
+                    <p>
+                      Choose a player, route, or utility tool, then place it on
+                      the map.
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
           <div className="tb-inspector-footer">
-            <button
-              onClick={() => imageRef.current?.click()}
-              disabled={uploading}
-            >
-              <ImagePlus size={14} />
-              {uploading
-                ? "Loading radar…"
-                : customImage
-                  ? "Replace custom radar"
-                  : "Upload custom radar"}
-            </button>
-            {customImage && (
-              <button
-                onClick={() => {
-                  if (
-                    !window.confirm(
-                      "Restore the supplied radar? Your custom image will be removed from this device.",
-                    )
-                  )
-                    return;
-                  try {
-                    localStorage.removeItem(imageKey(map.id, levelId));
-                    setCustomImage("");
-                    setMapFailed(false);
-                  } catch {
-                    notify.current("Could not remove the saved custom radar.");
-                  }
-                }}
-              >
-                Restore original radar
-              </button>
-            )}
-            <span>No account needed. Your board stays local.</span>
+            <span className="tb-local-dot" />
+            Private to this browser
           </div>
         </aside>
       </div>
@@ -1806,4 +2166,7 @@ export default function TacticBoard({ map, onNotify }: Props) {
       />
     </section>
   );
+}
+function LayersLabel() {
+  return <span>Layer</span>;
 }

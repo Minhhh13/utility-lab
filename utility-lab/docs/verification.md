@@ -1,16 +1,25 @@
-# Local draft verification
+# Current overhaul verification
 
-Checked 9 November 2026. Scope: the local tactic board, from choosing a map through editing, saving and transferring a plan. Utility lineups and the full playbook are later work.
+Updated 9 November 2026. Scope: the pixel-art entry, tactic board, Lineups, Playbooks, Stats, map pool and appearance system. This record replaces the earlier prototype's four-test report; those old results are not claimed as approval of the overhaul.
 
-- Production build and TypeScript check passed. Application JavaScript is approximately 79 KB gzip; CSS approximately 8 KB gzip. The self-hosted Latin variable font is 48 KB. Full-size radar assets load for the selected map/level; the map picker uses small thumbnails.
-- Eight model/catalogue tests passed: undo/redo branching, bounded route translation, independent route endpoints, malformed import rejection, bounded raster data, corrupt saved-record isolation, local artwork resolution, and multi-level/game-mode coverage.
-- Four isolated Microsoft Edge browser tests passed: complete edit/save/reload/map-floor/export/import flow; 390px and 320px layout and touch targets; production offline reload after installation; desktop layout and local artwork.
-- Browser flow exercised keyboard placement/nudging, pointer route drawing, clear/undo, named saving, map-switch draft recovery, Nuke lower radar, JSON download/import and PNG download.
-- Desktop at 1280×720 had no page overflow. Phone at 320px had no horizontal page overflow with a loaded tactic and four title actions. Phone toolbar targets measured 44×44px and notes text measured 16px. The map drawer manages focus, Escape, and inert background content.
-- The offline test found a same-origin static-cache mismatch caused by a preview server's `Vary: Origin` header. Matching cached static assets with `ignoreVary` fixed the failure; offline reload subsequently passed.
+## Confirmed checks
 
-The source review used the six Better Interface domains and the requested Apple/Superfuture guidance. Its actionable findings were addressed: offscreen focus, non-drag position editing, session recovery on storage failure, persistent notifications, linked map credit, phone typography, touch controls, and wrapping actions. The Impeccable detector reported a font familiarity warning for Inter. The neutral app font is retained deliberately for legibility and compact local delivery; this is a style warning, not a failed accessibility check.
+- TypeScript and the production build passed during the current overhaul.
+- All **20 model/catalogue/media tests passed**. They cover undo/redo, bounded routes and imports, saved-record isolation, local map assets, YouTube URLs and timestamps, unsafe/spoofed links, photo compatibility and limits, and combined-button throw labels.
+- The catalogue is now eight map entries and 10 levels. Lineups include 16 source-linked creator examples plus 68 illustrative practice records; the UI can suppress matching duplicate reference titles.
 
-Text token contrast was calculated in the source review and passed. Live desktop/phone renders were inspected. Physical iPhone gestures, Safari/WebKit, the real Steam overlay, screen-reader use, storage exhaustion in a real browser, and native iOS compilation are **not verified**. No specific in-game FPS or device performance claim is made.
+## Final browser run
 
-Screenshots: [desktop](preview-desktop.png), [phone](preview-phone.png).
+All **10 browser tests passed** against the completed presentation and media flow in headless Microsoft Edge. Coverage includes board edits/recovery/transfer, map floors, theme persistence, offline reopening, all four destinations, pausable/reduced-motion launch art, lazy video embeds, captioned photo slides, combined-button instructions, playbook draft recovery between tabs, and local stats. Board/launch widths include 1440, 1280, 768, 390 and 320px; media viewers were exercised at 1280, 390 and 320px.
+
+Impeccable's source detector returned no findings. The official TasteSkill v2.1.5 app inspector ran at 1440, 768 and 390px with no remaining contrast or overflow findings after the muted-text correction. Its other classifications were reviewed: a genuine floating tool dock uses a layer shadow; a selected theme-button shadow is inside a closed disclosure; hidden labels/dialog content and a screen-reader heading contribute misleading size counts. Visible utility metadata was increased to at least 11px after that report. Inspector reports remain in ignored `outputs/`.
+
+The Capacitor Swift Package Manager iOS project was generated and synced successfully on Windows. This verifies project preparation only; native compilation, signing and hardware behavior remain unverified.
+
+Production screenshots and before/after captures must be tied to the build they show. Files retained from the original prototype are historical evidence, not current visual approval.
+
+## Verification limits
+
+Physical iPhone gestures, Safari/WebKit, the actual Steam overlay, screen-reader behavior, real-browser storage exhaustion, native iOS compilation/signing and actual external video playback remain **not verified**. Source metadata checks establish linked videos and chapter offsets at the time of research; future availability, regional restrictions, embedding permissions and current game geometry can change.
+
+No throw is independently validated merely because a source video exists. Map pins are approximate navigation aids, and no generated image is presented as a real standing position or aim reference. Stats describe local workspace records, not Steam/FACEIT performance. No measured in-game FPS claim is made.

@@ -1,65 +1,49 @@
-# CS2 map catalogue and artwork sources
+# Map scope and artwork sources
 
-Checked on **9 November 2026** (Australia/Sydney). This is a local-first fan-tool prototype, not an official Valve product. Game geometry can change; do not infer that a saved throw is verified merely because its radar is bundled.
+Updated **9 November 2026** (Australia/Sydney). Utility Lab is an unofficial CS2 fan tool. Its configured picker is intentionally limited to Active Duty/FACEIT planning; it no longer exposes the earlier all-modes catalogue.
 
-## Playable map coverage
+## Current picker
 
-The catalogue has **24 current playable map definitions**, including the day/night variants. It includes more than the seven Premier maps. Nuke, Train, Vertigo and Baggage include both extracted radar floors; Boulder includes its second extracted layer. Complex includes the overall radar and all 20 local arena radars. Wingman also uses restricted areas of Inferno, Nuke, Overpass and Vertigo; those maps are already included rather than duplicated as different maps.
-
-The scope excludes non-playable lobby and Workshop preview maps, old overview files left in the depot, and removed community maps. It does not label the mere presence of a historical icon as current availability.
-
-| Group | Included maps |
+| Configured group | Maps |
 | --- | --- |
 | Active Duty / Premier | Ancient, Anubis, Cache, Dust II, Inferno, Mirage, Nuke |
-| Other Competitive | Overpass, Train, Vertigo |
-| Competitive/Casual/Deathmatch community rotation | Boulder, Fachwerk, Shelter (hostage) |
-| Hostage | Italy, Office, Shelter |
-| Additional Wingman community maps | Debris, El Dorado, Poseidon |
-| Arms Race | Baggage, Pool Day, Shoots (Day), Shoots (Night) |
-| Casual/Retakes alternate | Ancient (Night) |
-| Rush | Complex (`rush_001`), with its arena radars |
+| Additional FACEIT option | Vertigo |
 
-### Availability evidence
+This produces **8 map entries and 10 selectable views**. Nuke and Vertigo each have upper/lower views; the other six maps have one overview. The FACEIT filter includes the seven shared maps plus Vertigo. There is no live map-pool API or automatic rotation update.
 
-- [Valve official news and release-notes feed](https://www.counter-strike.net/news/CS2?l=english), current through 5 November 2026.
-- [Valve: Season 5, Armory, and More, 8 July 2026](https://www.counter-strike.net/newsentry/701021228894257508?l=english): Cache replaces Overpass in Active Duty; Boulder, Fachwerk and Shelter are added to Competitive/Casual/Deathmatch; Debris and El Dorado to Wingman.
-- [Valve release notes, 8 July 2026, via official Steam feed](https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165581827): removes Warden, Stronghold, Alpine and Sanctum from all modes. Overpass leaving Active Duty is not removal from the game.
-- [Valve release notes, 22 September 2026](https://www.counter-strike.net/newsentry/674006995886407685): introduces Rush, with battle arenas selected per match.
-- Valve's shipped [`gamemodes.txt`, mirrored by SteamDatabase](https://github.com/SteamDatabase/GameTracking-CS2/blob/cce7bf1f190144c1c08fb0fe75fd3c9514f2637f/game/csgo/pak01_dir/gamemodes.txt), snapshot dated 5 November 2026: the `competitive`, `casual`, `retakes`, `2v2`, Arms Race and Rush mode definitions resolve the complete set above. SteamDatabase is a third-party mirror of Valve's game data, not the publisher.
-- [Valve official Steam news API](https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=730&count=100&maxlength=0&feeds=steam_community_announcements&format=json) was also used to read the publisher's full release notes when the JavaScript news page did not expose readable HTML.
+`src/maps.ts` is the application catalogue. Extra game artwork retained from the original broader prototype is not a current picker entry and does not establish matchmaking availability.
 
-## Radar artwork: distinct ownership from application code
+### Pool evidence and limits
 
-The PNG radar files are extracted game artwork. **They are not covered by the application's source-code license.** Artwork and map designs remain the property of Valve Corporation and the respective community map creators. The extraction repositories do not grant an independent open-source license to Valve's assets. Their local use here is for the requested Counter-Strike fan-tool draft; a public source repository does not transfer ownership or establish a new license for the art.
+- [Valve's Season 5 announcement, 8 July 2026](https://www.counter-strike.net/newsentry/701021228894257508?l=english) documents Cache replacing Overpass in Active Duty. The [official Steam news feed](https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=730&count=100&maxlength=0&feeds=steam_community_announcements&format=json) was used where the JavaScript news page did not expose readable text.
+- Valve's shipped [`gamemodes.txt`, mirrored by SteamDatabase](https://github.com/SteamDatabase/GameTracking-CS2/blob/cce7bf1f190144c1c08fb0fe75fd3c9514f2637f/game/csgo/pak01_dir/gamemodes.txt) provides the game-data snapshot used in the original map research. SteamDatabase is a third-party mirror, not the game publisher.
+- [FACEIT's Season 9 Map Vote FAQ](https://support.faceit.com/hc/en-us/articles/28929221706652-Season-9-Map-Vote-FAQ), updated 28 July 2026, names Vertigo as the optional Elo-enabled addition from 5 August. It describes Season 9 availability and allows significant later changes; it is not an evergreen guarantee of future seasons. The app's Vertigo inclusion is based on that published configuration.
 
-### Game-depot radar extraction
+Pool membership and map geometry can change. Update the catalogue from current publisher/platform evidence when requirements change; do not infer membership from an old radar file or describe the static catalogue as live-synced.
 
-- Source: [MurkyYT/cs2-map-icons](https://github.com/MurkyYT/cs2-map-icons).
+## Original vector minimaps
+
+The seven Active Duty maps use original SVG drawings from [setposgg/cs2-minimaps](https://github.com/setposgg/cs2-minimaps). Nuke's drawing is upper-only, so its lower view uses game radar artwork. Local light/dark variants support the app's appearance modes.
+
+- Source snapshot: [`ba5f793883e1ce13076dd6919aa1601099c247cf`](https://github.com/setposgg/cs2-minimaps/tree/ba5f793883e1ce13076dd6919aa1601099c247cf), 23 October 2026.
+- Local files: `public/maps/{map}.svg` and `public/maps/{map}-light.svg` for Mirage, Dust II, Inferno, Nuke, Ancient, Anubis and Cache.
+- License: **CC BY 4.0**. The licensor waives requirements beyond the linked credit **[Minimaps by setpos.gg](https://setpos.gg)**. Preserve that credit when displaying these drawings.
+- Layouts may lag game updates. Source art is not independent in-game validation of saved positions or throws.
+
+## Game radar artwork
+
+Nuke lower and both Vertigo views use genuine game radar PNGs. The other game's PNGs also supply thumbnails/reference artwork where retained. Radar art and community map designs remain the property of Valve Corporation and their respective creators; they are not relicensed as application source code.
+
+- Source: [MurkyYT/cs2-map-icons](https://github.com/MurkyYT/cs2-map-icons), which documents extraction from the game depot and identifies the assets as Valve property.
 - Snapshot: [`50ca4c14b67762b3b3ee137b526b8cf300c0d8c9`](https://github.com/MurkyYT/cs2-map-icons/tree/50ca4c14b67762b3b3ee137b526b8cf300c0d8c9), 5 November 2026.
-- Remote path: `images/radars/<filename>.png`.
-- Local path: `public/maps/<same filename>.png`.
-- The source README explicitly identifies icons, radars, thumbnails and overview data as Valve property. The source automates extraction from the official game depot and retains historical files, so its complete asset list was **not** used as a current availability list.
-- Source inventory: [`data/available.json`](https://github.com/MurkyYT/cs2-map-icons/blob/50ca4c14b67762b3b3ee137b526b8cf300c0d8c9/data/available.json).
-- The catalogue selects the named base radar images rather than duplicates and historic versions. It includes the actual PNGs for all current maps except Pool Day, which uses the source below.
-- All files were downloaded unmodified. Application rendering scales the complete square image; no invented map layout is substituted.
+- Remote path: `images/radars/<filename>.png`; local path: `public/maps/<filename>.png`.
+- Current lower/floor files include `de_nuke_lower_radar_psd.png`, `de_vertigo_radar_psd.png` and `de_vertigo_lower_radar_psd.png`.
+- Full-size PNGs were downloaded without redrawing geometry. Small map-picker thumbnails in `public/map-thumbnails/` are resized local derivatives. The source repository retains historic files, so asset presence was not used as a current map-pool list.
 
-### Pool Day
+For provenance of retained historical artwork only: the unused Pool Day radar came from [2mlml/cs2-radar-images](https://github.com/2mlml/cs2-radar-images/tree/34df8bc70d47b64cb699091ef6b871cdcca22b59), snapshot `34df8bc70d47b64cb699091ef6b871cdcca22b59` dated 8 May 2025. Pool Day is not exposed by the current picker.
 
-- Source: [2mlml/cs2-radar-images](https://github.com/2mlml/cs2-radar-images).
-- Snapshot: [`34df8bc70d47b64cb699091ef6b871cdcca22b59`](https://github.com/2mlml/cs2-radar-images/tree/34df8bc70d47b64cb699091ef6b871cdcca22b59), 8 May 2025.
-- Remote `ar_pool_day.png`; local `public/maps/ar_pool_day.png`.
-- Extracted game radar, not original artwork made for this app. This source is older than the other radars and is marked accordingly in the catalogue. The app does not claim it is in-game validated for the current patch.
+## Rendering and lineup meaning
 
-## Optional original vector minimaps
+Map artwork is bundled locally, and full-size views load for the selected map/level. Appearance modes use the corresponding original vector variant or a radar display filter. Custom uploaded map/lineup images retain their own appearance.
 
-Seven optional SVG drawings are also bundled: Mirage, Dust II, Inferno, Ancient, Anubis, Nuke (upper only) and Cache.
-
-- Source: [setposgg/cs2-minimaps](https://github.com/setposgg/cs2-minimaps).
-- Snapshot: [`ba5f793883e1ce13076dd6919aa1601099c247cf`](https://github.com/setposgg/cs2-minimaps/tree/ba5f793883e1ce13076dd6919aa1601099c247cf), 23 October 2026.
-- Local paths: `public/maps/{slug}.svg`.
-- These are original vector drawings under **CC BY 4.0**. The licensor explicitly waives requirements beyond a linked credit line: **[Minimaps by setpos.gg](https://setpos.gg)**. Keep this credit when using the SVGs.
-- Their README states that layouts may lag game updates and Nuke has no lower-level vector drawing. Lower Nuke therefore uses the extracted game PNG rather than faked geometry.
-
-## Runtime delivery
-
-Assets are local and should load only for the selected map and level. There are no required third-party radar requests while planning. The original PNGs plus optional SVGs total approximately 10.4 MB on disk; an individual default map radar is typically 50–240 KB, with some community radars larger. Do not eagerly load every map or arena into the initial screen.
+The interface may fit the genuine art to its visible bounds; it does not substitute invented layouts. Utility pins are approximate navigation aids, not source-measured aim coordinates, landing points, trajectories or grenade volumes. Video examples and personal photo steps have separate provenance in [lineup-sources.md](lineup-sources.md).

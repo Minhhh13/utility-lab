@@ -36,23 +36,27 @@ test("every selectable map layer resolves to a local radar asset", () => {
   }
 });
 
-test("multi-level maps and all game-mode groups remain available", () => {
-  for (const id of ["nuke", "train", "vertigo", "baggage", "boulder"])
+test("only Active Duty and FACEIT maps are exposed, including both floors", () => {
+  for (const id of ["nuke", "vertigo"])
     assert.ok(
       MAPS.find((m) => m.id === id)!.levels.length >= 2,
       `${id} needs its second level`,
     );
-  assert.equal(MAPS.find((m) => m.id === "complex")!.levels.length, 21);
-  for (const group of [
-    "Active Duty",
-    "Competitive",
-    "Hostage",
-    "Wingman",
-    "Arms Race",
-    "Rush",
+  assert.equal(MAPS.length, 8);
+  assert.equal(MAPS.filter((map) => map.activeDuty).length, 7);
+  assert.ok(MAPS.every((map) => map.activeDuty || map.faceit));
+  assert.deepEqual(
+    MAPS.filter((map) => !map.activeDuty).map((map) => map.id),
+    ["vertigo"],
+  );
+  for (const removed of [
+    "office",
+    "italy",
+    "pool-day",
+    "boulder",
+    "complex",
+    "train",
+    "overpass",
   ])
-    assert.ok(
-      MAPS.some((m) => m.mode === group),
-      `Missing ${group} maps`,
-    );
+    assert.ok(!MAPS.some((map) => map.id === removed));
 });

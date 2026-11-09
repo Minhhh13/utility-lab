@@ -1,0 +1,555 @@
+.launch-screen {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+  background: var(--canvas);
+  color: var(--text);
+  overflow: hidden;
+}
+.launch-scene {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--canvas);
+}
+.launch-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  image-rendering: pixelated;
+  opacity: 0;
+}
+.launch-art.is-loaded {
+  opacity: 1;
+}
+.launch-scene-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, #07121ba6 0%, #07121b40 42%, transparent 75%),
+    linear-gradient(0deg, #07121b78 0%, transparent 55%);
+  pointer-events: none;
+}
+.launch-heading {
+  position: absolute;
+  z-index: 4;
+  top: 32%;
+  left: 7%;
+  right: 24px;
+  color: #fffdf6;
+}
+.launch-heading h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(54px, 6vw, 92px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  text-shadow: 0 3px 22px #07131e4d;
+}
+.launch-load-state {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 23px;
+  margin-top: 23px;
+  color: #f0eee7;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.launch-load-state progress {
+  appearance: none;
+  width: 110px;
+  height: 3px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 3px;
+  background: #ffffff40;
+  color: #fffdf6;
+}
+.launch-load-state progress::-webkit-progress-bar {
+  background: #ffffff40;
+}
+.launch-load-state progress::-webkit-progress-value {
+  background: #fffdf6;
+}
+.launch-load-state progress::-moz-progress-bar {
+  background: #fffdf6;
+}
+.launch-ready {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.launch-destinations {
+  position: absolute;
+  z-index: 5;
+  bottom: 6%;
+  left: 7%;
+  right: 7%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-radius: 13px;
+  background: var(--surface-raised);
+  overflow: hidden;
+  box-shadow: 0 10px 40px #07121b33;
+}
+.launch-destination {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 128px;
+  padding: 25px 27px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  touch-action: manipulation;
+}
+.launch-destination + .launch-destination {
+  border-left: 1px solid var(--border);
+}
+.launch-destination-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+}
+.launch-destination-title > svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.launch-destination-title strong {
+  font: inherit;
+}
+.launch-destination-description {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 24ch;
+  padding-right: 10px;
+}
+.launch-destination-arrow {
+  position: absolute;
+  right: 18px;
+  top: 22px;
+  color: var(--muted);
+}
+.launch-destination:focus-visible {
+  outline-offset: -5px;
+}
+.launch-smoke-layers {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.launch-smoke {
+  position: absolute;
+  width: clamp(220px, 32vw, 630px);
+  height: auto;
+  image-rendering: pixelated;
+  opacity: 0;
+  pointer-events: none;
+}
+.smoke-near {
+  left: 9%;
+  bottom: -19%;
+  animation: pixel-smoke-rise 16s steps(64, end) infinite;
+}
+.smoke-far {
+  left: 51%;
+  bottom: -31%;
+  width: clamp(190px, 28vw, 530px);
+  animation: pixel-smoke-rise 21s steps(70, end) -11s infinite;
+}
+.launch-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.launch-particles i {
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 3px;
+  background: #ffdaa0;
+  opacity: 0;
+  animation: pixel-dust 10s steps(40, end) infinite;
+}
+.scene-motion-toggle {
+  position: absolute;
+  z-index: 5;
+  top: 95px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+.scene-motion-toggle:disabled {
+  opacity: 0.8;
+}
+.scene-paused .launch-smoke,
+.scene-paused .launch-particles i {
+  animation-play-state: paused;
+}
+@keyframes pixel-smoke-rise {
+  0% {
+    transform: translate3d(-4%, 7%, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.16;
+  }
+  70% {
+    opacity: 0.13;
+  }
+  100% {
+    transform: translate3d(12%, -12%, 0);
+    opacity: 0;
+  }
+}
+@keyframes pixel-dust {
+  0% {
+    transform: translate3d(0, 15px, 0);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate3d(34px, -55px, 0);
+    opacity: 0;
+  }
+}
+.art-failed .launch-scene-shade {
+  background: transparent;
+}
+.art-failed .launch-heading {
+  color: var(--text);
+}
+.art-failed .launch-load-state {
+  color: var(--muted);
+}
+.art-failed .launch-smoke-layers,
+.art-failed .launch-particles {
+  display: none;
+}
+.is-home .studio-header {
+  position: absolute;
+  z-index: 30;
+  inset: 0 0 auto;
+  height: 78px;
+  min-height: 0;
+  padding: 0 7%;
+  background: transparent;
+  border: 0;
+  color: #fffdf6;
+}
+.is-home .brand {
+  color: #fffdf6;
+  font-size: 24px;
+}
+.is-home .global-actions > .icon-button,
+.is-home .appearance-menu > summary,
+.is-home .compact-toggle {
+  color: #fffdf6;
+}
+.is-home .workspace-status {
+  color: #f1f1e9;
+}
+.is-home .compact-toggle {
+  background: #14222c33;
+  border-color: #ffffff40;
+}
+.is-home .header-divider {
+  background: #ffffff40;
+}
+.is-home .app-main {
+  padding: 0;
+}
+.is-home .appearance-panel {
+  color: var(--text);
+}
+@media (hover: hover) and (pointer: fine) {
+  .launch-destination:hover {
+    background: var(--accent-soft);
+  }
+  .launch-destination:hover .launch-destination-title,
+  .launch-destination:hover .launch-destination-arrow {
+    color: var(--accent);
+  }
+  .scene-motion-toggle:hover {
+    color: var(--text);
+  }
+  .is-home .appearance-menu > summary:hover,
+  .is-home .global-actions > .icon-button:hover {
+    background: #ffffff20;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .launch-art {
+    transition: opacity 220ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .launch-destination {
+    transition: background-color 140ms ease;
+  }
+  .launch-destination-arrow {
+    transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .launch-destination:hover .launch-destination-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+@media (max-width: 1100px) {
+  .launch-destinations {
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+  }
+  .launch-destination {
+    padding: 23px 20px;
+    min-height: 126px;
+  }
+  .launch-destination-title {
+    font-size: 16px;
+    gap: 9px;
+  }
+  .launch-destination-description {
+    font-size: 12px;
+    max-width: 20ch;
+  }
+  .launch-destination-arrow {
+    right: 14px;
+    top: 16px;
+    width: 16px;
+  }
+  .launch-heading {
+    left: 5%;
+  }
+  .is-home .studio-header {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 800px) {
+  .launch-destinations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+  }
+  .launch-destination {
+    min-height: 111px;
+    padding: 20px 23px;
+    gap: 8px;
+  }
+  .launch-destination:nth-child(3) {
+    border-left: 0;
+  }
+  .launch-destination:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+  .launch-destination-title {
+    font-size: 17px;
+  }
+  .launch-destination-description {
+    font-size: 12px;
+    max-width: 28ch;
+  }
+  .launch-heading {
+    top: 25%;
+    left: 32px;
+  }
+  .launch-heading h1 {
+    font-size: clamp(49px, 7vw, 68px);
+  }
+  .scene-motion-toggle {
+    top: 92px;
+    right: 24px;
+  }
+  .is-home .studio-header {
+    padding: 0 28px;
+  }
+  .launch-smoke {
+    width: 60vw;
+    left: 3%;
+    bottom: 5%;
+  }
+  .smoke-far {
+    width: 50vw;
+    left: 58%;
+    bottom: 0;
+  }
+}
+@media (max-width: 500px) {
+  .launch-screen {
+    min-height: 680px;
+  }
+  .launch-art {
+    object-position: 55% 50%;
+  }
+  .launch-scene-shade {
+    background:
+      linear-gradient(90deg, #07121b99, #07121b40 85%),
+      linear-gradient(0deg, #07121b55, transparent 60%);
+  }
+  .is-home .studio-header {
+    height: 74px;
+    padding: 0 22px;
+  }
+  .is-home .brand {
+    font-size: 23px;
+  }
+  .is-home .global-actions {
+    gap: 4px;
+  }
+  .is-home .compact-toggle {
+    display: none;
+  }
+  .launch-heading {
+    top: 25%;
+    left: 25px;
+    right: 20px;
+  }
+  .launch-heading h1 {
+    font-size: 46px;
+    line-height: 1.1;
+  }
+  .launch-load-state {
+    font-size: 12px;
+    margin-top: 19px;
+  }
+  .launch-destinations {
+    left: 16px;
+    right: 16px;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    border-radius: 12px;
+  }
+  .launch-destination {
+    padding: 20px 16px;
+    min-height: 116px;
+    gap: 9px;
+  }
+  .launch-destination-title {
+    font-size: 16px;
+    gap: 8px;
+  }
+  .launch-destination-title > svg {
+    width: 19px;
+    height: 19px;
+  }
+  .launch-destination-description {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 18ch;
+    padding-right: 0;
+  }
+  .launch-destination-arrow {
+    display: none;
+  }
+  .scene-motion-toggle {
+    top: 91px;
+    right: 22px;
+    min-height: 36px;
+    font-size: 11px;
+  }
+  .launch-smoke {
+    width: 100vw;
+    left: -23%;
+    bottom: 8%;
+  }
+  .smoke-far {
+    left: 55%;
+    width: 90vw;
+    bottom: 12%;
+  }
+}
+@media (max-width: 350px) {
+  .launch-heading {
+    left: 21px;
+    top: 25%;
+  }
+  .launch-heading h1 {
+    font-size: 40px;
+  }
+  .launch-destinations {
+    left: 12px;
+    right: 12px;
+  }
+  .launch-destination {
+    padding: 18px 13px;
+    min-height: 119px;
+  }
+  .launch-destination-title {
+    font-size: 14px;
+    gap: 6px;
+  }
+  .launch-destination-description {
+    font-size: 11px;
+  }
+  .is-home .studio-header {
+    padding: 0 17px;
+  }
+  .is-home .brand {
+    font-size: 22px;
+  }
+}
+@media (max-height: 730px) and (min-width: 801px) {
+  .launch-heading {
+    top: 29%;
+  }
+  .launch-heading h1 {
+    font-size: 64px;
+  }
+  .launch-destination {
+    min-height: 112px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .launch-art,
+  .launch-destination,
+  .launch-destination-arrow,
+  .launch-smoke,
+  .launch-particles i {
+    transition: none !important;
+    animation: none !important;
+  }
+  .launch-smoke {
+    opacity: 0.09;
+    transform: translate3d(0, -3%, 0);
+  }
+  .launch-particles i {
+    display: none;
+  }
+}

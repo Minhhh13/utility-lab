@@ -3,6 +3,6 @@ const config: CapacitorConfig = {
   appId: "app.utilitylab.cs2",
   appName: "Utility Lab",
   webDir: "dist",
-  backgroundColor: "#101514",
+  backgroundColor: "#f5f5f2",
 };
 export default config;

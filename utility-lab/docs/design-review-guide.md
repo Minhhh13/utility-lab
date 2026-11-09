@@ -1,6 +1,21 @@
-# Tactic-board implementation and review contract
+# Utility Lab implementation and review contract
 
-Scope: the first local CS2 tactic-board flow, from selecting a map through editing, saving, reopening and exporting a strategy. Stack: React, TypeScript and Vite. Follow the root `PRODUCT.md` and `DESIGN.md`; the sources in [design-references](design-references/README.md) inform execution. Utility lineups and a full playbook are later surfaces.
+Scope: the current local CS2 launch, tactic board, Lineups, Playbooks and Stats flows. Stack: React, TypeScript and Vite. Follow the root `PRODUCT.md` and `DESIGN.md`; the [reference pack](design-references/README.md) and [additional sources](new-design-sources.md) inform execution. This is a review contract, not a claim that every check has passed.
+
+## Current surface requirements
+
+- The approved Utility Lab name/logo lead into a fullscreen pixel-art entry with four working destinations. Readiness feedback must reflect actual resources, never an artificial timer. The launch animation needs pause, reduced-motion and hidden-page behavior.
+- Keep the board map dominant with its inspector initially closed. The picker contains only the configured Active Duty/FACEIT union: eight maps and ten levels. Old bundled artwork must not imply extra picker entries or current matchmaking availability.
+- Light, Dark and System mode plus Cobalt, Ember, Mint and Rose must affect the whole workspace through semantic tokens, including canvas, radar, inspector, controls and markers. User-uploaded reference photos preserve their original appearance.
+- Shared smoke, flash, molly and HE silhouettes remain recognizable at their displayed size. Small map pins use larger hit areas without pretending to show measured grenade coverage.
+
+## Lineup media and local libraries
+
+- Source-linked creator videos and the 68 illustrative practice records have distinct, honest status. The 16 creator examples link to eight original guides; they are not a complete or independently tested lineup database.
+- Selecting a media lineup opens its viewer. A YouTube iframe loads only after an explicit player request, uses an allowlisted video ID and the privacy-enhanced embed host, and does not autoplay. Keep an original-source link available when playback fails or is unavailable.
+- Photo slides use real uploads or attributed source images, with captions, previous/next controls, direct selection and keyboard navigation. Never generate or invent standing-position/aim screenshots. Validate photo counts, types and total stored size.
+- Throw methods distinguish LMB, RMB, **Both buttons (LMB + RMB)**, jump and movement variants. A combined-button input must not be silently interpreted as a mouse-wheel action. Do not infer precise throw inputs from a video title or chapter name.
+- Personal lineups, favorites, tactics and playbooks stay local unless exported. Save status reflects successful writes; failures retain a recovery/export path. Stats count stored workspace records and must not imply Steam/FACEIT match data, connected accounts or a backend.
 
 ## Interaction
 
@@ -40,7 +55,7 @@ Scope: the first local CS2 tactic-board flow, from selecting a map through editi
 
 ## Verification record
 
-Run the project build and meaningful board-state tests. In the browser, complete map selection → place/move/draw → undo/redo → save → reload → export/import. Repeat essential editing with touch and keyboard paths. Inspect narrow layouts and computed sizes/contrast, then document observed results.
+Run the project build and meaningful state/catalogue tests. In the browser, cover launch navigation, map selection → place/move/draw → undo/redo → save → reload → export/import, both lineup sides, search/filter/favorite state, video gating, photo slides, personal-lineup saving, playbook creation and derived stats. Repeat essential editing with touch and keyboard paths, inspect themes/palettes and narrow layouts, and record observed results in [verification.md](verification.md).
 
 Better Interface review domains: accessibility, layout, writing, typography, colors and UI polish. Record the evidence and coverage for each. A source-only check cannot establish rendered behavior; a screenshot alone cannot establish keyboard or persistence behavior. Mark physical iPhone, Steam overlay and screen-reader checks “Not verified” until run in those environments.
 
