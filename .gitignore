@@ -1,0 +1,32 @@
+# Runtime output and local drafts
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/config.local.json
+.playwright-cli/
+node_modules/
+dist/
+outputs/
+*.log
+.env*
+.dev.vars*
+*.pem
+.DS_Store
+# Unused original generated framework template (local-only)
+utility-lab/app/
+utility-lab/components/
+utility-lab/db/
+utility-lab/drizzle/
+utility-lab/examples/
+utility-lab/hooks/
+utility-lab/lib/
+utility-lab/vendor/
+utility-lab/worker/
+utility-lab/scripts/
+utility-lab/.openai/
+utility-lab/.sites-runtime/
+utility-lab/cloudflare-env.d.ts
+utility-lab/components.json
+utility-lab/drizzle.config.ts
+utility-lab/eslint.config.mjs
+utility-lab/next.config.ts
