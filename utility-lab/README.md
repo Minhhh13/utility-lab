@@ -31,6 +31,10 @@ Add personal lineups with positions, instructions, throw methods, creator/source
 
 The 68 additional practice references contain illustrative targets and checklists, not verified aim points. Creator videos are demonstrations, not independent validation against the installed game build. Approximate map markers do not establish grenade coverage. See [creator sources and limitations](docs/lineup-sources.md).
 
+The Lineups map and photo viewer support mouse-wheel zoom, adjacent minus/plus buttons and a percentage button to fit the content again. Drag to pan after zooming. Focus the map or photo to use `+`/`-`, arrow keys and `0` to fit. In a photo viewer at 100%, left/right arrows still change slides; changing slides resets the photo zoom. Touch scrolls the page at fit and pans the canvas when zoomed; browser pinch zoom remains available. Physical touch-device behavior still needs hardware verification.
+
+The [UI/UX review and feature priorities](docs/lineups-ux-review.vi.md) explain the bounded layout changes and proposed follow-up work. See [Lineups verification](docs/lineups-map-ux-verification.md) for checks and device-testing limits. The hosted Cloudflare build contains features not present in this source baseline; reconcile its source before deploying this branch over it.
+
 **Playbooks.** Create named local collections with notes, saved tactics and personal/favorited lineup references. Open saved tactics on the board and export a playbook as JSON.
 
 **Stats.** Inspect counts of saved tactics, personal lineups, playbooks and saved references, map coverage, and utility placements across saved tactics. These figures come from browser records. There is no Steam/FACEIT match-stat connection or backend.
