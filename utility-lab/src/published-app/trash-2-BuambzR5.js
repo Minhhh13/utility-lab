@@ -1,0 +1,3 @@
+import { Y as e } from "./index-CPA0TY-O.js";
+var t = e(`arrow-down`, [[`path`, { d: `M12 5v14`, key: `s699le` }], [`path`, { d: `m19 12-7 7-7-7`, key: `1idqje` }]]), n = e(`arrow-up`, [[`path`, { d: `m5 12 7-7 7 7`, key: `hav0vg` }], [`path`, { d: `M12 19V5`, key: `x0mq9r` }]]), r = e(`trash-2`, [[`path`, { d: `M10 11v6`, key: `nco0om` }], [`path`, { d: `M14 11v6`, key: `outv1u` }], [`path`, { d: `M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6`, key: `miytrc` }], [`path`, { d: `M3 6h18`, key: `d0wm0j` }], [`path`, { d: `M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2`, key: `e791ji` }]]);
+export { n, t as r, r as t };

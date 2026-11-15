@@ -1,8 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
-import "./app.css";
-import "./theme.css";
+import { RecoveredApp as App } from "./published-app/index-CPA0TY-O.js";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

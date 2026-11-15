@@ -30,10 +30,6 @@ const contentBounds: Record<string, NonNullable<MapLevel["contentBounds"]>> = {
   ancient: { x: 101, y: 43, width: 774, height: 910 },
   anubis: { x: 129, y: 0, width: 754, height: 980 },
   cache: { x: 13, y: 150, width: 950, height: 723 },
-  // Raster bounds include a small safety margin around the visible floors.
-  "nuke-lower": { x: 40, y: 250, width: 960, height: 520 },
-  "vertigo-upper": { x: 100, y: 125, width: 720, height: 740 },
-  "vertigo-lower": { x: 100, y: 108, width: 720, height: 784 },
 };
 const vector = (id: string): MapLevel[] => [
   {
@@ -74,7 +70,6 @@ export const MAPS: GameMap[] = [
         id: "lower",
         name: "Lower",
         image: "/maps/de_nuke_lower_radar_psd.png",
-        contentBounds: contentBounds["nuke-lower"],
       },
     ],
     credit: "Upper minimap by setpos.gg; lower radar © Valve Corporation",
@@ -91,17 +86,11 @@ export const MAPS: GameMap[] = [
     activeDuty: false,
     faceit: true,
     levels: [
-      {
-        id: "upper",
-        name: "Upper",
-        image: "/maps/de_vertigo_radar_psd.png",
-        contentBounds: contentBounds["vertigo-upper"],
-      },
+      { id: "upper", name: "Upper", image: "/maps/de_vertigo_radar_psd.png" },
       {
         id: "lower",
         name: "Lower",
         image: "/maps/de_vertigo_lower_radar_psd.png",
-        contentBounds: contentBounds["vertigo-lower"],
       },
     ],
     credit: "Radar artwork © Valve Corporation and the respective map creators",

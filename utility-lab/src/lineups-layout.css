@@ -1,0 +1,64 @@
+/* Presentation-only overrides for the published Lineups workspace. */
+@media (min-width: 861px) {
+  body .utility-workspace.ul-map-only .ul-map-area {
+    position: relative;
+  }
+  body .utility-workspace.ul-map-only .ul-map-top {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+  body .utility-workspace.ul-map-only .ul-map-top > * {
+    pointer-events: auto;
+    border-radius: 7px;
+    background: var(--canvas);
+  }
+  body .utility-workspace.ul-map-only .ul-map-stage {
+    padding: 8px 12px 70px;
+  }
+  body .utility-workspace.ul-map-only .ul-map-bottom {
+    position: absolute;
+    inset: auto 0 28px;
+    z-index: 2;
+    min-height: 38px;
+    padding: 0 16px;
+    pointer-events: none;
+  }
+  body .utility-workspace.ul-map-only .ul-map-bottom p {
+    max-width: none;
+    width: fit-content;
+    background: var(--canvas);
+  }
+  body .utility-workspace.ul-map-only .ul-map-bottom .ul-zoom {
+    pointer-events: auto;
+  }
+  body .utility-workspace.ul-map-only .ul-navigation-help {
+    position: absolute;
+    left: 16px;
+    bottom: 7px;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    background: var(--canvas);
+  }
+  body .utility-workspace.ul-map-only .ul-map-credit {
+    position: absolute;
+    left: 50%;
+    bottom: 7px;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 0;
+    background: var(--canvas);
+  }
+}
+
+body .utility-workspace .ul-zoom,
+body .ul-photo-zoom {
+  gap: 0;
+}
+body .ul-zoom [aria-label="Reset utility map zoom"],
+body .ul-photo-zoom [aria-label="Fit photo"] {
+  margin-left: 3px;
+  border-left: 1px solid var(--border);
+}

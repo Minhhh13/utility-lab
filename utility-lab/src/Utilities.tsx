@@ -28,12 +28,10 @@ import {
   UserRound,
   Video,
   X,
+  ZoomIn,
+  ZoomOut,
 } from "lucide-react";
 import type { GameMap } from "./maps";
-import { FULL_MAP_BOUNDS } from "./lineup-map-view";
-import usePanZoom from "./usePanZoom";
-import ZoomControls from "./ZoomControls";
-import LineupPhoto from "./LineupPhoto";
 import { CREATOR_GUIDES } from "./creator-guides";
 import GrenadeIcon, { type UtilityKind } from "./UtilityIcon";
 import {
@@ -322,13 +320,6 @@ function LineupMedia({ record }: { record: UtilityReference }) {
       className="ul-lineup-media"
       onKeyDown={(event) => {
         if (
-          event.defaultPrevented ||
-          event.ctrlKey ||
-          event.metaKey ||
-          event.altKey
-        )
-          return;
-        if (
           mode === "photos" &&
           photos.length > 1 &&
           ["ArrowLeft", "ArrowRight"].includes(event.key)
@@ -408,10 +399,15 @@ function LineupMedia({ record }: { record: UtilityReference }) {
       )}
       {mode === "photos" && photos.length > 0 && (
         <div className="ul-photo-viewer" aria-label="Lineup photo slides">
-          <LineupPhoto
-            photo={photos[index]}
-            title={`${record.title}, photo ${index + 1}`}
-          >
+          <div className="ul-photo-stage">
+            <img
+              src={photos[index].image}
+              alt={
+                photos[index].caption || `${record.title}, photo ${index + 1}`
+              }
+              width="1600"
+              height="900"
+            />
             {photos.length > 1 && (
               <>
                 <button
@@ -430,7 +426,7 @@ function LineupMedia({ record }: { record: UtilityReference }) {
                 </button>
               </>
             )}
-          </LineupPhoto>
+          </div>
           <div className="ul-photo-caption" aria-live="polite">
             <span>
               {index + 1} / {photos.length}
@@ -497,9 +493,12 @@ export default function Utilities({
   const [formError, setFormError] = useState("");
   const [imageLoading, setImageLoading] = useState(false);
   const [placing, setPlacing] = useState(false);
+  const [zoom, setZoom] = useState(1);
   const [mapFallback, setMapFallback] = useState(false);
   const [mapFailed, setMapFailed] = useState(false);
+  const [mapUnit, setMapUnit] = useState(2.3);
   const [mediaRecord, setMediaRecord] = useState<UtilityReference | null>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
   const screenshotRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLElement>(null);
@@ -508,18 +507,9 @@ export default function Utilities({
   const currentContext = useRef(`${map.id}:${levelId}`);
   currentContext.current = `${map.id}:${levelId}`;
   const level = map.levels.find((item) => item.id === levelId) || map.levels[0];
-  const fit = level?.contentBounds || FULL_MAP_BOUNDS;
-  const {
-    viewportRef: svgRef,
-    zoom,
-    mapUnit,
-    viewBox,
-    panning,
-    changeZoom,
-    resetView,
-    onZoomKeyDown,
-    navigationProps,
-  } = usePanZoom<SVGSVGElement>(fit, `${map.id}:${levelId}`, placing);
+  const fit = level?.contentBounds || { x: 0, y: 0, width: 1000, height: 1000 };
+  const viewWidth = fit.width / zoom;
+  const viewHeight = fit.height / zoom;
   const guideKeys = new Set(
     CREATOR_GUIDES.map(
       (item) =>
@@ -569,6 +559,7 @@ export default function Utilities({
   useEffect(() => {
     setLevelId(map.levels[0]?.id || "main");
     setSelectedId(null);
+    setZoom(1);
     setEditing(false);
     setFormError("");
     setPlacing(false);
@@ -587,6 +578,21 @@ export default function Utilities({
     window.addEventListener("beforeunload", warn);
     return () => window.removeEventListener("beforeunload", warn);
   }, [editing, draft, editingId, map.id]);
+  useEffect(() => {
+    const element = svgRef.current;
+    if (!element) return;
+    const measure = () => {
+      const bounds = element.getBoundingClientRect();
+      if (bounds.width > 0 && bounds.height > 0)
+        setMapUnit(
+          Math.max(viewWidth / bounds.width, viewHeight / bounds.height),
+        );
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [viewWidth, viewHeight, map.id]);
 
   function selectRecord(item: UtilityReference) {
     if (editing) {
@@ -603,6 +609,7 @@ export default function Utilities({
   function changeLevel(id: string) {
     setLevelId(id);
     setSelectedId(null);
+    setZoom(1);
     setPlacing(false);
     if (editing) setDraft((current) => ({ ...current, levelId: id }));
   }
@@ -965,17 +972,13 @@ export default function Utilities({
               {visibleRecords.length === 1 ? "reference" : "references"}
             </span>
           </div>
-          <div
-            className={`ul-map-stage${placing ? " is-placing" : ""}${panning ? " is-panning" : ""}${zoom > 1 ? " is-zoomed" : ""}`}
-          >
+          <div className={`ul-map-stage${placing ? " is-placing" : ""}`}>
             <svg
               ref={svgRef}
               className={`ul-map-svg${!sourceImage.endsWith(".svg") ? " is-raster" : ""}`}
-              viewBox={viewBox}
+              viewBox={`${fit.x + (fit.width - viewWidth) / 2} ${fit.y + (fit.height - viewHeight) / 2} ${viewWidth} ${viewHeight}`}
               role="group"
               aria-label={`${map.name} ${level?.name || ""} utility map`}
-              aria-describedby="utility-map-navigation-help"
-              {...navigationProps}
               onClick={setTargetOnMap}
             >
               {mapImage && !mapFailed && (
@@ -1097,27 +1100,34 @@ export default function Utilities({
             )}
           </div>
           <div className="ul-map-bottom">
-            <p className="ul-map-validation">
+            <p>
               <Info size={14} />
               <span>
                 Target locations are illustrative. Validate throws in game.
               </span>
             </p>
-            <ZoomControls
-              subject="utility map"
-              zoom={zoom}
-              onZoom={changeZoom}
-              onReset={resetView}
-              onKeyDown={onZoomKeyDown}
-            />
-            <p className="ul-navigation-hint" id="utility-map-navigation-help">
-              Scroll to zoom · Drag to pan · 0 to fit
-              <span className="sr-only">
-                . Focus the map and use + or − to zoom, arrow keys to pan, and 0
-                to fit. Hold Space or the middle mouse button to pan while
-                placing a target.
-              </span>
-            </p>
+            <div className="ul-zoom">
+              <button
+                aria-label="Zoom utility map out"
+                disabled={zoom <= 1}
+                onClick={() => setZoom((value) => Math.max(1, value - 0.25))}
+              >
+                <ZoomOut size={16} />
+              </button>
+              <button
+                onClick={() => setZoom(1)}
+                aria-label="Reset utility map zoom"
+              >
+                {Math.round(zoom * 100)}%
+              </button>
+              <button
+                aria-label="Zoom utility map in"
+                disabled={zoom >= 2}
+                onClick={() => setZoom((value) => Math.min(2, value + 0.25))}
+              >
+                <ZoomIn size={16} />
+              </button>
+            </div>
           </div>
           <footer className="ul-map-credit">
             {sourceImage.endsWith(".svg") ? (

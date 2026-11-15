@@ -1,0 +1,3 @@
+# Keep the recovered public assets byte-identical to the published build.
+public/** -text -whitespace
+tools/published-snapshot/source.json.gz binary
