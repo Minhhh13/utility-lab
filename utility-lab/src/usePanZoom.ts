@@ -160,7 +160,27 @@ export default function usePanZoom<T extends HTMLElement | SVGSVGElement>(
       event.currentTarget.releasePointerCapture(event.pointerId);
   }
 
+  function onZoomKeyDown(event: KeyboardEvent<Element>) {
+    if (
+      event.defaultPrevented ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.altKey ||
+      !["+", "=", "-", "_", "0", "Home"].includes(event.key)
+    )
+      return false;
+    event.preventDefault();
+    if (event.key === "0" || event.key === "Home") resetView();
+    else
+      changeZoom(
+        current.current.view.zoom +
+          (["+", "="].includes(event.key) ? 0.25 : -0.25),
+      );
+    return true;
+  }
+
   function onKeyDown(event: KeyboardEvent<T>) {
+    if (onZoomKeyDown(event)) return;
     if (
       event.target !== event.currentTarget ||
       event.ctrlKey ||
@@ -169,14 +189,7 @@ export default function usePanZoom<T extends HTMLElement | SVGSVGElement>(
     )
       return;
     const now = current.current;
-    if (["+", "=", "-", "_", "0", "Home"].includes(event.key)) {
-      event.preventDefault();
-      if (event.key === "0" || event.key === "Home") resetView();
-      else
-        changeZoom(
-          now.view.zoom + (["+", "="].includes(event.key) ? 0.25 : -0.25),
-        );
-    } else if (
+    if (
       ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)
     ) {
       event.preventDefault();
@@ -214,6 +227,7 @@ export default function usePanZoom<T extends HTMLElement | SVGSVGElement>(
     panning,
     changeZoom,
     resetView,
+    onZoomKeyDown,
     navigationProps: {
       tabIndex: 0,
       onPointerDown,

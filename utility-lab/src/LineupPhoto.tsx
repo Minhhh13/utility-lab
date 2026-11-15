@@ -25,6 +25,7 @@ export default function LineupPhoto({
     contentTransform,
     changeZoom,
     resetView,
+    onZoomKeyDown,
     navigationProps,
   } = usePanZoom<HTMLDivElement>(bounds, title);
 
@@ -43,6 +44,7 @@ export default function LineupPhoto({
           zoom={zoom}
           onZoom={changeZoom}
           onReset={resetView}
+          onKeyDown={onZoomKeyDown}
         />
       </div>
       <div className="ul-photo-stage">

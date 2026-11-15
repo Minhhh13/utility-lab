@@ -4,7 +4,7 @@ Verified on 15 November 2026 against the branch based on `a26b2c8`. This change 
 
 ## Result
 
-TypeScript, the production build and all **27 unit tests passed**. Browser checks used the Codex in-app Chromium browser, including a clean production preview. The production preview loaded `index-BnSgcQsf.js` and `index-EhJwLgfj.css`; no console errors were recorded during its smoke checks.
+TypeScript, the production build and all **27 unit tests passed**. Browser checks used the Codex in-app Chromium browser, including a clean production preview. The production preview loaded `index-DwOLJ7F8.js` and `index-EhJwLgfj.css`; no console errors were recorded during its smoke checks.
 
 ![Lineups after the update](lineups-map-ux.png)
 
@@ -16,12 +16,14 @@ The capture shows the clean production preview at a 1282 × 1011 CSS-pixel viewp
 | --- | --- |
 | Wheel over the radar | Zoom changed from 100% to 127%; the fit button restored 100%. |
 | Drag after zooming | The viewBox moved; no lineup dialog opened from the drag. |
-| Map keyboard controls | `0` restored fit after zoom/pan. Camera bounds are also covered by the unit checks below. |
+| Map keyboard controls | Arrow Right moved the map viewBox. `0` restored fit when focus was on the map, a zoom button or a map marker. Enter on a marker still opened its media. |
+| Search field | Pressing the `0` key entered `0` in Search utilities while the map stayed at its existing 125% zoom. |
 | Switching maps | Mirage, Dust II, Inferno, Nuke, Ancient, Anubis, Cache and Vertigo loaded their existing assets; changing map restored fit. |
 | Switching floors | Both Nuke floors and both Vertigo floors loaded; changing floor restored 100%. |
 | Radar fit | Added bounds for Nuke lower and both Vertigo floors remove outer artwork margins. All bundled target coordinates remain within their floor's fit bounds. |
 | Target placement after zooming | Clicking the radar center at 200% recorded X = 510 and Y = 503, matching the current viewBox center. |
 | Photo controls | Adjacent minus/plus controls worked; zoom was bounded at 400% and the plus button became disabled. |
+| Photo zoom-button shortcuts | After clicking plus, pressing `0` on that button returned the photo from 125% to fit. Enter on the button still increased zoom. |
 | Photo keyboard behavior | Arrow keys panned a zoomed photo without changing its caption/slide. At fit, right arrow changed to the next slide while keeping focus in the photo viewport. |
 | Changing photos | Previous/next reset the newly displayed photo to 100%, including transitions between square and wide images. |
 | Independent cameras | Zooming a photo to 127% and closing it left the underlying map at its previous 200%. |

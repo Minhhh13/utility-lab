@@ -6,6 +6,7 @@ type ZoomControlsProps = {
   zoom: number;
   onZoom: (zoom: number) => void;
   onReset: () => void;
+  onKeyDown: KeyboardEventHandler<HTMLDivElement>;
 };
 
 export default function ZoomControls({
@@ -13,9 +14,15 @@ export default function ZoomControls({
   zoom,
   onZoom,
   onReset,
+  onKeyDown,
 }: ZoomControlsProps) {
   return (
-    <div className="ul-zoom" role="group" aria-label={`${subject} zoom`}>
+    <div
+      className="ul-zoom"
+      role="group"
+      aria-label={`${subject} zoom`}
+      onKeyDown={onKeyDown}
+    >
       <button
         aria-label={`Zoom ${subject} out`}
         title="Zoom out (−)"
@@ -43,3 +50,4 @@ export default function ZoomControls({
     </div>
   );
 }
+import type { KeyboardEventHandler } from "react";

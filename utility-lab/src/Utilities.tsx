@@ -517,6 +517,7 @@ export default function Utilities({
     panning,
     changeZoom,
     resetView,
+    onZoomKeyDown,
     navigationProps,
   } = usePanZoom<SVGSVGElement>(fit, `${map.id}:${levelId}`, placing);
   const guideKeys = new Set(
@@ -1107,6 +1108,7 @@ export default function Utilities({
               zoom={zoom}
               onZoom={changeZoom}
               onReset={resetView}
+              onKeyDown={onZoomKeyDown}
             />
             <p className="ul-navigation-hint" id="utility-map-navigation-help">
               Scroll to zoom · Drag to pan · 0 to fit
