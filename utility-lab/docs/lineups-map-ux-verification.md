@@ -16,7 +16,7 @@ The capture shows the clean production preview at a 1282 × 1011 CSS-pixel viewp
 | --- | --- |
 | Wheel over the radar | Zoom changed from 100% to 127%; the fit button restored 100%. |
 | Drag after zooming | The viewBox moved; no lineup dialog opened from the drag. |
-| Map keyboard controls | `0` restored fit after zoom/pan. Arrow navigation kept the camera bounded. |
+| Map keyboard controls | `0` restored fit after zoom/pan. Camera bounds are also covered by the unit checks below. |
 | Switching maps | Mirage, Dust II, Inferno, Nuke, Ancient, Anubis, Cache and Vertigo loaded their existing assets; changing map restored fit. |
 | Switching floors | Both Nuke floors and both Vertigo floors loaded; changing floor restored 100%. |
 | Radar fit | Added bounds for Nuke lower and both Vertigo floors remove outer artwork margins. All bundled target coordinates remain within their floor's fit bounds. |
