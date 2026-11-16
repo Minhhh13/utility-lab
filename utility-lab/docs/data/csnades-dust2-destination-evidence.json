@@ -1,0 +1,188 @@
+[
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/short-from-lower-tunnels",
+    "categorySource": "https://csnades.gg/dust2/hegrenades",
+    "mapId": "dust2",
+    "sourceId": "nade_fbb71c8b7935",
+    "videoUid": "dust2-he-aRR3lBtKnE",
+    "slug": "short-from-lower-tunnels",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Short",
+    "titleFrom": "Lower Tunnels",
+    "throwTo": {
+      "x": 630,
+      "y": 389,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 424,
+      "y": 408,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+      "https://assets.csnades.gg/dust2_simple_radar_75902be5bf.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/mid-doors-from-xbox",
+    "categorySource": "https://csnades.gg/dust2/hegrenades",
+    "mapId": "dust2",
+    "sourceId": "nade_8f19d0e67c2a",
+    "videoUid": "dust2-he-ja63UffcqG",
+    "slug": "mid-doors-from-xbox",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Mid Doors",
+    "titleFrom": "XBox",
+    "throwTo": {
+      "x": 446,
+      "y": 357,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 482,
+      "y": 420,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+      "https://assets.csnades.gg/dust2_simple_radar_75902be5bf.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/short-stairs-corner-from-mid",
+    "categorySource": "https://csnades.gg/dust2/hegrenades",
+    "mapId": "dust2",
+    "sourceId": "nade_220834dd48f4",
+    "videoUid": "dust2-he-Y1laUpVlaF",
+    "slug": "short-stairs-corner-from-mid",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Short Stairs Corner",
+    "titleFrom": "Mid",
+    "throwTo": {
+      "x": 659,
+      "y": 336,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 419,
+      "y": 493,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+      "https://assets.csnades.gg/dust2_simple_radar_75902be5bf.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/b-main-from-b-site",
+    "categorySource": "https://csnades.gg/dust2/hegrenades",
+    "mapId": "dust2",
+    "sourceId": "nade_01dae2e90adc",
+    "videoUid": "dust2-he-H8IQJi6tVb",
+    "slug": "b-main-from-b-site",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "B Main",
+    "titleFrom": "B Site",
+    "throwTo": {
+      "x": 74,
+      "y": 385,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 149,
+      "y": 118,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+      "https://assets.csnades.gg/dust2_simple_radar_75902be5bf.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/back-plat-from-upper-tunnels",
+    "categorySource": "https://csnades.gg/dust2/hegrenades",
+    "mapId": "dust2",
+    "sourceId": "nade_6ba91dfd9bce",
+    "videoUid": "dust2-he-t27wNMjp7J",
+    "slug": "back-plat-from-upper-tunnels",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Back Plat",
+    "titleFrom": "Upper Tunnels",
+    "throwTo": {
+      "x": 61,
+      "y": 33,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 85,
+      "y": 489,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+      "https://assets.csnades.gg/dust2_simple_radar_75902be5bf.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/under-b-window-from-outside-b",
+    "categorySource": "https://csnades.gg/dust2/hegrenades",
+    "mapId": "dust2",
+    "sourceId": "nade_2288e8c0651f",
+    "videoUid": "dust2-he-dEnBLozpin",
+    "slug": "under-b-window-from-outside-b",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Under B Window",
+    "titleFrom": "Outside B",
+    "throwTo": {
+      "x": 205,
+      "y": 102,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 365,
+      "y": 260,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+      "https://assets.csnades.gg/dust2_simple_radar_75902be5bf.webp"
+    ]
+  }
+]

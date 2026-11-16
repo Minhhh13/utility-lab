@@ -1,0 +1,860 @@
+[
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/1bf7d1a4cd08-garage-from-outside-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_1bf7d1a4cd08",
+    "videoUid": "KnFf43jCCg0",
+    "slug": "1bf7d1a4cd08-garage-from-outside-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Garage",
+    "titleFrom": "Outside T Spawn",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 330,
+      "y": 595,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/91afe651d426-t-blue-boxes-from-ct-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_91afe651d426",
+    "videoUid": "jwAgP_XML3Q",
+    "slug": "91afe651d426-t-blue-boxes-from-ct-spawn",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "T Blue Boxes",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 474,
+      "y": 860,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 730,
+      "y": 483,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/a43aa7dbae78-heaven-from-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_a43aa7dbae78",
+    "videoUid": "sCOqNRexQwg",
+    "slug": "a43aa7dbae78-heaven-from-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "Silo",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 472,
+      "y": 672,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/f83f1ca67510-outside-heaven-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_f83f1ca67510",
+    "videoUid": "7qPSz4b1-es",
+    "slug": "f83f1ca67510-outside-heaven-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Heaven",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 642,
+      "y": 446,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 444,
+      "y": 874,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/e17236b24d3e-garage-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_e17236b24d3e",
+    "videoUid": "KYv4kDtzIWc",
+    "slug": "e17236b24d3e-garage-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Garage",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 191,
+      "y": 599,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/1cd37f5bc35a-outside-garage-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_1cd37f5bc35a",
+    "videoUid": "LUrRDw-iU1s",
+    "slug": "1cd37f5bc35a-outside-garage-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Garage",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 643,
+      "y": 757,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 330,
+      "y": 595,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/5f786af83ef9-heaven-from-a-site",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_5f786af83ef9",
+    "videoUid": "WRSWb8_AjWg",
+    "slug": "5f786af83ef9-heaven-from-a-site",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "A Site",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 566,
+      "y": 460,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/43a71749dfc8-top-a-main-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_43a71749dfc8",
+    "videoUid": "tKoj_Jwmfpc",
+    "slug": "43a71749dfc8-top-a-main-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Top A Main",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 232,
+      "y": 588,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/30436a1163c6-outside-heaven-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_30436a1163c6",
+    "videoUid": "E4igASvfdBY",
+    "slug": "30436a1163c6-outside-heaven-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Heaven",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 642,
+      "y": 446,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/1b3d4c065d60-top-a-main-from-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_1b3d4c065d60",
+    "videoUid": "3GhAU-W-MHk",
+    "slug": "1b3d4c065d60-top-a-main-from-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Top A Main",
+    "titleFrom": "Silo",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 460,
+      "y": 692,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/d9705b6c9716-heaven-from-tetris",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_d9705b6c9716",
+    "videoUid": "GkYHjQTXDk0",
+    "slug": "d9705b6c9716-heaven-from-tetris",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "Tetris",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 531,
+      "y": 632,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/589895309854-tetris-from-squeaky",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_589895309854",
+    "videoUid": "ZQUDv7nnuJ4",
+    "slug": "589895309854-tetris-from-squeaky",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Tetris",
+    "titleFrom": "Squeaky",
+    "throwTo": {
+      "x": 540,
+      "y": 584,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 505,
+      "y": 630,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/7bd14c78b6e8-top-silo-from-ct-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_7bd14c78b6e8",
+    "videoUid": "9MW_9uJGAqA",
+    "slug": "7bd14c78b6e8-top-silo-from-ct-spawn",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Top Silo",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 501,
+      "y": 730,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 751,
+      "y": 509,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/a22621a2d6dd-vent-from-outside-lobby",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_a22621a2d6dd",
+    "videoUid": "M-EEpPpXL08",
+    "slug": "a22621a2d6dd-vent-from-outside-lobby",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Vent",
+    "titleFrom": "Outside Lobby",
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/ae3d208f448f-secret-far-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_ae3d208f448f",
+    "videoUid": "uOSNctBaxIE",
+    "slug": "ae3d208f448f-secret-far-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Far",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 417,
+      "y": 807,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/0f1f228313c0-garage-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_0f1f228313c0",
+    "videoUid": "0SUe7_8CceU",
+    "slug": "0f1f228313c0-garage-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Garage",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/65252c63f56a-heaven-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_65252c63f56a",
+    "videoUid": "-XHsyHhm4Eg",
+    "slug": "65252c63f56a-heaven-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/f79c31cb119f-heaven-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_f79c31cb119f",
+    "videoUid": "52Uc50BNXvs",
+    "slug": "f79c31cb119f-heaven-from-t-roof",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 442,
+      "y": 591,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/ab7aa245defa-lockers-from-red",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_ab7aa245defa",
+    "videoUid": "cgUGExFRKNU",
+    "slug": "ab7aa245defa-lockers-from-red",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Lockers",
+    "titleFrom": "Red",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 530,
+      "y": 888,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/953b039b3932-vent-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_953b039b3932",
+    "videoUid": "pDq6VlMP1nE",
+    "slug": "953b039b3932-vent-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Vent",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 213,
+      "y": 587,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/638e9956b5d3-outside-from-roof",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_638e9956b5d3",
+    "videoUid": "QhjdgoUG7wk",
+    "slug": "638e9956b5d3-outside-from-roof",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside",
+    "titleFrom": "Roof",
+    "throwTo": {
+      "x": 623,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 396,
+      "y": 580,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/06ffdba358b5-top-a-main-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/smokes",
+    "mapId": "nuke",
+    "sourceId": "community_06ffdba358b5",
+    "videoUid": "_Ow5i1dDhZc",
+    "slug": "06ffdba358b5-top-a-main-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Top A Main",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 232,
+      "y": 588,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/flashbangs/b3f09459ad30-ramp-from-trophy-room",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "community_b3f09459ad30",
+    "videoUid": "-5MWg_lubPY",
+    "slug": "b3f09459ad30-ramp-from-trophy-room",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Ramp",
+    "titleFrom": "Trophy Room",
+    "throwTo": {
+      "x": 540,
+      "y": 182,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 478,
+      "y": 374,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/flashbangs/0a9c896c653c-outside-from-a-site",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "community_0a9c896c653c",
+    "videoUid": "8XfHzE0gf0E",
+    "slug": "0a9c896c653c-outside-from-a-site",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "Outside",
+    "titleFrom": "A Site",
+    "throwTo": {
+      "x": 554,
+      "y": 720,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 591,
+      "y": 475,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/flashbangs/f9e03cfe1f96-silooutside-from-a-site",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "community_f9e03cfe1f96",
+    "videoUid": "MUgtDfzUCIU",
+    "slug": "f9e03cfe1f96-silooutside-from-a-site",
+    "type": "flashbang",
+    "team": "any",
+    "titleTo": "Silo/Outside",
+    "titleFrom": "A-Site",
+    "throwTo": {
+      "x": 504,
+      "y": 716,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 540,
+      "y": 478,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/hegrenades/bae7574f2486-silo-from-rafters",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "publicEndpoint": "https://csnades.gg/api/server/community/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "community_bae7574f2486",
+    "videoUid": "pKohBOdIcLo",
+    "slug": "bae7574f2486-silo-from-rafters",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Silo",
+    "titleFrom": "Rafters",
+    "throwTo": {
+      "x": 496,
+      "y": 721,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 605,
+      "y": 546,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp"
+    ],
+    "community": true
+  }
+]

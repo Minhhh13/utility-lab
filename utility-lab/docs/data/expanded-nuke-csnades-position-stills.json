@@ -1,0 +1,4924 @@
+[
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-main-from-a-main-roof",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/a-main-from-a-main-roof",
+    "sourceId": "nade_69811f3511b7",
+    "capturedSourceId": "nade_69811f3511b7",
+    "videoUid": "nuke-flashbang-yasa5t6dz9",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-a-main-from-a-main-roof-position-3533ms.jpg",
+    "time": 3.533,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-yasa5t6dz9/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "dc4732edb420d1b2f3f1afe8de410f4bdf567c0dc19790fa777f02a6f2d16657",
+    "bytes": 350612,
+    "caption": "Stand at intersection of lines.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.683,
+      "end": 3.683,
+      "text": "Stand at intersection of lines"
+    },
+    "sourceCues": [
+      {
+        "start": 0.683,
+        "end": 3.683,
+        "text": "Stand at intersection of lines"
+      },
+      {
+        "start": 4.833,
+        "end": 7.366,
+        "text": "Aim at wires"
+      },
+      {
+        "start": 8.533,
+        "end": 10.8,
+        "text": "Right click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "right",
+    "throwTo": {
+      "x": 599,
+      "y": 736,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 576,
+      "y": 736,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.533,
+      "end": 3.7624
+    },
+    "duration": 18.65,
+    "publishedAt": "$D2023-09-10T19:08:52.210Z",
+    "updatedAt": "$D2023-11-10T17:48:41.480Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-ct-spawn",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/a-site-from-ct-spawn",
+    "sourceId": "nade_fcdf81dfc775",
+    "capturedSourceId": "nade_fcdf81dfc775",
+    "videoUid": "nuke-flashbang-Os0GsIcoUa",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-a-site-from-ct-spawn-position-1725ms.jpg",
+    "time": 1.725,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-Os0GsIcoUa/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "fcee5ae7e5d4aeace1eebd02c7a168aab1b72775f66caab5af9ffb43af46f6ca",
+    "bytes": 115955,
+    "caption": "Stand to left of danger sign.",
+    "review": "Middle standing frame clearly shows the exact left edge of the Danger sign before looking up.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.95,
+      "text": "Stand to left of danger sign"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.95,
+        "text": "Stand to left of danger sign"
+      },
+      {
+        "start": 3.25,
+        "end": 5.25,
+        "text": "Aim at light"
+      },
+      {
+        "start": 5.583,
+        "end": 8.333,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 594,
+      "y": 399,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 727,
+      "y": 365,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.8,
+      "end": 2.9359
+    },
+    "duration": 17.25,
+    "publishedAt": "$D2024-04-16T15:18:03.151Z",
+    "updatedAt": "$D2024-04-16T15:18:03.190Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-heaven",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/a-site-from-heaven",
+    "sourceId": "nade_cd33720c03ca",
+    "capturedSourceId": "nade_cd33720c03ca",
+    "videoUid": "nuke-flashbang-mhpJ9kzQys",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-a-site-from-heaven-position-2533ms.jpg",
+    "time": 2.533,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-mhpJ9kzQys/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "d30017621e570b00e08dbe6c77a1cc4effd1dc71faecad2e2a1aa287f1f0c94e",
+    "bytes": 164165,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.616,
+      "end": 2.683,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.616,
+        "end": 2.683,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.433,
+        "end": 9.066,
+        "text": "Aim below at intersection of lines"
+      },
+      {
+        "start": 11.083,
+        "end": 13.349,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 594,
+      "y": 399,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 630,
+      "y": 424,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.533,
+      "end": 2.6617
+    },
+    "duration": 20.8,
+    "publishedAt": "$D2023-09-10T19:01:48.672Z",
+    "updatedAt": "$D2023-11-10T17:48:41.454Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-heaven-b",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/a-site-from-heaven-b",
+    "sourceId": "nade_073c6d922d55",
+    "capturedSourceId": "nade_073c6d922d55",
+    "videoUid": "nuke-flashbang-dj98tahEvd",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-a-site-from-heaven-b-position-2550ms.jpg",
+    "time": 2.55,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-dj98tahEvd/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "ecca0e68a48676051dc4e537b332a32639db87a9134d904a2c3d53603638c166",
+    "bytes": 128570,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.7,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.7,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.433,
+        "end": 5.75,
+        "text": "Aim at corner"
+      },
+      {
+        "start": 6.666,
+        "end": 9.416,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 594,
+      "y": 399,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 630,
+      "y": 424,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.55,
+      "end": 2.6783
+    },
+    "duration": 18.85,
+    "publishedAt": "$D2024-04-16T15:51:34.032Z",
+    "updatedAt": "$D2024-05-03T00:54:50.716Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-t-roof-a",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/a-site-from-t-roof-a",
+    "sourceId": "nade_634d6d88e54b",
+    "capturedSourceId": "nade_634d6d88e54b",
+    "videoUid": "nuke-flashbang-cho7PEwNEj",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-a-site-from-t-roof-a-position-7133ms.jpg",
+    "time": 7.132999,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-cho7PEwNEj/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "3caa30143787120bb92935c2377c4f26c3786a5eb700838a82b0e5e0db7341b3",
+    "bytes": 166789,
+    "caption": "Shoot window. Stand in the middle of the round roof vent.",
+    "review": "Middle standing frame shows the player settled in the centre of the round roof vent before turning to aim.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 6.133,
+      "end": 8.133,
+      "text": "Stand in middle"
+    },
+    "sourceCues": [
+      {
+        "start": 1.05,
+        "end": 3.049,
+        "text": "Shoot window"
+      },
+      {
+        "start": 6.133,
+        "end": 8.133,
+        "text": "Stand in middle"
+      },
+      {
+        "start": 9.583,
+        "end": 12.116,
+        "text": "Align to window and railing"
+      },
+      {
+        "start": 13.583,
+        "end": 15.75,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 570,
+      "y": 475,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 459,
+      "y": 485,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 7.982999,
+      "end": 8.1078
+    },
+    "duration": 26.183333,
+    "publishedAt": "$D2023-09-10T19:18:08.077Z",
+    "updatedAt": "$D2023-11-10T17:48:42.160Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-t-roof-b",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/a-site-from-t-roof-b",
+    "sourceId": "nade_ad1dd40070b8",
+    "capturedSourceId": "nade_ad1dd40070b8",
+    "videoUid": "nuke-flashbang-YNl0B4UNhN",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-a-site-from-t-roof-b-position-6000ms.jpg",
+    "time": 6,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-YNl0B4UNhN/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "baf2be210d0268c1bc60f76428a0608d5570035c922c4f7580f506ea42684e05",
+    "bytes": 115802,
+    "caption": "Shoot window. Stand in middle of right conduit.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.866,
+      "end": 6.15,
+      "text": "Stand in middle of right conduit"
+    },
+    "sourceCues": [
+      {
+        "start": 1.133,
+        "end": 3.133,
+        "text": "Shoot window"
+      },
+      {
+        "start": 3.866,
+        "end": 6.15,
+        "text": "Stand in middle of right conduit"
+      },
+      {
+        "start": 8.666,
+        "end": 14.766,
+        "text": "Aim at top of triangle"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 570,
+      "y": 475,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 457,
+      "y": 403,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 6,
+      "end": 6.1269
+    },
+    "duration": 27.983333,
+    "publishedAt": "$D2023-09-10T19:22:37.235Z",
+    "updatedAt": "$D2025-02-06T01:51:17.525Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/hut-from-lobby",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/hut-from-lobby",
+    "sourceId": "nade_d7332de761d7",
+    "capturedSourceId": "nade_d7332de761d7",
+    "videoUid": "nuke-flashbang-rBEiGe14xy",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-hut-from-lobby-position-2416ms.jpg",
+    "time": 2.416,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-rBEiGe14xy/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "562a95ddfcd3f1bb22511e91fce48948e285e7baec05c5dd5a767828d504ab97",
+    "bytes": 158792,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.566,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.566,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.6,
+        "end": 5.616,
+        "text": "Aim at top left corner"
+      },
+      {
+        "start": 6.316,
+        "end": 8.583,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 528,
+      "y": 513,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 499,
+      "y": 598,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.416,
+      "end": 2.542
+    },
+    "duration": 18.666667,
+    "publishedAt": "$D2023-09-10T18:54:21.071Z",
+    "updatedAt": "$D2023-11-10T17:48:41.446Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/hut-from-lobby-a",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/hut-from-lobby-a",
+    "sourceId": "nade_f8579c6d0dc1",
+    "capturedSourceId": "nade_f8579c6d0dc1",
+    "videoUid": "nuke-flashbang-76fv0beqvt",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-hut-from-lobby-a-position-3566ms.jpg",
+    "time": 3.566,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-76fv0beqvt/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "da9b5f3cd765ff37549fdb88a9db3a2428c90cb5a55fdc87adb9187e8f746fd8",
+    "bytes": 161446,
+    "caption": "Stand roughly at corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 1.066,
+      "end": 3.716,
+      "text": "Stand roughly at corner"
+    },
+    "sourceCues": [
+      {
+        "start": 1.066,
+        "end": 3.716,
+        "text": "Stand roughly at corner"
+      },
+      {
+        "start": 4.4,
+        "end": 6.416,
+        "text": "Aim at door frame"
+      },
+      {
+        "start": 6.983,
+        "end": 9.483,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 528,
+      "y": 513,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 482,
+      "y": 522,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.566,
+      "end": 3.692
+    },
+    "duration": 20.95,
+    "publishedAt": "$D2023-09-10T18:48:44.942Z",
+    "updatedAt": "$D2023-11-10T17:48:42.160Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/ramp-from-trophy",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/ramp-from-trophy",
+    "sourceId": "nade_1ccc0e06edbb",
+    "capturedSourceId": "nade_1ccc0e06edbb",
+    "videoUid": "nuke-flashbang-fmO2wSpha8",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-ramp-from-trophy-position-4133ms.jpg",
+    "time": 4.133,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-fmO2wSpha8/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "d19184be1312ca0ca0d6a7b320bd091a2e50755f696e9eb99b619584b133cb59",
+    "bytes": 171559,
+    "caption": "Stand roughly under logo.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.933,
+      "end": 4.283,
+      "text": "Stand roughly under logo"
+    },
+    "sourceCues": [
+      {
+        "start": 0.933,
+        "end": 4.283,
+        "text": "Stand roughly under logo"
+      },
+      {
+        "start": 6.433,
+        "end": 8.449,
+        "text": "Aim at sign"
+      },
+      {
+        "start": 8.9,
+        "end": 11.4,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 524,
+      "y": 272,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 502,
+      "y": 393,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.133,
+      "end": 4.2617
+    },
+    "duration": 22.183333,
+    "publishedAt": "$D2023-09-10T18:40:56.932Z",
+    "updatedAt": "$D2023-11-10T17:48:41.416Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/t-red-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/t-red-from-under-silo",
+    "sourceId": "nade_1149d038bfd6",
+    "capturedSourceId": "nade_1149d038bfd6",
+    "videoUid": "nuke-flashbang-9aDa27bn48",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-t-red-from-under-silo-position-2450ms.jpg",
+    "time": 2.45,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-9aDa27bn48/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "6b967d275408ef3ef269f88bde60c88d5f3ff68327dbea9d2ca7004bde9275d3",
+    "bytes": 255101,
+    "caption": "Stand at the position shown.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.6,
+      "end": 2.6,
+      "text": "Stand roughly here"
+    },
+    "sourceCues": [
+      {
+        "start": 0.6,
+        "end": 2.6,
+        "text": "Stand roughly here"
+      },
+      {
+        "start": 3.7,
+        "end": 5.983,
+        "text": "Aim at top of fence"
+      },
+      {
+        "start": 6.516,
+        "end": 8.966,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 520,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 447,
+      "y": 814,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.45,
+      "end": 2.5791
+    },
+    "duration": 18.75,
+    "publishedAt": "$D2023-09-10T19:24:29.645Z",
+    "updatedAt": "$D2023-11-10T17:48:41.509Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/vent-from-tetris",
+    "photoSource": "https://csnades.gg/nuke/flashbangs/vent-from-tetris",
+    "sourceId": "nade_c21aacdd5581",
+    "capturedSourceId": "nade_c21aacdd5581",
+    "videoUid": "nuke-flashbang-q6kvJ9KSxD",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/flashbang-vent-from-tetris-position-1033ms.jpg",
+    "time": 1.032999,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-flashbang-q6kvJ9KSxD/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "3ddfe02e5308c59dbbe8d30bca4a94d425dfde2c37207c62f790afcb753c93b6",
+    "bytes": 80359,
+    "caption": "Stand at hut, align to top vent.",
+    "review": "First standing-cue frame shows the player pressed to the Hut wall before the view turns up to the ceiling vent.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.883,
+      "end": 4.933,
+      "text": "Stand at hut, align to top vent"
+    },
+    "sourceCues": [
+      {
+        "start": 0.883,
+        "end": 4.933,
+        "text": "Stand at hut, align to top vent"
+      },
+      {
+        "start": 6.216,
+        "end": 10.933,
+        "text": "Aim at top of vent"
+      },
+      {
+        "start": 11.699,
+        "end": 13.966,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 530,
+      "y": 684,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 529,
+      "y": 620,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.782999,
+      "end": 4.9109
+    },
+    "duration": 22.816667,
+    "publishedAt": "$D2023-09-10T19:07:37.314Z",
+    "updatedAt": "$D2023-11-10T17:48:41.463Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/dark-from-b-ramp",
+    "photoSource": "https://csnades.gg/nuke/hegrenades/dark-from-b-ramp",
+    "sourceId": "nade_20cdfe70ab82",
+    "capturedSourceId": "nade_20cdfe70ab82",
+    "videoUid": "nuke-he-9bXQnVvC8s",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-dark-from-b-ramp-position-2800ms.jpg",
+    "time": 2.8,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-9bXQnVvC8s/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "78d390c82e3aaec00b7a5f71b789ea7988f0b62aec67eaf6e9ae8b9370030cc5",
+    "bytes": 106137,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.566,
+      "end": 2.95,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.566,
+        "end": 2.95,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.766,
+        "end": 7.516,
+        "text": "Align to box and floor"
+      },
+      {
+        "start": 8.15,
+        "end": 10.633,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 591,
+      "y": 388,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 592,
+      "y": 272,
+      "levels": [
+        2
+      ]
+    },
+    "playProgress": {
+      "start": 2.8,
+      "end": 2.9355
+    },
+    "duration": 17.033333,
+    "publishedAt": "$D2023-09-10T21:24:23.410Z",
+    "updatedAt": "$D2023-11-10T17:48:41.671Z",
+    "landing": {
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-dark-from-b-ramp-landing-16033ms.jpg",
+      "time": 16.033332,
+      "sha256": "1ecd38d8701d354ced1850d60acffe6f428c9ed8f07f2fa7e8e18e5040b671fd",
+      "review": "Manually reviewed actual B-site lower landing; agrees with the publisher's throwTo level 2."
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/silo-from-a-main",
+    "photoSource": "https://csnades.gg/nuke/hegrenades/silo-from-a-main",
+    "sourceId": "nade_e9c19735ec1a",
+    "capturedSourceId": "nade_e9c19735ec1a",
+    "videoUid": "nuke-he-xpGvbR2s4g",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-silo-from-a-main-position-2416ms.jpg",
+    "time": 2.416,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-xpGvbR2s4g/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "fc1ee7d6ba2c89f9e4336d00912aec2633879e02e1a318d3964b138cfc287c6d",
+    "bytes": 181917,
+    "caption": "Stand at edge of wall.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.55,
+      "end": 2.566,
+      "text": "Stand at edge of wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.55,
+        "end": 2.566,
+        "text": "Stand at edge of wall"
+      },
+      {
+        "start": 4.099,
+        "end": 7.349,
+        "text": "Align to window and ceiling"
+      },
+      {
+        "start": 8.066,
+        "end": 10.55,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 496,
+      "y": 721,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 614,
+      "y": 713,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.416,
+      "end": 2.6076
+    },
+    "duration": 15.866667,
+    "publishedAt": "$D2023-09-10T21:10:59.095Z",
+    "updatedAt": "$D2023-11-10T17:48:41.660Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/squeaky-door-from-lobby",
+    "photoSource": "https://csnades.gg/nuke/hegrenades/squeaky-door-from-lobby",
+    "sourceId": "nade_db1b0ccd48ae",
+    "capturedSourceId": "nade_db1b0ccd48ae",
+    "videoUid": "nuke-he-5nJ68A6AsF",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-squeaky-door-from-lobby-position-2583ms.jpg",
+    "time": 2.583,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-5nJ68A6AsF/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "f243c99cd359e830ff6f1c04a92b1a6c2d055c20e265c07b3aa2fdcdb5b53bf2",
+    "bytes": 141340,
+    "caption": "Stand at the position shown.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.633,
+      "end": 2.733,
+      "text": "Stand roughly here"
+    },
+    "sourceCues": [
+      {
+        "start": 0.633,
+        "end": 2.733,
+        "text": "Stand roughly here"
+      },
+      {
+        "start": 2.983,
+        "end": 5,
+        "text": "Aim at top left of sign"
+      },
+      {
+        "start": 5.349,
+        "end": 7.833,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 498,
+      "y": 635,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 407,
+      "y": 553,
+      "levels": [
+        null
+      ]
+    },
+    "playProgress": {
+      "start": 2.583,
+      "end": 2.7104
+    },
+    "duration": 13.7,
+    "publishedAt": "$D2023-09-10T22:00:57.222Z",
+    "updatedAt": "$D2023-11-10T17:48:41.720Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/t-red-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/hegrenades/t-red-from-under-silo",
+    "sourceId": "nade_5b466e16a0da",
+    "capturedSourceId": "nade_5b466e16a0da",
+    "videoUid": "nuke-he-ixVQss1Yyg",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-t-red-from-under-silo-position-3066ms.jpg",
+    "time": 3.066,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-ixVQss1Yyg/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "6819ee46bd19ae4afbfde32a2b42aa0e3882208fa1cb9347cf0242ed04385f4f",
+    "bytes": 271400,
+    "caption": "Stand on line.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.566,
+      "end": 3.216,
+      "text": "Stand on line"
+    },
+    "sourceCues": [
+      {
+        "start": 0.566,
+        "end": 3.216,
+        "text": "Stand on line"
+      },
+      {
+        "start": 5.15,
+        "end": 9.65,
+        "text": "Aim between metal and vent"
+      },
+      {
+        "start": 10.699,
+        "end": 13.183,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 588,
+      "y": 883,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 445,
+      "y": 805,
+      "levels": [
+        null
+      ]
+    },
+    "playProgress": {
+      "start": 3.066,
+      "end": 3.1903
+    },
+    "duration": 16.95,
+    "publishedAt": "$D2023-09-10T21:59:22.151Z",
+    "updatedAt": "$D2023-11-10T17:48:41.705Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-a",
+    "photoSource": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-a",
+    "sourceId": "nade_057f428bf738",
+    "capturedSourceId": "nade_057f428bf738",
+    "videoUid": "nuke-he-epK6U2SmEl",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-a-position-2916ms.jpg",
+    "time": 2.916,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-epK6U2SmEl/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "1aa3c5ecd5159a8a56485b1869bd2b1aaf4798aeefded2c92a39c9e039875741",
+    "bytes": 128031,
+    "caption": "Stand at the position shown.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 1.033,
+      "end": 3.066,
+      "text": "Stand roughly here"
+    },
+    "sourceCues": [
+      {
+        "start": 1.033,
+        "end": 3.066,
+        "text": "Stand roughly here"
+      },
+      {
+        "start": 3.299,
+        "end": 5.299,
+        "text": "Align to corner and ceiling"
+      },
+      {
+        "start": 5.299,
+        "end": 7.783,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 490,
+      "y": 375,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 576,
+      "y": 292,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.916,
+      "end": 3.0531
+    },
+    "duration": 13.45,
+    "publishedAt": "$D2023-09-10T21:25:48.537Z",
+    "updatedAt": "$D2023-11-10T17:48:41.683Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-b",
+    "photoSource": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-b",
+    "sourceId": "nade_f5cf2ebba98a",
+    "capturedSourceId": "nade_f5cf2ebba98a",
+    "videoUid": "nuke-he-PRtJ6ciQkq",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-b-position-2350ms.jpg",
+    "time": 2.35,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-PRtJ6ciQkq/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "a39d75e280f924279e1996acdcff947618976b115064986b2d611c4f34924979",
+    "bytes": 198893,
+    "caption": "Stand roughly on line.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.466,
+      "end": 2.5,
+      "text": "Stand roughly on line"
+    },
+    "sourceCues": [
+      {
+        "start": 0.466,
+        "end": 2.5,
+        "text": "Stand roughly on line"
+      },
+      {
+        "start": 3.166,
+        "end": 5.166,
+        "text": "Aim at middle light"
+      },
+      {
+        "start": 5.183,
+        "end": 7.666,
+        "text": "Walk + Left click throw"
+      }
+    ],
+    "sourceMovement": "walking",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 490,
+      "y": 375,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 557,
+      "y": 117,
+      "levels": [
+        null
+      ]
+    },
+    "playProgress": {
+      "start": 2.35,
+      "end": 2.4764
+    },
+    "duration": 15.866667,
+    "publishedAt": "$D2023-09-10T21:51:44.197Z",
+    "updatedAt": "$D2023-11-10T17:48:41.698Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/a-site-from-heaven",
+    "photoSource": "https://csnades.gg/nuke/molotovs/a-site-from-heaven",
+    "sourceId": "nade_0512334c32af",
+    "capturedSourceId": "nade_0512334c32af",
+    "videoUid": "nuke-molotov-4XGlm57IfU",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-a-site-from-heaven-position-2383ms.jpg",
+    "time": 2.383,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-4XGlm57IfU/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "dc4d90efa6c307480bcf532b7a8dd7ed078a49574e589d441a2e84658ec323e6",
+    "bytes": 118387,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.533,
+      "end": 2.533,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.533,
+        "end": 2.533,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.299,
+        "end": 6.116,
+        "text": "Align to yellow sign and frame"
+      },
+      {
+        "start": 8.15,
+        "end": 10.4,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 568,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 655,
+      "y": 432,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.383,
+      "end": 2.5091
+    },
+    "duration": 16.35,
+    "publishedAt": "$D2023-09-10T19:49:09.565Z",
+    "updatedAt": "$D2024-01-19T17:19:50.006Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/a-site-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/molotovs/a-site-from-t-roof",
+    "sourceId": "nade_81577034ac34",
+    "capturedSourceId": "nade_81577034ac34",
+    "videoUid": "nuke-molotov-WYZxVxrfE4",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-a-site-from-t-roof-position-5783ms.jpg",
+    "time": 5.782999,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-WYZxVxrfE4/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "25782e44467ebe5cf58a7a71498d5513d7f7f428b7e9fa9af572ecc4c24a4be6",
+    "bytes": 185194,
+    "caption": "Shoot window. Stand at edge of wall.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.433,
+      "end": 5.933,
+      "text": "Stand at edge of wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.65,
+        "end": 2.633,
+        "text": "Shoot window"
+      },
+      {
+        "start": 3.433,
+        "end": 5.933,
+        "text": "Stand at edge of wall"
+      },
+      {
+        "start": 6.316,
+        "end": 9.283,
+        "text": "Align to railing and first step"
+      },
+      {
+        "start": 10.25,
+        "end": 13.05,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 568,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 452,
+      "y": 478,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 5.782999,
+      "end": 5.908
+    },
+    "duration": 18.6,
+    "publishedAt": "$D2023-09-10T20:19:58.385Z",
+    "updatedAt": "$D2024-06-10T07:00:30.099Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/a-site-from-t-roof-b",
+    "photoSource": "https://csnades.gg/nuke/molotovs/a-site-from-t-roof-b",
+    "sourceId": "nade_4206da85fbbd",
+    "capturedSourceId": "nade_4206da85fbbd",
+    "videoUid": "nuke-molotov-xybNGm58eF",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-a-site-from-t-roof-b-position-5483ms.jpg",
+    "time": 5.483,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-xybNGm58eF/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "20ce17d9d3f8e6f181224de0a2567b34df22baf0fabf6d0ed64d8f0519ea7c60",
+    "bytes": 187215,
+    "caption": "Break window. Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.633,
+      "end": 5.633,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Break window"
+      },
+      {
+        "start": 3.633,
+        "end": 5.633,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 6.583,
+        "end": 16.266,
+        "text": "Align to ladder rung and between white and dark lines"
+      },
+      {
+        "start": 17.583,
+        "end": 19,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 568,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 446,
+      "y": 436,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 5.483,
+      "end": 5.6235
+    },
+    "duration": 26.483333,
+    "publishedAt": "$D2024-09-09T04:00:24.104Z",
+    "updatedAt": "$D2025-02-25T00:44:48.058Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/back-vent-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/molotovs/back-vent-from-t-roof",
+    "sourceId": "nade_2d7d2f341f97",
+    "capturedSourceId": "nade_2d7d2f341f97",
+    "videoUid": "nuke-molotov-eIeOPm4vbf",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-back-vent-from-t-roof-position-4983ms.jpg",
+    "time": 4.983,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-eIeOPm4vbf/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "eb807e961298b6b84bc15940f99132fe0598a2a8c5a7047cc7431261cf2ec0e8",
+    "bytes": 261252,
+    "caption": "Shoot window. Stand at railing.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 2.816,
+      "end": 5.133,
+      "text": "Stand at railing"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Shoot window"
+      },
+      {
+        "start": 2.816,
+        "end": 5.133,
+        "text": "Stand at railing"
+      },
+      {
+        "start": 6.849,
+        "end": 9.033,
+        "text": "Aim edge of metal"
+      },
+      {
+        "start": 9.816,
+        "end": 12.3,
+        "text": "Run + Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 599,
+      "y": 672,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 423,
+      "y": 494,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.983,
+      "end": 5.1128
+    },
+    "duration": 18.316667,
+    "publishedAt": "$D2023-09-10T20:55:39.314Z",
+    "updatedAt": "$D2024-01-19T19:00:53.614Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/behind-t-red-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/molotovs/behind-t-red-from-under-silo",
+    "sourceId": "nade_483e3e550192",
+    "capturedSourceId": "nade_483e3e550192",
+    "videoUid": "nuke-molotov-l3AciW5qd5",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-behind-t-red-from-under-silo-position-2399ms.jpg",
+    "time": 2.399,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-l3AciW5qd5/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "0b46076b021b1cabd2a732c01aa9471b6a04b418aaa74d551130fd3bcba260f1",
+    "bytes": 274020,
+    "caption": "Stand between fences.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.55,
+      "end": 2.549,
+      "text": "Stand between fences"
+    },
+    "sourceCues": [
+      {
+        "start": 0.55,
+        "end": 2.549,
+        "text": "Stand between fences"
+      },
+      {
+        "start": 3.149,
+        "end": 5.133,
+        "text": "Aim at bottom corner of box"
+      },
+      {
+        "start": 5.599,
+        "end": 8.083,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 590,
+      "y": 879,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 420,
+      "y": 807,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.399,
+      "end": 2.5236
+    },
+    "duration": 14.55,
+    "publishedAt": "$D2023-09-10T20:45:28.911Z",
+    "updatedAt": "$D2024-01-19T18:59:34.656Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/dark-from-b-ramp",
+    "photoSource": "https://csnades.gg/nuke/molotovs/dark-from-b-ramp",
+    "sourceId": "nade_7afb0af7c9e8",
+    "capturedSourceId": "nade_7afb0af7c9e8",
+    "videoUid": "nuke-molotov-UEnv8DRtZ9",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-dark-from-b-ramp-position-2466ms.jpg",
+    "time": 2.466,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-UEnv8DRtZ9/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "ca9c6bc97ce84b836d33e23a77745ddfcdc9fe63d191cbfebb2ddd139904a564",
+    "bytes": 109712,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.616,
+      "end": 2.616,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.616,
+        "end": 2.616,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.2,
+        "end": 7.166,
+        "text": "Align to box and floor"
+      },
+      {
+        "start": 8.4,
+        "end": 11.199,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 598,
+      "y": 392,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 593,
+      "y": 273,
+      "levels": [
+        2
+      ]
+    },
+    "playProgress": {
+      "start": 2.466,
+      "end": 2.6088
+    },
+    "duration": 15.583333,
+    "publishedAt": "$D2023-09-10T20:26:53.032Z",
+    "updatedAt": "$D2024-01-19T18:57:24.740Z",
+    "landing": {
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-dark-from-b-ramp-landing-14583ms.jpg",
+      "time": 14.583333,
+      "sha256": "339e86f3347c71c4c807ad41a6016dd5eb826b396e8f76723ea5def859a640e2",
+      "review": "Manually reviewed actual B-site lower landing; agrees with the publisher's throwTo level 2."
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/heaven-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/molotovs/heaven-from-t-roof",
+    "sourceId": "nade_8dd19d579003",
+    "capturedSourceId": "nade_8dd19d579003",
+    "videoUid": "nuke-molotov-mUn1lJ2406",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-heaven-from-t-roof-position-9016ms.jpg",
+    "time": 9.016,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-mUn1lJ2406/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "b0f81fd51552e1865cfd02a1a026d14fc934a34033adf1cc7448db9e02a80602",
+    "bytes": 261572,
+    "caption": "Shoot window. Stand on middle of lip.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 6.666,
+      "end": 9.166,
+      "text": "Stand on middle of lip"
+    },
+    "sourceCues": [
+      {
+        "start": 2.399,
+        "end": 4.833,
+        "text": "Shoot window"
+      },
+      {
+        "start": 6.666,
+        "end": 9.166,
+        "text": "Stand on middle of lip"
+      },
+      {
+        "start": 10.949,
+        "end": 14.416,
+        "text": "Crouch, aim at 45° of metal"
+      },
+      {
+        "start": 15.25,
+        "end": 17.75,
+        "text": "Crouch walk backwards + Left click throw"
+      }
+    ],
+    "sourceMovement": "crouched_walking",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 627,
+      "y": 402,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 457,
+      "y": 547,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 9.016,
+      "end": 9.165
+    },
+    "duration": 23.85,
+    "publishedAt": "$D2023-09-10T19:59:13.253Z",
+    "updatedAt": "$D2024-09-05T23:32:57.187Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/hut-from-heaven",
+    "photoSource": "https://csnades.gg/nuke/molotovs/hut-from-heaven",
+    "sourceId": "nade_b9eb33ea415a",
+    "capturedSourceId": "nade_b9eb33ea415a",
+    "videoUid": "nuke-molotov-IKl3rK97VJ",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-hut-from-heaven-position-2550ms.jpg",
+    "time": 2.55,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-IKl3rK97VJ/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "cb2e632b57c1b6f3c74d3d9c39b04149bf98128698d4d36c727be82c1c899ee5",
+    "bytes": 62540,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.7,
+      "end": 2.7,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.7,
+        "end": 2.7,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.899,
+        "end": 5.883,
+        "text": "Aim at lamp"
+      },
+      {
+        "start": 6.883,
+        "end": 9.133,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 522,
+      "y": 537,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 645,
+      "y": 381,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.55,
+      "end": 2.6799
+    },
+    "duration": 14.85,
+    "publishedAt": "$D2023-09-10T19:47:08.716Z",
+    "updatedAt": "$D2024-01-19T17:19:26.646Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/hut-roof-from-silo",
+    "photoSource": "https://csnades.gg/nuke/molotovs/hut-roof-from-silo",
+    "sourceId": "nade_c6b98f8239dc",
+    "capturedSourceId": "nade_c6b98f8239dc",
+    "videoUid": "nuke-molotov-eHZ28JYnl1",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-hut-roof-from-silo-position-3333ms.jpg",
+    "time": 3.333,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-eHZ28JYnl1/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "9b5ede224641c17edb6c1b43ae9b07b1e707d497cc57e4e5e49c0a492a0977e0",
+    "bytes": 250685,
+    "caption": "Stand on silo support.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.783,
+      "end": 3.483,
+      "text": "Stand on silo support"
+    },
+    "sourceCues": [
+      {
+        "start": 0.783,
+        "end": 3.483,
+        "text": "Stand on silo support"
+      },
+      {
+        "start": 5.416,
+        "end": 7.483,
+        "text": "Aim at top of line"
+      },
+      {
+        "start": 9.25,
+        "end": 12.05,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 523,
+      "y": 572,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 455,
+      "y": 692,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.333,
+      "end": 3.4581
+    },
+    "duration": 18.25,
+    "publishedAt": "$D2023-09-10T20:40:40.971Z",
+    "updatedAt": "$D2024-01-19T18:58:49.349Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/outside-from-outside-ct",
+    "photoSource": "https://csnades.gg/nuke/molotovs/outside-from-outside-ct",
+    "sourceId": "nade_89f737180641",
+    "capturedSourceId": "nade_89f737180641",
+    "videoUid": "nuke-molotov-Aox7KfuOVC",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-outside-from-outside-ct-position-3700ms.jpg",
+    "time": 3.7,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-Aox7KfuOVC/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "f44233cf6fb4ff7f2d52c163697edf76fa639f468da80aad529791687b834409",
+    "bytes": 246054,
+    "caption": "Stand roughly on ramp.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 1.149,
+      "end": 3.85,
+      "text": "Stand roughly on ramp"
+    },
+    "sourceCues": [
+      {
+        "start": 1.149,
+        "end": 3.85,
+        "text": "Stand roughly on ramp"
+      },
+      {
+        "start": 7.966,
+        "end": 10.033,
+        "text": "Aim at corner"
+      },
+      {
+        "start": 10.449,
+        "end": 14.266,
+        "text": "Walk + Jump + Left click throw, release at end of ramp"
+      }
+    ],
+    "sourceMovement": "walking",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 498,
+      "y": 881,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 727,
+      "y": 566,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.7,
+      "end": 3.825
+    },
+    "duration": 21.1,
+    "publishedAt": "$D2023-09-10T20:46:24.542Z",
+    "updatedAt": "$D2024-01-19T19:00:09.704Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/rafters-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/molotovs/rafters-from-t-roof",
+    "sourceId": "nade_fc5d6545349b",
+    "capturedSourceId": "nade_fc5d6545349b",
+    "videoUid": "nuke-molotov-l3pi8yukbS",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-rafters-from-t-roof-position-5866ms.jpg",
+    "time": 5.866,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-l3pi8yukbS/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "1a4785465b2720c6382e5194950e4a2040a2f40fdc593a87cba3b285b9b2e5f8",
+    "bytes": 252211,
+    "caption": "Shoot window. Stand at tip of line.",
+    "review": "Middle standing frame looks down at the boots on the roof-vent seam before aiming across the roof.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 4.616,
+      "end": 7.116,
+      "text": "Stand at tip of line"
+    },
+    "sourceCues": [
+      {
+        "start": 0.683,
+        "end": 2.666,
+        "text": "Shoot window"
+      },
+      {
+        "start": 4.616,
+        "end": 7.116,
+        "text": "Stand at tip of line"
+      },
+      {
+        "start": 8.333,
+        "end": 11.3,
+        "text": "Aim at top of line "
+      },
+      {
+        "start": 12.333,
+        "end": 15.133,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 513,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 461,
+      "y": 494,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 6.965999,
+      "end": 7.0907
+    },
+    "duration": 20.4,
+    "publishedAt": "$D2023-09-10T20:23:40.204Z",
+    "updatedAt": "$D2024-01-19T18:57:02.870Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/secret-entry-from-mini",
+    "photoSource": "https://csnades.gg/nuke/molotovs/secret-entry-from-mini",
+    "sourceId": "nade_2105856e58fa",
+    "capturedSourceId": "nade_2105856e58fa",
+    "videoUid": "nuke-molotov-Pv1osDbqut",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-secret-entry-from-mini-position-2350ms.jpg",
+    "time": 2.35,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-Pv1osDbqut/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "9e08fd7be20c5428d5d251cddc7438ef2a8182b120e30abf4412d28a152cbcd4",
+    "bytes": 80286,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.5,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.716,
+        "end": 5.933,
+        "text": "Aim to top right corner of light"
+      },
+      {
+        "start": 6.433,
+        "end": 9.199,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 644,
+      "y": 930,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 583,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.35,
+      "end": 2.4783
+    },
+    "duration": 14.75,
+    "publishedAt": "$D2024-05-04T16:30:48.268Z",
+    "updatedAt": "$D2024-05-28T19:51:18.059Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/silo-from-ct-red",
+    "photoSource": "https://csnades.gg/nuke/molotovs/silo-from-ct-red",
+    "sourceId": "nade_479e8063ae82",
+    "capturedSourceId": "nade_479e8063ae82",
+    "videoUid": "nuke-molotov-Q1ps8nB2qg",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-silo-from-ct-red-position-2366ms.jpg",
+    "time": 2.366,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-Q1ps8nB2qg/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "9244b264668e8cffd54b612da0151ce0291b618cc2df22294770d0aa986b9e8a",
+    "bytes": 67874,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.516,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.516,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.933,
+        "end": 6.066,
+        "text": "Aim at line on silo"
+      },
+      {
+        "start": 6.933,
+        "end": 9.416,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 496,
+      "y": 731,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 681,
+      "y": 748,
+      "levels": [
+        null
+      ]
+    },
+    "playProgress": {
+      "start": 2.366,
+      "end": 2.4968
+    },
+    "duration": 15.55,
+    "publishedAt": "$D2023-09-10T20:44:50.467Z",
+    "updatedAt": "$D2024-01-19T18:59:15.404Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/squeaky-from-heaven",
+    "photoSource": "https://csnades.gg/nuke/molotovs/squeaky-from-heaven",
+    "sourceId": "nade_ec0662faa89f",
+    "capturedSourceId": "nade_ec0662faa89f",
+    "videoUid": "nuke-molotov-HW6ILrNXaY",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-squeaky-from-heaven-position-2499ms.jpg",
+    "time": 2.499,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-HW6ILrNXaY/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "9f65374d85d16cd3ede097d7e45daf1db033e400c63783792d22a1d59794794e",
+    "bytes": 168104,
+    "caption": "Stand at frame.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.65,
+      "end": 2.649,
+      "text": "Stand at frame"
+    },
+    "sourceCues": [
+      {
+        "start": 0.65,
+        "end": 2.649,
+        "text": "Stand at frame"
+      },
+      {
+        "start": 3.149,
+        "end": 5.566,
+        "text": "Aim at bottom of second window frame"
+      },
+      {
+        "start": 6.299,
+        "end": 9.099,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 522,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 616,
+      "y": 418,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.499,
+      "end": 2.6282
+    },
+    "duration": 14.916667,
+    "publishedAt": "$D2023-09-10T20:30:49.270Z",
+    "updatedAt": "$D2024-01-19T18:58:26.417Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/top-a-main-from-ct-red",
+    "photoSource": "https://csnades.gg/nuke/molotovs/top-a-main-from-ct-red",
+    "sourceId": "nade_bcc50b702c5c",
+    "capturedSourceId": "nade_bcc50b702c5c",
+    "videoUid": "nuke-molotov-OCXgLDHnzd",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-top-a-main-from-ct-red-position-4666ms.jpg",
+    "time": 4.665999,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-OCXgLDHnzd/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "7801c2a0191b0dfcc7904c61beb701a04364ede4f23314cfef429530e7a3188c",
+    "bytes": 153847,
+    "caption": "Align lamps to top of box and loop to building.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 1.133,
+      "end": 4.816,
+      "text": "Align lamps to top of box and loop to building"
+    },
+    "sourceCues": [
+      {
+        "start": 1.133,
+        "end": 4.816,
+        "text": "Align lamps to top of box and loop to building"
+      },
+      {
+        "start": 5.45,
+        "end": 7.433,
+        "text": "Aim at top left of loop"
+      },
+      {
+        "start": 7.716,
+        "end": 10.199,
+        "text": "Walk + Left click throw"
+      }
+    ],
+    "sourceMovement": "walking",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 545,
+      "y": 739,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 688,
+      "y": 686,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.665999,
+      "end": 4.7936
+    },
+    "duration": 15.7,
+    "publishedAt": "$D2023-09-10T20:52:27.421Z",
+    "updatedAt": "$D2024-01-19T19:00:30.643Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/top-hut-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/molotovs/top-hut-from-t-roof",
+    "sourceId": "nade_cc72ce6d1200",
+    "capturedSourceId": "nade_cc72ce6d1200",
+    "videoUid": "nuke-molotov-IcIyXVJRjT",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-top-hut-from-t-roof-position-3683ms.jpg",
+    "time": 3.683,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-IcIyXVJRjT/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "a4caae4d6446758aa018c1b90a97cc940543507b768504253f81c9c69b8f3bd4",
+    "bytes": 257321,
+    "caption": "Stand at corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 3.833,
+      "text": "Stand at corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 3.833,
+        "text": "Stand at corner"
+      },
+      {
+        "start": 7.433,
+        "end": 14.449,
+        "text": "Align to middle of second window, at blue"
+      },
+      {
+        "start": 15.183,
+        "end": 15.75,
+        "text": "Run + Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 523,
+      "y": 572,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 393,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.683,
+      "end": 3.8096
+    },
+    "duration": 24.516667,
+    "publishedAt": "$D2023-09-10T21:10:36.487Z",
+    "updatedAt": "$D2024-01-19T19:01:24.182Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/top-hut-from-t-roof-a",
+    "photoSource": "https://csnades.gg/nuke/molotovs/top-hut-from-t-roof-a",
+    "sourceId": "nade_c896583b5b84",
+    "capturedSourceId": "nade_c896583b5b84",
+    "videoUid": "nuke-molotov-qQ0bD2PJeG",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/molotov-top-hut-from-t-roof-a-position-6183ms.jpg",
+    "time": 6.183,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-qQ0bD2PJeG/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "93d5fe5032d0c14db22a01657baf6e60d32643059b8f92ba6ad411e12072e2f6",
+    "bytes": 271971,
+    "caption": "Break window. Stand on tip of line.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 4.333,
+      "end": 6.333,
+      "text": "Stand on tip of line"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Break window"
+      },
+      {
+        "start": 4.333,
+        "end": 6.333,
+        "text": "Stand on tip of line"
+      },
+      {
+        "start": 7.049,
+        "end": 9.05,
+        "text": "Aim in center of right window"
+      },
+      {
+        "start": 9.55,
+        "end": 12.3,
+        "text": "Run + Left click throw, release late"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 523,
+      "y": 572,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 462,
+      "y": 473,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 6.183,
+      "end": 6.3083
+    },
+    "duration": 18.516667,
+    "publishedAt": "$D2023-09-10T19:39:36.378Z",
+    "updatedAt": "$D2024-04-16T15:53:11.465Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/smokes/a-main-from-t-roof",
+    "sourceId": "nade_67467fcde3bf",
+    "capturedSourceId": "nade_67467fcde3bf",
+    "videoUid": "nuke-smoke-EO2jbfxk5s",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-a-main-from-t-roof-position-6233ms.jpg",
+    "time": 6.233,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-EO2jbfxk5s/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "0ed72a06a135df82926cc92440a991e8a2231b2b98b0d726a23839fbf99f8500",
+    "bytes": 108235,
+    "caption": "Break window. Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 4.383,
+      "end": 6.383,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Break window"
+      },
+      {
+        "start": 4.383,
+        "end": 6.383,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 7.866,
+        "end": 13.75,
+        "text": "Align to red dot and top of window"
+      },
+      {
+        "start": 14.766,
+        "end": 17.533,
+        "text": "Jump + Left+Right click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "both_jump",
+    "throwTo": {
+      "x": 559,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 440,
+      "y": 392,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 6.233,
+      "end": 6.3596
+    },
+    "duration": 28.566667,
+    "publishedAt": "$D2023-09-09T20:13:52.003Z",
+    "updatedAt": "$D2025-01-26T19:26:02.221Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-t-roof-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/a-main-from-t-roof-b",
+    "sourceId": "nade_98e97a1aead6",
+    "capturedSourceId": "nade_98e97a1aead6",
+    "videoUid": "nuke-smoke-uoJKDJyZyX",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-a-main-from-t-roof-b-position-5666ms.jpg",
+    "time": 5.665999,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-uoJKDJyZyX/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "52f75514a433b1c37d1d24b3b148f3be970cfaa3211d036cb11884ac4d7340ef",
+    "bytes": 194203,
+    "caption": "Break glass. Stand on right vent.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.816,
+      "end": 5.816,
+      "text": "Stand on right vent"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Break glass"
+      },
+      {
+        "start": 3.816,
+        "end": 5.816,
+        "text": "Stand on right vent"
+      },
+      {
+        "start": 7.65,
+        "end": 9.75,
+        "text": "Aim at to left side of ladder notch"
+      },
+      {
+        "start": 11.099,
+        "end": 13.733,
+        "text": "Jump + Left+Right click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "both_jump",
+    "throwTo": {
+      "x": 559,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 458,
+      "y": 392,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 5.665999,
+      "end": 5.7914
+    },
+    "duration": 26.716667,
+    "publishedAt": "$D2023-10-31T21:06:59.090Z",
+    "updatedAt": "$D2024-01-23T01:22:34.075Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-t-roof-c",
+    "photoSource": "https://csnades.gg/nuke/smokes/a-main-from-t-roof-c",
+    "sourceId": "nade_e63595612a98",
+    "capturedSourceId": "nade_e63595612a98",
+    "videoUid": "nuke-smoke-0OhvBCnyNW",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-a-main-from-t-roof-c-position-4833ms.jpg",
+    "time": 4.832999,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-0OhvBCnyNW/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "b66752bee665325ff53ca9fa8ff502825521c50c96ad5517aaa6d440dd006e05",
+    "bytes": 153228,
+    "caption": "Shoot window, stand in corner of pipe. Shoot window, stand in corner of pipe.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 4.983,
+      "text": "Shoot window, stand in corner of pipe"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 4.983,
+        "text": "Shoot window, stand in corner of pipe"
+      },
+      {
+        "start": 5.366,
+        "end": 13.166,
+        "text": "Align center of emblem with blue line, then a little left"
+      },
+      {
+        "start": 14.466,
+        "end": 16.833,
+        "text": "Jump + Left+Right click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "both_jump",
+    "throwTo": {
+      "x": 559,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 435,
+      "y": 481,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.832999,
+      "end": 4.9592
+    },
+    "duration": 25.4,
+    "publishedAt": "$D2025-01-28T04:28:26.726Z",
+    "updatedAt": "$D2025-02-25T00:44:39.691Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/a-main-from-under-silo",
+    "sourceId": "nade_665f502b5f40",
+    "capturedSourceId": "nade_665f502b5f40",
+    "videoUid": "nuke-smoke-zymHn4R06u",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-a-main-from-under-silo-position-4216ms.jpg",
+    "time": 4.215999,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-zymHn4R06u/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "2bbbc326b784e736f0119fbaa3885fce5020deb2d336be842a1a8d65cd00fd04",
+    "bytes": 223348,
+    "caption": "Stand roughly at fence.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.633,
+      "end": 4.366,
+      "text": "Stand roughly at fence"
+    },
+    "sourceCues": [
+      {
+        "start": 0.633,
+        "end": 4.366,
+        "text": "Stand roughly at fence"
+      },
+      {
+        "start": 5.633,
+        "end": 8.316,
+        "text": "Align blue box and grey box line"
+      },
+      {
+        "start": 9.866,
+        "end": 13.066,
+        "text": "Align with box and top wire"
+      },
+      {
+        "start": 16.199,
+        "end": 18.866,
+        "text": "Run + Left click throw,"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 426,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.215999,
+      "end": 4.3413
+    },
+    "duration": 27.683333,
+    "publishedAt": "$D2023-09-09T20:51:50.820Z",
+    "updatedAt": "$D2024-01-19T17:16:26.887Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/ct-red-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/ct-red-from-under-silo",
+    "sourceId": "nade_1b4a343f32e1",
+    "capturedSourceId": "nade_1b4a343f32e1",
+    "videoUid": "nuke-smoke-EYwJuFOVfp",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-ct-red-from-under-silo-position-5183ms.jpg",
+    "time": 5.183,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-EYwJuFOVfp/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "804c8658b8d962211329c288680b4f2b52b6cc78553a41c5231870eef6aec62e",
+    "bytes": 300181,
+    "caption": "Stand next to line on dot.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 1.283,
+      "end": 5.333,
+      "text": "Stand next to line on dot"
+    },
+    "sourceCues": [
+      {
+        "start": 1.283,
+        "end": 5.333,
+        "text": "Stand next to line on dot"
+      },
+      {
+        "start": 6.75,
+        "end": 8.916,
+        "text": "Aim at silo support"
+      },
+      {
+        "start": 9.75,
+        "end": 12.083,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 631,
+      "y": 699,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 450,
+      "y": 815,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 5.183,
+      "end": 5.3102
+    },
+    "duration": 20.25,
+    "publishedAt": "$D2023-09-09T20:12:14.283Z",
+    "updatedAt": "$D2024-01-19T17:11:57.171Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/decon-cross-from-back-vents",
+    "photoSource": "https://csnades.gg/nuke/smokes/decon-cross-from-back-vents",
+    "sourceId": "nade_bb1f2cd370fe",
+    "capturedSourceId": "nade_bb1f2cd370fe",
+    "videoUid": "nuke-smoke-zJkjg0rC5k",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-decon-cross-from-back-vents-position-5983ms.jpg",
+    "time": 5.983,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-zJkjg0rC5k/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "4e24496ed839eb7f8d0296ed0a8d2d2603022e78d752fdbacba49145fa57ec13",
+    "bytes": 63671,
+    "caption": "Have door open. Stand at left of sign.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.633,
+      "end": 6.133,
+      "text": "Stand at left of sign"
+    },
+    "sourceCues": [
+      {
+        "start": 0.483,
+        "end": 2.483,
+        "text": "Have door open"
+      },
+      {
+        "start": 3.633,
+        "end": 6.133,
+        "text": "Stand at left of sign"
+      },
+      {
+        "start": 7.616,
+        "end": 12.383,
+        "text": "Align to sink and sign"
+      },
+      {
+        "start": 13.05,
+        "end": 15.533,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 529,
+      "y": 608,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 525,
+      "y": 743,
+      "levels": [
+        2
+      ]
+    },
+    "playProgress": {
+      "start": 5.983,
+      "end": 6.1091
+    },
+    "duration": 22.8,
+    "publishedAt": "$D2023-09-10T22:16:44.210Z",
+    "updatedAt": "$D2024-01-19T19:02:08.985Z",
+    "landing": {
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-decon-cross-from-back-vents-landing-21800ms.jpg",
+      "time": 21.8,
+      "sha256": "0d8ec784db671a4abb9867e2cf675cc43d60d2886d0a73dbcdd7cf84333cf2b5",
+      "review": "Manually reviewed actual B-site lower landing; agrees with the publisher's throwTo level 2."
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/double-doors-from-b-ramp",
+    "photoSource": "https://csnades.gg/nuke/smokes/double-doors-from-b-ramp",
+    "sourceId": "nade_c6ee83921aec",
+    "capturedSourceId": "nade_c6ee83921aec",
+    "videoUid": "nuke-smoke-FHo8HsdYw3",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-double-doors-from-b-ramp-position-2566ms.jpg",
+    "time": 2.566,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-FHo8HsdYw3/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "021af888e137768b9e08b46abd30cdd879648d92c718021f54191730f93627a1",
+    "bytes": 101710,
+    "caption": "Stand at wall.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.716,
+      "end": 2.716,
+      "text": "Stand at wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.716,
+        "end": 2.716,
+        "text": "Stand at wall"
+      },
+      {
+        "start": 3.566,
+        "end": 5.549,
+        "text": "Aim at wall"
+      },
+      {
+        "start": 5.816,
+        "end": 8.3,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 607,
+      "y": 557,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 522,
+      "y": 286,
+      "levels": [
+        2
+      ]
+    },
+    "playProgress": {
+      "start": 2.566,
+      "end": 2.6932
+    },
+    "duration": 15.483333,
+    "publishedAt": "$D2023-09-10T22:15:43.801Z",
+    "updatedAt": "$D2024-01-19T19:01:42.395Z",
+    "landing": {
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-double-doors-from-b-ramp-landing-14483ms.jpg",
+      "time": 14.483333,
+      "sha256": "74a2145a9cc4853759ca12f9e1f0b1920bad521c30d25aacbad92e5a3ee0738b",
+      "review": "Manually reviewed actual B-site lower landing; agrees with the publisher's throwTo level 2."
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/front-garage-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/front-garage-from-t-spawn",
+    "sourceId": "nade_f903ebb3304d",
+    "capturedSourceId": "nade_f903ebb3304d",
+    "videoUid": "nuke-smoke-UqQ4ZNd5Wl",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-front-garage-from-t-spawn-position-2050ms.jpg",
+    "time": 2.049999,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-UqQ4ZNd5Wl/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "d2674902f7dc386b3003e3b94bb7cd9a3c110a9d7b3a7fb6573556be99523500",
+    "bytes": 221269,
+    "caption": "Stand at edge of truck.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.2,
+      "text": "Stand at edge of truck"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.2,
+        "text": "Stand at edge of truck"
+      },
+      {
+        "start": 2.583,
+        "end": 6.483,
+        "text": "Align black shadow with horizontal white line"
+      },
+      {
+        "start": 7.4,
+        "end": 10.016,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 634,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.049999,
+      "end": 2.1897
+    },
+    "duration": 21.233333,
+    "publishedAt": "$D2024-09-08T23:40:03.628Z",
+    "updatedAt": "$D2025-02-25T00:44:05.513Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/front-garage-from-t-spawn-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/front-garage-from-t-spawn-b",
+    "sourceId": "nade_5fa8650c8e12",
+    "capturedSourceId": "nade_5fa8650c8e12",
+    "videoUid": "nuke-smoke-7wUdSDCEfa",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-front-garage-from-t-spawn-b-position-3133ms.jpg",
+    "time": 3.133,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-7wUdSDCEfa/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "a09c7a55b903b4265cdc115a7cd4fe108ea5cec48f580c035a350a74cbbca8aa",
+    "bytes": 218153,
+    "caption": "Stand at line on wall.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 3.283,
+      "text": "Stand at line on wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 3.283,
+        "text": "Stand at line on wall"
+      },
+      {
+        "start": 4.049,
+        "end": 6.866,
+        "text": "Aim at top-left corner of railing"
+      },
+      {
+        "start": 7.766,
+        "end": 10.116,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 634,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 268,
+      "y": 560,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.133,
+      "end": 3.2583
+    },
+    "duration": 21.416667,
+    "publishedAt": "$D2024-09-08T23:54:45.662Z",
+    "updatedAt": "$D2025-02-25T00:44:31.252Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/garage-from-outside-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/garage-from-outside-t-spawn",
+    "sourceId": "nade_7c70945d77bc",
+    "capturedSourceId": "nade_7c70945d77bc",
+    "videoUid": "nuke-smoke-0qZP5UcuWj",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-garage-from-outside-t-spawn-position-2533ms.jpg",
+    "time": 2.533,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-0qZP5UcuWj/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "cad87d95243e9fc6b3995838650429a41dcce3d3ace8a174891d5648c5f353da",
+    "bytes": 215280,
+    "caption": "Stand at edge of wall.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.583,
+      "end": 2.683,
+      "text": "Stand at edge of wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.583,
+        "end": 2.683,
+        "text": "Stand at edge of wall"
+      },
+      {
+        "start": 4.533,
+        "end": 9.216,
+        "text": "Align to shadow and 2nd ladder rung"
+      },
+      {
+        "start": 10.4,
+        "end": 12.733,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 331,
+      "y": 559,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.533,
+      "end": 2.6581
+    },
+    "duration": 24.016667,
+    "publishedAt": "$D2023-09-09T20:14:20.579Z",
+    "updatedAt": "$D2024-01-19T17:13:20.272Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/garage-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/garage-from-under-silo",
+    "sourceId": "nade_85d0e6b3cfc7",
+    "capturedSourceId": "nade_85d0e6b3cfc7",
+    "videoUid": "nuke-smoke-l3koCgeoHZ",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-garage-from-under-silo-position-3583ms.jpg",
+    "time": 3.583,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-l3koCgeoHZ/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "45644a1a8158564a6ced63d3f8b3b1a367c6d7c3bccbb9bf8607012187a6a41e",
+    "bytes": 260220,
+    "caption": "Stand under left of sign.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.55,
+      "end": 3.733,
+      "text": "Stand under left of sign"
+    },
+    "sourceCues": [
+      {
+        "start": 0.55,
+        "end": 3.733,
+        "text": "Stand under left of sign"
+      },
+      {
+        "start": 5.916,
+        "end": 11,
+        "text": "Align to edge and top wire"
+      },
+      {
+        "start": 12.483,
+        "end": 14.816,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 418,
+      "y": 797,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.583,
+      "end": 3.7155
+    },
+    "duration": 22.8,
+    "publishedAt": "$D2023-09-09T19:42:18.616Z",
+    "updatedAt": "$D2024-01-19T17:10:04.974Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/heaven-from-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/heaven-from-silo",
+    "sourceId": "nade_cea9c9aeab87",
+    "capturedSourceId": "nade_cea9c9aeab87",
+    "videoUid": "nuke-smoke-ZcYGFCKa39",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-heaven-from-silo-position-2200ms.jpg",
+    "time": 2.1995,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-ZcYGFCKa39/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "8864ac90386095115bcdb80a2ef5348abea0b065f84dbff48c8c21a4c06b8a0a",
+    "bytes": 240534,
+    "caption": "Shoot window. Stand on silo support.",
+    "review": "Middle standing frame looks down at boots on the silo's support, before shooting the window and setting aim.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.866,
+      "end": 3.533,
+      "text": "Stand on silo support"
+    },
+    "sourceCues": [
+      {
+        "start": 0.866,
+        "end": 3.533,
+        "text": "Stand on silo support"
+      },
+      {
+        "start": 4.733,
+        "end": 7.416,
+        "text": "Shoot window"
+      },
+      {
+        "start": 9.166,
+        "end": 11.9,
+        "text": "Aim at left of tip of blue"
+      },
+      {
+        "start": 13.583,
+        "end": 15.75,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 460,
+      "y": 692,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.383,
+      "end": 3.509
+    },
+    "duration": 24.45,
+    "publishedAt": "$D2023-09-09T20:28:46.692Z",
+    "updatedAt": "$D2024-04-22T07:00:15.673Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/lockers-from-t-spawn-a",
+    "photoSource": "https://csnades.gg/nuke/smokes/lockers-from-t-spawn-a",
+    "sourceId": "nade_5d6aae9bf29a",
+    "capturedSourceId": "nade_5d6aae9bf29a",
+    "videoUid": "nuke-smoke-gTyE7QMmuZ",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-lockers-from-t-spawn-a-position-2483ms.jpg",
+    "time": 2.483,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-gTyE7QMmuZ/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "201923b211d0e55c3690dd61c7579d439c6951e90a0dfaea04707fff68b39f6f",
+    "bytes": 121368,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.633,
+      "end": 2.633,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.633,
+        "end": 2.633,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.566,
+        "end": 10.566,
+        "text": "Aim at air conduit"
+      },
+      {
+        "start": 11.8,
+        "end": 14.883,
+        "text": "Run + Jump + Left click throw, release at box"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 269,
+      "y": 540,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.483,
+      "end": 2.61
+    },
+    "duration": 25.766667,
+    "publishedAt": "$D2023-09-09T21:24:31.789Z",
+    "updatedAt": "$D2024-01-19T17:18:24.517Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/lockers-from-t-spawn-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/lockers-from-t-spawn-b",
+    "sourceId": "nade_0428fda9d8c5",
+    "capturedSourceId": "nade_0428fda9d8c5",
+    "videoUid": "nuke-smoke-reQfiYAbzB",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-lockers-from-t-spawn-b-position-2550ms.jpg",
+    "time": 2.55,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-reQfiYAbzB/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "fb8c5821e5c9bb6589430c6fec42f03c2cede18865e2d4273b788f36c975958f",
+    "bytes": 155302,
+    "caption": "Stand in corner on box.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.633,
+      "end": 2.7,
+      "text": "Stand in corner on box"
+    },
+    "sourceCues": [
+      {
+        "start": 0.633,
+        "end": 2.7,
+        "text": "Stand in corner on box"
+      },
+      {
+        "start": 4.216,
+        "end": 7.533,
+        "text": "Aim below dirt at line"
+      },
+      {
+        "start": 9.449,
+        "end": 11.949,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 326,
+      "y": 531,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.55,
+      "end": 2.6748
+    },
+    "duration": 23.466667,
+    "publishedAt": "$D2023-09-09T20:31:51.136Z",
+    "updatedAt": "$D2024-01-19T17:14:44.592Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/lockers-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/lockers-from-under-silo",
+    "sourceId": "nade_0303ced24771",
+    "capturedSourceId": "nade_0303ced24771",
+    "videoUid": "nuke-smoke-ck29zmBBrh",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-lockers-from-under-silo-position-2800ms.jpg",
+    "time": 2.8,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-ck29zmBBrh/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "252f88673b1a906a6ada831a24e0932382b5045ba7ff5d81374173c20e0f11ff",
+    "bytes": 261658,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.95,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.95,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.316,
+        "end": 7.783,
+        "text": "Crouch, aim between dots, uncrouch"
+      },
+      {
+        "start": 8.199,
+        "end": 10.949,
+        "text": "Run + Jump + Left click throw, release when aiming at box"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 444,
+      "y": 874,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.8,
+      "end": 2.9683
+    },
+    "duration": 21.366667,
+    "publishedAt": "$D2024-04-16T15:19:31.313Z",
+    "updatedAt": "$D2024-04-16T16:02:22.227Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-garage-from-outside-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/outside-garage-from-outside-t-spawn",
+    "sourceId": "nade_9ef43f155a6c",
+    "capturedSourceId": "nade_9ef43f155a6c",
+    "videoUid": "nuke-smoke-QF0xiuEV4h",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-outside-garage-from-outside-t-spawn-position-2350ms.jpg",
+    "time": 2.35,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-QF0xiuEV4h/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "5c1ee78feffe5ed89d32f9caf8bc21ccec5d789bc909e76299de66d9d84514a5",
+    "bytes": 189535,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.5,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.35,
+        "end": 10.949,
+        "text": "Align to right of notch and top of silo pipe"
+      },
+      {
+        "start": 11.816,
+        "end": 14.566,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.35,
+      "end": 2.4767
+    },
+    "duration": 25.166667,
+    "publishedAt": "$D2024-01-18T04:38:37.957Z",
+    "updatedAt": "$D2024-06-30T07:00:33.911Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-main-from-outside-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/outside-main-from-outside-t-spawn",
+    "sourceId": "nade_7feecbe5ab6c",
+    "capturedSourceId": "nade_7feecbe5ab6c",
+    "videoUid": "nuke-smoke-zz31RtrBm0",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-outside-main-from-outside-t-spawn-position-2633ms.jpg",
+    "time": 2.633,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-zz31RtrBm0/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "8b1132d254f4af051289c1dfc337665580f844f59bc1993783a13934aaa47dea",
+    "bytes": 205207,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.683,
+      "end": 2.783,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.683,
+        "end": 2.783,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.566,
+        "end": 11.583,
+        "text": "Align to railing and silo border"
+      },
+      {
+        "start": 14.116,
+        "end": 15.75,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 607,
+      "y": 778,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.633,
+      "end": 2.7806
+    },
+    "duration": 26.5,
+    "publishedAt": "$D2023-09-09T20:13:54.944Z",
+    "updatedAt": "$D2024-01-19T17:12:52.202Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-main-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/outside-main-from-t-spawn",
+    "sourceId": "nade_f047fe559704",
+    "capturedSourceId": "nade_f047fe559704",
+    "videoUid": "nuke-smoke-jcmcyFHa9p",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-outside-main-from-t-spawn-position-2350ms.jpg",
+    "time": 2.35,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-jcmcyFHa9p/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "9a5eae9b5d4f194a8a584f1286a087ebad333ac508c34d6d70956c641f195a0f",
+    "bytes": 196176,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.5,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 6.216,
+        "end": 15.933,
+        "text": "Align to window and end of white wire"
+      },
+      {
+        "start": 17.083,
+        "end": 19,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 607,
+      "y": 778,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 232,
+      "y": 588,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.35,
+      "end": 2.4804
+    },
+    "duration": 31.933333,
+    "publishedAt": "$D2024-09-08T23:38:58.686Z",
+    "updatedAt": "$D2025-02-25T00:43:57.823Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-main-from-t-spawn-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/outside-main-from-t-spawn-b",
+    "sourceId": "nade_35cbefa9a2b2",
+    "capturedSourceId": "nade_35cbefa9a2b2",
+    "videoUid": "nuke-smoke-zZPGIOTm49",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-outside-main-from-t-spawn-b-position-2042ms.jpg",
+    "time": 2.0415,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-zZPGIOTm49/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "7be4c035a504eb02e59909a94df7efa5b8777d5c277379f93cbc292b5f193340",
+    "bytes": 168571,
+    "caption": "Stand at line in wall.",
+    "review": "Middle standing frame clearly shows the settled wall seam instead of the later upward aim view.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 3.583,
+      "text": "Stand at line in wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 3.583,
+        "text": "Stand at line in wall"
+      },
+      {
+        "start": 4.066,
+        "end": 6.566,
+        "text": "Aim at right edge of left lightbulb"
+      },
+      {
+        "start": 7.4,
+        "end": 10.016,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 607,
+      "y": 778,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 268,
+      "y": 560,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.433,
+      "end": 3.5619
+    },
+    "duration": 23.016667,
+    "publishedAt": "$D2024-09-08T23:53:29.281Z",
+    "updatedAt": "$D2025-02-25T00:44:25.375Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/ramp-from-trophy-a",
+    "photoSource": "https://csnades.gg/nuke/smokes/ramp-from-trophy-a",
+    "sourceId": "nade_acbe6740739d",
+    "capturedSourceId": "nade_acbe6740739d",
+    "videoUid": "nuke-smoke-GnMSqEPcto",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-ramp-from-trophy-a-position-3649ms.jpg",
+    "time": 3.649,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-GnMSqEPcto/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "4aa62e680b01b9e935b60a3441b6fcbbac5433ca002aabab2463cd8af71ecd61",
+    "bytes": 44865,
+    "caption": "Stand under logo.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.65,
+      "end": 3.799,
+      "text": "Stand under logo"
+    },
+    "sourceCues": [
+      {
+        "start": 0.65,
+        "end": 3.799,
+        "text": "Stand under logo"
+      },
+      {
+        "start": 4.833,
+        "end": 7,
+        "text": "Aim at corner of door"
+      },
+      {
+        "start": 7.933,
+        "end": 10.266,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 517,
+      "y": 228,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 502,
+      "y": 392,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.649,
+      "end": 3.7936
+    },
+    "duration": 16.65,
+    "publishedAt": "$D2023-09-09T20:49:14.479Z",
+    "updatedAt": "$D2024-01-19T17:15:35.664Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/ramp-from-trophy-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/ramp-from-trophy-b",
+    "sourceId": "nade_b09aa9364fdd",
+    "capturedSourceId": "nade_b09aa9364fdd",
+    "videoUid": "nuke-smoke-PAOl9mzPQl",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-ramp-from-trophy-b-position-2399ms.jpg",
+    "time": 2.399,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-PAOl9mzPQl/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "b44c6ec8d540a6560d6dd4d192efae8f02a6f444e3d7ddd932f9e3d5948fdc73",
+    "bytes": 121145,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.55,
+      "end": 2.549,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.55,
+        "end": 2.549,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 2.85,
+        "end": 5.016,
+        "text": "Aim at sign on corner"
+      },
+      {
+        "start": 5.349,
+        "end": 7.683,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 533,
+      "y": 270,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 502,
+      "y": 391,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.399,
+      "end": 2.5276
+    },
+    "duration": 14.6,
+    "publishedAt": "$D2023-09-09T20:59:48.751Z",
+    "updatedAt": "$D2024-01-19T17:16:45.969Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-close-from-outside-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-close-from-outside-t-spawn",
+    "sourceId": "nade_e7438e70a49d",
+    "capturedSourceId": "nade_e7438e70a49d",
+    "videoUid": "nuke-smoke-zKQpJWn98w",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-close-from-outside-t-spawn-position-2350ms.jpg",
+    "time": 2.35,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-zKQpJWn98w/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "248cd4dec0b826c37ef59455aa6ebdcc96f4e208173df43193ffdf33f94b1318",
+    "bytes": 139007,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.5,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.2,
+        "end": 10.533,
+        "text": "Align to edge on container and top of silo"
+      },
+      {
+        "start": 11.466,
+        "end": 14.099,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 594,
+      "y": 887,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.35,
+      "end": 2.4805
+    },
+    "duration": 24.933333,
+    "publishedAt": "$D2023-10-31T21:00:33.366Z",
+    "updatedAt": "$D2024-01-23T01:22:03.486Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-close-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-close-from-t-spawn",
+    "sourceId": "nade_64ecb38fdc05",
+    "capturedSourceId": "nade_64ecb38fdc05",
+    "videoUid": "nuke-smoke-Ox2V20EXl2",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-close-from-t-spawn-position-1833ms.jpg",
+    "time": 1.833,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-Ox2V20EXl2/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "3711d443bd71cf6764c6b38e336f26f9ea6ee2a7c2074da5d92ea7067f601ba4",
+    "bytes": 249155,
+    "caption": "Stand at edge of truck.",
+    "review": "Middle standing frame shows the settled position at the edge of the truck bed and rope coil before looking up.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.633,
+      "end": 3.033,
+      "text": "Stand at edge of truck"
+    },
+    "sourceCues": [
+      {
+        "start": 0.633,
+        "end": 3.033,
+        "text": "Stand at edge of truck"
+      },
+      {
+        "start": 3.366,
+        "end": 5.416,
+        "text": "Aim at corner of window"
+      },
+      {
+        "start": 6.099,
+        "end": 8.433,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 594,
+      "y": 887,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.883,
+      "end": 3.0152
+    },
+    "duration": 19.883333,
+    "publishedAt": "$D2023-09-09T19:21:20.052Z",
+    "updatedAt": "$D2024-01-19T17:08:24.553Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-close-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-close-from-under-silo",
+    "sourceId": "nade_1379710bc95d",
+    "capturedSourceId": "nade_1379710bc95d",
+    "videoUid": "nuke-smoke-Bsu1xam1dU",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-close-from-under-silo-position-4083ms.jpg",
+    "time": 4.082999,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-Bsu1xam1dU/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "9c37d30228934131b24f0e8fe061d79658025338e038b337902ec0be735612b2",
+    "bytes": 283822,
+    "caption": "Stand between fences.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.883,
+      "end": 4.233,
+      "text": "Stand between fences"
+    },
+    "sourceCues": [
+      {
+        "start": 0.883,
+        "end": 4.233,
+        "text": "Stand between fences"
+      },
+      {
+        "start": 5.866,
+        "end": 7.883,
+        "text": "Aim at tip of box"
+      },
+      {
+        "start": 8.116,
+        "end": 10.616,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 594,
+      "y": 887,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 417,
+      "y": 807,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 4.082999,
+      "end": 4.213
+    },
+    "duration": 19.116667,
+    "publishedAt": "$D2023-09-09T20:49:15.717Z",
+    "updatedAt": "$D2024-01-19T17:15:55.878Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-outside-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-far-from-outside-t-spawn",
+    "sourceId": "nade_6f59743cee68",
+    "capturedSourceId": "nade_6f59743cee68",
+    "videoUid": "nuke-smoke-faS2qYaA3o",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-far-from-outside-t-spawn-position-2749ms.jpg",
+    "time": 2.749,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-faS2qYaA3o/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "26bcf878aeeaed46a7af6c5e64d8d887c6185eaa8d4fa64038c1caaa8e95ca88",
+    "bytes": 220602,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.899,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.899,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.766,
+        "end": 5.966,
+        "text": "Aim at corner on container"
+      },
+      {
+        "start": 6.95,
+        "end": 9.283,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.749,
+      "end": 2.8757
+    },
+    "duration": 17.816667,
+    "publishedAt": "$D2023-09-09T19:36:56.190Z",
+    "updatedAt": "$D2024-01-19T17:09:12.290Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-far-from-t-spawn",
+    "sourceId": "nade_be649b2a86a9",
+    "capturedSourceId": "nade_be649b2a86a9",
+    "videoUid": "nuke-smoke-EsLX408n4d",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-far-from-t-spawn-position-1816ms.jpg",
+    "time": 1.816,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-EsLX408n4d/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "599cd40cbd5a0da977f10c0e4ed48b9269d5164d44e9b410325cfe523c27f9e3",
+    "bytes": 102175,
+    "caption": "Stand at edge of container.",
+    "review": "Middle standing frame clearly shows the player pressed to the truck/container junction before aiming upward.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.616,
+      "end": 3.016,
+      "text": "Stand at edge of container"
+    },
+    "sourceCues": [
+      {
+        "start": 0.616,
+        "end": 3.016,
+        "text": "Stand at edge of container"
+      },
+      {
+        "start": 3.649,
+        "end": 5.849,
+        "text": "Aim at corner of wall/wire"
+      },
+      {
+        "start": 7.2,
+        "end": 9.533,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 309,
+      "y": 600,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.866,
+      "end": 2.9937
+    },
+    "duration": 20.666667,
+    "publishedAt": "$D2023-09-09T19:37:13.047Z",
+    "updatedAt": "$D2024-01-19T17:09:38.111Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-t-spawn-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-far-from-t-spawn-b",
+    "sourceId": "nade_be3bc872dac3",
+    "capturedSourceId": "nade_be3bc872dac3",
+    "videoUid": "nuke-smoke-MoplRcxNea",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-far-from-t-spawn-b-position-1600ms.jpg",
+    "time": 1.6,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-MoplRcxNea/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "bda5ac5d86f501a818f8789fd8390d1af3916b790c8e459eb216decf2163a876",
+    "bytes": 242640,
+    "caption": "Stand at edge of truck.",
+    "review": "Middle standing frame shows the settled truck-bed edge and rope coil before turning upward.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.7,
+      "text": "Stand at edge of truck"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.7,
+        "text": "Stand at edge of truck"
+      },
+      {
+        "start": 3.45,
+        "end": 5.766,
+        "text": "Aim at second notch from left"
+      },
+      {
+        "start": 6.15,
+        "end": 8.9,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.55,
+      "end": 2.6773
+    },
+    "duration": 20.133333,
+    "publishedAt": "$D2024-04-16T15:44:51.211Z",
+    "updatedAt": "$D2024-04-16T16:03:14.214Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/secret-far-from-under-silo",
+    "sourceId": "nade_49d2c5aa58d5",
+    "capturedSourceId": "nade_49d2c5aa58d5",
+    "videoUid": "nuke-smoke-Sswwq7kpV9",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-secret-far-from-under-silo-position-5316ms.jpg",
+    "time": 5.316,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-Sswwq7kpV9/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "1ee64bf037428aa6b72b0d84664df34b4732b53b784591dca7170048b9038c15",
+    "bytes": 233487,
+    "caption": "Stand between fences.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.066,
+      "end": 5.466,
+      "text": "Stand between fences"
+    },
+    "sourceCues": [
+      {
+        "start": 3.066,
+        "end": 5.466,
+        "text": "Stand between fences"
+      },
+      {
+        "start": 7.183,
+        "end": 11.833,
+        "text": "Align to edge of building and silo"
+      },
+      {
+        "start": 13.4,
+        "end": 15.733,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 407,
+      "y": 774,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 5.316,
+      "end": 5.444
+    },
+    "duration": 23.8,
+    "publishedAt": "$D2023-09-09T19:35:34.360Z",
+    "updatedAt": "$D2024-01-19T17:08:50.558Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/squeaky-from-heaven",
+    "photoSource": "https://csnades.gg/nuke/smokes/squeaky-from-heaven",
+    "sourceId": "nade_2ef682d3de51",
+    "capturedSourceId": "nade_2ef682d3de51",
+    "videoUid": "nuke-smoke-QefmQzSwxJ",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-squeaky-from-heaven-position-2416ms.jpg",
+    "time": 2.416,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-QefmQzSwxJ/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "8aa82a89b988df0e3498717d93880dc9771148d8e116019fbc8dba00e1d89efe",
+    "bytes": 169168,
+    "caption": "Stand at edge of door frame.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.566,
+      "end": 2.566,
+      "text": "Stand at edge of door frame"
+    },
+    "sourceCues": [
+      {
+        "start": 0.566,
+        "end": 2.566,
+        "text": "Stand at edge of door frame"
+      },
+      {
+        "start": 3.166,
+        "end": 5.166,
+        "text": "Aim at lamp"
+      },
+      {
+        "start": 5.9,
+        "end": 8.4,
+        "text": "Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 512,
+      "y": 630,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 613,
+      "y": 410,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.416,
+      "end": 2.5428
+    },
+    "duration": 16.183333,
+    "publishedAt": "$D2023-09-09T21:21:27.392Z",
+    "updatedAt": "$D2024-01-19T17:17:26.296Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/t-red-from-ct-red",
+    "photoSource": "https://csnades.gg/nuke/smokes/t-red-from-ct-red",
+    "sourceId": "nade_6621ee60a37f",
+    "capturedSourceId": "nade_6621ee60a37f",
+    "videoUid": "nuke-smoke-1uACe4vrWx",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-t-red-from-ct-red-position-2833ms.jpg",
+    "time": 2.833,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-1uACe4vrWx/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "1ad86afce5b4b872d53d4c94bb4cd8d8e09d26fec6b3a66f3b2c8e067b5faa5f",
+    "bytes": 225865,
+    "caption": "Stand at the position shown.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.983,
+      "end": 2.983,
+      "text": "Stand roughly here"
+    },
+    "sourceCues": [
+      {
+        "start": 0.983,
+        "end": 2.983,
+        "text": "Stand roughly here"
+      },
+      {
+        "start": 3.583,
+        "end": 5.75,
+        "text": "Aim at blue box"
+      },
+      {
+        "start": 6.183,
+        "end": 8.516,
+        "text": "Run + Left click throw, release at CT red"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 553,
+      "y": 802,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 651,
+      "y": 656,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.833,
+      "end": 2.957
+    },
+    "duration": 15.066667,
+    "publishedAt": "$D2023-09-09T21:00:43.140Z",
+    "updatedAt": "$D2024-01-19T17:17:06.834Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/t-red-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/smokes/t-red-from-under-silo",
+    "sourceId": "nade_bd972bfaf179",
+    "capturedSourceId": "nade_bd972bfaf179",
+    "videoUid": "nuke-smoke-SeoQHvk150",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-t-red-from-under-silo-position-3816ms.jpg",
+    "time": 3.816,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-SeoQHvk150/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "e96013325921e72690b2cc909b1705c321d0f69e11c850c03ec3bfa1abbeb8cc",
+    "bytes": 266424,
+    "caption": "Run along shadow.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.616,
+      "end": 3.966,
+      "text": "Run along shadow"
+    },
+    "sourceCues": [
+      {
+        "start": 0.616,
+        "end": 3.966,
+        "text": "Run along shadow"
+      },
+      {
+        "start": 4.383,
+        "end": 6.383,
+        "text": "Aim at top of fence"
+      },
+      {
+        "start": 6.783,
+        "end": 9.116,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "throwTo": {
+      "x": 527,
+      "y": 848,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 437,
+      "y": 815,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.816,
+      "end": 3.9406
+    },
+    "duration": 16.833333,
+    "publishedAt": "$D2023-09-09T20:08:26.837Z",
+    "updatedAt": "$D2024-05-10T07:00:50.709Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/top-a-main-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/top-a-main-from-t-spawn",
+    "sourceId": "nade_beff77608ce6",
+    "capturedSourceId": "nade_beff77608ce6",
+    "videoUid": "nuke-smoke-5bFhaOVLPr",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-top-a-main-from-t-spawn-position-2433ms.jpg",
+    "time": 2.433,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-5bFhaOVLPr/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "e07584ee0712b33ff0b074cfd92b3c27f4a0a5d62d5a3453b80ff3cd3b81d3b8",
+    "bytes": 204832,
+    "caption": "Stand at pillar.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.566,
+      "end": 2.583,
+      "text": "Stand at pillar"
+    },
+    "sourceCues": [
+      {
+        "start": 0.566,
+        "end": 2.583,
+        "text": "Stand at pillar"
+      },
+      {
+        "start": 3.866,
+        "end": 5.883,
+        "text": "Aim at vent"
+      },
+      {
+        "start": 6.9,
+        "end": 9.4,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 210,
+      "y": 625,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.433,
+      "end": 2.5577
+    },
+    "duration": 20.416667,
+    "publishedAt": "$D2023-09-09T20:32:19.037Z",
+    "updatedAt": "$D2024-01-19T17:15:08.479Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/top-main-from-t-spawn-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/top-main-from-t-spawn-b",
+    "sourceId": "nade_eac2180d23c7",
+    "capturedSourceId": "nade_eac2180d23c7",
+    "videoUid": "nuke-smoke-TEd89iP1CU",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-top-main-from-t-spawn-b-position-3133ms.jpg",
+    "time": 3.133,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-TEd89iP1CU/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "65ad4c3d4076415739c7f64ee3cbc9c9e3be90fba3e3ed002754ac122f78863b",
+    "bytes": 173643,
+    "caption": "Stand at line on wall.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 3.283,
+      "text": "Stand at line on wall"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 3.283,
+        "text": "Stand at line on wall"
+      },
+      {
+        "start": 4.533,
+        "end": 7.583,
+        "text": "Aim at left edge of left lightbulb"
+      },
+      {
+        "start": 8.3,
+        "end": 10.666,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 268,
+      "y": 560,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 3.133,
+      "end": 3.2618
+    },
+    "duration": 22.283333,
+    "publishedAt": "$D2024-09-08T23:46:26.787Z",
+    "updatedAt": "$D2025-02-25T00:44:12.526Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/top-silo-from-ct-spawn",
+    "photoSource": "https://csnades.gg/nuke/smokes/top-silo-from-ct-spawn",
+    "sourceId": "nade_c5f476f3afe3",
+    "capturedSourceId": "nade_c5f476f3afe3",
+    "videoUid": "nuke-smoke-JDCgnyYtib",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-top-silo-from-ct-spawn-position-2666ms.jpg",
+    "time": 2.666,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-JDCgnyYtib/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "f4d078e7d9176b7d07defcabc031d94a51f11ed8a4e3d779e501ad21f5af35eb",
+    "bytes": 89644,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.816,
+      "end": 2.816,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.816,
+        "end": 2.816,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.566,
+        "end": 10.566,
+        "text": "Align below edge of air conduit, just above height of vents"
+      },
+      {
+        "start": 11.433,
+        "end": 13.933,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 501,
+      "y": 730,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 751,
+      "y": 509,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.666,
+      "end": 2.7939
+    },
+    "duration": 24.033333,
+    "publishedAt": "$D2023-09-09T21:23:28.018Z",
+    "updatedAt": "$D2024-07-05T23:54:44.279Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/trophy-from-ramp",
+    "photoSource": "https://csnades.gg/nuke/smokes/trophy-from-ramp",
+    "sourceId": "nade_40714b6784cf",
+    "capturedSourceId": "nade_40714b6784cf",
+    "videoUid": "nuke-smoke-2JmRiLmQdS",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-trophy-from-ramp-position-2800ms.jpg",
+    "time": 2.8,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-2JmRiLmQdS/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "43697488baeaf7ce575a71eebaf73051cd0e4dc6b69381103cf701c6425921d7",
+    "bytes": 83295,
+    "caption": "Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 0.5,
+      "end": 2.95,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.95,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.266,
+        "end": 8.383,
+        "text": "Aim at right of white middle ramp"
+      },
+      {
+        "start": 8.9,
+        "end": 11.65,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 488,
+      "y": 357,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 578,
+      "y": 46,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 2.8,
+      "end": 2.9293
+    },
+    "duration": 18.55,
+    "publishedAt": "$D2024-04-16T15:14:18.452Z",
+    "updatedAt": "$D2024-04-16T16:02:02.366Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/vent-from-t-spawn-a",
+    "photoSource": "https://csnades.gg/nuke/smokes/vent-from-t-spawn-a",
+    "sourceId": "nade_0d9006c00178",
+    "capturedSourceId": "nade_0d9006c00178",
+    "videoUid": "nuke-smoke-6T37K29Fos",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-vent-from-t-spawn-a-position-6116ms.jpg",
+    "time": 6.116,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-6T37K29Fos/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "95026b8e95869703e08945bd69e00c78be77a529bb126e7fcc41e2901435f51a",
+    "bytes": 141710,
+    "caption": "Break window. Stand in corner.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 4.266,
+      "end": 6.266,
+      "text": "Stand in corner"
+    },
+    "sourceCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Break window"
+      },
+      {
+        "start": 4.266,
+        "end": 6.266,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 7.65,
+        "end": 13.533,
+        "text": "Align to left of line and top of concrete"
+      },
+      {
+        "start": 15.116,
+        "end": 17.883,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 6.116,
+      "end": 6.2424
+    },
+    "duration": 28.083333,
+    "publishedAt": "$D2023-09-09T19:43:12.186Z",
+    "updatedAt": "$D2025-01-26T19:34:18.002Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/vent-from-t-spawn-b",
+    "photoSource": "https://csnades.gg/nuke/smokes/vent-from-t-spawn-b",
+    "sourceId": "nade_6de239ce235a",
+    "capturedSourceId": "nade_6de239ce235a",
+    "videoUid": "nuke-smoke-Q9fOLapNdW",
+    "mapId": "nuke",
+    "creator": "CSNADES.gg",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/smoke-vent-from-t-spawn-b-position-6699ms.jpg",
+    "time": 6.699,
+    "nativeWidth": 2562,
+    "nativeHeight": 1440,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "mediaUrl": "https://assets.csnades.gg/nades/nuke-smoke-Q9fOLapNdW/hq.mp4",
+    "extraction": "video-element-screenshot",
+    "sha256": "56f33b8800d6717d55d9811e69681eb95fefe57802a3477f45b50111386ffa5a",
+    "bytes": 136220,
+    "caption": "Shoot windows. Stand at 4th window.",
+    "review": "Compared all three source standing-cue frames. Selected the settled position with its original corner, floor line, beam, support or wall landmark, before aim/release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sourceStandingCue": {
+      "start": 3.45,
+      "end": 6.849,
+      "text": "Stand at 4th window"
+    },
+    "sourceCues": [
+      {
+        "start": 0.466,
+        "end": 2.866,
+        "text": "Shoot windows"
+      },
+      {
+        "start": 3.45,
+        "end": 6.849,
+        "text": "Stand at 4th window"
+      },
+      {
+        "start": 8.75,
+        "end": 12.849,
+        "text": "Crouch, aim to right of top of line"
+      },
+      {
+        "start": 13.766,
+        "end": 15.75,
+        "text": "Crouch walk + Jump + Left click throw"
+      }
+    ],
+    "sourceMovement": "crouched_walking",
+    "sourceTechnique": "left_jump",
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 282,
+      "y": 529,
+      "levels": [
+        1
+      ]
+    },
+    "playProgress": {
+      "start": 6.699,
+      "end": 6.8254
+    },
+    "duration": 26.866667,
+    "publishedAt": "$D2023-09-09T19:43:30.343Z",
+    "updatedAt": "$D2024-01-19T17:11:09.477Z"
+  }
+]

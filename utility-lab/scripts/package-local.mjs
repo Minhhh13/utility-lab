@@ -1,0 +1,105 @@
+import {
+  readdir,
+  mkdir,
+  copyFile,
+  readFile,
+  writeFile,
+} from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { join, basename, relative, sep } from "node:path";
+import { MAPS } from "../src/maps.ts";
+import { BUNDLED_GUIDE_PHOTOS } from "../src/guide-library.ts";
+
+const project = fileURLToPath(new URL("../", import.meta.url));
+const version = JSON.parse(
+  await readFile(join(project, "package.json"), "utf8"),
+).version;
+const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15);
+const target = join(
+  project,
+  "outputs",
+  "releases",
+  `utility-lab-local-${version}-${stamp}`,
+);
+const mapFiles = new Set(
+  MAPS.flatMap((map) =>
+    map.levels.flatMap((level) => [
+      basename(level.image),
+      ...(level.image.endsWith(".svg")
+        ? [basename(level.image).replace(".svg", "-light.svg")]
+        : []),
+      ...(level.radarImage ? [basename(level.radarImage)] : []),
+    ]),
+  ),
+);
+const photoFiles = new Set(BUNDLED_GUIDE_PHOTOS);
+let files = 0,
+  bytes = 0;
+async function copyTree(source, destination) {
+  await mkdir(destination, { recursive: true });
+  for (const entry of await readdir(source, { withFileTypes: true })) {
+    if (entry.isSymbolicLink())
+      throw new Error(
+        "Release assets must be ordinary files, not symbolic links.",
+      );
+    const from = join(source, entry.name),
+      to = join(destination, entry.name),
+      path = relative(join(project, "dist"), from).split(sep).join("/");
+    if (path === "favicon.svg") continue;
+    if (path.startsWith("lineup-media/") && !entry.isDirectory() && !photoFiles.has(`/${path}`)) continue;
+    if (
+      path.startsWith("art/launch-") &&
+      !/^art\/launch-dust-(cs1999|source|csgo)\.webp$/.test(path)
+    )
+      continue;
+    if (entry.isDirectory()) {
+      await copyTree(from, to);
+      continue;
+    }
+    if (
+      (path.startsWith("maps/") || path.startsWith("map-thumbnails/")) &&
+      /\.(png|svg)$/.test(entry.name) &&
+      !mapFiles.has(entry.name)
+    )
+      continue;
+    if (
+      path.startsWith("fonts/") &&
+      !/^(manrope-latin\.woff2|Manrope-OFL\.txt)$/.test(entry.name)
+    )
+      continue;
+    await copyFile(from, to);
+    files++;
+    bytes += (await readFile(from)).length;
+  }
+}
+await copyTree(join(project, "dist"), join(target, "dist"));
+await mkdir(join(target, "scripts"), { recursive: true });
+await copyFile(
+  join(project, "scripts", "serve-local.mjs"),
+  join(target, "scripts", "serve-local.mjs"),
+);
+await writeFile(
+  join(target, "Start-UtilityLab.cmd"),
+  '@echo off\r\nnode "%~dp0scripts\\serve-local.mjs" %*\r\nif errorlevel 1 pause\r\n',
+);
+await writeFile(
+  join(target, "README.txt"),
+  `Utility Lab ${version} — local build\n\nRequires Node.js 22.13 or newer. No npm install is needed for this packaged app.\nDouble-click Start-UtilityLab.cmd, then open http://127.0.0.1:5180\nLeave its terminal open while using the app. Ctrl+C stops it.\n\nThe server listens only on this PC by default and never uploads the website.\nOptional same-network access: Start-UtilityLab.cmd --lan\nPlain HTTP phone access cannot install offline service workers; localhost and HTTPS can.\n\nKeep the same address and port to use the same browser workspace. Steam, other browsers and phones have separate storage. Use Workspace settings > Export workspace to transfer your saved records and photos. Save unfinished lineups and playbooks before making a backup.\n\nOriginal online photos and creator videos require internet and remain on their source hosts. Photo guides open in the app’s own swipe/zoom viewer with position, aim and throw inputs. Only bundled photos and your own uploads are available offline after caching. Guides are demonstrations, not independent validation on the current game build. Only Active Duty/FACEIT map entries are included.\n\nMap drawings by setpos.gg (CC BY 4.0); retain the linked in-app credit. Game radars belong to Valve and the map creators. Font license is in dist/fonts/Manrope-OFL.txt. This is an unofficial fan app.\n`,
+);
+await writeFile(
+  join(target, "release.json"),
+  JSON.stringify(
+    {
+      name: "Utility Lab",
+      version,
+      createdAt: new Date().toISOString(),
+      files,
+      bytes,
+      maps: MAPS.map((map) => map.id),
+      localOnly: true,
+    },
+    null,
+    2,
+  ),
+);
+console.log(JSON.stringify({ directory: target, files, bytes }, null, 2));

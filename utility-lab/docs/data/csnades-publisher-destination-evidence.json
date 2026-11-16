@@ -1,0 +1,4940 @@
+[
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-close-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_64ecb38fdc05",
+    "videoUid": "nuke-smoke-Ox2V20EXl2",
+    "slug": "secret-close-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Close",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 594,
+      "y": 887,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_49d2c5aa58d5",
+    "videoUid": "nuke-smoke-Sswwq7kpV9",
+    "slug": "secret-far-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Far",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 407,
+      "y": 774,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-outside-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_6f59743cee68",
+    "videoUid": "nuke-smoke-faS2qYaA3o",
+    "slug": "secret-far-from-outside-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Far",
+    "titleFrom": "Outside T Spawn",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_be649b2a86a9",
+    "videoUid": "nuke-smoke-EsLX408n4d",
+    "slug": "secret-far-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Far",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 309,
+      "y": 600,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/garage-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_85d0e6b3cfc7",
+    "videoUid": "nuke-smoke-l3koCgeoHZ",
+    "slug": "garage-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Garage",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 418,
+      "y": 797,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/vent-from-t-spawn-a",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_0d9006c00178",
+    "videoUid": "nuke-smoke-6T37K29Fos",
+    "slug": "vent-from-t-spawn-a",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Vent",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/vent-from-t-spawn-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_6de239ce235a",
+    "videoUid": "nuke-smoke-Q9fOLapNdW",
+    "slug": "vent-from-t-spawn-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Vent",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 282,
+      "y": 529,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/t-red-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_bd972bfaf179",
+    "videoUid": "nuke-smoke-SeoQHvk150",
+    "slug": "t-red-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "T Red",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 527,
+      "y": 848,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 437,
+      "y": 815,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 461,
+        "y": 887,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/ct-red-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_1b4a343f32e1",
+    "videoUid": "nuke-smoke-EYwJuFOVfp",
+    "slug": "ct-red-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "CT Red",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 631,
+      "y": 699,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 450,
+      "y": 815,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_67467fcde3bf",
+    "videoUid": "nuke-smoke-EO2jbfxk5s",
+    "slug": "a-main-from-t-roof",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Main",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 559,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 440,
+      "y": 392,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-main-from-outside-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_7feecbe5ab6c",
+    "videoUid": "nuke-smoke-zz31RtrBm0",
+    "slug": "outside-main-from-outside-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Main",
+    "titleFrom": "Outside T Spawn",
+    "throwTo": {
+      "x": 607,
+      "y": 778,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/garage-from-outside-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_7c70945d77bc",
+    "videoUid": "nuke-smoke-0qZP5UcuWj",
+    "slug": "garage-from-outside-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Garage",
+    "titleFrom": "Outside T Spawn",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 331,
+      "y": 559,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/heaven-from-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_cea9c9aeab87",
+    "videoUid": "nuke-smoke-ZcYGFCKa39",
+    "slug": "heaven-from-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "Silo",
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 460,
+      "y": 692,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/lockers-from-t-spawn-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_0428fda9d8c5",
+    "videoUid": "nuke-smoke-reQfiYAbzB",
+    "slug": "lockers-from-t-spawn-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Lockers",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 326,
+      "y": 531,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/top-a-main-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_beff77608ce6",
+    "videoUid": "nuke-smoke-5bFhaOVLPr",
+    "slug": "top-a-main-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Top A Main",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 210,
+      "y": 625,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/ramp-from-trophy-a",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_acbe6740739d",
+    "videoUid": "nuke-smoke-GnMSqEPcto",
+    "slug": "ramp-from-trophy-a",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Ramp",
+    "titleFrom": "Trophy",
+    "throwTo": {
+      "x": 517,
+      "y": 228,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 502,
+      "y": 392,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 480,
+        "y": 310,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-close-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_1379710bc95d",
+    "videoUid": "nuke-smoke-Bsu1xam1dU",
+    "slug": "secret-close-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Close",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 594,
+      "y": 887,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 417,
+      "y": 807,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_665f502b5f40",
+    "videoUid": "nuke-smoke-zymHn4R06u",
+    "slug": "a-main-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Main",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 426,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 656,
+        "y": 766,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/ramp-from-trophy-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_b09aa9364fdd",
+    "videoUid": "nuke-smoke-PAOl9mzPQl",
+    "slug": "ramp-from-trophy-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Ramp",
+    "titleFrom": "Trophy",
+    "throwTo": {
+      "x": 533,
+      "y": 270,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 502,
+      "y": 391,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 480,
+        "y": 256,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/t-red-from-ct-red",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_6621ee60a37f",
+    "videoUid": "nuke-smoke-1uACe4vrWx",
+    "slug": "t-red-from-ct-red",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "T Red",
+    "titleFrom": "CT Red",
+    "throwTo": {
+      "x": 553,
+      "y": 802,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 651,
+      "y": 656,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/squeaky-from-heaven",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_2ef682d3de51",
+    "videoUid": "nuke-smoke-QefmQzSwxJ",
+    "slug": "squeaky-from-heaven",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Squeaky",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 512,
+      "y": 630,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 613,
+      "y": 410,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/top-silo-from-ct-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_c5f476f3afe3",
+    "videoUid": "nuke-smoke-JDCgnyYtib",
+    "slug": "top-silo-from-ct-spawn",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Top Silo",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 501,
+      "y": 730,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 751,
+      "y": 509,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/lockers-from-t-spawn-a",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_5d6aae9bf29a",
+    "videoUid": "nuke-smoke-gTyE7QMmuZ",
+    "slug": "lockers-from-t-spawn-a",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Lockers",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 269,
+      "y": 540,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/double-doors-from-b-ramp",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_c6ee83921aec",
+    "videoUid": "nuke-smoke-FHo8HsdYw3",
+    "slug": "double-doors-from-b-ramp",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Double Doors",
+    "titleFrom": "B Ramp",
+    "throwTo": {
+      "x": 607,
+      "y": 557,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 522,
+      "y": 286,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/decon-cross-from-back-vents",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_bb1f2cd370fe",
+    "videoUid": "nuke-smoke-zJkjg0rC5k",
+    "slug": "decon-cross-from-back-vents",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Decon Cross",
+    "titleFrom": "Back Vents",
+    "throwTo": {
+      "x": 529,
+      "y": 608,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 525,
+      "y": 743,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [
+      {
+        "x": 476,
+        "y": 686,
+        "levels": [
+          null
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-close-from-outside-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_e7438e70a49d",
+    "videoUid": "nuke-smoke-zKQpJWn98w",
+    "slug": "secret-close-from-outside-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Close",
+    "titleFrom": "Outside T Spawn",
+    "throwTo": {
+      "x": 594,
+      "y": 887,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-t-roof-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_98e97a1aead6",
+    "videoUid": "nuke-smoke-uoJKDJyZyX",
+    "slug": "a-main-from-t-roof-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Main",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 559,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 458,
+      "y": 392,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-garage-from-outside-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_9ef43f155a6c",
+    "videoUid": "nuke-smoke-QF0xiuEV4h",
+    "slug": "outside-garage-from-outside-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Garage",
+    "titleFrom": "Outside T Spawn",
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 357,
+      "y": 647,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/trophy-from-ramp",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_40714b6784cf",
+    "videoUid": "nuke-smoke-2JmRiLmQdS",
+    "slug": "trophy-from-ramp",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Trophy",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 488,
+      "y": 357,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 578,
+      "y": 46,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/lockers-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_0303ced24771",
+    "videoUid": "nuke-smoke-ck29zmBBrh",
+    "slug": "lockers-from-under-silo",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Lockers",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 444,
+      "y": 874,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/secret-far-from-t-spawn-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_be3bc872dac3",
+    "videoUid": "nuke-smoke-MoplRcxNea",
+    "slug": "secret-far-from-t-spawn-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Secret Far",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-main-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_f047fe559704",
+    "videoUid": "nuke-smoke-jcmcyFHa9p",
+    "slug": "outside-main-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Main",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 607,
+      "y": 778,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 232,
+      "y": 588,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/front-garage-from-t-spawn",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_f903ebb3304d",
+    "videoUid": "nuke-smoke-UqQ4ZNd5Wl",
+    "slug": "front-garage-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Front Garage",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 634,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/top-main-from-t-spawn-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_eac2180d23c7",
+    "videoUid": "nuke-smoke-TEd89iP1CU",
+    "slug": "top-main-from-t-spawn-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Top Main",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 268,
+      "y": 560,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/outside-main-from-t-spawn-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_35cbefa9a2b2",
+    "videoUid": "nuke-smoke-zZPGIOTm49",
+    "slug": "outside-main-from-t-spawn-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Outside Main",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 607,
+      "y": 778,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 268,
+      "y": 560,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/front-garage-from-t-spawn-b",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_5fa8650c8e12",
+    "videoUid": "nuke-smoke-7wUdSDCEfa",
+    "slug": "front-garage-from-t-spawn-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Front Garage",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 634,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 268,
+      "y": 560,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/smokes/a-main-from-t-roof-c",
+    "categorySource": "https://csnades.gg/nuke",
+    "mapId": "nuke",
+    "sourceId": "nade_e63595612a98",
+    "videoUid": "nuke-smoke-0OhvBCnyNW",
+    "slug": "a-main-from-t-roof-c",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Main",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 559,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 435,
+      "y": 481,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/ramp-from-trophy",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_1ccc0e06edbb",
+    "videoUid": "nuke-flashbang-fmO2wSpha8",
+    "slug": "ramp-from-trophy",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Ramp",
+    "titleFrom": "Trophy",
+    "throwTo": {
+      "x": 524,
+      "y": 272,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 502,
+      "y": 393,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 480,
+        "y": 253,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/hut-from-lobby-a",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_f8579c6d0dc1",
+    "videoUid": "nuke-flashbang-76fv0beqvt",
+    "slug": "hut-from-lobby-a",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Hut",
+    "titleFrom": "Lobby",
+    "throwTo": {
+      "x": 528,
+      "y": 513,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 482,
+      "y": 522,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 508,
+        "y": 593,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/hut-from-lobby",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_d7332de761d7",
+    "videoUid": "nuke-flashbang-rBEiGe14xy",
+    "slug": "hut-from-lobby",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Hut",
+    "titleFrom": "Lobby",
+    "throwTo": {
+      "x": 528,
+      "y": 513,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 499,
+      "y": 598,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-heaven",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_cd33720c03ca",
+    "videoUid": "nuke-flashbang-mhpJ9kzQys",
+    "slug": "a-site-from-heaven",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "A Site",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 594,
+      "y": 399,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 630,
+      "y": 424,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/vent-from-tetris",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_c21aacdd5581",
+    "videoUid": "nuke-flashbang-q6kvJ9KSxD",
+    "slug": "vent-from-tetris",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "Vent",
+    "titleFrom": "Tetris",
+    "throwTo": {
+      "x": 530,
+      "y": 684,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 529,
+      "y": 620,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-main-from-a-main-roof",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_69811f3511b7",
+    "videoUid": "nuke-flashbang-yasa5t6dz9",
+    "slug": "a-main-from-a-main-roof",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "A Main",
+    "titleFrom": "A Main Roof",
+    "throwTo": {
+      "x": 599,
+      "y": 736,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 576,
+      "y": 736,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-t-roof-a",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_634d6d88e54b",
+    "videoUid": "nuke-flashbang-cho7PEwNEj",
+    "slug": "a-site-from-t-roof-a",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "A Site",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 570,
+      "y": 475,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 459,
+      "y": 485,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-t-roof-b",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_ad1dd40070b8",
+    "videoUid": "nuke-flashbang-YNl0B4UNhN",
+    "slug": "a-site-from-t-roof-b",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "A Site",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 570,
+      "y": 475,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 457,
+      "y": 403,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/t-red-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_1149d038bfd6",
+    "videoUid": "nuke-flashbang-9aDa27bn48",
+    "slug": "t-red-from-under-silo",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "T Red",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 520,
+      "y": 825,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 447,
+      "y": 814,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 476,
+        "y": 894,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-ct-spawn",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_fcdf81dfc775",
+    "videoUid": "nuke-flashbang-Os0GsIcoUa",
+    "slug": "a-site-from-ct-spawn",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "A Site",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 594,
+      "y": 399,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 727,
+      "y": 365,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/flashbangs/a-site-from-heaven-b",
+    "categorySource": "https://csnades.gg/nuke/flashbangs",
+    "mapId": "nuke",
+    "sourceId": "nade_073c6d922d55",
+    "videoUid": "nuke-flashbang-dj98tahEvd",
+    "slug": "a-site-from-heaven-b",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "A Site",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 594,
+      "y": 399,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 630,
+      "y": 424,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/top-hut-from-t-roof-a",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_c896583b5b84",
+    "videoUid": "nuke-molotov-qQ0bD2PJeG",
+    "slug": "top-hut-from-t-roof-a",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Top Hut",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 523,
+      "y": 572,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 462,
+      "y": 473,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/hut-from-heaven",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_b9eb33ea415a",
+    "videoUid": "nuke-molotov-IKl3rK97VJ",
+    "slug": "hut-from-heaven",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Hut",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 522,
+      "y": 537,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 645,
+      "y": 381,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/a-site-from-heaven",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_0512334c32af",
+    "videoUid": "nuke-molotov-4XGlm57IfU",
+    "slug": "a-site-from-heaven",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "A Site",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 568,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 655,
+      "y": 432,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 601,
+        "y": 371,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/heaven-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_8dd19d579003",
+    "videoUid": "nuke-molotov-mUn1lJ2406",
+    "slug": "heaven-from-t-roof",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 627,
+      "y": 402,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 457,
+      "y": 547,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/a-site-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_81577034ac34",
+    "videoUid": "nuke-molotov-WYZxVxrfE4",
+    "slug": "a-site-from-t-roof",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "A Site",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 568,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 452,
+      "y": 478,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/rafters-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_fc5d6545349b",
+    "videoUid": "nuke-molotov-l3pi8yukbS",
+    "slug": "rafters-from-t-roof",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Rafters",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 513,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 461,
+      "y": 494,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/dark-from-b-ramp",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_7afb0af7c9e8",
+    "videoUid": "nuke-molotov-UEnv8DRtZ9",
+    "slug": "dark-from-b-ramp",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Dark",
+    "titleFrom": "B Ramp",
+    "throwTo": {
+      "x": 598,
+      "y": 392,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 593,
+      "y": 273,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/squeaky-from-heaven",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_ec0662faa89f",
+    "videoUid": "nuke-molotov-HW6ILrNXaY",
+    "slug": "squeaky-from-heaven",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Squeaky",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 522,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 616,
+      "y": 418,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/hut-roof-from-silo",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_c6b98f8239dc",
+    "videoUid": "nuke-molotov-eHZ28JYnl1",
+    "slug": "hut-roof-from-silo",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Hut Roof",
+    "titleFrom": "Silo",
+    "throwTo": {
+      "x": 523,
+      "y": 572,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 455,
+      "y": 692,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/silo-from-ct-red",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_479e8063ae82",
+    "videoUid": "nuke-molotov-Q1ps8nB2qg",
+    "slug": "silo-from-ct-red",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Silo",
+    "titleFrom": "CT Red",
+    "throwTo": {
+      "x": 496,
+      "y": 731,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 681,
+      "y": 748,
+      "levels": [
+        null
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/behind-t-red-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_483e3e550192",
+    "videoUid": "nuke-molotov-l3AciW5qd5",
+    "slug": "behind-t-red-from-under-silo",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Behind T Red",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 590,
+      "y": 879,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 420,
+      "y": 807,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/outside-from-outside-ct",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_89f737180641",
+    "videoUid": "nuke-molotov-Aox7KfuOVC",
+    "slug": "outside-from-outside-ct",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Outside",
+    "titleFrom": "Outside CT",
+    "throwTo": {
+      "x": 498,
+      "y": 881,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 727,
+      "y": 566,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/top-a-main-from-ct-red",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_bcc50b702c5c",
+    "videoUid": "nuke-molotov-OCXgLDHnzd",
+    "slug": "top-a-main-from-ct-red",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Top A Main",
+    "titleFrom": "CT Red",
+    "throwTo": {
+      "x": 545,
+      "y": 739,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 688,
+      "y": 686,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/back-vent-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_2d7d2f341f97",
+    "videoUid": "nuke-molotov-eIeOPm4vbf",
+    "slug": "back-vent-from-t-roof",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Back Vent",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 599,
+      "y": 672,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 423,
+      "y": 494,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/top-hut-from-t-roof",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_cc72ce6d1200",
+    "videoUid": "nuke-molotov-IcIyXVJRjT",
+    "slug": "top-hut-from-t-roof",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Top Hut",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 523,
+      "y": 572,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 393,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/secret-entry-from-mini",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_2105856e58fa",
+    "videoUid": "nuke-molotov-Pv1osDbqut",
+    "slug": "secret-entry-from-mini",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Secret Entry",
+    "titleFrom": "Mini",
+    "throwTo": {
+      "x": 644,
+      "y": 930,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 583,
+      "y": 711,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/a-site-from-t-roof-b",
+    "categorySource": "https://csnades.gg/nuke/molotovs",
+    "mapId": "nuke",
+    "sourceId": "nade_4206da85fbbd",
+    "videoUid": "nuke-molotov-xybNGm58eF",
+    "slug": "a-site-from-t-roof-b",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "A Site",
+    "titleFrom": "T Roof",
+    "throwTo": {
+      "x": 568,
+      "y": 441,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 446,
+      "y": 436,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/silo-from-a-main",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "nade_e9c19735ec1a",
+    "videoUid": "nuke-he-xpGvbR2s4g",
+    "slug": "silo-from-a-main",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Silo",
+    "titleFrom": "A Main",
+    "throwTo": {
+      "x": 496,
+      "y": 721,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 614,
+      "y": 713,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/dark-from-b-ramp",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "nade_20cdfe70ab82",
+    "videoUid": "nuke-he-9bXQnVvC8s",
+    "slug": "dark-from-b-ramp",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Dark",
+    "titleFrom": "B Ramp",
+    "throwTo": {
+      "x": 591,
+      "y": 388,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 592,
+      "y": 272,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-a",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "nade_057f428bf738",
+    "videoUid": "nuke-he-epK6U2SmEl",
+    "slug": "trophy-from-ramp-a",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Trophy",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 490,
+      "y": 375,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 576,
+      "y": 292,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 480,
+        "y": 257,
+        "levels": [
+          null
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-b",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "nade_f5cf2ebba98a",
+    "videoUid": "nuke-he-PRtJ6ciQkq",
+    "slug": "trophy-from-ramp-b",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Trophy",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 490,
+      "y": 375,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 557,
+      "y": 117,
+      "levels": [
+        null
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/t-red-from-under-silo",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "nade_5b466e16a0da",
+    "videoUid": "nuke-he-ixVQss1Yyg",
+    "slug": "t-red-from-under-silo",
+    "type": "he",
+    "team": "t",
+    "titleTo": "T Red",
+    "titleFrom": "Under Silo",
+    "throwTo": {
+      "x": 588,
+      "y": 883,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 445,
+      "y": 805,
+      "levels": [
+        null
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/squeaky-door-from-lobby",
+    "categorySource": "https://csnades.gg/nuke/hegrenades",
+    "mapId": "nuke",
+    "sourceId": "nade_db1b0ccd48ae",
+    "videoUid": "nuke-he-5nJ68A6AsF",
+    "slug": "squeaky-door-from-lobby",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Squeaky Door",
+    "titleFrom": "Lobby",
+    "throwTo": {
+      "x": 498,
+      "y": 635,
+      "levels": [
+        null
+      ]
+    },
+    "throwFrom": {
+      "x": 407,
+      "y": 553,
+      "levels": [
+        null
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_c7c09705ef.webp",
+      "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+      "https://assets.csnades.gg/nuke_simple_radar_lower_be2e03de3b.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/ebox-from-b-stairs",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_039c1f367e2b",
+    "videoUid": "vertigo-smoke-kLpQfwtnrZ",
+    "slug": "ebox-from-b-stairs",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "EBox",
+    "titleFrom": "B Stairs",
+    "throwTo": {
+      "x": 314,
+      "y": 222,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 131,
+      "y": 463,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-site-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_4c766d556aa3",
+    "videoUid": "vertigo-smoke-LZ7w8nAhRU",
+    "slug": "a-site-from-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Site",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 846,
+      "y": 549,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 734,
+      "y": 754,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-ct-mid",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_b86c69fe061f",
+    "videoUid": "vertigo-smoke-u2AcCDRYoM",
+    "slug": "a-ramp-from-ct-mid",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "A Ramp",
+    "titleFrom": "CT Mid",
+    "throwTo": {
+      "x": 690,
+      "y": 581,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 649,
+      "y": 314,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 678,
+        "y": 906,
+        "levels": [
+          1,
+          2
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/top-a-ramp-from-heaven",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_7d10b4378535",
+    "videoUid": "vertigo-smoke-T7wlpObMtB",
+    "slug": "top-a-ramp-from-heaven",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Top A Ramp",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 846,
+      "y": 786,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 898,
+      "y": 337,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/tarp-from-a-site",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_774ebb13c3da",
+    "videoUid": "vertigo-smoke-qMX7mv9E5v",
+    "slug": "tarp-from-a-site",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Tarp",
+    "titleFrom": "A Site",
+    "throwTo": {
+      "x": 623,
+      "y": 738,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 797,
+      "y": 582,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-site-right-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_507a8a5450ee",
+    "videoUid": "vertigo-smoke-cOpgHeMF27",
+    "slug": "a-site-right-from-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Site Right",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 898,
+      "y": 622,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 735,
+      "y": 784,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-site-left-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_8a2ea0cad206",
+    "videoUid": "vertigo-smoke-ynNaNJ7Ga9",
+    "slug": "a-site-left-from-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Site Left",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 806,
+      "y": 574,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 734,
+      "y": 754,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [
+      {
+        "x": 611,
+        "y": 676,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/crane-from-a-site",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_ad45c58f0d68",
+    "videoUid": "vertigo-smoke-GtVlFr6AV1",
+    "slug": "crane-from-a-site",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Crane",
+    "titleFrom": "A Site",
+    "throwTo": {
+      "x": 835,
+      "y": 755,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 951,
+      "y": 438,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-entry-from-tarp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_b681bac625c6",
+    "videoUid": "vertigo-smoke-EkYjo3n3Dj",
+    "slug": "a-entry-from-tarp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Entry",
+    "titleFrom": "Tarp",
+    "throwTo": {
+      "x": 778,
+      "y": 493,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 574,
+      "y": 814,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/top-mid-from-mid",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_01c00120d332",
+    "videoUid": "vertigo-smoke-MdynVcVs2e",
+    "slug": "top-mid-from-mid",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Top Mid",
+    "titleFrom": "Mid",
+    "throwTo": {
+      "x": 549,
+      "y": 344,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 374,
+      "y": 430,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 243,
+        "y": 406,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/headshot-from-a-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_18d46bc3869b",
+    "videoUid": "vertigo-smoke-fgahXx0KyV",
+    "slug": "headshot-from-a-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "A Ramp",
+    "throwTo": {
+      "x": 907,
+      "y": 547,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 646,
+      "y": 712,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/b-connector-from-mid",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_f801cb3b24fe",
+    "videoUid": "vertigo-smoke-IeKwajySMF",
+    "slug": "b-connector-from-mid",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "B Connector",
+    "titleFrom": "Mid",
+    "throwTo": {
+      "x": 449,
+      "y": 225,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 271,
+      "y": 500,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/ct-from-mid",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_5e2c7f676057",
+    "videoUid": "vertigo-smoke-i7KNkUQ8kz",
+    "slug": "ct-from-mid",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "CT",
+    "titleFrom": "Mid",
+    "throwTo": {
+      "x": 577,
+      "y": 294,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 271,
+      "y": 433,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-conn-from-mid",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_e9716c1f1244",
+    "videoUid": "vertigo-smoke-s2EG2EtZWU",
+    "slug": "a-conn-from-mid",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Conn",
+    "titleFrom": "Mid",
+    "throwTo": {
+      "x": 621,
+      "y": 400,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 274,
+      "y": 473,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 515,
+        "y": 305,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/mid-from-ct",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_0830150729d1",
+    "videoUid": "vertigo-smoke-ECkJMakj5x",
+    "slug": "mid-from-ct",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Mid",
+    "titleFrom": "CT",
+    "throwTo": {
+      "x": 388,
+      "y": 468,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 562,
+      "y": 304,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 242,
+        "y": 408,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/b-main-from-ct-spawn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_246021e4469e",
+    "videoUid": "vertigo-smoke-oUEmuLqsn5",
+    "slug": "b-main-from-ct-spawn",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "B Main",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 139,
+      "y": 262,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 522,
+      "y": 90,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/sidewalk-from-t-spawn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_14646dd3ec22",
+    "videoUid": "vertigo-smoke-27bmxMi0pS",
+    "slug": "sidewalk-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Sidewalk",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 585,
+      "y": 792,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 466,
+      "y": 940,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/ct-spawn-from-stairs",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_3eb4505de9dd",
+    "videoUid": "vertigo-smoke-cdq3ldLxa3",
+    "slug": "ct-spawn-from-stairs",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "CT Spawn",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 412,
+      "y": 173,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 89,
+      "y": 510,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/snipers-nest-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_58331241cab9",
+    "videoUid": "vertigo-smoke-p4Sgmzaaw1",
+    "slug": "snipers-nest-from-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Sniper's Nest",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 915,
+      "y": 401,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 657,
+      "y": 861,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/snipers-nest-from-tarp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_ea4236c47ea4",
+    "videoUid": "vertigo-smoke-eya1wSKuCZ",
+    "slug": "snipers-nest-from-tarp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Sniper's Nest",
+    "titleFrom": "Tarp",
+    "throwTo": {
+      "x": 915,
+      "y": 401,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 574,
+      "y": 814,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/b-cross-from-stairs",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_d42d1beef17a",
+    "videoUid": "vertigo-smoke-PQ1pgZ84Kb",
+    "slug": "b-cross-from-stairs",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "B Cross",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 172,
+      "y": 219,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 163,
+      "y": 513,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [
+      {
+        "x": 147,
+        "y": 206,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/bottom-b-main-from-b-site",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_aa654db665b7",
+    "videoUid": "vertigo-smoke-0cna4sznKf",
+    "slug": "bottom-b-main-from-b-site",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Bottom B Main",
+    "titleFrom": "B Site",
+    "throwTo": {
+      "x": 224,
+      "y": 417,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 211,
+      "y": 156,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 62,
+        "y": 309,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/generator-left-from-stairs-b",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_746e2b4399d5",
+    "videoUid": "vertigo-smoke-7i9hAxSqdw",
+    "slug": "generator-left-from-stairs-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Generator Left",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 341,
+      "y": 107,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 75,
+      "y": 471,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_b521e8a590cb",
+    "videoUid": "vertigo-smoke-OCWUxlteIP",
+    "slug": "a-ramp-from-a-conn",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "A Ramp",
+    "titleFrom": "A Conn",
+    "throwTo": {
+      "x": 690,
+      "y": 581,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 645,
+      "y": 404,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 679,
+        "y": 905,
+        "levels": [
+          1,
+          2
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/b-cross-from-t-spawn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_7c18a6f5a8a6",
+    "videoUid": "vertigo-smoke-0rGQhkDC5z",
+    "slug": "b-cross-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "B Cross",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 172,
+      "y": 219,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 147,
+      "y": 612,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/generator-left-from-t-spawn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_2a0301c5ded5",
+    "videoUid": "vertigo-smoke-a4G5X7OX8f",
+    "slug": "generator-left-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Generator Left",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 341,
+      "y": 107,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 302,
+      "y": 799,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/generator-right-from-t-spawn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_491be6fc978c",
+    "videoUid": "vertigo-smoke-d4Fi8e5fMw",
+    "slug": "generator-right-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Generator Right",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 314,
+      "y": 222,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 292,
+      "y": 847,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/generator-left-from-mid-iron",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_cd8e7359aa77",
+    "videoUid": "vertigo-smoke-6uslwKvIeA",
+    "slug": "generator-left-from-mid-iron",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Generator Left",
+    "titleFrom": "Mid Iron",
+    "throwTo": {
+      "x": 341,
+      "y": 107,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 378,
+      "y": 509,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/b-headshot-from-stairs",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_7ed99d07b2c4",
+    "videoUid": "vertigo-smoke-eFNgTkYBaM",
+    "slug": "b-headshot-from-stairs",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "B Headshot",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 228,
+      "y": 148,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 75,
+      "y": 471,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/generator-left-from-stairs",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_a86e70a73fe6",
+    "videoUid": "vertigo-smoke-dYZc5WmSg0",
+    "slug": "generator-left-from-stairs",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Generator Left",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 341,
+      "y": 107,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 179,
+      "y": 470,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/a-site-from-t-spawn",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_0789d5433418",
+    "videoUid": "vertigo-smoke-TEYNbRIHID",
+    "slug": "a-site-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "A Site",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 846,
+      "y": 549,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 239,
+      "y": 850,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/b-main-from-ct-spawn-b",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_a6b4cc7bbe28",
+    "videoUid": "vertigo-smoke-F4Byo6FWod",
+    "slug": "b-main-from-ct-spawn-b",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "B Main",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 139,
+      "y": 262,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 598,
+      "y": 86,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/elevator-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_3d7f3bf22501",
+    "videoUid": "vertigo-smoke-9hmj4yj4R3",
+    "slug": "elevator-from-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Elevator",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 778,
+      "y": 493,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 744,
+      "y": 863,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [
+      {
+        "x": 952,
+        "y": 659,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/heaven-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_965086adaccc",
+    "videoUid": "vertigo-smoke-5EXvkuPydU",
+    "slug": "heaven-from-ramp",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 876,
+      "y": 413,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 695,
+      "y": 910,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/ramp-lurk-from-bridge",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_5ebced794aab",
+    "videoUid": "vertigo-smoke-7aaSJs7qds",
+    "slug": "ramp-lurk-from-bridge",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Ramp Lurk",
+    "titleFrom": "Bridge",
+    "throwTo": {
+      "x": 711,
+      "y": 769,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 586,
+      "y": 468,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/front-elevator-from-ramp-a",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_a8ca85684b3a",
+    "videoUid": "vertigo-smoke-tpGDzrmtUP",
+    "slug": "front-elevator-from-ramp-a",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Front Elevator",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 650,
+      "y": 571,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 657,
+      "y": 861,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/front-elevator-from-ramp-b",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_428677f3e62f",
+    "videoUid": "vertigo-smoke-MPtQAQhFSg",
+    "slug": "front-elevator-from-ramp-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Front Elevator",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 650,
+      "y": 571,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 734,
+      "y": 754,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/heaven-from-ramp-b",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_cd71a95c6f59",
+    "videoUid": "vertigo-smoke-p7fOlTmomB",
+    "slug": "heaven-from-ramp-b",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 876,
+      "y": 413,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 657,
+      "y": 861,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/smokes/bottom-ramp-from-elevator",
+    "categorySource": "https://csnades.gg/vertigo",
+    "mapId": "vertigo",
+    "sourceId": "nade_7b7fc4eefb01",
+    "videoUid": "vertigo-smoke-Hys7uCz0Qx",
+    "slug": "bottom-ramp-from-elevator",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Bottom Ramp",
+    "titleFrom": "Elevator",
+    "throwTo": {
+      "x": 690,
+      "y": 581,
+      "levels": [
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 636,
+      "y": 444,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 679,
+        "y": 905,
+        "levels": [
+          1,
+          2
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/mid-from-ct-mid",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_ceb030fa27b1",
+    "videoUid": "vertigo-flashbang-MXoTsiA6QN",
+    "slug": "mid-from-ct-mid",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "Mid",
+    "titleFrom": "CT Mid",
+    "throwTo": {
+      "x": 302,
+      "y": 354,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 654,
+      "y": 312,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/sidewalk-from-sidewalk",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_3afeb29f5bd1",
+    "videoUid": "vertigo-flashbang-3scH1xEJR3",
+    "slug": "sidewalk-from-sidewalk",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Sidewalk",
+    "titleFrom": "Sidewalk",
+    "throwTo": {
+      "x": 586,
+      "y": 626,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 572,
+      "y": 769,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/a-short-from-sidewalk",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_4de3d5e6bff2",
+    "videoUid": "vertigo-flashbang-VdQpF9Xvip",
+    "slug": "a-short-from-sidewalk",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "A Short",
+    "titleFrom": "Sidewalk",
+    "throwTo": {
+      "x": 678,
+      "y": 644,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 602,
+      "y": 815,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/mid-from-t-mid",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_df4999df574b",
+    "videoUid": "vertigo-flashbang-TPzypIlAoj",
+    "slug": "mid-from-t-mid",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Mid",
+    "titleFrom": "T Mid",
+    "throwTo": {
+      "x": 305,
+      "y": 483,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 305,
+      "y": 597,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/mid-from-iron",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_d081874aca8f",
+    "videoUid": "vertigo-flashbang-SW2O8pZHMP",
+    "slug": "mid-from-iron",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Mid",
+    "titleFrom": "Iron",
+    "throwTo": {
+      "x": 392,
+      "y": 351,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 272,
+      "y": 495,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/b-site-from-under-t-mid",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_bcbde8206392",
+    "videoUid": "vertigo-flashbang-I9HvO0wJoh",
+    "slug": "b-site-from-under-t-mid",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "B Site",
+    "titleFrom": "Under T Mid",
+    "throwTo": {
+      "x": 40,
+      "y": 445,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 198,
+      "y": 607,
+      "levels": [
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/sidewalk-from-headshot",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_421b0ae564ca",
+    "videoUid": "vertigo-flashbang-UZ1rNN9HqV",
+    "slug": "sidewalk-from-headshot",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "Sidewalk",
+    "titleFrom": "Headshot",
+    "throwTo": {
+      "x": 586,
+      "y": 626,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 946,
+      "y": 554,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/a-site-from-heaven",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_2e3867100ad6",
+    "videoUid": "vertigo-flashbang-rchsSQuW8Z",
+    "slug": "a-site-from-heaven",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "A Site",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 809,
+      "y": 582,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 895,
+      "y": 340,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/b-site-from-stairs",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_bb0c7602a891",
+    "videoUid": "vertigo-flashbang-r5fW7mzj28",
+    "slug": "b-site-from-stairs",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "B Site",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 208,
+      "y": 194,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 173,
+      "y": 466,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/whitebox-from-stairs",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_69d5c8963d3b",
+    "videoUid": "vertigo-flashbang-XvCsfCDHqj",
+    "slug": "whitebox-from-stairs",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "Whitebox",
+    "titleFrom": "Stairs",
+    "throwTo": {
+      "x": 62,
+      "y": 195,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 179,
+      "y": 470,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/flashbangs/t-mid-from-mid-box",
+    "categorySource": "https://csnades.gg/vertigo/flashbangs",
+    "mapId": "vertigo",
+    "sourceId": "nade_df1b7444d450",
+    "videoUid": "vertigo-flashbang-bWA6zswYai",
+    "slug": "t-mid-from-mid-box",
+    "type": "flashbang",
+    "team": "ct",
+    "titleTo": "T Mid",
+    "titleFrom": "Mid Box",
+    "throwTo": {
+      "x": 332,
+      "y": 564,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 337,
+      "y": 386,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/triple-from-b-stairs",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_f2f42b1422c8",
+    "videoUid": "vertigo-molotov-Xqoq5mQWUs",
+    "slug": "triple-from-b-stairs",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Triple",
+    "titleFrom": "B Stairs",
+    "throwTo": {
+      "x": 203,
+      "y": 85,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 129,
+      "y": 457,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/default-a-from-heaven",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_dd27bf4725fa",
+    "videoUid": "vertigo-molotov-MKrcPIM9ev",
+    "slug": "default-a-from-heaven",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Default A",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 860,
+      "y": 656,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 898,
+      "y": 338,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/default-b-from-connector",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_0eb8a93dfcd2",
+    "videoUid": "vertigo-molotov-5BeVdjmj4Q",
+    "slug": "default-b-from-connector",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Default B",
+    "titleFrom": "Connector",
+    "throwTo": {
+      "x": 162,
+      "y": 145,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 483,
+      "y": 234,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/default-b-from-ct-spawn",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_4a410e049770",
+    "videoUid": "vertigo-molotov-gF8IVsW8sJ",
+    "slug": "default-b-from-ct-spawn",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Default B",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 211,
+      "y": 123,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 600,
+      "y": 90,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/headshot-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_df6637c89d9a",
+    "videoUid": "vertigo-molotov-567681fcB0",
+    "slug": "headshot-from-ramp",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 931,
+      "y": 540,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 749,
+      "y": 864,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/connector-from-mid-iron",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_48122f366c8c",
+    "videoUid": "vertigo-molotov-LBvUUSiugV",
+    "slug": "connector-from-mid-iron",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Connector",
+    "titleFrom": "Mid Iron",
+    "throwTo": {
+      "x": 452,
+      "y": 242,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 288,
+      "y": 514,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/t-mid-from-sandbags",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_5112d12e7f03",
+    "videoUid": "vertigo-molotov-5TooLtgC27",
+    "slug": "t-mid-from-sandbags",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "T Mid",
+    "titleFrom": "Sandbags",
+    "throwTo": {
+      "x": 312,
+      "y": 562,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 411,
+      "y": 271,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/default-a-from-ramp",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_bd80d233dafe",
+    "videoUid": "vertigo-molotov-h0XTM4tXUi",
+    "slug": "default-a-from-ramp",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Default A",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 860,
+      "y": 656,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 641,
+      "y": 841,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/pillar-from-b-stairs",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_e895ff0e1fc5",
+    "videoUid": "vertigo-molotov-MhXEFJqHF9",
+    "slug": "pillar-from-b-stairs",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Pillar",
+    "titleFrom": "B Stairs",
+    "throwTo": {
+      "x": 77,
+      "y": 76,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 179,
+      "y": 470,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/headshot-from-sidewalk",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_946530b884a8",
+    "videoUid": "vertigo-molotov-G3sb93YDAe",
+    "slug": "headshot-from-sidewalk",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "Sidewalk",
+    "throwTo": {
+      "x": 931,
+      "y": 540,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 574,
+      "y": 809,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/headshot-from-area-51",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_90a886025d86",
+    "videoUid": "vertigo-molotov-iZdnWXJ0b3",
+    "slug": "headshot-from-area-51",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "Area 51",
+    "throwTo": {
+      "x": 931,
+      "y": 540,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 603,
+      "y": 900,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/wood-from-b-stairs",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_720d0b1436e1",
+    "videoUid": "vertigo-molotov-xtTrNX5b7Q",
+    "slug": "wood-from-b-stairs",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Wood",
+    "titleFrom": "B Stairs",
+    "throwTo": {
+      "x": 171,
+      "y": 317,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 168,
+      "y": 441,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/headshot-from-ramp-b",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_038037dd55cd",
+    "videoUid": "vertigo-molotov-SJ1BAyNw3I",
+    "slug": "headshot-from-ramp-b",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "Ramp",
+    "throwTo": {
+      "x": 931,
+      "y": 540,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 695,
+      "y": 910,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/ramp-from-crane",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_4bffab0ce20c",
+    "videoUid": "vertigo-molotov-NxSHrm3gRj",
+    "slug": "ramp-from-crane",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Ramp",
+    "titleFrom": "Crane",
+    "throwTo": {
+      "x": 691,
+      "y": 722,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 833,
+      "y": 705,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/molotovs/sidewalk-from-ladder",
+    "categorySource": "https://csnades.gg/vertigo/molotovs",
+    "mapId": "vertigo",
+    "sourceId": "nade_54d35aaf7c6c",
+    "videoUid": "vertigo-molotov-FaEdGwC7yV",
+    "slug": "sidewalk-from-ladder",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Sidewalk",
+    "titleFrom": "Ladder",
+    "throwTo": {
+      "x": 608,
+      "y": 800,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 544,
+      "y": 668,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 544,
+        "y": 668,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/default-b-from-generator",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_e8115e379abb",
+    "videoUid": "vertigo-he-KBn6S5cuhX",
+    "slug": "default-b-from-generator",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Default B",
+    "titleFrom": "Generator",
+    "throwTo": {
+      "x": 182,
+      "y": 130,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 351,
+      "y": 172,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 269,
+        "y": 249,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/t-mid-from-boost-box",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_465c07b877bd",
+    "videoUid": "vertigo-he-OoyKIFKDyG",
+    "slug": "t-mid-from-boost-box",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "T Mid",
+    "titleFrom": "Boost Box",
+    "throwTo": {
+      "x": 306,
+      "y": 562,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 352,
+      "y": 367,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/default-a-from-headshot",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_29309d909de4",
+    "videoUid": "vertigo-he-RS5XdyGLLx",
+    "slug": "default-a-from-headshot",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Default A",
+    "titleFrom": "Headshot",
+    "throwTo": {
+      "x": 852,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 946,
+      "y": 534,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/whitebox-from-under-stairs",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_78467a8db5a2",
+    "videoUid": "vertigo-he-6YAIMfOsVh",
+    "slug": "whitebox-from-under-stairs",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Whitebox",
+    "titleFrom": "Under Stairs",
+    "throwTo": {
+      "x": 76,
+      "y": 196,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 76,
+      "y": 420,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/default-a-from-backsite",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_19de637ed7bb",
+    "videoUid": "vertigo-he-eAdWtexeB1",
+    "slug": "default-a-from-backsite",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Default A",
+    "titleFrom": "Backsite",
+    "throwTo": {
+      "x": 852,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 897,
+      "y": 338,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/sandbags-from-crane",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_47b8c72c0385",
+    "videoUid": "vertigo-he-Rq02neqsMm",
+    "slug": "sandbags-from-crane",
+    "type": "he",
+    "team": "ct",
+    "titleTo": "Sandbags",
+    "titleFrom": "Crane",
+    "throwTo": {
+      "x": 719,
+      "y": 744,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 822,
+      "y": 694,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  },
+  {
+    "source": "https://csnades.gg/vertigo/hegrenades/wood-from-b-stairs",
+    "categorySource": "https://csnades.gg/vertigo/hegrenades",
+    "mapId": "vertigo",
+    "sourceId": "nade_ecfb7a1ad699",
+    "videoUid": "vertigo-he-cupHPhyqzo",
+    "slug": "wood-from-b-stairs",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Wood",
+    "titleFrom": "B Stairs",
+    "throwTo": {
+      "x": 165,
+      "y": 311,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "throwFrom": {
+      "x": 168,
+      "y": 441,
+      "levels": [
+        1,
+        2
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+      "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_671412e42a.webp",
+      "https://assets.csnades.gg/vertigo_simple_radar_2_77ab7bc345.webp"
+    ]
+  }
+]

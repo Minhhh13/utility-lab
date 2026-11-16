@@ -7,6 +7,7 @@ import {
   parseUtilityVideo,
   safeSource,
   utilityPhotos,
+  validatePhotoEmbed,
   validateUtility,
 } from "../src/utility-data.ts";
 
@@ -14,6 +15,81 @@ const VIDEO_ID = "MJ-dtTYTUS8";
 const WATCH_URL = `https://www.youtube.com/watch?v=${VIDEO_ID}`;
 const PIXEL =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jS1sAAAAASUVORK5CYII=";
+
+test("licensed photo provenance survives export validation and source metadata cannot execute", () => {
+  const photo = {
+    image: "/lineup-media/compendium/mirage-t-palace-alley-a-smokes.webp",
+    caption: "Standing position and aim",
+    kind: "aim",
+    creator: "Original author",
+    source: "https://creator.example/original",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+  };
+  const saved = validateUtility(
+    lineup({
+      photos: [photo],
+      markerBasis: "callout-area",
+      showMarker: false,
+      site: "A",
+      tags: ["execute"],
+    }),
+  );
+  assert.ok(saved);
+  assert.deepEqual(saved.photos, [photo]);
+  assert.equal(saved.showMarker, false);
+  assert.equal(saved.markerBasis, "callout-area");
+  for (const overrides of [
+    { kind: "fake-position" },
+    { licenseUrl: "javascript:alert(1)" },
+    { source: "https://user:pass@creator.example/original" },
+    { capturedAt: "x".repeat(121) },
+  ])
+    assert.equal(
+      validateUtility(lineup({ photos: [{ ...photo, ...overrides }] })),
+      null,
+    );
+  assert.equal(
+    validateUtility(lineup({ markerBasis: "measured-impact" })),
+    null,
+  );
+  assert.equal(
+    validateUtility(
+      lineup({
+        photos: [{ ...photo, image: "/lineup-media/../../private.png" }],
+      }),
+    ),
+    null,
+  );
+});
+
+test("hosted photo guides only accept the original provider and exact corresponding post", () => {
+  const path = "/r/GlobalOffensive/comments/1b20abr/cs2_inferno_ct_smoke/";
+  const embed = {
+    provider: "reddit",
+    postUrl: `https://www.reddit.com${path}`,
+    embedUrl: `https://embed.reddit.com${path}?embed=true`,
+    height: 500,
+  };
+  assert.deepEqual(validatePhotoEmbed(embed), embed);
+  assert.deepEqual(
+    validateUtility(lineup({ photoEmbed: embed }))?.photoEmbed,
+    embed,
+  );
+  for (const overrides of [
+    { embedUrl: "https://evil.example/embed" },
+    { embedUrl: `https://embed.reddit.com.attacker.example${path}` },
+    {
+      embedUrl:
+        "https://embed.reddit.com/r/GlobalOffensive/comments/other/post/",
+    },
+    { postUrl: `http://reddit.com${path}` },
+    { postUrl: `https://name:secret@reddit.com${path}` },
+    { height: 5001 },
+    { provider: "html" },
+  ])
+    assert.equal(validatePhotoEmbed({ ...embed, ...overrides }), null);
+});
 
 function lineup(overrides: Record<string, unknown> = {}) {
   return {

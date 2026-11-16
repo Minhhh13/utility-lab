@@ -1,0 +1,1926 @@
+[
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-ct-spawn-0fc1",
+    "mapId": "nuke",
+    "sourceId": "8d0898d3-2104-46c6-8264-44c64c6dd582",
+    "from": "CT Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/a85337b0-b433-4c56-8a42-bc4282575d34.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-heaven-00bf",
+    "mapId": "nuke",
+    "sourceId": "55497d6a-bac0-4b4f-bd6a-ac8f5d991c73",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/ebd75574-cdda-4cf4-b443-ec933b2a076e.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-silo-cccc",
+    "mapId": "nuke",
+    "sourceId": "b86be991-55f8-4bb9-8a00-53524008a134",
+    "from": "Silo",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c4c2edee-947e-4699-83c5-70ed51b4163a.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-t-roof-9f65",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/376408ca-99a2-4145-9919-17a3606ffa8a.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/hut-from-lobby-9ec9",
+    "mapId": "nuke",
+    "sourceId": "d47c6e8a-1ea9-4a0a-8f07-e0722db310c2",
+    "from": "Lobby",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/fa0ca5dd-e925-49f7-9b9e-1534950be353.webp",
+    "publishedSourceHeight": -415.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/lobby-from-rafters-3385",
+    "mapId": "nuke",
+    "sourceId": "8b2b75ba-4487-4241-a1a9-2f630c34b106",
+    "from": "Rafters",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/f0a76ccf-e291-4644-a291-26de466b79cf.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/main-from-garage-f56a",
+    "mapId": "nuke",
+    "sourceId": "990b22d6-3192-4c66-a89a-d87bdd78c266",
+    "from": "Garage",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/58f5410a-2d32-4bcf-adba-c0bf8ba1bf8e.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/squeaky-from-heaven-a6f8",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/705f0da0-47d3-44ee-b03b-b32306c2562a.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/trophy-from-ramp-5ab6",
+    "mapId": "nuke",
+    "sourceId": "2e0b10f1-798e-42df-a059-17608e98fd15",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c552a2b4-8f61-4b51-b7c5-74e588f7963f.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/a-site-from-t-roof-c400",
+    "mapId": "nuke",
+    "sourceId": "c9338700-639d-497e-b242-e08f8711222c",
+    "from": "T-Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/acb387ac-34d5-46a6-beb1-800ba2beac27.webp",
+    "publishedSourceHeight": -108.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/hut-from-a-site-264a",
+    "mapId": "nuke",
+    "sourceId": "e2c6545c-2090-494f-8aa8-c94015169c28",
+    "from": "A Site",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/7bb9bfdb-16b4-4f12-bf5c-586d356b0e95.webp",
+    "publishedSourceHeight": -143.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/hut-from-t-roof-70d8",
+    "mapId": "nuke",
+    "sourceId": "c9338700-639d-497e-b242-e08f8711222c",
+    "from": "T-Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/0afe6ab1-7f55-4d39-8f75-337b561bffb9.webp",
+    "publishedSourceHeight": 41.87125,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/main-from-garage-92b7",
+    "mapId": "nuke",
+    "sourceId": "990b22d6-3192-4c66-a89a-d87bdd78c266",
+    "from": "Garage",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/24b5c53d-1731-49d7-ad6c-f368745104cf.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/new-end-from-ramp-9e71",
+    "mapId": "nuke",
+    "sourceId": "152f614e-1f8a-4398-81de-9c730850cb5f",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/78804e50-e744-462c-8564-1ed63317eb9d.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/silo-from-outside-main-af81",
+    "mapId": "nuke",
+    "sourceId": "598e4f9c-ac30-4386-b747-bb17c2b5f945",
+    "from": "Outside Main",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/556811ee-4654-4148-92ba-fc57953b167d.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/silo-from-rafters-7b2f",
+    "mapId": "nuke",
+    "sourceId": "ba2ca819-579a-440e-ac87-af1292a19820",
+    "from": "Rafters",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/268bfae7-f69c-4105-b6ff-a6910b6a8401.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/squeaky-from-a-site-73dc",
+    "mapId": "nuke",
+    "sourceId": "e2c6545c-2090-494f-8aa8-c94015169c28",
+    "from": "A Site",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/d80b7ee4-d6f0-43ab-8724-b2e1dee23344.webp",
+    "publishedSourceHeight": -143.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/grenades/squeaky-from-lobby-0f88",
+    "mapId": "nuke",
+    "sourceId": "90497a8e-9861-44c1-b565-4e802d0d4488",
+    "from": "Lobby",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/b20b45d2-28ed-40c5-b284-e8b3ad1c8a6d.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/2nd-vent-from-t-roof-43d0",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/a8c6a44e-7cff-47ee-aae8-2c5046d2283f.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/a-site-from-t-roof-19a5",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/06e4e43c-1a8e-46db-a76e-7b1c4f5fcc2a.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/a-site-from-t-roof-d73e",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/726d1906-4d1c-4441-97b1-05bcb51c403f.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/heaven-from-silo-bfc0",
+    "mapId": "nuke",
+    "sourceId": "b86be991-55f8-4bb9-8a00-53524008a134",
+    "from": "Silo",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c2bf2f38-bc55-4cca-8f29-037dc3c55d7a.webp",
+    "publishedSourceHeight": 19.115723,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/heaven-from-t-roof-589a",
+    "mapId": "nuke",
+    "sourceId": "c9338700-639d-497e-b242-e08f8711222c",
+    "from": "T-Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/bfa25301-899c-45a0-bc13-fbeef60aab4e.webp",
+    "publishedSourceHeight": 42,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-heaven-2bd3",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/96e08c89-85da-4712-b9fb-853a8ab9a10e.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-heaven-34c1",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/363fed05-dea4-449c-8c3a-6554c725d276.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-silo-4454",
+    "mapId": "nuke",
+    "sourceId": "b86be991-55f8-4bb9-8a00-53524008a134",
+    "from": "Silo",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/91c8fe68-443f-40b3-b3dd-8dc060974c67.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-t-roof-4359",
+    "mapId": "nuke",
+    "sourceId": "05b2acd6-a26b-4ee1-b4f1-20b4c45f980b",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/4a3bf249-9cd1-439f-a4b7-de18299034f5.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-t-roof-55fe",
+    "mapId": "nuke",
+    "sourceId": "c9338700-639d-497e-b242-e08f8711222c",
+    "from": "T-Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/d6809b33-e0e5-4dac-9976-1cdd2e3ef7fa.webp",
+    "publishedSourceHeight": 41.87125,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-t-roof-7bee",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/52305c6a-639d-42c6-aaed-834edc42e1a9.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/main-from-lobby-f4e2",
+    "mapId": "nuke",
+    "sourceId": "90497a8e-9861-44c1-b565-4e802d0d4488",
+    "from": "Lobby",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/1f5f718f-2277-4b63-bb0f-a8041f7e13ed.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/rafters-from-t-roof-6c0c",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/82538a00-6017-4cb6-b80c-2176c5e5ffcf.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/ramp-box-from-trophy-0bee",
+    "mapId": "nuke",
+    "sourceId": "000b9af5-c41b-4c7b-8bfb-64467fed7b7e",
+    "from": "Trophy",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/59189aa5-082d-4c7c-9d3e-a62efdc66e1b.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/silo-from-ct-red-4f77",
+    "mapId": "nuke",
+    "sourceId": "9847423b-54de-4bbb-a93f-09fd4411eb23",
+    "from": "CT Red",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/970b44ac-b642-4314-b5f0-7c3047f510d8.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/silo-from-rafters-10cc",
+    "mapId": "nuke",
+    "sourceId": "ba2ca819-579a-440e-ac87-af1292a19820",
+    "from": "Rafters",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/f453aaa0-d62f-41a0-b31e-6e0db76bffa5.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/squeaky-from-heaven-9e00",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/83fb06f5-8937-4944-a00a-dee7bdb3f888.webp",
+    "publishedSourceHeight": -100.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/squeaky-from-heaven-d3f5",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/2ba37d89-ac25-4937-901d-66c015952357.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/molotovs/t-outside-from-ct-box-4351",
+    "mapId": "nuke",
+    "sourceId": "9123b53c-a61e-478a-9336-c5e8e275e02f",
+    "from": "CT Box",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/97500a1e-fbda-4d84-a59a-70c36fa06505.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/ct-red-from-outside-a3c6",
+    "mapId": "nuke",
+    "sourceId": "aaa1e4a5-9e17-4226-b1fa-e24443991c0e",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/f3f7206c-b93f-4795-88a2-4c1215663687.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/garage-from-outside-f062",
+    "mapId": "nuke",
+    "sourceId": "bfbcbe7c-ae69-48b6-b66a-65fa9575b941",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c74c85c0-7aa3-4db4-b89a-3c4af9ea010a.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/garage-from-t-spawn-7fda",
+    "mapId": "nuke",
+    "sourceId": "72a5c669-9aec-433b-8469-13b3e7f01b98",
+    "from": "T-Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/425f9692-270a-4bc3-ad47-29a776cf1f0b.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-outside-00f3",
+    "mapId": "nuke",
+    "sourceId": "258d19a1-93e4-49ed-9618-de8c29476917",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/928decad-2fa0-40e3-841a-711f691e9f47.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-outside-7739",
+    "mapId": "nuke",
+    "sourceId": "52f89e9c-8cab-488b-bc1b-2cd45aee07c6",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/d82b0339-2369-4a29-8043-fed60eff2464.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-silo-dd2c",
+    "mapId": "nuke",
+    "sourceId": "b86be991-55f8-4bb9-8a00-53524008a134",
+    "from": "Silo",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/bc563c32-f5fd-4ba7-b50d-fd371d06d614.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-08f2",
+    "mapId": "nuke",
+    "sourceId": "d9d37a00-08c1-4c3b-ab45-8f5efc0f6db1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/b35aa7f9-eed8-4cb3-abac-975a093d245e.webp",
+    "publishedSourceHeight": -107.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-6f9a",
+    "mapId": "nuke",
+    "sourceId": "691ff3e5-e198-463c-b452-47b6099a3b33",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/536fd324-385e-41f5-a10a-8f4edbd1316d.webp",
+    "publishedSourceHeight": -107.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-7bcf",
+    "mapId": "nuke",
+    "sourceId": "1aaf6fb9-740b-4213-9ce6-2e51afc1a993",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/5ac459e0-b8ef-4f41-8413-786e5f093d37.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-7e8c",
+    "mapId": "nuke",
+    "sourceId": "24749c03-d084-4bf5-90bb-6c5e650f66d1",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/73eb5c63-71b7-4bba-a7d2-40f0597b13f8.webp",
+    "publishedSourceHeight": -171.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-spawn-eb88",
+    "mapId": "nuke",
+    "sourceId": "72a5c669-9aec-433b-8469-13b3e7f01b98",
+    "from": "T-Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/2cea5730-0914-4684-9621-84546f9fe525.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/hut-from-heaven-88db",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/659ca966-5be0-4eb9-b5a1-f39a965d3129.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/hut-from-t-spawn-07ff",
+    "mapId": "nuke",
+    "sourceId": "72a5c669-9aec-433b-8469-13b3e7f01b98",
+    "from": "T-Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/8414c7ef-7d1d-4d00-a58c-04f2942db8ce.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/lockers-from-t-spawn-3d4f",
+    "mapId": "nuke",
+    "sourceId": "38a85706-96b0-4383-b46d-758e8fe9d56e",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/227a754f-362b-48c1-b2a3-8eccbd670309.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/lockers-from-t-spawn-dffd",
+    "mapId": "nuke",
+    "sourceId": "72a5c669-9aec-433b-8469-13b3e7f01b98",
+    "from": "T-Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/cf426c6f-37ab-4cc4-9fb0-a65ca7f3e1bc.webp",
+    "publishedSourceHeight": -304.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-outside-2beb",
+    "mapId": "nuke",
+    "sourceId": "bfbcbe7c-ae69-48b6-b66a-65fa9575b941",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/95e15a00-96f7-4e27-9264-957ebe6d669b.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-outside-dfc0",
+    "mapId": "nuke",
+    "sourceId": "aaa1e4a5-9e17-4226-b1fa-e24443991c0e",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/5f4cf2f3-88c4-40ce-adc0-c285091f4d0f.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-roof-90c9",
+    "mapId": "nuke",
+    "sourceId": "0a884ab5-5b94-4fe4-993f-01303c90d2c9",
+    "from": "T Roof",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/ec194796-6b2e-4679-874e-7cc4e0901c0d.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-1f0c",
+    "mapId": "nuke",
+    "sourceId": "cd56574d-dcf7-43e2-b51c-cf9ee88d4d16",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/8ee1e248-73f8-422b-b9a6-a1478de030c3.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-39eb",
+    "mapId": "nuke",
+    "sourceId": "0ee95ad6-0ecf-4d9e-86a7-94bc00efc779",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/415f7906-ee91-40b0-87f9-d7ef613381fc.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-9dfd",
+    "mapId": "nuke",
+    "sourceId": "c6766f57-2bb4-46c1-924f-5ceca69ff3fc",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/f60a0208-7cde-4577-9f9b-100b6f5825c5.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-ddf0",
+    "mapId": "nuke",
+    "sourceId": "adc8a880-b53e-4494-86eb-27cad02cec96",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/66254f2f-ea30-461e-be32-53e3a932a8f6.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/new-location-from-t-spawn-464d",
+    "mapId": "nuke",
+    "sourceId": "adc8a880-b53e-4494-86eb-27cad02cec96",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/5039d124-697f-4fe9-bc70-3525680b9486.webp",
+    "publishedSourceHeight": -415.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-ct-box-7884",
+    "mapId": "nuke",
+    "sourceId": "dcccc667-1c19-46c3-acc9-ae2c3e6651aa",
+    "from": "CT Box",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/4d2ce46f-78b4-49b3-8a69-b2c499fb2f91.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-t-spawn-f5a3",
+    "mapId": "nuke",
+    "sourceId": "38a85706-96b0-4383-b46d-758e8fe9d56e",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/8d572365-3505-48b1-b7d9-86993a72810e.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-outside-7ee3",
+    "mapId": "nuke",
+    "sourceId": "258d19a1-93e4-49ed-9618-de8c29476917",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/04b1a932-74af-4854-b9be-7d118ece755c.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-84d5",
+    "mapId": "nuke",
+    "sourceId": "cd56574d-dcf7-43e2-b51c-cf9ee88d4d16",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/0285003a-be3b-45ed-92ef-00b738ff2e8a.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-cfc0",
+    "mapId": "nuke",
+    "sourceId": "0ee95ad6-0ecf-4d9e-86a7-94bc00efc779",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/43a9f57e-49d5-496c-bdea-bfe94053dc5a.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-outside-5349",
+    "mapId": "nuke",
+    "sourceId": "258d19a1-93e4-49ed-9618-de8c29476917",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/f91b07d9-0bad-4d3e-a9ea-2fbcedabd6cc.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-6320",
+    "mapId": "nuke",
+    "sourceId": "38a85706-96b0-4383-b46d-758e8fe9d56e",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/d8e4c300-33fd-4372-8b35-1298deb299b4.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-63d2",
+    "mapId": "nuke",
+    "sourceId": "0ee95ad6-0ecf-4d9e-86a7-94bc00efc779",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/2a8e0bdd-fc7f-4d7c-814f-a5c55167d954.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-cbdb",
+    "mapId": "nuke",
+    "sourceId": "564ace6a-bd7b-463a-90f8-c93f90f9f66a",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/ee32cc04-64fc-43d2-8667-96759ca9cc62.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/ramp-from-trophy-786b",
+    "mapId": "nuke",
+    "sourceId": "0e7f4920-1a0a-40e0-9eca-a41670a4fcb7",
+    "from": "Trophy",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/9bebe7da-60f4-45f7-95e7-e0668594dcc0.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/ramp-from-trophy-b453",
+    "mapId": "nuke",
+    "sourceId": "b85ef8b7-f90b-42c5-ac68-e6ebbce18c9a",
+    "from": "Trophy",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/1113efe3-851b-4659-a60f-49e63e61fa7b.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-outside-0adb",
+    "mapId": "nuke",
+    "sourceId": "52f89e9c-8cab-488b-bc1b-2cd45aee07c6",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c333c9c7-b39d-4d8f-a188-7a98c787e07c.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-outside-5982",
+    "mapId": "nuke",
+    "sourceId": "258d19a1-93e4-49ed-9618-de8c29476917",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/23f5ae47-b538-408d-992d-74a6d7325e35.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-outside-790e",
+    "mapId": "nuke",
+    "sourceId": "258d19a1-93e4-49ed-9618-de8c29476917",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/4fc29304-233d-4f4a-bbb2-e22424e8fa8e.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-red-14cd",
+    "mapId": "nuke",
+    "sourceId": "3931bdcc-7053-4d0c-b0bb-a40139a6d572",
+    "from": "T Red",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/4ff6de42-d898-4df7-ad7f-03804e481526.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-spawn-0922",
+    "mapId": "nuke",
+    "sourceId": "adc8a880-b53e-4494-86eb-27cad02cec96",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/d95064e0-8969-49ac-80a3-4caba7b99944.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-spawn-1eb1",
+    "mapId": "nuke",
+    "sourceId": "adc8a880-b53e-4494-86eb-27cad02cec96",
+    "from": "T Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c2a3df17-90c2-409b-af07-3c463fa0041e.webp",
+    "publishedSourceHeight": -351.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/silo-from-ct-box-b0d7",
+    "mapId": "nuke",
+    "sourceId": "dcccc667-1c19-46c3-acc9-ae2c3e6651aa",
+    "from": "CT Box",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/b954f027-274b-4fa3-b6ac-0d7545a2898e.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-a-site-0312",
+    "mapId": "nuke",
+    "sourceId": "842d5867-c69b-401d-9e32-d9c28f0161ea",
+    "from": "A Site",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/65054279-4c3d-4839-9367-578af07a6787.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-garage-9761",
+    "mapId": "nuke",
+    "sourceId": "990b22d6-3192-4c66-a89a-d87bdd78c266",
+    "from": "Garage",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/c633c3bd-5a9c-4820-b028-40be146d06b4.webp",
+    "publishedSourceHeight": -352.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-heaven-2038",
+    "mapId": "nuke",
+    "sourceId": "326cd715-bccd-4d1f-93d1-176b54a69e99",
+    "from": "Heaven",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/7835f236-5d41-400f-9443-ec1f5d248ef4.webp",
+    "publishedSourceHeight": -64.128754,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-t-spawn-bcda",
+    "mapId": "nuke",
+    "sourceId": "72a5c669-9aec-433b-8469-13b3e7f01b98",
+    "from": "T-Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/cacc414e-b71d-40ba-8e58-908c32b88531.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/t-outside-from-ct-spawn-a31e",
+    "mapId": "nuke",
+    "sourceId": "79fa9318-23b4-424d-8eb6-9c4635862902",
+    "from": "CT Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/dd1cf0b9-3b3e-4139-8245-0accb9c174cf.webp",
+    "publishedSourceHeight": -279.96875,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/nuke/smokes/t-red-from-outside-d7c3",
+    "mapId": "nuke",
+    "sourceId": "52f89e9c-8cab-488b-bc1b-2cd45aee07c6",
+    "from": "Outside",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "originalPositionPhoto": "https://d1ntlvfrxziqo6.cloudfront.net/17a62135-ca0c-407d-83e3-63da364646b3.webp",
+    "publishedSourceHeight": null,
+    "review": "Original start_location_name identifies the upper/outdoor/ramp-room origin; public source position and source callout identify this independently of the landing. No source in this provider batch starts in B, Decon, Dark, Tunnels, or Bottom Ramp.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/grenades/t-mid-from-mid-2f9a",
+    "mapId": "vertigo",
+    "sourceId": "3ca7a641-ebe6-4e81-bcdb-29d0a59ce4ec",
+    "from": "Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/t-mid-from-mid-2f9a-position-4000ms.png",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": 11938.03125,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/b-headshot-from-stairs-2d80",
+    "mapId": "vertigo",
+    "sourceId": "cf378d13-2e5b-4a4e-9e33-9f331e368aae",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-headshot-from-stairs-2d80-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/headshot-from-ramp-c7c8",
+    "mapId": "vertigo",
+    "sourceId": "12338b8c-6be9-4e95-9cb6-54cb6a73377b",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/headshot-from-ramp-c7c8-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/lane-from-ladder-1682",
+    "mapId": "vertigo",
+    "sourceId": "739b0754-9220-434f-a419-1ffae719e5c4",
+    "from": "Ladder",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/lane-from-ladder-1682-position-3500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/pillar-from-stairs-cb99",
+    "mapId": "vertigo",
+    "sourceId": "c7776216-6287-4dd6-8836-5bcae2979bda",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/pillar-from-stairs-cb99-position-3500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/sidewalk-from-ladder-f7cb",
+    "mapId": "vertigo",
+    "sourceId": "739b0754-9220-434f-a419-1ffae719e5c4",
+    "from": "Ladder",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/sidewalk-from-ladder-f7cb-position-3500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/wood-from-stairs-848c",
+    "mapId": "vertigo",
+    "sourceId": "75f3e9ea-e7fe-4279-b294-9eb4c49321e1",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/wood-from-stairs-848c-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/a-conn-from-mid-c798",
+    "mapId": "vertigo",
+    "sourceId": "11e9c894-4c6b-40bb-8394-f2c97bc3d9a2",
+    "from": "Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/a-conn-from-mid-c798-position-3500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-ramp-cc8f",
+    "mapId": "vertigo",
+    "sourceId": "8f8e2ed2-c93a-464e-9c17-4236f4d1a27b",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/a-site-left-from-ramp-cc8f-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-t-spawn-b650",
+    "mapId": "vertigo",
+    "sourceId": "971d1122-93fc-4112-9a84-89174db8836a",
+    "from": "T Spawn",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/a-site-left-from-t-spawn-b650-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/b-connector--from-mid-0e4b",
+    "mapId": "vertigo",
+    "sourceId": "5a001391-1173-4cfc-8eb2-d9df1c6b53d6",
+    "from": "Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-connector--from-mid-0e4b-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/b-cross-from-stairs-a167",
+    "mapId": "vertigo",
+    "sourceId": "f417932d-094b-4365-a205-940d2e0321ab",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-cross-from-stairs-a167-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/b-cross-from-t-spawn-274d",
+    "mapId": "vertigo",
+    "sourceId": "0dad7d4f-ec9c-4d9b-91c0-47fca66b1b0a",
+    "from": "T Spawn",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-cross-from-t-spawn-274d-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/b-headshot-from-stairs-3fbc",
+    "mapId": "vertigo",
+    "sourceId": "ec1e774a-f7b9-42db-8f00-d43da7f7fb3a",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-headshot-from-stairs-3fbc-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/b-main-from-ct-spawn-75b5",
+    "mapId": "vertigo",
+    "sourceId": "6f358531-ac32-4ecb-afb2-c8d7f641618e",
+    "from": "CT Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-main-from-ct-spawn-75b5-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/b-main-from-ct-spawn-cb0c",
+    "mapId": "vertigo",
+    "sourceId": "2b447f54-fee1-4cd1-867d-c3fd136530ae",
+    "from": "CT Spawn",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/b-main-from-ct-spawn-cb0c-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/crane-from-a-site-ad0e",
+    "mapId": "vertigo",
+    "sourceId": "eb303c24-91f5-4788-b36b-a1fcb6e581d2",
+    "from": "A Site",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/crane-from-a-site-ad0e-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ct-from-mid-38e3",
+    "mapId": "vertigo",
+    "sourceId": "c8e359b6-9596-4d94-9b6e-2fd168916888",
+    "from": "Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/ct-from-mid-38e3-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ct-spawn-from-stairs-e997",
+    "mapId": "vertigo",
+    "sourceId": "547dba81-2987-43ca-b061-189e26aa41fc",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/ct-spawn-from-stairs-e997-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/deep-ramp-from-elevator-9cb9",
+    "mapId": "vertigo",
+    "sourceId": "6eee3203-1a0a-4cf5-a18f-0bbd1995683f",
+    "from": "Elevator",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/deep-ramp-from-elevator-9cb9-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-stairs-bc18",
+    "mapId": "vertigo",
+    "sourceId": "d68630b8-9ce9-4600-a3cb-154f9068c9b4",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-stairs-bc18-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-t-spawn-4b77",
+    "mapId": "vertigo",
+    "sourceId": "3e41e4b2-dc2c-424f-b6d8-9beca8c4d9bd",
+    "from": "T Spawn",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-t-spawn-4b77-position-750ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-t-spawn-5a5b",
+    "mapId": "vertigo",
+    "sourceId": "6b63a155-6ace-47a5-8fcd-4574936a9f8e",
+    "from": "T Spawn",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-t-spawn-5a5b-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/elevator-from-ramp-0d0b",
+    "mapId": "vertigo",
+    "sourceId": "12338b8c-6be9-4e95-9cb6-54cb6a73377b",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/elevator-from-ramp-0d0b-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/front-elevator-from-ramp-54ee",
+    "mapId": "vertigo",
+    "sourceId": "cab253e1-dcd3-4490-84ff-efc161160a73",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/front-elevator-from-ramp-54ee-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/front-elevator-from-ramp-ab1b",
+    "mapId": "vertigo",
+    "sourceId": "8f8e2ed2-c93a-464e-9c17-4236f4d1a27b",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/front-elevator-from-ramp-ab1b-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-mid-8750",
+    "mapId": "vertigo",
+    "sourceId": "13883f6e-0608-42aa-9bb0-7d5ee3ff5dcd",
+    "from": "Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-mid-8750-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-stairs-8a4a",
+    "mapId": "vertigo",
+    "sourceId": "62bf53f5-5fa7-4d62-a6de-365c80888ce1",
+    "from": "Under Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-stairs-8a4a-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-stairs-b2bb",
+    "mapId": "vertigo",
+    "sourceId": "c7776216-6287-4dd6-8836-5bcae2979bda",
+    "from": "Stairs",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-stairs-b2bb-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-t-spawn-ab3f",
+    "mapId": "vertigo",
+    "sourceId": "d3c23eac-a254-4401-9f6d-d36a8bffbd4a",
+    "from": "T Spawn",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-t-spawn-ab3f-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/headshot-from-ramp-800d",
+    "mapId": "vertigo",
+    "sourceId": "cf0ad1db-b85f-4845-9717-a5ed41862281",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/headshot-from-ramp-800d-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/mid-from-ct-6e48",
+    "mapId": "vertigo",
+    "sourceId": "9ec25e40-41ab-4736-b244-025bbd806f36",
+    "from": "CT",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/mid-from-ct-6e48-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/mid-from-top-mid-40c8",
+    "mapId": "vertigo",
+    "sourceId": "25106052-75eb-48d8-a27c-9c17a9d75874",
+    "from": "Top Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/mid-from-top-mid-40c8-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/sidewalk-from-double-f8b2",
+    "mapId": "vertigo",
+    "sourceId": "4c571683-3ea2-456b-ab9e-bc643ba1221f",
+    "from": "Double",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/sidewalk-from-double-f8b2-position-750ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/sidewalk-from-t-spawn-741f",
+    "mapId": "vertigo",
+    "sourceId": "39275ef7-7822-4455-8a80-1822c5d69162",
+    "from": "T Spawn",
+    "levelIds": [
+      "lower"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/sidewalk-from-t-spawn-741f-position-2500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is on the T-spawn/lower B-stair approach, under the upper construction floor; it is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/sniper's-nest-from-ramp-88b5",
+    "mapId": "vertigo",
+    "sourceId": "cab253e1-dcd3-4490-84ff-efc161160a73",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/sniper-s-nest-from-ramp-88b5-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/stairs-from-b-site-252d",
+    "mapId": "vertigo",
+    "sourceId": "3c84aa9b-ea83-42d3-b951-b0320545c47d",
+    "from": "B Site",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/stairs-from-b-site-252d-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.cs2tricks.com/nades/vertigo/smokes/top-mid--from-mid-87c7",
+    "mapId": "vertigo",
+    "sourceId": "58d62dab-7aef-45bf-a5a2-f57b608e229d",
+    "from": "Mid",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/vertigo",
+    "positionPhoto": "/lineup-media/source-video-stills/cs2tricks/vertigo/top-mid--from-mid-87c7-position-1500ms.jpg",
+    "originalPositionPhoto": null,
+    "publishedSourceHeight": null,
+    "review": "Original source Position is at the upper CT/Mid/A/B or upper-facing ramp/ladder landing; ramp transition is displayed on the upper overview. It is not the destination floor.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/silo-from-ct-red",
+    "mapId": "nuke",
+    "sourceId": "nade_479e8063ae82",
+    "from": "CT Red",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "positionPhoto": "/lineup-media/source-video-stills/csnades/nuke/molotov-silo-from-ct-red-position-2366ms.jpg",
+    "review": "CT Red is the outside upper yard beside the red container. This resolves the null throwFrom floor independently of throwTo.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-b",
+    "mapId": "nuke",
+    "sourceId": "nade_f5cf2ebba98a",
+    "from": "Ramp",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "positionPhoto": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-b-position-2350ms.jpg",
+    "review": "Source Position is at the upper Ramp room beside its Trophy/Radio approach, not Bottom Ramp. This resolves the null throwFrom floor independently of throwTo.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/t-red-from-under-silo",
+    "mapId": "nuke",
+    "sourceId": "nade_5b466e16a0da",
+    "from": "Under Silo",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "positionPhoto": "/lineup-media/source-video-stills/csnades/nuke/he-t-red-from-under-silo-position-3066ms.jpg",
+    "review": "Under Silo is the outside upper yard at the silo base. This resolves the null throwFrom floor independently of throwTo.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/squeaky-door-from-lobby",
+    "mapId": "nuke",
+    "sourceId": "nade_db1b0ccd48ae",
+    "from": "Lobby",
+    "levelIds": [
+      "upper"
+    ],
+    "basis": "source-position-and-named-callout",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "positionPhoto": "/lineup-media/source-video-stills/csnades/nuke/he-squeaky-door-from-lobby-position-2583ms.jpg",
+    "review": "Lobby is the upper interior Hut/Squeaky room. This resolves the null throwFrom floor independently of throwTo.",
+    "checkedAt": "2026-11-10"
+  }
+]

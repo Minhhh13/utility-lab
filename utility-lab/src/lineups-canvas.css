@@ -1,0 +1,267 @@
+/* Lineup browsing uses the canvas as its workspace. The personal editor keeps
+   its existing form layout, and the global navigation keeps its own space. */
+.utility-workspace.ul-map-only {
+  position: relative;
+  background: var(--canvas);
+}
+.ul-map-controls { flex: 0 0 auto; }
+.utility-workspace.ul-map-only .ul-map-controls {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+.utility-workspace.ul-map-only .ul-header,
+.utility-workspace.ul-map-only .ul-filterbar {
+  position: absolute;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  min-height: 0;
+  margin: 0;
+  padding: 5px;
+  gap: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: 0 4px 18px #0b182414;
+  pointer-events: auto;
+}
+.utility-workspace.ul-map-only .ul-header { display: flex; top: 16px; left: 16px; }
+.utility-workspace.ul-map-only .ul-heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.utility-workspace.ul-map-only .ul-context-controls {
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+.utility-workspace.ul-map-only .ul-map-chip {
+  grid-area: auto;
+  height: 44px;
+  padding: 0 10px;
+  border: 0;
+  background: transparent;
+}
+.utility-workspace.ul-map-only .ul-side-toggle {
+  grid-area: auto;
+  padding: 2px;
+  gap: 2px;
+  border: 0;
+}
+.utility-workspace.ul-map-only .ul-side-toggle button {
+  min-height: 44px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+.utility-workspace.ul-map-only .ul-suggest-trigger {
+  grid-area: auto;
+  flex: 0 0 44px;
+  width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+}
+.utility-workspace.ul-map-only .ul-suggest-trigger > span { display: none; }
+.utility-workspace.ul-map-only .ul-filterbar {
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-wrap: nowrap;
+}
+.utility-workspace.ul-map-only .ul-types {
+  gap: 2px;
+  padding: 0;
+}
+.utility-workspace.ul-map-only .ul-types button {
+  min-height: 44px;
+  gap: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.utility-workspace.ul-map-only .ul-favorites-filter {
+  width: auto;
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 0;
+  background: transparent;
+}
+.utility-workspace.ul-map-only .ul-favorites-filter.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.utility-workspace.ul-map-only .ul-map-area { position: relative; }
+.utility-workspace.ul-map-only .ul-map-stage {
+  height: 100%;
+  min-height: 0;
+  padding: 84px 24px 96px;
+}
+.utility-workspace.ul-map-only .ul-map-top {
+  position: absolute;
+  z-index: 4;
+  top: 16px;
+  right: 16px;
+  min-height: 44px;
+  max-width: calc(100% - 400px);
+  padding: 0;
+  gap: 12px;
+  pointer-events: none;
+}
+.utility-workspace.ul-map-only .ul-map-top button { pointer-events: auto; }
+.utility-workspace.ul-map-only .ul-levels { gap: 2px; }
+.utility-workspace.ul-map-only .ul-levels button,
+.utility-workspace.ul-map-only .ul-origin-back {
+  min-height: 44px;
+  background: var(--surface-raised);
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 9px;
+}
+.utility-workspace.ul-map-only .ul-levels button.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.utility-workspace.ul-map-only .ul-map-bottom {
+  position: absolute;
+  z-index: 4;
+  left: 16px;
+  right: 16px;
+  bottom: 24px;
+  min-height: 44px;
+  padding: 0;
+  gap: 12px;
+  pointer-events: none;
+}
+.utility-workspace.ul-map-only .ul-map-bottom p {
+  max-width: 230px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.utility-workspace.ul-map-only .ul-zoom {
+  display: flex;
+  gap: 0;
+  padding: 4px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: 0 4px 18px #0b182414;
+  pointer-events: auto;
+}
+.utility-workspace.ul-map-only .ul-zoom button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px;
+  border-radius: 8px;
+}
+.utility-workspace.ul-map-only .ul-zoom button[aria-label="Reset utility map zoom"] {
+  min-width: 52px;
+  font-variant-numeric: tabular-nums;
+}
+.utility-workspace.ul-map-only .ul-map-credit {
+  position: absolute;
+  z-index: 4;
+  bottom: 7px;
+  left: 16px;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 10px;
+}
+.utility-workspace.ul-map-only .ul-navigation-help {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.utility-workspace.ul-map-only .ul-map-controls button:active,
+.utility-workspace.ul-map-only .ul-zoom button:active {
+  background: var(--accent-soft);
+}
+@media (max-width: 1100px) {
+  .utility-workspace.ul-map-only .ul-filterbar {
+    top: 78px;
+    bottom: auto;
+    left: 16px;
+    transform: none;
+  }
+  .utility-workspace.ul-map-only .ul-map-stage { padding-top: 144px; padding-bottom: 84px; }
+}
+@media (max-width: 600px) {
+  .utility-workspace.ul-map-only .ul-header {
+    top: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+    max-width: none;
+    padding: 4px;
+  }
+  .utility-workspace.ul-map-only .ul-context-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 44px;
+    width: 100%;
+    gap: 4px;
+  }
+  .utility-workspace.ul-map-only .ul-map-chip { min-width: 0; padding: 0 6px; gap: 6px; }
+  .utility-workspace.ul-map-only .ul-map-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .utility-workspace.ul-map-only .ul-side-toggle button { min-width: 54px; padding: 0 3px; gap: 3px; font-size: 11px; }
+  .utility-workspace.ul-map-only .ul-filterbar {
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 24px);
+    padding: 4px;
+    gap: 4px;
+  }
+  .utility-workspace.ul-map-only .ul-types { flex: 0 1 auto; overflow: visible; }
+  .utility-workspace.ul-map-only .ul-types button { justify-content: center; min-width: 44px; padding: 5px; }
+  .utility-workspace.ul-map-only .ul-types button:not([data-utility="All"]) > span,
+  .utility-workspace.ul-map-only .ul-favorites-filter > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .utility-workspace.ul-map-only .ul-types button small,
+  .utility-workspace.ul-map-only .ul-types .ul-all-icon,
+  .utility-workspace.ul-map-only .ul-favorites-filter small { display: none; }
+  .utility-workspace.ul-map-only .ul-favorites-filter { justify-content: center; min-width: 44px; padding: 5px; }
+  .utility-workspace.ul-map-only .ul-map-top {
+    top: auto;
+    bottom: 96px;
+    left: 12px;
+    right: 12px;
+    max-width: none;
+    min-height: 32px;
+  }
+  .utility-workspace.ul-map-only .ul-map-bottom {
+    left: 12px;
+    right: 12px;
+    bottom: 28px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .utility-workspace.ul-map-only .ul-map-bottom p { max-width: 100%; font-size: 11px; }
+  .utility-workspace.ul-map-only .ul-zoom button { min-width: 44px; }
+  .utility-workspace.ul-map-only .ul-map-credit { left: 0; right: 0; bottom: 7px; text-align: center; }
+  .utility-workspace.ul-map-only .ul-map-stage { padding: 140px 12px 142px; }
+}
+@media (max-height: 580px) and (min-width: 601px) {
+  .utility-workspace.ul-map-only .ul-header,
+  .utility-workspace.ul-map-only .ul-map-top { top: 8px; }
+  .utility-workspace.ul-map-only .ul-filterbar { top: 65px; bottom: auto; left: 12px; transform: none; }
+  .utility-workspace.ul-map-only .ul-map-stage { padding: 122px 16px 62px; }
+  .utility-workspace.ul-map-only .ul-map-bottom { bottom: 13px; }
+  .utility-workspace.ul-map-only .ul-map-credit { bottom: 0; }
+}

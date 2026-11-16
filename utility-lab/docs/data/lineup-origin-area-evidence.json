@@ -1,0 +1,419 @@
+[
+  {
+    "source": "https://gonade.app/nade/nuke-mustang-from-t-roof-molotov",
+    "guideId": "gonade-nuke-mustang-from-t-roof-molotov",
+    "mapId": "nuke",
+    "levelId": "upper",
+    "label": "T Roof",
+    "basis": "callout-area",
+    "x": 470,
+    "y": 522.5,
+    "registrationId": "nuke-upper-totalcs",
+    "sourceRegionId": "nuke:T Roof",
+    "sourceCallout": "T Roof",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "referencePoint": [
+      376,
+      418
+    ],
+    "referencePolygon": [
+      [
+        338,
+        360
+      ],
+      [
+        417,
+        359
+      ],
+      [
+        419,
+        478
+      ],
+      [
+        335,
+        478
+      ]
+    ],
+    "positionPhoto": "https://gonade.app/images/maps/webp/3038/lineup0.webp?v=1784807957",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Nuke T Roof and Outside are upper/outdoor origins.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://gonade.app/nade/nuke-secret-from-t-outside-molotov",
+    "guideId": "gonade-nuke-secret-from-t-outside-molotov",
+    "mapId": "nuke",
+    "levelId": "upper",
+    "label": "T Outside",
+    "basis": "callout-area",
+    "x": 639.38,
+    "y": 694.38,
+    "registrationId": "nuke-upper-totalcs",
+    "sourceRegionId": "nuke:Outside",
+    "sourceCallout": "Outside",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "referencePoint": [
+      511.5,
+      555.5
+    ],
+    "referencePolygon": [
+      [
+        369,
+        566
+      ],
+      [
+        474,
+        601
+      ],
+      [
+        557,
+        596
+      ],
+      [
+        553,
+        499
+      ],
+      [
+        609,
+        502
+      ],
+      [
+        608,
+        455
+      ],
+      [
+        568,
+        460
+      ],
+      [
+        568,
+        416
+      ],
+      [
+        501,
+        415
+      ],
+      [
+        500,
+        494
+      ],
+      [
+        483,
+        495
+      ],
+      [
+        484,
+        522
+      ],
+      [
+        440,
+        522
+      ],
+      [
+        441,
+        494
+      ],
+      [
+        419,
+        495
+      ]
+    ],
+    "positionPhoto": "https://gonade.app/images/maps/webp/3039/lineup0.webp?v=1784807957",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Nuke T Roof and Outside are upper/outdoor origins.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://gonade.app/nade/anubis-t-stairs-from-a-plat-he",
+    "guideId": "gonade-anubis-t-stairs-from-a-plat-he",
+    "mapId": "anubis",
+    "levelId": "main",
+    "label": "A Plat",
+    "basis": "callout-area",
+    "x": 692.3,
+    "y": 357.11,
+    "registrationId": "anubis-main-totalcs",
+    "sourceRegionId": "anubis:Plateau",
+    "sourceCallout": "Plateau",
+    "referenceSource": "https://totalcsgo.com/callouts/anubis",
+    "referencePoint": [
+      553.84,
+      285.69
+    ],
+    "referencePolygon": [
+      [
+        585.15625,
+        295.3125
+      ],
+      [
+        575,
+        267.1875
+      ],
+      [
+        549.21875,
+        242.96875
+      ],
+      [
+        550,
+        246.875
+      ],
+      [
+        546.875,
+        246.875
+      ],
+      [
+        546.09375,
+        242.96875
+      ],
+      [
+        527.34375,
+        242.1875
+      ],
+      [
+        527.34375,
+        310.15625
+      ],
+      [
+        531.25,
+        313.28125
+      ],
+      [
+        568.75,
+        312.5
+      ]
+    ],
+    "positionPhoto": "https://gonade.app/images/maps/webp/1008/lineup0.webp?v=1784807938",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Single-floor overview.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://gonade.app/nade/anubis-mid-doorswindow-from-ruins-molotov",
+    "guideId": "gonade-anubis-mid-doorswindow-from-ruins-molotov",
+    "mapId": "anubis",
+    "levelId": "main",
+    "label": "Ruins",
+    "basis": "callout-area",
+    "x": 331.25,
+    "y": 746.25,
+    "registrationId": "anubis-main-totalcs",
+    "sourceRegionId": "anubis:Ruins",
+    "sourceCallout": "Ruins",
+    "referenceSource": "https://totalcsgo.com/callouts/anubis",
+    "referencePoint": [
+      265,
+      597
+    ],
+    "referencePolygon": [
+      [
+        194.53125,
+        523.4375
+      ],
+      [
+        223.4375,
+        523.4375
+      ],
+      [
+        224.21875,
+        544.53125
+      ],
+      [
+        264.84375,
+        585.15625
+      ],
+      [
+        281.25,
+        568.75
+      ],
+      [
+        296.09375,
+        584.375
+      ],
+      [
+        304.6875,
+        575.78125
+      ],
+      [
+        303.125,
+        571.09375
+      ],
+      [
+        328.90625,
+        548.4375
+      ],
+      [
+        338.28125,
+        547.65625
+      ],
+      [
+        355.46875,
+        565.625
+      ],
+      [
+        337.5,
+        586.71875
+      ],
+      [
+        292.1875,
+        632.03125
+      ],
+      [
+        270.3125,
+        654.6875
+      ],
+      [
+        284.375,
+        668.75
+      ],
+      [
+        283.59375,
+        703.125
+      ],
+      [
+        275,
+        703.125
+      ],
+      [
+        241.40625,
+        668.75
+      ],
+      [
+        246.875,
+        660.15625
+      ],
+      [
+        230.46875,
+        644.53125
+      ],
+      [
+        258.59375,
+        614.0625
+      ],
+      [
+        218.75,
+        575
+      ],
+      [
+        195.3125,
+        550
+      ]
+    ],
+    "positionPhoto": "https://gonade.app/images/maps/webp/1014/lineup0.webp?v=1784807939",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Single-floor overview.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://app.nadesdb.com/maps/cache?nade=41360a2b-812f-433c-9e94-c23651fc3757",
+    "guideId": "expanded-nadesdb-cache-electro-a-main-ct-flash",
+    "mapId": "cache",
+    "levelId": "main",
+    "label": "Electro",
+    "basis": "callout-area",
+    "x": 233.75,
+    "y": 351.25,
+    "registrationId": "cache-main-totalcs",
+    "sourceRegionId": "cache:Elektro",
+    "sourceCallout": "Elektro",
+    "referenceSource": "https://totalcsgo.com/callouts/cache",
+    "referencePoint": [
+      187,
+      281
+    ],
+    "referencePolygon": [
+      [
+        176,
+        309
+      ],
+      [
+        238,
+        307
+      ],
+      [
+        243,
+        255
+      ],
+      [
+        128,
+        256
+      ]
+    ],
+    "positionPhoto": "https://media.nadesdb.com/media/b1095f41-2968-47dd-ae65-5b5af2f671a8.webp",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Single-floor overview.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=5gbIC3igve8&t=396",
+    "guideId": "expanded-nart-cache-white-box-boost-ct-he",
+    "mapId": "cache",
+    "levelId": "main",
+    "label": "White Box · cable spool",
+    "basis": "callout-area",
+    "x": 353.13,
+    "y": 498.13,
+    "registrationId": "cache-main-totalcs",
+    "sourceRegionId": "cache:White Box",
+    "sourceCallout": "White Box",
+    "referenceSource": "https://totalcsgo.com/callouts/cache",
+    "referencePoint": [
+      282.5,
+      398.5
+    ],
+    "referencePolygon": [
+      [
+        272,
+        410
+      ],
+      [
+        298,
+        410
+      ],
+      [
+        297,
+        386
+      ],
+      [
+        267,
+        388
+      ]
+    ],
+    "positionPhoto": "/lineup-media/source-video-stills/cache-completions/nart-boost-he-position.jpg",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Single-floor overview.",
+    "checkedAt": "2026-11-10"
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=AmbXVJOXMG8",
+    "guideId": "expanded-cs2nades-nuke-b-retake-flash-ambxvjoxmg8",
+    "mapId": "nuke",
+    "levelId": "lower",
+    "label": "Decon",
+    "basis": "callout-area",
+    "x": 509.63,
+    "y": 600.63,
+    "registrationId": "nuke-lower-totalcs-inset",
+    "sourceRegionId": "nuke:Decon",
+    "sourceCallout": "Decon",
+    "referenceSource": "https://totalcsgo.com/callouts/nuke",
+    "referencePoint": [
+      104.5,
+      260.5
+    ],
+    "referencePolygon": [
+      [
+        90,
+        276
+      ],
+      [
+        121,
+        275
+      ],
+      [
+        119,
+        245
+      ],
+      [
+        89,
+        247
+      ]
+    ],
+    "positionPhoto": "/lineup-media/source-video-stills/cs2nades/nuke/b-retake-flash-position-3500ms.jpg",
+    "review": "Original guide explicitly names this throw-from area. Source Position identifies the named room/area; point is the registered callout interior, not claimed exact feet. Decon source Position is the lower B-side sink/toolbox room.",
+    "checkedAt": "2026-11-10"
+  }
+]

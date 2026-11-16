@@ -1,0 +1,1522 @@
+[
+  {
+    "source": "https://csnades.gg/cache/smokes/b-main-from-b-halls",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_1191e925c9ff",
+    "videoUid": "cache-smoke-cLA5HHVtEQ",
+    "slug": "b-main-from-b-halls",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "B Main",
+    "titleFrom": "B Halls",
+    "throwTo": {
+      "x": 406,
+      "y": 744,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 602,
+      "y": 734,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/ct-from-sun-room",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_93eb02c0b372",
+    "videoUid": "cache-smoke-ORDvnr5ctw",
+    "slug": "ct-from-sun-room",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "CT",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 261,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 480,
+      "y": 936,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 20.133333,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--ct-from-sun-room/landing-20.133.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-ORDvnr5ctw/hq.mp4",
+      "sha256": "4f9ec05f10121faafc3491e43f94a8ffb2e30fec676cc8e66c62bd797113f77c",
+      "reviewed": true,
+      "description": "Lower CT/Hell entrance beneath the B Heaven platform, not CT Spawn."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/a-main-from-quad",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_b74b17743c76",
+    "videoUid": "cache-smoke-S08ZVVqf2I",
+    "slug": "a-main-from-quad",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "A Main",
+    "titleFrom": "Quad",
+    "throwTo": {
+      "x": 451,
+      "y": 183,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 281,
+      "y": 50,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-connector",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_67270d5ae235",
+    "videoUid": "cache-smoke-AnS1KivT8R",
+    "slug": "garage-from-connector",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Garage",
+    "titleFrom": "Connector",
+    "throwTo": {
+      "x": 511,
+      "y": 526,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 275,
+      "y": 583,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/b-main-from-heaven",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_39b3e4257cbf",
+    "videoUid": "cache-smoke-jGQQKaFTMo",
+    "slug": "b-main-from-heaven",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "B Main",
+    "titleFrom": "Heaven",
+    "throwTo": {
+      "x": 445,
+      "y": 796,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 294,
+      "y": 764,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/forklift-from-outside-squeaky",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_f2acc3a55b5f",
+    "videoUid": "cache-smoke-Bm0pxctIts",
+    "slug": "forklift-from-outside-squeaky",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Forklift",
+    "titleFrom": "Outside Squeaky",
+    "throwTo": {
+      "x": 367,
+      "y": 230,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 600,
+      "y": 217,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/back-a-site-from-outside-squeaky",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_8dbaecb2ed25",
+    "videoUid": "cache-smoke-mMK97AyqvZ",
+    "slug": "back-a-site-from-outside-squeaky",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Back A Site",
+    "titleFrom": "Outside Squeaky",
+    "throwTo": {
+      "x": 297,
+      "y": 220,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 600,
+      "y": 217,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 25.05,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--back-a-site-from-outside-squeaky/landing-25.050.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-mMK97AyqvZ/hq.mp4",
+      "sha256": "e63904905f7fc10ca01d146f22fac896585cb1d0c80892f6a77d474082590dd5",
+      "reviewed": true,
+      "description": "Back A-site lane beside the red container/green crate and the outer wall."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/left-mid-from-garage",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_7c7ec49cd108",
+    "videoUid": "cache-smoke-Q2aaUdfSnO",
+    "slug": "left-mid-from-garage",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Left Mid",
+    "titleFrom": "Garage",
+    "throwTo": {
+      "x": 415,
+      "y": 553,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 681,
+      "y": 536,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 13.45,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--left-mid-from-garage/landing-13.450.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-Q2aaUdfSnO/hq.mp4",
+      "sha256": "0568359cd2feab4c5ec55db579fea7d1aeee1c2450241845299917aa36cd84ae",
+      "reviewed": true,
+      "description": "The Sand Bags side of Mid, visibly separate from the White Box-side smoke."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/forklift-from-a-main",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_692feb153cea",
+    "videoUid": "cache-smoke-55kRlH53et",
+    "slug": "forklift-from-a-main",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Forklift",
+    "titleFrom": "A Main",
+    "throwTo": {
+      "x": 367,
+      "y": 230,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 478,
+      "y": 237,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 451,
+        "y": 165,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/a-main-from-truck",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_0c08f147877a",
+    "videoUid": "cache-smoke-B5bCYxZUEW",
+    "slug": "a-main-from-truck",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "A Main",
+    "titleFrom": "Truck",
+    "throwTo": {
+      "x": 451,
+      "y": 183,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 193,
+      "y": 329,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/right-mid-from-garage",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_d35f2aaff5b6",
+    "videoUid": "cache-smoke-0CRKYU9cDw",
+    "slug": "right-mid-from-garage",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Right Mid",
+    "titleFrom": "Garage",
+    "throwTo": {
+      "x": 415,
+      "y": 500,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 681,
+      "y": 513,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 17.783333,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--right-mid-from-garage/landing-17.783.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-0CRKYU9cDw/hq.mp4",
+      "sha256": "5b6400b1be57e6504447683707b457dd2ca3e6993615e84ef2c11343bb90bf8d",
+      "reviewed": true,
+      "description": "The White Box side of Mid, visibly separate from the Sand Bags-side smoke."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/connector-from-t-spawn",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_643db0dbcd4b",
+    "videoUid": "cache-smoke-IAUCaCQh6J",
+    "slug": "connector-from-t-spawn",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Connector",
+    "titleFrom": "T Spawn",
+    "throwTo": {
+      "x": 299,
+      "y": 593,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 869,
+      "y": 589,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 19.133333,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--connector-from-t-spawn/landing-19.133.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-IAUCaCQh6J/hq.mp4",
+      "sha256": "fc25000642080c93239c9693adf4fe319aa6c2279822832cb7882adf98b04b4e",
+      "reviewed": true,
+      "description": "Green Z/CT Connector doorway opening onto Mid."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/a-main-from-ct-spawn",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_96f3e56782f4",
+    "videoUid": "cache-smoke-E9gJQRbXEN",
+    "slug": "a-main-from-ct-spawn",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "A Main",
+    "titleFrom": "CT Spawn",
+    "throwTo": {
+      "x": 451,
+      "y": 183,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 44,
+      "y": 618,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/ct-from-b-main",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_d2d0591d2f2b",
+    "videoUid": "cache-smoke-R29RAW6EHp",
+    "slug": "ct-from-b-main",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "CT",
+    "titleFrom": "B Main",
+    "throwTo": {
+      "x": 261,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 428,
+      "y": 773,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 358,
+        "y": 697,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 17.966667,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--ct-from-b-main/landing-17.967.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-R29RAW6EHp/hq.mp4",
+      "sha256": "8df9f88b27eb0549efd32259313e2b46af49807d1b56b5b2aebdb616714efc04",
+      "reviewed": true,
+      "description": "Lower CT/Hell entrance beneath the B Heaven platform; same destination as the Sun Room variant."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/back-a-site-from-outside-garage",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_ea30816eb266",
+    "videoUid": "cache-smoke-aZQOSRIALg",
+    "slug": "back-a-site-from-outside-garage",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Back A Site",
+    "titleFrom": "Outside Garage",
+    "throwTo": {
+      "x": 297,
+      "y": 220,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 676,
+      "y": 470,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 20.416667,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--back-a-site-from-outside-garage/landing-20.417.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-aZQOSRIALg/hq.mp4",
+      "sha256": "aa5aefd6658ba1798e10c94ac97ef9ecd8ce24355f3661d5b2e9e38750424d8d",
+      "reviewed": true,
+      "description": "The same back A-site lane beside the red container/green crate and outer wall."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/nbk-from-outside-a-main",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_ea6e3d75b59a",
+    "videoUid": "cache-smoke-ACOsbzEdtx",
+    "slug": "nbk-from-outside-a-main",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "NBK",
+    "titleFrom": "Outside A Main",
+    "throwTo": {
+      "x": 368,
+      "y": 122,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 593,
+      "y": 467,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 23.883333,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--nbk-from-outside-a-main/landing-23.883.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-ACOsbzEdtx/hq.mp4",
+      "sha256": "2503f8ae654de9a043f76006618c1abaf60be1aa1f33f082a3ccfa5d1381a685",
+      "reviewed": true,
+      "description": "NBK corner between the blue Squeaky doorway and Quad."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/heaven-from-b-main",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_8c8616fc9af3",
+    "videoUid": "cache-smoke-aHzkPliICo",
+    "slug": "heaven-from-b-main",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "B Main",
+    "throwTo": {
+      "x": 283,
+      "y": 757,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 428,
+      "y": 773,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 358,
+        "y": 697,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 22.816667,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--heaven-from-b-main/landing-22.817.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-aHzkPliICo/hq.mp4",
+      "sha256": "e84f7747a5a942a6d719c6cec3eb390f52d1491e25f628a0c038371995adaadf",
+      "reviewed": true,
+      "description": "B Heaven upper opening/platform, separate from the lower CT/Hell doorway."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/highway-from-truck",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_28bd64bb8cb9",
+    "videoUid": "cache-smoke-YayxoQ4qxh",
+    "slug": "highway-from-truck",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Highway",
+    "titleFrom": "Truck",
+    "throwTo": {
+      "x": 331,
+      "y": 342,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 694,
+      "y": 414,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/heaven-from-garbage",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_38dad25e7fd6",
+    "videoUid": "cache-smoke-brLnKq1v6O",
+    "slug": "heaven-from-garbage",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Heaven",
+    "titleFrom": "Garbage",
+    "throwTo": {
+      "x": 283,
+      "y": 757,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 620,
+      "y": 636,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 25.816667,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--heaven-from-garbage/landing-25.817.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-brLnKq1v6O/hq.mp4",
+      "sha256": "d926e79434ea9223f68a0e14db010f8ea04fb8196bd63f087617743e428bd759",
+      "reviewed": true,
+      "description": "The same B Heaven upper opening/platform, separate from the lower CT/Hell doorway."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garbage-from-connector",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_0e06c3c5da94",
+    "videoUid": "cache-smoke-cVpgfA6Qye",
+    "slug": "garbage-from-connector",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Garbage",
+    "titleFrom": "Connector",
+    "throwTo": {
+      "x": 540,
+      "y": 690,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 309,
+      "y": 595,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 18.016667,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--garbage-from-connector/landing-18.017.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-cVpgfA6Qye/hq.mp4",
+      "sha256": "65cc4eb8a4927904b652249002e151d07f5033386e6537d5c0ec8f96403ca131",
+      "reviewed": true,
+      "description": "Garbage/Dumpster passage between Garage and B Halls."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/front-b-site-from-sun-room",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_c1a5958e197e",
+    "videoUid": "cache-smoke-zJ91GUbvky",
+    "slug": "front-b-site-from-sun-room",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Front B Site",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 365,
+      "y": 850,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 577,
+      "y": 930,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 17.75,
+      "image": "outputs/expanded-cache-completions/pin-review/smoke--front-b-site-from-sun-room/landing-17.750.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-smoke-zJ91GUbvky/hq.mp4",
+      "sha256": "fe6a20d277f2f1579621d3f700c1c71ca1691dccb31311142cdbc777c7373556",
+      "reviewed": true,
+      "description": "Front/ramp edge of the raised B bomb platform, not the back-site corner."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/forklift-from-squeaky",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_aeae5a6faaf0",
+    "videoUid": "cache-smoke-mvHihqkWDa",
+    "slug": "forklift-from-squeaky",
+    "type": "smoke",
+    "team": "t",
+    "titleTo": "Forklift",
+    "titleFrom": "Squeaky",
+    "throwTo": {
+      "x": 367,
+      "y": 230,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 393,
+      "y": 87,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [
+      {
+        "x": 413,
+        "y": 136,
+        "levels": [
+          1
+        ]
+      }
+    ],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-2",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_832b3b339b86",
+    "videoUid": "cache-smoke-OnpWxnVUhv",
+    "slug": "garage-from-ct-spawn-2",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Garage",
+    "titleFrom": "CT Spawn 2",
+    "throwTo": {
+      "x": 511,
+      "y": 526,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 121,
+      "y": 425,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-3",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_40b419eebbad",
+    "videoUid": "cache-smoke-LXeM5mMuBB",
+    "slug": "garage-from-ct-spawn-3",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Garage",
+    "titleFrom": "CT Spawn 3",
+    "throwTo": {
+      "x": 511,
+      "y": 526,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 107,
+      "y": 395,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-4",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_168014e2d434",
+    "videoUid": "cache-smoke-n107yl6EXv",
+    "slug": "garage-from-ct-spawn-4",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Garage",
+    "titleFrom": "CT Spawn 4",
+    "throwTo": {
+      "x": 511,
+      "y": 526,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 121,
+      "y": 395,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-1",
+    "categorySource": "https://csnades.gg/cache",
+    "mapId": "cache",
+    "sourceId": "nade_c0214941f82a",
+    "videoUid": "cache-smoke-JkW6jPBKqe",
+    "slug": "garage-from-ct-spawn-1",
+    "type": "smoke",
+    "team": "ct",
+    "titleTo": "Garage",
+    "titleFrom": "CT Spawn 1",
+    "throwTo": {
+      "x": 511,
+      "y": 526,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 107,
+      "y": 425,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/headshot-from-sun-room",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_dddb36603e98",
+    "videoUid": "cache-molotov-T3MXIDeQHH",
+    "slug": "headshot-from-sun-room",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 294,
+      "y": 861,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 559,
+      "y": 933,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/newbox-from-sun-room",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_b35b40491718",
+    "videoUid": "cache-molotov-JBdUeWtGMW",
+    "slug": "newbox-from-sun-room",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Newbox",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 386,
+      "y": 871,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 480,
+      "y": 936,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 16.649999,
+      "image": "outputs/expanded-cache-completions/pin-review/molotov--newbox-from-sun-room/landing-16.650.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-molotov-JBdUeWtGMW/hq.mp4",
+      "sha256": "26d23ae5f29a47459f8db2c4e7dce8c614bbea79d851b9973b673ba0866bcaf3",
+      "reviewed": true,
+      "description": "Flames around the tall New Boxes on the B Halls side of the raised B platform."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/backsite-from-sun-room",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_849f3a3ef38d",
+    "videoUid": "cache-molotov-BGcoxAq4FX",
+    "slug": "backsite-from-sun-room",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Backsite",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 363,
+      "y": 933,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 480,
+      "y": 936,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 16.383333,
+      "image": "outputs/expanded-cache-completions/pin-review/molotov--backsite-from-sun-room/landing-16.383.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-molotov-BGcoxAq4FX/hq.mp4",
+      "sha256": "ece3fb49a7f91ff2e917b5734fafafb84b5887f741c1cd4d024ea14899d7d219",
+      "reviewed": true,
+      "description": "The rear B-platform corner behind the boxes, matching Back Site/Spray; not the throwing window."
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/forklift-from-a-main",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_8645122b1fa2",
+    "videoUid": "cache-molotov-g13t86vkmg",
+    "slug": "forklift-from-a-main",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Forklift",
+    "titleFrom": "A Main",
+    "throwTo": {
+      "x": 434,
+      "y": 265,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 467,
+      "y": 252,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/boost-from-connector",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_9f9186f310ca",
+    "videoUid": "cache-molotov-STd9RPKeUT",
+    "slug": "boost-from-connector",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Boost",
+    "titleFrom": "Connector",
+    "throwTo": {
+      "x": 529,
+      "y": 460,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 316,
+      "y": 576,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/sandbags-from-garage",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_00706947580c",
+    "videoUid": "cache-molotov-iBbtpo1PH0",
+    "slug": "sandbags-from-garage",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Sandbags",
+    "titleFrom": "Garage",
+    "throwTo": {
+      "x": 367,
+      "y": 605,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 512,
+      "y": 514,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/boost-from-connector-b",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_03860877697d",
+    "videoUid": "cache-molotov-ZII8RhcAAA",
+    "slug": "boost-from-connector-b",
+    "type": "molotov",
+    "team": "ct",
+    "titleTo": "Boost",
+    "titleFrom": "Connector",
+    "throwTo": {
+      "x": 529,
+      "y": 460,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 315,
+      "y": 606,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/headshot-from-sun-room-b",
+    "categorySource": "https://csnades.gg/cache/molotovs",
+    "mapId": "cache",
+    "sourceId": "nade_2bd52a8edc10",
+    "videoUid": "cache-molotov-7MFNSha6Oi",
+    "slug": "headshot-from-sun-room-b",
+    "type": "molotov",
+    "team": "t",
+    "titleTo": "Headshot",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 294,
+      "y": 861,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 536,
+      "y": 935,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/flashbangs/a-main-from-a-main",
+    "categorySource": "https://csnades.gg/cache/flashbangs",
+    "mapId": "cache",
+    "sourceId": "nade_7cf82d085af1",
+    "videoUid": "cache-flashbang-o4olV7R8Ht",
+    "slug": "a-main-from-a-main",
+    "type": "flashbang",
+    "team": "t",
+    "titleTo": "A Main",
+    "titleFrom": "A Main",
+    "throwTo": {
+      "x": 451,
+      "y": 183,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 506,
+      "y": 318,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    }
+  },
+  {
+    "source": "https://csnades.gg/cache/hegrenades/backsite-from-sun-room",
+    "categorySource": "https://csnades.gg/cache/hegrenades",
+    "mapId": "cache",
+    "sourceId": "nade_e9e4f70c0087",
+    "videoUid": "cache-he-MAhWEX0xII",
+    "slug": "backsite-from-sun-room",
+    "type": "he",
+    "team": "t",
+    "titleTo": "Backsite",
+    "titleFrom": "Sun Room",
+    "throwTo": {
+      "x": 372,
+      "y": 929,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 480,
+      "y": 936,
+      "levels": [
+        1
+      ]
+    },
+    "bounces": [],
+    "mapArt": [
+      "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp"
+    ],
+    "coordinateFrame": {
+      "mode": "Normalized percent of the displayed original image",
+      "xMax": 1000,
+      "yMax": 1000,
+      "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+      "nativeWidth": 2048,
+      "nativeHeight": 1596
+    },
+    "landingReview": {
+      "timestamp": 14.766667,
+      "image": "outputs/expanded-cache-completions/pin-review/he--backsite-from-sun-room/landing-14.767.jpg",
+      "sourceVideo": "https://assets.csnades.gg/nades/cache-he-MAhWEX0xII/hq.mp4",
+      "sha256": "e29acb9f0854d3957e189a81316e20d840e8fb11c876e862acc00ddf8f9f7785",
+      "reviewed": true,
+      "description": "The rear B-platform corner behind the boxes, matching Back Site/Spray; not the throwing window."
+    }
+  }
+]

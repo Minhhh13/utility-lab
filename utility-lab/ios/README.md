@@ -31,14 +31,22 @@ Do not run `cap add ios` again; this repository already includes the platform pr
 
 Windows can prepare and sync this source project. Apple's build tools, the iOS Simulator, native compilation and device signing require macOS and Xcode. No native build or release verification is claimed. See Capacitor's [environment requirements](https://capacitorjs.com/docs/getting-started/environment-setup), [iOS workflow](https://capacitorjs.com/docs/ios), and [Swift Package Manager guide](https://capacitorjs.com/docs/ios/spm).
 
+## Native file exports
+
+Tactic JSON, board PNG, lineup JSON, playbook JSON and whole-workspace backups use the shared `src/file-transfer.ts` helper. Browser builds request an ordinary file download. In the native app, the helper writes the export into a unique temporary cache folder using **@capacitor/filesystem**, then opens **@capacitor/share** with the file URI. The iOS share sheet provides destinations such as Save to Files and other installed apps. The helper removes the temporary folder after the sharing operation finishes; cancelling leaves saved workspace records intact. See the official [Filesystem](https://capacitorjs.com/docs/apis/filesystem) and [Share](https://capacitorjs.com/docs/apis/share) APIs.
+
+Both plugins are installed as Capacitor 8 dependencies. Run `npm run ios:sync` after cloning or changing plugins to update the generated Swift package and bundled web code. This export path is **source-prepared, not native-verified**: JSON/photo transfer, PNG sharing, cancellation and saving to Files still require a Simulator or iPhone check.
+
+`ios/App/App/PrivacyInfo.xcprivacy` is registered in the App target's Resources build phase. It declares `NSPrivacyAccessedAPICategoryFileTimestamp` with approved reason **C617.1**, the reason recommended by the Filesystem documentation for app-container file access. The XML and Xcode resource reference were checked on Windows. This declaration covers the implemented filesystem use; it does not establish App Store approval. Review the [Capacitor privacy-manifest guidance](https://capacitorjs.com/docs/ios/privacy-manifest) before submission.
+
 ## Native artwork
 
-The native icon and launch screen use the approved blue and white Waypoints artwork from `public/icon.svg`. The 1024px icon has a full square, opaque blue background; iOS supplies the corner mask. The launch image places the same mark on the app's `#f5f5f2` background. Editable SVG sources are in `ios/BrandAssets`.
+The native icon and launch screen use the approved blue and white Utility Lab artwork from `public/icon.svg`. The 1024px icon has a full square, opaque blue background; iOS supplies the corner mask. The launch image places the same mark on the app's `#f5f5f2` background. Editable SVG sources are in `ios/BrandAssets`.
 
 To regenerate these local assets from the shared brand source, run `node ios/scripts/generate-brand-assets.mjs` from `utility-lab`. The script uses the project's Playwright dependency and Microsoft Edge on Windows. On other systems, install Playwright's Chromium browser first or set `PLAYWRIGHT_CHANNEL` to a locally installed supported browser. It does not load external media.
 
-## Draft limits
+## Native verification limits
 
-The interactive Utility Lab interface is the bundled web app. Creator videos and remotely linked photos require a network connection. Native playback, file import/export, keyboard behavior, safe areas and landscape board interactions need an iPhone/Simulator check before distributing this draft.
+The interactive Utility Lab interface is the bundled web app. Creator videos and remotely linked photos require a network connection. Native playback, file import/export, keyboard behavior, safe areas and landscape board interactions need an iPhone/Simulator check before distribution.
 
 There are no signing certificates, provisioning profiles, Apple account details or App Store submission settings in this project.

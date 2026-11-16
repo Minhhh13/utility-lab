@@ -12,6 +12,13 @@ outputs/
 .dev.vars*
 *.pem
 .DS_Store
+# Local operational checkpoints and discarded landscape drafts
+/HANDOFF.md
+/utility-lab/docs/handoffs/
+/utility-lab/public/art/launch-courtyard.webp
+/utility-lab/public/art/launch-dunes.webp
+/utility-lab/public/art/launch-foundry.webp
+/utility-lab/public/art/launch-temple.webp
 # Unused original generated framework template (local-only)
 utility-lab/app/
 utility-lab/components/
@@ -22,7 +29,13 @@ utility-lab/hooks/
 utility-lab/lib/
 utility-lab/vendor/
 utility-lab/worker/
-utility-lab/scripts/
+utility-lab/scripts/*
+!utility-lab/scripts/build-expanded-catalogue.mjs
+!utility-lab/scripts/build-origin-catalogue.mjs
+!utility-lab/scripts/check-local.mjs
+!utility-lab/scripts/serve-local.mjs
+!utility-lab/scripts/package-local.mjs
+!utility-lab/scripts/prepare-cloudflare.mjs
 utility-lab/.openai/
 utility-lab/.sites-runtime/
 utility-lab/cloudflare-env.d.ts

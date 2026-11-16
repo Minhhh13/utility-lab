@@ -1,0 +1,114 @@
+[
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/mid-doors-from-xbox",
+    "sourceId": "dust2-he-ja63UffcqG",
+    "sourceTeam": "Terrorist",
+    "from": "XBox",
+    "target": "Mid Doors",
+    "sourceTechnique": "Left Click",
+    "sourceMovement": "Stationary",
+    "sourceInputText": "Left Click Movement Stationary",
+    "videoUrl": "https://assets.csnades.gg/nades/dust2-he-ja63UffcqG/hq.mp4",
+    "videoDuration": 15.75,
+    "videoWidth": 2562,
+    "videoHeight": 1440,
+    "standingPhoto": "/lineup-media/source-video-stills/csnades/dust2/dust2-he-ja63UffcqG.jpg",
+    "standingTime": 1.75,
+    "standingSha256": "3804b62589e457aa27465b4b2c62f8815915ce9e803cfc7e254cd6ab2daf17b5",
+    "standingReview": "The original pre-aim frame is pressed into the crate/wall junction after approaching it.",
+    "aimPhoto": "https://assets.csnades.gg/nades/dust2-he-ja63UffcqG/lineup.webp",
+    "aimDimensions": {
+      "width": 2560,
+      "height": 1440
+    },
+    "sourcePublishedAndUpdated": [
+      "September 9, 2023",
+      "June 28, 2024"
+    ],
+    "noAddedMarkers": true
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/short-from-lower-tunnels",
+    "sourceId": "dust2-he-aRR3lBtKnE",
+    "sourceTeam": "Terrorist",
+    "from": "Lower Tunnels",
+    "target": "Short",
+    "sourceTechnique": "Jump + Left Click",
+    "sourceMovement": "Stationary",
+    "sourceInputText": "Jump + Left Click Movement Stationary",
+    "videoUrl": "https://assets.csnades.gg/nades/dust2-he-aRR3lBtKnE/hq.mp4",
+    "videoDuration": 15.35,
+    "videoWidth": 2562,
+    "videoHeight": 1440,
+    "standingPhoto": "/lineup-media/source-video-stills/csnades/dust2/dust2-he-aRR3lBtKnE.jpg",
+    "standingTime": 1.75,
+    "standingSha256": "96ca58b905cee14fe7ce179e9205c95ac7781538c165bbcd654390cd97b5868e",
+    "standingReview": "The original setup view shows the stopped arch/pillar edge before turning to aim.",
+    "aimPhoto": "https://assets.csnades.gg/nades/dust2-he-aRR3lBtKnE/lineup.webp",
+    "aimDimensions": {
+      "width": 2560,
+      "height": 1440
+    },
+    "sourcePublishedAndUpdated": [
+      "September 9, 2023",
+      "January 18, 2024"
+    ],
+    "noAddedMarkers": true
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/short-stairs-corner-from-mid",
+    "sourceId": "dust2-he-Y1laUpVlaF",
+    "sourceTeam": "Terrorist",
+    "from": "Mid",
+    "target": "Short Stairs Corner",
+    "sourceTechnique": "Left Click",
+    "sourceMovement": "Running",
+    "sourceInputText": "Left Click Movement Running",
+    "videoUrl": "https://assets.csnades.gg/nades/dust2-he-Y1laUpVlaF/hq.mp4",
+    "videoDuration": 17.516667,
+    "videoWidth": 2562,
+    "videoHeight": 1440,
+    "standingPhoto": "/lineup-media/source-video-stills/csnades/dust2/dust2-he-Y1laUpVlaF.jpg",
+    "standingTime": 2.5,
+    "standingSha256": "70776323aa825ab01fe72670c8696842fdcd4deb6db2b7401f60e7982e894f43",
+    "standingReview": "Settled pre-aim corner view retains the ground/wall junction; later frames turn toward Short.",
+    "aimPhoto": "https://assets.csnades.gg/nades/dust2-he-Y1laUpVlaF/lineup.webp",
+    "aimDimensions": {
+      "width": 2560,
+      "height": 1440
+    },
+    "sourcePublishedAndUpdated": [
+      "September 9, 2023",
+      "January 18, 2024"
+    ],
+    "noAddedMarkers": true
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/back-plat-from-upper-tunnels",
+    "sourceId": "dust2-he-t27wNMjp7J",
+    "sourceTeam": "Terrorist",
+    "from": "Upper Tunnels",
+    "target": "Back Plat",
+    "sourceTechnique": "Left Click",
+    "sourceMovement": "Running",
+    "sourceInputText": "Left Click Movement Running",
+    "videoUrl": "https://assets.csnades.gg/nades/dust2-he-t27wNMjp7J/hq.mp4",
+    "videoDuration": 24.533333,
+    "videoWidth": 2562,
+    "videoHeight": 1440,
+    "standingPhoto": "/lineup-media/source-video-stills/csnades/dust2/dust2-he-t27wNMjp7J.jpg",
+    "standingTime": 1.75,
+    "standingSha256": "44feeefe90bd74bef1241656c7f901f4a2e3751380c44ceaa40512eda858ca7c",
+    "standingReview": "The original stopped corner setup appears before the source turns toward the exit and aim.",
+    "aimPhoto": "https://assets.csnades.gg/nades/dust2-he-t27wNMjp7J/lineup.webp",
+    "aimDimensions": {
+      "width": 2560,
+      "height": 1440
+    },
+    "sourcePublishedAndUpdated": [
+      "September 9, 2023",
+      "January 18, 2024"
+    ],
+    "noAddedMarkers": true
+  }
+]

@@ -1,9 +1,117 @@
 export const UTILITY_TYPES = ["Smoke", "Flash", "Molotov", "HE"] as const;
 export type UtilityType = (typeof UTILITY_TYPES)[number];
-export type UtilityPhoto = { image: string; caption: string };
+export type UtilityPhotoRegion = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  sourceWidth: number;
+  sourceHeight: number;
+};
+export type UtilityPhoto = {
+  image: string;
+  caption: string;
+  kind?: "position" | "aim" | "release" | "landing" | "context";
+  creator?: string;
+  source?: string;
+  license?: string;
+  licenseUrl?: string;
+  capturedAt?: string;
+  gameBuild?: string;
+  annotationId?: string;
+  /** A labelled panel of the unchanged source image, in source pixels. */
+  region?: UtilityPhotoRegion;
+  /** Source-confirmed crosshair point, normalized against the full original image. */
+  aimPoint?: { x: number; y: number };
+};
+export const isBundledPhoto = (value: string): boolean =>
+  /^\/lineup-media\/[a-zA-Z0-9_/-]+\.(png|jpe?g|webp)$/.test(value);
 export type UtilityVideo =
   | { kind: "youtube"; id: string; url: string; start: number }
   | { kind: "file"; url: string; start: number };
+export type UtilityPhotoEmbed = {
+  provider: "reddit" | "gonade" | "csnades" | "cs2tricks" | "lineupspro";
+  postUrl: string;
+  embedUrl: string;
+  height?: number;
+};
+export function validatePhotoEmbed(value: unknown): UtilityPhotoEmbed | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const item = value as Record<string, unknown>;
+  if (
+    !["reddit", "gonade", "csnades", "cs2tricks", "lineupspro"].some(
+      (provider) => item.provider === provider,
+    ) ||
+    typeof item.postUrl !== "string" ||
+    typeof item.embedUrl !== "string" ||
+    item.postUrl.length > 2000 ||
+    item.embedUrl.length > 2500
+  )
+    return null;
+  try {
+    const post = new URL(item.postUrl),
+      embed = new URL(item.embedUrl);
+    if (item.provider !== "reddit") {
+      const allowed =
+        item.provider === "gonade"
+          ? {
+              origin: "https://gonade.app",
+              path: /^\/nade\/[a-z0-9]+(?:-[a-z0-9]+)*$/,
+            }
+          : item.provider === "csnades"
+            ? {
+                origin: "https://csnades.gg",
+                path: /^\/(mirage|dust2|inferno|nuke|ancient|anubis|cache|vertigo)\/(smokes|flashes|molotovs|grenades)\/[a-z0-9]+(?:-[a-z0-9]+)*$/,
+              }
+            : item.provider === "lineupspro"
+              ? {
+                  origin: "https://lineups.pro",
+                  path: /^\/cache\/[a-z0-9]{6}$/,
+                }
+              : {
+                  origin: "https://www.cs2tricks.com",
+                  path: /^\/nades\/(mirage|dust2|inferno|nuke|ancient|anubis|cache|vertigo)\/(smokes|flashes|molotovs|grenades)\/[a-z0-9]+(?:-[a-z0-9]+)*$/,
+                };
+      if (
+        post.origin !== allowed.origin ||
+        embed.href !== post.href ||
+        post.username ||
+        post.password ||
+        post.search ||
+        post.hash ||
+        !allowed.path.test(post.pathname)
+      )
+        return null;
+    } else if (
+      post.protocol !== "https:" ||
+      !["www.reddit.com", "reddit.com"].includes(post.hostname) ||
+      post.username ||
+      post.password ||
+      !/^\/r\/[a-zA-Z0-9_]+\/comments\/[a-zA-Z0-9]+\//.test(post.pathname) ||
+      embed.origin !== "https://embed.reddit.com" ||
+      embed.username ||
+      embed.password ||
+      embed.pathname !== post.pathname
+    )
+      return null;
+    if (
+      item.height !== undefined &&
+      (typeof item.height !== "number" ||
+        !Number.isFinite(item.height) ||
+        item.height < 200 ||
+        item.height > 5000)
+    )
+      return null;
+    return {
+      provider: item.provider as UtilityPhotoEmbed["provider"],
+      postUrl: post.href,
+      embedUrl: embed.href,
+      ...(typeof item.height === "number" ? { height: item.height } : {}),
+    };
+  } catch {
+    return null;
+  }
+}
 export type UtilityReference = {
   id: string;
   mapId: string;
@@ -22,9 +130,20 @@ export type UtilityReference = {
   image?: string;
   source?: string;
   videoUrl?: string;
+  /** The same source guide's alternate player, used if its direct clip fails. */
+  videoFallbackUrl?: string;
   videoStart?: number;
   photos?: UtilityPhoto[];
+  /** Original online reference images, displayed directly in our gallery. */
+  remotePhotos?: UtilityPhoto[];
   creator?: string;
+  showMarker?: boolean;
+  markerBasis?: "callout-area";
+  /** Publisher destination point, in its audited 1000-unit radar frame. */
+  markerSource?: { registrationId: string; destinationId: string; x: number; y: number };
+  site?: "A" | "B" | "Mid" | "Other";
+  tags?: string[];
+  photoEmbed?: UtilityPhotoEmbed;
 };
 
 type Target = [
@@ -252,7 +371,10 @@ export const FAVORITE_UTILITIES_KEY = "utility-lab:utility-favorites:v1";
 export const MAX_USER_UTILITIES = 80;
 export const MAX_SCREENSHOT_BYTES = 1_048_576;
 export const MAX_LINEUP_PHOTOS = 4;
+export const MAX_REMOTE_LINEUP_PHOTOS = 12;
 export const MAX_PHOTO_DATA_CHARS = 2_900_000;
+export const isLocalPhoto = (value: string): boolean =>
+  /^ul-media:[a-zA-Z0-9-]{1,100}$/.test(value);
 export const THROW_METHODS = [
   "Not recorded",
   "LMB (left button)",
@@ -264,6 +386,13 @@ export const THROW_METHODS = [
   "Run + LMB",
   "Run + jump + LMB",
   "Walk + LMB",
+  "Walk + jump + LMB",
+  "Crouch + LMB",
+  "Crouch + RMB",
+  "Crouch + both buttons (LMB + RMB)",
+  "Crouch + jump + LMB",
+  "Run + RMB",
+  "Run + jump + both buttons (LMB + RMB)",
 ] as const;
 export function utilityColor(type: UtilityType): string {
   return `var(--marker-${type.toLowerCase()})`;
@@ -344,17 +473,112 @@ export function parseUtilityVideo(
   );
 }
 export function utilityPhotos(item: UtilityReference): UtilityPhoto[] {
-  return item.photos?.length
+  const personal = item.photos?.length
     ? item.photos
     : item.image
       ? [{ image: item.image, caption: "Lineup reference" }]
       : [];
+  return [...(item.remotePhotos || []), ...personal];
 }
 function object(value: unknown): value is Record<string, unknown> {
   return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 function bounded(value: unknown, max: number): value is string {
   return typeof value === "string" && value.length <= max;
+}
+function validatePhotos(
+  value: unknown,
+  limit: number,
+  remote = false,
+): UtilityPhoto[] | null {
+  if (value === undefined) return [];
+  if (!Array.isArray(value) || value.length > limit) return null;
+  const photos: UtilityPhoto[] = [];
+  for (const photo of value) {
+    if (
+      !object(photo) ||
+      !bounded(photo.image, remote ? 2000 : 1_450_000) ||
+      !bounded(photo.caption, 240)
+    )
+      return null;
+    if (
+      remote ||
+      (!isLocalPhoto(photo.image) &&
+        !isBundledPhoto(photo.image) &&
+        !/^data:image\/(png|jpeg|webp);base64,/.test(photo.image))
+    ) {
+      try {
+        if (new URL(safeSource(photo.image)).protocol !== "https:") return null;
+      } catch {
+        return null;
+      }
+    }
+    if (
+      photo.kind !== undefined &&
+      !["position", "aim", "release", "landing", "context"].some(
+        (kind) => kind === photo.kind,
+      )
+    )
+      return null;
+    const metadata: Partial<UtilityPhoto> = {};
+    if (photo.aimPoint !== undefined) {
+      const point = photo.aimPoint;
+      if (
+        photo.kind !== "aim" || !object(point) ||
+        !["x", "y"].every(key => typeof point[key] === "number" &&
+          Number.isFinite(point[key]) && point[key] >= 0 && point[key] <= 1)
+      ) return null;
+      metadata.aimPoint = { x: point.x as number, y: point.y as number };
+    }
+    if (photo.region !== undefined) {
+      const region = photo.region;
+      if (
+        !object(region) ||
+        !["x", "y", "width", "height", "sourceWidth", "sourceHeight"].every(
+          (key) => typeof region[key] === "number" && Number.isFinite(region[key]),
+        ) ||
+        (region.x as number) < 0 || (region.y as number) < 0 ||
+        (region.width as number) <= 0 || (region.height as number) <= 0 ||
+        (region.sourceWidth as number) > 20_000 ||
+        (region.sourceHeight as number) > 20_000 ||
+        (region.x as number) + (region.width as number) > (region.sourceWidth as number) ||
+        (region.y as number) + (region.height as number) > (region.sourceHeight as number)
+      ) return null;
+      metadata.region = {
+        x: region.x as number, y: region.y as number,
+        width: region.width as number, height: region.height as number,
+        sourceWidth: region.sourceWidth as number, sourceHeight: region.sourceHeight as number,
+      };
+    }
+    for (const [key, max] of [
+      ["creator", 120],
+      ["license", 160],
+      ["capturedAt", 40],
+      ["gameBuild", 80],
+      ["annotationId", 160],
+    ] as const) {
+      if (photo[key] !== undefined) {
+        if (!bounded(photo[key], max)) return null;
+        metadata[key] = photo[key];
+      }
+    }
+    for (const key of ["source", "licenseUrl"] as const)
+      if (photo[key] !== undefined) {
+        if (!bounded(photo[key], 2000)) return null;
+        try {
+          metadata[key] = safeSource(photo[key]);
+        } catch {
+          return null;
+        }
+      }
+    photos.push({
+      image: photo.image,
+      caption: photo.caption,
+      ...(photo.kind ? { kind: photo.kind as UtilityPhoto["kind"] } : {}),
+      ...metadata,
+    });
+  }
+  return photos;
 }
 export function validateUtility(value: unknown): UtilityReference | null {
   if (
@@ -375,6 +599,11 @@ export function validateUtility(value: unknown): UtilityReference | null {
   )
     return null;
   let video: UtilityVideo | null = null;
+  const photoEmbed =
+    value.photoEmbed === undefined
+      ? null
+      : validatePhotoEmbed(value.photoEmbed);
+  if (value.photoEmbed !== undefined && !photoEmbed) return null;
   if (value.videoUrl !== undefined) {
     if (!bounded(value.videoUrl, 2000)) return null;
     try {
@@ -382,6 +611,15 @@ export function validateUtility(value: unknown): UtilityReference | null {
         value.videoUrl,
         typeof value.videoStart === "number" ? value.videoStart : undefined,
       );
+    } catch {
+      return null;
+    }
+  }
+  let videoFallback: UtilityVideo | null = null;
+  if (value.videoFallbackUrl !== undefined) {
+    if (!bounded(value.videoFallbackUrl, 2000)) return null;
+    try {
+      videoFallback = parseUtilityVideo(value.videoFallbackUrl);
     } catch {
       return null;
     }
@@ -395,34 +633,46 @@ export function validateUtility(value: unknown): UtilityReference | null {
   )
     return null;
   if (value.creator !== undefined && !bounded(value.creator, 120)) return null;
-  let photos: UtilityPhoto[] = [];
-  if (value.photos !== undefined) {
-    if (!Array.isArray(value.photos) || value.photos.length > MAX_LINEUP_PHOTOS)
-      return null;
-    for (const photo of value.photos) {
-      if (
-        !object(photo) ||
-        !bounded(photo.image, 1_450_000) ||
-        !bounded(photo.caption, 240)
-      )
-        return null;
-      if (!/^data:image\/(png|jpeg|webp);base64,/.test(photo.image)) {
-        try {
-          if (new URL(safeSource(photo.image)).protocol !== "https:")
-            return null;
-        } catch {
-          return null;
-        }
-      }
-      photos.push({ image: photo.image, caption: photo.caption });
-    }
-    if (
-      photos.reduce((total, photo) => total + photo.image.length, 0) +
-        (typeof value.image === "string" ? value.image.length : 0) >
-      MAX_PHOTO_DATA_CHARS
-    )
-      return null;
+  if (value.showMarker !== undefined && typeof value.showMarker !== "boolean")
+    return null;
+  if (value.markerBasis !== undefined && value.markerBasis !== "callout-area")
+    return null;
+  let markerSource: UtilityReference["markerSource"];
+  if (value.markerSource !== undefined) {
+    const point = value.markerSource as Record<string, unknown>;
+    if (!point || typeof point !== "object" || Array.isArray(point) ||
+        !bounded(point.registrationId, 100) || !bounded(point.destinationId, 100) ||
+        typeof point.x !== "number" || typeof point.y !== "number" ||
+        !Number.isFinite(point.x) || !Number.isFinite(point.y) ||
+        point.x < 0 || point.x > 1000 || point.y < 0 || point.y > 1000) return null;
+    markerSource = { registrationId: point.registrationId as string,
+      destinationId: point.destinationId as string, x: point.x, y: point.y };
   }
+  if (
+    value.site !== undefined &&
+    !["A", "B", "Mid", "Other"].includes(String(value.site))
+  )
+    return null;
+  if (
+    value.tags !== undefined &&
+    (!Array.isArray(value.tags) ||
+      value.tags.length > 20 ||
+      !value.tags.every((tag) => bounded(tag, 40)))
+  )
+    return null;
+  const photos = validatePhotos(value.photos, MAX_LINEUP_PHOTOS);
+  const remotePhotos = validatePhotos(
+    value.remotePhotos,
+    MAX_REMOTE_LINEUP_PHOTOS,
+    true,
+  );
+  if (!photos || !remotePhotos) return null;
+  if (
+    photos.reduce((total, photo) => total + photo.image.length, 0) +
+      (typeof value.image === "string" ? value.image.length : 0) >
+    MAX_PHOTO_DATA_CHARS
+  )
+    return null;
   if (
     typeof value.x !== "number" ||
     typeof value.y !== "number" ||
@@ -443,7 +693,9 @@ export function validateUtility(value: unknown): UtilityReference | null {
   if (
     value.image !== undefined &&
     (!bounded(value.image, 1_450_000) ||
-      !/^data:image\/(png|jpeg|webp);base64,/.test(value.image))
+      (!isLocalPhoto(value.image) &&
+        !isBundledPhoto(value.image) &&
+        !/^data:image\/(png|jpeg|webp);base64,/.test(value.image)))
   )
     return null;
   let source = "";
@@ -473,8 +725,20 @@ export function validateUtility(value: unknown): UtilityReference | null {
     ...(value.image ? { image: value.image as string } : {}),
     ...(source ? { source } : {}),
     ...(video ? { videoUrl: video.url, videoStart: video.start } : {}),
+    ...(videoFallback ? { videoFallbackUrl: videoFallback.url } : {}),
     ...(photos.length ? { photos } : {}),
+    ...(remotePhotos.length ? { remotePhotos } : {}),
     ...(value.creator ? { creator: value.creator as string } : {}),
+    ...(typeof value.showMarker === "boolean"
+      ? { showMarker: value.showMarker }
+      : {}),
+    ...(value.markerBasis === "callout-area"
+      ? { markerBasis: "callout-area" as const }
+      : {}),
+    ...(markerSource ? { markerSource } : {}),
+    ...(value.site ? { site: value.site as UtilityReference["site"] } : {}),
+    ...(Array.isArray(value.tags) ? { tags: value.tags as string[] } : {}),
+    ...(photoEmbed ? { photoEmbed } : {}),
   };
 }
 export function readUserUtilities(): UtilityReference[] {

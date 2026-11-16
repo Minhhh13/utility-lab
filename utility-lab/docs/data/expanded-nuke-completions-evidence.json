@@ -1,0 +1,95 @@
+[
+  {
+    "source": "https://www.youtube.com/watch?v=AmbXVJOXMG8",
+    "sourceId": "AmbXVJOXMG8",
+    "capturedSourceId": "AmbXVJOXMG8",
+    "videoUid": "AmbXVJOXMG8",
+    "creator": "CS2 Nades 💣",
+    "mapId": "nuke",
+    "levelId": "lower",
+    "side": "CT",
+    "publication": {
+      "title": "Nuke Retake B-Side Flash 💥",
+      "publishDate": "2024-04-17T13:50:04-07:00",
+      "uploadDate": "2024-04-17T13:50:04-07:00"
+    },
+    "review": "Original source explicitly calls this a B retake flash. First-person source shows Decon red-toolbox/hazmat-suit corner, precise marked wall aim beside the glove sign above the sink, LEFT CLICK overlay, then a blinded player on B. CT is the stated retake use; destination is actual lower B reactor. No invented input, marker, timing or source pairing.",
+    "inputEvidence": {
+      "text": "LEFT CLICK",
+      "time": 7
+    },
+    "frames": [
+      {
+        "kind": "position",
+        "publicPath": "/lineup-media/source-video-stills/cs2nades/nuke/b-retake-flash-position-3500ms.jpg",
+        "time": 3.5,
+        "nativeWidth": 1080,
+        "nativeHeight": 1920,
+        "outputWidth": 1080,
+        "outputHeight": 1920,
+        "extraction": "decoded-video-canvas",
+        "sha256": "103674ccb8a876439207b674f9dc654cb2f2c69b6803fa3636fbcbb4b4b253af",
+        "bytes": 198967
+      },
+      {
+        "kind": "aim",
+        "publicPath": "/lineup-media/source-video-stills/cs2nades/nuke/b-retake-flash-aim-7000ms.jpg",
+        "time": 7,
+        "nativeWidth": 1080,
+        "nativeHeight": 1920,
+        "outputWidth": 1080,
+        "outputHeight": 1920,
+        "extraction": "decoded-video-canvas",
+        "sha256": "39d9a9e34b0e490c4a95a69f02e267201e265bf87cc5ef140780d39cc3e75bf4",
+        "bytes": 194792,
+        "region": {
+          "x": 430,
+          "y": 460,
+          "width": 650,
+          "height": 1460,
+          "sourceWidth": 1080,
+          "sourceHeight": 1920
+        }
+      },
+      {
+        "kind": "landing",
+        "publicPath": "/lineup-media/source-video-stills/cs2nades/nuke/b-retake-flash-landing-11000ms.jpg",
+        "time": 11,
+        "nativeWidth": 1080,
+        "nativeHeight": 1920,
+        "outputWidth": 1080,
+        "outputHeight": 1920,
+        "extraction": "decoded-video-canvas",
+        "sha256": "6ddd7b0ac410a89f7f60ea155e87824378994d6014b1468c2d2786908d6fdf17",
+        "bytes": 267527
+      }
+    ],
+    "playback": {
+      "id": "AmbXVJOXMG8",
+      "sources": [
+        "https://www.youtube.com/watch?v=AmbXVJOXMG8"
+      ],
+      "checkedAt": "2026-11-09T16:37:17.928Z",
+      "oEmbedStatus": 200,
+      "title": "Nuke Retake B-Side Flash 💥",
+      "author": "CS2 Nades 💣",
+      "evidence": {
+        "status": "OK",
+        "videoId": "AmbXVJOXMG8",
+        "duration": 19.781,
+        "currentTime": 0.205353,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Nuke Retake B-Side Flash 💥 - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "regionReason": "Original Aim frame is retained unmodified. UI region shows the exact sign/crosshair/arrow/sink reference while excluding the creator's unrelated sponsor graphic to the left.",
+    "rights": "Original creator retains rights. Local derived original video stills; no claim of free licensing/public redistribution."
+  }
+]

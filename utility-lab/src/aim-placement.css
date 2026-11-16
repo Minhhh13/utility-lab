@@ -1,0 +1,16 @@
+.ul-aim-point {
+  position: absolute;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: none;
+  transition: none;
+  fill: none;
+}
+.ul-aim-point-outline { stroke: #071b18; stroke-width: 5; }
+.ul-aim-point-color { stroke: #4dffd1; stroke-width: 2; }
+.ul-photo-zoom .ul-aim-toggle { min-width: 40px; }
+.ul-photo-zoom .ul-aim-toggle[aria-pressed="true"] { color: var(--accent); }

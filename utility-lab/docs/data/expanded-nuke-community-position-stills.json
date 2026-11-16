@@ -1,0 +1,2291 @@
+[
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/1bf7d1a4cd08-garage-from-outside-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/1bf7d1a4cd08-garage-from-outside-t-spawn",
+    "sourceId": "community_1bf7d1a4cd08",
+    "capturedSourceId": "community_1bf7d1a4cd08",
+    "videoUid": "KnFf43jCCg0",
+    "mapId": "nuke",
+    "creator": "pub_rob · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1bf7d1a4cd08-garage-from-outside-t-spawn-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "4ffe2a2cb0b594e87e9d87090d04e5e4a0d51ab1d0317a54487c9b6908cdad3b",
+    "bytes": 219965,
+    "caption": "Stand at the gate post beside the truck cab.",
+    "review": "Settled at the metal gate edge beside the truck cab before rotating toward the garage-roof/ladder aim.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1bf7d1a4cd08-garage-from-outside-t-spawn-aim-4500ms.jpg",
+      "time": 4.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "94c4ee1215262990fdd3300b2e8ae7bc2f77f40256c52f864c593ff02538b97f",
+      "bytes": 365053
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=KnFf43jCCg0",
+    "publication": {
+      "title": "CS2 New Nuke Warehouse Smoke",
+      "publish": "2023-09-06T16:18:12-07:00",
+      "author": "pub_rob"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 0.976838
+    },
+    "embeddedPlayback": {
+      "id": "KnFf43jCCg0",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/1bf7d1a4cd08-garage-from-outside-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:41.492Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 New Nuke Warehouse Smoke",
+      "author": "pub_rob",
+      "evidence": {
+        "status": "OK",
+        "videoId": "KnFf43jCCg0",
+        "duration": 29.261,
+        "currentTime": 0.072452,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 New Nuke Warehouse Smoke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 330,
+      "y": 595,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/91afe651d426-t-blue-boxes-from-ct-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/91afe651d426-t-blue-boxes-from-ct-spawn",
+    "sourceId": "community_91afe651d426",
+    "capturedSourceId": "community_91afe651d426",
+    "videoUid": "jwAgP_XML3Q",
+    "mapId": "nuke",
+    "creator": "pub_rob · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-91afe651d426-t-blue-boxes-from-ct-spawn-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "a985ff2272e83f06d1d9942c4e334c9d4ddcd0e2f1fbc60a85b9d42ab0c4c70f",
+    "bytes": 262250,
+    "caption": "Stand at the front-left corner of CT Red.",
+    "review": "Standing at the left front corner of the red CT container before aiming at the roofline across Outside.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-91afe651d426-t-blue-boxes-from-ct-spawn-aim-4500ms.jpg",
+      "time": 4.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "af63ccc5ee2452900ecb8b441fedae894c6a3ca528529d245ee630f6fbb8fbb5",
+      "bytes": 286152
+    },
+    "sourceTeam": "ct",
+    "recordSides": [
+      "CT"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=jwAgP_XML3Q",
+    "publication": {
+      "title": "CS2 New Nuke CT Outside Smoke",
+      "publish": "2023-09-06T16:32:26-07:00",
+      "author": "pub_rob"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.211868
+    },
+    "embeddedPlayback": {
+      "id": "jwAgP_XML3Q",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/91afe651d426-t-blue-boxes-from-ct-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:41.502Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 New Nuke CT Outside Smoke",
+      "author": "pub_rob",
+      "evidence": {
+        "status": "OK",
+        "videoId": "jwAgP_XML3Q",
+        "duration": 22.801,
+        "currentTime": 0.103789,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 New Nuke CT Outside Smoke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 474,
+      "y": 860,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 730,
+      "y": 483,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/a43aa7dbae78-heaven-from-silo",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/a43aa7dbae78-heaven-from-silo",
+    "sourceId": "community_a43aa7dbae78",
+    "capturedSourceId": "community_a43aa7dbae78",
+    "videoUid": "sCOqNRexQwg",
+    "mapId": "nuke",
+    "creator": "surtiwe nades · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-a43aa7dbae78-heaven-from-silo-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "0668049f79f81ae2c806d9ccf5d575d2033347c9c225c14e389594143b8017f2",
+    "bytes": 329584,
+    "caption": "Stand on the white Silo support pipe.",
+    "review": "Downward first-person view shows feet on the marked white silo pipe; subsequent frame sets the aim at the rooftop railing.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-a43aa7dbae78-heaven-from-silo-aim-5500ms.jpg",
+      "time": 5.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "544484b0d5b010583baf0504a7e71f29bee9c5e2120a7cc5fad7d5ad00e06c6c",
+      "bytes": 352378
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "sourceVideo": "https://www.youtube.com/watch?v=sCOqNRexQwg",
+    "publication": {
+      "title": "CS2 | Nuke | Smoke to Heaven from Silo",
+      "publish": "2023-09-03T16:11:57-07:00",
+      "author": "surtiwe"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.222705
+    },
+    "embeddedPlayback": {
+      "id": "sCOqNRexQwg",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/a43aa7dbae78-heaven-from-silo"
+      ],
+      "checkedAt": "2026-11-09T16:40:43.860Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 | Nuke | Smoke to Heaven from Silo",
+      "author": "surtiwe",
+      "evidence": {
+        "status": "OK",
+        "videoId": "sCOqNRexQwg",
+        "duration": 14.666666666666666,
+        "currentTime": 0.019469,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "CS2 | Nuke | Smoke to Heaven from Silo - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 472,
+      "y": 672,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/f83f1ca67510-outside-heaven-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/f83f1ca67510-outside-heaven-from-under-silo",
+    "sourceId": "community_f83f1ca67510",
+    "capturedSourceId": "community_f83f1ca67510",
+    "videoUid": "7qPSz4b1-es",
+    "mapId": "nuke",
+    "creator": "AvondaleZPR · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-f83f1ca67510-outside-heaven-from-under-silo-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "efe9224159eb40ec33a416605d4e7af09721f45d22875a30c3269e8946a84c7c",
+    "bytes": 482191,
+    "caption": "Stand in the fence corner under Silo.",
+    "review": "Settled first-person fence-gate corner beside the concrete support; source's zoomed aim view shows the exact silo rim crosshair.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-f83f1ca67510-outside-heaven-from-under-silo-aim-5500ms.jpg",
+      "time": 5.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "5ba4b7726a38f3246ea08e71b89fa479e5c0b2cb34d2815805112c6f059d1a48",
+      "bytes": 77500
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=7qPSz4b1-es",
+    "publication": {
+      "title": "cs2 nuke smoke outside heaven",
+      "publish": "2023-09-09T18:19:56-07:00",
+      "author": "AvondaleZPR"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.138092
+    },
+    "embeddedPlayback": {
+      "id": "7qPSz4b1-es",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/f83f1ca67510-outside-heaven-from-under-silo"
+      ],
+      "checkedAt": "2026-11-09T16:40:43.861Z",
+      "oEmbedStatus": 200,
+      "title": "cs2 nuke smoke outside heaven",
+      "author": "AvondaleZPR",
+      "evidence": {
+        "status": "OK",
+        "videoId": "7qPSz4b1-es",
+        "duration": 31.401,
+        "currentTime": 0.186371,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "cs2 nuke smoke outside heaven - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 642,
+      "y": 446,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 444,
+      "y": 874,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/e17236b24d3e-garage-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/e17236b24d3e-garage-from-t-spawn",
+    "sourceId": "community_e17236b24d3e",
+    "capturedSourceId": "community_e17236b24d3e",
+    "videoUid": "KYv4kDtzIWc",
+    "mapId": "nuke",
+    "creator": "surtiwe nades · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-e17236b24d3e-garage-from-t-spawn-position-1500ms.jpg",
+    "time": 1.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "31eb19308fcfb23a7d280552924c9fc2a24be054c343a61f97498ca52f395103",
+    "bytes": 194744,
+    "caption": "Stand in the curb corner shown at T Spawn.",
+    "review": "Settled at the curb/building corner before turning up to aim; exact source walking jumpthrow variant.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-e17236b24d3e-garage-from-t-spawn-aim-3500ms.jpg",
+      "time": 3.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "27c1d1417ab1ee39f3ebe728f4dd2b6b67bbfef689a7f9ea06d6ab4a9444e76e",
+      "bytes": 461370
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "walking",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=KYv4kDtzIWc",
+    "publication": {
+      "title": "CS2 | Nuke | Garage smoke from T Spawn",
+      "publish": "2023-09-03T16:34:17-07:00",
+      "author": "surtiwe"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.224976
+    },
+    "embeddedPlayback": {
+      "id": "KYv4kDtzIWc",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/e17236b24d3e-garage-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:46.050Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 | Nuke | Garage smoke from T Spawn",
+      "author": "surtiwe",
+      "evidence": {
+        "status": "OK",
+        "videoId": "KYv4kDtzIWc",
+        "duration": 17.981,
+        "currentTime": 0.12123,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 | Nuke | Garage smoke from T Spawn - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 191,
+      "y": 599,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/1cd37f5bc35a-outside-garage-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/1cd37f5bc35a-outside-garage-from-t-spawn",
+    "sourceId": "community_1cd37f5bc35a",
+    "capturedSourceId": "community_1cd37f5bc35a",
+    "videoUid": "LUrRDw-iU1s",
+    "mapId": "nuke",
+    "creator": "SkyFall · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1cd37f5bc35a-outside-garage-from-t-spawn-position-7000ms.jpg",
+    "time": 7,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "fc81d3b32a7def136ff6bde7a0589e9a5880e905c00e34f36f8870e3c45263ef",
+    "bytes": 166742,
+    "caption": "Stand at the gate post beside the truck cab.",
+    "review": "Settled at the metal post beside the truck cab, with a separate static crosshair frame before jumpthrow.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1cd37f5bc35a-outside-garage-from-t-spawn-aim-9000ms.jpg",
+      "time": 9,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "d7f0b4435dc7061a6194a7edcd02b8f0ea4061a07a43538ec635294dec07bf72",
+      "bytes": 252725
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=LUrRDw-iU1s",
+    "publication": {
+      "title": "CS2 Nuke | T-Side Outside-Cross Main/Garage - Smoke 1",
+      "publish": "2023-10-01T00:35:45-07:00",
+      "author": "SkyFall"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.237144
+    },
+    "embeddedPlayback": {
+      "id": "LUrRDw-iU1s",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/1cd37f5bc35a-outside-garage-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:46.051Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 Nuke | T-Side Outside-Cross Main/Garage - Smoke 1",
+      "author": "SkyFall",
+      "evidence": {
+        "status": "OK",
+        "videoId": "LUrRDw-iU1s",
+        "duration": 22.601,
+        "currentTime": 0.019127,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 Nuke | T-Side Outside-Cross Main/Garage - Smoke 1 - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 643,
+      "y": 757,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 330,
+      "y": 595,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/5f786af83ef9-heaven-from-a-site",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/5f786af83ef9-heaven-from-a-site",
+    "sourceId": "community_5f786af83ef9",
+    "capturedSourceId": "community_5f786af83ef9",
+    "videoUid": "WRSWb8_AjWg",
+    "mapId": "nuke",
+    "creator": "pub_rob · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-5f786af83ef9-heaven-from-a-site-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "1a3e40d3d53f9f7052ea478f0e186c404cb50fd22bddd126c283f9189dd2770b",
+    "bytes": 158343,
+    "caption": "Stand between the two A-site silos.",
+    "review": "Settled between the two A-site silos; separate aimed view of Heaven before the throw.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-5f786af83ef9-heaven-from-a-site-aim-5500ms.jpg",
+      "time": 5.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "7b51fb76a6edfa0e09accbbec7093205b99f386ef36f36caf3abe18d335b3997",
+      "bytes": 368809
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "sourceVideo": "https://www.youtube.com/watch?v=WRSWb8_AjWg",
+    "publication": {
+      "title": "CS2 New Nuke Post Plant Heaven Smoke",
+      "publish": "2023-09-06T16:06:53-07:00",
+      "author": "pub_rob"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.222199
+    },
+    "embeddedPlayback": {
+      "id": "WRSWb8_AjWg",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/5f786af83ef9-heaven-from-a-site"
+      ],
+      "checkedAt": "2026-11-09T16:40:47.893Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 New Nuke Post Plant Heaven Smoke",
+      "author": "pub_rob",
+      "evidence": {
+        "status": "OK",
+        "videoId": "WRSWb8_AjWg",
+        "duration": 17.761,
+        "currentTime": 0.095192,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 New Nuke Post Plant Heaven Smoke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 566,
+      "y": 460,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/43a71749dfc8-top-a-main-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/43a71749dfc8-top-a-main-from-t-spawn",
+    "sourceId": "community_43a71749dfc8",
+    "capturedSourceId": "community_43a71749dfc8",
+    "videoUid": "tKoj_Jwmfpc",
+    "mapId": "nuke",
+    "creator": "wlofa · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-43a71749dfc8-top-a-main-from-t-spawn-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "1550fcb3df49d432f52649f61a8fd113cbbd5916e181dff82fc4713e785d1f34",
+    "bytes": 317541,
+    "caption": "Stand against the wall seam shown at T Spawn.",
+    "review": "Close first-person wall seam at T Spawn, followed by the exact aimed roofline view before release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-43a71749dfc8-top-a-main-from-t-spawn-aim-4500ms.jpg",
+      "time": 4.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "641818b68b90ce115617bf891ac37b2f7700f5e31661e298917c4e5bcdaa89a3",
+      "bytes": 375936
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=tKoj_Jwmfpc",
+    "publication": {
+      "title": "Top A Main Smoke",
+      "publish": "2024-03-06T20:05:43-08:00",
+      "author": "wLoFa"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.205107
+    },
+    "embeddedPlayback": {
+      "id": "tKoj_Jwmfpc",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/43a71749dfc8-top-a-main-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:47.893Z",
+      "oEmbedStatus": 200,
+      "title": "Top A Main Smoke",
+      "author": "wLoFa",
+      "evidence": {
+        "status": "OK",
+        "videoId": "tKoj_Jwmfpc",
+        "duration": 16.041,
+        "currentTime": 0.211729,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Top A Main Smoke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 232,
+      "y": 588,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/30436a1163c6-outside-heaven-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/30436a1163c6-outside-heaven-from-t-spawn",
+    "sourceId": "community_30436a1163c6",
+    "capturedSourceId": "community_30436a1163c6",
+    "videoUid": "E4igASvfdBY",
+    "mapId": "nuke",
+    "creator": "Mastermig34 · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-30436a1163c6-outside-heaven-from-t-spawn-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "0695dd007a6aebf0cc34d303f2a4e42ecb7b76039564a845423abd31ad8acdc2",
+    "bytes": 440592,
+    "caption": "Stand in the metal gate corner.",
+    "review": "Source looks down at the floor and gate corner, then sets a separate static aim above the garage roof.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-30436a1163c6-outside-heaven-from-t-spawn-aim-7000ms.jpg",
+      "time": 7,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "9d4e6182feecba07eba6f931baf9e30e1bcc99b4906fc790aae79008ddbe2920",
+      "bytes": 369197
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=E4igASvfdBY",
+    "publication": {
+      "title": "CS2 Smoke: Nuke T spawn to heaven",
+      "publish": "2024-04-10T05:55:08-07:00",
+      "author": "Mastermig34"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.215606
+    },
+    "embeddedPlayback": {
+      "id": "E4igASvfdBY",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/30436a1163c6-outside-heaven-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:50.609Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 Smoke: Nuke T spawn to heaven",
+      "author": "Mastermig34",
+      "evidence": {
+        "status": "OK",
+        "videoId": "E4igASvfdBY",
+        "duration": 22.621,
+        "currentTime": 0.012711,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "CS2 Smoke: Nuke T spawn to heaven - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 642,
+      "y": 446,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/1b3d4c065d60-top-a-main-from-silo",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/1b3d4c065d60-top-a-main-from-silo",
+    "sourceId": "community_1b3d4c065d60",
+    "capturedSourceId": "community_1b3d4c065d60",
+    "videoUid": "3GhAU-W-MHk",
+    "mapId": "nuke",
+    "creator": "FREEON · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1b3d4c065d60-top-a-main-from-silo-position-1500ms.jpg",
+    "time": 1.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "58a571fdcd6618fcde9f2bb13c7e90d6c4840a9687c7825c591a1f8dbcd0d1e9",
+    "bytes": 331125,
+    "caption": "Crouch on the Silo lip beside its support.",
+    "review": "Downward first-person view shows feet on the silo lip/support, then a separate static roof-edge aim. Crouch and both-button inputs are explicitly published.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1b3d4c065d60-top-a-main-from-silo-aim-4500ms.jpg",
+      "time": 4.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "a42db836ca4ea45980775e404942c1d22ab0fe3a0a8a8ab96f3fcdbc5d039cdb",
+      "bytes": 296447
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "crouched_stationary",
+    "sourceTechnique": "both",
+    "sourceVideo": "https://www.youtube.com/watch?v=3GhAU-W-MHk",
+    "publication": {
+      "title": "Pressure through the roof.  Antisniper Smog (Silos) Main   Main Roof",
+      "publish": "2024-07-03T23:30:30-07:00",
+      "author": "ฺ ฺ"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.191268
+    },
+    "embeddedPlayback": {
+      "id": "3GhAU-W-MHk",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/1b3d4c065d60-top-a-main-from-silo"
+      ],
+      "checkedAt": "2026-11-09T16:40:50.610Z",
+      "oEmbedStatus": 200,
+      "title": "Pressure through the roof.  Antisniper Smog (Silos) Main   Main Roof",
+      "author": "ฺ ฺ",
+      "evidence": {
+        "status": "OK",
+        "videoId": "3GhAU-W-MHk",
+        "duration": 13.421,
+        "currentTime": 0.040726,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Pressure through the roof. Antisniper Smog (Silos) Main Main Roof - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 460,
+      "y": 692,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/d9705b6c9716-heaven-from-tetris",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/d9705b6c9716-heaven-from-tetris",
+    "sourceId": "community_d9705b6c9716",
+    "capturedSourceId": "community_d9705b6c9716",
+    "videoUid": "GkYHjQTXDk0",
+    "mapId": "nuke",
+    "creator": "FREEON · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-d9705b6c9716-heaven-from-tetris-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "350e8b49629cb3c4c8109778e2e9c3060b5b09f6e69c8c1d20a4d6e9abc8a34d",
+    "bytes": 163574,
+    "caption": "Stand against the Hut wall at Tetris.",
+    "review": "Settled against the Hut wall on Tetris; separate aimed view at the adjacent crate/railing before release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-d9705b6c9716-heaven-from-tetris-aim-9000ms.jpg",
+      "time": 9,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "b19edbcde0e99f74b47fcecd2244485969452c3c869f27f1c2a1112a3b1c1547",
+      "bytes": 235039
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=GkYHjQTXDk0",
+    "publication": {
+      "title": "NUKE tetris 9",
+      "publish": "2024-07-04T03:48:51-07:00",
+      "author": "ฺ ฺ"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.223097
+    },
+    "embeddedPlayback": {
+      "id": "GkYHjQTXDk0",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/d9705b6c9716-heaven-from-tetris"
+      ],
+      "checkedAt": "2026-11-09T16:40:53.224Z",
+      "oEmbedStatus": 200,
+      "title": "NUKE tetris 9",
+      "author": "ฺ ฺ",
+      "evidence": {
+        "status": "OK",
+        "videoId": "GkYHjQTXDk0",
+        "duration": 19.861,
+        "currentTime": 0.079779,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE tetris 9 - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 531,
+      "y": 632,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/589895309854-tetris-from-squeaky",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/589895309854-tetris-from-squeaky",
+    "sourceId": "community_589895309854",
+    "capturedSourceId": "community_589895309854",
+    "videoUid": "ZQUDv7nnuJ4",
+    "mapId": "nuke",
+    "creator": "FREEON · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-589895309854-tetris-from-squeaky-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "0c862c261652e007c756e03859f68faa416b0b805f987052db912f2a5e73d1cf",
+    "bytes": 250223,
+    "caption": "Stand on the Squeaky doorway’s floor line.",
+    "review": "Source looks down at boots aligned to the Squeaky door threshold/floor line, then aims upward to the ceiling structure.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-589895309854-tetris-from-squeaky-aim-7000ms.jpg",
+      "time": 7,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "42d26e3d88c5cca44cb64d620344095148dcef38b9975e739dbbd31e2b6f5ff2",
+      "bytes": 370476
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "both",
+    "sourceVideo": "https://www.youtube.com/watch?v=ZQUDv7nnuJ4",
+    "publication": {
+      "title": "Nuke   Vent   Tetris AntiHeaven",
+      "publish": "2024-07-04T04:13:44-07:00",
+      "author": "ฺ ฺ"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.239385
+    },
+    "embeddedPlayback": {
+      "id": "ZQUDv7nnuJ4",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/589895309854-tetris-from-squeaky"
+      ],
+      "checkedAt": "2026-11-09T16:40:53.224Z",
+      "oEmbedStatus": 200,
+      "title": "Nuke   Vent   Tetris AntiHeaven",
+      "author": "ฺ ฺ",
+      "evidence": {
+        "status": "OK",
+        "videoId": "ZQUDv7nnuJ4",
+        "duration": 14.601,
+        "currentTime": 0.012112,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Nuke Vent Tetris AntiHeaven - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 540,
+      "y": 584,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 505,
+      "y": 630,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/7bd14c78b6e8-top-silo-from-ct-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/7bd14c78b6e8-top-silo-from-ct-spawn",
+    "sourceId": "community_7bd14c78b6e8",
+    "capturedSourceId": "community_7bd14c78b6e8",
+    "videoUid": "9MW_9uJGAqA",
+    "mapId": "nuke",
+    "creator": "GlowflixGlower · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-7bd14c78b6e8-top-silo-from-ct-spawn-position-750ms.jpg",
+    "time": 0.75,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "004d59b96882461bfcf24ae5a6e2082356490f04121690fbfb3e94cf11f81b39",
+    "bytes": 99192,
+    "caption": "Stand in the concrete corner at CT Spawn.",
+    "review": "Pressed into the CT Spawn concrete corner, then a separate aimed roofline view before jumpthrow.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-7bd14c78b6e8-top-silo-from-ct-spawn-aim-2500ms.jpg",
+      "time": 2.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "72215d8781b3a2577be2b38a269bcd796e8267357eba8b6ff44705c5649d70ca",
+      "bytes": 223412
+    },
+    "sourceTeam": "ct",
+    "recordSides": [
+      "CT"
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left",
+    "sourceVideo": "https://www.youtube.com/watch?v=9MW_9uJGAqA",
+    "publication": {
+      "title": "smoke silo from ct",
+      "publish": "2024-07-07T01:40:13-07:00",
+      "author": "GlowflixGlower"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.218734
+    },
+    "embeddedPlayback": {
+      "id": "9MW_9uJGAqA",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/7bd14c78b6e8-top-silo-from-ct-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:54.898Z",
+      "oEmbedStatus": 200,
+      "title": "smoke silo from ct",
+      "author": "GlowflixGlower",
+      "evidence": {
+        "status": "OK",
+        "videoId": "9MW_9uJGAqA",
+        "duration": 17.361,
+        "currentTime": 0.046543,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "smoke silo from ct - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 501,
+      "y": 730,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 751,
+      "y": 509,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/a22621a2d6dd-vent-from-outside-lobby",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/a22621a2d6dd-vent-from-outside-lobby",
+    "sourceId": "community_a22621a2d6dd",
+    "capturedSourceId": "community_a22621a2d6dd",
+    "videoUid": "M-EEpPpXL08",
+    "mapId": "nuke",
+    "creator": "jfgh900 · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-a22621a2d6dd-vent-from-outside-lobby-position-7000ms.jpg",
+    "time": 7,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "d8ecb96af14af352679004c536c598f3385f2b82c993944e10e47c3798d3d280",
+    "bytes": 202188,
+    "caption": "Stand in the gate and metal-wall corner by Lobby.",
+    "review": "Downward source view shows the standing gate/metal-wall corner; later static frame clearly shows the crosshair before release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-a22621a2d6dd-vent-from-outside-lobby-aim-9000ms.jpg",
+      "time": 9,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "ee40347d00281525370146a0d587f1e2edadbc3825bd4257370ae3f8ea2a0701",
+      "bytes": 393082
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "crouched_stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=M-EEpPpXL08",
+    "publication": {
+      "title": "CS2 Nuke Vent Smoke",
+      "publish": "2024-07-07T16:11:17-07:00",
+      "author": "Ricardo"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.237865
+    },
+    "embeddedPlayback": {
+      "id": "M-EEpPpXL08",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/a22621a2d6dd-vent-from-outside-lobby"
+      ],
+      "checkedAt": "2026-11-09T16:40:54.899Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 Nuke Vent Smoke",
+      "author": "Ricardo",
+      "evidence": {
+        "status": "OK",
+        "videoId": "M-EEpPpXL08",
+        "duration": 20.181,
+        "currentTime": 0.087241,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 Nuke Vent Smoke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/ae3d208f448f-secret-far-from-under-silo",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/ae3d208f448f-secret-far-from-under-silo",
+    "sourceId": "community_ae3d208f448f",
+    "capturedSourceId": "community_ae3d208f448f",
+    "videoUid": "uOSNctBaxIE",
+    "mapId": "nuke",
+    "creator": "shxktie · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-ae3d208f448f-secret-far-from-under-silo-position-1500ms.jpg",
+    "time": 1.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "aad8b073cdcc7de0525c0923a5b54145707e56701216873b42ecf14b427486c5",
+    "bytes": 412864,
+    "caption": "Stand at the fence post shown under Silo.",
+    "review": "Settled against the fence post immediately after the publisher shows the original floor marker; separate static aim before release. The approach/marker overview is not substituted for the actual settled position.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-ae3d208f448f-secret-far-from-under-silo-aim-3500ms.jpg",
+      "time": 3.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "ece85dd2f080dcbd925b6146d8e2ee08e9e60685552762fda827967bc151c5bc",
+      "bytes": 347787
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "sourceVideo": "https://www.youtube.com/watch?v=uOSNctBaxIE",
+    "publication": {
+      "title": "smoke nuke",
+      "publish": "2024-08-13T03:03:51-07:00",
+      "author": "shxktie"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.189677
+    },
+    "embeddedPlayback": {
+      "id": "uOSNctBaxIE",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/ae3d208f448f-secret-far-from-under-silo"
+      ],
+      "checkedAt": "2026-11-09T16:40:58.435Z",
+      "oEmbedStatus": 200,
+      "title": "smoke nuke",
+      "author": "shxktie",
+      "evidence": {
+        "status": "OK",
+        "videoId": "uOSNctBaxIE",
+        "duration": 10.761,
+        "currentTime": 0.162667,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "smoke nuke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 628,
+      "y": 893,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 417,
+      "y": 807,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/0f1f228313c0-garage-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/0f1f228313c0-garage-from-t-spawn",
+    "sourceId": "community_0f1f228313c0",
+    "capturedSourceId": "community_0f1f228313c0",
+    "videoUid": "0SUe7_8CceU",
+    "mapId": "nuke",
+    "creator": "loonikurt · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-0f1f228313c0-garage-from-t-spawn-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "804825948462bf4298b5cc618ee6307030e34d29e3ddadeb83cb6192f184ea50",
+    "bytes": 197669,
+    "caption": "Stand in the metal gate and wall corner.",
+    "review": "Close source view shows the actual metal gate/wall corner; a separate final crosshair frame occurs before release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-0f1f228313c0-garage-from-t-spawn-aim-7000ms.jpg",
+      "time": 7,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "de43b9a9d83053a1354290f8d610f7aa6eef386f806b4a96fad93877cebfb89c",
+      "bytes": 266602
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=0SUe7_8CceU",
+    "publication": {
+      "title": "Nuke Garage smoke from T entrance",
+      "publish": "2023-12-10T02:55:34-08:00",
+      "author": "loonikurt"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.216464
+    },
+    "embeddedPlayback": {
+      "id": "0SUe7_8CceU",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/0f1f228313c0-garage-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:40:58.435Z",
+      "oEmbedStatus": 200,
+      "title": "Nuke Garage smoke from T entrance",
+      "author": "loonikurt",
+      "evidence": {
+        "status": "OK",
+        "videoId": "0SUe7_8CceU",
+        "duration": 21.901,
+        "currentTime": 0.097715,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Nuke Garage smoke from T entrance - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 661,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 336,
+      "y": 539,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/65252c63f56a-heaven-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/65252c63f56a-heaven-from-t-spawn",
+    "sourceId": "community_65252c63f56a",
+    "capturedSourceId": "community_65252c63f56a",
+    "videoUid": "-XHsyHhm4Eg",
+    "mapId": "nuke",
+    "creator": "Varizio · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-65252c63f56a-heaven-from-t-spawn-position-750ms.jpg",
+    "time": 0.75,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "3270cbe24ff603662f1ecb111cb19ca53f895740c9f9e308944d6950b51bc686",
+    "bytes": 195151,
+    "caption": "Line up with the truck’s red side light.",
+    "review": "Publisher explicitly labels the truck's red side light for position and fuse box/cable for aim. Original video says throw almost as late as possible; retained as a release note.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-65252c63f56a-heaven-from-t-spawn-aim-5500ms.jpg",
+      "time": 5.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "13327cb91e0bf364a0805ce7efeaa556155fe6ebac5ee6a17d8fc0af07b14943",
+      "bytes": 386551
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=-XHsyHhm4Eg",
+    "publication": {
+      "title": "Counter-Strike 2: Nuke T-Spawn Heaven Smoke",
+      "publish": "2025-03-21T19:02:26-07:00",
+      "author": "Varizio"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.03831
+    },
+    "embeddedPlayback": {
+      "id": "-XHsyHhm4Eg",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/65252c63f56a-heaven-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:41:01.756Z",
+      "oEmbedStatus": 200,
+      "title": "Counter-Strike 2: Nuke T-Spawn Heaven Smoke",
+      "author": "Varizio",
+      "evidence": {
+        "status": "OK",
+        "videoId": "-XHsyHhm4Eg",
+        "duration": 20.541,
+        "currentTime": 0.016734,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Counter-Strike 2: Nuke T-Spawn Heaven Smoke - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 278,
+      "y": 604,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/f79c31cb119f-heaven-from-t-roof",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/f79c31cb119f-heaven-from-t-roof",
+    "sourceId": "community_f79c31cb119f",
+    "capturedSourceId": "community_f79c31cb119f",
+    "videoUid": "52Uc50BNXvs",
+    "mapId": "nuke",
+    "creator": "R4cc02 · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-f79c31cb119f-heaven-from-t-roof-position-15000ms.jpg",
+    "time": 15,
+    "nativeWidth": 1280,
+    "nativeHeight": 720,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "extraction": "decoded-video-canvas",
+    "sha256": "9f75dd098457ff654a09f31e021ba7be0112b6896fc6405477cb7ccabb0af521",
+    "bytes": 238531,
+    "caption": "Stand on the roof-edge seam beside the round vent.",
+    "review": "Downward source view clearly shows feet on the roof-edge seam beside the round vent, followed by the actual prethrow aimed view.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-f79c31cb119f-heaven-from-t-roof-aim-18000ms.jpg",
+      "time": 18,
+      "nativeWidth": 1280,
+      "nativeHeight": 720,
+      "outputWidth": 1280,
+      "outputHeight": 720,
+      "extraction": "decoded-video-canvas",
+      "sha256": "03d7ef5f81a13672ec3522fca9eff59f6fad809d71728e7df35b28fd65ed98fc",
+      "bytes": 180130
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "crouched_stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=52Uc50BNXvs",
+    "publication": {
+      "title": "Heaven Smoke from Roof",
+      "publish": "2025-03-22T08:09:42-07:00",
+      "author": "R4cc02"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.202784
+    },
+    "embeddedPlayback": {
+      "id": "52Uc50BNXvs",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/f79c31cb119f-heaven-from-t-roof"
+      ],
+      "checkedAt": "2026-11-09T16:41:01.756Z",
+      "oEmbedStatus": 200,
+      "title": "Heaven Smoke from Roof",
+      "author": "R4cc02",
+      "evidence": {
+        "status": "OK",
+        "videoId": "52Uc50BNXvs",
+        "duration": 30.061,
+        "currentTime": 0.058042,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Heaven Smoke from Roof - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 619,
+      "y": 394,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 442,
+      "y": 591,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/ab7aa245defa-lockers-from-red",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/ab7aa245defa-lockers-from-red",
+    "sourceId": "community_ab7aa245defa",
+    "capturedSourceId": "community_ab7aa245defa",
+    "videoUid": "cgUGExFRKNU",
+    "mapId": "nuke",
+    "creator": "R4cc02 · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-ab7aa245defa-lockers-from-red-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1280,
+    "nativeHeight": 720,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "extraction": "decoded-video-canvas",
+    "sha256": "517ad848b41f15cf8f2e284b8ad3e3660fe82f0e6d4a697cdbc04122621e5683",
+    "bytes": 78956,
+    "caption": "Stand against the red container’s vertical seam.",
+    "review": "Pressed to the vertical seam of T Red container before aiming above its top corner with the grenade held.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-ab7aa245defa-lockers-from-red-aim-7000ms.jpg",
+      "time": 7,
+      "nativeWidth": 1280,
+      "nativeHeight": 720,
+      "outputWidth": 1280,
+      "outputHeight": 720,
+      "extraction": "decoded-video-canvas",
+      "sha256": "313e8ddb80fc0cd6abab2b25543143fd865f783b0a97b3e37cdfef17cb9ccfda",
+      "bytes": 134809
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "crouched_stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=cgUGExFRKNU",
+    "publication": {
+      "title": "Nuke Locker Smoke From Red",
+      "publish": "2025-03-22T08:09:35-07:00",
+      "author": "R4cc02"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.212829
+    },
+    "embeddedPlayback": {
+      "id": "cgUGExFRKNU",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/ab7aa245defa-lockers-from-red"
+      ],
+      "checkedAt": "2026-11-09T16:41:03.245Z",
+      "oEmbedStatus": 200,
+      "title": "Nuke Locker Smoke From Red",
+      "author": "R4cc02",
+      "evidence": {
+        "status": "OK",
+        "videoId": "cgUGExFRKNU",
+        "duration": 26.061,
+        "currentTime": 0.110854,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Nuke Locker Smoke From Red - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 631,
+      "y": 520,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 530,
+      "y": 888,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/953b039b3932-vent-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/953b039b3932-vent-from-t-spawn",
+    "sourceId": "community_953b039b3932",
+    "capturedSourceId": "community_953b039b3932",
+    "videoUid": "pDq6VlMP1nE",
+    "mapId": "nuke",
+    "creator": "Lucian · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-953b039b3932-vent-from-t-spawn-position-9000ms.jpg",
+    "time": 9,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "a663cad84b1da93313657ea4690d3ecf63d358ca961774206a07a9d8891f3b7f",
+    "bytes": 429725,
+    "caption": "Stand against the wall seam at T Spawn.",
+    "review": "Settled building corner at T Spawn is visible before the fast run/jump release. Extra 10-second frame required to show the actual prethrow aim rather than later trajectory.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-953b039b3932-vent-from-t-spawn-aim-10000ms.jpg",
+      "time": 10,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "e080e608052c0e9f3bab55ec2db67929b72315fa14599c806dec10761a8fc7b2",
+      "bytes": 267467
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "running",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=pDq6VlMP1nE",
+    "publication": {
+      "title": "Smoke Nuke A Fast",
+      "publish": "2025-05-01T08:39:34-07:00",
+      "author": "Lucian"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 0.902932
+    },
+    "embeddedPlayback": {
+      "id": "pDq6VlMP1nE",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/953b039b3932-vent-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:41:03.246Z",
+      "oEmbedStatus": 200,
+      "title": "Smoke Nuke A Fast",
+      "author": "Lucian",
+      "evidence": {
+        "status": "OK",
+        "videoId": "pDq6VlMP1nE",
+        "duration": 34.541,
+        "currentTime": 0.174841,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Smoke Nuke A Fast - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 539,
+      "y": 645,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 213,
+      "y": 587,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/638e9956b5d3-outside-from-roof",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/638e9956b5d3-outside-from-roof",
+    "sourceId": "community_638e9956b5d3",
+    "capturedSourceId": "community_638e9956b5d3",
+    "videoUid": "QhjdgoUG7wk",
+    "mapId": "nuke",
+    "creator": "Ivan Ugrina · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-638e9956b5d3-outside-from-roof-position-750ms.jpg",
+    "time": 0.75,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "e6d9426f3081766c693a3926c353b61f6284f2421e945276ec5bb62207393b6d",
+    "bytes": 543756,
+    "caption": "Stand beside the large roof vent, as shown.",
+    "review": "Source looks down at the standing boots beside the large roof vent, then sets a separate crosshair reference above the outside building.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-638e9956b5d3-outside-from-roof-aim-4500ms.jpg",
+      "time": 4.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "2c756574d65969fcb83d1ea4bc5428e72ef0dc1cea15f2367e01f252a72b5033",
+      "bytes": 297893
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "both_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=QhjdgoUG7wk",
+    "publication": {
+      "title": "Calm Smoke Line-up for Nuke (sorry for bad aim lol)",
+      "publish": "2025-05-22T07:23:30-07:00",
+      "author": "Ivan Ugrina"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.160973
+    },
+    "embeddedPlayback": {
+      "id": "QhjdgoUG7wk",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/638e9956b5d3-outside-from-roof"
+      ],
+      "checkedAt": "2026-11-09T16:41:05.735Z",
+      "oEmbedStatus": 200,
+      "title": "Calm Smoke Line-up for Nuke (sorry for bad aim lol)",
+      "author": "Ivan Ugrina",
+      "evidence": {
+        "status": "OK",
+        "videoId": "QhjdgoUG7wk",
+        "duration": 14.941,
+        "currentTime": 0.013934,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "Calm Smoke Line-up for Nuke (sorry for bad aim lol) - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 623,
+      "y": 805,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 396,
+      "y": 580,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/smokes/06ffdba358b5-top-a-main-from-t-spawn",
+    "photoSource": "https://csnades.gg/nuke/community/smokes/06ffdba358b5-top-a-main-from-t-spawn",
+    "sourceId": "community_06ffdba358b5",
+    "capturedSourceId": "community_06ffdba358b5",
+    "videoUid": "_Ow5i1dDhZc",
+    "mapId": "nuke",
+    "creator": "R4cc02 · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-06ffdba358b5-top-a-main-from-t-spawn-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1280,
+    "nativeHeight": 720,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "extraction": "decoded-video-canvas",
+    "sha256": "e46e2cbbd1ab47ddf7c2c5dc7cd1f28add99c6da59cfab1f14703b14a7f83fe4",
+    "bytes": 180458,
+    "caption": "Stand against the wall seam shown at T Spawn.",
+    "review": "Close first-person view shows the actual pebbled wall/vertical-seam position, followed by the held-grenade crosshair before release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-smoke-06ffdba358b5-top-a-main-from-t-spawn-aim-4500ms.jpg",
+      "time": 4.5,
+      "nativeWidth": 1280,
+      "nativeHeight": 720,
+      "outputWidth": 1280,
+      "outputHeight": 720,
+      "extraction": "decoded-video-canvas",
+      "sha256": "c99704c5a2976f503ac518f9ae4080a86896a4554b60f2633911a02805754f0e",
+      "bytes": 209686
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=_Ow5i1dDhZc",
+    "publication": {
+      "title": "EASIEST Nuke Top Main Smoke in CS2",
+      "publish": "2025-05-05T16:22:28-07:00",
+      "author": "R4cc02"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.102216
+    },
+    "embeddedPlayback": {
+      "id": "_Ow5i1dDhZc",
+      "sources": [
+        "https://csnades.gg/nuke/community/smokes/06ffdba358b5-top-a-main-from-t-spawn"
+      ],
+      "checkedAt": "2026-11-09T16:41:05.736Z",
+      "oEmbedStatus": 200,
+      "title": "EASIEST Nuke Top Main Smoke in CS2",
+      "author": "R4cc02",
+      "evidence": {
+        "status": "OK",
+        "videoId": "_Ow5i1dDhZc",
+        "duration": 21.141,
+        "currentTime": 0.196529,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "EASIEST Nuke Top Main Smoke in CS2 - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 585,
+      "y": 735,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 232,
+      "y": 588,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/flashbangs/b3f09459ad30-ramp-from-trophy-room",
+    "photoSource": "https://csnades.gg/nuke/community/flashbangs/b3f09459ad30-ramp-from-trophy-room",
+    "sourceId": "community_b3f09459ad30",
+    "capturedSourceId": "community_b3f09459ad30",
+    "videoUid": "-5MWg_lubPY",
+    "mapId": "nuke",
+    "creator": "wlofa · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-b3f09459ad30-ramp-from-trophy-room-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "48b5d9314351e2c7a735127f1ff246e83aeac2745f255f92d923f97f486db268",
+    "bytes": 120664,
+    "caption": "Stand at the left edge of the blue Trophy doorway.",
+    "review": "Settled at the left blue doorway edge, with a separate static sign/doorway aim before the running throw.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-b3f09459ad30-ramp-from-trophy-room-aim-3500ms.jpg",
+      "time": 3.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "4b2762ff0b83f4a8d7ace2acb6e22f76e51af73dec4e978608ca3024b6305fff",
+      "bytes": 143485
+    },
+    "sourceTeam": "t",
+    "recordSides": [
+      "T"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "sourceVideo": "https://www.youtube.com/watch?v=-5MWg_lubPY",
+    "publication": {
+      "title": "Nuke Ramp Flash",
+      "publish": "2024-03-06T19:46:21-08:00",
+      "author": "wLoFa"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.23057
+    },
+    "embeddedPlayback": {
+      "id": "-5MWg_lubPY",
+      "sources": [
+        "https://csnades.gg/nuke/community/flashbangs/b3f09459ad30-ramp-from-trophy-room"
+      ],
+      "checkedAt": "2026-11-09T16:41:08.121Z",
+      "oEmbedStatus": 200,
+      "title": "Nuke Ramp Flash",
+      "author": "wLoFa",
+      "evidence": {
+        "status": "OK",
+        "videoId": "-5MWg_lubPY",
+        "duration": 22.881,
+        "currentTime": 0.17924,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Nuke Ramp Flash - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 540,
+      "y": 182,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 478,
+      "y": 374,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/flashbangs/0a9c896c653c-outside-from-a-site",
+    "photoSource": "https://csnades.gg/nuke/community/flashbangs/0a9c896c653c-outside-from-a-site",
+    "sourceId": "community_0a9c896c653c",
+    "capturedSourceId": "community_0a9c896c653c",
+    "videoUid": "8XfHzE0gf0E",
+    "mapId": "nuke",
+    "creator": "wlofa · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-0a9c896c653c-outside-from-a-site-position-2500ms.jpg",
+    "time": 2.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "9d024f98f08d7587b10ccad15fc59494efc6c89b8d9a8997b1b59005ac337f93",
+    "bytes": 183982,
+    "caption": "Stand against the front of the A-site silo.",
+    "review": "Source approaches then presses against the A-site silo; original overlay explicitly says to shoot out the indicated roof window before setting the upward throw.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-0a9c896c653c-outside-from-a-site-aim-5500ms.jpg",
+      "time": 5.5,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "9215ffaeb603898c4cca73b83aaebaab2eddd1ae85f1c0b59a9faf4393c5ace6",
+      "bytes": 313901
+    },
+    "sourceTeam": "ct",
+    "recordSides": [
+      "CT"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=8XfHzE0gf0E",
+    "publication": {
+      "title": "CT Outside Flash",
+      "publish": "2024-03-06T21:38:16-08:00",
+      "author": "wLoFa"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.217716
+    },
+    "embeddedPlayback": {
+      "id": "8XfHzE0gf0E",
+      "sources": [
+        "https://csnades.gg/nuke/community/flashbangs/0a9c896c653c-outside-from-a-site"
+      ],
+      "checkedAt": "2026-11-09T16:41:08.121Z",
+      "oEmbedStatus": 200,
+      "title": "CT Outside Flash",
+      "author": "wLoFa",
+      "evidence": {
+        "status": "OK",
+        "videoId": "8XfHzE0gf0E",
+        "duration": 21.841,
+        "currentTime": 0.190191,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CT Outside Flash - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 554,
+      "y": 720,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 591,
+      "y": 475,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/flashbangs/f9e03cfe1f96-silooutside-from-a-site",
+    "photoSource": "https://csnades.gg/nuke/community/flashbangs/f9e03cfe1f96-silooutside-from-a-site",
+    "sourceId": "community_f9e03cfe1f96",
+    "capturedSourceId": "community_f9e03cfe1f96",
+    "videoUid": "MUgtDfzUCIU",
+    "mapId": "nuke",
+    "creator": "MacKs · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-f9e03cfe1f96-silooutside-from-a-site-position-3500ms.jpg",
+    "time": 3.5,
+    "nativeWidth": 1920,
+    "nativeHeight": 1080,
+    "outputWidth": 1920,
+    "outputHeight": 1080,
+    "extraction": "decoded-video-canvas",
+    "sha256": "b15525443c58112a1d0d6f337460604400686c4f8f245bad2e5639abc12fe747",
+    "bytes": 297062,
+    "caption": "Stand on the red floor seam beside the A-site silo.",
+    "review": "Downward first-person view shows boots on the red floor-edge seam beside the silo. Source visibly shoots out the roof window, then holds the flash at the actual crosshair before release.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-f9e03cfe1f96-silooutside-from-a-site-aim-13000ms.jpg",
+      "time": 13,
+      "nativeWidth": 1920,
+      "nativeHeight": 1080,
+      "outputWidth": 1920,
+      "outputHeight": 1080,
+      "extraction": "decoded-video-canvas",
+      "sha256": "98ac619f761dc9f19a9aab58d885d7037e81c52ee3c2464984bf8c30055db1f7",
+      "bytes": 420787
+    },
+    "sourceTeam": "any",
+    "recordSides": [
+      "T",
+      "CT"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left_jump",
+    "sourceVideo": "https://www.youtube.com/watch?v=MUgtDfzUCIU",
+    "publication": {
+      "title": "nuke flash silo and outside",
+      "publish": "2025-03-31T05:10:15-07:00",
+      "author": "MacKs"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.17081
+    },
+    "embeddedPlayback": {
+      "id": "MUgtDfzUCIU",
+      "sources": [
+        "https://csnades.gg/nuke/community/flashbangs/f9e03cfe1f96-silooutside-from-a-site"
+      ],
+      "checkedAt": "2026-11-09T16:41:10.845Z",
+      "oEmbedStatus": 200,
+      "title": "nuke flash silo and outside",
+      "author": "MacKs",
+      "evidence": {
+        "status": "OK",
+        "videoId": "MUgtDfzUCIU",
+        "duration": 36.601,
+        "currentTime": 0.010997,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "nuke flash silo and outside - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 504,
+      "y": 716,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 540,
+      "y": 478,
+      "levels": [
+        1
+      ]
+    }
+  },
+  {
+    "source": "https://csnades.gg/nuke/community/hegrenades/bae7574f2486-silo-from-rafters",
+    "photoSource": "https://csnades.gg/nuke/community/hegrenades/bae7574f2486-silo-from-rafters",
+    "sourceId": "community_bae7574f2486",
+    "capturedSourceId": "community_bae7574f2486",
+    "videoUid": "pKohBOdIcLo",
+    "mapId": "nuke",
+    "creator": "CS Tactics · CSNADES.gg",
+    "kind": "position",
+    "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-he-bae7574f2486-silo-from-rafters-position-4500ms.jpg",
+    "time": 4.5,
+    "nativeWidth": 1080,
+    "nativeHeight": 1920,
+    "outputWidth": 1080,
+    "outputHeight": 1920,
+    "extraction": "decoded-video-canvas",
+    "sha256": "c5fbab72695e2f25c9cae7297b2a2c4db28c4d7d3ca482e2aad03285e49eaddd",
+    "bytes": 238172,
+    "caption": "Stand in the Rafters corner between the wall and beam.",
+    "review": "Source shows the player pressed into the Rafters wall/beam corner. The separate original zoomed aim view marks the exact right lip of the hanging light before the HE throw.",
+    "manuallyReviewed": true,
+    "noAddedMarkers": true,
+    "sceneUnchanged": true,
+    "aim": {
+      "kind": "aim",
+      "publicPath": "/lineup-media/source-video-stills/csnades/nuke/community-he-bae7574f2486-silo-from-rafters-aim-7000ms.jpg",
+      "time": 7,
+      "nativeWidth": 1080,
+      "nativeHeight": 1920,
+      "outputWidth": 1080,
+      "outputHeight": 1920,
+      "extraction": "decoded-video-canvas",
+      "sha256": "b1704ee4c43c7646254c630c10251899e1918ee5e5a622375c3f03c521329855",
+      "bytes": 176358
+    },
+    "sourceTeam": "ct",
+    "recordSides": [
+      "CT"
+    ],
+    "sourceMovement": "stationary",
+    "sourceTechnique": "left",
+    "sourceVideo": "https://www.youtube.com/watch?v=pKohBOdIcLo",
+    "publication": {
+      "title": "CS2 Nuke - Awesome HE for SILO! #cs2  #counterstrike",
+      "publish": "2023-11-06T05:00:44-08:00",
+      "author": "CS Tactics"
+    },
+    "playProgress": {
+      "start": 0.3,
+      "end": 1.223529
+    },
+    "embeddedPlayback": {
+      "id": "pKohBOdIcLo",
+      "sources": [
+        "https://csnades.gg/nuke/community/hegrenades/bae7574f2486-silo-from-rafters"
+      ],
+      "checkedAt": "2026-11-09T16:41:10.846Z",
+      "oEmbedStatus": 200,
+      "title": "CS2 Nuke - Awesome HE for SILO! #cs2  #counterstrike",
+      "author": "CS Tactics",
+      "evidence": {
+        "status": "OK",
+        "videoId": "pKohBOdIcLo",
+        "duration": 34.266666666666666,
+        "currentTime": 0.072468,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "CS2 Nuke - Awesome HE for SILO! #cs2 #counterstrike - YouTube"
+      },
+      "clickedPlay": true,
+      "pass": true
+    },
+    "throwTo": {
+      "x": 496,
+      "y": 721,
+      "levels": [
+        1
+      ]
+    },
+    "throwFrom": {
+      "x": 605,
+      "y": 546,
+      "levels": [
+        1
+      ]
+    }
+  }
+]

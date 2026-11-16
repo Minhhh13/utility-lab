@@ -1,0 +1,108 @@
+.ul-marker-choices {
+  position: fixed;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  width: min(328px, calc(100vw - 24px));
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  color: var(--text);
+  font: inherit;
+  isolation: isolate;
+}
+.ul-marker-choices-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 2px 4px 2px 14px;
+  border-radius: 12px;
+  background: var(--surface-raised);
+}
+.ul-marker-choices-heading h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -.015em;
+}
+.ul-marker-choices button {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.ul-marker-choices button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.ul-marker-choices-heading > button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+}
+.ul-marker-choices-heading > button:focus-visible { outline-offset: -3px; }
+.ul-marker-choice-options { position: relative; flex: 0 0 282px; height: 282px; margin-top: 4px; }
+.ul-marker-choice-connections { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.ul-marker-choice-connections line { stroke: var(--muted); stroke-width: 1.5; stroke-opacity: .55; }
+.ul-marker-choice-hub { position: absolute; width: 54px; height: 54px; overflow: visible; pointer-events: none; }
+.ul-marker-choice-leaf {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 88px;
+  min-height: 80px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  text-align: center;
+}
+.ul-marker-choice-disc {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  box-sizing: border-box;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background: var(--surface-raised);
+}
+.ul-marker-choice-label {
+  max-width: 88px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.35;
+}
+.ul-marker-choice-hint {
+  align-self: center;
+  flex: 0 0 auto;
+  margin: 3px 0 0;
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ul-marker-choices-heading > button:hover { background: var(--accent-soft); }
+  .ul-marker-choice-leaf:hover .ul-marker-choice-disc { background: color-mix(in srgb, currentColor 12%, var(--surface-raised)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ul-marker-choice-leaf, .ul-marker-choice-connections { animation: none; transition: none; }
+}

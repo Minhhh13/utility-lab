@@ -1,0 +1,56 @@
+{
+  "project": "https://github.com/1234/cs2-compendium",
+  "creator": "spnk and CS2 Compendium contributors",
+  "commit": "deaae65ebae1a9a48240ea215d3d72d5e1c7a712",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "checkedAt": "2026-11-09",
+  "sourceImagePublishedDates": {
+    "mirage-t-palace-alley-a-smokes.webp": "2026-06-20",
+    "t-spawn-insta-window-smokes.webp": "2026-06-17"
+  },
+  "capturedAt": "Not stated",
+  "gameBuild": "Not stated",
+  "files": [
+    {
+      "file": "mirage-t-palace-alley-a-smokes.webp",
+      "source": "training/utility/mirage/mirage-t-palace-alley-a-smokes.webp",
+      "sourceUrl": "https://raw.githubusercontent.com/1234/cs2-compendium/deaae65ebae1a9a48240ea215d3d72d5e1c7a712/training/utility/mirage/mirage-t-palace-alley-a-smokes.webp",
+      "bytes": 151710,
+      "sha256": "90e88198457b55fcf4fdc5742d83edc722b93c9740ff96d271e55b90939b114d",
+      "modified": false
+    },
+    {
+      "file": "t-spawn-insta-window-smokes.webp",
+      "source": "training/utility/mirage/t-spawn-insta-window-smokes.webp",
+      "sourceUrl": "https://raw.githubusercontent.com/1234/cs2-compendium/deaae65ebae1a9a48240ea215d3d72d5e1c7a712/training/utility/mirage/t-spawn-insta-window-smokes.webp",
+      "bytes": 154870,
+      "sha256": "34e0687ade9004520eb180675ed6540d7184d2284f7731109fcfcb2bc6f11bf8",
+      "modified": false
+    },
+    {
+      "file": "LICENSE.txt",
+      "source": "LICENSE",
+      "sourceUrl": "https://raw.githubusercontent.com/1234/cs2-compendium/deaae65ebae1a9a48240ea215d3d72d5e1c7a712/LICENSE",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966",
+      "modified": false
+    },
+    {
+      "file": "source-README.md",
+      "source": "README.md",
+      "sourceUrl": "https://raw.githubusercontent.com/1234/cs2-compendium/deaae65ebae1a9a48240ea215d3d72d5e1c7a712/README.md",
+      "bytes": 12085,
+      "sha256": "4820ee5e76f860100979363eaec07276e4a274f9513cb12aca30768e0790ba7f",
+      "modified": false
+    },
+    {
+      "file": "source-mirage-README.md",
+      "source": "training/utility/mirage/README.md",
+      "sourceUrl": "https://raw.githubusercontent.com/1234/cs2-compendium/deaae65ebae1a9a48240ea215d3d72d5e1c7a712/training/utility/mirage/README.md",
+      "bytes": 2103,
+      "sha256": "dbc4fb19e7a964efa71a1b9b60efecf4fa950048e3277bd197807118bd1b51e4",
+      "modified": false
+    }
+  ]
+}

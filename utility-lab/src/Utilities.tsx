@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -14,6 +15,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Crosshair,
+  Hand,
   ImagePlus,
   Images,
   Info,
@@ -30,9 +32,37 @@ import {
   X,
   ZoomIn,
   ZoomOut,
+  ArrowUp,
+  ArrowDown,
+  Upload,
+  Link2,
 } from "lucide-react";
-import type { GameMap } from "./maps";
-import { CREATOR_GUIDES } from "./creator-guides";
+import { MAPS, type GameMap } from "./maps";
+import MediaImage from "./MediaImage";
+import useMapNavigation from "./useMapNavigation";
+import PhotoZoom from "./PhotoZoom";
+import { withAimPlacement } from "./aim-placement";
+import { portableLineups, storeLineupMedia } from "./media-store";
+import { lineupLink } from "./routes";
+import { exportFile } from "./file-transfer";
+import {
+  groupUtilityMarkers,
+  layoutUtilityMarkers,
+  splitUtilityDestinations,
+  clusterUtilityAreas,
+  type UtilityMarkerGroup,
+} from "./utility-markers";
+import { PHOTO_GUIDE_LIBRARY } from "./guide-library";
+import { cachedMapGuides, loadMapGuides } from "./expanded-catalogue";
+import { mergePhotoGuides } from "./expanded-guide-model";
+import MarkerChoices from "./MarkerChoices";
+import GuideActions from "./GuideActions";
+import UtilityTargetMarker from "./UtilityTargetMarker";
+import { loadMapOrigins, findLineupOrigin, type OriginLookup } from "./lineup-origins";
+import { curateLineups, normalizeOriginLabel } from "./lineup-curation";
+import LineupSuggestions from "./LineupSuggestions";
+import { photoStepName } from "./lineup-copy";
+import { nativePhotoRecord } from "./native-photo-library";
 import GrenadeIcon, { type UtilityKind } from "./UtilityIcon";
 import {
   FAVORITE_UTILITIES_KEY,
@@ -41,7 +71,6 @@ import {
   MAX_PHOTO_DATA_CHARS,
   MAX_USER_UTILITIES,
   USER_UTILITIES_KEY,
-  UTILITY_REFERENCES,
   UTILITY_TYPES,
   THROW_METHODS,
   readUserUtilities,
@@ -56,6 +85,7 @@ import {
   type UtilityType,
 } from "./utility-data";
 import "./utilities.css";
+import "./lineups-canvas.css";
 
 export type UtilitiesProps = {
   map: GameMap;
@@ -65,8 +95,22 @@ export type UtilitiesProps = {
   onNotify: (message: string) => void;
   theme: "light" | "dark";
   compact: boolean;
+  initialLineup?: UtilityReference;
+  initialLevelId?: string;
+  onOpenLineup?: (record: UtilityReference) => void;
+};
+type MapSelection = {
+  records: UtilityReference[];
+  type: UtilityType;
+  target: {x:number;y:number;levelId:string;label:string};
+  animate: boolean;
 };
 type Draft = {
+  showMarker?: boolean;
+  site?: UtilityReference["site"];
+  tags?: string[];
+  photoEmbed?: UtilityReference["photoEmbed"];
+  remotePhotos?: UtilityPhoto[];
   title: string;
   from: string;
   target: string;
@@ -82,11 +126,79 @@ type Draft = {
   source: string;
   photos: UtilityPhoto[];
   videoUrl: string;
+  videoFallbackUrl?: string;
   videoStart: string;
   creator: string;
 };
 type DraftRecovery = { draft: Draft; editingId: string | null };
 const recoveredDrafts = new Map<string, DraftRecovery>();
+const recoveryKey = (map: string) => `utility-lab:lineup-draft:v1:${map}`;
+function readRecovery(map: GameMap): DraftRecovery | undefined {
+  if (recoveredDrafts.has(map.id)) return recoveredDrafts.get(map.id);
+  try {
+    const raw = JSON.parse(localStorage.getItem(recoveryKey(map.id)) || "null"),
+      draft = raw?.draft;
+    if (
+      !draft ||
+      typeof draft !== "object" ||
+      !(raw.editingId === null || typeof raw.editingId === "string")
+    )
+      return;
+    for (const key of [
+      "title",
+      "from",
+      "target",
+      "purpose",
+      "throwType",
+      "steps",
+      "image",
+      "source",
+      "videoUrl",
+      "videoStart",
+      "creator",
+    ])
+      if (
+        typeof draft[key] !== "string" ||
+        draft[key].length > (key === "image" ? 1_450_000 : 10_000)
+      )
+        return;
+    if (
+      !map.levels.some((level) => level.id === draft.levelId) ||
+      !["T", "CT"].includes(draft.side) ||
+      !UTILITY_TYPES.includes(draft.type)
+    )
+      return;
+    if (
+      !validateUtility({
+        id: "draft",
+        mapId: map.id,
+        levelId: draft.levelId,
+        side: draft.side,
+        type: draft.type,
+        title: "Draft",
+        target: "Draft",
+        from: "",
+        purpose: "",
+        throwType: "",
+        steps: [],
+        x: draft.x,
+        y: draft.y,
+        photos: draft.photos,
+        remotePhotos: draft.remotePhotos,
+        image: draft.image || undefined,
+        userCreated: true,
+        showMarker: draft.showMarker,
+        site: draft.site,
+        tags: draft.tags,
+        photoEmbed: draft.photoEmbed,
+      })
+    )
+      return;
+    return raw as DraftRecovery;
+  } catch {
+    return;
+  }
+}
 const uid = () =>
   typeof crypto !== "undefined" && crypto.randomUUID
     ? crypto.randomUUID()
@@ -97,6 +209,7 @@ const utilityLabel = (type: UtilityType) =>
   type === "Molotov" ? "Molly" : type === "HE" ? "HE grenade" : type;
 function blankDraft(levelId: string, side: "T" | "CT"): Draft {
   return {
+    showMarker: false,
     title: "",
     from: "",
     target: "",
@@ -116,13 +229,14 @@ function blankDraft(levelId: string, side: "T" | "CT"): Draft {
     creator: "",
   };
 }
-function fromReference(item: UtilityReference): Draft {
+function fromReference(original: UtilityReference): Draft {
+  const item = withAimPlacement(original);
   return {
     ...item,
     steps: item.steps.join("\n"),
     image: item.image || "",
     source: item.source || "",
-    photos: utilityPhotos(item),
+    photos: item.remotePhotos?.length ? item.photos || [] : utilityPhotos(item),
     videoUrl: item.videoUrl || "",
     videoStart: item.videoStart === undefined ? "" : String(item.videoStart),
     creator: item.creator || "",
@@ -196,43 +310,37 @@ function UtilityIcon({
     />
   );
 }
-function downloadLineup(item: UtilityReference) {
+async function downloadLineup(item: UtilityReference) {
+  const [portable] = await portableLineups([item]);
   const blob = new Blob(
     [
       JSON.stringify(
-        { format: "utility-lab-lineup", version: 1, lineup: item },
+        { format: "utility-lab-lineup", version: 1, lineup: portable },
         null,
         2,
       ),
     ],
     { type: "application/json" },
   );
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = `${
-    item.title
-      .replace(/[^a-z0-9 -]/gi, "")
-      .trim()
-      .replace(/\s+/g, "-")
-      .toLowerCase() || "lineup"
-  }.json`;
-  document.body.append(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  await exportFile(
+    blob,
+    `${
+      item.title
+        .replace(/[^a-z0-9 -]/gi, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .toLowerCase() || "lineup"
+    }.json`,
+  );
 }
 
 function ThrowInputs({ method }: { method: string }) {
-  const label = method.replace(
-    /middle[ -]?click/gi,
-    "Both buttons (LMB + RMB)",
-  );
-  const both = /both/i.test(label),
+  const label = method.replace(/\bmiddle[ -]?(?:click|throw)\b/gi, "LMB + RMB");
+  const both = /both|middle[ -]?click/i.test(label) || (/LMB/i.test(label) && /RMB/i.test(label)),
     left = both || /LMB|left[ -]?click/i.test(label),
     right = both || /RMB|right[ -]?click/i.test(label),
     jump = /jump/i.test(label),
-    run = /\brun\b/i.test(label);
+    run = /\b(?:run|running)\b/i.test(label);
   return (
     <div className="ul-throw-inputs">
       <div
@@ -240,7 +348,14 @@ function ThrowInputs({ method }: { method: string }) {
         aria-label={label || "Throw inputs not recorded"}
       >
         {jump && <span className="ul-key-input">Jump</span>}
+        {/\bshift\b/i.test(label) && <span className="ul-key-input">Shift</span>}
+        {/\bW\b/.test(label) && <span className="ul-key-input">{/W tap|tap W/i.test(label) ? "Tap W" : "W"}</span>}
+        {(["A", "S", "D"] as const).filter(key => new RegExp(`\\b${key}\\b`).test(label)).map(key => <span key={key} className="ul-key-input">{key}</span>)}
         {run && <span className="ul-key-input">Run</span>}
+        {/\b(?:walk|walking)\b/i.test(label) && (
+          <span className="ul-key-input">Walk</span>
+        )}
+        {/crouch/i.test(label) && <span className="ul-key-input">Crouch</span>}
         {(left || right) && (
           <span className="ul-mouse-input">
             <svg
@@ -283,28 +398,36 @@ function ThrowInputs({ method }: { method: string }) {
           </span>
         )}
         {!jump && !run && !left && !right && (
-          <span className="ul-key-input">Not recorded</span>
+          <span className="ul-key-input">
+            {/video/i.test(label)
+              ? "Shown in video"
+              : label
+                ? "See guide"
+                : "Not recorded"}
+          </span>
         )}
       </div>
       <p>
-        {both
-          ? "Both buttons (LMB + RMB)"
-          : label || "Throw inputs not recorded"}
+        {label || "Throw inputs not recorded"}
       </p>
     </div>
   );
 }
 
 function LineupMedia({ record }: { record: UtilityReference }) {
-  const photos = utilityPhotos(record);
+  const photos = useMemo(() => utilityPhotos(withAimPlacement(record)), [record]);
+  const [fileFailed, setFileFailed] = useState(false);
   let video = null;
   try {
     video = parseUtilityVideo(record.videoUrl || "", record.videoStart);
   } catch {
     /* Invalid media retains the original source link. */
   }
+  if (fileFailed && record.videoFallbackUrl) {
+    try { video = parseUtilityVideo(record.videoFallbackUrl); } catch { /* Keep the original source link. */ }
+  }
   const [mode, setMode] = useState<"video" | "photos">(
-    video ? "video" : "photos",
+    photos.length ? "photos" : "video",
   );
   const [loaded, setLoaded] = useState(false);
   const [index, setIndex] = useState(0);
@@ -315,9 +438,19 @@ function LineupMedia({ record }: { record: UtilityReference }) {
       ? `https://www.youtube.com/watch?v=${video.id}${video.start ? `&t=${video.start}s` : ""}`
       : `${video.url.split("#")[0]}${video.start ? `#t=${video.start}` : ""}`
     : record.source;
+  const formats = photos.length > 0 ? (
+    <div className="ul-media-tabs" role="group" aria-label="Lineup media type">
+      <button title="Photos" aria-pressed={mode === "photos"} onClick={() => { setMode("photos"); setLoaded(false); }}>
+        <Images size={16} />Photos <span>{photos.length}</span>
+      </button>
+      <button aria-pressed={mode === "video"} disabled={!video} title={video ? "Watch video" : "No video for this guide"} onClick={() => { setMode("video"); setLoaded(false); }}>
+        <Video size={16} />Video
+      </button>
+    </div>
+  ) : null;
   return (
     <div
-      className="ul-lineup-media"
+      className={`ul-lineup-media is-${mode}`}
       onKeyDown={(event) => {
         if (
           mode === "photos" &&
@@ -329,34 +462,12 @@ function LineupMedia({ record }: { record: UtilityReference }) {
         }
       }}
     >
-      {video && photos.length > 0 && (
-        <div
-          className="ul-media-tabs"
-          role="group"
-          aria-label="Lineup media type"
-        >
-          <button
-            aria-pressed={mode === "video"}
-            onClick={() => {
-              setMode("video");
-              setLoaded(false);
-            }}
-          >
-            <Video size={17} />
-            Video
-          </button>
-          <button
-            aria-pressed={mode === "photos"}
-            onClick={() => {
-              setMode("photos");
-              setLoaded(false);
-            }}
-          >
-            <Images size={17} />
-            Photos <span>{photos.length}</span>
-          </button>
-        </div>
-      )}
+      {mode === "video" && formats}
+      {!photos.length && !video && <div className="ul-text-guide">
+        {record.from && <p>Throw from {record.from} to {record.target}.</p>}
+        {record.purpose && <p>{record.purpose}</p>}
+        <ol className="ul-instructions">{record.steps.map((step,index) => <li key={index}><span>{index+1}</span><p>{step}</p></li>)}</ol>
+      </div>}
       {mode === "video" && video && (
         <div className="ul-video-stage">
           {!loaded ? (
@@ -373,10 +484,11 @@ function LineupMedia({ record }: { record: UtilityReference }) {
                   ? ` · starts at ${Math.floor(video.start / 60)}:${String(video.start % 60).padStart(2, "0")}`
                   : ""}
               </p>
-              <span>
-                The player loads after your click. Playback stays in your
-                control.
-              </span>
+            </div>
+          ) : fileFailed && video.kind === "file" && !record.videoFallbackUrl ? (
+            <div className="ul-video-ready" role="status">
+              <p>The video couldn’t load.</p>
+              <button className="ul-video-load" onClick={() => setFileFailed(false)}>Try video again</button>
             </div>
           ) : video.kind === "youtube" ? (
             <iframe
@@ -391,7 +503,8 @@ function LineupMedia({ record }: { record: UtilityReference }) {
               src={`${video.url.split("#")[0]}${video.start ? `#t=${video.start}` : ""}`}
               controls
               playsInline
-              preload="none"
+              preload="metadata"
+              onError={() => setFileFailed(true)}
               aria-label={`${record.title} video guide`}
             />
           )}
@@ -400,13 +513,12 @@ function LineupMedia({ record }: { record: UtilityReference }) {
       {mode === "photos" && photos.length > 0 && (
         <div className="ul-photo-viewer" aria-label="Lineup photo slides">
           <div className="ul-photo-stage">
-            <img
-              src={photos[index].image}
-              alt={
-                photos[index].caption || `${record.title}, photo ${index + 1}`
-              }
-              width="1600"
-              height="900"
+            <PhotoZoom
+              key={`${photos[index].image}:${index}`}
+              formats={formats}
+              photo={photos[index]}
+              title={`${record.title}, photo ${index + 1}`}
+              onSwipe={photos.length > 1 ? changePhoto : undefined}
             />
             {photos.length > 1 && (
               <>
@@ -427,11 +539,66 @@ function LineupMedia({ record }: { record: UtilityReference }) {
               </>
             )}
           </div>
+          <div className="ul-photo-details">
           <div className="ul-photo-caption" aria-live="polite">
             <span>
               {index + 1} / {photos.length}
             </span>
-            <p>{photos[index].caption || `Photo ${index + 1}`}</p>
+            <div>
+              {photos[index].kind && (
+                <strong className="ul-photo-kind">
+                  {photoStepName(
+                    photos[index].kind,
+                    index,
+                    photos[index].caption,
+                  )}
+                </strong>
+              )}
+              <p>
+                {!record.userCreated &&
+                index === 0 &&
+                (photos[index].kind === "position" ||
+                  /^Position & aim/i.test(photos[index].caption))
+                  ? record.steps[0] || photos[index].caption
+                  : photos[index].caption || `Photo ${index + 1}`}
+              </p>
+            </div>
+          </div>
+          {(photos[index].creator ||
+            photos[index].source ||
+            photos[index].license ||
+            photos[index].capturedAt ||
+            photos[index].gameBuild) && (
+            <div className="ul-photo-credit">
+              {photos[index].region && <span>Source panel</span>}
+              {photos[index].creator && (
+                <span>Photo: {photos[index].creator}</span>
+              )}
+              {photos[index].source && (
+                <a href={photos[index].source} target="_blank" rel="noreferrer">
+                  Photo source
+                </a>
+              )}
+              {photos[index].license &&
+                (photos[index].licenseUrl ? (
+                  <a
+                    href={photos[index].licenseUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {photos[index].license}
+                  </a>
+                ) : (
+                  <span>{photos[index].license}</span>
+                ))}
+              {photos[index].gameBuild && (
+                <span>CS2 build {photos[index].gameBuild}</span>
+              )}
+              {photos[index].capturedAt && (
+                <span>Captured {photos[index].capturedAt}</span>
+              )}
+            </div>
+          )}
           </div>
           {photos.length > 1 && (
             <div
@@ -447,7 +614,10 @@ function LineupMedia({ record }: { record: UtilityReference }) {
                   aria-pressed={index === photoIndex}
                   onClick={() => setIndex(photoIndex)}
                 >
-                  <span />
+                  <span className="ul-photo-step-number">{photoIndex + 1}</span>
+                  <span>
+                    {photoStepName(photo.kind, photoIndex, photo.caption)}
+                  </span>
                 </button>
               ))}
             </div>
@@ -455,8 +625,11 @@ function LineupMedia({ record }: { record: UtilityReference }) {
         </div>
       )}
       <div className="ul-media-footer">
-        <ThrowInputs method={record.throwType} />
-        {source && (
+        <div className="ul-viewer-keys">
+          <h3>Keys</h3>
+          <ThrowInputs method={record.throwType} />
+        </div>
+        {source && (mode === "video" || !photos[index]?.source) && (
           <a href={source} target="_blank" rel="noreferrer">
             Open original {video ? "video" : "source"}{" "}
             <ArrowUpRight size={16} />
@@ -475,28 +648,88 @@ export default function Utilities({
   onNotify,
   theme,
   compact,
+  initialLineup: suppliedLineup,
+  initialLevelId,
+  onOpenLineup,
 }: UtilitiesProps) {
-  const [levelId, setLevelId] = useState(map.levels[0]?.id || "main");
-  const [type, setType] = useState<UtilityType | "All">("All");
-  const [search, setSearch] = useState("");
+  const initialLineup = useMemo(
+    () => (suppliedLineup ? nativePhotoRecord(suppliedLineup) : undefined),
+    [suppliedLineup],
+  );
+  const [levelId, setLevelId] = useState(
+    initialLineup?.levelId ||
+      initialLevelId ||
+      readRecovery(map)?.draft.levelId ||
+      map.levels[0]?.id ||
+      "main",
+  );
+  const [types, setTypes] = useState<UtilityType[]>([]);
+  const [origins, setOrigins] = useState<{mapId:string; lookup:OriginLookup; error:string}>({mapId:map.id,lookup:{},error:""});
+  const [originSelection, setOriginSelection] = useState<MapSelection | null>(null);
+  const [landingSelection, setLandingSelection] = useState<MapSelection | null>(null);
+  const [loadingStanding, setLoadingStanding] = useState(false);
+  const selectionRequest = useRef(0);
+  const [catalogue, setCatalogue] = useState(() => ({
+    mapId: map.id,
+    records: cachedMapGuides(map.id) || [],
+    loading: !cachedMapGuides(map.id),
+    error: "",
+  }));
+  const [catalogueRetry, setCatalogueRetry] = useState(0);
+  useEffect(() => {
+    let current = true;
+    const cached = cachedMapGuides(map.id);
+    setOrigins({mapId:map.id,lookup:{},error:""});
+    void loadMapOrigins(map.id).then(lookup => {
+      if(current) setOrigins({mapId:map.id,lookup,error:""});
+    }).catch(() => {
+      if(current) setOrigins({mapId:map.id,lookup:{},error:"Standing locations couldn’t load. Try loading this map again."});
+    });
+    setCatalogue({ mapId: map.id, records: cached || [], loading: !cached, error: "" });
+    void loadMapGuides(map.id).then((records) => {
+      if (current) setCatalogue({ mapId: map.id, records, loading: false, error: "" });
+    }).catch(() => {
+      if (current) setCatalogue({ mapId: map.id, records: [], loading: false, error: "Couldn’t load this map’s lineups." });
+    });
+    return () => { current = false; };
+  }, [map.id, catalogueRetry]);
+  const [markerFilter, setMarkerFilter] = useState<string[]>([]);
+  const [targetLabelId, setTargetLabelId] = useState<string | null>(null);
+  const [markerChoice, setMarkerChoice] = useState<{
+    records: UtilityReference[];
+    anchor: { x: number; y: number };
+    target: {x:number;y:number;levelId:string;label:string};
+    trigger: SVGElement;
+    animate: boolean;
+  } | null>(null);
   const [savedOnly, setSavedOnly] = useState(false);
   const [custom, setCustom] = useState(readUserUtilities);
   const [favorites, setFavorites] = useState(readUtilityFavorites);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [editing, setEditing] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(
+    initialLineup?.id || null,
+  );
+  const [saving, setSaving] = useState(false);
+  const importRef = useRef<HTMLInputElement>(null);
+  const [editing, setEditing] = useState(
+    () =>
+      !initialLineup &&
+      !!readRecovery(map) &&
+      (!initialLevelId || initialLevelId === readRecovery(map)?.draft.levelId),
+  );
+  const [editingId, setEditingId] = useState<string | null>(
+    () => readRecovery(map)?.editingId || null,
+  );
   const [draft, setDraft] = useState<Draft>(
     () =>
-      recoveredDrafts.get(map.id)?.draft ||
-      blankDraft(map.levels[0]?.id || "main", side),
+      readRecovery(map)?.draft || blankDraft(map.levels[0]?.id || "main", side),
   );
   const [formError, setFormError] = useState("");
   const [imageLoading, setImageLoading] = useState(false);
   const [placing, setPlacing] = useState(false);
-  const [zoom, setZoom] = useState(1);
   const [mapFallback, setMapFallback] = useState(false);
   const [mapFailed, setMapFailed] = useState(false);
   const [mapUnit, setMapUnit] = useState(2.3);
+  const [mapSize, setMapSize] = useState({width:0,height:0});
   const [mediaRecord, setMediaRecord] = useState<UtilityReference | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
@@ -508,40 +741,92 @@ export default function Utilities({
   currentContext.current = `${map.id}:${levelId}`;
   const level = map.levels.find((item) => item.id === levelId) || map.levels[0];
   const fit = level?.contentBounds || { x: 0, y: 0, width: 1000, height: 1000 };
+  const navigation = useMapNavigation(
+    svgRef,
+    fit,
+    `${map.id}:${levelId}`,
+    placing,
+  );
+  const zoom = navigation.zoom;
+  useEffect(() => { selectionRequest.current++;setMarkerChoice(null);setLoadingStanding(false); }, [map.id, levelId, side, types, zoom]);
+  useEffect(() => { selectionRequest.current++;setOriginSelection(null);setLandingSelection(null);setLoadingStanding(false); }, [map.id, side, types, savedOnly, initialLevelId]);
   const viewWidth = fit.width / zoom;
   const viewHeight = fit.height / zoom;
-  const guideKeys = new Set(
-    CREATOR_GUIDES.map(
-      (item) =>
-        `${item.mapId}:${item.levelId}:${item.side}:${item.type}:${item.title.toLowerCase()}`,
-    ),
-  );
-  const contextRecords: UtilityReference[] = [
-    ...custom,
-    ...CREATOR_GUIDES,
-    ...UTILITY_REFERENCES.filter(
-      (item) =>
-        !guideKeys.has(
-          `${item.mapId}:${item.levelId}:${item.side}:${item.type}:${item.title.toLowerCase()}`,
-        ),
-    ),
-  ].filter(
+  const mapRecords: UtilityReference[] = useMemo(() => [...new Map([
+    ...mergePhotoGuides(PHOTO_GUIDE_LIBRARY, catalogue.mapId === map.id ? catalogue.records : []),
+    ...custom.map(nativePhotoRecord),
+  ].map(record => [record.id, record])).values()].filter(
     (item) =>
-      item.mapId === map.id && item.levelId === levelId && item.side === side,
-  );
-  const visibleRecords = contextRecords.filter(
+      item.mapId === map.id && item.side === side,
+  ), [map.id,side,catalogue,custom]);
+  const allContextRecords = mapRecords.filter(item => item.levelId === levelId);
+  const contextRecords = useMemo(() => curateLineups(allContextRecords), [mapRecords,levelId]);
+  const countContext = originSelection ? mapRecords.filter(item => item.levelId === originSelection.target.levelId) : allContextRecords;
+  const filterCountRecords = savedOnly ? countContext.filter(item => favorites.includes(item.id)) : countContext;
+  const targetRecords = (savedOnly ? allContextRecords : contextRecords).filter(
     (item) =>
-      (type === "All" || item.type === type) &&
+      (!types.length || types.includes(item.type)) &&
       (!savedOnly || favorites.includes(item.id)) &&
-      (!search ||
-        `${item.title} ${item.from} ${item.target} ${item.type}`
-          .toLowerCase()
-          .includes(search.toLowerCase())),
+      (!markerFilter.length || markerFilter.includes(item.id)),
+
   );
+  const mapMarkerRecords = useMemo(() => {
+    const preferred = new Set(targetRecords.map(record => record.id));
+    return [...targetRecords,...allContextRecords.filter(record => !preferred.has(record.id) &&
+      (!types.length || types.includes(record.type)) && (!savedOnly || favorites.includes(record.id)) &&
+      (!markerFilter.length || markerFilter.includes(record.id)))];
+  }, [contextRecords,mapRecords,levelId,types,savedOnly,favorites,markerFilter]);
+  const landingGroups = useMemo(() => landingSelection ? splitUtilityDestinations(landingSelection.records.filter(record => !savedOnly || favorites.includes(record.id))) : [], [landingSelection,savedOnly,favorites]);
+  const originRecords = originSelection?.records.filter(record => !savedOnly || favorites.includes(record.id)) || [];
+  const visibleRecords = originSelection ? originRecords : mapMarkerRecords;
+  const originChoices = originRecords.flatMap(record => {
+    const point = findLineupOrigin(record, origins.mapId === map.id ? origins.lookup : {}, levelId);
+    return point?.levelId === levelId ? [{record,point}] : [];
+  });
+  const originFloors = originSelection ? map.levels.filter(floor => originRecords.some(record =>
+    findLineupOrigin(record,origins.lookup,floor.id)?.levelId === floor.id)) : [];
+  useEffect(() => {
+    if(!originSelection || !originRecords.length || originChoices.length) return;
+    const point = findLineupOrigin(originRecords[0],origins.lookup,levelId);
+    if(point && point.levelId !== levelId) setLevelId(point.levelId);
+  }, [originSelection, origins.lookup, levelId, favorites, savedOnly]);
+  useEffect(() => {
+    if(savedOnly && originSelection && !originSelection.records.some(record => favorites.includes(record.id))) backToTargets();
+    if(savedOnly && landingSelection && !landingGroups.length) backToTargets();
+  }, [savedOnly, originSelection, landingSelection, favorites]);
+  useEffect(() => {
+    if(originSelection && !originSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-origin-pin")?.focus({preventScroll:true}));
+  }, [originSelection, levelId, origins.lookup]);
+  useEffect(() => {
+    if(landingSelection && !landingSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-landing-pin")?.focus({preventScroll:true}));
+  }, [landingSelection,levelId]);
   const selected =
     visibleRecords.find((item) => item.id === selectedId) ||
-    visibleRecords[0] ||
+    (initialLineup?.id === selectedId && initialLineup.mapId === map.id &&
+      initialLineup.levelId === levelId && initialLineup.side === side &&
+      (!types.length || types.includes(initialLineup.type)) ? initialLineup : null) ||
+    (!originSelection ? visibleRecords[0] : null) ||
     null;
+  const catalogueReady = !catalogue.loading && catalogue.mapId === map.id && !catalogue.error;
+  const markerGroups = useMemo(() => groupUtilityMarkers(catalogueReady ? mapMarkerRecords : [],mapUnit,zoom<=1.01), [catalogueReady,mapMarkerRecords,mapUnit,zoom]);
+  const markerBounds = useMemo(() => {
+    const [x,y,width,height] = navigation.viewBox.split(/\s+/).map(Number);
+    const visibleWidth = mapSize.width ? mapSize.width * mapUnit : width;
+    const visibleHeight = mapSize.height ? mapSize.height * mapUnit : height;
+    return {
+      x:x-(visibleWidth-width)/2,y:y-(visibleHeight-height)/2,
+      width:visibleWidth,height:visibleHeight,
+    };
+  }, [mapUnit,mapSize,navigation.viewBox]);
+  const mainClusters = useMemo(() => clusterUtilityAreas(markerGroups.filter(group =>
+    group.x >= markerBounds.x && group.x <= markerBounds.x+markerBounds.width &&
+    group.y >= markerBounds.y && group.y <= markerBounds.y+markerBounds.height),mapUnit), [markerGroups,markerBounds,mapUnit]);
+  const clusterById = useMemo(() => new Map(mainClusters.map(group=>[group.id,group])), [mainClusters]);
+  const destinationCounts = useMemo(() => new Map(mainClusters.map(group => [group.id,splitUtilityDestinations(group.records).length])), [mainClusters]);
+  const laidOutMarkers = useMemo(() => landingSelection ? layoutUtilityMarkers(landingGroups,mapUnit,markerBounds) :
+    mainClusters.map(group=>({...group,displayX:group.x,displayY:group.y,inView:true})),
+    [landingSelection,landingGroups,mapUnit,markerBounds,mainClusters]);
+  useEffect(() => setMarkerFilter([]), [side]);
   const sourceImage = level?.image || "";
   const preferredImage =
     theme === "light" && sourceImage.endsWith(".svg")
@@ -551,19 +836,37 @@ export default function Utilities({
   const draftPhotos = draft.photos || [];
 
   useEffect(() => {
+    if (!initialLineup) return;
+    setLevelId(initialLineup.levelId);
+    setSelectedId(initialLineup.id);
+    if (initialLineup.videoUrl || utilityPhotos(initialLineup).length) {
+      setMediaRecord(initialLineup);
+      requestAnimationFrame(() => mediaDialog.current?.showModal());
+    }
+  }, [initialLineup]);
+  useEffect(() => {
+    if (!initialLineup) mediaDialog.current?.close();
+  }, [map.id, side, initialLevelId, initialLineup]);
+
+  useEffect(() => {
     alive.current = true;
     return () => {
       alive.current = false;
     };
   }, []);
   useEffect(() => {
-    setLevelId(map.levels[0]?.id || "main");
-    setSelectedId(null);
-    setZoom(1);
-    setEditing(false);
+    setLevelId(
+      initialLineup?.levelId ||
+        initialLevelId ||
+        readRecovery(map)?.draft.levelId ||
+        map.levels[0]?.id ||
+        "main",
+    );
+    setSelectedId(initialLineup?.id || null);
+    navigation.reset();
     setFormError("");
     setPlacing(false);
-  }, [map.id]);
+  }, [map.id, initialLevelId, side]);
   useEffect(() => {
     setMapFallback(false);
     setMapFailed(false);
@@ -571,6 +874,14 @@ export default function Utilities({
   useEffect(() => {
     if (!editing) return;
     recoveredDrafts.set(map.id, { draft, editingId });
+    try {
+      localStorage.setItem(
+        recoveryKey(map.id),
+        JSON.stringify({ draft, editingId }),
+      );
+    } catch {
+      /* Session recovery and explicit export remain available. */
+    }
     const warn = (event: BeforeUnloadEvent) => {
       event.preventDefault();
       event.returnValue = "";
@@ -584,9 +895,12 @@ export default function Utilities({
     const measure = () => {
       const bounds = element.getBoundingClientRect();
       if (bounds.width > 0 && bounds.height > 0)
+      {
         setMapUnit(
           Math.max(viewWidth / bounds.width, viewHeight / bounds.height),
         );
+        setMapSize(previous => previous.width === bounds.width && previous.height === bounds.height ? previous : {width:bounds.width,height:bounds.height});
+      }
     };
     measure();
     const observer = new ResizeObserver(measure);
@@ -600,17 +914,146 @@ export default function Utilities({
       return;
     }
     setSelectedId(item.id);
+    history.replaceState(null, "", lineupLink(item, location.href));
     if (item.videoUrl || utilityPhotos(item).length) openMedia(item);
+  }
+  function selectMarker(group: UtilityMarkerGroup, trigger: SVGElement, animate = true) {
+    if (editing) {
+      onNotify("Save or cancel your lineup before opening another reference.");
+      return;
+    }
+    const box = trigger.getBoundingClientRect();
+    selectionRequest.current++;
+    setLoadingStanding(false);
+    const choice = {
+      records: group.records,
+      anchor: { x: box.x + box.width / 2, y: box.y + box.height / 2 },
+      target: {x:group.x,y:group.y,levelId,label:group.label},
+      trigger,
+      animate,
+    };
+    const available = UTILITY_TYPES.filter(type => group.records.some(record => record.type === type));
+    if(available.length === 1) chooseTargetUtility(available[0],choice);
+    else setMarkerChoice(choice);
+  }
+  function chooseTargetUtility(type: UtilityType, choice = markerChoice) {
+    if (!choice) return;
+    const records = choice.records.filter(record => record.type === type);
+    if(!records.length) return;
+    const animate = choice.animate && !document.activeElement?.matches(":focus-visible");
+    selectionRequest.current++;
+    setLandingSelection({records,type,target:choice.target,animate});
+    setMarkerChoice(null);
+    setSelectedId(null);
+    setTargetLabelId(null);
+    const destinations = splitUtilityDestinations(records);
+    if(destinations.length === 1) {
+      setLandingSelection(null);
+      const destination = destinations[0];
+      void openThrowFrom(destination.records,type,{
+        x:destination.x,y:destination.y,levelId:choice.target.levelId,label:destination.label,
+      },animate);
+    }
+  }
+  function chooseLandingSpot(group: UtilityMarkerGroup, keyboard = false) {
+    if(!landingSelection) return;
+    void openThrowFrom(group.records,landingSelection.type,{
+      x:group.x,y:group.y,levelId:landingSelection.target.levelId,label:group.label,
+    },landingSelection.animate && !keyboard && !document.activeElement?.matches(":focus-visible"));
+  }
+  async function openThrowFrom(input: UtilityReference[], type: UtilityType, target: MapSelection["target"], animate: boolean) {
+    const request = ++selectionRequest.current;
+    let lookup = origins.mapId === map.id ? origins.lookup : {};
+    if(!Object.keys(lookup).length) {
+      setLoadingStanding(true);
+      try {
+        lookup = await loadMapOrigins(map.id);
+        if(!alive.current || selectionRequest.current !== request) return;
+        setOrigins({mapId:map.id,lookup,error:""});
+      } catch {
+        if(alive.current && selectionRequest.current === request)
+          onNotify("Standing locations couldn’t load. Choose the spot again to retry.");
+        return;
+      } finally {
+        if(alive.current && selectionRequest.current === request) setLoadingStanding(false);
+      }
+    }
+    const records = curateLineups(input);
+    // A target offers a small set of genuinely different standing points.
+    const known = new Set<string>();
+    const positions: {x:number;y:number;levelId:string}[] = [];
+    const bounds = svgRef.current?.getBoundingClientRect();
+    const choices = records.filter(record => {
+      const point = findLineupOrigin(record,lookup);
+      const key = normalizeOriginLabel(record.from);
+      if(known.has(key)) return false;
+      if(point) {
+        const projections = map.levels.flatMap(floor => {
+          const projection = findLineupOrigin(record,lookup,floor.id);
+          return projection?.levelId === floor.id ? [{point:projection,frame:floor.contentBounds || {width:1000,height:1000}}] : [];
+        });
+        // Keep real source coordinates. Pick one useful example when two
+        // standing points would overlap; never fan them out onto invented spots.
+        if(projections.some(({point,frame}) => {
+          const unit = bounds ? Math.max(frame.width / bounds.width,frame.height / bounds.height) : mapUnit * zoom;
+          return positions.some(previous => previous.levelId === point.levelId && Math.hypot(previous.x-point.x,previous.y-point.y) < 46 * unit);
+        })) return false;
+        positions.push(...projections.map(({point}) => point));
+      }
+      known.add(key); return true;
+    }).slice(0,4);
+    if (!choices.length) return;
+    const first = choices[0];
+    const point = findLineupOrigin(first,lookup,levelId);
+    setOriginSelection({records:choices,type,target,animate});
+    setLoadingStanding(false);
+    setLandingSelection(null);
+    setMarkerChoice(null);
+    setSelectedId(null);
+    setMarkerFilter([]);
+    if(point) setLevelId(point.levelId);
+  }
+  function backToTargets() {
+    selectionRequest.current++;
+    setLoadingStanding(false);
+    const selection = originSelection || landingSelection;
+    if(selection) {
+      setLevelId(selection.target.levelId);
+      history.replaceState(null,"",`#utilities?${new URLSearchParams({map:map.id,level:selection.target.levelId,side})}`);
+    }
+    setOriginSelection(null);
+    setLandingSelection(null);
+    
+    setSelectedId(null);
   }
   function openMedia(item: UtilityReference) {
     setMediaRecord(item);
     requestAnimationFrame(() => mediaDialog.current?.showModal());
   }
+  async function copyLineup(item: UtilityReference) {
+    try {
+      if (!navigator.clipboard) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(lineupLink(item, location.href));
+      onNotify(
+        "Local lineup link copied. Personal guides need a lineup export or workspace backup on another device.",
+      );
+    } catch {
+      onNotify(
+        "The browser could not copy the link. Export the lineup to share it.",
+      );
+    }
+  }
   function changeLevel(id: string) {
+    setMarkerFilter([]);
     setLevelId(id);
     setSelectedId(null);
-    setZoom(1);
+    navigation.reset();
     setPlacing(false);
+    if(!originSelection && !landingSelection) history.replaceState(
+      null,
+      "",
+      `#utilities?${new URLSearchParams({ map: map.id, level: id, side })}`,
+    );
     if (editing) setDraft((current) => ({ ...current, levelId: id }));
   }
   function toggleFavorite(item: UtilityReference) {
@@ -628,7 +1071,7 @@ export default function Utilities({
     }
   }
   function startEditor(item?: UtilityReference) {
-    const recovered = !item ? recoveredDrafts.get(map.id) : undefined;
+    const recovered = !item ? readRecovery(map) : undefined;
     const next = item
       ? fromReference(item)
       : recovered?.draft || blankDraft(levelId, side);
@@ -646,6 +1089,11 @@ export default function Utilities({
   }
   function cancelEditor() {
     recoveredDrafts.delete(map.id);
+    try {
+      localStorage.removeItem(recoveryKey(map.id));
+    } catch {
+      /* Session draft is still cleared. */
+    }
     setEditing(false);
     setEditingId(null);
     setFormError("");
@@ -691,6 +1139,13 @@ export default function Utilities({
       x: boundedPosition(draft.x),
       y: boundedPosition(draft.y),
       userCreated: true,
+      ...(draft.showMarker === false ? { showMarker: false } : {}),
+      ...(draft.site ? { site: draft.site } : {}),
+      ...(draft.tags ? { tags: draft.tags } : {}),
+      ...(draft.remotePhotos?.length
+        ? { remotePhotos: draft.remotePhotos }
+        : {}),
+      ...(draft.photoEmbed ? { photoEmbed: draft.photoEmbed } : {}),
       ...(draftPhotos.length
         ? { photos: draftPhotos }
         : draft.image
@@ -698,6 +1153,7 @@ export default function Utilities({
           : {}),
       ...(draft.source.trim() ? { source: safeSource(draft.source) } : {}),
       ...(video ? { videoUrl: video.url, videoStart: video.start } : {}),
+      ...(video && draft.videoFallbackUrl ? { videoFallbackUrl: draft.videoFallbackUrl } : {}),
       ...((draft.creator || "").trim()
         ? { creator: draft.creator.trim() }
         : {}),
@@ -708,10 +1164,12 @@ export default function Utilities({
       );
     return record;
   }
-  function saveLineup(event: FormEvent) {
+  async function saveLineup(event: FormEvent) {
     event.preventDefault();
+    const form = event.currentTarget;
+    setSaving(true);
     try {
-      const record = draftReference();
+      const [record] = await storeLineupMedia([draftReference()]);
       const existing = readUserUtilities();
       if (!editingId && existing.length >= MAX_USER_UTILITIES)
         throw new Error(
@@ -729,13 +1187,15 @@ export default function Utilities({
         );
       }
       setCustom(next);
-      setType("All");
-      setSearch("");
+      setTypes([]);
+
       setSavedOnly(false);
       setSelectedId(record.id);
       setLevelId(record.levelId);
       onSideChange(record.side);
       cancelEditor();
+      history.replaceState(null, "", lineupLink(record, location.href));
+      openMedia(record);
       onNotify(
         editingId
           ? "Your lineup was updated on this device."
@@ -749,18 +1209,18 @@ export default function Utilities({
       );
       if (!draft.title.trim()) titleRef.current?.focus();
       else if (!draft.target.trim())
-        event.currentTarget
-          .querySelector<HTMLInputElement>('[name="lineup-target"]')
-          ?.focus();
+        form.querySelector<HTMLInputElement>('[name="lineup-target"]')?.focus();
       else if (!draft.steps.trim())
-        event.currentTarget
+        form
           .querySelector<HTMLTextAreaElement>('[name="lineup-steps"]')
           ?.focus();
+    } finally {
+      setSaving(false);
     }
   }
-  function exportDraft() {
+  async function exportDraft() {
     try {
-      downloadLineup(draftReference());
+      await downloadLineup(draftReference());
       onNotify("Lineup backup prepared for download.");
     } catch (error) {
       setFormError(
@@ -768,6 +1228,66 @@ export default function Utilities({
           ? error.message
           : "Add the required fields before exporting.",
       );
+    }
+  }
+  async function importLineup(file: File | undefined) {
+    if (!file) return;
+    setSaving(true);
+    try {
+      if (file.size > 5_000_000)
+        throw new Error("Choose a lineup JSON file smaller than 5 MB.");
+      const data = JSON.parse(await file.text());
+      if (data?.format !== "utility-lab-lineup" || data.version !== 1)
+        throw new Error("Choose a Utility Lab lineup export.");
+      const record = validateUtility(data.lineup);
+      if (
+        record &&
+        [
+          record.image,
+          ...(record.photos || []).map((photo) => photo.image),
+        ].some((image) => image?.startsWith("ul-media:"))
+      )
+        throw new Error(
+          "This file is missing its photos. Export a complete lineup from the original device.",
+        );
+      if (
+        !record ||
+        !MAPS.some(
+          (item) =>
+            item.id === record.mapId &&
+            item.levels.some((level) => level.id === record.levelId),
+        )
+      )
+        throw new Error(
+          "This lineup is invalid or uses a map outside the supported pool.",
+        );
+      const existing = readUserUtilities();
+      if (existing.length >= MAX_USER_UTILITIES)
+        throw new Error(
+          "Your personal library is full. Export and remove a lineup before importing another.",
+        );
+      const [saved] = await storeLineupMedia([
+        {
+          ...record,
+          id: existing.some((item) => item.id === record.id)
+            ? uid()
+            : record.id,
+        },
+      ]);
+      const next = [saved, ...existing];
+      localStorage.setItem(USER_UTILITIES_KEY, JSON.stringify(next));
+      setCustom(next);
+      onNotify("Lineup imported with its photos and instructions.");
+      onOpenLineup?.(saved);
+    } catch (error) {
+      onNotify(
+        error instanceof Error
+          ? error.message
+          : "This lineup could not be imported. Your library was kept.",
+      );
+    } finally {
+      setSaving(false);
+      if (importRef.current) importRef.current.value = "";
     }
   }
   function deleteLineup(item: UtilityReference) {
@@ -784,6 +1304,7 @@ export default function Utilities({
       localStorage.setItem(USER_UTILITIES_KEY, JSON.stringify(next));
       setCustom(next);
       setSelectedId(null);
+      if(mediaRecord?.id === item.id) mediaDialog.current?.close();
       onNotify("Your saved lineup was removed from this device.");
     } catch {
       onNotify(
@@ -803,7 +1324,26 @@ export default function Utilities({
     }
     setImageLoading(true);
     try {
-      const next: UtilityPhoto[] = [...draftPhotos];
+      const [expanded] = await portableLineups([
+        {
+          id: "photo-draft",
+          mapId: map.id,
+          levelId,
+          side,
+          type: "Smoke",
+          title: "Draft",
+          target: "Draft",
+          from: "",
+          purpose: "",
+          throwType: "",
+          steps: [],
+          x: 500,
+          y: 500,
+          userCreated: true,
+          photos: draftPhotos,
+        },
+      ]);
+      const next: UtilityPhoto[] = [...(expanded.photos || [])];
       for (const file of Array.from(files)) {
         const image = await prepareLineupPhoto(file);
         if (
@@ -816,8 +1356,31 @@ export default function Utilities({
           );
         next.push({ image, caption: "" });
       }
+      const [prepared] = await storeLineupMedia([
+        {
+          id: "photo-draft",
+          mapId: map.id,
+          levelId,
+          side,
+          type: "Smoke",
+          title: "Draft",
+          target: "Draft",
+          from: "",
+          purpose: "",
+          throwType: "",
+          steps: [],
+          x: 500,
+          y: 500,
+          userCreated: true,
+          photos: next,
+        },
+      ]);
       if (alive.current && context === currentContext.current)
-        setDraft((current) => ({ ...current, photos: next, image: "" }));
+        setDraft((current) => ({
+          ...current,
+          photos: prepared.photos || [],
+          image: "",
+        }));
     } catch (error) {
       if (alive.current)
         setFormError(
@@ -842,6 +1405,7 @@ export default function Utilities({
     );
     setDraft((current) => ({
       ...current,
+      showMarker: true,
       x: boundedPosition(point.x),
       y: boundedPosition(point.y),
     }));
@@ -849,17 +1413,24 @@ export default function Utilities({
     titleRef.current?.focus();
   }
   const setDraftField = <K extends keyof Draft>(key: K, value: Draft[K]) =>
-    setDraft((current) => ({ ...current, [key]: value }));
+    setDraft((current) => ({
+      ...current,
+      [key]: value,
+      ...(key === "videoUrl" ? { videoFallbackUrl: undefined } : {}),
+      ...(["x", "y"].includes(key) ? { showMarker: true } : {}),
+    }));
 
   return (
     <section
-      className={`utility-workspace${compact ? " ul-compact" : ""}`}
+      className={`utility-workspace${compact ? " ul-compact" : ""}${!editing ? " ul-map-only" : ""}`}
+      aria-busy={catalogue.loading || catalogue.mapId !== map.id}
+      data-reference-count={visibleRecords.length}
       aria-label="Utility library"
     >
+      <div className="ul-map-controls">
       <header className="ul-header">
         <div className="ul-heading">
-          <h2>Utility library</h2>
-          <span>Find the utility. Make the space.</span>
+          <h2>Lineups</h2>
         </div>
         <div className="ul-context-controls">
           <button
@@ -878,25 +1449,24 @@ export default function Utilities({
           >
             <button
               aria-pressed={side === "T"}
+              disabled={editing}
               className={side === "T" ? "is-active" : ""}
-              onClick={() => onSideChange("T")}
+              onClick={() => {if(originSelection || landingSelection) backToTargets();onSideChange("T");}}
             >
               <UserRound size={15} />
               <span>T side</span>
             </button>
             <button
               aria-pressed={side === "CT"}
+              disabled={editing}
               className={side === "CT" ? "is-active" : ""}
-              onClick={() => onSideChange("CT")}
+              onClick={() => {if(originSelection || landingSelection) backToTargets();onSideChange("CT");}}
             >
               <Shield size={15} />
               <span>CT side</span>
             </button>
           </div>
-          <button className="ul-primary-button" onClick={() => startEditor()}>
-            <Plus size={17} />
-            <span>Add lineup</span>
-          </button>
+          <LineupSuggestions map={map} side={side} onNotify={onNotify} />
         </div>
       </header>
       <div className="ul-filterbar">
@@ -904,9 +1474,14 @@ export default function Utilities({
           {(["All", ...UTILITY_TYPES] as const).map((item) => (
             <button
               key={item}
-              aria-pressed={type === item}
-              className={type === item ? "is-active" : ""}
-              onClick={() => setType(item)}
+              data-utility={item}
+              aria-pressed={item === "All" ? !types.length : types.includes(item)}
+              className={(item === "All" ? !types.length : types.includes(item)) ? "is-active" : ""}
+              onClick={() => {
+                if(originSelection || landingSelection) backToTargets();
+                setTypes(current => item === "All" ? [] : current.includes(item) ? current.filter(type => type !== item) : [...current,item]);
+                setMarkerFilter([]);
+              }}
             >
               {item === "All" ? (
                 <span className="ul-all-icon">
@@ -918,10 +1493,16 @@ export default function Utilities({
               ) : (
                 <UtilityIcon type={item} />
               )}
-              <span>{item === "All" ? "All utility" : utilityLabel(item)}</span>
+              <span>
+                {item === "All"
+                  ? "All"
+                  : item === "HE"
+                    ? "HE"
+                    : utilityLabel(item)}
+              </span>
               <small>
                 {
-                  contextRecords.filter(
+                  filterCountRecords.filter(
                     (record) => item === "All" || record.type === item,
                   ).length
                 }
@@ -931,18 +1512,21 @@ export default function Utilities({
         </div>
         <button
           className={`ul-favorites-filter${savedOnly ? " is-active" : ""}`}
+          aria-label={`Saved ${countContext.filter(item => favorites.includes(item.id)).length}`}
+          title="Saved lineups"
           aria-pressed={savedOnly}
-          onClick={() => setSavedOnly(!savedOnly)}
+          onClick={() => {if(originSelection || landingSelection) backToTargets();setSavedOnly(!savedOnly);}}
         >
           <Star size={15} fill={savedOnly ? "currentColor" : "none"} />
           <span>Saved</span>
           <small>
             {
-              contextRecords.filter((item) => favorites.includes(item.id))
+              countContext.filter((item) => favorites.includes(item.id))
                 .length
             }
           </small>
         </button>
+      </div>
       </div>
       <div className="ul-workspace-body">
         <div className="ul-map-area">
@@ -958,6 +1542,7 @@ export default function Utilities({
                     key={item.id}
                     className={levelId === item.id ? "is-active" : ""}
                     aria-pressed={levelId === item.id}
+                    disabled={!!landingSelection ? item.id !== landingSelection.target.levelId : !!originSelection && !originFloors.some(floor => floor.id === item.id)}
                     onClick={() => changeLevel(item.id)}
                   >
                     {item.name}
@@ -967,19 +1552,21 @@ export default function Utilities({
                 <span>{level?.name || "Overview"}</span>
               )}
             </div>
-            <span className="ul-map-count">
-              {visibleRecords.length}{" "}
-              {visibleRecords.length === 1 ? "reference" : "references"}
-            </span>
+            {originSelection || landingSelection || loadingStanding ? <button className="ul-origin-back ul-text-button" onClick={backToTargets}><ArrowLeft size={16}/>Back to targets</button> : <span className="ul-map-count">{visibleRecords.length} {visibleRecords.length === 1 ? "reference" : "references"}</span>}
           </div>
           <div className={`ul-map-stage${placing ? " is-placing" : ""}`}>
             <svg
               ref={svgRef}
-              className={`ul-map-svg${!sourceImage.endsWith(".svg") ? " is-raster" : ""}`}
-              viewBox={`${fit.x + (fit.width - viewWidth) / 2} ${fit.y + (fit.height - viewHeight) / 2} ${viewWidth} ${viewHeight}`}
+              className={`ul-map-svg${!sourceImage.endsWith(".svg") ? " is-raster" : ""}${navigation.hand || navigation.space ? " is-hand" : ""}${navigation.panning ? " is-panning" : ""}`}
+              viewBox={navigation.viewBox}
               role="group"
               aria-label={`${map.name} ${level?.name || ""} utility map`}
-              onClick={setTargetOnMap}
+              aria-describedby="utility-map-navigation-help"
+              tabIndex={0}
+              {...navigation.handlers}
+              onClick={(event) => {
+                if (!navigation.shouldIgnoreClick()) setTargetOnMap(event);
+              }}
             >
               {mapImage && !mapFailed && (
                 <image
@@ -996,61 +1583,91 @@ export default function Utilities({
                   }}
                 />
               )}
-              {!mapFailed &&
-                visibleRecords.map((item) => (
-                  <g
-                    key={item.id}
-                    className={`ul-map-marker${selected?.id === item.id ? " is-selected" : ""}`}
-                    transform={`translate(${item.x} ${item.y})`}
-                    style={
-                      {
-                        "--ul-marker": utilityColor(item.type),
-                      } as CSSProperties
+              <g role={landingSelection ? "group" : undefined} aria-label={landingSelection ? "Landing locations" : undefined} aria-busy={landingSelection ? loadingStanding : undefined}
+                visibility={markerChoice || loadingStanding ? "hidden" : undefined}
+                aria-hidden={markerChoice || loadingStanding ? true : undefined}>
+              {!mapFailed && !originSelection && !!landingSelection && <g className="ul-target-leaders" aria-hidden="true" pointerEvents="none">
+                {laidOutMarkers.filter(group => group.inView && Math.hypot(group.displayX-group.x,group.displayY-group.y)>mapUnit).map(group => <g key={group.id}>
+                  <line x1={group.x} y1={group.y} x2={group.displayX} y2={group.displayY} strokeWidth={mapUnit}/>
+                  <circle cx={group.x} cy={group.y} r={2.5*mapUnit}/>
+                </g>)}
+              </g>}
+              {!mapFailed && !originSelection && laidOutMarkers.filter(group => group.inView).map((group,index) => {
+                const available = UTILITY_TYPES.filter(type => group.records.some(record => record.type === type));
+                const active = !landingSelection && !!selectedId && group.records.some(record => record.id === selectedId);
+                const groupedAreas = !landingSelection ? clusterById.get(group.id)?.areas || [group] : [];
+                const grouped = groupedAreas.length > 1;
+                const locationNames = groupedAreas.map(area=>area.label).join(", ");
+                return <g key={group.id} className={`ul-map-marker${landingSelection ? " ul-landing-pin" : ""}${active ? " is-selected" : ""}`}
+                  transform={`translate(${group.displayX} ${group.displayY})`} role="button" tabIndex={markerChoice || loadingStanding ? -1 : 0}
+                  data-target-area={group.areaId} data-target-label={group.label}
+                  data-group-area-ids={!landingSelection ? JSON.stringify(groupedAreas.map(area=>area.areaId)) : undefined}
+                  data-group-area-labels={!landingSelection ? JSON.stringify(groupedAreas.map(area=>area.label)) : undefined}
+                  data-group-size={!landingSelection ? groupedAreas.length : undefined}
+                  data-target-destinations={landingSelection ? undefined : destinationCounts.get(group.id)}
+                  data-target-x={group.x} data-target-y={group.y}
+                  data-landing-id={landingSelection ? group.id : undefined}
+                  data-landing-x={landingSelection ? group.x : undefined} data-landing-y={landingSelection ? group.y : undefined}
+                  data-landing-level={landingSelection?.target.levelId}
+                  aria-label={landingSelection ? `${group.label}, landing spot ${index+1}, choose throw-from location` : `${grouped ? locationNames : group.label}: ${available.map(utilityLabel).join(", ")}, choose utility`}
+                  aria-pressed={landingSelection ? undefined : active} aria-haspopup={landingSelection ? undefined : "dialog"} aria-controls={landingSelection ? undefined : "ul-map-lineup-choices"}
+                  aria-expanded={landingSelection ? undefined : !!markerChoice?.records.some(record => group.records.some(item => item.id === record.id))}
+                  onPointerEnter={() => setTargetLabelId(group.id)}
+                  onPointerLeave={() => setTargetLabelId(null)}
+                  onFocus={() => setTargetLabelId(group.id)}
+                  onBlur={() => setTargetLabelId(null)}
+                  onClick={event => {
+                    if(navigation.shouldIgnoreClick() || placing) return;
+                    event.stopPropagation();
+                    if(landingSelection) chooseLandingSpot(group); else selectMarker(group,event.currentTarget);
+                  }}
+                  onKeyDown={event => {
+                    if(event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      if(landingSelection) chooseLandingSpot(group,true); else selectMarker(group,event.currentTarget,false);
                     }
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${item.title}, ${item.type}, ${item.userCreated ? "your lineup" : item.videoUrl ? "creator guide" : "practice reference"}`}
-                    aria-pressed={selected?.id === item.id}
-                    onClick={(event) => {
-                      if (placing) return;
-                      event.stopPropagation();
-                      selectRecord(item);
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter" || event.key === " ") {
-                        event.preventDefault();
-                        selectRecord(item);
-                      }
-                    }}
-                  >
-                    <title>{item.title}</title>
-                    <circle
-                      className="ul-marker-hit"
-                      r={22 * mapUnit}
-                      fill="transparent"
-                    />
-                    {selected?.id === item.id && (
-                      <circle
-                        className="ul-marker-ring"
-                        r={15 * mapUnit}
-                        fill="none"
-                        strokeWidth={2 * mapUnit}
-                      />
-                    )}
-                    <circle
-                      className="ul-marker-body"
-                      r={11 * mapUnit}
-                      strokeWidth={1.5 * mapUnit}
-                    />
-                    <g
-                      transform={`translate(${-9 * mapUnit} ${-9 * mapUnit})`}
-                      className="ul-marker-glyph"
-                    >
-                      <UtilityIcon type={item.type} size={18 * mapUnit} />
-                    </g>
+                  }}>
+                  <title>{grouped ? locationNames : group.label} — {landingSelection ? "choose throw-from location" : "choose utility"}</title>
+                  <circle className="ul-marker-hit" r={23 * mapUnit} fill="transparent"/>
+                  <g className={landingSelection?.animate ? "ul-origin-glyph can-animate" : undefined}>
+                  {grouped && <circle cx={3*mapUnit} cy={-3*mapUnit} r={18*mapUnit} className="ul-group-stack" strokeWidth={mapUnit}/>}
+                  <UtilityTargetMarker types={available} radius={18 * mapUnit} compact={!landingSelection}/>
                   </g>
-                ))}
-              {editing && (
+                </g>;
+              })}
+              {!mapFailed && !originSelection && !markerChoice && !loadingStanding && <g aria-hidden="true" pointerEvents="none">
+                {laidOutMarkers.filter(group => group.inView && (group.id === targetLabelId || (!!landingSelection && laidOutMarkers.length <= 6))).map(group => <text
+                  key={group.id} className="ul-target-label" textAnchor="middle"
+                  x={group.displayX} y={group.displayY+33*mapUnit} fontSize={11*mapUnit}
+                  strokeWidth={4*mapUnit}>{!landingSelection && (clusterById.get(group.id)?.areas.length || 0)>1 ? `${clusterById.get(group.id)!.areas.length} locations` : group.label}</text>)}
+              </g>}
+              </g>
+              {!mapFailed && originSelection && <g role="group" aria-label="Throw-from locations"
+                data-target-x={originSelection.target.x} data-target-y={originSelection.target.y}
+                data-target-level={originSelection.target.levelId} data-target-label={originSelection.target.label}
+                data-target-utility={originSelection.type}>
+                {originSelection.target.levelId === levelId && <g className="ul-origin-target" transform={`translate(${originSelection.target.x} ${originSelection.target.y})`} aria-hidden="true">
+                  <circle r={13 * mapUnit} fill="var(--surface-raised)" stroke={utilityColor(originSelection.type)} strokeWidth={2 * mapUnit}/>
+                  <circle r={4 * mapUnit} fill={utilityColor(originSelection.type)}/>
+                  <text className="ul-origin-label" textAnchor="middle" y={25*mapUnit} fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{originSelection.target.label}</text>
+                </g>}
+                {originChoices.map(({record,point},index) => <g key={record.id}
+                  className="ul-origin-pin" transform={`translate(${point.x} ${point.y})`}
+                  role="button" tabIndex={0} aria-label={`Throw from ${record.from}`}
+                  data-origin-x={point.x} data-origin-y={point.y} data-origin-level={point.levelId}
+                  onClick={event => {if(navigation.shouldIgnoreClick())return;event.stopPropagation();selectRecord(record);}}
+                  onKeyDown={event => {if(event.key === "Enter" || event.key === " "){event.preventDefault();selectRecord(record);}}}>
+                  <title>{record.from} — open photos</title>
+                  <circle r={23 * mapUnit} fill="transparent"/>
+                  <g className={originSelection.animate ? "ul-origin-glyph can-animate" : "ul-origin-glyph"} style={{animationDelay:`${index * 30}ms`}}>
+                    <circle className="ul-origin-disc" r={15 * mapUnit} strokeWidth={1.5 * mapUnit}/>
+                    <Crosshair x={-9 * mapUnit} y={-9 * mapUnit} size={18 * mapUnit} strokeWidth={2}/>
+                    <text className="ul-origin-label" textAnchor="middle" y={-23 * mapUnit} fontSize={11 * mapUnit} strokeWidth={3 * mapUnit}>{record.from.length > 23 ? `${record.from.slice(0,22)}…` : record.from}</text>
+                  </g>
+                </g>)}
+              </g>}
+
+              {editing && (draft.showMarker !== false || placing) && (
                 <g
                   transform={`translate(${draft.x} ${draft.y})`}
                   aria-label="Your lineup target"
@@ -1070,11 +1687,19 @@ export default function Utilities({
                 </g>
               )}
             </svg>
+            {!mapFailed && (catalogue.loading || catalogue.mapId !== map.id) && <p className="ul-map-feedback" role="status">Loading lineups…</p>}
+            {!mapFailed && catalogue.error && <div className="ul-map-feedback" role="alert">{catalogue.error}<button className="ul-text-button" onClick={() => setCatalogueRetry(attempt => attempt+1)}>Try again</button></div>}
+            {!mapFailed && !catalogue.loading && !catalogue.error && !visibleRecords.length && <div className="ul-map-feedback" role="status">
+              {savedOnly ? "No saved lineups on this map yet." : "No lineups match these filters."}
+              <button className="ul-text-button" onClick={() => {setTypes([]);setSavedOnly(false);setMarkerFilter([]);}}>Show all</button>
+              {map.levels.length > 1 && levelId !== map.levels[0].id && <button className="ul-text-button" onClick={() => changeLevel(map.levels[0].id)}>View {map.levels[0].name} guides</button>}
+            </div>}
+            {loadingStanding && <p className="ul-map-feedback" role="status">Loading throw-from locations…</p>}
             {mapFailed && (
               <div className="ul-map-error">
                 <MapPinned size={28} />
                 <h2>The radar could not load.</h2>
-                <p>Your references are still available in the list.</p>
+                <p>Reload the radar to choose your lineup.</p>
                 <button
                   className="ul-secondary-button"
                   onClick={() => {
@@ -1102,33 +1727,57 @@ export default function Utilities({
           <div className="ul-map-bottom">
             <p>
               <Info size={14} />
-              <span>
-                Target locations are illustrative. Validate throws in game.
-              </span>
+              <span>{landingSelection ? "Choose the exact landing spot." : originSelection ? "Choose where to throw from." : "Choose a target, then utility."}</span>
             </p>
             <div className="ul-zoom">
               <button
+                className={navigation.hand ? "is-active" : ""}
+                aria-label="Pan utility map"
+                aria-pressed={navigation.hand}
+                title="Hand tool (G). Space or middle-button drag also pans."
+                onClick={navigation.toggleHand}
+              >
+                <Hand size={16} />
+              </button>
+              <button
                 aria-label="Zoom utility map out"
                 disabled={zoom <= 1}
-                onClick={() => setZoom((value) => Math.max(1, value - 0.25))}
+                onClick={() => navigation.zoomBy(1 / 1.25)}
               >
                 <ZoomOut size={16} />
               </button>
               <button
-                onClick={() => setZoom(1)}
+                onClick={navigation.reset}
                 aria-label="Reset utility map zoom"
+                title="Fit map (0)"
               >
                 {Math.round(zoom * 100)}%
               </button>
               <button
                 aria-label="Zoom utility map in"
-                disabled={zoom >= 2}
-                onClick={() => setZoom((value) => Math.min(2, value + 0.25))}
+                disabled={zoom >= 4}
+                onClick={() => navigation.zoomBy(1.25)}
               >
                 <ZoomIn size={16} />
               </button>
             </div>
           </div>
+          <p
+            id="utility-map-navigation-help"
+            className="ul-navigation-help"
+            title="Drag empty space, hold Space and drag, or use the hand tool to pan. Scroll or +/− to zoom; 0 fits the map. Arrow keys pan while the map is focused."
+          >
+            <span className="ul-navigation-desktop">
+              Drag to pan · Scroll to zoom · 0 to fit
+            </span>
+            <span className="ul-navigation-touch">
+              Drag to pan · Pinch to zoom
+            </span>
+            <span className="ul-navigation-shortcuts">
+              . Keyboard: + or − to zoom, 0 to fit, arrow keys to pan. Space and
+              drag pans while placing a target.
+            </span>
+          </p>
           <footer className="ul-map-credit">
             {sourceImage.endsWith(".svg") ? (
               <a href="https://setpos.gg" target="_blank" rel="noreferrer">
@@ -1139,14 +1788,13 @@ export default function Utilities({
             )}
           </footer>
         </div>
-        <aside
+        {editing && <aside
           ref={panelRef}
           className={`ul-sidebar${editing ? " is-editing" : ""}`}
           aria-label={
             editing ? "Add or edit utility lineup" : "Utility references"
           }
         >
-          {editing ? (
             <>
               <div className="ul-editor-heading">
                 <button
@@ -1336,6 +1984,16 @@ export default function Utilities({
                     {placing ? "Cancel map placement" : "Choose target on map"}
                   </button>
                   <span>Map positions use a 0–1000 scale.</span>
+                  <label className="ul-pin-choice">
+                    <input
+                      type="checkbox"
+                      checked={draft.showMarker !== false}
+                      onChange={(event) =>
+                        setDraftField("showMarker", event.target.checked)
+                      }
+                    />
+                    Show target on map
+                  </label>
                 </fieldset>
                 <div className="ul-screenshot-field">
                   <span className="ul-field-label">
@@ -1348,10 +2006,24 @@ export default function Utilities({
                     Add your real standing position, aim reference, and throw
                     screenshots. Caption each step.
                   </p>
+                  {!!draft.remotePhotos?.length && (
+                    <div className="ul-linked-photos">
+                      <span>
+                        {draft.remotePhotos.length} source photos included
+                      </span>
+                      <button
+                        type="button"
+                        className="ul-text-button"
+                        onClick={() => setDraftField("remotePhotos", [])}
+                      >
+                        Remove source photos
+                      </button>
+                    </div>
+                  )}
                   {draftPhotos.map((photo, index) => (
                     <div className="ul-photo-edit" key={index}>
                       <div className="ul-upload-preview">
-                        <img
+                        <MediaImage
                           src={photo.image}
                           alt={`Lineup photo ${index + 1}`}
                           width="160"
@@ -1390,6 +2062,66 @@ export default function Utilities({
                           }
                         />
                       </label>
+                      <label className="ul-photo-step-kind">
+                        Photo {index + 1} type
+                        <select
+                          aria-label={`Photo ${index + 1} type`}
+                          value={photo.kind || "context"}
+                          onChange={(event) =>
+                            setDraftField(
+                              "photos",
+                              draftPhotos.map((item, at) =>
+                                at === index
+                                  ? {
+                                      ...item,
+                                      kind: event.target
+                                        .value as UtilityPhoto["kind"],
+                                    }
+                                  : item,
+                              ),
+                            )
+                          }
+                        >
+                          <option value="position">Standing position</option>
+                          <option value="aim">Aim reference</option>
+                          <option value="release">Throw / release</option>
+                          <option value="landing">Landing result</option>
+                          <option value="context">Context / other</option>
+                        </select>
+                      </label>
+                      <div
+                        className="ul-photo-order"
+                        role="group"
+                        aria-label={`Reorder photo ${index + 1}`}
+                      >
+                        {([-1, 1] as const).map((direction) => (
+                          <button
+                            key={direction}
+                            type="button"
+                            className="ul-icon-button"
+                            disabled={
+                              saving ||
+                              index + direction < 0 ||
+                              index + direction >= draftPhotos.length
+                            }
+                            aria-label={`Move photo ${index + 1} ${direction < 0 ? "up" : "down"}`}
+                            onClick={() => {
+                              const photos = [...draftPhotos];
+                              [photos[index], photos[index + direction]] = [
+                                photos[index + direction],
+                                photos[index],
+                              ];
+                              setDraftField("photos", photos);
+                            }}
+                          >
+                            {direction < 0 ? (
+                              <ArrowUp size={16} />
+                            ) : (
+                              <ArrowDown size={16} />
+                            )}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   ))}
                   <button
@@ -1484,15 +2216,20 @@ export default function Utilities({
                   <button
                     className="ul-primary-button"
                     type="submit"
-                    disabled={imageLoading}
+                    disabled={imageLoading || saving}
                   >
                     <Check size={16} />
-                    {editingId ? "Update lineup" : "Save lineup"}
+                    {saving
+                      ? "Saving…"
+                      : editingId
+                        ? "Update lineup"
+                        : "Save lineup"}
                   </button>
                   <button
                     type="button"
                     className="ul-secondary-button"
                     onClick={cancelEditor}
+                    disabled={saving}
                   >
                     Cancel
                   </button>
@@ -1511,259 +2248,17 @@ export default function Utilities({
                 </p>
               </form>
             </>
-          ) : (
-            <>
-              <div className="ul-list-heading">
-                <div>
-                  <h2>{side === "T" ? "T-side" : "CT-side"} utility</h2>
-                  <span>
-                    {map.name}
-                    {map.levels.length > 1 ? ` · ${level?.name}` : ""}
-                  </span>
-                </div>
-                <button
-                  className="ul-icon-button"
-                  aria-label="Add your own lineup"
-                  onClick={() => startEditor()}
-                >
-                  <Plus size={19} />
-                </button>
-              </div>
-              <label className="ul-search">
-                <Search size={16} />
-                <input
-                  type="search"
-                  name="utility-search"
-                  autoComplete="off"
-                  value={search}
-                  aria-label="Search utilities"
-                  placeholder="Find a callout or lineup…"
-                  onChange={(event) => setSearch(event.target.value)}
-                />
-                {search && (
-                  <button
-                    aria-label="Clear utility search"
-                    onClick={() => setSearch("")}
-                  >
-                    <X size={14} />
-                  </button>
-                )}
-              </label>
-              <div
-                className="ul-reference-list"
-                role="list"
-                aria-label="Matching utility references"
-              >
-                {visibleRecords.map((item) => (
-                  <div
-                    className={`ul-reference-row${selected?.id === item.id ? " is-selected" : ""}`}
-                    role="listitem"
-                    key={item.id}
-                  >
-                    <button
-                      className="ul-reference-open"
-                      aria-label={`Open ${item.title}`}
-                      aria-pressed={selected?.id === item.id}
-                      onClick={() => selectRecord(item)}
-                    >
-                      <span
-                        className="ul-reference-icon"
-                        style={{ color: utilityColor(item.type) }}
-                      >
-                        <UtilityIcon type={item.type} size={27} />
-                      </span>
-                      <span>
-                        <strong>{item.title}</strong>
-                        <small>
-                          {utilityLabel(item.type)}{" "}
-                          <span className="ul-inline-dot" />{" "}
-                          {item.from || "Position not recorded"}{" "}
-                          <ArrowUpRight size={10} /> {item.target}
-                        </small>
-                      </span>
-                    </button>
-                    <button
-                      className={`ul-favorite-button${favorites.includes(item.id) ? " is-saved" : ""}`}
-                      aria-label={`${favorites.includes(item.id) ? "Unsave" : "Save"} ${item.title}`}
-                      aria-pressed={favorites.includes(item.id)}
-                      onClick={() => toggleFavorite(item)}
-                    >
-                      <Star
-                        size={15}
-                        fill={
-                          favorites.includes(item.id) ? "currentColor" : "none"
-                        }
-                      />
-                    </button>
-                  </div>
-                ))}
-                {!visibleRecords.length && (
-                  <div className="ul-empty">
-                    <Search size={25} />
-                    <h3>No utilities match.</h3>
-                    <p>
-                      {savedOnly
-                        ? "Save a reference with its star, or view all utilities."
-                        : `Try another callout or add your own ${side}-side lineup for this level.`}
-                    </p>
-                    <button
-                      className="ul-secondary-button"
-                      onClick={() => {
-                        setType("All");
-                        setSearch("");
-                        setSavedOnly(false);
-                      }}
-                    >
-                      Clear filters
-                    </button>
-                    <button
-                      className="ul-text-button"
-                      onClick={() => startEditor()}
-                    >
-                      Add a lineup <Plus size={14} />
-                    </button>
-                  </div>
-                )}
-              </div>
-              {selected && (
-                <article
-                  className="ul-detail"
-                  aria-label={`${selected.title} details`}
-                >
-                  <div className="ul-detail-title">
-                    <span
-                      className="ul-detail-symbol"
-                      style={{ color: utilityColor(selected.type) }}
-                    >
-                      <UtilityIcon type={selected.type} size={32} />
-                    </span>
-                    <div>
-                      <span>
-                        {utilityLabel(selected.type)}{" "}
-                        <span className="ul-inline-dot" />{" "}
-                        {selected.userCreated
-                          ? "Your lineup"
-                          : selected.videoUrl
-                            ? "Creator guide"
-                            : "Practice reference"}
-                      </span>
-                      <h2>{selected.title}</h2>
-                    </div>
-                  </div>
-                  {(selected.videoUrl ||
-                    utilityPhotos(selected).length > 0) && (
-                    <button
-                      className="ul-media-preview"
-                      aria-label="Open lineup media"
-                      onClick={() => openMedia(selected)}
-                    >
-                      {selected.videoUrl ? (
-                        <Video size={24} />
-                      ) : (
-                        <Images size={24} />
-                      )}
-                      <span>
-                        <strong>
-                          {selected.videoUrl
-                            ? "Watch lineup"
-                            : "View photo steps"}
-                        </strong>
-                        <small>
-                          {selected.creator
-                            ? `By ${selected.creator}`
-                            : `${utilityPhotos(selected).length} captioned ${utilityPhotos(selected).length === 1 ? "photo" : "photos"}`}
-                        </small>
-                      </span>
-                      <Play size={19} />
-                    </button>
-                  )}
-                  <div className="ul-validation-note">
-                    <Info size={15} />
-                    <p>
-                      {selected.userCreated
-                        ? "Your own notes. Verify the throw in a practice server before relying on it."
-                        : selected.videoUrl
-                          ? "Original creator demonstration. Match the video inputs and test on your current map version; the radar marker is illustrative."
-                          : "Needs in-game validation. This is a target and practice checklist, not a verified aim-point lineup."}
-                    </p>
-                  </div>
-                  <p className="ul-purpose">
-                    {selected.purpose ||
-                      "Add a purpose to explain when your team should use this lineup."}
-                  </p>
-                  <dl className="ul-lineup-facts">
-                    <div>
-                      <dt>From</dt>
-                      <dd>{selected.from || "Not recorded"}</dd>
-                    </div>
-                    <div>
-                      <dt>Target</dt>
-                      <dd>{selected.target}</dd>
-                    </div>
-                    <div>
-                      <dt>Throw</dt>
-                      <dd>{selected.throwType || "Not recorded"}</dd>
-                    </div>
-                  </dl>
-                  <ThrowInputs method={selected.throwType} />
-                  <h3>
-                    {selected.userCreated
-                      ? "Your instructions"
-                      : selected.videoUrl
-                        ? "Follow the demonstration"
-                        : "Practice checklist"}
-                  </h3>
-                  <ol className="ul-instructions">
-                    {selected.steps.map((step, index) => (
-                      <li key={`${selected.id}-${index}`}>
-                        <span>{index + 1}</span>
-                        <p>{step}</p>
-                      </li>
-                    ))}
-                  </ol>
-                  {selected.source && (
-                    <a
-                      className="ul-source-link"
-                      href={selected.source}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Open source <ArrowUpRight size={15} />
-                    </a>
-                  )}
-                  <div className="ul-detail-actions">
-                    <button
-                      className="ul-secondary-button"
-                      onClick={() => startEditor(selected)}
-                    >
-                      <Pencil size={14} />
-                      {selected.userCreated
-                        ? "Edit lineup"
-                        : "Make your own version"}
-                    </button>
-                    <button
-                      className="ul-icon-button"
-                      aria-label="Export selected lineup"
-                      onClick={() => downloadLineup(selected)}
-                    >
-                      <ArrowDownToLine size={17} />
-                    </button>
-                    {selected.userCreated && (
-                      <button
-                        className="ul-icon-button ul-delete-button"
-                        aria-label="Delete your lineup"
-                        onClick={() => deleteLineup(selected)}
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    )}
-                  </div>
-                </article>
-              )}
-            </>
-          )}
-        </aside>
+        </aside>}
       </div>
+      {markerChoice && (
+        <MarkerChoices
+          {...markerChoice}
+          targetLabel={markerChoice.target.label}
+          busy={loadingStanding}
+          onClose={() => {selectionRequest.current++;setMarkerChoice(null);setLoadingStanding(false);}}
+          onSelectType={chooseTargetUtility}
+        />
+      )}
       <dialog
         className="ul-media-dialog"
         ref={mediaDialog}
@@ -1783,6 +2278,15 @@ export default function Utilities({
               {mediaRecord?.title || "Lineup media"}
             </h2>
           </div>
+          <div className="ul-media-heading-actions">
+          {mediaRecord && <GuideActions
+            record={mediaRecord} saved={favorites.includes(mediaRecord.id)}
+            onToggleSaved={() => toggleFavorite(mediaRecord)}
+            onCopyLink={() => void copyLineup(mediaRecord)}
+            onDownload={() => void downloadLineup(mediaRecord).catch(error => onNotify(error instanceof Error ? error.message : "This lineup could not be exported."))}
+            onEdit={() => {const record=mediaRecord;mediaDialog.current?.close();startEditor(record);}}
+            onDelete={mediaRecord.userCreated ? () => deleteLineup(mediaRecord) : undefined}
+          />}
           <button
             className="ul-icon-button"
             aria-label="Close lineup media"
@@ -1790,15 +2294,11 @@ export default function Utilities({
           >
             <X size={22} />
           </button>
+          </div>
         </div>
         {mediaRecord && (
           <LineupMedia key={mediaRecord.id} record={mediaRecord} />
         )}
-        <p className="ul-media-disclaimer">
-          <Info size={14} />
-          Match the demonstrated standing position, aim, and inputs. Check the
-          result in a practice server.
-        </p>
       </dialog>
     </section>
   );

@@ -1,0 +1,3466 @@
+import type { UtilityPhoto, UtilityReference } from "./utility-data";
+
+export type WorldPosition = { x: number; y: number; z: number };
+export type WebSourceAnnotation = {
+  id: string;
+  annotationId: string;
+  mapId: string;
+  side: "T" | "CT" | null;
+  type: "Smoke" | "Flash" | "Molotov" | "HE";
+  title: string;
+  standingPosition: WorldPosition;
+  aim: { pitch: number; yaw: number; roll: number };
+  aimMarkerPosition: WorldPosition;
+  landing: WorldPosition;
+  sourceTolerance: number | null;
+  sourceInstructions: {
+    standing: string;
+    aim: string;
+    additional: string[];
+    jumpThrow: boolean;
+    jumpFlagEvidence: "source-flag" | "not-recorded";
+  };
+  warnings: string[];
+  source: {
+    creator: string;
+    project: string;
+    commit: string;
+    file: string;
+    nodes: { position: string; aim: string; landing: string };
+    url: string;
+    license: "MIT";
+    licenseUrl: string;
+    sourceSha256: string;
+    checkedAt: string;
+  };
+};
+
+export type AttributedLineupPhoto = UtilityPhoto & {
+  kind: "position" | "aim" | "release" | "landing" | "context";
+  creator: string;
+  source: string;
+  license: string;
+  licenseUrl: string;
+  capturedAt?: string;
+  gameBuild?: string;
+  annotationId?: string;
+};
+export type AcceptedPhotoLineup = UtilityReference & {
+  annotationId?: string;
+  showMarker: false;
+  photos: AttributedLineupPhoto[];
+  photoSource?: {
+    project: string;
+    commit: string;
+    file: string;
+    section: string;
+    index: number;
+    sourceId: string;
+    sourceTitle: string;
+    sourceSide: string;
+    sourceThrow: { mouse?: string; action?: string; keys?: string[] };
+    sourceSha256: string;
+    checkedAt: string;
+  };
+};
+
+export const ANNOTATION_SOURCE = {
+  project: "https://github.com/ReneRebsdorf/CS2-annotations",
+  commit: "f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe",
+  license: "MIT",
+  licenseUrl: "https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE",
+  copyright: "Copyright (c) 2025 Rene Rebsdorf",
+  checkedAt: "2026-11-09",
+} as const;
+
+/** Exact public-web annotation facts, retained separately from finished photo
+ * guides. They have no measured SVG registration, derived floor assignments or
+ * local installation metadata. Raw source instructions preserve uncertain inputs.
+ */
+export const WEB_SOURCE_ANNOTATIONS: WebSourceAnnotation[] = [
+  {"id":"annotation-mirage-3535834e-86a3-4de9-a963-cc29ab8aeb03","annotationId":"3535834e-86a3-4de9-a963-cc29ab8aeb03","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke","standingPosition":{"x":1389.46875,"y":70.968201,"z":-167.96875},"aim":{"pitch":-30.937386,"yaw":-163.909958,"roll":0},"aimMarkerPosition":{"x":1307.055786,"y":47.196411,"z":-52.718651},"landing":{"x":-1161.228394,"y":-643.96991,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Strafe right, then jump throw","additional":["Strafe right, then jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-bb4277a1-409e-4d2c-aa01-7861913cd0e0","annotationId":"bb4277a1-409e-4d2c-aa01-7861913cd0e0","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Stairs","standingPosition":{"x":907.430115,"y":-1036.031982,"z":-251.96875},"aim":{"pitch":-64.587288,"yaw":-158.774521,"roll":0},"aimMarkerPosition":{"x":867.427673,"y":-1051.568359,"z":-100.601532},"landing":{"x":-520.425903,"y":-1590.563599,"z":-37.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim slight off the edge of the building\nCombine with jungle smoke","additional":["Aim slight off the edge of the building\nCombine with jungle smoke"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-58d008f2-147f-423a-a2ca-f07159ea2940","annotationId":"58d008f2-147f-423a-a2ca-f07159ea2940","mapId":"mirage","side":"T","type":"Flash","title":"Lamp flash","standingPosition":{"x":873.610168,"y":-1036.031372,"z":-251.96875},"aim":{"pitch":-33.451729,"yaw":-154.218887,"roll":0},"aimMarkerPosition":{"x":798.480042,"y":-1072.32019,"z":-135.506378},"landing":{"x":95.679504,"y":-1411.779541,"z":96.837936},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-1ae5efea-0053-4eb9-8703-1ab3e13b3e97","annotationId":"1ae5efea-0053-4eb9-8703-1ab3e13b3e97","mapId":"mirage","side":"T","type":"Smoke","title":"Jungle smoke","standingPosition":{"x":1092.043335,"y":-1012.002258,"z":-257.438171},"aim":{"pitch":-22.106411,"yaw":-162.921844,"roll":0},"aimMarkerPosition":{"x":1003.480042,"y":-1039.210938,"z":-157.9673},"landing":{"x":-812.124756,"y":-1647.311646,"z":18.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the dot on the wall and jump throw\nCombine with stairs smoke","additional":["Aim at the dot on the wall and jump throw\nCombine with stairs smoke"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-ee36e993-22ed-4d05-9268-4e27a2fb7817","annotationId":"ee36e993-22ed-4d05-9268-4e27a2fb7817","mapId":"mirage","side":"T","type":"Smoke","title":"Top conn smoke","standingPosition":{"x":1239.962158,"y":-1159.484131,"z":-246.550842},"aim":{"pitch":-24.690639,"yaw":-175.049759,"roll":0},"aimMarkerPosition":{"x":1149.443359,"y":-1167.324341,"z":-147.207748},"landing":{"x":-611.516357,"y":-1368.771606,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the top of the antenna\njump throw","additional":["Wedge into corner","Aim at the top of the antenna\njump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-885d6007-4902-4194-b5fa-94ce6c935814","annotationId":"885d6007-4902-4194-b5fa-94ce6c935814","mapId":"mirage","side":"T","type":"Smoke","title":"A Main Lurk Smoke","standingPosition":{"x":509.521759,"y":-1707.965698,"z":-263.96875},"aim":{"pitch":-15.127167,"yaw":133.609192,"roll":0},"aimMarkerPosition":{"x":442.938171,"y":-1638.068481,"z":-174.032532},"landing":{"x":19.33671,"y":-1642.851929,"z":-169.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle of the line","additional":["Middle of the line"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-eeb7fbac-b4a7-49db-a252-bbcb5fcf2a21","annotationId":"eeb7fbac-b4a7-49db-a252-bbcb5fcf2a21","mapId":"mirage","side":"T","type":"Smoke","title":"Palace Lurk smoke","standingPosition":{"x":385.87326,"y":-2127.966309,"z":-39.96875},"aim":{"pitch":-5.785342,"yaw":-126.39624,"roll":0},"aimMarkerPosition":{"x":326.838867,"y":-2208.049561,"z":33.951427},"landing":{"x":-34.790619,"y":-2081.317383,"z":-36.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim between the two horizontal lines at the vertical line","additional":["Aim between the two horizontal lines at the vertical line"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-abace398-457e-4a58-aeca-f033270827ad","annotationId":"abace398-457e-4a58-aeca-f033270827ad","mapId":"mirage","side":"T","type":"Smoke","title":"Top mid smoke","standingPosition":{"x":1422.966919,"y":36.46875,"z":-167.96875},"aim":{"pitch":-42.303638,"yaw":-160.521606,"roll":0},"aimMarkerPosition":{"x":1353.240967,"y":11.80707,"z":-36.822807},"landing":{"x":34.644897,"y":-481.505035,"z":-184.162582},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Tip of the antenna","additional":["Tip of the antenna"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode21","aim":"MapAnnotationNode22","landing":"MapAnnotationNode23"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-c5d46018-6036-4da3-bd6b-ee3427ce422a","annotationId":"c5d46018-6036-4da3-bd6b-ee3427ce422a","mapId":"mirage","side":"T","type":"Smoke","title":"Window smoke","standingPosition":{"x":343.302429,"y":-621.618347,"z":-162.331787},"aim":{"pitch":-32.384068,"yaw":179.378647,"roll":0},"aimMarkerPosition":{"x":258.859711,"y":-620.702576,"z":-45.646915},"landing":{"x":-1187.866455,"y":-603.414001,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"1x at the top of the flap on the box","additional":["1x at the top of the flap on the box"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-52bb2de0-7f6e-4169-aaa6-f3082abd9fc7","annotationId":"52bb2de0-7f6e-4169-aaa6-f3082abd9fc7","mapId":"mirage","side":"T","type":"Smoke","title":"Short smoke","standingPosition":{"x":360.075439,"y":-691.96875,"z":-163.355286},"aim":{"pitch":-24.909782,"yaw":160.904984,"roll":0},"aimMarkerPosition":{"x":274.368622,"y":-662.298462,"z":-58.108246},"landing":{"x":-798.707214,"y":-202.775055,"z":-164.94046},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the tip of the antenna","additional":["Aim at the tip of the antenna"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-53157d39-88f0-4c3e-ab3a-36d6e4225594","annotationId":"53157d39-88f0-4c3e-ab3a-36d6e4225594","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke kitchen window","standingPosition":{"x":-160.03302,"y":887.96698,"z":-135.328064},"aim":{"pitch":-50.946461,"yaw":-146.991608,"roll":0},"aimMarkerPosition":{"x":-212.868134,"y":853.644531,"z":5.850853},"landing":{"x":-1916.892456,"y":-292.930206,"z":-165.972},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into the corner","aim":"Aim at the top most part of the tower, jump throw","additional":["Wedge into the corner","Aim at the top most part of the tower, jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode30","aim":"MapAnnotationNode31","landing":"MapAnnotationNode32"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-2d509f9b-edcc-4d2c-a35d-0a257e4c18f8","annotationId":"2d509f9b-edcc-4d2c-a35d-0a257e4c18f8","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke kitchen entrance","standingPosition":{"x":-160.027588,"y":887.969849,"z":-135.328125},"aim":{"pitch":-42.075165,"yaw":-151.91066,"roll":0},"aimMarkerPosition":{"x":-225.511414,"y":853.020386,"z":-4.794472},"landing":{"x":-2376.21167,"y":-295.757202,"z":-165.966705},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Top part of the right most window","additional":["Top part of the right most window"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-4169c6de-a461-43af-ba30-51d6f3b5883b","annotationId":"4169c6de-a461-43af-ba30-51d6f3b5883b","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke CT Spawn","standingPosition":{"x":1091.133789,"y":-1012.912842,"z":-257.549683},"aim":{"pitch":-29.730185,"yaw":-143.773361,"roll":0},"aimMarkerPosition":{"x":1021.083618,"y":-1064.231812,"z":-146.137482},"landing":{"x":-876.852173,"y":-2436.367432,"z":-108.837357},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Right most part of the tower (not the beam)","additional":["Right most part of the tower (not the beam)"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-bce4337a-cef1-421e-9a7d-2a7e12bc852e","annotationId":"bce4337a-cef1-421e-9a7d-2a7e12bc852e","mapId":"mirage","side":"CT","type":"Smoke","title":"Smoke A Ramp deep from CT Spawn","standingPosition":{"x":-2031.968872,"y":-1766.488647,"z":-300.431152},"aim":{"pitch":-16.542898,"yaw":5.386463,"roll":0},"aimMarkerPosition":{"x":-1936.531494,"y":-1757.489868,"z":-211.352829},"landing":{"x":476.344696,"y":-1531.98938,"z":-255.135513},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at edge of wall and top grout","additional":["Wedge into corner","Aim at edge of wall and top grout"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-8bca73f1-11a9-430c-b8be-594f71fd040b","annotationId":"8bca73f1-11a9-430c-b8be-594f71fd040b","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 1","standingPosition":{"x":1296,"y":32,"z":-167.96875},"aim":{"pitch":-28.912582,"yaw":-165.958099,"roll":0},"aimMarkerPosition":{"x":1211.079834,"y":10.761017,"z":-55.781288},"landing":{"x":-1162.511597,"y":-632.730225,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1296.000000 32.000000 -103.968750","aim":"","additional":["setpos 1296.000000 32.000000 -103.968750"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode47","aim":"MapAnnotationNode48","landing":"MapAnnotationNode49"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-6e3a5792-20d1-4925-9f54-6fd25f9a97a2","annotationId":"6e3a5792-20d1-4925-9f54-6fd25f9a97a2","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 2","standingPosition":{"x":1296,"y":-352,"z":-167.96875},"aim":{"pitch":-42.454956,"yaw":-173.246841,"roll":0},"aimMarkerPosition":{"x":1222.731079,"y":-360.676025,"z":-36.627716},"landing":{"x":-1195.737061,"y":-663.078857,"z":-165.968414},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1216.00 -211.00 -158.60","aim":"","additional":["setpos 1216.00 -211.00 -158.60"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode50","aim":"MapAnnotationNode51","landing":"MapAnnotationNode52"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-907ba19b-97c6-4db9-808d-3f42d4e5cd85","annotationId":"907ba19b-97c6-4db9-808d-3f42d4e5cd85","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 3","standingPosition":{"x":1216,"y":-16,"z":-163.96875},"aim":{"pitch":-44.59679,"yaw":-166.252304,"roll":0},"aimMarkerPosition":{"x":1146.833374,"y":-32.922001,"z":-31.725586},"landing":{"x":-1207.445801,"y":-634.600586,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1136.00 32.000 -158.78","aim":"","additional":["setpos 1136.00 32.000 -158.78"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode53","aim":"MapAnnotationNode54","landing":"MapAnnotationNode55"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-4e2928e8-e1da-449e-af53-b90610f444ae","annotationId":"4e2928e8-e1da-449e-af53-b90610f444ae","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 4","standingPosition":{"x":1216,"y":-115,"z":-163.96875},"aim":{"pitch":-44.462006,"yaw":-167.666473,"roll":0},"aimMarkerPosition":{"x":1146.275635,"y":-130.245102,"z":-31.893295},"landing":{"x":-1200.9021,"y":-670.274963,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1136.00 -64.00 -158.69","aim":"","additional":["setpos 1136.00 -64.00 -158.69"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode56","aim":"MapAnnotationNode57","landing":"MapAnnotationNode58"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-b56dad48-54dd-4114-bf41-001d7789681a","annotationId":"b56dad48-54dd-4114-bf41-001d7789681a","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 5","standingPosition":{"x":1216,"y":-211,"z":-163.96875},"aim":{"pitch":-46.032028,"yaw":-170.316238,"roll":0},"aimMarkerPosition":{"x":1147.563599,"y":-222.678085,"z":-29.028008},"landing":{"x":-1208.038574,"y":-643.046753,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1136.00 -256.00 -158.83","aim":"","additional":["setpos 1136.00 -256.00 -158.83"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode59","aim":"MapAnnotationNode60","landing":"MapAnnotationNode61"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-0c138120-239f-4608-a6a8-0743b5ba3ce6","annotationId":"0c138120-239f-4608-a6a8-0743b5ba3ce6","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 6","standingPosition":{"x":1216.000122,"y":-307.000244,"z":-164.814819},"aim":{"pitch":-46.432678,"yaw":-170.927353,"roll":0},"aimMarkerPosition":{"x":1147.941772,"y":-317.868103,"z":-28.5214},"landing":{"x":-1208.431396,"y":-674.645142,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1296.00 32.000 -161.96","aim":"Walk to the right until you reach the 2nd metal railing, step jump throw","additional":["setpos 1296.00 32.000 -161.96","Walk to the right until you reach the 2nd metal railing, step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode62","aim":"MapAnnotationNode63","landing":"MapAnnotationNode64"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-e3243c6f-dce9-4096-8e59-7080532575b4","annotationId":"e3243c6f-dce9-4096-8e59-7080532575b4","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 7","standingPosition":{"x":1135.997314,"y":32.00264,"z":-164.788452},"aim":{"pitch":-45.479965,"yaw":-164.376755,"roll":0},"aimMarkerPosition":{"x":1068.472046,"y":13.119694,"z":-29.669563},"landing":{"x":-1208.431396,"y":-674.645142,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos 1216.00 -307.04 -158.81","aim":"Aim to the left of the square mark, walk backwards until crosshair is at the dark brick, step jump throw","additional":["setpos 1216.00 -307.04 -158.81","Aim to the left of the square mark, walk backwards until crosshair is at the dark brick, step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode65","aim":"MapAnnotationNode66","landing":"MapAnnotationNode67"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-a24b13de-faa9-4d58-b1e4-a37c9dad4b33","annotationId":"a24b13de-faa9-4d58-b1e4-a37c9dad4b33","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 8","standingPosition":{"x":1136.049194,"y":-63.972839,"z":-164.499817},"aim":{"pitch":-42.432632,"yaw":-166.298676,"roll":0},"aimMarkerPosition":{"x":1072.717041,"y":-79.413086,"z":-41.342056},"landing":{"x":-1204.479736,"y":-654.664429,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -428.000092 -842.999939 156.245865","aim":"Align with the dirt in the center of the A, and the bottom right corner of the center in the A, walk backwards until reaching bottom of railing","additional":["setpos -428.000092 -842.999939 156.245865","Align with the dirt in the center of the A, and the bottom right corner of the center in the A, walk backwards until reaching bottom of railing"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode68","aim":"MapAnnotationNode69","landing":"MapAnnotationNode70"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-e891423b-1163-4471-87b2-2d0b47585d00","annotationId":"e891423b-1163-4471-87b2-2d0b47585d00","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 9","standingPosition":{"x":1136.052612,"y":-160.017456,"z":-164.431152},"aim":{"pitch":-42.878601,"yaw":-168.192444,"roll":0},"aimMarkerPosition":{"x":1064.323486,"y":-175.012329,"z":-32.781769},"landing":{"x":-1194.388184,"y":-675.464722,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -362.691559 -808.681946 142.943451","aim":"Align where the black lines from the window meet, walk backwards until above the swirl on the railing, step jump throw","additional":["setpos -362.691559 -808.681946 142.943451","Align where the black lines from the window meet, walk backwards until above the swirl on the railing, step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode71","aim":"MapAnnotationNode72","landing":"MapAnnotationNode73"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-eb78e3f5-7fc2-4ee9-ac5e-106f025ddc43","annotationId":"eb78e3f5-7fc2-4ee9-ac5e-106f025ddc43","mapId":"mirage","side":"T","type":"Smoke","title":"Window Smoke\nT Spawn 10","standingPosition":{"x":1135.99585,"y":-256,"z":-164.836548},"aim":{"pitch":-27.582886,"yaw":-171.158752,"roll":0},"aimMarkerPosition":{"x":1048.875854,"y":-269.551117,"z":-54.944305},"landing":{"x":-1159.483765,"y":-637.949402,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -326.505127 -755.703247 136.503326","aim":"Align between two black dots, and look at bottom of dirt, walk backwards until reaching the bottom of the border, step jump throw","additional":["setpos -326.505127 -755.703247 136.503326","Align between two black dots, and look at bottom of dirt, walk backwards until reaching the bottom of the border, step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode74","aim":"MapAnnotationNode75","landing":"MapAnnotationNode76"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-6f38392e-68ed-46aa-ac79-98556c2ef6d4","annotationId":"6f38392e-68ed-46aa-ac79-98556c2ef6d4","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke jungle and connector\nFrom palace","standingPosition":{"x":32.012798,"y":-2375.968506,"z":-39.96875},"aim":{"pitch":-11.086205,"yaw":82.633415,"roll":0},"aimMarkerPosition":{"x":44.594959,"y":-2278.64502,"z":43.099819},"landing":{"x":-702.168518,"y":-1605.487427,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner on the left side of the lamp","aim":"Aim slightly above the ladder, run throw","additional":["Wedge into corner on the left side of the lamp","Aim slightly above the ladder, run throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode77","aim":"MapAnnotationNode78","landing":"MapAnnotationNode79"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-03d0101f-5ef9-4bd5-9548-1571d44bc74d","annotationId":"03d0101f-5ef9-4bd5-9548-1571d44bc74d","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke ticket from tetris","standingPosition":{"x":-30.46875,"y":-1418.031372,"z":-167.96875},"aim":{"pitch":-32.748001,"yaw":-117.342819,"roll":0},"aimMarkerPosition":{"x":-69.09967,"y":-1492.740356,"z":-50.108276},"landing":{"x":-919.340942,"y":-2402.688965,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the lower left corner of the window","additional":["Wedge into corner","Aim at the lower left corner of the window"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode80","aim":"MapAnnotationNode81","landing":"MapAnnotationNode82"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-06d3c397-f9d9-4f49-8e5f-46cf3cd5c097","annotationId":"06d3c397-f9d9-4f49-8e5f-46cf3cd5c097","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke connector","standingPosition":{"x":1389.46875,"y":70.971207,"z":-167.96875},"aim":{"pitch":-20.363251,"yaw":-157.222641,"roll":0},"aimMarkerPosition":{"x":1303.029297,"y":34.67556,"z":-69.331673},"landing":{"x":-627.418335,"y":-886.672913,"z":-245.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner in front of bin","aim":"Aim at bottom of border\nAlign with center of the door","additional":["Wedge into corner in front of bin","Aim at bottom of border\nAlign with center of the door"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode83","aim":"MapAnnotationNode84","landing":"MapAnnotationNode85"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-d85d851d-0348-457f-97ac-3b245e386e3c","annotationId":"d85d851d-0348-457f-97ac-3b245e386e3c","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke conn","standingPosition":{"x":1422.966431,"y":36.46875,"z":-167.96875},"aim":{"pitch":-19.514093,"yaw":-157.981613,"roll":0},"aimMarkerPosition":{"x":1335.585205,"y":1.131798,"z":-70.724884},"landing":{"x":-618.204895,"y":-895.653015,"z":-245.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode93","aim":"MapAnnotationNode94","landing":"MapAnnotationNode95"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-fbc14976-c9d7-41e5-8428-b42fcd714082","annotationId":"fbc14976-c9d7-41e5-8428-b42fcd714082","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke short","standingPosition":{"x":473.427765,"y":401.470917,"z":-251.96875},"aim":{"pitch":-27.830023,"yaw":-175.065186,"roll":0},"aimMarkerPosition":{"x":385.32193,"y":393.863647,"z":-141.443741},"landing":{"x":-986.797913,"y":200.521667,"z":-170.833588},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at black dot","additional":["Aim at black dot"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode96","aim":"MapAnnotationNode97","landing":"MapAnnotationNode98"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-51f9368a-bf5c-4834-b63e-851bdef10cbb","annotationId":"51f9368a-bf5c-4834-b63e-851bdef10cbb","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke kitchen window","standingPosition":{"x":-161.029663,"y":576.386169,"z":-69.767151},"aim":{"pitch":-7.744146,"yaw":-154.720551,"roll":0},"aimMarkerPosition":{"x":-250.62854,"y":534.072266,"z":5.346231},"landing":{"x":-1871.772217,"y":-318.362762,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode99","aim":"MapAnnotationNode100","landing":"MapAnnotationNode101"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-64dd93fc-a965-428e-935d-9f1d6c6c5bf9","annotationId":"64dd93fc-a965-428e-935d-9f1d6c6c5bf9","mapId":"mirage","side":"T","type":"Flash","title":"Flash B","standingPosition":{"x":-396.251831,"y":598.035522,"z":-80.292358},"aim":{"pitch":-14.663282,"yaw":-175.51828,"roll":0},"aimMarkerPosition":{"x":-492.699036,"y":590.475952,"z":8.52947},"landing":{"x":-1808.161011,"y":489.617371,"z":446.879242},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Running jump throw","additional":["Running jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode102","aim":"MapAnnotationNode103","landing":"MapAnnotationNode104"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-d85ab8c6-ee4e-4003-88ff-382d19522449","annotationId":"d85ab8c6-ee4e-4003-88ff-382d19522449","mapId":"mirage","side":"T","type":"Molotov","title":"Molo bench","standingPosition":{"x":-1321.249878,"y":815.958313,"z":-79.96875},"aim":{"pitch":-7.700288,"yaw":-160.777451,"roll":0},"aimMarkerPosition":{"x":-1414.823364,"y":783.331421,"z":-2.729637},"landing":{"x":-2517.611084,"y":290.459412,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode105","aim":"MapAnnotationNode106","landing":"MapAnnotationNode107"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-1ef27a97-9cb8-4612-9791-a5058defecb7","annotationId":"1ef27a97-9cb8-4612-9791-a5058defecb7","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke jungle","standingPosition":{"x":283.032745,"y":-1599.023926,"z":-175.96875},"aim":{"pitch":-14.597266,"yaw":-178.726547,"roll":0},"aimMarkerPosition":{"x":186.284653,"y":-1601.175049,"z":-86.926437},"landing":{"x":-627.446655,"y":-1626.849976,"z":-169.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode108","aim":"MapAnnotationNode109","landing":"MapAnnotationNode110"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-66563f94-5c54-4acd-9ea8-191e796a0413","annotationId":"66563f94-5c54-4acd-9ea8-191e796a0413","mapId":"mirage","side":"T","type":"Molotov","title":"Molo stairs","standingPosition":{"x":460.96875,"y":-1520.031494,"z":-242.44635},"aim":{"pitch":-23.287334,"yaw":-179.668427,"roll":0},"aimMarkerPosition":{"x":369.116913,"y":-1520.56311,"z":-145.206329},"landing":{"x":-492.245361,"y":-1525.548828,"z":-37.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode111","aim":"MapAnnotationNode112","landing":"MapAnnotationNode113"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-1f291e66-1ba5-4e53-a2de-c23cfd49106d","annotationId":"1f291e66-1ba5-4e53-a2de-c23cfd49106d","mapId":"mirage","side":"T","type":"Flash","title":"Flash jungle","standingPosition":{"x":460.970703,"y":-1520.027588,"z":-242.447327},"aim":{"pitch":2.980685,"yaw":-174.586151,"roll":0},"aimMarkerPosition":{"x":361.551483,"y":-1529.449707,"z":-189.941483},"landing":{"x":-649.827209,"y":-1625.296387,"z":-5.276679},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode114","aim":"MapAnnotationNode115","landing":"MapAnnotationNode116"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-945dabe9-1941-4912-afa1-b6ae595b62d8","annotationId":"945dabe9-1941-4912-afa1-b6ae595b62d8","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke jungle","standingPosition":{"x":907.600159,"y":-1036.03125,"z":-251.96875},"aim":{"pitch":-61.095295,"yaw":-162.678314,"roll":0},"aimMarkerPosition":{"x":861.456848,"y":-1050.422485,"z":-103.384087},"landing":{"x":-765.740234,"y":-1557.873047,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the middle of the wall","additional":["Aim at the middle of the wall"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode117","aim":"MapAnnotationNode118","landing":"MapAnnotationNode119"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-7c33c1c6-9f45-4bde-ab67-823d9c284d07","annotationId":"7c33c1c6-9f45-4bde-ab67-823d9c284d07","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Window","standingPosition":{"x":1422.96875,"y":-367.96875,"z":-167.96875},"aim":{"pitch":-32.241234,"yaw":-173.920013,"roll":0},"aimMarkerPosition":{"x":1338.863525,"y":-376.927277,"z":-50.780243},"landing":{"x":-1170.35144,"y":-641.017029,"z":-165.96991},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Step Jump Throw","additional":["Wedge into corner","Step Jump Throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode120","aim":"MapAnnotationNode121","landing":"MapAnnotationNode122"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-77afdbf5-105a-4e24-b21b-4e67cdf8cde8","annotationId":"77afdbf5-105a-4e24-b21b-4e67cdf8cde8","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Jungle","standingPosition":{"x":814.949463,"y":-1548.909058,"z":-108.96875},"aim":{"pitch":-29.358986,"yaw":-178.373764,"roll":0},"aimMarkerPosition":{"x":727.828064,"y":-1551.382446,"z":4.059246},"landing":{"x":-713.966736,"y":-1597.099365,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode123","aim":"MapAnnotationNode124","landing":"MapAnnotationNode125"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-f6775926-6503-41a6-a1f2-8e3817ccc039","annotationId":"f6775926-6503-41a6-a1f2-8e3817ccc039","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Stairs / Entry Flash","standingPosition":{"x":814.949463,"y":-1548.909058,"z":-108.96875},"aim":{"pitch":-3.530984,"yaw":-179.63884,"roll":0},"aimMarkerPosition":{"x":715.141296,"y":-1549.538208,"z":-38.809921},"landing":{"x":-478.927795,"y":-1557.059814,"z":-37.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle Click Jump throw","additional":["Middle Click Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode126","aim":"MapAnnotationNode127","landing":"MapAnnotationNode128"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-4a70125d-bd32-4a65-9822-7e18e2e2ce5a","annotationId":"4a70125d-bd32-4a65-9822-7e18e2e2ce5a","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Short","standingPosition":{"x":-160.03125,"y":887.964111,"z":-135.328003},"aim":{"pitch":-45.515762,"yaw":-134.684814,"roll":0},"aimMarkerPosition":{"x":-209.305832,"y":838.144409,"z":-0.300514},"landing":{"x":-998.699158,"y":167.673553,"z":-170.557404},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle click jump throw","additional":["Middle click jump throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":["Source JumpThrow=false conflicts with instruction text requiring a jump throw. Manual review is required."],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode129","aim":"MapAnnotationNode130","landing":"MapAnnotationNode131"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-1a77214e-c4dd-491e-b43c-bfe3f695a669","annotationId":"1a77214e-c4dd-491e-b43c-bfe3f695a669","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Top Mid","standingPosition":{"x":1422.964233,"y":70.96875,"z":-112.46875},"aim":{"pitch":-31.867228,"yaw":-161.931534,"roll":0},"aimMarkerPosition":{"x":1342.224854,"y":44.628242,"z":4.326515},"landing":{"x":-263.696136,"y":-482.791199,"z":-163.454605},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode132","aim":"MapAnnotationNode133","landing":"MapAnnotationNode134"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-mirage-2ba3d19e-683f-4d28-8d42-ab01eb6a2004","annotationId":"2ba3d19e-683f-4d28-8d42-ab01eb6a2004","mapId":"mirage","side":"T","type":"Smoke","title":"Smoke Window","standingPosition":{"x":1389.456543,"y":70.971863,"z":-167.96875},"aim":{"pitch":-28.852715,"yaw":-162.727432,"roll":0},"aimMarkerPosition":{"x":1305.820068,"y":44.965927,"z":-55.712784},"landing":{"x":-1155.30957,"y":-687.634277,"z":-165.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Strafe right, jump throw","additional":["Strafe right, jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_mirage/de_mirage.txt","nodes":{"position":"MapAnnotationNode135","aim":"MapAnnotationNode136","landing":"MapAnnotationNode137"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_mirage/de_mirage.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"b96f17112d5ac8140d7b91c458d9cf5f6bc414bd186d25a38b8a142c62b55308","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-4f2f0b14-3d59-4c52-bccf-6530ec0a5af4","annotationId":"4f2f0b14-3d59-4c52-bccf-6530ec0a5af4","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke CT Cross","standingPosition":{"x":916.03125,"y":1123.96875,"z":1.416784},"aim":{"pitch":-57.617897,"yaw":77.505424,"roll":0},"aimMarkerPosition":{"x":927.617981,"y":1176.256592,"z":149.355804},"landing":{"x":1144.560913,"y":2186.959473,"z":4.651137},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle click","additional":["Middle click"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-66e86aee-4474-48fa-a17e-b16728c5c348","annotationId":"66e86aee-4474-48fa-a17e-b16728c5c348","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke middle double doors","standingPosition":{"x":-450.617676,"y":-660.03125,"z":116.854233},"aim":{"pitch":-10.122581,"yaw":88.908669,"roll":0},"aimMarkerPosition":{"x":-448.742706,"y":-561.605713,"z":191.700623},"landing":{"x":-462.351227,"y":1650.846313,"z":-124.171837},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-860dd8f2-cc23-432e-81a7-03ebd7956940","annotationId":"860dd8f2-cc23-432e-81a7-03ebd7956940","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke B doors","standingPosition":{"x":-1332.026978,"y":491.96875,"z":8.03125},"aim":{"pitch":-57.213181,"yaw":87.883202,"roll":0},"aimMarkerPosition":{"x":-1330.026978,"y":546.083618,"z":155.940369},"landing":{"x":-1275.540161,"y":2298.789795,"z":7.742087},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-da71a7e4-b931-41b1-98e2-83adbd154149","annotationId":"da71a7e4-b931-41b1-98e2-83adbd154149","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke B window","standingPosition":{"x":-1332.026978,"y":491.96875,"z":8.03125},"aim":{"pitch":-50.045624,"yaw":89.051575,"roll":0},"aimMarkerPosition":{"x":-1330.963989,"y":556.177673,"z":148.526855},"landing":{"x":-1192.302979,"y":2697.526123,"z":85.270889},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-bf015e94-9faf-45c5-b3cc-913ba1549279","annotationId":"bf015e94-9faf-45c5-b3cc-913ba1549279","mapId":"dust2","side":"T","type":"Flash","title":"Flash Long","standingPosition":{"x":363.96875,"y":-384.090759,"z":6.350057},"aim":{"pitch":-7.020854,"yaw":49.626762,"roll":0},"aimMarkerPosition":{"x":428.25946,"y":-308.477905,"z":77.897331},"landing":{"x":1062.637817,"y":437.625488,"z":424.140076},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-4dbb4d07-450a-4160-8610-e240deced9b7","annotationId":"4dbb4d07-450a-4160-8610-e240deced9b7","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke CT Spawn","standingPosition":{"x":-275.02771,"y":1345.365601,"z":-122.771606},"aim":{"pitch":-12.179221,"yaw":129.617523,"roll":0},"aimMarkerPosition":{"x":-292.920319,"y":1366.980591,"z":-71.11731},"landing":{"x":-149.679184,"y":2207.076172,"z":-53.939972},"sourceTolerance":80,"sourceInstructions":{"standing":"Crouch for lineup","aim":"Standup before jump throwing","additional":["Crouch for lineup","Standup before jump throwing"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-f9b7813d-4a27-420c-9a8b-8f6ab620d389","annotationId":"f9b7813d-4a27-420c-9a8b-8f6ab620d389","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke CT Ramp","standingPosition":{"x":-641.193848,"y":493.968445,"z":9.046554},"aim":{"pitch":-23.663158,"yaw":56.556755,"roll":0},"aimMarkerPosition":{"x":-590.716492,"y":570.395813,"z":112.556625},"landing":{"x":631.406006,"y":2149.366211,"z":-97.462051},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-a5979859-bb66-4ae8-8bb1-b9f028b5656f","annotationId":"a5979859-bb66-4ae8-8bb1-b9f028b5656f","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke B Lurk","standingPosition":{"x":-1766.324707,"y":993.93219,"z":38.610825},"aim":{"pitch":-4.900614,"yaw":111.865814,"roll":0},"aimMarkerPosition":{"x":-1803.432007,"y":1086.398804,"z":110.639168},"landing":{"x":-1948.179565,"y":1934.987915,"z":2.429452},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode21","aim":"MapAnnotationNode22","landing":"MapAnnotationNode23"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-88190d60-6dcb-4597-92e2-863aa6f4c944","annotationId":"88190d60-6dcb-4597-92e2-863aa6f4c944","mapId":"dust2","side":"T","type":"Molotov","title":"Molo A site","standingPosition":{"x":1768.968384,"y":708.380371,"z":51.829105},"aim":{"pitch":5.178739,"yaw":109.056473,"roll":0},"aimMarkerPosition":{"x":1736.45166,"y":802.514282,"z":99.224838},"landing":{"x":1171.14978,"y":2469.638672,"z":95.779968},"sourceTolerance":20,"sourceInstructions":{"standing":"2nd step","aim":"aim at reticule (top of where white and grey meets)\nRun 2 steps towards the wall and jump throw","additional":["2nd step","aim at reticule (top of where white and grey meets)\nRun 2 steps towards the wall and jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-8eafd00a-8808-420e-9891-1c3f730fb901","annotationId":"8eafd00a-8808-420e-9891-1c3f730fb901","mapId":"dust2","side":"T","type":"Molotov","title":"Molo Car","standingPosition":{"x":847.175293,"y":790.028687,"z":47.03125},"aim":{"pitch":5.919145,"yaw":54.657383,"roll":0},"aimMarkerPosition":{"x":904.713379,"y":871.164368,"z":100.718758},"landing":{"x":1690.756226,"y":1979.594604,"z":76.889748},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on top of barrel","aim":"Top right of key panel","additional":["Stand on top of barrel","Top right of key panel"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-75875143-c7cb-4d4f-b76b-3c59c6184ac2","annotationId":"75875143-c7cb-4d4f-b76b-3c59c6184ac2","mapId":"dust2","side":"CT","type":"Flash","title":"Retake flash B","standingPosition":{"x":-569.967346,"y":2080.009033,"z":-118.046753},"aim":{"pitch":-35.829189,"yaw":170.290817,"roll":0},"aimMarkerPosition":{"x":-649.882629,"y":2093.682373,"z":3.163452},"landing":{"x":-1394.831421,"y":2221.164795,"z":263.462891},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"At cable, to the left of the spike above the door","additional":["At cable, to the left of the spike above the door"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode30","aim":"MapAnnotationNode31","landing":"MapAnnotationNode32"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-7a29fa00-b95b-4279-ba05-5df71bd8ee88","annotationId":"7a29fa00-b95b-4279-ba05-5df71bd8ee88","mapId":"dust2","side":"T","type":"Flash","title":"Pop flash mid","standingPosition":{"x":-275.031738,"y":1345.435791,"z":-122.197815},"aim":{"pitch":-37.957565,"yaw":60.321495,"roll":0},"aimMarkerPosition":{"x":-256.363373,"y":1378.193359,"z":-29.787172},"landing":{"x":-445.798096,"y":1682.328247,"z":-120.363968},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-df97e2f3-1d17-4bae-b2c2-5ed5a5e58b9f","annotationId":"df97e2f3-1d17-4bae-b2c2-5ed5a5e58b9f","mapId":"dust2","side":"T","type":"Flash","title":"Flash B","standingPosition":{"x":-1624.031616,"y":933.307556,"z":35.095646},"aim":{"pitch":-19.426493,"yaw":126.203423,"roll":0},"aimMarkerPosition":{"x":-1679.734375,"y":1009.406128,"z":129.166763},"landing":{"x":-2213.84668,"y":1739.078125,"z":654.515747},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-536d9553-20cd-4c20-a3d3-7f7b8f0a20fa","annotationId":"536d9553-20cd-4c20-a3d3-7f7b8f0a20fa","mapId":"dust2","side":"T","type":"Flash","title":"Entry flash A","standingPosition":{"x":255.674881,"y":1515.96875,"z":2.102551},"aim":{"pitch":-28.604063,"yaw":61.051277,"roll":0},"aimMarkerPosition":{"x":298.169952,"y":1592.793945,"z":113.141792},"landing":{"x":698.772644,"y":2317.030762,"z":760.364075},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Bottom of lamp","additional":["Bottom of lamp"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-047ac8bd-9f3f-48c0-b2de-36fdc5f4897a","annotationId":"047ac8bd-9f3f-48c0-b2de-36fdc5f4897a","mapId":"dust2","side":"T","type":"Flash","title":"Entry flash A 2","standingPosition":{"x":489.968536,"y":1943.96875,"z":96.03125},"aim":{"pitch":-28.663475,"yaw":113.26783,"roll":0},"aimMarkerPosition":{"x":455.30658,"y":2024.577515,"z":207.837677},"landing":{"x":185.817703,"y":2433.703857,"z":379.973419},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode42","aim":"MapAnnotationNode43","landing":"MapAnnotationNode44"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-5e1b6aa1-c287-4bae-87b5-d4eeab48b329","annotationId":"5e1b6aa1-c287-4bae-87b5-d4eeab48b329","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke xbox","standingPosition":{"x":-403.819702,"y":-1051.968506,"z":105.379646},"aim":{"pitch":-8.721829,"yaw":87.226273,"roll":0},"aimMarkerPosition":{"x":-399.036469,"y":-953.240723,"z":179.758713},"landing":{"x":-287.062744,"y":1428.335327,"z":-26.093674},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"","additional":["Wedge into corner"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode45","aim":"MapAnnotationNode46","landing":"MapAnnotationNode47"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-62427761-06a0-4b6e-9c91-a10a99cc23e7","annotationId":"62427761-06a0-4b6e-9c91-a10a99cc23e7","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke B doors","standingPosition":{"x":-1040.035522,"y":-980.730835,"z":130.551239},"aim":{"pitch":-20.037663,"yaw":93.466873,"roll":0},"aimMarkerPosition":{"x":-1045.716553,"y":-886.955994,"z":227.135025},"landing":{"x":-1290.690308,"y":2360.846191,"z":17.867657},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim slightly to the right of the antenna\nRun until you reach the curb on the other side of the road\nJump throw","additional":["Aim slightly to the right of the antenna\nRun until you reach the curb on the other side of the road\nJump throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":["Source JumpThrow=false conflicts with instruction text requiring a jump throw. Manual review is required."],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode48","aim":"MapAnnotationNode49","landing":"MapAnnotationNode50"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-3be4b438-cd25-4489-b5e9-5dd00128ffa2","annotationId":"3be4b438-cd25-4489-b5e9-5dd00128ffa2","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke long corner","standingPosition":{"x":7.483195,"y":-660.032837,"z":6.761933},"aim":{"pitch":-13.731374,"yaw":56.823174,"roll":0},"aimMarkerPosition":{"x":60.641544,"y":-578.726501,"z":92.220551},"landing":{"x":1292.447876,"y":1119.770142,"z":-1.875649},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim slightly to the left of the arch","additional":["Aim slightly to the left of the arch"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode51","aim":"MapAnnotationNode52","landing":"MapAnnotationNode53"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-ef2c9a03-25d8-416a-90ba-2bd8d27cc50b","annotationId":"ef2c9a03-25d8-416a-90ba-2bd8d27cc50b","mapId":"dust2","side":"CT","type":"Smoke","title":"Smoke long double doors","standingPosition":{"x":769.658447,"y":2379.970459,"z":-35.010498},"aim":{"pitch":-53.34145,"yaw":-91.717018,"roll":0},"aimMarkerPosition":{"x":767.869507,"y":2320.292725,"z":104.206512},"landing":{"x":704.269226,"y":728.394104,"z":78.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Bottom of white cable","additional":["Wedge into corner","Bottom of white cable"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode54","aim":"MapAnnotationNode55","landing":"MapAnnotationNode56"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-c6b55c6a-2fd7-4c0f-9a56-e93b859a7c78","annotationId":"c6b55c6a-2fd7-4c0f-9a56-e93b859a7c78","mapId":"dust2","side":"CT","type":"Flash","title":"1st flash long","standingPosition":{"x":1254.184448,"y":2038.033203,"z":2.009079},"aim":{"pitch":-42.956436,"yaw":-82.434113,"roll":0},"aimMarkerPosition":{"x":1263.820801,"y":1965.483643,"z":133.327209},"landing":{"x":1352.640137,"y":1295.743164,"z":472.0159},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim above the plus sign","additional":["Aim above the plus sign"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode57","aim":"MapAnnotationNode58","landing":"MapAnnotationNode59"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-b8b2978c-e574-4c84-b24d-b1104a5ac491","annotationId":"b8b2978c-e574-4c84-b24d-b1104a5ac491","mapId":"dust2","side":"CT","type":"Flash","title":"2nd flash long","standingPosition":{"x":1254.184448,"y":2038.033203,"z":2.009079},"aim":{"pitch":-29.185564,"yaw":-61.347157,"roll":0},"aimMarkerPosition":{"x":1296.047119,"y":1961.419922,"z":113.94696},"landing":{"x":1690.316406,"y":1239.883667,"z":293.939606},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim from the corner of the building and up until reaching the cable","additional":["Aim from the corner of the building and up until reaching the cable"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode60","aim":"MapAnnotationNode61","landing":"MapAnnotationNode62"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-dust2-b376c652-f4ae-4991-b3ef-578911faf12e","annotationId":"b376c652-f4ae-4991-b3ef-578911faf12e","mapId":"dust2","side":"T","type":"Smoke","title":"Smoke CT Cross #2","standingPosition":{"x":847.187805,"y":790.034302,"z":47.03125},"aim":{"pitch":-53.672684,"yaw":77.161934,"roll":0},"aimMarkerPosition":{"x":860.350952,"y":847.793274,"z":191.59584},"landing":{"x":1172.526489,"y":2182.625,"z":4.905128},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_dust2/de_dust2.txt","nodes":{"position":"MapAnnotationNode83","aim":"MapAnnotationNode84","landing":"MapAnnotationNode85"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_dust2/de_dust2.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"ce5e1b44618f638c85036170ab545db7ea553385dc458d8a6289cd00fefe3c65","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-dc25ea53-a585-4b3b-89eb-ffc67f313485","annotationId":"dc25ea53-a585-4b3b-89eb-ffc67f313485","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke short","standingPosition":{"x":-850.915894,"y":787.967896,"z":-23.647644},"aim":{"pitch":-11.523694,"yaw":-9.152133,"roll":0},"aimMarkerPosition":{"x":-754.179077,"y":772.382874,"z":60.147121},"landing":{"x":1412.234131,"y":412.681488,"z":130.927521},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"","additional":["Wedge into corner"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-eb4cfec0-46ea-4cc9-8217-0c406fc13839","annotationId":"eb4cfec0-46ea-4cc9-8217-0c406fc13839","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke bottom Mid from Arch","standingPosition":{"x":1778.053833,"y":1234.924072,"z":169.53125},"aim":{"pitch":-24.244055,"yaw":-175.692581,"roll":0},"aimMarkerPosition":{"x":1687.130859,"y":1228.075684,"z":274.557159},"landing":{"x":167.083176,"y":805.418213,"z":82.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-5170b9d8-0ac9-48d8-a48e-54b8a78c8a8d","annotationId":"5170b9d8-0ac9-48d8-a48e-54b8a78c8a8d","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke street","standingPosition":{"x":2214.03125,"y":1926.968018,"z":138.079575},"aim":{"pitch":-33.561436,"yaw":-133.965057,"roll":0},"aimMarkerPosition":{"x":2156.182373,"y":1866.990601,"z":255.997849},"landing":{"x":822.577026,"y":47.280155,"z":86.755562},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner by wall and flowers","aim":"Aim at bottom left of the triangle","additional":["Wedge into corner by wall and flowers","Aim at bottom left of the triangle"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-a7e63cdf-768c-462f-8575-24e928e43ef4","annotationId":"a7e63cdf-768c-462f-8575-24e928e43ef4","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke middle","standingPosition":{"x":2214.03125,"y":1926.968262,"z":138.079575},"aim":{"pitch":-33.383121,"yaw":-136.774765,"roll":0},"aimMarkerPosition":{"x":2153.186768,"y":1869.781128,"z":255.738235},"landing":{"x":321.95929,"y":589.245056,"z":84.724289},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-f8e87c79-3aae-4bff-93ce-1b4fe095ac20","annotationId":"f8e87c79-3aae-4bff-93ce-1b4fe095ac20","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke CT spawn","standingPosition":{"x":542.669861,"y":3005.964355,"z":161.855606},"aim":{"pitch":-36.550533,"yaw":-38.745838,"roll":0},"aimMarkerPosition":{"x":605.323669,"y":2955.686523,"z":284.258759},"landing":{"x":1061.04126,"y":2650.552734,"z":242.440338},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the top left of the antenna\nMiddle click throw","additional":["Wedge into corner","Aim at the top left of the antenna\nMiddle click throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-6df07a74-049d-437e-8d73-16a9dd577d16","annotationId":"6df07a74-049d-437e-8d73-16a9dd577d16","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke CT spawn","standingPosition":{"x":120.59037,"y":1593.891113,"z":107.246925},"aim":{"pitch":-33.105255,"yaw":59.220783,"roll":0},"aimMarkerPosition":{"x":163.456497,"y":1665.859009,"z":224.151428},"landing":{"x":1009.338135,"y":2637.338135,"z":244.384262},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner in front of barrels","aim":"Aim at the roof, use the corner of the towers roof as reference\nShould be sightly to the right of the corner","additional":["Wedge into corner in front of barrels","Aim at the roof, use the corner of the towers roof as reference\nShould be sightly to the right of the corner"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-c12ac943-1e1c-46c5-b038-2fa913903241","annotationId":"c12ac943-1e1c-46c5-b038-2fa913903241","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke coffins","standingPosition":{"x":423.745209,"y":1761.963867,"z":134.031219},"aim":{"pitch":-17.502523,"yaw":86.759781,"roll":0},"aimMarkerPosition":{"x":425.890686,"y":1799.86084,"z":209.841049},"landing":{"x":553.192017,"y":3227.427979,"z":165.833115},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the bottom left of the 'L' on the wall","additional":["Wedge into corner","Aim at the bottom left of the 'L' on the wall"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-9b20b21f-f66c-4eeb-9db5-8517e8fbb0a7","annotationId":"9b20b21f-f66c-4eeb-9db5-8517e8fbb0a7","mapId":"inferno","side":"T","type":"Molotov","title":"Molo Quad/3rd","standingPosition":{"x":479.024384,"y":2016.971191,"z":136.031204},"aim":{"pitch":-36.531048,"yaw":123.342842,"roll":0},"aimMarkerPosition":{"x":434.858307,"y":2084.098145,"z":259.397034},"landing":{"x":102.415421,"y":2540.146484,"z":167.816391},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner by barrel and chipboard","aim":"Left side of gutter bracket","additional":["Wedge into corner by barrel and chipboard","Left side of gutter bracket"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode21","aim":"MapAnnotationNode22","landing":"MapAnnotationNode23"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-04869ab8-dd78-4340-81cd-7ece983ee5d1","annotationId":"04869ab8-dd78-4340-81cd-7ece983ee5d1","mapId":"inferno","side":"T","type":"Smoke","title":"Truck lurk smoke","standingPosition":{"x":1607.621094,"y":-274.531372,"z":256.03125},"aim":{"pitch":-9.197071,"yaw":-47.04541,"roll":0},"aimMarkerPosition":{"x":1674.886963,"y":-346.779877,"z":335.854309},"landing":{"x":2026.208252,"y":-69.320084,"z":220.57077},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner by radiator and wall","aim":"Top right corner on the inside of the frame","additional":["Wedge into corner by radiator and wall","Top right corner on the inside of the frame"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-72380cee-8cfc-407c-bd34-8bd9d47038fa","annotationId":"72380cee-8cfc-407c-bd34-8bd9d47038fa","mapId":"inferno","side":"T","type":"Molotov","title":"Molo large pit","standingPosition":{"x":1564.259766,"y":-377.96875,"z":256.03125},"aim":{"pitch":-0.217595,"yaw":23.304047,"roll":0},"aimMarkerPosition":{"x":1656.100952,"y":-338.40799,"z":320.251007},"landing":{"x":2536.220459,"y":-44.767578,"z":99.934311},"sourceTolerance":80,"sourceInstructions":{"standing":"Between wooden beam and the guard rail post","aim":"Middle of door frame","additional":["Between wooden beam and the guard rail post","Middle of door frame"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-d46646b5-31d1-437b-8f01-235a261ecb4a","annotationId":"d46646b5-31d1-437b-8f01-235a261ecb4a","mapId":"inferno","side":"T","type":"Molotov","title":"Molo mini pit","standingPosition":{"x":1753.047852,"y":-89.965515,"z":142.03125},"aim":{"pitch":8.491274,"yaw":55.332745,"roll":0},"aimMarkerPosition":{"x":1809.305298,"y":-8.620155,"z":191.105362},"landing":{"x":2155.02002,"y":-189.100174,"z":99.771568},"sourceTolerance":80,"sourceInstructions":{"standing":"Under lamp","aim":"Aim at the top of the wooden support","additional":["Under lamp","Aim at the top of the wooden support"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode30","aim":"MapAnnotationNode31","landing":"MapAnnotationNode32"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1ef44b82-4298-4474-9d2f-9c7ef9efdaf2","annotationId":"1ef44b82-4298-4474-9d2f-9c7ef9efdaf2","mapId":"inferno","side":"T","type":"Molotov","title":"Molo apartments","standingPosition":{"x":353.031464,"y":25.96875,"z":71.03125},"aim":{"pitch":-26.950703,"yaw":-0.696768,"roll":0},"aimMarkerPosition":{"x":442.164551,"y":24.884758,"z":180.063095},"landing":{"x":1273.160278,"y":-215.481354,"z":262.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the top right of the D, run and release when at the bottom of the D","additional":["Wedge into corner","Aim at the top right of the D, run and release when at the bottom of the D"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-b41c928c-b7b2-4fa4-a53e-600a443cd9d1","annotationId":"b41c928c-b7b2-4fa4-a53e-600a443cd9d1","mapId":"inferno","side":"T","type":"Flash","title":"Entry flash B","standingPosition":{"x":368.970154,"y":1663.042847,"z":134.031311},"aim":{"pitch":-5.942828,"yaw":60.861603,"roll":0},"aimMarkerPosition":{"x":417.400543,"y":1749.918091,"z":208.224884},"landing":{"x":896.64209,"y":2609.588135,"z":537.549194},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Right side of arrow","additional":["Wedge into corner","Right side of arrow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-e75e081e-e9c0-4867-aa3a-bd98032948f4","annotationId":"e75e081e-e9c0-4867-aa3a-bd98032948f4","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke arch","standingPosition":{"x":91.46875,"y":-195.213135,"z":51.677376},"aim":{"pitch":-39.305939,"yaw":39.980038,"roll":0},"aimMarkerPosition":{"x":150.760651,"y":-145.496521,"z":177.381821},"landing":{"x":1839.949341,"y":1363.478271,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the left side of the window crown","additional":["Wedge into corner","Aim at the left side of the window crown"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-12ed30aa-14a7-4534-b1c1-18d2d8b23990","annotationId":"12ed30aa-14a7-4534-b1c1-18d2d8b23990","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Moto from Mid","standingPosition":{"x":953.937256,"y":424.080963,"z":96.03125},"aim":{"pitch":-40.667152,"yaw":12.511938,"roll":0},"aimMarkerPosition":{"x":1027.986694,"y":440.513519,"z":225.197617},"landing":{"x":2322.922852,"y":818.092468,"z":154.734344},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into the corner by the mailbox and corner of the building","aim":"-2y on roof","additional":["Wedge into the corner by the mailbox and corner of the building","-2y on roof"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode42","aim":"MapAnnotationNode43","landing":"MapAnnotationNode44"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-6dd08e1b-0541-4830-afc5-8912b3d42e3c","annotationId":"6dd08e1b-0541-4830-afc5-8912b3d42e3c","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke moto","standingPosition":{"x":340.332611,"y":2021.449585,"z":139.091446},"aim":{"pitch":-43.652969,"yaw":-34.596973,"roll":0},"aimMarkerPosition":{"x":399.89151,"y":1980.36731,"z":268.900024},"landing":{"x":2308.835449,"y":984.778442,"z":158.990372},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the top of the window frame in the middle","additional":["Wedge into corner","Aim at the top of the window frame in the middle"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode45","aim":"MapAnnotationNode46","landing":"MapAnnotationNode47"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-e5917d5b-a358-4b7b-8462-6d5774c1198b","annotationId":"e5917d5b-a358-4b7b-8462-6d5774c1198b","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Mid","standingPosition":{"x":-1139.843872,"y":566.96344,"z":-59.753784},"aim":{"pitch":-11.782691,"yaw":-1.024191,"roll":0},"aimMarkerPosition":{"x":-1041.966553,"y":565.213623,"z":14.491879},"landing":{"x":1333.670898,"y":523.143372,"z":120.603233},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at top of left steel bar on window\nRun middle-click throw\nRelease when crossing out of T main","additional":["Aim at top of left steel bar on window\nRun middle-click throw\nRelease when crossing out of T main"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode48","aim":"MapAnnotationNode49","landing":"MapAnnotationNode50"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-5fa178bc-449b-4c8c-9e2e-cf2d0e886d9e","annotationId":"5fa178bc-449b-4c8c-9e2e-cf2d0e886d9e","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke CT","standingPosition":{"x":-246.731323,"y":780.03125,"z":29.1968},"aim":{"pitch":-34.460327,"yaw":60.122025,"roll":0},"aimMarkerPosition":{"x":-205.657578,"y":851.524292,"z":147.041565},"landing":{"x":945.1474,"y":2731.826904,"z":134.927567},"sourceTolerance":80,"sourceInstructions":{"standing":"Lineup at left side of the arch","aim":"Aim between flower pots","additional":["Lineup at left side of the arch","Aim between flower pots"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode51","aim":"MapAnnotationNode52","landing":"MapAnnotationNode53"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-0acce90c-4542-4940-8b21-b63a9ae5aa5b","annotationId":"0acce90c-4542-4940-8b21-b63a9ae5aa5b","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Graveyard","standingPosition":{"x":91.468498,"y":-195.214111,"z":51.677452},"aim":{"pitch":-19.556118,"yaw":8.065786,"roll":0},"aimMarkerPosition":{"x":184.767731,"y":-181.992493,"z":147.508682},"landing":{"x":2304.467529,"y":100.908096,"z":118.35244},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at bottom of V","additional":["Aim at bottom of V"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode54","aim":"MapAnnotationNode55","landing":"MapAnnotationNode56"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-b792d71c-10b2-4dae-bc03-8e0a6268c76f","annotationId":"b792d71c-10b2-4dae-bc03-8e0a6268c76f","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Short + boost","standingPosition":{"x":1134.114136,"y":587.96875,"z":115.005074},"aim":{"pitch":-7.914412,"yaw":-31.768335,"roll":0},"aimMarkerPosition":{"x":1220.559082,"y":535.823547,"z":191.831329},"landing":{"x":1404.314209,"y":6.579472,"z":264.038879},"sourceTolerance":80,"sourceInstructions":{"standing":"In front of garage door (not sensitive)","aim":"X: Aim between 2nd and 3rd stone\nY: Align between tower windows\nW + jump throw","additional":["In front of garage door (not sensitive)","X: Aim between 2nd and 3rd stone\nY: Align between tower windows\nW + jump throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":["Source JumpThrow=false conflicts with instruction text requiring a jump throw. Manual review is required."],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode57","aim":"MapAnnotationNode58","landing":"MapAnnotationNode59"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-17fe5bdd-9af7-422f-b2a5-10227089e2d8","annotationId":"17fe5bdd-9af7-422f-b2a5-10227089e2d8","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke banana","standingPosition":{"x":-1362.09729,"y":141.030884,"z":-63.96875},"aim":{"pitch":-47.084576,"yaw":40.542473,"roll":0},"aimMarkerPosition":{"x":-1310.352783,"y":185.291473,"z":73.107208},"landing":{"x":177.413895,"y":1747.995117,"z":120.434479},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on right side of arch","aim":"Aim at bottom right of yellow dress\nW + jump throw","additional":["Stand on right side of arch","Aim at bottom right of yellow dress\nW + jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode60","aim":"MapAnnotationNode61","landing":"MapAnnotationNode62"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-b19d309a-4698-43c4-b7c6-36c44fc69675","annotationId":"b19d309a-4698-43c4-b7c6-36c44fc69675","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke Mid\nSpawn 1","standingPosition":{"x":2472,"y":2005,"z":134.592056},"aim":{"pitch":-32.747208,"yaw":-139.15538,"roll":0},"aimMarkerPosition":{"x":2408.374512,"y":1949.99353,"z":251.79567},"landing":{"x":531.644531,"y":565.144409,"z":89.811188},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact 2472 2005 135","aim":"","additional":["setpos_exact 2472 2005 135"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode63","aim":"MapAnnotationNode64","landing":"MapAnnotationNode65"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-6f678f92-5fb0-4fb4-96b9-407779cb2a9f","annotationId":"6f678f92-5fb0-4fb4-96b9-407779cb2a9f","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke Mid\nSpawn 3","standingPosition":{"x":2456.830078,"y":2153.159912,"z":132.077179},"aim":{"pitch":-26.225555,"yaw":-138.083908,"roll":0},"aimMarkerPosition":{"x":2390.077637,"y":2093.232422,"z":240.093735},"landing":{"x":1594.753418,"y":1801.265991,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact 2456 2153 133","aim":"Aim at wall on the top building and line up with the overhang\nW + jump throw","additional":["setpos_exact 2456 2153 133","Aim at wall on the top building and line up with the overhang\nW + jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode66","aim":"MapAnnotationNode67","landing":"MapAnnotationNode68"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-5a826c12-2cdc-433d-9c03-90e08b8397a8","annotationId":"5a826c12-2cdc-433d-9c03-90e08b8397a8","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke mid\nSpawn 4","standingPosition":{"x":2353,"y":1977,"z":135.518875},"aim":{"pitch":-34.267208,"yaw":-140.348679,"roll":0},"aimMarkerPosition":{"x":2289.370361,"y":1924.264893,"z":255.275024},"landing":{"x":396.804169,"y":549.351624,"z":85.997879},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact 2353 1977 136","aim":"Aim furthest at 2nd plank from the left of rafter 3","additional":["setpos_exact 2353 1977 136","Aim furthest at 2nd plank from the left of rafter 3"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode69","aim":"MapAnnotationNode70","landing":"MapAnnotationNode71"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-20710087-64de-4371-965f-78f534b13f51","annotationId":"20710087-64de-4371-965f-78f534b13f51","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke mid\nSpawn 5","standingPosition":{"x":2397,"y":2079,"z":132.767548},"aim":{"pitch":-27.192043,"yaw":-140.361511,"roll":0},"aimMarkerPosition":{"x":2328.503418,"y":2022.25708,"z":242.175385},"landing":{"x":297.435638,"y":564.679443,"z":86.530609},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact 2397 2079 133","aim":"Aim at tip of overhang - W + jump throw","additional":["setpos_exact 2397 2079 133","Aim at tip of overhang - W + jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode72","aim":"MapAnnotationNode73","landing":"MapAnnotationNode74"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-b6656108-2239-47b5-89aa-c6e977b1611e","annotationId":"b6656108-2239-47b5-89aa-c6e977b1611e","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke Mid\nSpawn 6","standingPosition":{"x":2292.060059,"y":2027.689941,"z":135.956955},"aim":{"pitch":-22.717239,"yaw":-137.351868,"roll":0},"aimMarkerPosition":{"x":2224.213379,"y":1965.196411,"z":237.926559},"landing":{"x":501.029816,"y":587.614563,"z":87.984962},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact 2292 2027 136","aim":"Aim at bottom of big broken stone","additional":["setpos_exact 2292 2027 136","Aim at bottom of big broken stone"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode75","aim":"MapAnnotationNode76","landing":"MapAnnotationNode77"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-d85aa130-4a4a-4ab1-8423-0b68558b998a","annotationId":"d85aa130-4a4a-4ab1-8423-0b68558b998a","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke Mid\nSpawn 2","standingPosition":{"x":2493,"y":2090,"z":132.551376},"aim":{"pitch":-29.158848,"yaw":-139.982437,"roll":0},"aimMarkerPosition":{"x":2426.120605,"y":2033.84668,"z":244.835968},"landing":{"x":394.796448,"y":578.581604,"z":85.405098},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact 2493 2090 133","aim":"Aim furthest left on tallest roof\nW + jump throw","additional":["setpos_exact 2493 2090 133","Aim furthest left on tallest roof\nW + jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode78","aim":"MapAnnotationNode79","landing":"MapAnnotationNode80"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-fe55c9d4-653d-4289-a005-9dbbdb724939","annotationId":"fe55c9d4-653d-4289-a005-9dbbdb724939","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke long","standingPosition":{"x":-891.22998,"y":569.968384,"z":-27.84375},"aim":{"pitch":-22.205648,"yaw":3.083162,"roll":0},"aimMarkerPosition":{"x":-798.78064,"y":574.947998,"z":68.322174},"landing":{"x":1428.004883,"y":670.562195,"z":125.715149},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at bottom left of pipe\nStep JumpThrow","additional":["Aim at bottom left of pipe\nStep JumpThrow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode86","aim":"MapAnnotationNode87","landing":"MapAnnotationNode88"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-6797b1bd-2a9e-48f1-9314-56007a451fab","annotationId":"6797b1bd-2a9e-48f1-9314-56007a451fab","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke moto","standingPosition":{"x":263.03125,"y":-293.966431,"z":99.031258},"aim":{"pitch":-18.207436,"yaw":25.068251,"roll":0},"aimMarkerPosition":{"x":349.076416,"y":-253.718063,"z":194.117065},"landing":{"x":2303.436768,"y":745.443298,"z":152.967239},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge in corner","aim":"Aim at left most first star\nW + jump throw","additional":["Wedge in corner","Aim at left most first star\nW + jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode89","aim":"MapAnnotationNode90","landing":"MapAnnotationNode91"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-5a8bb1ba-f6cf-4154-90be-b5b0966e3d03","annotationId":"5a8bb1ba-f6cf-4154-90be-b5b0966e3d03","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke coffin","standingPosition":{"x":457.268494,"y":1833.312744,"z":136.031219},"aim":{"pitch":-9.213768,"yaw":88.210602,"roll":0},"aimMarkerPosition":{"x":460.3508,"y":1931.974365,"z":215.883057},"landing":{"x":525.267029,"y":3197.266357,"z":165.263306},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner","aim":"Aim in small D\nW + Jump throw","additional":["Stand in corner","Aim in small D\nW + Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode92","aim":"MapAnnotationNode93","landing":"MapAnnotationNode94"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1caacf0e-6d21-4689-a5ae-230d3897a4e7","annotationId":"1caacf0e-6d21-4689-a5ae-230d3897a4e7","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke long","standingPosition":{"x":807.03125,"y":-290.967285,"z":89.03125},"aim":{"pitch":-44.293495,"yaw":60.937584,"roll":0},"aimMarkerPosition":{"x":841.80072,"y":-228.402283,"z":222.704651},"landing":{"x":1424.55542,"y":674.597046,"z":126.262489},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner","aim":"Aim at A\nMiddle jump throw","additional":["Stand in corner","Aim at A\nMiddle jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode95","aim":"MapAnnotationNode96","landing":"MapAnnotationNode97"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1c4d9f29-65c6-43bb-a33c-70ccdd99d24f","annotationId":"1c4d9f29-65c6-43bb-a33c-70ccdd99d24f","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke in front of pit from 2nd mid","standingPosition":{"x":255.239288,"y":-131.941162,"z":65.53125},"aim":{"pitch":-20.239843,"yaw":4.061149,"roll":0},"aimMarkerPosition":{"x":348.828979,"y":-125.296356,"z":164.126328},"landing":{"x":2196.908936,"y":26.770184,"z":121.828888},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode98","aim":"MapAnnotationNode99","landing":"MapAnnotationNode100"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-096a9802-f93c-43e5-bf75-9aefffdca2d9","annotationId":"096a9802-f93c-43e5-bf75-9aefffdca2d9","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke short","standingPosition":{"x":729.03833,"y":243.325104,"z":91.846138},"aim":{"pitch":-20.427509,"yaw":41.496513,"roll":0},"aimMarkerPosition":{"x":799.227844,"y":305.415924,"z":190.313278},"landing":{"x":1480.964722,"y":301.756165,"z":130.028687},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in middle of window","aim":"Aim between the 2 windows","additional":["Stand in middle of window","Aim between the 2 windows"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode101","aim":"MapAnnotationNode102","landing":"MapAnnotationNode103"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-5029e41a-93a2-41dd-b301-204944f87b2e","annotationId":"5029e41a-93a2-41dd-b301-204944f87b2e","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke deep long","standingPosition":{"x":1512.968384,"y":909.96875,"z":147.528915},"aim":{"pitch":-22.19632,"yaw":167.378708,"roll":0},"aimMarkerPosition":{"x":1422.616211,"y":930.200134,"z":247.949097},"landing":{"x":2030.277832,"y":1103.275513,"z":170.584366},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner","aim":"Aim at grout on slope","additional":["Stand in corner","Aim at grout on slope"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode104","aim":"MapAnnotationNode105","landing":"MapAnnotationNode106"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-e8c25e36-6564-4d4c-ab45-19f28363d6d8","annotationId":"e8c25e36-6564-4d4c-ab45-19f28363d6d8","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke deep long","standingPosition":{"x":256.063568,"y":506.212738,"z":87.809853},"aim":{"pitch":-24.728014,"yaw":13.364126,"roll":0},"aimMarkerPosition":{"x":344.434326,"y":527.207153,"z":192.439133},"landing":{"x":2080.386475,"y":1057.512817,"z":170.213226},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front of corner on the half wall","aim":"Aim at the top of the parasol\nW + Jump throw","additional":["Stand in front of corner on the half wall","Aim at the top of the parasol\nW + Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode107","aim":"MapAnnotationNode108","landing":"MapAnnotationNode109"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-76f867ea-566e-477e-834f-e49aca660553","annotationId":"76f867ea-566e-477e-834f-e49aca660553","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke close B","standingPosition":{"x":960.96875,"y":2648.03125,"z":140.084305},"aim":{"pitch":-12.378224,"yaw":107.882545,"roll":0},"aimMarkerPosition":{"x":930.975891,"y":2740.987793,"z":224.595993},"landing":{"x":741.477844,"y":2284.777832,"z":138.031464},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in Corner","aim":"Aim at O\nStep throw","additional":["Stand in Corner","Aim at O\nStep throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode110","aim":"MapAnnotationNode111","landing":"MapAnnotationNode112"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-5af67953-50b3-4e32-99e4-4a976a3b0197","annotationId":"5af67953-50b3-4e32-99e4-4a976a3b0197","mapId":"inferno","side":"T","type":"Molotov","title":"Molo pit","standingPosition":{"x":1322.029419,"y":225.111481,"z":138.03125},"aim":{"pitch":-11.612615,"yaw":-23.823374,"roll":0},"aimMarkerPosition":{"x":1411.636475,"y":185.546417,"z":222.00061},"landing":{"x":2455.782959,"y":-171.035873,"z":96.981255},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand between 2nd and 3rd mailbox","aim":"Aim slightly above corner of the roof on the building in the distance\n2 step run-throw","additional":["Stand between 2nd and 3rd mailbox","Aim slightly above corner of the roof on the building in the distance\n2 step run-throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode113","aim":"MapAnnotationNode114","landing":"MapAnnotationNode115"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-8222046f-fd37-4c17-a771-e29d06608c16","annotationId":"8222046f-fd37-4c17-a771-e29d06608c16","mapId":"inferno","side":"CT","type":"Molotov","title":"Molo pit","standingPosition":{"x":1915.026733,"y":1235.96582,"z":219.088074},"aim":{"pitch":8.623022,"yaw":-64.573776,"roll":0},"aimMarkerPosition":{"x":1957.476318,"y":1146.67334,"z":268.094818},"landing":{"x":2577.772949,"y":-158.299835,"z":172.281174},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on trashcan","aim":"Aim at Y\nW + jump throw","additional":["Stand on trashcan","Aim at Y\nW + jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode116","aim":"MapAnnotationNode117","landing":"MapAnnotationNode118"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-a7bd311f-6733-43c5-8cf7-c929f5b0e6fb","annotationId":"a7bd311f-6733-43c5-8cf7-c929f5b0e6fb","mapId":"inferno","side":"T","type":"Flash","title":"Flash banana","standingPosition":{"x":-667.943604,"y":530.032959,"z":-29.189697},"aim":{"pitch":-13.038184,"yaw":41.680508,"roll":0},"aimMarkerPosition":{"x":-595.182495,"y":594.816345,"z":57.19706},"landing":{"x":112.236481,"y":1224.672974,"z":491.917023},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front of corner","aim":"Aim at arch line up with left side of window above","additional":["Stand in front of corner","Aim at arch line up with left side of window above"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode119","aim":"MapAnnotationNode120","landing":"MapAnnotationNode121"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-37fe790f-c503-479d-8e21-5d50b4539d38","annotationId":"37fe790f-c503-479d-8e21-5d50b4539d38","mapId":"inferno","side":"T","type":"Flash","title":"Pop flash top mid","standingPosition":{"x":300.85672,"y":460.529175,"z":92.031242},"aim":{"pitch":-13.922739,"yaw":8.319439,"roll":0},"aimMarkerPosition":{"x":396.8974,"y":474.573273,"z":179.932556},"landing":{"x":1329.384521,"y":607.785522,"z":152.443207},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand at the corner","aim":"Aim at bottom edge of railing","additional":["Stand at the corner","Aim at bottom edge of railing"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode122","aim":"MapAnnotationNode123","landing":"MapAnnotationNode124"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-731ef239-d5db-4bc2-9f12-1b3f295efe43","annotationId":"731ef239-d5db-4bc2-9f12-1b3f295efe43","mapId":"inferno","side":"T","type":"Flash","title":"Pop flash top mid","standingPosition":{"x":848.96875,"y":297.695892,"z":92.983147},"aim":{"pitch":-14.72788,"yaw":47.104511,"roll":0},"aimMarkerPosition":{"x":914.798706,"y":368.548523,"z":181.824982},"landing":{"x":1323.447998,"y":404.249695,"z":136.79715},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at lamp mount","additional":["Aim at lamp mount"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode125","aim":"MapAnnotationNode126","landing":"MapAnnotationNode127"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-a3a0c7d7-11a8-45eb-af12-bb0c441d2cc7","annotationId":"a3a0c7d7-11a8-45eb-af12-bb0c441d2cc7","mapId":"inferno","side":"T","type":"Flash","title":"Flash short mid","standingPosition":{"x":-256.896729,"y":914.5625,"z":18.599457},"aim":{"pitch":-40.777485,"yaw":-17.849493,"roll":0},"aimMarkerPosition":{"x":-184.816589,"y":891.351379,"z":143.171326},"landing":{"x":483.556885,"y":678.046082,"z":459.049286},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim where the gutter bends","additional":["Aim where the gutter bends"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode128","aim":"MapAnnotationNode129","landing":"MapAnnotationNode130"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-4ba87ae0-f385-4fb6-9a78-c42993de048c","annotationId":"4ba87ae0-f385-4fb6-9a78-c42993de048c","mapId":"inferno","side":"T","type":"Flash","title":"Flash long mid","standingPosition":{"x":-257.076904,"y":914.570496,"z":18.579269},"aim":{"pitch":-41.014927,"yaw":-26.614679,"roll":0},"aimMarkerPosition":{"x":-189.618164,"y":880.768066,"z":143.450729},"landing":{"x":434.832977,"y":567.869995,"z":461.49234},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand under left side of arch","aim":"Lineup with the bent gutter to the left and railing below\nStep throw","additional":["Stand under left side of arch","Lineup with the bent gutter to the left and railing below\nStep throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode131","aim":"MapAnnotationNode132","landing":"MapAnnotationNode133"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-a0f11a12-5c32-487a-8175-30cec8587949","annotationId":"a0f11a12-5c32-487a-8175-30cec8587949","mapId":"inferno","side":"T","type":"Flash","title":"B entry flash","standingPosition":{"x":479.024567,"y":2016.966919,"z":136.031204},"aim":{"pitch":-40.728477,"yaw":53.151718,"roll":0},"aimMarkerPosition":{"x":524.470276,"y":2077.608887,"z":265.118713},"landing":{"x":945.309204,"y":2639.165771,"z":580.089539},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode134","aim":"MapAnnotationNode135","landing":"MapAnnotationNode136"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-d17211fb-a9f6-48fe-8546-46ab717783b2","annotationId":"d17211fb-a9f6-48fe-8546-46ab717783b2","mapId":"inferno","side":"CT","type":"Smoke","title":"Smoke B entrance","standingPosition":{"x":1573.985596,"y":1019.109497,"z":161.315613},"aim":{"pitch":-60.657192,"yaw":128.664459,"roll":0},"aimMarkerPosition":{"x":1543.370361,"y":1057.372192,"z":310.623199},"landing":{"x":760.958313,"y":2206.894287,"z":138.031281},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim -1y at bottom of overhang","additional":["Wedge into corner","Aim -1y at bottom of overhang"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode137","aim":"MapAnnotationNode138","landing":"MapAnnotationNode139"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1b0749a6-436e-4443-a40c-8e09ddb638e7","annotationId":"1b0749a6-436e-4443-a40c-8e09ddb638e7","mapId":"inferno","side":"T","type":"Molotov","title":"Molo bedroom","standingPosition":{"x":-316.269531,"y":-89.490784,"z":22.03125},"aim":{"pitch":0.770001,"yaw":3.912192,"roll":0},"aimMarkerPosition":{"x":-216.511566,"y":-82.66864,"z":84.527382},"landing":{"x":185.089706,"y":-54.017532,"z":45.955647},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at shadow\nRun towards this spot, release when parsing under the bridge","additional":["Aim at shadow\nRun towards this spot, release when parsing under the bridge"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode140","aim":"MapAnnotationNode141","landing":"MapAnnotationNode142"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1bbdbcdb-036f-4d7f-80c1-2ee6a92ef673","annotationId":"1bbdbcdb-036f-4d7f-80c1-2ee6a92ef673","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke library","standingPosition":{"x":-858.96875,"y":450.638702,"z":-26.09552},"aim":{"pitch":-29.513014,"yaw":13.402469,"roll":0},"aimMarkerPosition":{"x":-774.314392,"y":470.810059,"z":85.133392},"landing":{"x":2257.005371,"y":1098.967773,"z":166.422379},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at top right antenna\nWalk until reaching middle of antenna","additional":["Aim at top right antenna\nWalk until reaching middle of antenna"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode143","aim":"MapAnnotationNode144","landing":"MapAnnotationNode145"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1a8b8602-e343-4fe3-8a30-4bb18908bb15","annotationId":"1a8b8602-e343-4fe3-8a30-4bb18908bb15","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke arch","standingPosition":{"x":-858.96875,"y":450.638672,"z":-26.09552},"aim":{"pitch":-30.272108,"yaw":16.135853,"roll":0},"aimMarkerPosition":{"x":-776.006897,"y":474.640625,"z":86.28199},"landing":{"x":1809.601807,"y":1285.052979,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at 2nd antenna from the left\nWalk until reaching the bottom of the antenna","additional":["Aim at 2nd antenna from the left\nWalk until reaching the bottom of the antenna"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode146","aim":"MapAnnotationNode147","landing":"MapAnnotationNode148"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-cacc0425-dad9-49b4-8b25-9c8c31cf537f","annotationId":"cacc0425-dad9-49b4-8b25-9c8c31cf537f","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke library","standingPosition":{"x":1278.03125,"y":802.968689,"z":142.217163},"aim":{"pitch":-62.117046,"yaw":16.405396,"roll":0},"aimMarkerPosition":{"x":1322.893921,"y":816.177063,"z":293.274811},"landing":{"x":2443.057129,"y":1117.084473,"z":170.435974},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Align y-axis with berries and set x-1 on the top of the left window shutters","additional":["Align y-axis with berries and set x-1 on the top of the left window shutters"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode149","aim":"MapAnnotationNode150","landing":"MapAnnotationNode151"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-e5f58a1d-0cff-4da1-9d81-8eea7d70f6cf","annotationId":"e5f58a1d-0cff-4da1-9d81-8eea7d70f6cf","mapId":"inferno","side":"T","type":"Molotov","title":"Molo oranges/1st and 2nd","standingPosition":{"x":479.023499,"y":2016.96521,"z":136.031204},"aim":{"pitch":-35.659798,"yaw":132.825409,"roll":0},"aimMarkerPosition":{"x":423.792969,"y":2076.555664,"z":258.168335},"landing":{"x":422.662323,"y":2536.616699,"z":283.754059},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim between drain and rust spot","additional":["Aim between drain and rust spot"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode152","aim":"MapAnnotationNode153","landing":"MapAnnotationNode154"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-eb4297d3-3fca-4050-a06d-061e623e12be","annotationId":"eb4297d3-3fca-4050-a06d-061e623e12be","mapId":"inferno","side":"T","type":"Flash","title":"A entry from aps","standingPosition":{"x":1565.141602,"y":-377.964783,"z":256.03125},"aim":{"pitch":-25.374811,"yaw":-28.029919,"roll":0},"aimMarkerPosition":{"x":1644.895874,"y":-420.424316,"z":344.725037},"landing":{"x":2125.159668,"y":-435.830627,"z":390.203339},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim to the left of the left tower window","additional":["Aim to the left of the left tower window"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode155","aim":"MapAnnotationNode156","landing":"MapAnnotationNode157"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-8b634870-5a3d-41fb-b919-38c6d70979da","annotationId":"8b634870-5a3d-41fb-b919-38c6d70979da","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke library","standingPosition":{"x":807.03125,"y":-290.967468,"z":89.03125},"aim":{"pitch":-48.125336,"yaw":40.615784,"roll":0},"aimMarkerPosition":{"x":857.700806,"y":-247.514038,"z":227.331924},"landing":{"x":2526.58252,"y":1170.768188,"z":160.408203},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode158","aim":"MapAnnotationNode159","landing":"MapAnnotationNode160"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-3f96d066-9b28-4587-ad4c-f172559efe76","annotationId":"3f96d066-9b28-4587-ad4c-f172559efe76","mapId":"inferno","side":"CT","type":"Flash","title":"Flash 2nd mid","standingPosition":{"x":1553.565552,"y":1229.222412,"z":175.601593},"aim":{"pitch":-12.85876,"yaw":-115.538383,"roll":0},"aimMarkerPosition":{"x":1511.535156,"y":1141.255615,"z":261.627686},"landing":{"x":932.904297,"y":-129.789551,"z":695.910339},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand under lamp","aim":"Aim at top right of window\nRunning jump throw","additional":["Stand under lamp","Aim at top right of window\nRunning jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode161","aim":"MapAnnotationNode162","landing":"MapAnnotationNode163"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-a2a60487-28fd-4d91-9486-d2d02145cd65","annotationId":"a2a60487-28fd-4d91-9486-d2d02145cd65","mapId":"inferno","side":"CT","type":"Flash","title":"Banana pop flash","standingPosition":{"x":983.509949,"y":2779.962158,"z":132.203766},"aim":{"pitch":-2.267122,"yaw":-128.838699,"roll":0},"aimMarkerPosition":{"x":920.845581,"y":2702.132324,"z":199.274307},"landing":{"x":532.162048,"y":2219.394287,"z":386.58313},"sourceTolerance":80,"sourceInstructions":{"standing":"Not sensitive","aim":"Middle-click JumpThrow","additional":["Not sensitive","Middle-click JumpThrow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode164","aim":"MapAnnotationNode165","landing":"MapAnnotationNode166"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-d68295d5-5996-4cba-8782-5b93bda46d75","annotationId":"d68295d5-5996-4cba-8782-5b93bda46d75","mapId":"inferno","side":"CT","type":"Flash","title":"Banana pop flash from coffins","standingPosition":{"x":537.22052,"y":3094.02832,"z":213.028992},"aim":{"pitch":-18.552641,"yaw":-77.906624,"roll":0},"aimMarkerPosition":{"x":557.082336,"y":3001.329102,"z":307.408173},"landing":{"x":747.875061,"y":2110.87793,"z":346.039032},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Top right of chimney","additional":["Top right of chimney"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode167","aim":"MapAnnotationNode168","landing":"MapAnnotationNode169"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-772c5331-4e9d-4378-bb63-db5906ff6a10","annotationId":"772c5331-4e9d-4378-bb63-db5906ff6a10","mapId":"inferno","side":"CT","type":"Flash","title":"Ramp pop flash from car","standingPosition":{"x":571.49292,"y":2119.960205,"z":140.139816},"aim":{"pitch":-7.900334,"yaw":-117.298973,"roll":0},"aimMarkerPosition":{"x":526.06488,"y":2031.94104,"z":216.903595},"landing":{"x":167.278458,"y":875.879761,"z":143.933823},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front of the 2nd finger\nNot sensitive","aim":"Run throw","additional":["Stand in front of the 2nd finger\nNot sensitive","Run throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode170","aim":"MapAnnotationNode171","landing":"MapAnnotationNode172"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-c83e7f6e-3e97-4ac9-91df-d2d0faeab022","annotationId":"c83e7f6e-3e97-4ac9-91df-d2d0faeab022","mapId":"inferno","side":"T","type":"Flash","title":"Flash banana","standingPosition":{"x":154.787338,"y":1008.66394,"z":84.519669},"aim":{"pitch":-25.430912,"yaw":86.269173,"roll":0},"aimMarkerPosition":{"x":160.664032,"y":1098.783081,"z":171.788467},"landing":{"x":219.929108,"y":1915.886475,"z":328.761078},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front of black spots on wall","aim":"Crouch and aim at seat of chair above the light bulb","additional":["Stand in front of black spots on wall","Crouch and aim at seat of chair above the light bulb"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode173","aim":"MapAnnotationNode174","landing":"MapAnnotationNode175"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-e3b2a788-6118-4c4c-b2dd-04a1415078da","annotationId":"e3b2a788-6118-4c4c-b2dd-04a1415078da","mapId":"inferno","side":"T","type":"Smoke","title":"CT Smoke\nFrom boost","standingPosition":{"x":430.333282,"y":1773.86084,"z":226.03125},"aim":{"pitch":-3.993023,"yaw":64.154594,"roll":0},"aimMarkerPosition":{"x":443.056519,"y":1800.126953,"z":292.068512},"landing":{"x":1051.262085,"y":2635.858154,"z":244.599442},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Middle-click JumpThrow","additional":["Wedge into corner","Middle-click JumpThrow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode176","aim":"MapAnnotationNode177","landing":"MapAnnotationNode178"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-9d1b9874-8331-4d95-bc3d-77a921c0582f","annotationId":"9d1b9874-8331-4d95-bc3d-77a921c0582f","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke pit entrance","standingPosition":{"x":1354.03125,"y":-89.96875,"z":132.03125},"aim":{"pitch":-7.282176,"yaw":-0.197688,"roll":0},"aimMarkerPosition":{"x":1453.223999,"y":-90.310997,"z":208.546844},"landing":{"x":2290.398682,"y":-105.528839,"z":108.280167},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"","additional":["Wedge into corner"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode179","aim":"MapAnnotationNode180","landing":"MapAnnotationNode181"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-9e8b9e5d-99dd-4296-b11e-8a071a7d99dc","annotationId":"9e8b9e5d-99dd-4296-b11e-8a071a7d99dc","mapId":"inferno","side":"T","type":"Flash","title":"Entry Flash B (Balcony)","standingPosition":{"x":120.587097,"y":1593.892578,"z":107.246971},"aim":{"pitch":2.199865,"yaw":47.794239,"roll":0},"aimMarkerPosition":{"x":187.717102,"y":1667.911743,"z":165.695053},"landing":{"x":881.472595,"y":2446.244385,"z":364.401123},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step Jump Throw","additional":["Step Jump Throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode182","aim":"MapAnnotationNode183","landing":"MapAnnotationNode184"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-1421520d-cf2b-4c16-9c20-ee14288d0ae3","annotationId":"1421520d-cf2b-4c16-9c20-ee14288d0ae3","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Arch","standingPosition":{"x":205.947174,"y":436.815063,"z":82.03125},"aim":{"pitch":-59.422165,"yaw":19.915049,"roll":0},"aimMarkerPosition":{"x":253.775864,"y":454.143005,"z":232.125137},"landing":{"x":1871.265869,"y":1346.051636,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode185","aim":"MapAnnotationNode186","landing":"MapAnnotationNode187"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-0f841ac4-9405-4b5b-b22f-05b8f5e759e8","annotationId":"0f841ac4-9405-4b5b-b22f-05b8f5e759e8","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Lib","standingPosition":{"x":205.968018,"y":436.779053,"z":82.03125},"aim":{"pitch":-32.802143,"yaw":17.781038,"roll":0},"aimMarkerPosition":{"x":286.007385,"y":462.447662,"z":200.205215},"landing":{"x":2643.238525,"y":1128.22876,"z":162.90625},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode188","aim":"MapAnnotationNode189","landing":"MapAnnotationNode190"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-85b9b3ec-85c9-431f-9f94-873041a7c309","annotationId":"85b9b3ec-85c9-431f-9f94-873041a7c309","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Arch","standingPosition":{"x":807.04248,"y":-290.944824,"z":89.03125},"aim":{"pitch":-55.121368,"yaw":55.995213,"roll":0},"aimMarkerPosition":{"x":839.023315,"y":-243.53981,"z":235.06778},"landing":{"x":1866.391235,"y":1347.779785,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode191","aim":"MapAnnotationNode192","landing":"MapAnnotationNode193"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-9343b1bc-a6c2-4c58-9275-bdb2a0fbf0d3","annotationId":"9343b1bc-a6c2-4c58-9275-bdb2a0fbf0d3","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke A Site","standingPosition":{"x":546.179688,"y":705.93927,"z":98.170433},"aim":{"pitch":-9.075457,"yaw":-18.274487,"roll":0},"aimMarkerPosition":{"x":639.94751,"y":674.974854,"z":176.615524},"landing":{"x":2239.17749,"y":29.930519,"z":119.760757},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode194","aim":"MapAnnotationNode195","landing":"MapAnnotationNode196"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-145b40b7-1a86-4e3b-93f1-73699af598ba","annotationId":"145b40b7-1a86-4e3b-93f1-73699af598ba","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Top mid","standingPosition":{"x":-935.577148,"y":584.380127,"z":-29.709045},"aim":{"pitch":-13.057577,"yaw":-1.361449,"roll":0},"aimMarkerPosition":{"x":-838.190308,"y":582.065613,"z":54.834316},"landing":{"x":1398.29834,"y":527.815308,"z":120.322357},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode197","aim":"MapAnnotationNode198","landing":"MapAnnotationNode199"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-b00b3d66-9cdf-44a6-8411-5503bafb6f11","annotationId":"b00b3d66-9cdf-44a6-8411-5503bafb6f11","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke CT","standingPosition":{"x":423.739594,"y":1761.970459,"z":134.031235},"aim":{"pitch":-11.48405,"yaw":65.100281,"roll":0},"aimMarkerPosition":{"x":435.862366,"y":1788.087036,"z":203.880875},"landing":{"x":714.477295,"y":2388.312012,"z":490.314026},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle click jump throw","additional":["Middle click jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode200","aim":"MapAnnotationNode201","landing":"MapAnnotationNode202"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-eb0dcf7e-5623-4607-9f48-818496e75795","annotationId":"eb0dcf7e-5623-4607-9f48-818496e75795","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke long corner","standingPosition":{"x":729.03125,"y":243.208618,"z":91.844124},"aim":{"pitch":-32.58205,"yaw":40.100811,"roll":0},"aimMarkerPosition":{"x":793.484375,"y":297.484741,"z":209.419708},"landing":{"x":1494.724121,"y":1066.302612,"z":159.708511},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode203","aim":"MapAnnotationNode204","landing":"MapAnnotationNode205"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-e721222f-6e23-478b-bf18-de5e44747bfd","annotationId":"e721222f-6e23-478b-bf18-de5e44747bfd","mapId":"inferno","side":"T","type":"Smoke","title":"Smoke Moto","standingPosition":{"x":255.239288,"y":-131.941162,"z":65.53125},"aim":{"pitch":-30.777843,"yaw":22.343151,"roll":0},"aimMarkerPosition":{"x":334.704834,"y":-99.280029,"z":180.702316},"landing":{"x":2269.37207,"y":799.484619,"z":153.014297},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode206","aim":"MapAnnotationNode207","landing":"MapAnnotationNode208"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-inferno-b70e6f65-1c69-4c26-8b35-056ec262d6f7","annotationId":"b70e6f65-1c69-4c26-8b35-056ec262d6f7","mapId":"inferno","side":"T","type":"Flash","title":"Flash B Entry","standingPosition":{"x":478.688263,"y":2015.635742,"z":136.031204},"aim":{"pitch":-41.12888,"yaw":93.748901,"roll":0},"aimMarkerPosition":{"x":473.763336,"y":2090.797852,"z":265.806702},"landing":{"x":443.617462,"y":2550.864502,"z":236.237274},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_inferno/de_inferno.txt","nodes":{"position":"MapAnnotationNode209","aim":"MapAnnotationNode210","landing":"MapAnnotationNode211"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_inferno/de_inferno.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"039733969d671cf28f27622899f79563e9e1d80f1cec4e8a1eb484f770a069a7","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-18fcc7ff-5cbb-4c47-83db-146f61b8d052","annotationId":"18fcc7ff-5cbb-4c47-83db-146f61b8d052","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke main (waterfall)","standingPosition":{"x":-1754.495117,"y":-1245.821899,"z":-407.96875},"aim":{"pitch":-25.8062,"yaw":-10.301163,"roll":0},"aimMarkerPosition":{"x":-1665.919067,"y":-1261.920776,"z":-300.595886},"landing":{"x":838.908936,"y":-1642.617432,"z":-237.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front of post","aim":"Aim in the middle of the vents\nJump throw","additional":["Stand in front of post","Aim in the middle of the vents\nJump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-c3b27fa7-69d8-47cb-9b8e-069f0d5a4cf8","annotationId":"c3b27fa7-69d8-47cb-9b8e-069f0d5a4cf8","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke wall 2","standingPosition":{"x":-1268.03125,"y":-1157.234741,"z":-415.96875},"aim":{"pitch":-44.965714,"yaw":-25.870638,"roll":0},"aimMarkerPosition":{"x":-1204.369019,"y":-1188.107178,"z":-281.460388},"landing":{"x":915.114807,"y":-2215.034912,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-fadebbec-0274-4ef8-bb28-62065303d5c8","annotationId":"fadebbec-0274-4ef8-bb28-62065303d5c8","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke wall 3","standingPosition":{"x":-732.878113,"y":-1322.139893,"z":-407.96875},"aim":{"pitch":-10.068164,"yaw":-22.128399,"roll":0},"aimMarkerPosition":{"x":-641.670349,"y":-1359.228149,"z":-326.956848},"landing":{"x":1134.482056,"y":-2166.074707,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-b377199b-4435-4757-9204-599a35bae2b3","annotationId":"b377199b-4435-4757-9204-599a35bae2b3","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke wall 1","standingPosition":{"x":-493.269775,"y":-1643.733521,"z":-415.96875},"aim":{"pitch":-3.544067,"yaw":-49.690063,"roll":0},"aimMarkerPosition":{"x":-428.701019,"y":-1719.84314,"z":-345.947144},"landing":{"x":1134.482056,"y":-2166.074707,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-21e88a5d-d26b-47f8-9354-5de9b5b1250e","annotationId":"21e88a5d-d26b-47f8-9354-5de9b5b1250e","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke mouz wall 2","standingPosition":{"x":-732.876099,"y":-1322.138062,"z":-407.96875},"aim":{"pitch":-19.087103,"yaw":-16.851908,"roll":0},"aimMarkerPosition":{"x":-642.432007,"y":-1349.53418,"z":-311.738678},"landing":{"x":1069.490112,"y":-2012.131592,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-0cf7c6fe-6030-4578-a065-d3ca30ed406f","annotationId":"0cf7c6fe-6030-4578-a065-d3ca30ed406f","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke mouz wall 1","standingPosition":{"x":-732.876099,"y":-1322.138062,"z":-407.96875},"aim":{"pitch":-17.780354,"yaw":-11.555408,"roll":0},"aimMarkerPosition":{"x":-639.582703,"y":-1341.212769,"z":-313.902344},"landing":{"x":985.273865,"y":-1806.226807,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-c988e014-640e-484f-b1ec-4ba0573ed167","annotationId":"c988e014-640e-484f-b1ec-4ba0573ed167","mapId":"nuke","side":"T","type":"Molotov","title":"Molo hut and flash site","standingPosition":{"x":-502.8302,"y":-1178.010742,"z":-154.96875},"aim":{"pitch":1.514254,"yaw":2.504888,"roll":0},"aimMarkerPosition":{"x":-402.960632,"y":-1173.641846,"z":-93.942719},"landing":{"x":433.918701,"y":-1123.007324,"z":-191.979111},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Run jump throws\nGlass must be broken before throwing","additional":["Run jump throws\nGlass must be broken before throwing"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-55ab381c-3b51-4452-9813-a60c9951950d","annotationId":"55ab381c-3b51-4452-9813-a60c9951950d","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke ramp entry","standingPosition":{"x":251.968704,"y":-463.96875,"z":-415.96875},"aim":{"pitch":-6.583899,"yaw":107.3657,"roll":0},"aimMarkerPosition":{"x":222.318604,"y":-369.15625,"z":-340.662964},"landing":{"x":423.092682,"y":26.832132,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step throw or walk throw","additional":["Step throw or walk throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode21","aim":"MapAnnotationNode22","landing":"MapAnnotationNode23"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-0bf95257-fdb5-43f0-b099-1718bb5517bb","annotationId":"0bf95257-fdb5-43f0-b099-1718bb5517bb","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke left ramp","standingPosition":{"x":749.967957,"y":125.546288,"z":-629.436096},"aim":{"pitch":3.375485,"yaw":-64.518089,"roll":0},"aimMarkerPosition":{"x":792.915955,"y":35.430786,"z":-575.841553},"landing":{"x":776.566589,"y":-422.936554,"z":-637.968628},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-bfecc991-3bb8-44f3-9e92-1ba967a02571","annotationId":"bfecc991-3bb8-44f3-9e92-1ba967a02571","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke right ramp","standingPosition":{"x":545.263855,"y":160.154099,"z":-618.272339},"aim":{"pitch":1.999369,"yaw":-112.552956,"roll":0},"aimMarkerPosition":{"x":506.933502,"y":67.85778,"z":-562.278625},"landing":{"x":495.741547,"y":-485.235016,"z":-637.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-b8ae609a-9873-44bd-a2de-cc7786c9a020","annotationId":"b8ae609a-9873-44bd-a2de-cc7786c9a020","mapId":"nuke","side":"T","type":"Molotov","title":"Molo red box","standingPosition":{"x":454.475342,"y":139.14946,"z":-415.96875},"aim":{"pitch":-7.62344,"yaw":83.071312,"roll":0},"aimMarkerPosition":{"x":466.432129,"y":237.541748,"z":-338.862579},"landing":{"x":572.607849,"y":909.40979,"z":-477.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode30","aim":"MapAnnotationNode31","landing":"MapAnnotationNode32"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-7267b94c-2ef1-4a4a-874a-9e2bcec07bb0","annotationId":"7267b94c-2ef1-4a4a-874a-9e2bcec07bb0","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke garage","standingPosition":{"x":-163.039795,"y":-1950.811401,"z":-415.96875},"aim":{"pitch":-13.444628,"yaw":0.69367,"roll":0},"aimMarkerPosition":{"x":-65.787415,"y":-1949.633911,"z":-328.878204},"landing":{"x":1311.587646,"y":-1932.963867,"z":-413.46875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-10c9522d-79bd-4e99-9e24-45a089cebd6e","annotationId":"10c9522d-79bd-4e99-9e24-45a089cebd6e","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke main","standingPosition":{"x":-163.977295,"y":-1999.811768,"z":-415.96875},"aim":{"pitch":-7.494659,"yaw":9.900833,"roll":0},"aimMarkerPosition":{"x":-66.308212,"y":-1982.764282,"z":-339.085388},"landing":{"x":1087.13147,"y":-1781.446045,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-a8ba2d1b-4d43-49fb-a9d3-e418b47e69c7","annotationId":"a8ba2d1b-4d43-49fb-a9d3-e418b47e69c7","mapId":"nuke","side":"CT","type":"Molotov","title":"Molo silo","standingPosition":{"x":1680.052246,"y":-1583.966553,"z":-407.96875},"aim":{"pitch":-21.73081,"yaw":-179.951065,"roll":0},"aimMarkerPosition":{"x":1587.158936,"y":-1584.045898,"z":-307.104126},"landing":{"x":188.02182,"y":-1578.416504,"z":9.035271},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Run several steps, middle jump throw","additional":["Run several steps, middle jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-902635a2-8ffe-400d-89fd-034838152130","annotationId":"902635a2-8ffe-400d-89fd-034838152130","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke door at A","standingPosition":{"x":-891.96875,"y":-927.03125,"z":-415.96875},"aim":{"pitch":-13.988972,"yaw":-11.157334,"roll":0},"aimMarkerPosition":{"x":-796.768494,"y":-945.807739,"z":-327.955231},"landing":{"x":379.092957,"y":-1289.195068,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Glass must be broken\nStep jump throw","additional":["Glass must be broken\nStep jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode42","aim":"MapAnnotationNode43","landing":"MapAnnotationNode44"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-094049fa-cf70-48cf-9e0c-5860dcb4a756","annotationId":"094049fa-cf70-48cf-9e0c-5860dcb4a756","mapId":"nuke","side":"T","type":"Molotov","title":"Molo magisk","standingPosition":{"x":-24.549194,"y":-825.156189,"z":-21.96875},"aim":{"pitch":-7.277499,"yaw":15.084722,"roll":0},"aimMarkerPosition":{"x":71.227196,"y":-799.341125,"z":54.538757},"landing":{"x":279.969391,"y":-587.762451,"z":-125.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on weld line","aim":"","additional":["Stand on weld line"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode48","aim":"MapAnnotationNode49","landing":"MapAnnotationNode50"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-f41bf8f9-b798-452f-b4ce-ffae5ae1e1a7","annotationId":"f41bf8f9-b798-452f-b4ce-ffae5ae1e1a7","mapId":"nuke","side":"T","type":"Molotov","title":"Molo back of A site","standingPosition":{"x":-113.032104,"y":-734.963379,"z":-171.96875},"aim":{"pitch":-1.683889,"yaw":10.600467,"roll":0},"aimMarkerPosition":{"x":-14.781174,"y":-716.575378,"z":-105.190239},"landing":{"x":734.290955,"y":-560.342957,"z":-389.96344},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode51","aim":"MapAnnotationNode52","landing":"MapAnnotationNode53"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-f3fb27d7-f116-4f59-b6b2-093dc0bc7a11","annotationId":"f3fb27d7-f116-4f59-b6b2-093dc0bc7a11","mapId":"nuke","side":"T","type":"Flash","title":"Flash A site","standingPosition":{"x":-24.737305,"y":-824.96814,"z":-21.96875},"aim":{"pitch":17.073206,"yaw":15.40112,"roll":0},"aimMarkerPosition":{"x":67.422951,"y":-799.580933,"z":12.511919},"landing":{"x":350.361633,"y":-602.857239,"z":-40.359009},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode56","aim":"MapAnnotationNode57","landing":"MapAnnotationNode58"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-0a1925d1-a445-49ae-89dd-521f432aa4f4","annotationId":"0a1925d1-a445-49ae-89dd-521f432aa4f4","mapId":"nuke","side":"T","type":"Smoke","title":"T Spawn 6\nSmoke Vent Dive","standingPosition":{"x":-1832,"y":-1160,"z":-415.96875},"aim":{"pitch":-17.687763,"yaw":-1.600855,"roll":0},"aimMarkerPosition":{"x":-1736.764526,"y":-1162.661621,"z":-321.585785},"landing":{"x":448.171906,"y":-1222.309448,"z":151.489243},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact -1832 -1160 -414","aim":"Crouch, Aim at the baluster, then move crosshair to aim at the wire and stand up\nRun and jump throw when the crosshair X-axis reaches the top of chimney on the right","additional":["setpos_exact -1832 -1160 -414","Crouch, Aim at the baluster, then move crosshair to aim at the wire and stand up\nRun and jump throw when the crosshair X-axis reaches the top of chimney on the right"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode69","aim":"MapAnnotationNode70","landing":"MapAnnotationNode71"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-1419f1ec-2a3d-418f-961e-d02377f83baa","annotationId":"1419f1ec-2a3d-418f-961e-d02377f83baa","mapId":"nuke","side":"T","type":"Smoke","title":"T spawn 8\nSmoke Vent Dive","standingPosition":{"x":-1808,"y":-1089,"z":-415.96875},"aim":{"pitch":-17.483425,"yaw":-2.610982,"roll":0},"aimMarkerPosition":{"x":-1712.718628,"y":-1093.344971,"z":-322.085754},"landing":{"x":-657.573547,"y":-1149.461182,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact -1808 -1089 -414","aim":"Aim at the wire, align with center of ladder\nJumpThrow when reaching the end of the annotation line\nAlign with chimney on the right for when to throw","additional":["setpos_exact -1808 -1089 -414","Aim at the wire, align with center of ladder\nJumpThrow when reaching the end of the annotation line\nAlign with chimney on the right for when to throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode77","aim":"MapAnnotationNode78","landing":"MapAnnotationNode79"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-7142787f-0df4-455a-871d-793c19a8100d","annotationId":"7142787f-0df4-455a-871d-793c19a8100d","mapId":"nuke","side":"T","type":"Molotov","title":"Molo hut","standingPosition":{"x":-24.736145,"y":-824.826172,"z":-21.96875},"aim":{"pitch":-5.673682,"yaw":-41.342087,"roll":0},"aimMarkerPosition":{"x":49.973969,"y":-890.557922,"z":51.757515},"landing":{"x":444.052979,"y":-992.20874,"z":-178.872803},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at two screws\nRun throw","additional":["Aim at two screws\nRun throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode82","aim":"MapAnnotationNode83","landing":"MapAnnotationNode84"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-dbae5ab2-9e30-4462-a819-501e167f2c6d","annotationId":"dbae5ab2-9e30-4462-a819-501e167f2c6d","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke wall 3","standingPosition":{"x":-1268.0354,"y":-1157.329224,"z":-415.96875},"aim":{"pitch":-37.443634,"yaw":-24.172852,"roll":0},"aimMarkerPosition":{"x":-1195.602051,"y":-1189.84082,"z":-291.330688},"landing":{"x":1102.632202,"y":-2221.407471,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode85","aim":"MapAnnotationNode86","landing":"MapAnnotationNode87"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-82bb395b-52e3-4800-b054-9ade6651e996","annotationId":"82bb395b-52e3-4800-b054-9ade6651e996","mapId":"nuke","side":"CT","type":"Flash","title":"A pop flash","standingPosition":{"x":1259.957764,"y":-316.039856,"z":-127.96875},"aim":{"pitch":-27.499931,"yaw":-15.996166,"roll":0},"aimMarkerPosition":{"x":1287.147339,"y":-323.834351,"z":-49.404686},"landing":{"x":897.008057,"y":-434.999268,"z":-189.621124},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode91","aim":"MapAnnotationNode92","landing":"MapAnnotationNode93"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-66c62beb-af1b-4d08-a8f6-dd6ace15efb0","annotationId":"66c62beb-af1b-4d08-a8f6-dd6ace15efb0","mapId":"nuke","side":"CT","type":"HE","title":"Nade silo","standingPosition":{"x":1013.283142,"y":-1553.032837,"z":-415.96875},"aim":{"pitch":-40.589607,"yaw":179.761246,"roll":0},"aimMarkerPosition":{"x":937.344849,"y":-1552.716431,"z":-287.065094},"landing":{"x":234.015686,"y":-1549.782227,"z":26.413425},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode94","aim":"MapAnnotationNode95","landing":"MapAnnotationNode96"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-afc51cd9-4b23-4d03-a732-2346d65d6db9","annotationId":"afc51cd9-4b23-4d03-a732-2346d65d6db9","mapId":"nuke","side":"CT","type":"Flash","title":"Squeaky pop flash","standingPosition":{"x":959.962585,"y":-971.281555,"z":-415.96875},"aim":{"pitch":8.843634,"yaw":-153.553375,"roll":0},"aimMarkerPosition":{"x":871.492065,"y":-1015.288452,"z":-367.502594},"landing":{"x":300.828278,"y":-1298.36499,"z":-311.639435},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Middle click JumpThrow","additional":["Wedge into corner","Middle click JumpThrow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode97","aim":"MapAnnotationNode98","landing":"MapAnnotationNode99"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-cd9a2c2f-e801-41ac-bd02-20e48b8afa16","annotationId":"cd9a2c2f-e801-41ac-bd02-20e48b8afa16","mapId":"nuke","side":"CT","type":"Flash","title":"Hut pop flash","standingPosition":{"x":598.539795,"y":-613.478516,"z":-399.96875},"aim":{"pitch":-7.630686,"yaw":-126.807693,"roll":0},"aimMarkerPosition":{"x":539.157227,"y":-692.834595,"z":-326.838745},"landing":{"x":254.909912,"y":-1072.685181,"z":-384.915955},"sourceTolerance":80,"sourceInstructions":{"standing":"Make sure tetris boxes are not visible\nMiddle click","aim":"","additional":["Make sure tetris boxes are not visible\nMiddle click"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode100","aim":"MapAnnotationNode101","landing":"MapAnnotationNode102"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-2f833c82-19be-4864-a194-018c18069f04","annotationId":"2f833c82-19be-4864-a194-018c18069f04","mapId":"nuke","side":"T","type":"Flash","title":"Ramp pop flash","standingPosition":{"x":101.011398,"y":-292.03125,"z":-415.96875},"aim":{"pitch":-5.170465,"yaw":60.642918,"roll":0},"aimMarkerPosition":{"x":149.837006,"y":-205.227768,"z":-343.116821},"landing":{"x":521.12439,"y":454.85614,"z":-360.401611},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode103","aim":"MapAnnotationNode104","landing":"MapAnnotationNode105"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-8360380b-d750-410f-8804-9087579f7c82","annotationId":"8360380b-d750-410f-8804-9087579f7c82","mapId":"nuke","side":"CT","type":"Smoke","title":"Smoke top of A silos","standingPosition":{"x":1349.033325,"y":-280.031372,"z":-85.96875},"aim":{"pitch":-66.484146,"yaw":-154.032379,"roll":0},"aimMarkerPosition":{"x":1313.161499,"y":-297.502258,"z":69.726219},"landing":{"x":691.875549,"y":-695.526062,"z":70.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at bottom of railing\nAlign with right side of screw","additional":["Wedge into corner","Aim at bottom of railing\nAlign with right side of screw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode106","aim":"MapAnnotationNode107","landing":"MapAnnotationNode108"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-cf5a8986-db21-47d3-8ff7-158488a79649","annotationId":"cf5a8986-db21-47d3-8ff7-158488a79649","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke Mouz 1","standingPosition":{"x":-1351.131348,"y":-1043.327515,"z":-415.96875},"aim":{"pitch":-44.737091,"yaw":-19.354107,"roll":0},"aimMarkerPosition":{"x":-1284.111206,"y":-1066.868652,"z":-281.743286},"landing":{"x":948.340332,"y":-1850.998657,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode113","aim":"MapAnnotationNode114","landing":"MapAnnotationNode115"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-cea4f726-3040-4986-a5c2-7759dccd275d","annotationId":"cea4f726-3040-4986-a5c2-7759dccd275d","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke Mouz 2","standingPosition":{"x":-1351.131348,"y":-1043.327515,"z":-415.96875},"aim":{"pitch":-27.632099,"yaw":-22.07114,"roll":0},"aimMarkerPosition":{"x":-1269.029297,"y":-1076.617554,"z":-305.749512},"landing":{"x":1145.06897,"y":-2055.471436,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode116","aim":"MapAnnotationNode117","landing":"MapAnnotationNode118"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-de82d75b-9c5e-4429-bba9-c8ca23900277","annotationId":"de82d75b-9c5e-4429-bba9-c8ca23900277","mapId":"nuke","side":"T","type":"Molotov","title":"Molo and flash behind A silo from T Roof","standingPosition":{"x":-13.044556,"y":-769.614258,"z":-95.96875},"aim":{"pitch":3.960014,"yaw":12.854218,"roll":0},"aimMarkerPosition":{"x":84.216606,"y":-747.420288,"z":-38.874779},"landing":{"x":743.165405,"y":-578.06366,"z":-397.968262},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode119","aim":"MapAnnotationNode120","landing":"MapAnnotationNode121"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-59d0890a-dc00-4997-98d4-ccc19235060e","annotationId":"59d0890a-dc00-4997-98d4-ccc19235060e","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke Heaven","standingPosition":{"x":-499.347595,"y":-1182.300537,"z":-154.96875},"aim":{"pitch":-16.67701,"yaw":8.411704,"roll":0},"aimMarkerPosition":{"x":-404.58432,"y":-1168.287354,"z":-62.771133},"landing":{"x":1170.184692,"y":-307.520569,"z":-125.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Running jump throw","additional":["Running jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode122","aim":"MapAnnotationNode123","landing":"MapAnnotationNode124"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-nuke-da307497-7c1a-4589-8d20-ad1f23106d2c","annotationId":"da307497-7c1a-4589-8d20-ad1f23106d2c","mapId":"nuke","side":"T","type":"Smoke","title":"Smoke Mouz Wall 2","standingPosition":{"x":-1268.068359,"y":-1157.36145,"z":-415.96875},"aim":{"pitch":-34.717232,"yaw":-18.483021,"roll":0},"aimMarkerPosition":{"x":-1190.110962,"y":-1183.419922,"z":-295.016083},"landing":{"x":1238.787476,"y":-1995.318115,"z":-413.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_nuke/de_nuke.txt","nodes":{"position":"MapAnnotationNode125","aim":"MapAnnotationNode126","landing":"MapAnnotationNode127"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_nuke/de_nuke.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"c02fcf33293e91c77f26b06863c495f148cbc6bdb88f8018408b6534e1187a3f","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-7cc60773-dd91-40e8-8841-a99e4e64abb8","annotationId":"7cc60773-dd91-40e8-8841-a99e4e64abb8","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke red room\nT Spawn 5","standingPosition":{"x":-392.000244,"y":-2224.000244,"z":-163.255737},"aim":{"pitch":-34.08559,"yaw":92.732597,"roll":0},"aimMarkerPosition":{"x":-395.948669,"y":-2141.274414,"z":-43.372669},"landing":{"x":-524.953308,"y":336.453217,"z":162.033325},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -392.00 -2224.00 -157.25","aim":"Aim at yellow leaf\nStep jump throw","additional":["setpos -392.00 -2224.00 -157.25","Aim at yellow leaf\nStep jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-86ec5636-5b02-4b4d-980f-311e6e803227","annotationId":"86ec5636-5b02-4b4d-980f-311e6e803227","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke cave entrance","standingPosition":{"x":-687.973022,"y":-2467.972656,"z":-153.928467},"aim":{"pitch":-27.621035,"yaw":62.843906,"roll":0},"aimMarkerPosition":{"x":-647.53302,"y":-2389.136475,"z":-53.005177},"landing":{"x":304.587646,"y":-627.22052,"z":153.145569},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at black line - jump throw","additional":["Aim at black line - jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-04c2fa3e-4e51-4b82-8f2c-1de87bd6349f","annotationId":"04c2fa3e-4e51-4b82-8f2c-1de87bd6349f","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke B site","standingPosition":{"x":-391.971497,"y":-2042.114014,"z":-153.664551},"aim":{"pitch":-41.382076,"yaw":56.212349,"roll":0},"aimMarkerPosition":{"x":-350.245087,"y":-1979.754761,"z":-23.782372},"landing":{"x":1036.352295,"y":107.468887,"z":132.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Look at blocks","aim":"Look at bottom right part of block, but not the corner - step jump throw","additional":["Look at blocks","Look at bottom right part of block, but not the corner - step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-ea941de1-995f-4218-baf3-a931139bcdb4","annotationId":"ea941de1-995f-4218-baf3-a931139bcdb4","mapId":"ancient","side":"T","type":"Flash","title":"Flash middle above cat","standingPosition":{"x":-216.030762,"y":-1954.634888,"z":-164.028381},"aim":{"pitch":-19.463442,"yaw":91.07016,"roll":0},"aimMarkerPosition":{"x":-217.791702,"y":-1860.365967,"z":-69.234886},"landing":{"x":-234.676422,"y":-956.530701,"z":456.811523},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand between the signs, lineup is not sensitive","aim":"Aim at end of leaf - jump throw","additional":["Stand between the signs, lineup is not sensitive","Aim at end of leaf - jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-7869cee3-84e3-45d1-b991-c99b6490e1c8","annotationId":"7869cee3-84e3-45d1-b991-c99b6490e1c8","mapId":"ancient","side":"T","type":"Flash","title":"Flash middle above elbow","standingPosition":{"x":-735.966858,"y":-1862.124023,"z":-145.537842},"aim":{"pitch":-25.136049,"yaw":94.132477,"roll":0},"aimMarkerPosition":{"x":-742.490723,"y":-1771.829224,"z":-48.12981},"landing":{"x":-804.360413,"y":-915.459106,"z":563.130066},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-9c850e87-a020-4326-8a4a-31f2de6d15bb","annotationId":"9c850e87-a020-4326-8a4a-31f2de6d15bb","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke CT spawn","standingPosition":{"x":-1262.755615,"y":-1350.03833,"z":-19.712952},"aim":{"pitch":-43.302612,"yaw":84.549072,"roll":0},"aimMarkerPosition":{"x":-1255.842529,"y":-1277.593262,"z":110.68956},"landing":{"x":-1032.823975,"y":1059.756104,"z":68.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-fc9c4a1d-c1ea-4802-a516-3442c374eede","annotationId":"fc9c4a1d-c1ea-4802-a516-3442c374eede","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke CT spawn","standingPosition":{"x":-1936.975342,"y":-862.031372,"z":-1.675415},"aim":{"pitch":-43.173904,"yaw":67.035583,"roll":0},"aimMarkerPosition":{"x":-1908.521729,"y":-794.883057,"z":117.148895},"landing":{"x":-1033.831055,"y":1133.870972,"z":68.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-bbd71835-363b-41c5-b96d-fd3d28d86a14","annotationId":"bbd71835-363b-41c5-b96d-fd3d28d86a14","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke CT spawn","standingPosition":{"x":-2143.968262,"y":-1003.967896,"z":-2.85553},"aim":{"pitch":-33.877632,"yaw":60.333794,"roll":0},"aimMarkerPosition":{"x":-2102.876221,"y":-931.827271,"z":108.336807},"landing":{"x":-1130.216919,"y":1147.062378,"z":54.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-521b8e3c-4b6d-469d-afb0-2ab156417971","annotationId":"521b8e3c-4b6d-469d-afb0-2ab156417971","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke donut","standingPosition":{"x":-1866.969238,"y":-448.96875,"z":76.381996},"aim":{"pitch":-21.581635,"yaw":75.016136,"roll":0},"aimMarkerPosition":{"x":-1842.927124,"y":-359.141052,"z":175.528381},"landing":{"x":-1294.71228,"y":349.443481,"z":89.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-17ca39df-6ccf-4588-a734-37b7f832a997","annotationId":"17ca39df-6ccf-4588-a734-37b7f832a997","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke temple","standingPosition":{"x":-1774.25769,"y":-1237.558105,"z":-29.946411},"aim":{"pitch":-28.333261,"yaw":86.05024,"roll":0},"aimMarkerPosition":{"x":-1768.194702,"y":-1149.746948,"z":77.819397},"landing":{"x":-1598.81604,"y":1130.164795,"z":54.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode30","aim":"MapAnnotationNode31","landing":"MapAnnotationNode32"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-f99477a0-1d17-443e-950b-08659204f47a","annotationId":"f99477a0-1d17-443e-950b-08659204f47a","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke short","standingPosition":{"x":1255.968262,"y":-1479.96582,"z":30.013294},"aim":{"pitch":-10.265729,"yaw":108.869835,"roll":0},"aimMarkerPosition":{"x":1224.144043,"y":-1386.85498,"z":103.022614},"landing":{"x":657.836365,"y":482.325684,"z":123.639488},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-d68d6243-a80d-4d70-83d0-b73d737f95e0","annotationId":"d68d6243-a80d-4d70-83d0-b73d737f95e0","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke long","standingPosition":{"x":1255.96875,"y":-1479.966309,"z":30.013599},"aim":{"pitch":-6.107743,"yaw":93.544601,"roll":0},"aimMarkerPosition":{"x":1249.821289,"y":-1380.724121,"z":95.8414},"landing":{"x":1120.281494,"y":330.321442,"z":121.790215},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-f23208f1-d06a-4779-a7a0-1014b4d100ea","annotationId":"f23208f1-d06a-4779-a7a0-1014b4d100ea","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke cave","standingPosition":{"x":1255.967285,"y":-1479.967285,"z":30.013449},"aim":{"pitch":-11.136957,"yaw":110.770683,"roll":0},"aimMarkerPosition":{"x":1221.172241,"y":-1388.227661,"z":104.516891},"landing":{"x":543.170898,"y":157.5401,"z":154.654755},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Jump throw","additional":["Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-b1345c97-5e08-4caa-b95a-500dfe0a85c4","annotationId":"b1345c97-5e08-4caa-b95a-500dfe0a85c4","mapId":"ancient","side":"T","type":"Molotov","title":"Molo b default plant","standingPosition":{"x":1127.352905,"y":-1413.894531,"z":60.03125},"aim":{"pitch":3.20649,"yaw":100.216331,"roll":0},"aimMarkerPosition":{"x":1109.644165,"y":-1315.634155,"z":118.43779},"landing":{"x":869.865479,"y":14.799128,"z":166.234909},"sourceTolerance":80,"sourceInstructions":{"standing":"Jump on the edge of the box","aim":"Aim X as far to the left of the door way, and Y between the two signs, jump throw","additional":["Jump on the edge of the box","Aim X as far to the left of the door way, and Y between the two signs, jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode42","aim":"MapAnnotationNode43","landing":"MapAnnotationNode44"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-ba3d7e89-951a-41b7-a4aa-c5d710cd126c","annotationId":"ba3d7e89-951a-41b7-a4aa-c5d710cd126c","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke elbow","standingPosition":{"x":-512,"y":1696,"z":26.8372},"aim":{"pitch":-27.056713,"yaw":-101.701691,"roll":0},"aimMarkerPosition":{"x":-530.062317,"y":1608.79541,"z":134.169495},"landing":{"x":-1079.969238,"y":-871.21228,"z":66.279709},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -512.00 1696.00 30.75","aim":"Shift walk jump throw - throw before reaching bottom of U","additional":["setpos -512.00 1696.00 30.75","Shift walk jump throw - throw before reaching bottom of U"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode45","aim":"MapAnnotationNode46","landing":"MapAnnotationNode47"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-3e484524-59e2-4fa1-a137-5664f3ed458b","annotationId":"3e484524-59e2-4fa1-a137-5664f3ed458b","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke red room","standingPosition":{"x":-735.968994,"y":-2135.957275,"z":-164.082214},"aim":{"pitch":-30.767935,"yaw":85.191147,"roll":0},"aimMarkerPosition":{"x":-728.765747,"y":-2050.335205,"z":-53.399742},"landing":{"x":-516.475525,"y":226.271683,"z":162.751328},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge yourself between the wall and the rock.","aim":"Place -1y where the right branch and the top \n of the sine wave meet, and jump throw.","additional":["Wedge yourself between the wall and the rock.","Place -1y where the right branch and the top \n of the sine wave meet, and jump throw."],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode48","aim":"MapAnnotationNode49","landing":"MapAnnotationNode50"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-f5b6f6a4-0500-4e66-87b3-8018da64c48e","annotationId":"f5b6f6a4-0500-4e66-87b3-8018da64c48e","mapId":"ancient","side":"T","type":"Molotov","title":"Molo behind crates","standingPosition":{"x":-1983.030518,"y":235.893661,"z":87.981766},"aim":{"pitch":-0.257278,"yaw":79.361488,"roll":0},"aimMarkerPosition":{"x":-1964.569458,"y":334.173828,"z":146.140472},"landing":{"x":-1829.541382,"y":1056.151367,"z":54.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner on the right, and shift walk to the left.\nNot sensitive, can be thrown as soon as you are clear of the wall.","aim":"Aim slightly to the left of the top left corner of the box\nMolo clears left and right box, and behind it.","additional":["Wedge into corner on the right, and shift walk to the left.\nNot sensitive, can be thrown as soon as you are clear of the wall.","Aim slightly to the left of the top left corner of the box\nMolo clears left and right box, and behind it."],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode51","aim":"MapAnnotationNode52","landing":"MapAnnotationNode53"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-81f3b5e2-8069-4adf-a414-088788386a5c","annotationId":"81f3b5e2-8069-4adf-a414-088788386a5c","mapId":"ancient","side":"CT","type":"Smoke","title":"CT Ramp Smoke","standingPosition":{"x":541.923523,"y":935.959961,"z":112.051208},"aim":{"pitch":-0.584063,"yaw":-59.309719,"roll":0},"aimMarkerPosition":{"x":592.960571,"y":849.970581,"z":176.661362},"landing":{"x":1227.929932,"y":-228.571075,"z":112.328926},"sourceTolerance":80,"sourceInstructions":{"standing":"Line yourself up with the broken stem \n in the middle of this shrub.","aim":"Line up the X axis on the black crevice, \n and have the Y axis on the right side of the two rocks. \n and then do a middle powered jump throw.","additional":["Line yourself up with the broken stem \n in the middle of this shrub.","Line up the X axis on the black crevice, \n and have the Y axis on the right side of the two rocks. \n and then do a middle powered jump throw."],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode54","aim":"MapAnnotationNode55","landing":"MapAnnotationNode56"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-14b75e64-49c1-4c81-8197-6e1bb9d6c4d6","annotationId":"14b75e64-49c1-4c81-8197-6e1bb9d6c4d6","mapId":"ancient","side":"CT","type":"Smoke","title":"Molo/Smoke B Main entrance to A","standingPosition":{"x":-1672.970947,"y":1113.460815,"z":52.03125},"aim":{"pitch":-20.47197,"yaw":-116.990814,"roll":0},"aimMarkerPosition":{"x":-1715.48938,"y":1029.980591,"z":150.846161},"landing":{"x":-2007.804932,"y":456.06189,"z":75.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Back up into the green mold \n when facing the crate.","aim":"Aim -1y at the top of the crate, \n and then middle throw.","additional":["Back up into the green mold \n when facing the crate.","Aim -1y at the top of the crate, \n and then middle throw."],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode57","aim":"MapAnnotationNode58","landing":"MapAnnotationNode59"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-9a8e8795-c3d4-4083-bb81-e50c0c11574e","annotationId":"9a8e8795-c3d4-4083-bb81-e50c0c11574e","mapId":"ancient","side":"T","type":"Molotov","title":"Molo ninja","standingPosition":{"x":1056.990479,"y":-916.298767,"z":9.03125},"aim":{"pitch":-24.769917,"yaw":119.487358,"roll":0},"aimMarkerPosition":{"x":1012.295959,"y":-837.260803,"z":111.75119},"landing":{"x":1114.221313,"y":372.819336,"z":127.854385},"sourceTolerance":80,"sourceInstructions":{"standing":"Aim at door handle","aim":"","additional":["Aim at door handle"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode60","aim":"MapAnnotationNode61","landing":"MapAnnotationNode62"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-ed14e83a-daa5-4f16-81f9-1dcb9b848f4f","annotationId":"ed14e83a-daa5-4f16-81f9-1dcb9b848f4f","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke short","standingPosition":{"x":1056.990479,"y":-916.298767,"z":9.03125},"aim":{"pitch":-35.818321,"yaw":109.904076,"roll":0},"aimMarkerPosition":{"x":1029.384521,"y":-840.054932,"z":128.375351},"landing":{"x":1114.221313,"y":372.819336,"z":127.854385},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the end of the top most leaf","additional":["Aim at the end of the top most leaf"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode63","aim":"MapAnnotationNode64","landing":"MapAnnotationNode65"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-3052787a-5e7e-4a87-b243-36ba83400fc9","annotationId":"3052787a-5e7e-4a87-b243-36ba83400fc9","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke long","standingPosition":{"x":1056.990479,"y":-916.298767,"z":9.03125},"aim":{"pitch":-10.009006,"yaw":87.975594,"roll":0},"aimMarkerPosition":{"x":1060.469238,"y":-817.882202,"z":87.233948},"landing":{"x":1114.221313,"y":372.819336,"z":127.854385},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the top right nail, middle click jump throw","additional":["Aim at the top right nail, middle click jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode66","aim":"MapAnnotationNode67","landing":"MapAnnotationNode68"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-9d0ff488-d80d-4203-80df-873fb1cdd2b4","annotationId":"9d0ff488-d80d-4203-80df-873fb1cdd2b4","mapId":"ancient","side":"T","type":"Flash","title":"Flash A site (pop)","standingPosition":{"x":-1868.96875,"y":2.149075,"z":83.03125},"aim":{"pitch":-2.871008,"yaw":115.313965,"roll":0},"aimMarkerPosition":{"x":-1911.672852,"y":92.433456,"z":144.880005},"landing":{"x":-2189.565918,"y":533.790649,"z":106.339958},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the chipped block","additional":["Wedge into corner","Aim at the chipped block"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode69","aim":"MapAnnotationNode70","landing":"MapAnnotationNode71"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-1809464c-8823-4e19-a8e3-70c00d063465","annotationId":"1809464c-8823-4e19-a8e3-70c00d063465","mapId":"ancient","side":"T","type":"Molotov","title":"Vent Molotov","standingPosition":{"x":1116.37207,"y":-961.798828,"z":3.528252},"aim":{"pitch":-9.018937,"yaw":128.710556,"roll":0},"aimMarkerPosition":{"x":1054.606567,"y":-884.732056,"z":83.044342},"landing":{"x":480.077057,"y":-325.944305,"z":296.767914},"sourceTolerance":80,"sourceInstructions":{"standing":"In front of left most flower","aim":"Aim at the top right corner of the brick\nRun forward until crosshair reaches bottom right corner of brick","additional":["In front of left most flower","Aim at the top right corner of the brick\nRun forward until crosshair reaches bottom right corner of brick"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode72","aim":"MapAnnotationNode73","landing":"MapAnnotationNode74"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-1fd34808-4c8d-4aa8-b3ed-d5a6f717204b","annotationId":"1fd34808-4c8d-4aa8-b3ed-d5a6f717204b","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke B doors","standingPosition":{"x":-286.100098,"y":1771.964966,"z":28.201561},"aim":{"pitch":-21.760191,"yaw":-49.718056,"roll":0},"aimMarkerPosition":{"x":-226.052231,"y":1701.11377,"z":127.54776},"landing":{"x":1102.567261,"y":-984.170349,"z":5.528252},"sourceTolerance":80,"sourceInstructions":{"standing":"Left side of steps","aim":"Aim at the edge of platform on tower\nRun forward until crosshair reaches the top of the plant","additional":["Left side of steps","Aim at the edge of platform on tower\nRun forward until crosshair reaches the top of the plant"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode75","aim":"MapAnnotationNode76","landing":"MapAnnotationNode77"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-2d8a4257-84f5-4f5d-bec2-edc64c7039de","annotationId":"2d8a4257-84f5-4f5d-bec2-edc64c7039de","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke red room\nT Spawn 2","standingPosition":{"x":-456,"y":-2288,"z":-163.255737},"aim":{"pitch":-30.521589,"yaw":92.000359,"roll":0},"aimMarkerPosition":{"x":-459.006927,"y":-2201.908691,"z":-48.629444},"landing":{"x":-511.660339,"y":261.986328,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -584.00 -2288.00 -156.79","aim":"aim as shown, step to the right until reaching right side of leaves\nStep jump throw","additional":["setpos -584.00 -2288.00 -156.79","aim as shown, step to the right until reaching right side of leaves\nStep jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode78","aim":"MapAnnotationNode79","landing":"MapAnnotationNode80"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-078cdbfa-8939-4553-a6e4-7e091c53f72a","annotationId":"078cdbfa-8939-4553-a6e4-7e091c53f72a","mapId":"ancient","side":"T","type":"Smoke","title":"Red room\nT Spawn 1","standingPosition":{"x":-584,"y":-2288,"z":-162.422363},"aim":{"pitch":-34.719151,"yaw":88.643944,"roll":0},"aimMarkerPosition":{"x":-582.05481,"y":-2205.827637,"z":-41.981098},"landing":{"x":-523.936523,"y":258.074036,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -456.00 -2288.00 -157.25","aim":"Aim to the left of the wooden plank and above the flower","additional":["setpos -456.00 -2288.00 -157.25","Aim to the left of the wooden plank and above the flower"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode81","aim":"MapAnnotationNode82","landing":"MapAnnotationNode83"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-c196a30a-0bab-4901-a2b7-1c4962ac1827","annotationId":"c196a30a-0bab-4901-a2b7-1c4962ac1827","mapId":"ancient","side":"T","type":"Smoke","title":"Red room\nT Spawn 3","standingPosition":{"x":-328,"y":-2288,"z":-163.255737},"aim":{"pitch":-32.818371,"yaw":94.019836,"roll":0},"aimMarkerPosition":{"x":-333.891296,"y":-2204.16748,"z":-45.217976},"landing":{"x":-508.761902,"y":256.136444,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -328.00 -2288.00 -157.25","aim":"Aim above the tree on the left side","additional":["setpos -328.00 -2288.00 -157.25","Aim above the tree on the left side"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode84","aim":"MapAnnotationNode85","landing":"MapAnnotationNode86"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-139c967e-514a-4f52-be29-7b25c2eda3c3","annotationId":"139c967e-514a-4f52-be29-7b25c2eda3c3","mapId":"ancient","side":"T","type":"Smoke","title":"Red room\nT Spawn 4","standingPosition":{"x":-520,"y":-2224,"z":-163.255737},"aim":{"pitch":-41.055119,"yaw":88.565155,"roll":0},"aimMarkerPosition":{"x":-518.111755,"y":-2148.615723,"z":-33.737267},"landing":{"x":-527.816406,"y":265.946686,"z":162.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -520.00 -2224.00 -157.25","aim":"Aim at the middle of the large brick.\nWalk to the left until reaching center of plant\nStep Jump throw","additional":["setpos -520.00 -2224.00 -157.25","Aim at the middle of the large brick.\nWalk to the left until reaching center of plant\nStep Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode87","aim":"MapAnnotationNode88","landing":"MapAnnotationNode89"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-dc31bc0b-de64-48d9-ada4-fbc2e4cc7e25","annotationId":"dc31bc0b-de64-48d9-ada4-fbc2e4cc7e25","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke A main\nCT Spawn 2","standingPosition":{"x":-192,"y":1696,"z":26.053043},"aim":{"pitch":-28.498816,"yaw":-144.159698,"roll":0},"aimMarkerPosition":{"x":-263.24231,"y":1644.542236,"z":136.347183},"landing":{"x":-2064.759033,"y":236.436905,"z":76.281624},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -192.00 1696.00 30.76","aim":"Aim at top of mountain","additional":["setpos -192.00 1696.00 30.76","Aim at top of mountain"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode90","aim":"MapAnnotationNode91","landing":"MapAnnotationNode92"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-2550e60a-bfa1-431a-834c-28c1336703f4","annotationId":"2550e60a-bfa1-431a-834c-28c1336703f4","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke A main\nCT Spawn 1","standingPosition":{"x":-256,"y":1728,"z":25.602573},"aim":{"pitch":-28.050041,"yaw":-142.364471,"roll":0},"aimMarkerPosition":{"x":-325.889099,"y":1674.109131,"z":135.858063},"landing":{"x":-2053.037842,"y":234.575836,"z":75.957954},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -256.00 1728.00 30.94","aim":"Aim at the left side of the leaf","additional":["setpos -256.00 1728.00 30.94","Aim at the left side of the leaf"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode93","aim":"MapAnnotationNode94","landing":"MapAnnotationNode95"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-3682c1fd-faa5-4b80-b8b6-0a4bbd455144","annotationId":"3682c1fd-faa5-4b80-b8b6-0a4bbd455144","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke A main\nCT Spawn 3","standingPosition":{"x":-448,"y":1728,"z":30.739716},"aim":{"pitch":-46.208755,"yaw":-138.705048,"roll":0},"aimMarkerPosition":{"x":-499.993958,"y":1682.330322,"z":165.42572},"landing":{"x":-2087.768066,"y":196.325317,"z":74.031258},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos_exact -448 1728 31","aim":"Crouch and Aim at the 2nd leaf stand up","additional":["setpos_exact -448 1728 31","Crouch and Aim at the 2nd leaf stand up"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode96","aim":"MapAnnotationNode97","landing":"MapAnnotationNode98"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-ce1fee92-814a-4657-aa05-97b9b6c193fc","annotationId":"ce1fee92-814a-4657-aa05-97b9b6c193fc","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke A main\nCT Spawn 4","standingPosition":{"x":-352,"y":1728,"z":28.813251},"aim":{"pitch":-37.118587,"yaw":-140.432648,"roll":0},"aimMarkerPosition":{"x":-413.468781,"y":1677.20752,"z":151.895035},"landing":{"x":-2009.851685,"y":167.957764,"z":74.031258},"sourceTolerance":80,"sourceInstructions":{"standing":"setpos -352.00 1728.00 33.64","aim":"Aim at top of 3rd leaf from the right","additional":["setpos -352.00 1728.00 33.64","Aim at top of 3rd leaf from the right"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode99","aim":"MapAnnotationNode100","landing":"MapAnnotationNode101"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-4fa859f1-75e8-4099-8901-e900d2f5c24e","annotationId":"4fa859f1-75e8-4099-8901-e900d2f5c24e","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke A main\nCT Spawn 5","standingPosition":{"x":-512,"y":1696,"z":26.8372},"aim":{"pitch":-51.747154,"yaw":-137.195557,"roll":0},"aimMarkerPosition":{"x":-557.424377,"y":1653.930054,"z":167.210876},"landing":{"x":-2106.757324,"y":193.614441,"z":74.031258},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode102","aim":"MapAnnotationNode103","landing":"MapAnnotationNode104"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-c7f17475-e265-412d-97c7-04c6442662ce","annotationId":"c7f17475-e265-412d-97c7-04c6442662ce","mapId":"ancient","side":"CT","type":"Smoke","title":"Retake smoke donut","standingPosition":{"x":-607.270813,"y":1771.968628,"z":28.892628},"aim":{"pitch":-65.348236,"yaw":-119.431007,"roll":0},"aimMarkerPosition":{"x":-627.766174,"y":1735.641235,"z":181.992249},"landing":{"x":-1359.070312,"y":448.661377,"z":77.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front the red sign","aim":"Aim at tip of small leaf","additional":["Stand in front the red sign","Aim at tip of small leaf"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode111","aim":"MapAnnotationNode112","landing":"MapAnnotationNode113"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-94afafc2-ea76-4051-86dc-f516d2c92ab6","annotationId":"94afafc2-ea76-4051-86dc-f516d2c92ab6","mapId":"ancient","side":"CT","type":"Smoke","title":"Retake smoke A main","standingPosition":{"x":-66.03125,"y":1771.96875,"z":37.465809},"aim":{"pitch":-27.670424,"yaw":-147.494507,"roll":0},"aimMarkerPosition":{"x":-140.720261,"y":1724.376587,"z":145.465439},"landing":{"x":-2045.94458,"y":358.088043,"z":80.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner","aim":"Aim top right of the mountain\nW + Jump throw","additional":["Stand in corner","Aim top right of the mountain\nW + Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode114","aim":"MapAnnotationNode115","landing":"MapAnnotationNode116"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-0eb31b4c-c8fe-4386-998b-ee80d895e463","annotationId":"0eb31b4c-c8fe-4386-998b-ee80d895e463","mapId":"ancient","side":"CT","type":"Smoke","title":"Retake smoke ramp","standingPosition":{"x":1004.03125,"y":970.967102,"z":100.986099},"aim":{"pitch":0.5591,"yaw":-57.274643,"roll":0},"aimMarkerPosition":{"x":1058.089722,"y":886.843933,"z":163.144684},"landing":{"x":1234.501709,"y":-233.074661,"z":111.97287},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner of wall and stairs","aim":"Aim at tip of bottom leaf","additional":["Stand in corner of wall and stairs","Aim at tip of bottom leaf"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode117","aim":"MapAnnotationNode118","landing":"MapAnnotationNode119"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-0a66665d-1d19-4de4-bbdb-22d1c5dcca6f","annotationId":"0a66665d-1d19-4de4-bbdb-22d1c5dcca6f","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke donut","standingPosition":{"x":-520,"y":-2224,"z":-163.255737},"aim":{"pitch":-42.292629,"yaw":54.568794,"roll":0},"aimMarkerPosition":{"x":-477.116699,"y":-2163.726807,"z":-32.124008},"landing":{"x":-1354.76355,"y":335.269012,"z":89.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the side of the plank, not sensitive\nRun sideways with the back against the wall\nRun-JumpThrow when reaching corner of tower\nUse the annotation line as a reference\nThe end of the line has a spot to indicate where to throw.","additional":["Aim at the side of the plank, not sensitive\nRun sideways with the back against the wall\nRun-JumpThrow when reaching corner of tower\nUse the annotation line as a reference\nThe end of the line has a spot to indicate where to throw."],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode120","aim":"MapAnnotationNode121","landing":"MapAnnotationNode122"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-90330c18-208e-478d-ac7b-e9615aa64252","annotationId":"90330c18-208e-478d-ac7b-e9615aa64252","mapId":"ancient","side":"CT","type":"Smoke","title":"Retake cave smoke","standingPosition":{"x":1004.03125,"y":970.96814,"z":100.986053},"aim":{"pitch":-1.608341,"yaw":-116.203491,"roll":0},"aimMarkerPosition":{"x":959.892578,"y":881.280334,"z":166.927155},"landing":{"x":524.734558,"y":241.009903,"z":154.654755},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim where the two white bricks meet\nMiddle click jump throw","additional":["Aim where the two white bricks meet\nMiddle click jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode125","aim":"MapAnnotationNode126","landing":"MapAnnotationNode127"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-a1751a6d-749f-48f7-915a-4becc3c54273","annotationId":"a1751a6d-749f-48f7-915a-4becc3c54273","mapId":"ancient","side":"CT","type":"Molotov","title":"Retake molo B default","standingPosition":{"x":1004.061768,"y":970.968689,"z":100.985924},"aim":{"pitch":-21.827494,"yaw":-115.313995,"roll":0},"aimMarkerPosition":{"x":964.369324,"y":887.051697,"z":201.301636},"landing":{"x":703.559204,"y":16.671791,"z":197.826447},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at top right corner of the brick","additional":["Aim at top right corner of the brick"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode128","aim":"MapAnnotationNode129","landing":"MapAnnotationNode130"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-b9551e65-ca23-47e3-9ead-71eec1bf0b35","annotationId":"b9551e65-ca23-47e3-9ead-71eec1bf0b35","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke temple","standingPosition":{"x":-1984.031372,"y":291.969849,"z":88.03125},"aim":{"pitch":-11.708333,"yaw":63.729259,"roll":0},"aimMarkerPosition":{"x":-1940.690918,"y":379.77533,"z":172.164215},"landing":{"x":-1472.546509,"y":1125.56543,"z":106.091431},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode131","aim":"MapAnnotationNode132","landing":"MapAnnotationNode133"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-127cdc79-fd31-4b2d-95e1-b6802fce423d","annotationId":"127cdc79-fd31-4b2d-95e1-b6802fce423d","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke CT\nRed room entrance","standingPosition":{"x":-572.864441,"y":412.125214,"z":160.396088},"aim":{"pitch":-4.713445,"yaw":68.578537,"roll":0},"aimMarkerPosition":{"x":-536.465393,"y":504.902283,"z":232.088501},"landing":{"x":-236.780548,"y":1025.521973,"z":65.663048},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in the middle of the room\nMake sure your position does not expose you to CT spawn\nPosition is not sensitive","aim":"Aim at the bricks\nRun and throw when reaching the end of the bricks\nAs shown with a line annotation","additional":["Stand in the middle of the room\nMake sure your position does not expose you to CT spawn\nPosition is not sensitive","Aim at the bricks\nRun and throw when reaching the end of the bricks\nAs shown with a line annotation"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode134","aim":"MapAnnotationNode135","landing":"MapAnnotationNode136"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-5547a6d3-e280-4110-9351-10bf24e0fc8f","annotationId":"5547a6d3-e280-4110-9351-10bf24e0fc8f","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke B alley","standingPosition":{"x":-284.031372,"y":-806.031555,"z":37.400223},"aim":{"pitch":-64.123222,"yaw":78.716331,"roll":0},"aimMarkerPosition":{"x":-275.49176,"y":-763.231445,"z":187.275238},"landing":{"x":14.168371,"y":762.585388,"z":69.952209},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode139","aim":"MapAnnotationNode140","landing":"MapAnnotationNode141"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-f06dd3eb-d606-4a01-b397-d315fb42430f","annotationId":"f06dd3eb-d606-4a01-b397-d315fb42430f","mapId":"ancient","side":"T","type":"HE","title":"Nade B site","standingPosition":{"x":816.987366,"y":-859.540588,"z":63.337196},"aim":{"pitch":4.91697,"yaw":95.324539,"roll":0},"aimMarkerPosition":{"x":807.741821,"y":-760.338501,"z":109.455444},"landing":{"x":713.057922,"y":255.530228,"z":260.240845},"sourceTolerance":80,"sourceInstructions":{"standing":"Combine with spray","aim":"Not sensitive, make sure not to hit the rafters\nAnd to throw too low","additional":["Combine with spray","Not sensitive, make sure not to hit the rafters\nAnd to throw too low"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode147","aim":"MapAnnotationNode148","landing":"MapAnnotationNode149"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-b42fa496-01e7-4723-acdd-bdcf3abd4660","annotationId":"b42fa496-01e7-4723-acdd-bdcf3abd4660","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke heaven","standingPosition":{"x":-391.96875,"y":-2042.517334,"z":-153.664551},"aim":{"pitch":-19.360199,"yaw":82.765625,"roll":0},"aimMarkerPosition":{"x":-380.087982,"y":-1948.923096,"z":-56.781483},"landing":{"x":-172.727753,"y":-756.142517,"z":155.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"T spawn","aim":"T spawn","additional":["T spawn","T spawn"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode166","aim":"MapAnnotationNode167","landing":"MapAnnotationNode168"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-9a423745-563f-4baf-a985-6655c7f54f55","annotationId":"9a423745-563f-4baf-a985-6655c7f54f55","mapId":"ancient","side":"CT","type":"Smoke","title":"Smoke B Double doors","standingPosition":{"x":450.109924,"y":935.947571,"z":109.623932},"aim":{"pitch":-17.433109,"yaw":-49.596149,"roll":0},"aimMarkerPosition":{"x":511.949799,"y":863.295837,"z":202.801956},"landing":{"x":1062.208496,"y":-972.514343,"z":5.528252},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in front of the box, align with the center\n(Use the aim reticle on the box to align)","aim":"","additional":["Stand in front of the box, align with the center\n(Use the aim reticle on the box to align)"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode169","aim":"MapAnnotationNode170","landing":"MapAnnotationNode171"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-7139f19d-aebb-4b84-88aa-3202520d7e0b","annotationId":"7139f19d-aebb-4b84-88aa-3202520d7e0b","mapId":"ancient","side":"CT","type":"Flash","title":"Flash lane","standingPosition":{"x":744.885193,"y":497.203186,"z":129.652817},"aim":{"pitch":3.69369,"yaw":-95.658936,"roll":0},"aimMarkerPosition":{"x":735.045044,"y":397.897247,"z":186.171921},"landing":{"x":634.714355,"y":-614.673645,"z":353.614594},"sourceTolerance":80,"sourceInstructions":{"standing":"Not sensitive, stand clear of ramp in case of a push","aim":"Aim at left bottom corner of the toolbox","additional":["Not sensitive, stand clear of ramp in case of a push","Aim at left bottom corner of the toolbox"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode174","aim":"MapAnnotationNode175","landing":"MapAnnotationNode176"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-0c565216-9816-41fb-9d6a-78eea9bb73fe","annotationId":"0c565216-9816-41fb-9d6a-78eea9bb73fe","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke B alley","standingPosition":{"x":-775.967285,"y":-879.96875,"z":38.725098},"aim":{"pitch":-9.184993,"yaw":56.408638,"roll":0},"aimMarkerPosition":{"x":-721.350098,"y":-797.736328,"z":116.24968},"landing":{"x":-33.781925,"y":739.245728,"z":67.800705},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"","additional":["Wedge into corner"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode177","aim":"MapAnnotationNode178","landing":"MapAnnotationNode179"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-9f10b1f7-8a33-4878-a7c9-a009a9cfdfbe","annotationId":"9f10b1f7-8a33-4878-a7c9-a009a9cfdfbe","mapId":"ancient","side":"T","type":"Molotov","title":"Molo behind donut - run throw","standingPosition":{"x":-587.681641,"y":-341.999512,"z":58.766682},"aim":{"pitch":-8.448159,"yaw":158.403412,"roll":0},"aimMarkerPosition":{"x":-679.652588,"y":-305.59198,"z":133.624496},"landing":{"x":-1480.85498,"y":-134.652512,"z":99.812721},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode180","aim":"MapAnnotationNode181","landing":"MapAnnotationNode182"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-5897b383-cfa9-48e9-97cf-5644f9ea100c","annotationId":"5897b383-cfa9-48e9-97cf-5644f9ea100c","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke Cave","standingPosition":{"x":759.968628,"y":-1636.03125,"z":-59.131958},"aim":{"pitch":-29.304058,"yaw":102.133003,"roll":0},"aimMarkerPosition":{"x":741.640076,"y":-1550.775757,"z":41.557453},"landing":{"x":526.167786,"y":253.796997,"z":155.160904},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at tip of leaf","additional":["Aim at tip of leaf"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode183","aim":"MapAnnotationNode184","landing":"MapAnnotationNode185"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-1c07fe0a-bcba-4b52-8321-b4fc8927bd10","annotationId":"1c07fe0a-bcba-4b52-8321-b4fc8927bd10","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke donut","standingPosition":{"x":-735.968201,"y":-2135.96875,"z":-164.082764},"aim":{"pitch":-27.291473,"yaw":92.65329,"roll":0},"aimMarkerPosition":{"x":-740.082092,"y":-2047.195435,"z":-58.544769},"landing":{"x":-836.814697,"y":-251.65918,"z":80.338722},"sourceTolerance":80,"sourceInstructions":{"standing":"T Spawn","aim":"","additional":["T Spawn"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode186","aim":"MapAnnotationNode187","landing":"MapAnnotationNode188"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-c3b7b8f0-aaa4-4bef-be79-32599fbe4088","annotationId":"c3b7b8f0-aaa4-4bef-be79-32599fbe4088","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke Donut","standingPosition":{"x":-1935.130127,"y":-862.027954,"z":-0.882202},"aim":{"pitch":-32.010654,"yaw":74.62365,"roll":0},"aimMarkerPosition":{"x":-1912.645996,"y":-780.26825,"z":102.688293},"landing":{"x":-1285.22998,"y":349.239685,"z":89.319275},"sourceTolerance":80,"sourceInstructions":{"standing":"Outside A Main","aim":"","additional":["Outside A Main"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode189","aim":"MapAnnotationNode190","landing":"MapAnnotationNode191"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-f9b7fcae-cf91-452d-bb37-58173f343b91","annotationId":"f9b7fcae-cf91-452d-bb37-58173f343b91","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke CT","standingPosition":{"x":-990.96875,"y":-244.966858,"z":101.274399},"aim":{"pitch":-33.429947,"yaw":93.39296,"roll":0},"aimMarkerPosition":{"x":-995.907959,"y":-161.65715,"z":216.853607},"landing":{"x":-1098.715576,"y":946.909241,"z":60.342213},"sourceTolerance":80,"sourceInstructions":{"standing":"Outside Donut\nWedge into corner","aim":"","additional":["Outside Donut\nWedge into corner"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode192","aim":"MapAnnotationNode193","landing":"MapAnnotationNode194"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-ad260406-74b4-480f-a08a-1b804635d955","annotationId":"ad260406-74b4-480f-a08a-1b804635d955","mapId":"ancient","side":"T","type":"Smoke","title":"CT/HS Smoke","standingPosition":{"x":-1235.96875,"y":-1323.549194,"z":-19.510925},"aim":{"pitch":-32.312611,"yaw":82.972008,"roll":0},"aimMarkerPosition":{"x":-1225.628052,"y":-1239.6698,"z":96.84034},"landing":{"x":-1153.895752,"y":930.962097,"z":55.317043},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the end of the plank","additional":["Aim at the end of the plank"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode195","aim":"MapAnnotationNode196","landing":"MapAnnotationNode197"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-dc819954-ec82-460e-bb80-a8bee1a4e685","annotationId":"dc819954-ec82-460e-bb80-a8bee1a4e685","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke Short","standingPosition":{"x":1159.970703,"y":-919.189636,"z":9.031252},"aim":{"pitch":-39.336567,"yaw":113.030594,"roll":0},"aimMarkerPosition":{"x":1129.712158,"y":-848.01062,"z":132.16217},"landing":{"x":669.497864,"y":433.680481,"z":125.207817},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in the corner of the door","aim":"Put -1y on where the two buildings align, the y axis is not sensitive","additional":["Stand in the corner of the door","Put -1y on where the two buildings align, the y axis is not sensitive"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode198","aim":"MapAnnotationNode199","landing":"MapAnnotationNode200"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-b137d8cd-4cda-4f26-8ca2-a2e8e21a3e8b","annotationId":"b137d8cd-4cda-4f26-8ca2-a2e8e21a3e8b","mapId":"ancient","side":"T","type":"Molotov","title":"Molo Long","standingPosition":{"x":1159.972656,"y":-919.187012,"z":9.03125},"aim":{"pitch":-0.462712,"yaw":85.879639,"roll":0},"aimMarkerPosition":{"x":1167.157593,"y":-819.44873,"z":51.583405},"landing":{"x":1262.169556,"y":513.818054,"z":204.146744},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Align your crosshair of the middle right side of the 9 while crouched, jump throw while crouched","additional":["Align your crosshair of the middle right side of the 9 while crouched, jump throw while crouched"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode201","aim":"MapAnnotationNode202","landing":"MapAnnotationNode203"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-ancient-cec64b39-269d-41c3-aed2-0a4378114792","annotationId":"cec64b39-269d-41c3-aed2-0a4378114792","mapId":"ancient","side":"T","type":"Smoke","title":"Smoke Heaven","standingPosition":{"x":-392,"y":-2224,"z":-163.255737},"aim":{"pitch":-18.227037,"yaw":84.479347,"roll":0},"aimMarkerPosition":{"x":-382.862244,"y":-2129.458008,"z":-67.977417},"landing":{"x":-221.096176,"y":-807.024536,"z":154.355743},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_ancient/de_ancient.txt","nodes":{"position":"MapAnnotationNode204","aim":"MapAnnotationNode205","landing":"MapAnnotationNode206"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_ancient/de_ancient.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"5599c48c884926081a2b39d66974d2aac496251858978f4c2cd925d20ff1ae85","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-d3be97f7-567a-4cc1-9adb-c11e0fb70d99","annotationId":"d3be97f7-567a-4cc1-9adb-c11e0fb70d99","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke temple","standingPosition":{"x":1493.967896,"y":92.700645,"z":0.03125},"aim":{"pitch":-18.276974,"yaw":130.300415,"roll":0},"aimMarkerPosition":{"x":1432.554077,"y":165.118408,"z":95.232338},"landing":{"x":41.595615,"y":1522.731689,"z":-29.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner created by the rugs","aim":"","additional":["Wedge into corner created by the rugs"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-2eba213b-6286-4153-9ad5-36b3c668c489","annotationId":"2eba213b-6286-4153-9ad5-36b3c668c489","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke camera","standingPosition":{"x":365.96875,"y":424.03125,"z":-13.968811},"aim":{"pitch":2.079115,"yaw":118.204048,"roll":0},"aimMarkerPosition":{"x":318.738556,"y":512.10022,"z":37.001095},"landing":{"x":486.297333,"y":1250.233398,"z":-29.968742},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Running jump throw","additional":["Running jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-0c6571c8-f70b-47b5-887b-bfb695031f28","annotationId":"0c6571c8-f70b-47b5-887b-bfb695031f28","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke heaven","standingPosition":{"x":1149.968506,"y":610.03125,"z":-188.833618},"aim":{"pitch":-4.187597,"yaw":93.919449,"roll":0},"aimMarkerPosition":{"x":1143.151367,"y":709.531006,"z":-117.691391},"landing":{"x":1020.986572,"y":2263.612305,"z":-37.965336},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle of the create along the line","additional":["Middle of the create along the line"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-9dbe978c-a77c-4c21-a02d-2902bf8b19a3","annotationId":"9dbe978c-a77c-4c21-a02d-2902bf8b19a3","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke CT spawn and entry flash","standingPosition":{"x":-1267.945312,"y":-314.032043,"z":5.697535},"aim":{"pitch":-25.829075,"yaw":86.534378,"roll":0},"aimMarkerPosition":{"x":-1262.504272,"y":-224.186859,"z":111.501053},"landing":{"x":-1202.021729,"y":762.178589,"z":-1.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Left click for smoke\nMiddle click for flash","additional":["Wedge into corner","Left click for smoke\nMiddle click for flash"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-158dec05-edd5-4aeb-a6b6-71c9a47ed109","annotationId":"158dec05-edd5-4aeb-a6b6-71c9a47ed109","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke temple","standingPosition":{"x":-730.007202,"y":148.5009,"z":-95.96875},"aim":{"pitch":-28.669941,"yaw":116.947144,"roll":0},"aimMarkerPosition":{"x":-769.768066,"y":226.71434,"z":15.847572},"landing":{"x":-887.122253,"y":1060.772949,"z":37.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Must be able to see the side of the totem","aim":"Aim at the top of the doorway\nStep walk","additional":["Must be able to see the side of the totem","Aim at the top of the doorway\nStep walk"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-212021f6-df9d-4a52-9de3-93f8387a2ab0","annotationId":"212021f6-df9d-4a52-9de3-93f8387a2ab0","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke middle deep","standingPosition":{"x":-298.323242,"y":-1723.963135,"z":2.03125},"aim":{"pitch":-11.236129,"yaw":85.620819,"roll":0},"aimMarkerPosition":{"x":-290.83432,"y":-1626.166504,"z":85.356537},"landing":{"x":-93.3358,"y":903.678528,"z":2.266544},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step jump throw","additional":["Step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-e0084e22-f956-4867-8641-b63a5a0f6228","annotationId":"e0084e22-f956-4867-8641-b63a5a0f6228","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke connector","standingPosition":{"x":-296.97644,"y":-1723.965698,"z":2.03125},"aim":{"pitch":-17.106783,"yaw":96.659157,"roll":0},"aimMarkerPosition":{"x":-308.059662,"y":-1629.034668,"z":95.286591},"landing":{"x":-415.900299,"y":185.528915,"z":-117.965393},"sourceTolerance":80,"sourceInstructions":{"standing":"In front of middle column","aim":"","additional":["In front of middle column"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-32fdb010-fd84-465f-ba1b-b1e1a728d2f1","annotationId":"32fdb010-fd84-465f-ba1b-b1e1a728d2f1","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke water","standingPosition":{"x":-368.94519,"y":2360.894287,"z":24.031494},"aim":{"pitch":-31.417444,"yaw":-71.334373,"roll":0},"aimMarkerPosition":{"x":-341.625854,"y":2280.033203,"z":139.998337},"landing":{"x":474.383545,"y":134.866638,"z":-147.997009},"sourceTolerance":20,"sourceInstructions":{"standing":"Wedge into corner","aim":"Center underneath the protruding bricks","additional":["Wedge into corner","Center underneath the protruding bricks"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode21","aim":"MapAnnotationNode22","landing":"MapAnnotationNode23"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-cbdf1086-e8db-451f-887c-41b5d5a861ef","annotationId":"cbdf1086-e8db-451f-887c-41b5d5a861ef","mapId":"anubis","side":"CT","type":"Flash","title":"Flash A water","standingPosition":{"x":750.031555,"y":1399.853516,"z":-87.96875},"aim":{"pitch":-21.691635,"yaw":-30.66238,"roll":0},"aimMarkerPosition":{"x":829.958984,"y":1352.467041,"z":12.832359},"landing":{"x":972.235962,"y":1039.795898,"z":60.068233},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Bottom of arch in window\nLeft click throw","additional":["Bottom of arch in window\nLeft click throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-f9e422fa-3eca-4381-afa6-44bf09fe9f31","annotationId":"f9e422fa-3eca-4381-afa6-44bf09fe9f31","mapId":"anubis","side":"CT","type":"Flash","title":"Flash A water","standingPosition":{"x":1604.597046,"y":1446.479004,"z":-145.96875},"aim":{"pitch":-25.810118,"yaw":-90.933464,"roll":0},"aimMarkerPosition":{"x":1603.130493,"y":1356.466797,"z":-43.014919},"landing":{"x":1188.977417,"y":867.94635,"z":328.04364},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Running left click jump throw","additional":["Running left click jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-735b2635-08b9-45ae-b6be-0cbe01742ab3","annotationId":"735b2635-08b9-45ae-b6be-0cbe01742ab3","mapId":"anubis","side":"T","type":"Flash","title":"Flash A site","standingPosition":{"x":1550.651611,"y":944.969238,"z":-145.96759},"aim":{"pitch":-12.166065,"yaw":73.150681,"roll":0},"aimMarkerPosition":{"x":1578.986206,"y":1038.526733,"z":-66.113129},"landing":{"x":1597.375977,"y":1978.17981,"z":-72.378075},"sourceTolerance":80,"sourceInstructions":{"standing":"At the quarter circle, on the path","aim":"Aim at the edge of the column\nShould bounce behind the column so as to not self-flash\nRun all the way to the site entrance before throwing","additional":["At the quarter circle, on the path","Aim at the edge of the column\nShould bounce behind the column so as to not self-flash\nRun all the way to the site entrance before throwing"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-2aedf139-b04a-4e5f-9dbe-742957f187a8","annotationId":"2aedf139-b04a-4e5f-9dbe-742957f187a8","mapId":"anubis","side":"T","type":"Molotov","title":"Smoke Ninja & Molo connector","standingPosition":{"x":-1267.968628,"y":-314.58313,"z":5.707728},"aim":{"pitch":-26.639986,"yaw":89.520416,"roll":0},"aimMarkerPosition":{"x":-1267.220459,"y":-225.202118,"z":112.780746},"landing":{"x":-999.039917,"y":388.432922,"z":-3.361699},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-1196da28-79c7-44ee-a4a8-60809f0c996a","annotationId":"1196da28-79c7-44ee-a4a8-60809f0c996a","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke temple entrance to B","standingPosition":{"x":-1157.192993,"y":-425.579956,"z":56.03125},"aim":{"pitch":-41.33733,"yaw":80.039627,"roll":0},"aimMarkerPosition":{"x":-1144.206055,"y":-351.628235,"z":186.080353},"landing":{"x":-863.37616,"y":1180.371704,"z":37.03125},"sourceTolerance":90,"sourceInstructions":{"standing":"On top of the sewer exit - very forgiving","aim":"Middle of the 2nd 'tooth' from the right","additional":["On top of the sewer exit - very forgiving","Middle of the 2nd 'tooth' from the right"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-3eaa5b78-1abf-4950-9c45-459edda07430","annotationId":"3eaa5b78-1abf-4950-9c45-459edda07430","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke ninja","standingPosition":{"x":-1519.009277,"y":-146.966797,"z":32.03125},"aim":{"pitch":-54.623325,"yaw":48.434856,"roll":0},"aimMarkerPosition":{"x":-1480.597656,"y":-103.649704,"z":177.407593},"landing":{"x":-832.699219,"y":627.006348,"z":37.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner of box","aim":"Aim between wall and 1st tooth - middle jump throw","additional":["Stand in corner of box","Aim between wall and 1st tooth - middle jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode58","aim":"MapAnnotationNode59","landing":"MapAnnotationNode60"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-07f2e0c5-d9ab-4957-8e81-5ecd42355a7f","annotationId":"07f2e0c5-d9ab-4957-8e81-5ecd42355a7f","mapId":"anubis","side":"T","type":"Flash","title":"Mid flash","standingPosition":{"x":-735.600403,"y":-500.644653,"z":94.224113},"aim":{"pitch":-19.82659,"yaw":55.244892,"roll":0},"aimMarkerPosition":{"x":-681.972778,"y":-423.355164,"z":179.390198},"landing":{"x":-168.267883,"y":315.89856,"z":237.731354},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in small corner","aim":"Aim at corner of wall and small overhang","additional":["Stand in small corner","Aim at corner of wall and small overhang"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode61","aim":"MapAnnotationNode62","landing":"MapAnnotationNode63"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-5c6372a7-2478-4ae9-ac8e-5c2e80bc5652","annotationId":"5c6372a7-2478-4ae9-ac8e-5c2e80bc5652","mapId":"anubis","side":"T","type":"Molotov","title":"Molo deep mid","standingPosition":{"x":-784.275024,"y":-817.022278,"z":106.03125},"aim":{"pitch":-11.827353,"yaw":62.776279,"roll":0},"aimMarkerPosition":{"x":-739.499634,"y":-729.987427,"z":190.367584},"landing":{"x":-78.131691,"y":849.9729,"z":19.78949},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand right side of the square on the wall","aim":"Aim at bottom left on the window\nRun throw\nRelease after 2 steps","additional":["Stand right side of the square on the wall","Aim at bottom left on the window\nRun throw\nRelease after 2 steps"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode64","aim":"MapAnnotationNode65","landing":"MapAnnotationNode66"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-b02c38fa-61f5-4947-8abf-c671df076ada","annotationId":"b02c38fa-61f5-4947-8abf-c671df076ada","mapId":"anubis","side":"T","type":"Molotov","title":"Molo double doors","standingPosition":{"x":-252.625305,"y":-104.440918,"z":38.03125},"aim":{"pitch":10.933978,"yaw":42.10577,"roll":0},"aimMarkerPosition":{"x":-179.781311,"y":-38.607986,"z":83.063477},"landing":{"x":171.438263,"y":648.499207,"z":-1.116693},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on corner of the table\nNot sensitive\nTake care not to be visible from mid","aim":"Aim at middle of the bottom rail","additional":["Stand on corner of the table\nNot sensitive\nTake care not to be visible from mid","Aim at middle of the bottom rail"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode67","aim":"MapAnnotationNode68","landing":"MapAnnotationNode69"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-43e1d072-351c-40f2-9c86-6062a7b12580","annotationId":"43e1d072-351c-40f2-9c86-6062a7b12580","mapId":"anubis","side":"CT","type":"Smoke","title":"Retake smoke A main","standingPosition":{"x":141.030807,"y":732.051636,"z":-30.746521},"aim":{"pitch":-63.08276,"yaw":20.240501,"roll":0},"aimMarkerPosition":{"x":183.505676,"y":747.71344,"z":121.037392},"landing":{"x":1731.192749,"y":1318.412231,"z":-147.205124},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand in corner","aim":"Aim middle of the left side of the 3th blue V from the left","additional":["Stand in corner","Aim middle of the left side of the 3th blue V from the left"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode70","aim":"MapAnnotationNode71","landing":"MapAnnotationNode72"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-5b5dc074-1298-4a0d-bf22-6bb346e13d36","annotationId":"5b5dc074-1298-4a0d-bf22-6bb346e13d36","mapId":"anubis","side":"CT","type":"Smoke","title":"Retake smoke B main","standingPosition":{"x":-368.945129,"y":2360.894531,"z":24.031492},"aim":{"pitch":-29.607576,"yaw":-119.121651,"roll":0},"aimMarkerPosition":{"x":-411.257263,"y":2284.942139,"z":137.277069},"landing":{"x":-1600.978638,"y":384.544586,"z":2.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim top left side of the ruin","additional":["Aim top left side of the ruin"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode73","aim":"MapAnnotationNode74","landing":"MapAnnotationNode75"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-4fe8c79f-d82b-4492-aa01-95f7afdbcf60","annotationId":"4fe8c79f-d82b-4492-aa01-95f7afdbcf60","mapId":"anubis","side":"CT","type":"Smoke","title":"Retake smoke B connector","standingPosition":{"x":-368.945129,"y":2360.894531,"z":24.031494},"aim":{"pitch":-17.918884,"yaw":-126.566643,"roll":0},"aimMarkerPosition":{"x":-425.631042,"y":2284.473877,"z":118.638412},"landing":{"x":-854.936096,"y":300.717896,"z":-53.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at top leaf over the big plant\nRun jump throw\nRelease after 1 step","additional":["Aim at top leaf over the big plant\nRun jump throw\nRelease after 1 step"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode76","aim":"MapAnnotationNode77","landing":"MapAnnotationNode78"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-0057f7ed-fdcf-4c0d-ba8a-b14737b67f84","annotationId":"0057f7ed-fdcf-4c0d-ba8a-b14737b67f84","mapId":"anubis","side":"T","type":"Molotov","title":"Molo mid","standingPosition":{"x":-527.845825,"y":-340.03241,"z":66.03125},"aim":{"pitch":-16.220388,"yaw":63.70953,"roll":0},"aimMarkerPosition":{"x":-485.316711,"y":-253.945221,"z":157.964523},"landing":{"x":-29.869221,"y":718.621582,"z":62.93853},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode89","aim":"MapAnnotationNode90","landing":"MapAnnotationNode91"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-71d58f34-049d-4cc2-b57c-c9b55a694cf8","annotationId":"71d58f34-049d-4cc2-b57c-c9b55a694cf8","mapId":"anubis","side":"T","type":"Molotov","title":"Molo inside double doors","standingPosition":{"x":1495.967407,"y":451.96875,"z":0.03125},"aim":{"pitch":5.746458,"yaw":170.611664,"roll":0},"aimMarkerPosition":{"x":1397.802612,"y":468.19928,"z":53.858597},"landing":{"x":153.338715,"y":703.041931,"z":70.42247},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"","additional":["Wedge into corner"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode92","aim":"MapAnnotationNode93","landing":"MapAnnotationNode94"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-9b64d652-de60-4067-817f-10926e60b23d","annotationId":"9b64d652-de60-4067-817f-10926e60b23d","mapId":"anubis","side":"T","type":"Flash","title":"A self-flash","standingPosition":{"x":1251.96875,"y":934.967468,"z":-151.96875},"aim":{"pitch":8.958228,"yaw":-25.749363,"roll":0},"aimMarkerPosition":{"x":1340.94043,"y":892.053833,"z":-103.700188},"landing":{"x":1565.533691,"y":783.505066,"z":-55.758308},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Right click jump throw","additional":["Wedge into corner","Right click jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode95","aim":"MapAnnotationNode96","landing":"MapAnnotationNode97"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-ea64fdc1-6638-4b77-ae05-ae26fb1c6afa","annotationId":"ea64fdc1-6638-4b77-ae05-ae26fb1c6afa","mapId":"anubis","side":"T","type":"Flash","title":"A main flash from rugs","standingPosition":{"x":1330.893921,"y":-233.945679,"z":-23.96875},"aim":{"pitch":2.578255,"yaw":79.003662,"roll":0},"aimMarkerPosition":{"x":1349.949219,"y":-135.881104,"z":35.372864},"landing":{"x":1543.512085,"y":860.310242,"z":223.506104},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode98","aim":"MapAnnotationNode99","landing":"MapAnnotationNode100"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-861a01c1-47f8-4e36-a80b-efd8162e29e5","annotationId":"861a01c1-47f8-4e36-a80b-efd8162e29e5","mapId":"anubis","side":"T","type":"Flash","title":"Connector Flash","standingPosition":{"x":-526.638367,"y":-340.032837,"z":66.03125},"aim":{"pitch":-3.3417,"yaw":71.004028,"roll":0},"aimMarkerPosition":{"x":-494.143555,"y":-245.639465,"z":135.860306},"landing":{"x":-244.913849,"y":123.627487,"z":11.112478},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode101","aim":"MapAnnotationNode102","landing":"MapAnnotationNode103"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-90672e0a-cfcf-43aa-998d-db64f22a1895","annotationId":"90672e0a-cfcf-43aa-998d-db64f22a1895","mapId":"anubis","side":"T","type":"HE","title":"Nade Double doors","standingPosition":{"x":1004.626526,"y":-421.167114,"z":-31.96875},"aim":{"pitch":3.711507,"yaw":122.471405,"roll":0},"aimMarkerPosition":{"x":951.05127,"y":-336.978088,"z":25.397978},"landing":{"x":198.225403,"y":497.991913,"z":76.469116},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Running JumpThrow\nKeep aim at the spot while running\nRelease when reaching stairs","additional":["Running JumpThrow\nKeep aim at the spot while running\nRelease when reaching stairs"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode104","aim":"MapAnnotationNode105","landing":"MapAnnotationNode106"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-9b102fe8-b70a-418a-ba35-21f6c8c8b8b0","annotationId":"9b102fe8-b70a-418a-ba35-21f6c8c8b8b0","mapId":"anubis","side":"T","type":"Flash","title":"A site pop flash","standingPosition":{"x":732.031738,"y":615.96875,"z":-151.96875},"aim":{"pitch":-29.136648,"yaw":54.079697,"roll":0},"aimMarkerPosition":{"x":783.27417,"y":686.70459,"z":-39.439339},"landing":{"x":1265.910156,"y":1352.935425,"z":139.939316},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode107","aim":"MapAnnotationNode108","landing":"MapAnnotationNode109"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-36c49f1a-65be-4b0d-a3bf-cee32b57f413","annotationId":"36c49f1a-65be-4b0d-a3bf-cee32b57f413","mapId":"anubis","side":"CT","type":"Flash","title":"Connector Pop flash","standingPosition":{"x":-959.96875,"y":744.032593,"z":-1.96875},"aim":{"pitch":-28.628309,"yaw":-98.905914,"roll":0},"aimMarkerPosition":{"x":-973.557617,"y":657.316162,"z":107.783806},"landing":{"x":-805.270386,"y":301.828369,"z":-51.788517},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode110","aim":"MapAnnotationNode111","landing":"MapAnnotationNode112"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-6e2f62cd-a7f3-4eb9-a95c-e48dab682a69","annotationId":"6e2f62cd-a7f3-4eb9-a95c-e48dab682a69","mapId":"anubis","side":"CT","type":"Flash","title":"Mid pop flash CT","standingPosition":{"x":166.113022,"y":702.975586,"z":-28.96875},"aim":{"pitch":-28.320225,"yaw":-13.620417,"roll":0},"aimMarkerPosition":{"x":251.668335,"y":682.2453,"z":81.454216},"landing":{"x":-23.445105,"y":577.783508,"z":19.86882},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step throw","additional":["Step throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode113","aim":"MapAnnotationNode114","landing":"MapAnnotationNode115"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-599003a3-821c-42ff-b5f2-415228340524","annotationId":"599003a3-821c-42ff-b5f2-415228340524","mapId":"anubis","side":"T","type":"Flash","title":"Mid pop flash T","standingPosition":{"x":-16.533142,"y":440.033417,"z":16.03125},"aim":{"pitch":10.595419,"yaw":46.442299,"roll":0},"aimMarkerPosition":{"x":51.200447,"y":511.26593,"z":55.961327},"landing":{"x":223.309341,"y":692.267517,"z":101.349808},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Right click jump throw","additional":["Right click jump throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":["Source JumpThrow=false conflicts with instruction text requiring a jump throw. Manual review is required."],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode116","aim":"MapAnnotationNode117","landing":"MapAnnotationNode118"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-b3dbb419-e2b3-410b-883e-dc35f6ae1b70","annotationId":"b3dbb419-e2b3-410b-883e-dc35f6ae1b70","mapId":"anubis","side":"T","type":"Molotov","title":"Molo mid double doors","standingPosition":{"x":-760.672668,"y":-561.756104,"z":81.865341},"aim":{"pitch":11.594167,"yaw":42.491619,"roll":0},"aimMarkerPosition":{"x":-688.439636,"y":-495.586151,"z":125.29702},"landing":{"x":268.293549,"y":643.731079,"z":-31.968748},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at corner of carpet\nRunning JumpThrow","additional":["Aim at corner of carpet\nRunning JumpThrow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode119","aim":"MapAnnotationNode120","landing":"MapAnnotationNode121"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-1094ec72-ff17-45cb-b688-09210a54ae39","annotationId":"1094ec72-ff17-45cb-b688-09210a54ae39","mapId":"anubis","side":"T","type":"Flash","title":"Entry flash A","standingPosition":{"x":1149.96875,"y":610.031921,"z":-188.833618},"aim":{"pitch":-34.199219,"yaw":91.664078,"roll":0},"aimMarkerPosition":{"x":1147.566895,"y":692.705872,"z":-68.786407},"landing":{"x":1125.133667,"y":1465.210815,"z":172.443878},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode122","aim":"MapAnnotationNode123","landing":"MapAnnotationNode124"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-f3f1db0b-3790-4aa0-9957-979dcd2bf02e","annotationId":"f3f1db0b-3790-4aa0-9957-979dcd2bf02e","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke camera","standingPosition":{"x":1259.964966,"y":600.03125,"z":-115.96875},"aim":{"pitch":-21.219213,"yaw":125.511276,"roll":0},"aimMarkerPosition":{"x":1205.816772,"y":675.912659,"z":-15.935036},"landing":{"x":575.034424,"y":1275.90332,"z":-85.717201},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode125","aim":"MapAnnotationNode126","landing":"MapAnnotationNode127"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-010a3492-4f9d-45dd-911b-ff16ea7f611b","annotationId":"010a3492-4f9d-45dd-911b-ff16ea7f611b","mapId":"anubis","side":"CT","type":"Flash","title":"Flash B main","standingPosition":{"x":-1277.874023,"y":897.613953,"z":0.031249},"aim":{"pitch":-41.888557,"yaw":-87.071564,"roll":0},"aimMarkerPosition":{"x":-1274.070801,"y":823.266663,"z":130.639633},"landing":{"x":-1238.632324,"y":136.238892,"z":458.343506},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode128","aim":"MapAnnotationNode129","landing":"MapAnnotationNode130"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-2313cd83-2b3b-4990-81a8-66f3796f5dfa","annotationId":"2313cd83-2b3b-4990-81a8-66f3796f5dfa","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke window (waterfall)","standingPosition":{"x":166.03125,"y":639.963501,"z":-28.96875},"aim":{"pitch":-4.199532,"yaw":-145.154556,"roll":0},"aimMarkerPosition":{"x":84.181976,"y":582.980408,"z":41.329578},"landing":{"x":16.39089,"y":226.029877,"z":7.031242},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode131","aim":"MapAnnotationNode132","landing":"MapAnnotationNode133"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-7ead3326-2d33-4862-8597-85e20abd0970","annotationId":"7ead3326-2d33-4862-8597-85e20abd0970","mapId":"anubis","side":"CT","type":"HE","title":"Nade Siren","standingPosition":{"x":870.23999,"y":1313.721069,"z":-87.96875},"aim":{"pitch":-51.447544,"yaw":-87.149719,"roll":0},"aimMarkerPosition":{"x":873.338867,"y":1251.475586,"z":54.075043},"landing":{"x":891.278381,"y":891.195435,"z":-39.167133},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode134","aim":"MapAnnotationNode135","landing":"MapAnnotationNode136"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-ad6bba97-b3a3-45a1-9bc3-676a96a28e5e","annotationId":"ad6bba97-b3a3-45a1-9bc3-676a96a28e5e","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke inside connector","standingPosition":{"x":-1006.667419,"y":-1293.28833,"z":64.03125},"aim":{"pitch":-60.335159,"yaw":77.331795,"roll":0},"aimMarkerPosition":{"x":-995.813477,"y":-1245.00061,"z":214.764786},"landing":{"x":-673.588867,"y":302.678925,"z":-93.892128},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim slightly to the right of the corner","additional":["Aim slightly to the right of the corner"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode140","aim":"MapAnnotationNode141","landing":"MapAnnotationNode142"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-1ad52023-8f9a-4a0f-a618-3592c64a50cc","annotationId":"1ad52023-8f9a-4a0f-a618-3592c64a50cc","mapId":"anubis","side":"T","type":"Flash","title":"B pop flash","standingPosition":{"x":-874.967285,"y":-803.628113,"z":64.03125},"aim":{"pitch":-7.293149,"yaw":111.189384,"roll":0},"aimMarkerPosition":{"x":-910.820007,"y":-711.143372,"z":140.565842},"landing":{"x":-1289.463989,"y":260.650848,"z":492.493439},"sourceTolerance":80,"sourceInstructions":{"standing":"(Not sensitive)","aim":"Aim where the head is missing\nStep jump throw","additional":["(Not sensitive)","Aim where the head is missing\nStep jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode143","aim":"MapAnnotationNode144","landing":"MapAnnotationNode145"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-a2036f30-757f-48ae-a635-2ad9776905a0","annotationId":"a2036f30-757f-48ae-a635-2ad9776905a0","mapId":"anubis","side":"T","type":"Molotov","title":"Molo double doors","standingPosition":{"x":1451.968506,"y":571.96875,"z":0.03125},"aim":{"pitch":-19.909893,"yaw":177.110306,"roll":0},"aimMarkerPosition":{"x":1358.065186,"y":576.70874,"z":97.925446},"landing":{"x":253.995987,"y":609.116333,"z":31.988749},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode146","aim":"MapAnnotationNode147","landing":"MapAnnotationNode148"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-fa3ce01d-662b-4057-9497-641deaf333b9","annotationId":"fa3ce01d-662b-4057-9497-641deaf333b9","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke connector","standingPosition":{"x":837.971069,"y":-763.968689,"z":-11.96875},"aim":{"pitch":-13.705934,"yaw":151.88826,"roll":0},"aimMarkerPosition":{"x":752.279663,"y":-718.191162,"z":75.565125},"landing":{"x":-594.286499,"y":171.241302,"z":-93.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode149","aim":"MapAnnotationNode150","landing":"MapAnnotationNode151"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-1e1ff7cb-13a5-45c3-991a-ddef91360289","annotationId":"1e1ff7cb-13a5-45c3-991a-ddef91360289","mapId":"anubis","side":"T","type":"Flash","title":"Pop flash A main","standingPosition":{"x":736.03418,"y":460.010376,"z":-151.96875},"aim":{"pitch":-8.040938,"yaw":33.52821,"roll":0},"aimMarkerPosition":{"x":818.57605,"y":514.701965,"z":-92.140694},"landing":{"x":1572.735474,"y":1012.098389,"z":-128.489594},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Crouch","additional":["Crouch"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode152","aim":"MapAnnotationNode153","landing":"MapAnnotationNode154"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-967c1297-9d3f-481b-acb5-4e9ed9a49988","annotationId":"967c1297-9d3f-481b-acb5-4e9ed9a49988","mapId":"anubis","side":"T","type":"Flash","title":"Flash A entry","standingPosition":{"x":736.034363,"y":460.009827,"z":-151.96875},"aim":{"pitch":-0.142952,"yaw":60.682297,"roll":0},"aimMarkerPosition":{"x":784.99939,"y":547.201355,"z":-87.879257},"landing":{"x":1277.546143,"y":1424.280273,"z":153.458221},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode155","aim":"MapAnnotationNode156","landing":"MapAnnotationNode157"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-2a8af77e-f76d-4d0f-b850-5a48be782ace","annotationId":"2a8af77e-f76d-4d0f-b850-5a48be782ace","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke temple from rugs","standingPosition":{"x":1487.968384,"y":479.679138,"z":0.03125},"aim":{"pitch":-31.85844,"yaw":169.207779,"roll":0},"aimMarkerPosition":{"x":1404.535156,"y":495.58313,"z":116.653488},"landing":{"x":-878.505188,"y":930.776672,"z":37.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode158","aim":"MapAnnotationNode159","landing":"MapAnnotationNode160"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-15e5771c-288a-487d-b1bd-726459b3072c","annotationId":"15e5771c-288a-487d-b1bd-726459b3072c","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke temple","standingPosition":{"x":-605.02179,"y":-630.977356,"z":64.03125},"aim":{"pitch":-38.730591,"yaw":72.027977,"roll":0},"aimMarkerPosition":{"x":-580.951843,"y":-556.773926,"z":190.437164},"landing":{"x":158.676987,"y":1517.789429,"z":-29.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner in front of sign","aim":"","additional":["Wedge into corner in front of sign"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode161","aim":"MapAnnotationNode162","landing":"MapAnnotationNode163"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-df3790c1-a56a-4899-94eb-75f5a04b631e","annotationId":"df3790c1-a56a-4899-94eb-75f5a04b631e","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke T stairs","standingPosition":{"x":-543.176331,"y":2270.971191,"z":24.03125},"aim":{"pitch":-29.426617,"yaw":-60.923931,"roll":0},"aimMarkerPosition":{"x":-500.848999,"y":2194.849121,"z":137.00209},"landing":{"x":763.280579,"y":75.729607,"z":-149.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"","additional":["Wedge into corner"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode164","aim":"MapAnnotationNode165","landing":"MapAnnotationNode166"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-55cf1683-6e13-42ce-99e3-0a060b20287a","annotationId":"55cf1683-6e13-42ce-99e3-0a060b20287a","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke/Molo Rugs","standingPosition":{"x":750.03302,"y":1396.30249,"z":-87.96875},"aim":{"pitch":-23.957842,"yaw":-59.20491,"roll":0},"aimMarkerPosition":{"x":796.819031,"y":1317.802856,"z":16.47768},"landing":{"x":1386.182495,"y":564.342834,"z":2.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode167","aim":"MapAnnotationNode168","landing":"MapAnnotationNode169"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-6ed4ce94-7c62-4b03-b6ec-6eae43bd53d6","annotationId":"6ed4ce94-7c62-4b03-b6ec-6eae43bd53d6","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke T Stairs","standingPosition":{"x":-607.967346,"y":2270.967285,"z":24.03125},"aim":{"pitch":-29.006826,"yaw":-58.952019,"roll":0},"aimMarkerPosition":{"x":-562.861633,"y":2196.040527,"z":136.362625},"landing":{"x":820.465393,"y":-106.000412,"z":-93.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode170","aim":"MapAnnotationNode171","landing":"MapAnnotationNode172"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-f1ba6701-0bec-445a-8011-90071c1ff0b1","annotationId":"f1ba6701-0bec-445a-8011-90071c1ff0b1","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke Rugs","standingPosition":{"x":-607.968689,"y":2270.96875,"z":24.03125},"aim":{"pitch":-26.586586,"yaw":-43.332367,"roll":0},"aimMarkerPosition":{"x":-542.921631,"y":2209.602051,"z":114.626221},"landing":{"x":1396.866821,"y":571.081238,"z":2.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Crouched, take several steps\nJump throw","additional":["Crouched, take several steps\nJump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode173","aim":"MapAnnotationNode174","landing":"MapAnnotationNode175"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-6443f4bd-c2d5-468e-b454-5c3df28cb548","annotationId":"6443f4bd-c2d5-468e-b454-5c3df28cb548","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke inside conn","standingPosition":{"x":-347.96875,"y":-1315.675537,"z":2.421142},"aim":{"pitch":-60.040257,"yaw":100.246689,"roll":0},"aimMarkerPosition":{"x":-354.328979,"y":-1280.491455,"z":127.900208},"landing":{"x":-700.700623,"y":179.778595,"z":-93.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the bottom right corner of the smudge","additional":["Aim at the bottom right corner of the smudge"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode176","aim":"MapAnnotationNode177","landing":"MapAnnotationNode178"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-1a65b49c-c1cc-4bb1-827f-1c032aa13c20","annotationId":"1a65b49c-c1cc-4bb1-827f-1c032aa13c20","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke inside conn","standingPosition":{"x":-416,"y":-1696,"z":2.03125},"aim":{"pitch":-40.931767,"yaw":97.254456,"roll":0},"aimMarkerPosition":{"x":-425.540039,"y":-1621.055664,"z":131.387222},"landing":{"x":-768.774597,"y":74.641449,"z":-93.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Spawn 11","aim":"Align with -1y","additional":["Spawn 11","Align with -1y"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode179","aim":"MapAnnotationNode180","landing":"MapAnnotationNode181"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-c858fe03-d0fb-41a1-aa9d-2b31c4056a12","annotationId":"c858fe03-d0fb-41a1-aa9d-2b31c4056a12","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke inside conn 2","standingPosition":{"x":-347.965942,"y":-1315.617676,"z":2.814609},"aim":{"pitch":-65.087471,"yaw":103.288544,"roll":0},"aimMarkerPosition":{"x":-357.648224,"y":-1274.62207,"z":156.566437},"landing":{"x":-718.688782,"y":38.968792,"z":-83.654732},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step jump throw","additional":["Step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode182","aim":"MapAnnotationNode183","landing":"MapAnnotationNode184"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-2a95b038-2e29-45d6-8cd9-0e9f4fef6724","annotationId":"2a95b038-2e29-45d6-8cd9-0e9f4fef6724","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke Conn from CT","standingPosition":{"x":-1063.23645,"y":1999.05896,"z":48.03125},"aim":{"pitch":-25.058027,"yaw":-99.219742,"roll":0},"aimMarkerPosition":{"x":-1077.75061,"y":1909.641357,"z":154.224838},"landing":{"x":-921.329651,"y":311.161346,"z":-53.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Align with chip on wall","aim":"Aim at bottom left of triangle","additional":["Align with chip on wall","Aim at bottom left of triangle"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode185","aim":"MapAnnotationNode186","landing":"MapAnnotationNode187"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-dcaf6d87-41e1-41a7-b946-e09748d13a2b","annotationId":"dcaf6d87-41e1-41a7-b946-e09748d13a2b","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke B Main from CT","standingPosition":{"x":-995.680176,"y":1860.734131,"z":48.03125},"aim":{"pitch":-64.552322,"yaw":-111.224251,"roll":0},"aimMarkerPosition":{"x":-1004.322815,"y":1838.47998,"z":162.040894},"landing":{"x":-1580.185547,"y":352.804443,"z":2.033468},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode188","aim":"MapAnnotationNode189","landing":"MapAnnotationNode190"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-fdb89c3f-2719-428a-b5be-649cad5c21ee","annotationId":"fdb89c3f-2719-428a-b5be-649cad5c21ee","mapId":"anubis","side":"CT","type":"Flash","title":"Flash Window to B Main","standingPosition":{"x":-843.83429,"y":946.542847,"z":35.031246},"aim":{"pitch":-8.676607,"yaw":-117.083618,"roll":0},"aimMarkerPosition":{"x":-888.842285,"y":858.527466,"z":113.95697},"landing":{"x":-1753.691895,"y":276.887207,"z":497.120422},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode191","aim":"MapAnnotationNode192","landing":"MapAnnotationNode193"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-07add427-33c4-43e3-abb4-ab6d8272fa25","annotationId":"07add427-33c4-43e3-abb4-ab6d8272fa25","mapId":"anubis","side":"CT","type":"Flash","title":"Flash over B Main","standingPosition":{"x":-843.594116,"y":946.553406,"z":35.165646},"aim":{"pitch":-9.424627,"yaw":-143.712173,"roll":0},"aimMarkerPosition":{"x":-923.111511,"y":888.168091,"z":115.246246},"landing":{"x":-1330.983765,"y":-6.093643,"z":485.328949},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step jump throw","additional":["Step jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode194","aim":"MapAnnotationNode195","landing":"MapAnnotationNode196"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-6db9751f-db31-43ff-9f4e-e160b2eb5327","annotationId":"6db9751f-db31-43ff-9f4e-e160b2eb5327","mapId":"anubis","side":"CT","type":"Flash","title":"Flash out B Main","standingPosition":{"x":-1106.067383,"y":1288.328369,"z":4.209559},"aim":{"pitch":5.086712,"yaw":-113.819016,"roll":0},"aimMarkerPosition":{"x":-1146.293213,"y":1197.206055,"z":56.004917},"landing":{"x":-1583.716553,"y":207.177277,"z":195.735779},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step Jump Throw","additional":["Step Jump Throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode197","aim":"MapAnnotationNode198","landing":"MapAnnotationNode199"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-bd1d9a5b-6625-4f6e-8494-c7b9e77399de","annotationId":"bd1d9a5b-6625-4f6e-8494-c7b9e77399de","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke A Main from Beach","standingPosition":{"x":540.646667,"y":2065.638428,"z":-54.250061},"aim":{"pitch":-19.946079,"yaw":-27.362062,"roll":0},"aimMarkerPosition":{"x":624.131226,"y":2022.434326,"z":32.668312},"landing":{"x":1664.900024,"y":1363.795288,"z":-149.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on correct step","aim":"","additional":["Stand on correct step"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode200","aim":"MapAnnotationNode201","landing":"MapAnnotationNode202"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-290345ca-ce39-4eaf-b820-80a700f72c5d","annotationId":"290345ca-ce39-4eaf-b820-80a700f72c5d","mapId":"anubis","side":"CT","type":"Flash","title":"Flash Camera from Mid","standingPosition":{"x":94.040207,"y":1175.35376,"z":-31.96875},"aim":{"pitch":16.519983,"yaw":14.14036,"roll":0},"aimMarkerPosition":{"x":187.007355,"y":1198.775146,"z":3.436275},"landing":{"x":772.982422,"y":1343.90271,"z":15.533954},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step Walk Through (approx 3 steps)\nRight Click Jump Throw","additional":["Step Walk Through (approx 3 steps)\nRight Click Jump Throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode209","aim":"MapAnnotationNode210","landing":"MapAnnotationNode211"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-3e1efbfb-40b7-435f-a6a6-fd0a9afa8e21","annotationId":"3e1efbfb-40b7-435f-a6a6-fd0a9afa8e21","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke House from T Spawn","standingPosition":{"x":23.969147,"y":-1744.96875,"z":6.03125},"aim":{"pitch":-12.847915,"yaw":92.238708,"roll":0},"aimMarkerPosition":{"x":20.16066,"y":-1647.546753,"z":90.625168},"landing":{"x":-76.138817,"y":815.825684,"z":2.266544},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode212","aim":"MapAnnotationNode213","landing":"MapAnnotationNode214"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-855a4a36-b686-402b-abec-5e91ebb19f83","annotationId":"855a4a36-b686-402b-abec-5e91ebb19f83","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke House from Left Mid","standingPosition":{"x":-605.027649,"y":-630.971497,"z":64.03125},"aim":{"pitch":-13.826964,"yaw":65.560715,"roll":0},"aimMarkerPosition":{"x":-564.853699,"y":-542.569641,"z":151.930298},"landing":{"x":-29.363272,"y":752.731384,"z":2.266544},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle-Click Jump Throw","additional":["Middle-Click Jump Throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode215","aim":"MapAnnotationNode216","landing":"MapAnnotationNode217"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-5dfe6779-8527-4a22-9dff-6c06134d2554","annotationId":"5dfe6779-8527-4a22-9dff-6c06134d2554","mapId":"anubis","side":"T","type":"Molotov","title":"Molo Mid Double Doors from Left Mid","standingPosition":{"x":-259.721252,"y":-110.03125,"z":0.266542},"aim":{"pitch":9.284112,"yaw":42.53809,"roll":0},"aimMarkerPosition":{"x":-187.003662,"y":-43.308853,"z":48.133522},"landing":{"x":127.26561,"y":624.803467,"z":-14.300752},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step Jump throw","additional":["Step Jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode218","aim":"MapAnnotationNode219","landing":"MapAnnotationNode220"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-82c2472b-3e5c-4cf1-b105-1174c188aa2c","annotationId":"82c2472b-3e5c-4cf1-b105-1174c188aa2c","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Camera from Left Mid","standingPosition":{"x":-605.042725,"y":-630.952942,"z":64.03125},"aim":{"pitch":-12.572878,"yaw":61.922997,"roll":0},"aimMarkerPosition":{"x":-559.105591,"y":-544.837158,"z":149.799377},"landing":{"x":535.705811,"y":1288.397095,"z":-53.968742},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Align with teeth on the right and edge of building in the background","additional":["Align with teeth on the right and edge of building in the background"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode221","aim":"MapAnnotationNode222","landing":"MapAnnotationNode223"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-0fb6e410-5fc5-427d-b09d-60f3282ac9bf","annotationId":"0fb6e410-5fc5-427d-b09d-60f3282ac9bf","mapId":"anubis","side":"T","type":"Flash","title":"Flash Double Doors from Left Mid","standingPosition":{"x":-367.307922,"y":-424.92041,"z":0.266544},"aim":{"pitch":-18.557058,"yaw":66.542984,"roll":0},"aimMarkerPosition":{"x":-329.571442,"y":-337.954132,"z":96.088135},"landing":{"x":-42.030262,"y":433.27771,"z":155.857132},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode224","aim":"MapAnnotationNode225","landing":"MapAnnotationNode226"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-39aeb840-014c-40ab-9bed-ebbb37ad7345","annotationId":"39aeb840-014c-40ab-9bed-ebbb37ad7345","mapId":"anubis","side":"T","type":"Molotov","title":"Molo Camera from Rugs","standingPosition":{"x":1493.943359,"y":269.249084,"z":20.03125},"aim":{"pitch":-10.373024,"yaw":125.437561,"roll":0},"aimMarkerPosition":{"x":1436.909424,"y":349.392273,"z":102.03685},"landing":{"x":575.646667,"y":1280.255737,"z":-48.559097},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Running Throw","additional":["Running Throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode227","aim":"MapAnnotationNode228","landing":"MapAnnotationNode229"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-d02d3d40-3099-43ca-91e9-f84bd66ee266","annotationId":"d02d3d40-3099-43ca-91e9-f84bd66ee266","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Connector from T Spawn (truck)","standingPosition":{"x":80.03125,"y":-1759.949951,"z":2.03125},"aim":{"pitch":-17.897036,"yaw":103.368942,"roll":0},"aimMarkerPosition":{"x":58.028061,"y":-1667.367676,"z":96.241501},"landing":{"x":-492.582062,"y":98.768753,"z":-117.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Align with window frame and corner of roof","additional":["Wedge into corner","Align with window frame and corner of roof"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode230","aim":"MapAnnotationNode231","landing":"MapAnnotationNode232"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-36bd50bd-538d-45af-87cc-b57fe6fa8d93","annotationId":"36bd50bd-538d-45af-87cc-b57fe6fa8d93","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Connector from T Spawn (pillar)","standingPosition":{"x":-568.044434,"y":-1279.03125,"z":2.03125},"aim":{"pitch":-30.36013,"yaw":94.671646,"roll":0},"aimMarkerPosition":{"x":-575.072083,"y":-1193.031372,"z":116.574593},"landing":{"x":-638.870361,"y":42.03125,"z":-93.479767},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Align with the black spot on the pillar","additional":["Align with the black spot on the pillar"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode233","aim":"MapAnnotationNode234","landing":"MapAnnotationNode235"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-42649c54-da88-4254-9546-1eca82f2dcea","annotationId":"42649c54-da88-4254-9546-1eca82f2dcea","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke B Main Lurk (Left of T Spawn)","standingPosition":{"x":-954.016052,"y":-1302.079224,"z":65.630249},"aim":{"pitch":-18.348047,"yaw":101.206184,"roll":0},"aimMarkerPosition":{"x":-972.462097,"y":-1208.972656,"z":160.077606},"landing":{"x":-1386.28894,"y":771.847473,"z":38.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Not sensitive\nLineup works when you see the 2nd tooth","aim":"Aim at 2nd tooth, running middle click","additional":["Not sensitive\nLineup works when you see the 2nd tooth","Aim at 2nd tooth, running middle click"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode236","aim":"MapAnnotationNode237","landing":"MapAnnotationNode238"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-106442b3-8dc6-4898-8b38-edc784c2f181","annotationId":"106442b3-8dc6-4898-8b38-edc784c2f181","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke CT @ B (Left of T Spawn)","standingPosition":{"x":-938.394226,"y":-1363.419556,"z":66.03125},"aim":{"pitch":-11.880025,"yaw":99.787025,"roll":0},"aimMarkerPosition":{"x":-955.028748,"y":-1266.985596,"z":150.226501},"landing":{"x":-1176.136719,"y":786.866455,"z":-1.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode239","aim":"MapAnnotationNode240","landing":"MapAnnotationNode241"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-869805cc-17d3-4ca5-9c02-0c0b5d9cd1cb","annotationId":"869805cc-17d3-4ca5-9c02-0c0b5d9cd1cb","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Right B Site / Ninja from B Main","standingPosition":{"x":-1321.065186,"y":-491.941162,"z":96.03125},"aim":{"pitch":-13.046019,"yaw":66.264389,"roll":0},"aimMarkerPosition":{"x":-1281.852417,"y":-402.762665,"z":182.604614},"landing":{"x":-807.526184,"y":603.056702,"z":37.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Middle Click Jump Throw","additional":["Wedge into corner","Middle Click Jump Throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode242","aim":"MapAnnotationNode243","landing":"MapAnnotationNode244"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-d37a6962-9405-4494-9c91-c48141ef4f54","annotationId":"d37a6962-9405-4494-9c91-c48141ef4f54","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Temple from B Main","standingPosition":{"x":-1106.79834,"y":-473.941467,"z":56.03125},"aim":{"pitch":-39.77597,"yaw":83.468277,"roll":0},"aimMarkerPosition":{"x":-1098.055786,"y":-397.585144,"z":184.009979},"landing":{"x":-903.335388,"y":1190.235107,"z":37.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode245","aim":"MapAnnotationNode246","landing":"MapAnnotationNode247"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-a6bc53aa-08db-4410-ac4d-60a148868a31","annotationId":"a6bc53aa-08db-4410-ac4d-60a148868a31","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Temple from B Main Platform","standingPosition":{"x":-1176.592529,"y":-531.464722,"z":96.031242},"aim":{"pitch":-34.682877,"yaw":81.257332,"roll":0},"aimMarkerPosition":{"x":-1164.093628,"y":-450.188751,"z":216.934631},"landing":{"x":-893.460205,"y":1201.595337,"z":37.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode248","aim":"MapAnnotationNode249","landing":"MapAnnotationNode250"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-b52cda92-040f-4bf3-91ce-e6d853b70719","annotationId":"b52cda92-040f-4bf3-91ce-e6d853b70719","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke CT @ B from B Main Platform","standingPosition":{"x":-1305.362915,"y":-502.548462,"z":96.031242},"aim":{"pitch":-35.375828,"yaw":80.685799,"roll":0},"aimMarkerPosition":{"x":-1292.16626,"y":-422.086273,"z":217.924973},"landing":{"x":-1237.1073,"y":969.168823,"z":2.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode251","aim":"MapAnnotationNode252","landing":"MapAnnotationNode253"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-ed5a3b5e-8b66-405c-b87b-d297f4456db7","annotationId":"ed5a3b5e-8b66-405c-b87b-d297f4456db7","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke A Main from T Spawn (Right side)","standingPosition":{"x":743.96875,"y":-1243.942017,"z":46.002041},"aim":{"pitch":-32.240776,"yaw":70.455589,"roll":0},"aimMarkerPosition":{"x":764.685791,"y":-1185.582764,"z":148.087357},"landing":{"x":1684.659302,"y":1405.990234,"z":-149.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode254","aim":"MapAnnotationNode255","landing":"MapAnnotationNode256"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-431af76a-cf8c-4ff5-bdb1-3516cf34e08b","annotationId":"431af76a-cf8c-4ff5-bdb1-3516cf34e08b","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke A Main from outside Main","standingPosition":{"x":1005.244324,"y":924.539978,"z":-188.833618},"aim":{"pitch":-23.022858,"yaw":-5.9394,"roll":0},"aimMarkerPosition":{"x":1096.785156,"y":915.016541,"z":-85.723785},"landing":{"x":1613.119995,"y":1413.891113,"z":-149.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step Throw","additional":["Step Throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode257","aim":"MapAnnotationNode258","landing":"MapAnnotationNode259"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-7acda03a-e402-4fc6-ada6-53e6be0eb92b","annotationId":"7acda03a-e402-4fc6-ada6-53e6be0eb92b","mapId":"anubis","side":"T","type":"Molotov","title":"Molo A Main from outside Main","standingPosition":{"x":1004.610352,"y":923.750854,"z":-188.833618},"aim":{"pitch":-22.208855,"yaw":-10.449392,"roll":0},"aimMarkerPosition":{"x":1095.656128,"y":906.959656,"z":-87.035233},"landing":{"x":1536.103638,"y":1181.380859,"z":-142.900848},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Step Throw","additional":["Step Throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode260","aim":"MapAnnotationNode261","landing":"MapAnnotationNode262"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-17ffc8a4-ded8-46ae-98c2-2221f97d0ab7","annotationId":"17ffc8a4-ded8-46ae-98c2-2221f97d0ab7","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Heaven from outside A Main","standingPosition":{"x":744.13855,"y":625.949585,"z":-151.96875},"aim":{"pitch":-0.252845,"yaw":79.049545,"roll":0},"aimMarkerPosition":{"x":763.134399,"y":724.127808,"z":-87.527451},"landing":{"x":952.299561,"y":2267.783203,"z":-37.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode263","aim":"MapAnnotationNode264","landing":"MapAnnotationNode265"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-1f027bc5-5107-423b-bbb5-fbe7e2f16ebe","annotationId":"1f027bc5-5107-423b-bbb5-fbe7e2f16ebe","mapId":"anubis","side":"T","type":"Flash","title":"Flash A Site from outside Main","standingPosition":{"x":732.042725,"y":520.03125,"z":-151.96875},"aim":{"pitch":0.154147,"yaw":59.029488,"roll":0},"aimMarkerPosition":{"x":783.502197,"y":605.77417,"z":-88.237785},"landing":{"x":1301.665894,"y":1469.147583,"z":147.713287},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode266","aim":"MapAnnotationNode267","landing":"MapAnnotationNode268"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-ac792a1c-e25c-4808-9c32-f428c8217b8f","annotationId":"ac792a1c-e25c-4808-9c32-f428c8217b8f","mapId":"anubis","side":"T","type":"Smoke","title":"Smoke Camera from outside A Main","standingPosition":{"x":1253.955566,"y":802.03125,"z":-151.96875},"aim":{"pitch":0.473219,"yaw":136.777496,"roll":0},"aimMarkerPosition":{"x":1181.088135,"y":870.512268,"z":-88.794662},"landing":{"x":578.951599,"y":1327.983521,"z":-85.71875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle click jump throw","additional":["Middle click jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode272","aim":"MapAnnotationNode273","landing":"MapAnnotationNode274"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-b5fdb62b-b2d8-45a5-a185-72d61b9a0660","annotationId":"b5fdb62b-b2d8-45a5-a185-72d61b9a0660","mapId":"anubis","side":"CT","type":"Smoke","title":"Smoke A Main from CT Spawn","standingPosition":{"x":-607.925354,"y":2270.959961,"z":24.03125},"aim":{"pitch":-16.13678,"yaw":-37.077274,"roll":0},"aimMarkerPosition":{"x":-531.286377,"y":2213.046143,"z":115.824387},"landing":{"x":1319.838867,"y":824.364807,"z":-149.96875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode275","aim":"MapAnnotationNode276","landing":"MapAnnotationNode277"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-anubis-e4e38835-6cf2-427b-9859-c9e804a46a16","annotationId":"e4e38835-6cf2-427b-9859-c9e804a46a16","mapId":"anubis","side":"T","type":"Molotov","title":"Molo A Headshot from water","standingPosition":{"x":1149.96875,"y":610.051514,"z":-188.833618},"aim":{"pitch":1.124648,"yaw":115.270645,"roll":0},"aimMarkerPosition":{"x":1107.287476,"y":700.464233,"z":-126.796371},"landing":{"x":798.99353,"y":1702.517212,"z":12.283487},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_anubis/de_anubis.txt","nodes":{"position":"MapAnnotationNode278","aim":"MapAnnotationNode279","landing":"MapAnnotationNode280"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_anubis/de_anubis.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"9ab829848def7db7772654894f2a7483915ea7babb4e8fe7c93850395db13715","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-3856286b-c313-4802-b7d8-ae91c25707a7","annotationId":"3856286b-c313-4802-b7d8-ae91c25707a7","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke short","standingPosition":{"x":-1418.031982,"y":-1599.96875,"z":11489.03125},"aim":{"pitch":-80.774063,"yaw":54.466778,"roll":0},"aimMarkerPosition":{"x":-1408.714111,"y":-1586.921631,"z":11651.577148},"landing":{"x":-1078.831787,"y":-1125.007324,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode0","aim":"MapAnnotationNode1","landing":"MapAnnotationNode2"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-b319ac4a-7326-4d55-a047-5b601f842407","annotationId":"b319ac4a-7326-4d55-a047-5b601f842407","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke connector","standingPosition":{"x":-656.032776,"y":-1016.96875,"z":11648.03125},"aim":{"pitch":-58.04451,"yaw":110.836494,"roll":0},"aimMarkerPosition":{"x":-674.85907,"y":-967.504272,"z":11795.447266},"landing":{"x":-865.001465,"y":-467.596191,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Middle click throw","additional":["Middle click throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode3","aim":"MapAnnotationNode4","landing":"MapAnnotationNode5"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-de08edb7-758c-495a-9edf-c371a3fad602","annotationId":"de08edb7-758c-495a-9edf-c371a3fad602","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke headshot","standingPosition":{"x":-876.966309,"y":-929.487427,"z":11628.404297},"aim":{"pitch":-70.993507,"yaw":36.576462,"roll":0},"aimMarkerPosition":{"x":-850.812561,"y":-910.080566,"z":11783.279297},"landing":{"x":-164.982483,"y":-401.181274,"z":11883.53125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode6","aim":"MapAnnotationNode7","landing":"MapAnnotationNode8"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-834c9a1d-725c-4cae-b7e3-66e836ce56c8","annotationId":"834c9a1d-725c-4cae-b7e3-66e836ce56c8","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke left of site","standingPosition":{"x":-656.03186,"y":-1016.96875,"z":11648.03125},"aim":{"pitch":-6.386114,"yaw":142.863297,"roll":0},"aimMarkerPosition":{"x":-735.25708,"y":-956.97168,"z":11721.724609},"landing":{"x":-434.549652,"y":-484.313568,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode9","aim":"MapAnnotationNode10","landing":"MapAnnotationNode11"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-5052e6e2-9c45-4ff8-a4da-80257ed27e90","annotationId":"5052e6e2-9c45-4ff8-a4da-80257ed27e90","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke ramp (waterfall)","standingPosition":{"x":-90.034058,"y":-1454.971436,"z":11776.03125},"aim":{"pitch":-27.690914,"yaw":151.674377,"roll":0},"aimMarkerPosition":{"x":-167.978668,"y":-1412.957642,"z":11886.34082},"landing":{"x":-777.941772,"y":-829.838745,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode12","aim":"MapAnnotationNode13","landing":"MapAnnotationNode14"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-574d1532-b1a5-4462-91cc-6780066fb837","annotationId":"574d1532-b1a5-4462-91cc-6780066fb837","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke guardian","standingPosition":{"x":-1947.530884,"y":-295.966675,"z":11799.03125},"aim":{"pitch":-14.701303,"yaw":55.338196,"roll":0},"aimMarkerPosition":{"x":-1892.519653,"y":-216.40712,"z":11888.249023},"landing":{"x":-1388.653687,"y":524.435669,"z":11876.03418},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode15","aim":"MapAnnotationNode16","landing":"MapAnnotationNode17"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-970fd6a9-21c5-4c89-8c79-824700806e6e","annotationId":"970fd6a9-21c5-4c89-8c79-824700806e6e","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke CT Spawn","standingPosition":{"x":-1978.96875,"y":-39.96875,"z":11835.03125},"aim":{"pitch":-1.168138,"yaw":25.231516,"roll":0},"aimMarkerPosition":{"x":-1888.52832,"y":2.650085,"z":11901.070312},"landing":{"x":-1090.591797,"y":450.826843,"z":11779.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at wrinkle","additional":["Aim at wrinkle"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode18","aim":"MapAnnotationNode19","landing":"MapAnnotationNode20"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-43fdb451-2463-4279-a11a-9baf159bb85b","annotationId":"43fdb451-2463-4279-a11a-9baf159bb85b","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke center of mid","standingPosition":{"x":-1978.967041,"y":-39.96875,"z":11835.03125},"aim":{"pitch":-11.993508,"yaw":30.033527,"roll":0},"aimMarkerPosition":{"x":-1894.283569,"y":8.989372,"z":11919.811523},"landing":{"x":-1071.100952,"y":232.676819,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Run forward, throw just before falling","additional":["Run forward, throw just before falling"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode21","aim":"MapAnnotationNode22","landing":"MapAnnotationNode23"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-28091f22-4869-4f5f-9ca2-7f00a3d83593","annotationId":"28091f22-4869-4f5f-9ca2-7f00a3d83593","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke right electric","standingPosition":{"x":-2533.970215,"y":-3.96875,"z":11552.03125},"aim":{"pitch":-63.502686,"yaw":45.535637,"roll":0},"aimMarkerPosition":{"x":-2502.718506,"y":27.872778,"z":11705.366211},"landing":{"x":-1809.766602,"y":629.671814,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the left end\nof the wire rope clamp","additional":["Aim at the left end\nof the wire rope clamp"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode24","aim":"MapAnnotationNode25","landing":"MapAnnotationNode26"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-d630f9c7-5a0f-45eb-b460-a4b7f0da01e7","annotationId":"d630f9c7-5a0f-45eb-b460-a4b7f0da01e7","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke left electric","standingPosition":{"x":-2533.970215,"y":-3.96875,"z":11552.03125},"aim":{"pitch":-64.344269,"yaw":43.050789,"roll":0},"aimMarkerPosition":{"x":-2502.331543,"y":25.587296,"z":11706.012695},"landing":{"x":-1667.389404,"y":805.555481,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at the right end\nof the wire rope clamp","additional":["Aim at the right end\nof the wire rope clamp"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode27","aim":"MapAnnotationNode28","landing":"MapAnnotationNode29"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-aff7b3d0-5872-4f58-ac09-6d45b2e177aa","annotationId":"aff7b3d0-5872-4f58-ac09-6d45b2e177aa","mapId":"vertigo","side":"T","type":"Molotov","title":"Molo quad","standingPosition":{"x":-2347.454102,"y":-58.962952,"z":11552.03125},"aim":{"pitch":-30.195543,"yaw":96.017097,"roll":0},"aimMarkerPosition":{"x":-2356.514404,"y":26.992271,"z":11666.166016},"landing":{"x":-2469.197754,"y":1103.868896,"z":11758.71875},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at top right bolt","additional":["Aim at top right bolt"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode30","aim":"MapAnnotationNode31","landing":"MapAnnotationNode32"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-057ef722-0a08-4544-ada5-ff532b4222ad","annotationId":"057ef722-0a08-4544-ada5-ff532b4222ad","mapId":"vertigo","side":"T","type":"Molotov","title":"Molo headshot","standingPosition":{"x":-2374.27124,"y":-112.96875,"z":11552.03125},"aim":{"pitch":-32.79607,"yaw":77.685219,"roll":0},"aimMarkerPosition":{"x":-2356.342529,"y":-30.842552,"z":11670.036133},"landing":{"x":-2132.61084,"y":993.866882,"z":11804.983398},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Between the cone and beam\nSlightly above the chipboard","additional":["Between the cone and beam\nSlightly above the chipboard"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode33","aim":"MapAnnotationNode34","landing":"MapAnnotationNode35"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-1e93032d-5286-4d7d-8e48-91163e6b2702","annotationId":"1e93032d-5286-4d7d-8e48-91163e6b2702","mapId":"vertigo","side":"T","type":"Flash","title":"Flash B entry","standingPosition":{"x":-2352.968506,"y":-637.775574,"z":11488.03125},"aim":{"pitch":-56.938156,"yaw":74.880325,"roll":0},"aimMarkerPosition":{"x":-2338.73877,"y":-585.10968,"z":11617.679688},"landing":{"x":-2281.158936,"y":-304.44693,"z":11914.029297},"sourceTolerance":80,"sourceInstructions":{"standing":"Crouch at the metal beam","aim":"Aim at shown, align crosshair\nwith the right side of the window","additional":["Crouch at the metal beam","Aim at shown, align crosshair\nwith the right side of the window"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode36","aim":"MapAnnotationNode37","landing":"MapAnnotationNode38"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-1d579a3b-3caa-4779-bc07-be854f0021e2","annotationId":"1d579a3b-3caa-4779-bc07-be854f0021e2","mapId":"vertigo","side":"T","type":"Molotov","title":"Molo & nade danger","standingPosition":{"x":-2248.777588,"y":-67.971802,"z":11569.520508},"aim":{"pitch":-26.604441,"yaw":118.420509,"roll":0},"aimMarkerPosition":{"x":-2291.333008,"y":10.664261,"z":11654.013672},"landing":{"x":-2283.639404,"y":300.708771,"z":11746.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Crouch\nNot sensitive","aim":"Aim below 2nd bolt from the right","additional":["Crouch\nNot sensitive","Aim below 2nd bolt from the right"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode39","aim":"MapAnnotationNode40","landing":"MapAnnotationNode41"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-5c7d22da-2e41-47e2-aed2-4af6b81f2678","annotationId":"5c7d22da-2e41-47e2-aed2-4af6b81f2678","mapId":"vertigo","side":"CT","type":"Smoke","title":"Smoke bottom of A ramp","standingPosition":{"x":-901.933594,"y":-408.601807,"z":11777.03125},"aim":{"pitch":-13.428309,"yaw":-85.900192,"roll":0},"aimMarkerPosition":{"x":-894.979614,"y":-505.619019,"z":11864.09375},"landing":{"x":-766.393494,"y":-621.099731,"z":11549.807617},"sourceTolerance":80,"sourceInstructions":{"standing":"Run towards this spot","aim":"Release when reaching this spot\nLineup is very forgiving\nGrenade should bounce of the beam","additional":["Run towards this spot","Release when reaching this spot\nLineup is very forgiving\nGrenade should bounce of the beam"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode42","aim":"MapAnnotationNode43","landing":"MapAnnotationNode44"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-5092fa57-203b-46a5-a2d4-366b132ea6fb","annotationId":"5092fa57-203b-46a5-a2d4-366b132ea6fb","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke Connector to A","standingPosition":{"x":-842.16156,"y":-1358.96875,"z":11648.03125},"aim":{"pitch":-5.385779,"yaw":43.1464,"roll":0},"aimMarkerPosition":{"x":-769.522949,"y":-1290.884155,"z":11721.256836},"landing":{"x":-526.798401,"y":-136.823898,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at bottom of metal beam over 3rd grout\nStep jump throw","additional":["Aim at bottom of metal beam over 3rd grout\nStep jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode45","aim":"MapAnnotationNode46","landing":"MapAnnotationNode47"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-f7ac9db1-bb91-4737-85c8-8fbe60756e42","annotationId":"f7ac9db1-bb91-4737-85c8-8fbe60756e42","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke Connector to short","standingPosition":{"x":-842.142883,"y":-1358.967041,"z":11648.03125},"aim":{"pitch":-0.924193,"yaw":93.253418,"roll":0},"aimMarkerPosition":{"x":-847.817383,"y":-1259.141235,"z":11713.484375},"landing":{"x":-905.31958,"y":-348.555511,"z":11971.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at bottom of left-most V on crossbeam","additional":["Wedge into corner","Aim at bottom of left-most V on crossbeam"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode48","aim":"MapAnnotationNode49","landing":"MapAnnotationNode50"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-4b205c3e-f7f1-4d29-8462-16d881f7684a","annotationId":"4b205c3e-f7f1-4d29-8462-16d881f7684a","mapId":"vertigo","side":"CT","type":"HE","title":"Mid nade","standingPosition":{"x":-1551.968628,"y":443.97168,"z":11874.03125},"aim":{"pitch":13.965408,"yaw":-115.157768,"roll":0},"aimMarkerPosition":{"x":-1593.223633,"y":356.132935,"z":11913.897461},"landing":{"x":-1992.670776,"y":-485.846771,"z":11898.708984},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at wooden knob","additional":["Wedge into corner","Aim at wooden knob"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode51","aim":"MapAnnotationNode52","landing":"MapAnnotationNode53"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-e44ae632-c7cc-49ff-b01a-023ddd6f39f9","annotationId":"e44ae632-c7cc-49ff-b01a-023ddd6f39f9","mapId":"vertigo","side":"CT","type":"Flash","title":"Lamp flash","standingPosition":{"x":-843.03125,"y":92.031586,"z":11776.03125},"aim":{"pitch":-15.114184,"yaw":176.849121,"roll":0},"aimMarkerPosition":{"x":-939.426086,"y":97.338005,"z":11865.945312},"landing":{"x":-1872.234253,"y":148.687042,"z":11856.078125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"","additional":[],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode54","aim":"MapAnnotationNode55","landing":"MapAnnotationNode56"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-125566e4-ea86-44cf-be2a-24e95b0190f3","annotationId":"125566e4-ea86-44cf-be2a-24e95b0190f3","mapId":"vertigo","side":"CT","type":"Flash","title":"B flash and smoke","standingPosition":{"x":-1389.968506,"y":411.889221,"z":11776.03125},"aim":{"pitch":-17.292208,"yaw":176.100281,"roll":0},"aimMarkerPosition":{"x":-1485.227539,"y":418.382874,"z":11869.595703},"landing":{"x":-2158.215576,"y":444.037415,"z":11946.337891},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at left side of lock on soldier","additional":["Wedge into corner","Aim at left side of lock on soldier"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode57","aim":"MapAnnotationNode58","landing":"MapAnnotationNode59"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-9f81e5d6-1edf-4722-98d8-deda5c4cae1b","annotationId":"9f81e5d6-1edf-4722-98d8-deda5c4cae1b","mapId":"vertigo","side":"T","type":"Smoke","title":"Mid smoke","standingPosition":{"x":-1680.031372,"y":-55.869629,"z":11776.03125},"aim":{"pitch":0.461589,"yaw":166.524719,"roll":0},"aimMarkerPosition":{"x":-1777.275269,"y":-32.567787,"z":11839.06543},"landing":{"x":-1230.057495,"y":236.325195,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"","aim":"Aim at plaster holder running jump throw","additional":["Aim at plaster holder running jump throw"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode60","aim":"MapAnnotationNode61","landing":"MapAnnotationNode62"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-3f451fff-9517-4e19-a5ed-39e5388aecb9","annotationId":"3f451fff-9517-4e19-a5ed-39e5388aecb9","mapId":"vertigo","side":"T","type":"Molotov","title":"Molo headshot","standingPosition":{"x":-787.96875,"y":-1510.96875,"z":11776.03125},"aim":{"pitch":4.577775,"yaw":53.891392,"roll":0},"aimMarkerPosition":{"x":-729.224976,"y":-1430.436401,"z":11831.889648},"landing":{"x":-108.598755,"y":-386.119324,"z":11890.737305},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at top edge of concrete block","additional":["Wedge into corner","Aim at top edge of concrete block"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode73","aim":"MapAnnotationNode74","landing":"MapAnnotationNode75"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-be4640c9-2905-44d6-8d0b-46c670583864","annotationId":"be4640c9-2905-44d6-8d0b-46c670583864","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke B cross","standingPosition":{"x":-2205.963379,"y":-1510.96875,"z":11488.03125},"aim":{"pitch":-24.066372,"yaw":93.005867,"roll":0},"aimMarkerPosition":{"x":-2210.751465,"y":-1419.786987,"z":11592.650391},"landing":{"x":-2238.028809,"y":599.295471,"z":11746.320312},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim at the top right of the drywall","additional":["Wedge into corner","Aim at the top right of the drywall"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode76","aim":"MapAnnotationNode77","landing":"MapAnnotationNode78"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-4abc598a-450d-4182-a1ce-3eb7e4f9519f","annotationId":"4abc598a-450d-4182-a1ce-3eb7e4f9519f","mapId":"vertigo","side":"CT","type":"Smoke","title":"Retake smoke B","standingPosition":{"x":-1021.50354,"y":993.968933,"z":11776.03125},"aim":{"pitch":-28.459221,"yaw":-159.6091,"roll":0},"aimMarkerPosition":{"x":-1103.9104,"y":963.33728,"z":11887.524414},"landing":{"x":-2377.29834,"y":422.966614,"z":11746.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim between metal beam and steel framing","additional":["Wedge into corner","Aim between metal beam and steel framing"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode79","aim":"MapAnnotationNode80","landing":"MapAnnotationNode81"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-217b9897-1a5c-4438-bb6f-314fb9eb1552","annotationId":"217b9897-1a5c-4438-bb6f-314fb9eb1552","mapId":"vertigo","side":"T","type":"Flash","title":"Flash ramp","standingPosition":{"x":-1081.968872,"y":-12.030457,"z":11488.03125},"aim":{"pitch":-33.554295,"yaw":-64.700882,"roll":0},"aimMarkerPosition":{"x":-1046.355591,"y":-87.373848,"z":11607.143555},"landing":{"x":-840.467773,"y":-522.939331,"z":11586.469727},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner on the side of drywall board","aim":"Aim in middle of ventilation\nMiddle-click throw","additional":["Wedge into corner on the side of drywall board","Aim in middle of ventilation\nMiddle-click throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode82","aim":"MapAnnotationNode83","landing":"MapAnnotationNode84"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-a49cb163-dd0d-40bc-a06b-4de83c6b687b","annotationId":"a49cb163-dd0d-40bc-a06b-4de83c6b687b","mapId":"vertigo","side":"CT","type":"Flash","title":"Flash ramp","standingPosition":{"x":-639.961426,"y":-767.909485,"z":11792.03125},"aim":{"pitch":-65.722313,"yaw":-92.87825,"roll":0},"aimMarkerPosition":{"x":-642.026001,"y":-808.973572,"z":11947.027344},"landing":{"x":-650.366455,"y":-904.333923,"z":11730.943359},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on edge of concrete block","aim":"Aim a little to the right of the top concrete brick\nRight-click throw","additional":["Stand on edge of concrete block","Aim a little to the right of the top concrete brick\nRight-click throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode85","aim":"MapAnnotationNode86","landing":"MapAnnotationNode87"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-de687a93-fb6e-4541-99c3-b63e5dbdb364","annotationId":"de687a93-fb6e-4541-99c3-b63e5dbdb364","mapId":"vertigo","side":"T","type":"Molotov","title":"Molo short","standingPosition":{"x":-1216.512939,"y":-685.993469,"z":11818.03125},"aim":{"pitch":-43.554363,"yaw":177.740967,"roll":0},"aimMarkerPosition":{"x":-1288.928711,"y":-683.13678,"z":11950.935547},"landing":{"x":-995.437195,"y":-665.720764,"z":11835.623047},"sourceTolerance":80,"sourceInstructions":{"standing":"Stand on top of railing","aim":"Aim in middle of window frame under middle steel bar","additional":["Stand on top of railing","Aim in middle of window frame under middle steel bar"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode88","aim":"MapAnnotationNode89","landing":"MapAnnotationNode90"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-b01b0c91-f858-4fe4-a60c-0135f6310db3","annotationId":"b01b0c91-f858-4fe4-a60c-0135f6310db3","mapId":"vertigo","side":"T","type":"Smoke","title":"Smoke elevator","standingPosition":{"x":-1423.96875,"y":-758.014709,"z":11776.03125},"aim":{"pitch":-62.60194,"yaw":25.783102,"roll":0},"aimMarkerPosition":{"x":-1382.532959,"y":-737.998901,"z":11928.654297},"landing":{"x":-865.983032,"y":-488.310944,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner on left side of box","aim":"Aim where the 2 wires connect in the top right\nMiddle-click throw","additional":["Wedge into corner on left side of box","Aim where the 2 wires connect in the top right\nMiddle-click throw"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode91","aim":"MapAnnotationNode92","landing":"MapAnnotationNode93"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-f13e5fb6-6a85-4e0f-b899-ba545d2771c3","annotationId":"f13e5fb6-6a85-4e0f-b899-ba545d2771c3","mapId":"vertigo","side":"CT","type":"Smoke","title":"Smoke Ramp (Retake)","standingPosition":{"x":-187.03125,"y":238.968674,"z":11783.03125},"aim":{"pitch":-61.76302,"yaw":-95.309319,"roll":0},"aimMarkerPosition":{"x":-191.409149,"y":191.859711,"z":11934.970703},"landing":{"x":-301.880432,"y":-993.773987,"z":11778.03125},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim between crane cabin and metal beam","additional":["Wedge into corner","Aim between crane cabin and metal beam"],"jumpThrow":false,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode94","aim":"MapAnnotationNode95","landing":"MapAnnotationNode96"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-8891c7f4-70e3-4b88-8e24-7563f974c194","annotationId":"8891c7f4-70e3-4b88-8e24-7563f974c194","mapId":"vertigo","side":"CT","type":"Molotov","title":"Molo catwalk","standingPosition":{"x":-1267.446655,"y":995.967957,"z":11776.03125},"aim":{"pitch":5.688976,"yaw":-163.312958,"roll":0},"aimMarkerPosition":{"x":-1362.763672,"y":967.394958,"z":11829.958008},"landing":{"x":-2663.961182,"y":577.339417,"z":11811.671875},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim in middle of the 6","additional":["Wedge into corner","Aim in middle of the 6"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode97","aim":"MapAnnotationNode98","landing":"MapAnnotationNode99"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}},
+  {"id":"annotation-vertigo-d93e36d7-a6a3-4715-aa38-59c28948d835","annotationId":"d93e36d7-a6a3-4715-aa38-59c28948d835","mapId":"vertigo","side":"CT","type":"Molotov","title":"Molo default B site","standingPosition":{"x":-746.03125,"y":939.96875,"z":11776.03125},"aim":{"pitch":6.771342,"yaw":-177.924942,"roll":0},"aimMarkerPosition":{"x":-845.268616,"y":936.373108,"z":11828.080078},"landing":{"x":-2287.752197,"y":885.944824,"z":11780.619141},"sourceTolerance":80,"sourceInstructions":{"standing":"Wedge into corner","aim":"Aim in corner of shadow","additional":["Wedge into corner","Aim in corner of shadow"],"jumpThrow":true,"jumpFlagEvidence":"source-flag"},"warnings":[],"source":{"creator":"Rene Rebsdorf and CS2-annotations contributors","project":"https://github.com/ReneRebsdorf/CS2-annotations","commit":"f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe","file":"local/de_vertigo/de_vertigo.txt","nodes":{"position":"MapAnnotationNode100","aim":"MapAnnotationNode101","landing":"MapAnnotationNode102"},"url":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/local/de_vertigo/de_vertigo.txt","license":"MIT","licenseUrl":"https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/LICENSE","sourceSha256":"7b16c9edc6e7a555b87e5eab8a75c6e6d1f757a4b6f40ce7f9c6f8dcb24aca4a","checkedAt":"2026-11-09"}}
+];
+
+/** Genuine licensed source photo guides, independent of creator-video records.
+ * Original source image order and mouse/movement metadata are preserved. These
+ * are photographically reviewed guides, not independently tested current-build
+ * throws. Unknown radar registration stays hidden rather than inventing pins.
+ */
+export const PHOTO_LINEUPS: AcceptedPhotoLineup[] = [
+  {
+    "id": "photo-kielson-cache-s_wozek_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Cart (Wózek) smoke · A door corner",
+    "from": "A door corner",
+    "target": "Cart (Wózek)",
+    "purpose": "Photo guide by _Kielson for Cart (Wózek). The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + both buttons (LMB + RMB)",
+    "steps": [
+      "Position: match photo 1's marked standing location (A door corner).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + both buttons (LMB + RMB).",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/drzwi_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A door corner).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/drzwi_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_wozek_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_wozek_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_wozek_0.webp",
+        "caption": "Target/result overview from the same source guide: Cart (Wózek). Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_wozek_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-A",
+      "index": 0,
+      "sourceId": "kielson-cache-s_wozek_0",
+      "sourceTitle": "Wózek",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "both-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-s_site_a_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "A site smoke · A door corner",
+    "from": "A door corner",
+    "target": "A site",
+    "purpose": "Photo guide by _Kielson for A site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (A door corner).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/drzwi_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A door corner).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/drzwi_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_site_a_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_site_a_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_site_a_0.webp",
+        "caption": "Target/result overview from the same source guide: A site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_site_a_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-A",
+      "index": 1,
+      "sourceId": "kielson-cache-s_site_a_0",
+      "sourceTitle": "Site A",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-s_main_a_0-ct",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Smoke",
+    "title": "A main smoke · CT reference",
+    "from": "CT reference",
+    "target": "A main",
+    "purpose": "Photo guide by _Kielson for A main. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (CT reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/ct_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (CT reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/ct_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_main_a_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_main_a_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_main_a_0.webp",
+        "caption": "Target/result overview from the same source guide: A main. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_main_a_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-A",
+      "index": 2,
+      "sourceId": "kielson-cache-s_main_a_0",
+      "sourceTitle": "Main A",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-s_highway_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Highway smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Highway",
+    "purpose": "Photo guide by _Kielson for Highway. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/t_spawn_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/t_spawn_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_highway_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_highway_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_highway_0.webp",
+        "caption": "Target/result overview from the same source guide: Highway. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_highway_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Mid",
+      "index": 0,
+      "sourceId": "kielson-cache-s_highway_0",
+      "sourceTitle": "Highway",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-s_connector_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Connector smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Connector",
+    "purpose": "Photo guide by _Kielson for Connector. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Run + jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Run + jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/t_spawn_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/t_spawn_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_connector_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_connector_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_connector_0.webp",
+        "caption": "Target/result overview from the same source guide: Connector. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_connector_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Mid",
+      "index": 1,
+      "sourceId": "kielson-cache-s_connector_0",
+      "sourceTitle": "Connector",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "Skok w biegu"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_sandbagi_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Molotov",
+    "title": "Sandbags molly · Mid reference",
+    "from": "Mid reference",
+    "target": "Sandbags",
+    "purpose": "Photo guide by _Kielson for Sandbags. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (Mid reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/mid_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Mid reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/mid_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_sandbagi_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_sandbagi_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_sandbagi_0.webp",
+        "caption": "Target/result overview from the same source guide: Sandbags. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_sandbagi_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Mid",
+      "index": 2,
+      "sourceId": "kielson-cache-m_sandbagi_0",
+      "sourceTitle": "Sandbagi",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_boost_0-ct",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Molotov",
+    "title": "Boost molly · Mid reference",
+    "from": "Mid reference",
+    "target": "Boost",
+    "purpose": "Photo guide by _Kielson for Boost. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (Mid reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/mid_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Mid reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/mid_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_boost_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_boost_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_boost_0.webp",
+        "caption": "Target/result overview from the same source guide: Boost. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_boost_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Mid",
+      "index": 3,
+      "sourceId": "kielson-cache-m_boost_0",
+      "sourceTitle": "Boost",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-s_ct_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "CT smoke · B main reference",
+    "from": "B main reference",
+    "target": "CT",
+    "purpose": "Photo guide by _Kielson for CT. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + both buttons (LMB + RMB)",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + both buttons (LMB + RMB).",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_ct_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_ct_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_ct_0.webp",
+        "caption": "Target/result overview from the same source guide: CT. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_ct_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 0,
+      "sourceId": "kielson-cache-s_ct_0",
+      "sourceTitle": "CT",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "both-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-s_heaven_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Heaven smoke · B main reference",
+    "from": "B main reference",
+    "target": "Heaven",
+    "purpose": "Photo guide by _Kielson for Heaven. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Backward + Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Backward + Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_heaven_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_heaven_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/s_heaven_0.webp",
+        "caption": "Target/result overview from the same source guide: Heaven. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/s_heaven_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 1,
+      "sourceId": "kielson-cache-s_heaven_0",
+      "sourceTitle": "Heaven",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "keys": [
+          "S"
+        ],
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_site_b_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Molotov",
+    "title": "B site molly · B main reference",
+    "from": "B main reference",
+    "target": "B site",
+    "purpose": "Photo guide by _Kielson for B site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_site_b_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_site_b_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_site_b_0.webp",
+        "caption": "Target/result overview from the same source guide: B site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_site_b_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 2,
+      "sourceId": "kielson-cache-m_site_b_0",
+      "sourceTitle": "Site B",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_site_b_0-ct",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Molotov",
+    "title": "B site molly · B main reference",
+    "from": "B main reference",
+    "target": "B site",
+    "purpose": "Photo guide by _Kielson for B site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_site_b_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_site_b_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_site_b_0.webp",
+        "caption": "Target/result overview from the same source guide: B site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_site_b_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 2,
+      "sourceId": "kielson-cache-m_site_b_0",
+      "sourceTitle": "Site B",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_site_b_2-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Molotov",
+    "title": "B site molly · B main reference",
+    "from": "B main reference",
+    "target": "B site",
+    "purpose": "Photo guide by _Kielson for B site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_site_b_3.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_site_b_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_site_b_2.webp",
+        "caption": "Target/result overview from the same source guide: B site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_site_b_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 3,
+      "sourceId": "kielson-cache-m_site_b_2",
+      "sourceTitle": "Site B",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_headshot_0-t",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "T",
+    "type": "Molotov",
+    "title": "Headshot molly · B main reference",
+    "from": "B main reference",
+    "target": "Headshot",
+    "purpose": "Photo guide by _Kielson for Headshot. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_headshot_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_headshot_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_headshot_0.webp",
+        "caption": "Target/result overview from the same source guide: Headshot. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_headshot_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 4,
+      "sourceId": "kielson-cache-m_headshot_0",
+      "sourceTitle": "Headshot",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-cache-m_headshot_0-ct",
+    "mapId": "cache",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Molotov",
+    "title": "Headshot molly · B main reference",
+    "from": "B main reference",
+    "target": "Headshot",
+    "purpose": "Photo guide by _Kielson for Headshot. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/cache/bmain_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/bmain_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_headshot_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_headshot_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/cache/m_headshot_0.webp",
+        "caption": "Target/result overview from the same source guide: Headshot. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/cache/m_headshot_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/cache.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/cache.json",
+      "section": "Bombsite-B",
+      "index": 4,
+      "sourceId": "kielson-cache-m_headshot_0",
+      "sourceTitle": "Headshot",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "a78f5ffefd16df47a333bf60700e51a6c77499961d3ee9897c077c53d6016732",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_ct_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "CT smoke · A main reference",
+    "from": "A main reference",
+    "target": "CT",
+    "purpose": "Photo guide by _Kielson for CT. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (A main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/amain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/amain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_ct_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_ct_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_ct_0.webp",
+        "caption": "Target/result overview from the same source guide: CT. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_ct_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-A",
+      "index": 0,
+      "sourceId": "kielson-ancient-s_ct_0",
+      "sourceTitle": "CT",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_rondo_2-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Donut (Rondo) smoke · A main reference",
+    "from": "A main reference",
+    "target": "Donut (Rondo)",
+    "purpose": "Photo guide by _Kielson for Donut (Rondo). The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (A main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/amain_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/amain_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_rondo_3.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_rondo_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_rondo_2.webp",
+        "caption": "Target/result overview from the same source guide: Donut (Rondo). Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_rondo_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-A",
+      "index": 1,
+      "sourceId": "kielson-ancient-s_rondo_2",
+      "sourceTitle": "Rondo",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-m_a_site_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Molotov",
+    "title": "A site molly · A main reference",
+    "from": "A main reference",
+    "target": "A site",
+    "purpose": "Photo guide by _Kielson for A site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (A main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/amain_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/amain_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/m_a_site_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_a_site_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/m_a_site_0.webp",
+        "caption": "Target/result overview from the same source guide: A site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_a_site_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-A",
+      "index": 2,
+      "sourceId": "kielson-ancient-m_a_site_0",
+      "sourceTitle": "Site A",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-m_a_site_0-ct",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Molotov",
+    "title": "A site molly · A main reference",
+    "from": "A main reference",
+    "target": "A site",
+    "purpose": "Photo guide by _Kielson for A site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (A main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/amain_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/amain_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/m_a_site_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_a_site_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/m_a_site_0.webp",
+        "caption": "Target/result overview from the same source guide: A site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_a_site_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-A",
+      "index": 2,
+      "sourceId": "kielson-ancient-m_a_site_0",
+      "sourceTitle": "Site A",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-f_a_site_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Flash",
+    "title": "A site flash · A main reference",
+    "from": "A main reference",
+    "target": "A site",
+    "purpose": "Photo guide by _Kielson for A site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Run + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (A main reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Run + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/amain_3.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (A main reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/amain_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/f_a_site_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/f_a_site_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/f_a_site_0.webp",
+        "caption": "Target/result overview from the same source guide: A site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/f_a_site_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-A",
+      "index": 3,
+      "sourceId": "kielson-ancient-f_a_site_0",
+      "sourceTitle": "Site A",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_heaven_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Heaven smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Heaven",
+    "purpose": "Photo guide by _Kielson for Heaven. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/t_spawn_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/t_spawn_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_heaven_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_heaven_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_heaven_0.webp",
+        "caption": "Target/result overview from the same source guide: Heaven. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_heaven_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Mid",
+      "index": 2,
+      "sourceId": "kielson-ancient-s_heaven_0",
+      "sourceTitle": "Heaven",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_rondo_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Donut (Rondo) smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Donut (Rondo)",
+    "purpose": "Photo guide by _Kielson for Donut (Rondo). The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/t_spawn_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/t_spawn_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_rondo_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_rondo_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_rondo_0.webp",
+        "caption": "Target/result overview from the same source guide: Donut (Rondo). Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_rondo_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Mid",
+      "index": 3,
+      "sourceId": "kielson-ancient-s_rondo_0",
+      "sourceTitle": "Rondo",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-f_mid_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Flash",
+    "title": "Mid flash · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Mid",
+    "purpose": "Photo guide by _Kielson for Mid. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/t_spawn_4.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/t_spawn_4.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/f_mid_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/f_mid_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/f_mid_0.webp",
+        "caption": "Target/result overview from the same source guide: Mid. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/f_mid_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Mid",
+      "index": 5,
+      "sourceId": "kielson-ancient-f_mid_0",
+      "sourceTitle": "Mid",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_long_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Long smoke · B gate reference",
+    "from": "B gate reference",
+    "target": "Long",
+    "purpose": "Photo guide by _Kielson for Long. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B gate reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/brama_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B gate reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/brama_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_long_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_long_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_long_0.webp",
+        "caption": "Target/result overview from the same source guide: Long. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_long_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-B",
+      "index": 0,
+      "sourceId": "kielson-ancient-s_long_0",
+      "sourceTitle": "Long",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_short_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Short smoke · B gate reference",
+    "from": "B gate reference",
+    "target": "Short",
+    "purpose": "Photo guide by _Kielson for Short. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B gate reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/brama_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B gate reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/brama_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_short_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_short_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_short_0.webp",
+        "caption": "Target/result overview from the same source guide: Short. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_short_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-B",
+      "index": 1,
+      "sourceId": "kielson-ancient-s_short_0",
+      "sourceTitle": "Short",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_cave_0-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Cave smoke · B gate reference",
+    "from": "B gate reference",
+    "target": "Cave",
+    "purpose": "Photo guide by _Kielson for Cave. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (B gate reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/brama_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (B gate reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/brama_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_cave_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_cave_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_cave_0.webp",
+        "caption": "Target/result overview from the same source guide: Cave. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_cave_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-B",
+      "index": 2,
+      "sourceId": "kielson-ancient-s_cave_0",
+      "sourceTitle": "Cave",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-s_rampa_0-ct",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Smoke",
+    "title": "Ramp smoke · CT reference",
+    "from": "CT reference",
+    "target": "Ramp",
+    "purpose": "Photo guide by _Kielson for Ramp. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (CT reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/ct_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (CT reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/ct_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_rampa_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_rampa_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/s_rampa_0.webp",
+        "caption": "Target/result overview from the same source guide: Ramp. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/s_rampa_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-B",
+      "index": 6,
+      "sourceId": "kielson-ancient-s_rampa_0",
+      "sourceTitle": "Rampa",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-ancient-m_heaven_0-ct",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Molotov",
+    "title": "Heaven molly · Source standing reference",
+    "from": "Source standing reference",
+    "target": "Heaven",
+    "purpose": "Photo guide by _Kielson for Heaven. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Run + jump + both buttons (LMB + RMB)",
+    "steps": [
+      "Position: match photo 1's marked standing location (Source standing reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Run + jump + both buttons (LMB + RMB).",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/ancient/m_heaven_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Source standing reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_heaven_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/m_heaven_2.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_heaven_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/ancient/m_heaven_0.webp",
+        "caption": "Target/result overview from the same source guide: Heaven. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/ancient/m_heaven_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/ancient.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/ancient.json",
+      "section": "Bombsite-B",
+      "index": 9,
+      "sourceId": "kielson-ancient-m_heaven_0",
+      "sourceTitle": "Heaven",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "both-click",
+        "action": "Skok w biegu"
+      },
+      "sourceSha256": "f6a8385ae0a78d43f4c43ea089162cd72749b90c27ffaac45b634624215ec8b7",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_ct_3-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "CT smoke · Long reference",
+    "from": "Long reference",
+    "target": "CT",
+    "purpose": "Photo guide by _Kielson for CT. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Run + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (Long reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Run + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/long_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Long reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/long_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_ct_4.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_ct_4.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_ct_3.webp",
+        "caption": "Target/result overview from the same source guide: CT. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_ct_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 0,
+      "sourceId": "kielson-dust2-s_ct_3",
+      "sourceTitle": "CT",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_short_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Short smoke · Short reference",
+    "from": "Short reference",
+    "target": "Short",
+    "purpose": "Photo guide by _Kielson for Short. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (Short reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/short_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Short reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/short_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_short_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_short_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_short_0.webp",
+        "caption": "Target/result overview from the same source guide: Short. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_short_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 1,
+      "sourceId": "kielson-dust2-s_short_0",
+      "sourceTitle": "Short",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_short_0-ct",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Smoke",
+    "title": "Short smoke · Short reference",
+    "from": "Short reference",
+    "target": "Short",
+    "purpose": "Photo guide by _Kielson for Short. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (Short reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/short_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Short reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/short_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_short_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_short_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_short_0.webp",
+        "caption": "Target/result overview from the same source guide: Short. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_short_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 1,
+      "sourceId": "kielson-dust2-s_short_0",
+      "sourceTitle": "Short",
+      "sourceSide": "both",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-m_car_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Molotov",
+    "title": "Car molly · Long reference",
+    "from": "Long reference",
+    "target": "Car",
+    "purpose": "Photo guide by _Kielson for Car. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Forward + Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (Long reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Forward + Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/long_3.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Long reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/long_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/m_car_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/m_car_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/m_car_0.webp",
+        "caption": "Target/result overview from the same source guide: Car. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/m_car_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 2,
+      "sourceId": "kielson-dust2-m_car_0",
+      "sourceTitle": "Car",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "keys": [
+          "w"
+        ],
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-f_long_2-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Flash",
+    "title": "Long (1) flash · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Long (1)",
+    "purpose": "Photo guide by _Kielson for Long (1). The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/t_spawn_3.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/t_spawn_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/f_long_3.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/f_long_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/f_long_2.webp",
+        "caption": "Target/result overview from the same source guide: Long (1). Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/f_long_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 5,
+      "sourceId": "kielson-dust2-f_long_2",
+      "sourceTitle": "Long (1)",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_double_doorsy_0-ct",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Smoke",
+    "title": "Double Doorsy smoke · CT reference",
+    "from": "CT reference",
+    "target": "Double Doorsy",
+    "purpose": "Photo guide by _Kielson for Double Doorsy. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (CT reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/ct_3.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (CT reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/ct_3.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_double_doorsy_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_double_doorsy_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_double_doorsy_0.webp",
+        "caption": "Target/result overview from the same source guide: Double Doorsy. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_double_doorsy_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 8,
+      "sourceId": "kielson-dust2-s_double_doorsy_0",
+      "sourceTitle": "Double Doorsy",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-f_long_0-ct",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Flash",
+    "title": "Long flash · Long reference",
+    "from": "Long reference",
+    "target": "Long",
+    "purpose": "Photo guide by _Kielson for Long. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "LMB (left button)",
+    "steps": [
+      "Position: match photo 1's marked standing location (Long reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: LMB (left button). Additional movement/jump timing is not specified.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/long_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Long reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/long_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/f_long_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/f_long_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/f_long_0.webp",
+        "caption": "Target/result overview from the same source guide: Long. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/f_long_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "A",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-A",
+      "index": 10,
+      "sourceId": "kielson-dust2-f_long_0",
+      "sourceTitle": "Long",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "left-click"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_brama_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Gate (Brama) smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Gate (Brama)",
+    "purpose": "Photo guide by _Kielson for Gate (Brama). The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/t_spawn_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/t_spawn_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_brama_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_brama_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_brama_0.webp",
+        "caption": "Target/result overview from the same source guide: Gate (Brama). Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_brama_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Mid",
+      "index": 0,
+      "sourceId": "kielson-dust2-s_brama_0",
+      "sourceTitle": "Brama",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_ct_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "CT smoke · Mid reference",
+    "from": "Mid reference",
+    "target": "CT",
+    "purpose": "Photo guide by _Kielson for CT. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (Mid reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2 and its additional reference in photo 3.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/mid_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Mid reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/mid_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_ct_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_ct_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_ct_2.webp",
+        "caption": "Aim reference 2: reproduce the green crosshair alignment shown. This is the source's exact step 3.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_ct_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_ct_0.webp",
+        "caption": "Target/result overview from the same source guide: CT. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_ct_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Mid",
+      "index": 1,
+      "sourceId": "kielson-dust2-s_ct_0",
+      "sourceTitle": "CT",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_suicide_0-ct",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "CT",
+    "type": "Smoke",
+    "title": "Suicide smoke · CT reference",
+    "from": "CT reference",
+    "target": "Suicide",
+    "purpose": "Photo guide by _Kielson for Suicide. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (CT reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/ct_2.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (CT reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/ct_2.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_suicide_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_suicide_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_suicide_0.webp",
+        "caption": "Target/result overview from the same source guide: Suicide. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_suicide_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "Mid",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Mid",
+      "index": 2,
+      "sourceId": "kielson-dust2-s_suicide_0",
+      "sourceTitle": "Suicide",
+      "sourceSide": "ct",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_okno_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Window smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Window",
+    "purpose": "Photo guide by _Kielson for Window. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/t_spawn_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/t_spawn_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_okno_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_okno_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_okno_0.webp",
+        "caption": "Target/result overview from the same source guide: Window. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_okno_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-B",
+      "index": 0,
+      "sourceId": "kielson-dust2-s_okno_0",
+      "sourceTitle": "Okno",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-s_drzwi_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Doors smoke · T spawn reference",
+    "from": "T spawn reference",
+    "target": "Doors",
+    "purpose": "Photo guide by _Kielson for Doors. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (T spawn reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/t_spawn_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (T spawn reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/t_spawn_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_drzwi_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_drzwi_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/s_drzwi_0.webp",
+        "caption": "Target/result overview from the same source guide: Doors. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/s_drzwi_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-B",
+      "index": 1,
+      "sourceId": "kielson-dust2-s_drzwi_0",
+      "sourceTitle": "Drzwi",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  },
+  {
+    "id": "photo-kielson-dust2-f_bsite_0-t",
+    "mapId": "dust2",
+    "levelId": "main",
+    "side": "T",
+    "type": "Flash",
+    "title": "B Site flash · Tunnel reference",
+    "from": "Tunnel reference",
+    "target": "B Site",
+    "purpose": "Photo guide by _Kielson for B Site. The source publishes the image sequence and throw inputs; its capture date/game build is not stated. Test it on your current map version.",
+    "throwType": "Jump + LMB",
+    "steps": [
+      "Position: match photo 1's marked standing location (Tunnel reference).",
+      "Aim: reproduce the source's green crosshair alignment in photo 2.",
+      "Throw input recorded by the source: Jump + LMB.",
+      "Compare the source target/result overview, then test in a practice server. No release-frame photograph or current-build verification is claimed."
+    ],
+    "x": 500,
+    "y": 500,
+    "showMarker": false,
+    "userCreated": false,
+    "photos": [
+      {
+        "image": "/lineup-media/kielson/dust2/tunele_1.webp",
+        "caption": "Position reference from the source guide. Match the marked standing location (Tunnel reference).",
+        "kind": "position",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/tunele_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/f_bsite_1.webp",
+        "caption": "Aim reference 1: reproduce the green crosshair alignment shown. This is the source's exact step 2.",
+        "kind": "aim",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/f_bsite_1.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      },
+      {
+        "image": "/lineup-media/kielson/dust2/f_bsite_0.webp",
+        "caption": "Target/result overview from the same source guide: B Site. Not an independently retested result.",
+        "kind": "context",
+        "creator": "_Kielson",
+        "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/assets/images/lineups/dust2/f_bsite_0.webp",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/LICENSE"
+      }
+    ],
+    "creator": "_Kielson",
+    "source": "https://github.com/Kielson123/CS2Lineups/blob/05972d55ec70194ffe6a4a8b677cdd0322fbda8c/data/dust2.json",
+    "site": "B",
+    "tags": [
+      "Photo guide",
+      "MIT source",
+      "Current build untested"
+    ],
+    "photoSource": {
+      "project": "https://github.com/Kielson123/CS2Lineups",
+      "commit": "05972d55ec70194ffe6a4a8b677cdd0322fbda8c",
+      "file": "data/dust2.json",
+      "section": "Bombsite-B",
+      "index": 3,
+      "sourceId": "kielson-dust2-f_bsite_0",
+      "sourceTitle": "B Site",
+      "sourceSide": "t",
+      "sourceThrow": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "sourceSha256": "d8048c54751f95069429b009c13927cd3d5c2b6d471c53a94057c0f6c0d79933",
+      "checkedAt": "2026-11-09"
+    }
+  }
+];
+
+/** Repository documentation screenshots show several different Nuke lineups at
+ * once. Their camera pose is not tied to one record: they are context only.
+ */
+export const ANNOTATION_CONTEXT_PHOTOS: AttributedLineupPhoto[] = [
+  {
+    image: "/lineup-media/cs2-annotations/positions-source.jpg",
+    caption: "Nuke project preview: several outside standing markers. Context only; this is not an exact standing step for one lineup.",
+    kind: "context",
+    creator: "Rene Rebsdorf and CS2-annotations contributors",
+    source: "https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/assets/positions.jpg",
+    license: "MIT; underlying Counter-Strike artwork remains Valve's property",
+    licenseUrl: ANNOTATION_SOURCE.licenseUrl,
+  },
+  {
+    image: "/lineup-media/cs2-annotations/aim-targets-source.jpg",
+    caption: "Nuke project preview: several outside aim markers. Context only; the camera is not a recorded exact pose for one throw.",
+    kind: "context",
+    creator: "Rene Rebsdorf and CS2-annotations contributors",
+    source: "https://github.com/ReneRebsdorf/CS2-annotations/blob/f6b2b17dac00f8167e7226b7029f1f4c0f4ceabe/assets/aim-targets.jpg",
+    license: "MIT; underlying Counter-Strike artwork remains Valve's property",
+    licenseUrl: ANNOTATION_SOURCE.licenseUrl,
+  },
+];
+
+export const PHOTO_GUIDE_GAPS = [
+  { mapId: "inferno", reason: "Additional licensed public-web photo sources are needed." },
+  { mapId: "nuke", reason: "Public documentation context views are not complete per-lineup photo steps." },
+  { mapId: "anubis", reason: "Additional licensed public-web photo sources are needed." },
+  { mapId: "vertigo", reason: "Additional licensed public-web photo sources are needed." },
+] as const;
+
+export const ANNOTATION_DATA_GAPS = [
+  { mapId: "cache", reason: "The annotation-coordinate dataset has no Cache file. Its separate Kielson photo guides do not claim annotation coordinates." },
+] as const;
+
+export const PHOTO_VALIDATION_STATUS = "Licensed source photo guides have no independent current-build test. No release-frame screenshot is invented when a source only provides position and aim views.";

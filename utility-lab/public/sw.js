@@ -1,5 +1,5 @@
 // Cache only this app's assets. No analytics, polling, or third-party requests.
-const CACHE = "utility-lab-v6";
+const CACHE = "utility-lab-v15";
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
@@ -14,6 +14,11 @@ self.addEventListener("install", (event) => {
         "/",
         "/icon.svg",
         "/manifest.webmanifest",
+        "/icon.svg?v=route20261110",
+        "/manifest.webmanifest?v=route20261110",
+        "/icons/apple-touch-icon.png?v=route20261110",
+        "/icons/icon-192.png?v=route20261110",
+        "/icons/icon-512.png?v=route20261110",
         "/fonts/manrope-latin.woff2",
         "/maps/mirage.svg",
         "/maps/mirage-light.svg",
@@ -39,11 +44,52 @@ self.addEventListener("activate", (event) => {
   );
 });
 self.addEventListener("message", (event) => {
+  if (event.data?.type === "CACHE_OFFLINE" && Array.isArray(event.data.urls)) {
+    const urls = [...new Set(event.data.urls)].filter(
+      (url) =>
+        typeof url === "string" &&
+        (/^\/(maps|map-thumbnails)\/[a-zA-Z0-9_.-]+\.(svg|png)$/.test(url) ||
+          url === "/art/pixel-smoke.png" ||
+          /^\/art\/launch-dust-(cs1999|source|csgo)\.webp$/.test(url) ||
+          /^\/lineup-media\/(?:[a-zA-Z0-9_-]+\/)+[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/.test(
+            url,
+          )),
+    );
+    const port = event.ports[0];
+    event.waitUntil(
+      (async () => {
+        let completed = 0;
+        try {
+          const cache = await caches.open(CACHE);
+          for (const url of urls) {
+            const response = await fetch(url, { cache: "reload" });
+            if (!response.ok)
+              throw new Error(
+                "An offline asset was unavailable. Keep the local server running and try again.",
+              );
+            await cache.put(url, response);
+            port?.postMessage({ completed: ++completed, total: urls.length });
+          }
+          port?.postMessage({ done: true });
+        } catch (error) {
+          port?.postMessage({
+            done: true,
+            error:
+              error instanceof Error
+                ? error.message
+                : "Offline installation could not finish.",
+          });
+        }
+      })(),
+    );
+    return;
+  }
   if (event.data?.type === "CACHE_ART" && Array.isArray(event.data.urls)) {
     const urls = event.data.urls.filter(
       (url) =>
         typeof url === "string" &&
-        /^\/art\/(launch-pixel|pixel-smoke)\.png$/.test(url),
+        (url === "/art/pixel-smoke.png" ||
+          /^\/art\/launch-dust-(cs1999|source|csgo)\.webp$/.test(url)),
     );
     event.waitUntil(
       caches
@@ -89,7 +135,9 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   if (
-    !/^\/(assets|maps|map-thumbnails|fonts|icons|art)\//.test(url.pathname) &&
+    !/^\/(assets|maps|map-thumbnails|fonts|icons|art|lineup-media)\//.test(
+      url.pathname,
+    ) &&
     !["/icon.svg", "/manifest.webmanifest"].includes(url.pathname)
   )
     return;
@@ -113,3 +161,4 @@ self.addEventListener("fetch", (event) => {
     ),
   );
 });
+

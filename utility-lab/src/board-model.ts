@@ -9,6 +9,7 @@ export type BoardObject = {
   points?: XY[];
   label?: string;
   number?: number;
+  color?: string;
 };
 export type BoardPlan = {
   version: 1;
@@ -44,8 +45,43 @@ const kinds: ObjectKind[] = [
   "text",
 ];
 export const MAX_OBJECTS = 250;
+/** Fixed drawing colours are portable; an absent colour follows the board theme. */
+export function boardInkColor(value: unknown): string | undefined {
+  return typeof value === "string" && /^#[0-9a-f]{6}$/i.test(value)
+    ? value.toLowerCase() : undefined;
+}
 export const clamp = (value: number, min = 0, max = 1000) =>
   Math.min(max, Math.max(min, value));
+
+/** Keep raw map-space samples portable; dense gestures retain their endpoint. */
+export function appendPenPoints(previous: XY[], samples: XY[]): XY[] {
+  let points = previous.filter((point, index) => !index || point.x !== previous[index - 1].x || point.y !== previous[index - 1].y);
+  for (const sample of samples) {
+    const point = { x: clamp(sample.x), y: clamp(sample.y) };
+    const last = points[points.length - 1];
+    if (!last || Math.hypot(point.x - last.x, point.y - last.y) >= 0.6) points.push(point);
+    if (points.length > 800) points = points.filter((_, index) => index === 0 || index % 2 === 0 || index === points.length - 1);
+  }
+  return points;
+}
+
+/** Interpolating cubic segments follow the samples, with round joins at rest/export. */
+export function penPath(samples: XY[]): string {
+  const points = samples.filter((point, index) => !index || point.x !== samples[index - 1].x || point.y !== samples[index - 1].y);
+  if (!points.length) return "";
+  const value = (number: number) => String(Math.round(clamp(number) * 100) / 100);
+  const pair = (point: XY) => `${value(point.x)} ${value(point.y)}`;
+  let path = `M ${pair(points[0])}`;
+  if (points.length === 2) return `${path} L ${pair(points[1])}`;
+  for (let index = 0; index < points.length - 1; index++) {
+    const before = points[Math.max(0, index - 1)], start = points[index];
+    const end = points[index + 1], after = points[Math.min(points.length - 1, index + 2)];
+    const first = { x: start.x + (end.x - before.x) / 6, y: start.y + (end.y - before.y) / 6 };
+    const second = { x: end.x - (after.x - start.x) / 6, y: end.y - (after.y - start.y) / 6 };
+    path += ` C ${pair(first)} ${pair(second)} ${pair(end)}`;
+  }
+  return path;
+}
 export function uid() {
   return typeof crypto !== "undefined" && crypto.randomUUID
     ? crypto.randomUUID()
@@ -246,6 +282,12 @@ export function validatePlan(value: unknown): BoardPlan {
       x: coordinate(raw.x),
       y: coordinate(raw.y),
     };
+    if (raw.color !== undefined) {
+      const color = boardInkColor(raw.color);
+      if ((kind !== "pen" && kind !== "route") || !color)
+        throw new Error("Drawing colours must be six-digit hex values on drawings or routes.");
+      item.color = color;
+    }
     if (raw.label !== undefined) item.label = text(raw.label, 80);
     if (raw.number !== undefined) {
       if (

@@ -1,0 +1,64 @@
+.tactic-share-dialog {
+  width: min(680px, calc(100% - 32px));
+  max-height: min(880px, calc(100dvh - 32px));
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  color: var(--text);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 24px 80px #0005;
+  overscroll-behavior: contain;
+}
+.tactic-share-dialog::backdrop { background: #080c12a8; }
+.ts-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 25px 26px 20px; }
+.ts-heading h2 { margin: 0 0 6px; font-size: 24px; font-weight: 700; letter-spacing: -.025em; }
+.ts-heading p, .ts-summary span, .ts-preview-title p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.ts-heading .icon-button { flex: 0 0 auto; }
+.ts-tabs { display: flex; gap: 22px; padding: 0 26px; border-bottom: 1px solid var(--border); }
+.ts-tabs button { display: flex; align-items: center; gap: 7px; padding: 11px 0; color: var(--muted); border: 0; border-bottom: 2px solid transparent; background: transparent; font: inherit; font-size: 13px; }
+.ts-tabs button[aria-pressed="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+.ts-content { padding: 22px 26px 26px; }
+.ts-summary { display: flex; flex-direction: column; gap: 3px; margin-bottom: 22px; overflow-wrap: anywhere; }
+.ts-summary strong { font-size: 17px; }
+.ts-label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 650; }
+.ts-code { width: 100%; height: 122px; resize: vertical; min-height: 100px; max-height: 260px; margin-bottom: 14px; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font: 13px/1.6 ui-monospace, monospace; overflow-wrap: anywhere; word-break: break-all; caret-color: var(--accent); }
+.ts-code::placeholder { color: var(--muted); }
+.ts-actions { display: flex; gap: 9px; flex-wrap: wrap; }
+.tactic-share-dialog .ts-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 14px; font: inherit; font-size: 13px; font-weight: 600; border: 1px solid var(--border); border-radius: 8px; color: var(--text); background: var(--surface); cursor: pointer; touch-action: manipulation; }
+.tactic-share-dialog .ts-primary { color: var(--accent-ink); border-color: var(--accent); background: var(--accent); }
+.tactic-share-dialog .ts-button:disabled { opacity: .45; cursor: not-allowed; }
+@media (hover: hover) { .tactic-share-dialog .ts-button:hover:not(:disabled) { filter: brightness(.96); } }
+.ts-check { display: flex; align-items: flex-start; gap: 9px; margin-top: 20px; color: var(--text); font-size: 13px; line-height: 1.6; }
+.ts-check input { margin-top: 4px; accent-color: var(--accent); }
+.ts-note { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 15px 0 0; }
+.ts-error { color: var(--text); background: var(--surface); padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.65; margin: 16px 0 0; overflow-wrap: anywhere; }
+.ts-preview { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--border); }
+.ts-preview-title { display: flex; gap: 15px; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+.ts-preview-title h3 { font-size: 20px; margin: 0 0 5px; overflow-wrap: anywhere; }
+.ts-preview-title > span { flex: 0 0 auto; font-size: 12px; color: var(--muted); padding: 4px 8px; background: var(--surface); border-radius: 5px; }
+.ts-preview-map { display: block; width: 100%; max-height: 410px; background: var(--canvas); border-radius: 10px; }
+.ts-map-credit { color: var(--muted); margin: 8px 0 0; font-size: 12px; text-align: center; }
+.ts-map-credit a { color: inherit; text-underline-offset: 3px; }
+.ts-preview-notes h4 { margin: 21px 0 7px; font-size: 13px; }
+.ts-preview-notes p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.75; margin: 0; }
+.ts-preview details { margin-top: 16px; color: var(--muted); font-size: 13px; }
+.ts-preview summary { min-height: 36px; cursor: pointer; }
+.ts-preview ul { padding-left: 20px; max-height: 160px; overflow: auto; }
+.ts-preview li { padding-bottom: 4px; overflow-wrap: anywhere; }
+.ts-preview > .ts-button { margin-top: 18px; }
+.tactic-share-dialog :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.tactic-share-dialog ::selection { background: var(--accent-soft); color: var(--text); }
+@media (prefers-reduced-motion: no-preference) { .ts-loading { animation: ts-spin 1s linear infinite; } }
+@keyframes ts-spin { to { transform: rotate(360deg); } }
+@media (max-width: 540px) {
+  .tactic-share-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: 12px; }
+  .ts-heading { padding: 20px 18px 16px; gap: 8px; }
+  .ts-heading h2 { font-size: 22px; }
+  .ts-tabs { padding: 0 18px; }
+  .ts-content { padding: 20px 18px 24px; }
+  .ts-code { font-size: 16px; }
+  .ts-preview-title { flex-direction: column; gap: 8px; }
+  .ts-check { min-height: 44px; }
+}

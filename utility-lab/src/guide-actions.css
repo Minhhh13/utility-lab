@@ -1,0 +1,80 @@
+.ul-guide-actions {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.ul-media-heading-actions {display: flex; align-items: center; gap: 4px; flex: 0 0 auto;}
+.ul-media-dialog-heading > div:first-child {min-width: 0;}
+.ul-media-dialog-heading .ul-media-heading-actions > .ul-icon-button {min-width: 44px; min-height: 44px;}
+@media (max-width: 540px) {
+  .ul-media-dialog-heading {flex-wrap: wrap;}
+  .ul-media-dialog-heading > div:first-child {flex: 1 0 100%; padding-right: 44px;}
+  .ul-media-heading-actions {margin-left: auto;}
+  .ul-media-heading-actions > .ul-icon-button {position: absolute; right: 10px; top: 8px;}
+}
+.ul-guide-actions .ul-guide-action-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.ul-guide-actions .ul-guide-save.is-saved {background: var(--accent-soft); color: var(--accent);}
+.ul-guide-actions button:focus-visible {outline: 2px solid var(--accent); outline-offset: -2px;}
+.ul-guide-actions button:active {background: var(--accent-soft);}
+.ul-guide-action-menu {
+  position: absolute;
+  z-index: 20;
+  width: min(224px, calc(100vw - 40px));
+  padding: 6px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: 0 10px 30px #00000026;
+  color: var(--text);
+}
+.ul-guide-action-menu > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.ul-guide-action-menu > button > svg {flex: 0 0 auto; color: var(--muted);}
+.ul-guide-action-menu > button > span {min-width: 0; overflow-wrap: anywhere;}
+@media (hover: hover) and (pointer: fine) {
+  .ul-guide-actions .ul-guide-action-button:hover, .ul-guide-action-menu > button:hover {background: var(--accent-soft); color: var(--accent);}
+  .ul-guide-action-menu > button:hover > svg {color: var(--accent);}
+}
+@media (max-width: 600px) {
+  .ul-guide-actions .ul-guide-save > span {display: none;}
+  .ul-guide-actions .ul-guide-action-button {padding: 8px;}
+}

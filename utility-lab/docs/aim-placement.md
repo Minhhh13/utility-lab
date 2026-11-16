@@ -1,0 +1,20 @@
+# Source-confirmed aim markers
+
+The viewer preserves each original image. A static hollow reticle restores the source website’s separate crosshair layer; its open centre leaves the exact aiming pixel visible. Position and landing photos have no added crosshair. The small crosshair button hides or shows it.
+
+`UtilityPhoto.aimPoint` stores normalized coordinates against the **full original image**, before any selected panel. The viewer maps that point through contain sizing, zoom, scrolling and panel selection. It never uses the centre of a cropped panel as a substitute for an aiming point. Metadata survives validation and portable copies.
+
+Public UI evidence collected 10 November 2026, without launching or inspecting CS2, Steam, game processes or game files:
+
+- [CS2Tricks B Alley from Ruins](https://www.cs2tricks.com/nades/ancient/smokes/b-alley-from-ruins-6af7) and [X Box from T Spawn](https://www.cs2tricks.com/nades/dust2/smokes/x-box-from-t-spawn-fd23): the original UI places a separate absolute SVG, `viewBox="0 0 1920 1080"`, at crosshair centre `(960, 540)` over the camera image. Raw image resources omit that overlay.
+- [CS2Tricks Heaven from Water](https://www.cs2tricks.com/nades/anubis/smokes/heaven-from-water-d678): the original normal `0229310a-eab4-4311-8b55-65a13c2bb138` and zoomed `7392d27c-7a28-485e-a270-42bab093aa1f` images share that centred SVG layer. This verifies both the initial Aim and publisher-labelled Aim detail image. It does not establish a point on arbitrary added images.
+- [CSNADES Backsite from Sun Room](https://csnades.gg/cache/hegrenades/backsite-from-sun-room): selecting the ordinary **Lineup** tab reveals the original `lineup.webp` (2560 × 1440) with a separate `Crosshair image`, absolutely positioned `top-1/2 left-1/2` and translated by half its own size. Its original point is `(1280, 720)`. This restores the first original camera Aim image from this provider.
+- Four individually reviewed original captures retain their existing centre crosshair: GO NADE Mustang/T Roof and T Stairs/A Plat, NartOutHere Cache boost HE, and CS2 Nades Nuke B retake flash. The latter is a portrait original (1080 × 1920), point `(540, 960)`, mapped through its selected panel `(430, 460, 650, 1460)`.
+
+The source helper requires the original publisher source and its expected camera asset host/name. It excludes personal images, composites, unknown providers, unreviewed panels and extra Aim views. Existing explicit aim coordinates remain unchanged. Some other sources already bake their crosshair into the original pixels; they receive no guessed overlay.
+
+Research artifacts (local, ignored): `outputs/aim-placement-research/source-ui-evidence.json`, `source-ui-1.html`, `source-ui-2.html`, `proof-samples.json`, and `outputs/aim-placement-20261110/{cs2tricks-detail-proof.json,csnades-lineup-proof.json,csnades-lineup.html,csnades-lineup.png}`.
+
+Current generated catalogue: **1,848/1,848 CS2Tricks Aim references** across 1,287 records (including 561 detail views) and **183/183 curated CSNADES Aim references** receive the restored source overlay. The 27 community video-still references keep their original baked crosshairs. One NadesDB reference and other legacy/composite guides retain their original images without an inferred overlay. Current bundling replaces no CS2Tricks camera Aim or curated CSNADES `lineup.webp` asset; a future asset substitution must preserve the original aim metadata.
+
+Verification: six focused model checks cover all eight map catalogues, metadata round-trips/rejections, trusted source boundaries, letterboxing and portrait panel coordinates. Four Edge tests load actual source image bytes for Ancient B Alley, Anubis Heaven (including Aim detail), Cache Backsite and Nuke B-retake portrait; they check alignment at Fit/150%, scrolling, 390/320px, original image identity and the hide/show control. The five existing photo stability tests also pass, including 30 consecutive painted-frame samples and classic scrollbars. Screenshots are under `outputs/aim-placement-20261110/browser-results/`. The reticle has no animation and does not affect image or canvas dimensions.

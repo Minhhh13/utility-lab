@@ -1,0 +1,361 @@
+{
+  "checkedAt": "2026-11-10",
+  "scope": "Online original Result photos and original named Total CS polygon areas only; no game or Steam access.",
+  "coreEdits": false,
+  "proposals": [
+    {
+      "guideId": "gonade-nuke-mustang-from-t-roof-molotov",
+      "region": "Mustang",
+      "proposedAnchorId": "nuke:upper:mustang",
+      "aliases": [
+        "mustang"
+      ],
+      "scope": "named-target",
+      "semanticReview": "Original Result shows fire along the elevated A-side catwalk directly above the Hut exit, next to the yellow bridge and opposite the A-site silos. This matches the separate Mustang region, not the northern Rafters anchor.",
+      "mapId": "nuke",
+      "levelId": "upper",
+      "canonicalSource": "https://gonade.app/nade/nuke-mustang-from-t-roof-molotov",
+      "sourceLandingImage": "https://gonade.app/images/maps/webp/3038/result.webp?v=1784807957",
+      "sourceLandingDimensions": {
+        "width": 2560,
+        "height": 1440
+      },
+      "decision": "propose-named-callout-area",
+      "matchedExistingAnchorId": null,
+      "sourceRegion": {
+        "id": 928,
+        "name": "Mustang",
+        "aliases": [],
+        "description": "Mustang refers to the raised area next to rafters and above the entrance/exit to Hut from A Site.",
+        "url": "https://totalcsgo.com/callouts/nuke",
+        "logicalViewBox": 800,
+        "polygon": [
+          [
+            417,
+            434
+          ],
+          [
+            414,
+            352
+          ],
+          [
+            424,
+            352
+          ],
+          [
+            423,
+            432
+          ]
+        ],
+        "referencePoint": [
+          419.4381099126862,
+          389.1535695942476
+        ],
+        "pointInsidePolygon": true
+      },
+      "registrationId": "nuke-upper-totalcs",
+      "registrationTransform": {
+        "scaleX": 1.25,
+        "scaleY": 1.25,
+        "translateX": 0,
+        "translateY": 0
+      },
+      "appPoint": {
+        "x": 524.3,
+        "y": 486.44
+      },
+      "artwork": "/maps/nuke.svg",
+      "artworkSha256": "b5d7db39cc01e30dbc66f7697b2386de3538bc2d859e53a75ac8536b71ec5372",
+      "sourcePageCheck": {
+        "status": 200,
+        "sha256": "c84f98979d770db1eb8948b75683ec5914348aedbac1f2db4c037a0b26d94208",
+        "exactPolygonStillPublished": true
+      },
+      "checkedAt": "2026-11-10",
+      "measuredGrenadeImpact": false
+    },
+    {
+      "guideId": "gonade-nuke-secret-from-t-outside-molotov",
+      "region": "Secret",
+      "proposedAnchorId": "nuke:upper:secret",
+      "aliases": [
+        "secret"
+      ],
+      "scope": "named-target-on-upper-floor",
+      "semanticReview": "Original Result shows the Outside doorway, upper Secret landing and first descending stairs beside the B-arrow sign. The named upper Secret entrance is defensible; it is not the lower Tunnels/Decon room.",
+      "mapId": "nuke",
+      "levelId": "upper",
+      "canonicalSource": "https://gonade.app/nade/nuke-secret-from-t-outside-molotov",
+      "sourceLandingImage": "https://gonade.app/images/maps/webp/3039/result.webp?v=1784807957",
+      "sourceLandingDimensions": {
+        "width": 2560,
+        "height": 1440
+      },
+      "decision": "propose-named-callout-area",
+      "matchedExistingAnchorId": null,
+      "sourceRegion": {
+        "id": 945,
+        "name": "Secret",
+        "aliases": [],
+        "description": "The staircase that leads from Outside to Tunnels.",
+        "url": "https://totalcsgo.com/callouts/nuke",
+        "logicalViewBox": 800,
+        "polygon": [
+          [
+            523,
+            599
+          ],
+          [
+            558,
+            600
+          ],
+          [
+            558,
+            558
+          ],
+          [
+            523,
+            559
+          ]
+        ],
+        "referencePoint": [
+          540.6422764227642,
+          579
+        ],
+        "pointInsidePolygon": true
+      },
+      "registrationId": "nuke-upper-totalcs",
+      "registrationTransform": {
+        "scaleX": 1.25,
+        "scaleY": 1.25,
+        "translateX": 0,
+        "translateY": 0
+      },
+      "appPoint": {
+        "x": 675.8,
+        "y": 723.75
+      },
+      "artwork": "/maps/nuke.svg",
+      "artworkSha256": "b5d7db39cc01e30dbc66f7697b2386de3538bc2d859e53a75ac8536b71ec5372",
+      "sourcePageCheck": {
+        "status": 200,
+        "sha256": "c84f98979d770db1eb8948b75683ec5914348aedbac1f2db4c037a0b26d94208",
+        "exactPolygonStillPublished": true
+      },
+      "checkedAt": "2026-11-10",
+      "measuredGrenadeImpact": false
+    },
+    {
+      "guideId": "gonade-anubis-t-stairs-from-a-plat-he",
+      "region": "Stairs",
+      "proposedAnchorId": "anubis:main:t-stairs",
+      "aliases": [
+        "t stairs"
+      ],
+      "scope": "named-target",
+      "semanticReview": "Original Result shows the HE at the building/window beside the T-side descending steps. Total CS explicitly lists T Stairs as an alias of the separate Stairs region leading from Alley toward Canal. This is separate from the short Bridge/Double Doors stairs.",
+      "mapId": "anubis",
+      "levelId": "main",
+      "canonicalSource": "https://gonade.app/nade/anubis-t-stairs-from-a-plat-he",
+      "sourceLandingImage": "https://gonade.app/images/maps/webp/1008/result.webp?v=1784807938",
+      "sourceLandingDimensions": {
+        "width": 2560,
+        "height": 1440
+      },
+      "decision": "propose-named-callout-area",
+      "matchedExistingAnchorId": null,
+      "sourceRegion": {
+        "id": 981,
+        "name": "Stairs",
+        "aliases": [
+          "T Stairs"
+        ],
+        "description": "The Stairs callout refers to the descending stairs leading to the Water/Canal area from Alley. This is the quickest route to Canal from T spawn.",
+        "url": "https://totalcsgo.com/callouts/anubis",
+        "logicalViewBox": 800,
+        "polygon": [
+          [
+            527.34375,
+            500.78125
+          ],
+          [
+            548.4375,
+            500.78125
+          ],
+          [
+            548.4375,
+            525.78125
+          ],
+          [
+            558.59375,
+            532.8125
+          ],
+          [
+            559.375,
+            538.28125
+          ],
+          [
+            543.75,
+            548.4375
+          ],
+          [
+            534.375,
+            539.0625
+          ],
+          [
+            527.34375,
+            536.71875
+          ]
+        ],
+        "referencePoint": [
+          540.3069572153553,
+          523.639898000201
+        ],
+        "pointInsidePolygon": true
+      },
+      "registrationId": "anubis-main-totalcs",
+      "registrationTransform": {
+        "scaleX": 1.25,
+        "scaleY": 1.25,
+        "translateX": 0,
+        "translateY": 0
+      },
+      "appPoint": {
+        "x": 675.38,
+        "y": 654.55
+      },
+      "artwork": "/maps/anubis.svg",
+      "artworkSha256": "99ae93d3c660c567ff13f5028ddf0395ce15f728aae3af0c3b148c089f7c2beb",
+      "sourcePageCheck": {
+        "status": 200,
+        "sha256": "cfc0ed1839cefcd3f441c3df2bab35d5a53d68fa03e9f83402af03face3cf2c7",
+        "exactPolygonStillPublished": true
+      },
+      "checkedAt": "2026-11-10",
+      "measuredGrenadeImpact": false
+    },
+    {
+      "guideId": "gonade-anubis-mid-doorswindow-from-ruins-molotov",
+      "region": "Double Doors",
+      "proposedAnchorId": "anubis:main:mid-doors",
+      "aliases": [
+        "mid doors",
+        "double doors"
+      ],
+      "scope": "exact-guide-source-only-for-composite-target",
+      "semanticReview": "Original Result shows one fire patch at the foot of the adjacent window and open wooden double door, with the small stair approach in front. This can bind this exact guide to the Double Doors area. Do not generally alias arbitrary composite Mid Doors/Window targets or average different destinations.",
+      "mapId": "anubis",
+      "levelId": "main",
+      "canonicalSource": "https://gonade.app/nade/anubis-mid-doorswindow-from-ruins-molotov",
+      "sourceLandingImage": "https://gonade.app/images/maps/webp/1014/result.webp?v=1784807939",
+      "sourceLandingDimensions": {
+        "width": 2560,
+        "height": 1440
+      },
+      "decision": "propose-named-callout-area",
+      "matchedExistingAnchorId": null,
+      "sourceRegion": {
+        "id": 985,
+        "name": "Double Doors",
+        "aliases": [
+          "Mid Doors",
+          "Door"
+        ],
+        "description": "Double Doors consists of the two doors in the middle of the map, as well as the small area leading up the short stairs to Bridge.",
+        "url": "https://totalcsgo.com/callouts/anubis",
+        "logicalViewBox": 800,
+        "polygon": [
+          [
+            418.75,
+            402.34375
+          ],
+          [
+            415.625,
+            434.375
+          ],
+          [
+            435.15625,
+            435.15625
+          ],
+          [
+            435.9375,
+            437.5
+          ],
+          [
+            435.9375,
+            436.71875
+          ],
+          [
+            474.21875,
+            436.71875
+          ],
+          [
+            475,
+            421.875
+          ],
+          [
+            478.90625,
+            421.875
+          ],
+          [
+            478.125,
+            403.90625
+          ],
+          [
+            471.09375,
+            401.5625
+          ],
+          [
+            466.40625,
+            398.4375
+          ],
+          [
+            471.09375,
+            389.84375
+          ],
+          [
+            437.5,
+            387.5
+          ],
+          [
+            440.625,
+            390.625
+          ],
+          [
+            441.40625,
+            399.21875
+          ],
+          [
+            438.28125,
+            401.5625
+          ]
+        ],
+        "referencePoint": [
+          448.42154131847724,
+          415.2394527623027
+        ],
+        "pointInsidePolygon": true
+      },
+      "registrationId": "anubis-main-totalcs",
+      "registrationTransform": {
+        "scaleX": 1.25,
+        "scaleY": 1.25,
+        "translateX": 0,
+        "translateY": 0
+      },
+      "appPoint": {
+        "x": 560.53,
+        "y": 519.05
+      },
+      "artwork": "/maps/anubis.svg",
+      "artworkSha256": "99ae93d3c660c567ff13f5028ddf0395ce15f728aae3af0c3b148c089f7c2beb",
+      "sourcePageCheck": {
+        "status": 200,
+        "sha256": "cfc0ed1839cefcd3f441c3df2bab35d5a53d68fa03e9f83402af03face3cf2c7",
+        "exactPolygonStillPublished": true
+      },
+      "checkedAt": "2026-11-10",
+      "measuredGrenadeImpact": false
+    }
+  ]
+}

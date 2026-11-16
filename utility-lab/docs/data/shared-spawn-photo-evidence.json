@@ -1,0 +1,47 @@
+[
+  {
+    "guideSource": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e",
+    "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-1-5e7e",
+    "photoImage": "/lineup-media/source-video-stills/cs2tricks/ancient/5962b8c2-dcb9-42f1-95dc-839db8982fa1.jpg",
+    "photoCreator": "Kobrick / CS2Tricks",
+    "originID": "d52e8b13-6bd2-4f8a-bb0f-891e7905d527",
+    "originXY": [
+      516,
+      945
+    ],
+    "spawnLabel": "T Spawn #1",
+    "photoTime": 1,
+    "photoSha256": "c234c2d01fc2d15115406803f2f12cf0b4d15a189cadf1ab97dec24fd2e5c2c7",
+    "review": "Explicit predefined T Spawn #1; original and donor share the exact publisher origin UUID and x/y. Donor frame visibly shows feet/standing ground. Original Top Mid aim and video remain its own. No generic callout substitution."
+  },
+  {
+    "guideSource": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20",
+    "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-4-659b",
+    "photoImage": "/lineup-media/source-video-stills/cs2tricks/ancient/2a7f83bf-472e-4bd5-b377-91a1ea39a4aa.jpg",
+    "photoCreator": "Kobrick / CS2Tricks",
+    "originID": "41f2735e-2f69-464f-8fdc-8a8fbf1fcff2",
+    "originXY": [
+      516,
+      920
+    ],
+    "spawnLabel": "T Spawn #4",
+    "photoTime": 2.5,
+    "photoSha256": "3165bccc1ca191c306e0d92254a45454bb2506378f44dc9cf16ecbd4d9597e7c",
+    "review": "Explicit predefined T Spawn #4; original and donor share the exact publisher origin UUID and x/y. Donor frame visibly shows feet/standing ground. Original Top Mid aim and video remain its own. No generic callout substitution."
+  },
+  {
+    "guideSource": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3",
+    "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-5-aa01",
+    "photoImage": "/lineup-media/source-video-stills/cs2tricks/ancient/06d734c7-0b48-4b06-9f03-da47caed4d09.jpg",
+    "photoCreator": "Kobrick / CS2Tricks",
+    "originID": "ca6a50cd-a94a-45d6-8eac-8b6db5160e9b",
+    "originXY": [
+      489,
+      920
+    ],
+    "spawnLabel": "T Spawn #5",
+    "photoTime": 2.5,
+    "photoSha256": "202ba63500bf83bab0aa386acede59de6fe1fa8191d4ace3f288509f639f6984",
+    "review": "Explicit predefined T Spawn #5; original and donor share the exact publisher origin UUID and x/y. Donor frame visibly shows feet/standing ground. Original Top Mid aim and video remain its own. No generic callout substitution."
+  }
+]

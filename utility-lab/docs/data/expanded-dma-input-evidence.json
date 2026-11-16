@@ -1,0 +1,11 @@
+[
+  {
+    "guideSource": "https://www.cs2tricks.com/nades/dust2/smokes/long-doors-from-cross-925f",
+    "sourceId": "f003717d-7ce0-49d5-b98f-589247544ce6",
+    "publishedTechnique": "jumpthrow",
+    "additionalSourceInput": "A + S",
+    "review": "The source description explicitly identifies an A + S jumpthrow. Original clip captions around 5 seconds instruct moving left with A, then around 7 seconds adding S at the marked roof beam. The app preserves those directional keys instead of reducing the throw to generic running.",
+    "appStep": "Move left with A; at the marked beam, add S and jump + LMB.",
+    "checkedAt": "2026-11-10"
+  }
+]

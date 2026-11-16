@@ -4,14 +4,14 @@ Scope: the current local CS2 launch, tactic board, Lineups, Playbooks and Stats 
 
 ## Current surface requirements
 
-- The approved Utility Lab name/logo lead into a fullscreen pixel-art entry with four working destinations. Readiness feedback must reflect actual resources, never an artificial timer. The launch animation needs pause, reduced-motion and hidden-page behavior.
+- The approved Utility Lab name and polished route/node logo lead into a fullscreen pixel-art entry with four working destinations. Courtyard stays the default; Dunes, Foundry and Temple are remembered landscape choices that load on demand. No slogan, readiness phrase or artificial intro delays the workspaces. Scene motion runs normally and stops for reduced motion or a hidden page; there is no pause/play control.
 - Keep the board map dominant with its inspector initially closed. The picker contains only the configured Active Duty/FACEIT union: eight maps and ten levels. Old bundled artwork must not imply extra picker entries or current matchmaking availability.
 - Light, Dark and System mode plus Cobalt, Ember, Mint and Rose must affect the whole workspace through semantic tokens, including canvas, radar, inspector, controls and markers. User-uploaded reference photos preserve their original appearance.
 - Shared smoke, flash, molly and HE silhouettes remain recognizable at their displayed size. Small map pins use larger hit areas without pretending to show measured grenade coverage.
 
 ## Lineup media and local libraries
 
-- Source-linked creator videos and the 68 illustrative practice records have distinct, honest status. The 16 creator examples link to eight original guides; they are not a complete or independently tested lineup database.
+- The 223 source-linked creator video records from 57 sources and the 68 illustrative practice records have distinct, honest status. Bundled photo guides preserve licensed original images and source composites; hosted Reddit image/gallery guides retain their original presentation and source fallback. Source dates and input ambiguities remain explicit; none is an independently tested current-build lineup database.
 - Selecting a media lineup opens its viewer. A YouTube iframe loads only after an explicit player request, uses an allowlisted video ID and the privacy-enhanced embed host, and does not autoplay. Keep an original-source link available when playback fails or is unavailable.
 - Photo slides use real uploads or attributed source images, with captions, previous/next controls, direct selection and keyboard navigation. Never generate or invent standing-position/aim screenshots. Validate photo counts, types and total stored size.
 - Throw methods distinguish LMB, RMB, **Both buttons (LMB + RMB)**, jump and movement variants. A combined-button input must not be silently interpreted as a mouse-wheel action. Do not infer precise throw inputs from a video title or chapter name.

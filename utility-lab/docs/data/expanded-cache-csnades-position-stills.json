@@ -1,0 +1,1334 @@
+[
+  {
+    "source": "https://csnades.gg/cache/molotovs/backsite-from-sun-room",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-BGcoxAq4FX/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--backsite-from-sun-room-position.jpg",
+    "timestamp": 2.35,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "1f91f853439914f186c756d4322f9f41f72b02793a126f1ce17119ef2f21e284",
+    "duration": 16.783333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.233,
+        "end": 7.099,
+        "text": "Align window edge, down to roof"
+      },
+      {
+        "start": 8.433,
+        "end": 10.583,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/newbox-from-sun-room",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-JBdUeWtGMW/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--newbox-from-sun-room-position.jpg",
+    "timestamp": 2.35,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "b5d735e62d2ff1fa54b1b24020737f8a08af84179e189d87c6e5e5847d943198",
+    "duration": 17.05,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.899,
+        "end": 7.033,
+        "text": "Aim at corner in bricks"
+      },
+      {
+        "start": 8.3,
+        "end": 10.449,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/forklift-from-a-main",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-g13t86vkmg/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--forklift-from-a-main-position.jpg",
+    "timestamp": 2.35,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "b67da631fe9a78292a64c615e6e135abc4effad306aec4fcf3d70bba4fcb0bed",
+    "duration": 16.233333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at corner of drawers",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand at corner of drawers"
+      },
+      {
+        "start": 3.233,
+        "end": 6.616,
+        "text": "Aim at right of door hinge"
+      },
+      {
+        "start": 7.766,
+        "end": 9.916,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/b-main-from-b-halls",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-cLA5HHVtEQ/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--b-main-from-b-halls-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "f018a889cf12834afaf7df3562c0d7e61158fea6270ef9f24590cb25f41f7886",
+    "duration": 18.15,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand by the box on floor",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand by the box on floor"
+      },
+      {
+        "start": 3.549,
+        "end": 6.45,
+        "text": "Aim above light at support beam"
+      },
+      {
+        "start": 7.516,
+        "end": 9.783,
+        "text": "Run + Left click throw, release before corner"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/ct-from-sun-room",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-ORDvnr5ctw/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--ct-from-sun-room-position.jpg",
+    "timestamp": 2.333,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "11626b4e8fb020522d8df04d2f6f783a927cccd6671c7dce1ad32d25395c2d3c",
+    "duration": 20.533333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.483,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.399,
+        "end": 7.983,
+        "text": "Aim at corner in bricks"
+      },
+      {
+        "start": 9.65,
+        "end": 11.916,
+        "text": "Jump + Left+Right click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/a-main-from-quad",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-S08ZVVqf2I/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--a-main-from-quad-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "ebbdaf9372af4ad9e3cdf22c0de846f5963dbd1f17f5c833987134254305b80e",
+    "duration": 17.216667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.549,
+        "end": 7.066,
+        "text": "Aim above \"H\", in middle of rhombus"
+      },
+      {
+        "start": 8.516,
+        "end": 10.783,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/right-mid-from-garage",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-0CRKYU9cDw/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--right-mid-from-garage-position.jpg",
+    "timestamp": 1.7,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "02aacbcc6142c237c241101be447363157da0ec74fdde2777f8107a4b9efd4bb",
+    "duration": 18.183333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at right doorframe",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 1.85,
+        "text": "Stand at right doorframe"
+      },
+      {
+        "start": 3.25,
+        "end": 7.733,
+        "text": "Aim above left square, to top-left beam"
+      },
+      {
+        "start": 8.949,
+        "end": 10.949,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/boost-from-connector",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-STd9RPKeUT/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--boost-from-connector-position.jpg",
+    "timestamp": 3.6,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "233b3f775d59d914da7988138d6a23563c65272008870c44dfc7eeabe99f2bae",
+    "duration": 17.616667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at end of railing",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 3.75,
+        "text": "Stand at end of railing"
+      },
+      {
+        "start": 4.483,
+        "end": 7.849,
+        "text": "Aim where red meets door"
+      },
+      {
+        "start": 9.183,
+        "end": 11.333,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-connector",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-AnS1KivT8R/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-connector-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "f1b4fd21f1b6892b055888552ac693e57545c8fd1f415440d35b235c3f73e59a",
+    "duration": 15.966667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in Connector",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand in Connector"
+      },
+      {
+        "start": 3.549,
+        "end": 5.716,
+        "text": "Aim at top of railing, aligned with garage door"
+      },
+      {
+        "start": 7.099,
+        "end": 9.116,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/left-mid-from-garage",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-Q2aaUdfSnO/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--left-mid-from-garage-position.jpg",
+    "timestamp": 2.333,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "9a580618137eeace6e3412d7a2566ae1108c355714b74f9228f31e76227a3a17",
+    "duration": 13.85,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at right doorframe",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.483,
+        "text": "Stand at right doorframe"
+      },
+      {
+        "start": 3.216,
+        "end": 7.7,
+        "text": "Aim above left square, to top-left beam"
+      },
+      {
+        "start": 9,
+        "end": 10.916,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/b-main-from-heaven",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-jGQQKaFTMo/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--b-main-from-heaven-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "b114d20ac0eaa68d0743cf0a7a1f8da786d719646b16597601201bcc910e227a",
+    "duration": 16.466667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand on heaven as shown",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand on heaven as shown"
+      },
+      {
+        "start": 3.549,
+        "end": 5.75,
+        "text": "Aim at line to right of pole"
+      },
+      {
+        "start": 6.883,
+        "end": 9.116,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/forklift-from-a-main",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-55kRlH53et/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--forklift-from-a-main-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "5cb01fb1c523433a369f7e5fa5215c04f9fa974755ecc177f8fc871aba18e21f",
+    "duration": 18,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in A Main as shown",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand in A Main as shown"
+      },
+      {
+        "start": 3.983,
+        "end": 7.466,
+        "text": "Aim between two blank squares on crate"
+      },
+      {
+        "start": 8.566,
+        "end": 10.9,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/back-a-site-from-outside-squeaky",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-mMK97AyqvZ/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--back-a-site-from-outside-squeaky-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "eefff7a63e323ea51a0cba9caf484de0489ab2349cc43d2d80c60201adcc6125",
+    "duration": 25.45,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 4.133,
+        "end": 9.566,
+        "text": "Align corner of wall with railing below"
+      },
+      {
+        "start": 13.666,
+        "end": 15.666,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/a-main-from-truck",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-B5bCYxZUEW/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--a-main-from-truck-position.jpg",
+    "timestamp": 2.35,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "39bcf6e2c5f805044a582deab3be3110506d167613de54213b4d83b23345d7e4",
+    "duration": 13.85,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at yellow light on truck.",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Stand at yellow light on truck."
+      },
+      {
+        "start": 3.316,
+        "end": 7.299,
+        "text": "Aim above vertical line on building, up to middle of gray area."
+      },
+      {
+        "start": 8.133,
+        "end": 10.3,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/flashbangs/a-main-from-a-main",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-flashbang-o4olV7R8Ht/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/flashbang--a-main-from-a-main-position.jpg",
+    "timestamp": 3.249,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "68ec4c16818bcffc9d5bb53939388fe8b273a022172b5959915abb752ca72cc6",
+    "duration": 18.116667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner, crouch",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 3.399,
+        "text": "Stand in corner, crouch"
+      },
+      {
+        "start": 4.366,
+        "end": 6.316,
+        "text": "Aim at bottom-left corner of light"
+      },
+      {
+        "start": 8.183,
+        "end": 9.933,
+        "text": "Still crouched, Left+Right click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/sandbags-from-garage",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-iBbtpo1PH0/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--sandbags-from-garage-position.jpg",
+    "timestamp": 2.733,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "4f6e95285ce80645887511a69701a903e8cd13a21b2c827c1198cd42a03ec44c",
+    "duration": 15.966667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner of door",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.883,
+        "text": "Stand in corner of door"
+      },
+      {
+        "start": 3.7,
+        "end": 6.299,
+        "text": "Aim at corner to top-left of pipes"
+      },
+      {
+        "start": 7.549,
+        "end": 9.033,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/connector-from-t-spawn",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-IAUCaCQh6J/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--connector-from-t-spawn-position.jpg",
+    "timestamp": 2.85,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "b0115701fd655d49ae2b324dd896f76331208ad0c55a674e769cd3d3e9475bc8",
+    "duration": 19.533333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand behind 3rd hash mark",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 3,
+        "text": "Stand behind 3rd hash mark"
+      },
+      {
+        "start": 3.5,
+        "end": 5.883,
+        "text": "Aim at \"И\""
+      },
+      {
+        "start": 6.849,
+        "end": 9.349,
+        "text": "Run + Jump + Left click throw, release at end of hash mark"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/ct-from-b-main",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-R29RAW6EHp/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--ct-from-b-main-position.jpg",
+    "timestamp": 2.899,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "57311aa9545e2dd02181f1f7b3853eb8fa8931c93f0b6fbb382027253d0d1435",
+    "duration": 18.366667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand next to door as shown",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 3.049,
+        "text": "Stand next to door as shown"
+      },
+      {
+        "start": 3.7,
+        "end": 6.433,
+        "text": "Aim at left edge of pipe"
+      },
+      {
+        "start": 8.349,
+        "end": 9.833,
+        "text": "Run + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/back-a-site-from-outside-garage",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-aZQOSRIALg/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--back-a-site-from-outside-garage-position.jpg",
+    "timestamp": 2.733,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "f788f6197add5922d441539455397e3a4199f75d7a363c3a98573428b8e9d9a0",
+    "duration": 20.816667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.883,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.7,
+        "end": 6.45,
+        "text": "Aim at shadow on pole"
+      },
+      {
+        "start": 7.883,
+        "end": 9.366,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/boost-from-connector-b",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-ZII8RhcAAA/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--boost-from-connector-b-position.jpg",
+    "timestamp": 2.7,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "9741007bd60d89df1fe0201963ca4d0c6801853d7c109f92e262b47fd7cc1e07",
+    "duration": 14.783333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.85,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.649,
+        "end": 5.333,
+        "text": "Aim at top-right corner of door"
+      },
+      {
+        "start": 6.933,
+        "end": 8.416,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/headshot-from-sun-room-b",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-7MFNSha6Oi/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--headshot-from-sun-room-b-position.jpg",
+    "timestamp": 2.35,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "7aca0403a8576668cecedd871ab5312dd30104c1264e54b179f31355c028c91d",
+    "duration": 17.383333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Jump into corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.5,
+        "text": "Jump into corner"
+      },
+      {
+        "start": 3.216,
+        "end": 7.166,
+        "text": "Aim at middle of dark line"
+      },
+      {
+        "start": 8.483,
+        "end": 10.516,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/nbk-from-outside-a-main",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-ACOsbzEdtx/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--nbk-from-outside-a-main-position.jpg",
+    "timestamp": 2.733,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "fa6303af2bf905df193fcb5e68d6f01395a108eda4b58d703d7f76eecf7a2279",
+    "duration": 24.283333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner of barrel",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.883,
+        "text": "Stand in corner of barrel"
+      },
+      {
+        "start": 4.416,
+        "end": 8.533,
+        "text": "Align vertical gray line, up to edge"
+      },
+      {
+        "start": 10.216,
+        "end": 11.966,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/highway-from-truck",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-YayxoQ4qxh/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--highway-from-truck-position.jpg",
+    "timestamp": 2.733,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "d88362147d8a456b25b798f3589aae752a6b955bdc91a751e7923e393a497ad8",
+    "duration": 21.8,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner of truck",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.883,
+        "text": "Stand in corner of truck"
+      },
+      {
+        "start": 4.233,
+        "end": 6.549,
+        "text": "Aim at bottom-left corner of platform"
+      },
+      {
+        "start": 8.233,
+        "end": 9.983,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/heaven-from-b-main",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-aHzkPliICo/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--heaven-from-b-main-position.jpg",
+    "timestamp": 6.85,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "8ecd8083511c0f717b5d3825bdc92583804a5ab197cd291fef843f26d5c747c4",
+    "duration": 23.216667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand next to doorway as shown",
+    "originalCues": [
+      {
+        "start": 3.583,
+        "end": 7,
+        "text": "Stand next to doorway as shown"
+      },
+      {
+        "start": 8.4,
+        "end": 11.933,
+        "text": "Aim at wall above yellow rod"
+      },
+      {
+        "start": 13.483,
+        "end": 14.966,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/hegrenades/backsite-from-sun-room",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-he-MAhWEX0xII/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/he--backsite-from-sun-room-position.jpg",
+    "timestamp": 2.283,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "4d484c66e7578d303a793dc143bce597a9d593ea9a5cd9391c408f9702cf4aa9",
+    "duration": 15.166667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.433,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.133,
+        "end": 5.383,
+        "text": "Align window sill, down to roof"
+      },
+      {
+        "start": 6.233,
+        "end": 8.483,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garbage-from-connector",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-cVpgfA6Qye/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--garbage-from-connector-position.jpg",
+    "timestamp": 2.283,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "8205f1d3de2acb12cad2466a1c34e9fad04f8e4d3019fa69bbc5e40a40feb2a7",
+    "duration": 18.416667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at bar on railing",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.433,
+        "text": "Stand at bar on railing"
+      },
+      {
+        "start": 3.133,
+        "end": 5.166,
+        "text": "Aim at corner of brick wall"
+      },
+      {
+        "start": 5.95,
+        "end": 8.199,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/heaven-from-garbage",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-brLnKq1v6O/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--heaven-from-garbage-position.jpg",
+    "timestamp": 3.1,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "5fe75d534d963dbb63b8e4a5f351a619c1c24d9a2939277083f837fce0f6a1a7",
+    "duration": 26.216667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner, crouch",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 3.25,
+        "text": "Stand in corner, crouch"
+      },
+      {
+        "start": 4.666,
+        "end": 11.133,
+        "text": "Aim at edge of pipe, down to dark line, and align -2y on crosshair to that position"
+      },
+      {
+        "start": 12.683,
+        "end": 14.166,
+        "text": "Still crouched, Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/front-b-site-from-sun-room",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-zJ91GUbvky/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--front-b-site-from-sun-room-position.jpg",
+    "timestamp": 2.283,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "cccc67d43b64275fb896334604cda2a1a246e2a79f66ba729f6484e94d0303ce",
+    "duration": 18.15,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.433,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.133,
+        "end": 5.433,
+        "text": "Aim at bottom of window sill and vertical line"
+      },
+      {
+        "start": 6.099,
+        "end": 8.349,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/forklift-from-squeaky",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-mvHihqkWDa/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--forklift-from-squeaky-position.jpg",
+    "timestamp": 4.082999,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "e6b85bc88bfe4c2a0847683203873ef3ab0b22b1654c64754ea0e26477155b20",
+    "duration": 18.866667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand at 3rd bar in windows",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 4.233,
+        "text": "Stand at 3rd bar in windows"
+      },
+      {
+        "start": 5.533,
+        "end": 8.349,
+        "text": "Aim at bottom-right of gray square"
+      },
+      {
+        "start": 9.016,
+        "end": 11.266,
+        "text": "Walk 1 step forward, Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-3",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-LXeM5mMuBB/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-3-position.jpg",
+    "timestamp": 4.082999,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "81c560e553b8cb48615c28a67725dccf8434d0b00cb78edd9870cd275747973a",
+    "duration": 28.45,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Spawn #3",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 4.233,
+        "text": "Spawn #3"
+      },
+      {
+        "start": 4.966,
+        "end": 9.933,
+        "text": "Aim between 4 panels"
+      },
+      {
+        "start": 10.833,
+        "end": 15.583,
+        "text": "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-1",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-JkW6jPBKqe/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-1-position.jpg",
+    "timestamp": 4.082999,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "f465bb802995207092547db0b4cfdf87a5c154725e7c457af2330a0683dace35",
+    "duration": 27.35,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Spawn #1",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 4.233,
+        "text": "Spawn #1"
+      },
+      {
+        "start": 5.599,
+        "end": 9.716,
+        "text": "Aim at edge above the the dark square"
+      },
+      {
+        "start": 10.5,
+        "end": 15.016,
+        "text": "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/molotovs/headshot-from-sun-room",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-molotov-T3MXIDeQHH/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/molotov--headshot-from-sun-room-position.jpg",
+    "timestamp": 5.233,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "c064c7dc8c088ec7a337e2711cac611568b091c5c5e457a2310a5976437ee936",
+    "duration": 19.083333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand up on railing, to the left of the track, aligned with the dark spot",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 5.383,
+        "text": "Stand up on railing, to the left of the track, aligned with the dark spot"
+      },
+      {
+        "start": 6.349,
+        "end": 8.666,
+        "text": "Aim at notch on the box"
+      },
+      {
+        "start": 9.949,
+        "end": 12.099,
+        "text": "Jump + Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/forklift-from-outside-squeaky",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-Bm0pxctIts/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--forklift-from-outside-squeaky-position.jpg",
+    "timestamp": 2.533,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "1970df607e28e01faba535e48737e848eb3e9dee4a82cb543faf1a9145fae3d9",
+    "duration": 18.1,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.683,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.566,
+        "end": 5.533,
+        "text": "Aim at corner of roof"
+      },
+      {
+        "start": 6.583,
+        "end": 8.583,
+        "text": "Left click throw"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-4",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-n107yl6EXv/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-4-position.jpg",
+    "timestamp": 3.783,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "65c79abe18ca10cacb7ce323a2a8a5641f5742e7e5b5ba297f4ec923b6739847",
+    "duration": 28.183333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Spawn #4",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 3.933,
+        "text": "Spawn #4"
+      },
+      {
+        "start": 4.966,
+        "end": 9.666,
+        "text": "Align vertical smudge on beam, up to line"
+      },
+      {
+        "start": 10.166,
+        "end": 14.916,
+        "text": "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/a-main-from-ct-spawn",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-E9gJQRbXEN/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--a-main-from-ct-spawn-position.jpg",
+    "timestamp": 2.333,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "9ad39a639cc6bcbdf2cf15a779780926a566996a0d690196be4b0f7f1622bd55",
+    "duration": 23.066667,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Stand in corner",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 2.483,
+        "text": "Stand in corner"
+      },
+      {
+        "start": 3.399,
+        "end": 9.25,
+        "text": "Aim at corner of building, release at lower roof"
+      },
+      {
+        "start": 10.466,
+        "end": 12.733,
+        "text": "Walk + Jump + Left clickn throw, release after low roof"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  },
+  {
+    "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-2",
+    "mediaUrl": "https://assets.csnades.gg/nades/cache-smoke-OnpWxnVUhv/hq.mp4",
+    "publicPath": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-2-position.jpg",
+    "timestamp": 4.082999,
+    "outputWidth": 1280,
+    "outputHeight": 720,
+    "nativeWidth": 2560,
+    "nativeHeight": 1440,
+    "sha256": "5216cd8ba76342844d38e3f35a6500e111c5c944d6d841f85e5fc1c0e8543163",
+    "duration": 28.533333,
+    "aimImage": {
+      "width": 2560,
+      "height": 1440
+    },
+    "positionInstruction": "Spawn #2",
+    "originalCues": [
+      {
+        "start": 0.5,
+        "end": 4.233,
+        "text": "Spawn #2"
+      },
+      {
+        "start": 5.599,
+        "end": 10.483,
+        "text": "Align vertical line, down speck at middle of beam"
+      },
+      {
+        "start": 11.083,
+        "end": 15.599,
+        "text": "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
+      }
+    ],
+    "reviewed": true,
+    "review": "Reviewed source first-person standing scene, visible corner/edge/spawn reference and exact canonical video match. Original source pixels; no new markers.",
+    "extraction": "Original decoded source-video frame; video element screenshot, JPEG90. No added annotations or game interaction."
+  }
+]

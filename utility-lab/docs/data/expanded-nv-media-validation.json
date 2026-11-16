@@ -1,0 +1,3090 @@
+{
+  "checkedAt": "2026-11-09T16:17:50.703Z",
+  "guides": 194,
+  "exactOriginalVideo": true,
+  "nativePlaying": 107,
+  "youtubePlaying": 87,
+  "media": [
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-ct-spawn-0fc1"
+      ],
+      "url": "https://www.youtube.com/watch?v=47k5dBeIm04",
+      "videoId": "47k5dBeIm04",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "47k5dBeIm04",
+        "duration": 17.241,
+        "currentTime": 0.003424,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - A Site Flash from CT Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-heaven-00bf"
+      ],
+      "url": "https://www.youtube.com/watch?v=CtRkzA9US9Q",
+      "videoId": "CtRkzA9US9Q",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "CtRkzA9US9Q",
+        "duration": 12.181,
+        "currentTime": 0.017831,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "TRAIN - A Site Flash from Heaven - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-t-roof-9f65"
+      ],
+      "url": "https://www.youtube.com/watch?v=iD9db__5e6o",
+      "videoId": "iD9db__5e6o",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "iD9db__5e6o",
+        "duration": 13.901,
+        "currentTime": 0.019617,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - A Site Flash from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/hut-from-lobby-9ec9"
+      ],
+      "url": "https://www.youtube.com/watch?v=svSqs2js2yg",
+      "videoId": "svSqs2js2yg",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "svSqs2js2yg",
+        "duration": 23.941,
+        "currentTime": 0.192634,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Flash from Hut to A Site - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/lobby-from-rafters-3385"
+      ],
+      "url": "https://www.youtube.com/watch?v=GGsEaAAsa_o",
+      "videoId": "GGsEaAAsa_o",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "GGsEaAAsa_o",
+        "duration": 17.901,
+        "currentTime": 0.175626,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Flash from Heaven to Lobby - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/main-from-garage-f56a"
+      ],
+      "url": "https://www.youtube.com/watch?v=-pKUzE1z7nQ",
+      "videoId": "-pKUzE1z7nQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "-pKUzE1z7nQ",
+        "duration": 16.661,
+        "currentTime": 0.013655,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Flash from Garage to Main - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/squeaky-from-heaven-a6f8"
+      ],
+      "url": "https://www.youtube.com/watch?v=zyBQOnlG7j8",
+      "videoId": "zyBQOnlG7j8",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "zyBQOnlG7j8",
+        "duration": 16.101,
+        "currentTime": 0.019284,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Flash from Heaven to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/a-site-from-t-roof-c400"
+      ],
+      "url": "https://www.youtube.com/watch?v=lX02rh_0F3k",
+      "videoId": "lX02rh_0F3k",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "lX02rh_0F3k",
+        "duration": 12.941,
+        "currentTime": 0.017139,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - HE from T Roof to A Site - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/hut-from-a-site-264a"
+      ],
+      "url": "https://www.youtube.com/watch?v=KKhoqDUYVVo",
+      "videoId": "KKhoqDUYVVo",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "KKhoqDUYVVo",
+        "duration": 12.061,
+        "currentTime": 0.010329,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - HE from A Site to Hut - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/hut-from-t-roof-70d8"
+      ],
+      "url": "https://www.youtube.com/watch?v=nVJz-CWKFPk",
+      "videoId": "nVJz-CWKFPk",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "nVJz-CWKFPk",
+        "duration": 17.041,
+        "currentTime": 0.213951,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - HE from T Roof to Hut - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/main-from-garage-92b7"
+      ],
+      "url": "https://www.youtube.com/watch?v=7D3briIzRrs",
+      "videoId": "7D3briIzRrs",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "7D3briIzRrs",
+        "duration": 12.521,
+        "currentTime": 0.076213,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - HE from Garage to Main - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/new-end-from-ramp-9e71"
+      ],
+      "url": "https://www.youtube.com/watch?v=Tz1AMkEWlnw",
+      "videoId": "Tz1AMkEWlnw",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "Tz1AMkEWlnw",
+        "duration": 14.821,
+        "currentTime": 0.090299,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "Nukde - B Double Roor from Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/silo-from-outside-main-af81"
+      ],
+      "url": "https://www.youtube.com/watch?v=LacCDI2fcOI",
+      "videoId": "LacCDI2fcOI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "LacCDI2fcOI",
+        "duration": 13.141,
+        "currentTime": 0.203799,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Silo Grenade from Outside - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/silo-from-rafters-7b2f"
+      ],
+      "url": "https://www.youtube.com/watch?v=UVkQDll9zFU",
+      "videoId": "UVkQDll9zFU",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "UVkQDll9zFU",
+        "duration": 12.961,
+        "currentTime": 0.186594,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Silo Grenade from Rafters - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/squeaky-from-a-site-73dc"
+      ],
+      "url": "https://www.youtube.com/watch?v=oMW4lgvJzgI",
+      "videoId": "oMW4lgvJzgI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "oMW4lgvJzgI",
+        "duration": 12.421,
+        "currentTime": 0.140329,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - HE from A Site to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/grenades/squeaky-from-lobby-0f88"
+      ],
+      "url": "https://www.youtube.com/watch?v=CAUoqSXd7Ns",
+      "videoId": "CAUoqSXd7Ns",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "CAUoqSXd7Ns",
+        "duration": 12.161,
+        "currentTime": 0.125389,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - HE from Lobby to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/2nd-vent-from-t-roof-43d0"
+      ],
+      "url": "https://www.youtube.com/watch?v=VyWSJkEPRlk",
+      "videoId": "VyWSJkEPRlk",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "VyWSJkEPRlk",
+        "duration": 13.261,
+        "currentTime": 0.038196,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - 2nd Vent Molotov from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/a-site-from-t-roof-19a5"
+      ],
+      "url": "https://www.youtube.com/watch?v=97FInkNYHf4",
+      "videoId": "97FInkNYHf4",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "97FInkNYHf4",
+        "duration": 13.661,
+        "currentTime": 0.158116,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - A Site Molotov from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/a-site-from-t-roof-d73e"
+      ],
+      "url": "https://www.youtube.com/watch?v=D8SMvgb1JAk",
+      "videoId": "D8SMvgb1JAk",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "D8SMvgb1JAk",
+        "duration": 12.161,
+        "currentTime": 0.06469,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - A Site Molotov from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/heaven-from-silo-bfc0"
+      ],
+      "url": "https://www.youtube.com/watch?v=tHL9up_0yqA",
+      "videoId": "tHL9up_0yqA",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "tHL9up_0yqA",
+        "duration": 16.221,
+        "currentTime": 0.014723,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Molotov from Sile to Heaven (broken window) - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-heaven-2bd3"
+      ],
+      "url": "https://www.youtube.com/watch?v=I9KL-8ijIPQ",
+      "videoId": "I9KL-8ijIPQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "I9KL-8ijIPQ",
+        "duration": 15.461,
+        "currentTime": 0.016452,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Molotov from Heaven to Hut - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-heaven-34c1"
+      ],
+      "url": "https://www.youtube.com/watch?v=A5jDWuJ_jv4",
+      "videoId": "A5jDWuJ_jv4",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "A5jDWuJ_jv4",
+        "duration": 13.401,
+        "currentTime": 0.02862,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Molotov from Heaven to Hut - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-t-roof-4359"
+      ],
+      "url": "https://www.youtube.com/watch?v=n6Fwf1VOSXI",
+      "videoId": "n6Fwf1VOSXI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "n6Fwf1VOSXI",
+        "duration": 18.501,
+        "currentTime": 0.174123,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Hut Molotov from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-t-roof-55fe"
+      ],
+      "url": "https://www.youtube.com/watch?v=zBOSIy-SEhE",
+      "videoId": "zBOSIy-SEhE",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "zBOSIy-SEhE",
+        "duration": 17.081,
+        "currentTime": 0.026877,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Molotov from T Roof to Hut - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-t-roof-7bee"
+      ],
+      "url": "https://www.youtube.com/watch?v=sLlAyabRThI",
+      "videoId": "sLlAyabRThI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "sLlAyabRThI",
+        "duration": 17.161,
+        "currentTime": 0.191475,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Hut Molotov from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/main-from-lobby-f4e2"
+      ],
+      "url": "https://www.youtube.com/watch?v=SuE1Go4gktM",
+      "videoId": "SuE1Go4gktM",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "SuE1Go4gktM",
+        "duration": 12.921,
+        "currentTime": 0.169896,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Molotov from Lobby to Main - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/rafters-from-t-roof-6c0c"
+      ],
+      "url": "https://www.youtube.com/watch?v=fo49X8haZM4",
+      "videoId": "fo49X8haZM4",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "fo49X8haZM4",
+        "duration": 15.421,
+        "currentTime": 0.018407,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Rafters Molotov from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/ramp-box-from-trophy-0bee"
+      ],
+      "url": "https://www.youtube.com/watch?v=6zK8KBnNE9U",
+      "videoId": "6zK8KBnNE9U",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "6zK8KBnNE9U",
+        "duration": 13.081,
+        "currentTime": 0.158434,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Ramp Box Molotov from Trophy - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/silo-from-ct-red-4f77"
+      ],
+      "url": "https://www.youtube.com/watch?v=HMCw7E1iAqA",
+      "videoId": "HMCw7E1iAqA",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "HMCw7E1iAqA",
+        "duration": 12.421,
+        "currentTime": 0.053895,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Silo Molotov from CT Red - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/silo-from-rafters-10cc"
+      ],
+      "url": "https://www.youtube.com/watch?v=NhLx2_Z8Exg",
+      "videoId": "NhLx2_Z8Exg",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "NhLx2_Z8Exg",
+        "duration": 11.901,
+        "currentTime": 0.030426,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Silo Molotov from Rafters - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/squeaky-from-heaven-9e00"
+      ],
+      "url": "https://www.youtube.com/watch?v=-h4oEqEoHjk",
+      "videoId": "-h4oEqEoHjk",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "-h4oEqEoHjk",
+        "duration": 15.241,
+        "currentTime": 0.109591,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Molotov from Heavon to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/squeaky-from-heaven-d3f5"
+      ],
+      "url": "https://www.youtube.com/watch?v=TWVVhh4klb4",
+      "videoId": "TWVVhh4klb4",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "TWVVhh4klb4",
+        "duration": 13.581,
+        "currentTime": 0.229566,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Molotov from Heaven to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/ct-red-from-outside-a3c6"
+      ],
+      "url": "https://www.youtube.com/watch?v=S-PBTPERDtA",
+      "videoId": "S-PBTPERDtA",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "S-PBTPERDtA",
+        "duration": 11.921,
+        "currentTime": 0.098968,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - CT Red Smoke from Outside - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/garage-from-t-spawn-7fda"
+      ],
+      "url": "https://www.youtube.com/watch?v=bx3_2tiPW6k",
+      "videoId": "bx3_2tiPW6k",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "bx3_2tiPW6k",
+        "duration": 17.301,
+        "currentTime": 0.147617,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Garage Smoke from T-Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-outside-7739"
+      ],
+      "url": "https://www.youtube.com/watch?v=1TZtMSu4sEw",
+      "videoId": "1TZtMSu4sEw",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "1TZtMSu4sEw",
+        "duration": 19.881,
+        "currentTime": 0.134986,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Smoke from Outside to Heaven (broken window) - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-silo-dd2c"
+      ],
+      "url": "https://www.youtube.com/watch?v=wwT3-I3dKZQ",
+      "videoId": "wwT3-I3dKZQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "wwT3-I3dKZQ",
+        "duration": 16.461,
+        "currentTime": 0.112914,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Heaven Smoke from Silo - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-7bcf"
+      ],
+      "url": "https://www.youtube.com/watch?v=9pI3EBDl6rw",
+      "videoId": "9pI3EBDl6rw",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "9pI3EBDl6rw",
+        "duration": 23.901,
+        "currentTime": 0.054111,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Heaven Smoke from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-7e8c"
+      ],
+      "url": "https://www.youtube.com/watch?v=ZXzT0c_p8HE",
+      "videoId": "ZXzT0c_p8HE",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "ZXzT0c_p8HE",
+        "duration": 19.041,
+        "currentTime": 0.167682,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Heaven Smoke from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/hut-from-heaven-88db"
+      ],
+      "url": "https://www.youtube.com/watch?v=tIJ730BEFcc",
+      "videoId": "tIJ730BEFcc",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "tIJ730BEFcc",
+        "duration": 14.661,
+        "currentTime": 0.116447,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Smoke from Heaven to Hut - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/hut-from-t-spawn-07ff"
+      ],
+      "url": "https://www.youtube.com/watch?v=_w8yIWFbfE0",
+      "videoId": "_w8yIWFbfE0",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "_w8yIWFbfE0",
+        "duration": 17.861,
+        "currentTime": 0.177912,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Smoke from T-Spawn to Hut (broken window) - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/lockers-from-t-spawn-3d4f"
+      ],
+      "url": "https://www.youtube.com/watch?v=HU1i8XGcIGU",
+      "videoId": "HU1i8XGcIGU",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "HU1i8XGcIGU",
+        "duration": 19.221,
+        "currentTime": 0.070834,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Lockers Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-outside-2beb"
+      ],
+      "url": "https://www.youtube.com/watch?v=vhgQNixQz1w",
+      "videoId": "vhgQNixQz1w",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "vhgQNixQz1w",
+        "duration": 15.481,
+        "currentTime": 0.014635,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Smoke from Outside to Heaven - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-roof-90c9"
+      ],
+      "url": "https://www.youtube.com/watch?v=q6wujzxBfqI",
+      "videoId": "q6wujzxBfqI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "q6wujzxBfqI",
+        "duration": 19.081,
+        "currentTime": 0.126216,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Main Smoke from T Roof - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/new-location-from-t-spawn-464d"
+      ],
+      "url": "https://www.youtube.com/watch?v=pgG87Hy5spw",
+      "videoId": "pgG87Hy5spw",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "pgG87Hy5spw",
+        "duration": 19.141,
+        "currentTime": 0.099547,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Secret Far Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-outside-5349"
+      ],
+      "url": "https://www.youtube.com/watch?v=2Q4XCa3-AHM",
+      "videoId": "2Q4XCa3-AHM",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "2Q4XCa3-AHM",
+        "duration": 17.701,
+        "currentTime": 0.10765,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Outside Main Smoke from Outside - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-6320"
+      ],
+      "url": "https://www.youtube.com/watch?v=UhAEgb41KU0",
+      "videoId": "UhAEgb41KU0",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "UhAEgb41KU0",
+        "duration": 19.241,
+        "currentTime": 0.175991,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Outside Main Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/ramp-from-trophy-786b"
+      ],
+      "url": "https://www.youtube.com/watch?v=zjsABjX7QIw",
+      "videoId": "zjsABjX7QIw",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "zjsABjX7QIw",
+        "duration": 16.401,
+        "currentTime": 0.014736,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Ramp Smoke from Trophy on Nuke - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/ramp-from-trophy-b453"
+      ],
+      "url": "https://www.youtube.com/watch?v=hL09s0Jz2K8",
+      "videoId": "hL09s0Jz2K8",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "hL09s0Jz2K8",
+        "duration": 15.481,
+        "currentTime": 0.002853,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "NUKE - Ramp Smoke from Trophy - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-outside-0adb"
+      ],
+      "url": "https://www.youtube.com/watch?v=ZTh0qpz4EOc",
+      "videoId": "ZTh0qpz4EOc",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "ZTh0qpz4EOc",
+        "duration": 13.641,
+        "currentTime": 0.054361,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Secret Far Smoke from Outside - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-outside-5982"
+      ],
+      "url": "https://www.youtube.com/watch?v=nyHOSpcA-1A",
+      "videoId": "nyHOSpcA-1A",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "nyHOSpcA-1A",
+        "duration": 18.601,
+        "currentTime": 0.172934,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Secret Far Smoke from Outside - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-outside-790e"
+      ],
+      "url": "https://www.youtube.com/watch?v=1ItbLEQQosk",
+      "videoId": "1ItbLEQQosk",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "1ItbLEQQosk",
+        "duration": 13.261,
+        "currentTime": 0.053673,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Secret Far Smoke from Outside - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-spawn-0922"
+      ],
+      "url": "https://www.youtube.com/watch?v=urqIXlRfowc",
+      "videoId": "urqIXlRfowc",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "urqIXlRfowc",
+        "duration": 16.021,
+        "currentTime": 0.129526,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Secret Far Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/silo-from-ct-box-b0d7"
+      ],
+      "url": "https://www.youtube.com/watch?v=VG-S1zikZ2I",
+      "videoId": "VG-S1zikZ2I",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "VG-S1zikZ2I",
+        "duration": 18.401,
+        "currentTime": 0.172364,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Silo Smoke from CT Box - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-garage-9761"
+      ],
+      "url": "https://www.youtube.com/watch?v=caeGDD8MG5U",
+      "videoId": "caeGDD8MG5U",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "caeGDD8MG5U",
+        "duration": 15.441,
+        "currentTime": 0.007692,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Smoke from Garage to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-heaven-2038"
+      ],
+      "url": "https://www.youtube.com/watch?v=pgHn_5SYIK8",
+      "videoId": "pgHn_5SYIK8",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "pgHn_5SYIK8",
+        "duration": 14.121,
+        "currentTime": 0.032226,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Smoke from Heaven to Door - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-t-spawn-bcda"
+      ],
+      "url": "https://www.youtube.com/watch?v=y1VCZz4ydUA",
+      "videoId": "y1VCZz4ydUA",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "y1VCZz4ydUA",
+        "duration": 18.421,
+        "currentTime": 0.090519,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "NUKE - Squeaky Smoke from T-Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/molotovs/b-headshot-from-stairs-2d80"
+      ],
+      "url": "https://www.youtube.com/watch?v=gMzCYARlEfI",
+      "videoId": "gMzCYARlEfI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "gMzCYARlEfI",
+        "duration": 11.621,
+        "currentTime": 0.01522,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Triple Molotov From B Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/molotovs/headshot-from-ramp-c7c8"
+      ],
+      "url": "https://www.youtube.com/watch?v=LWQtd1oCzWI",
+      "videoId": "LWQtd1oCzWI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "LWQtd1oCzWI",
+        "duration": 19.221,
+        "currentTime": 0.185173,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Headshot Molotov From Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/molotovs/pillar-from-stairs-cb99"
+      ],
+      "url": "https://www.youtube.com/watch?v=5adr6_WGv60",
+      "videoId": "5adr6_WGv60",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "5adr6_WGv60",
+        "duration": 15.161,
+        "currentTime": 0.07635,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Pillar Molotov From B Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/molotovs/sidewalk-from-ladder-f7cb"
+      ],
+      "url": "https://www.youtube.com/watch?v=UR0c8sSurqI",
+      "videoId": "UR0c8sSurqI",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "UR0c8sSurqI",
+        "duration": 16.481,
+        "currentTime": 0.165819,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Sidewalk Molotov From Ladder - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/molotovs/wood-from-stairs-848c"
+      ],
+      "url": "https://www.youtube.com/watch?v=0f67InbEEmQ",
+      "videoId": "0f67InbEEmQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "0f67InbEEmQ",
+        "duration": 10.821,
+        "currentTime": 0.204049,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Wood Molotov From B Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/a-conn-from-mid-c798"
+      ],
+      "url": "https://www.youtube.com/watch?v=Rwko6tOGx1o",
+      "videoId": "Rwko6tOGx1o",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "Rwko6tOGx1o",
+        "duration": 15.041,
+        "currentTime": 0.144658,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - A Conn Smoke From Mid - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-ramp-cc8f"
+      ],
+      "url": "https://www.youtube.com/watch?v=rz2dOO09qkA",
+      "videoId": "rz2dOO09qkA",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "rz2dOO09qkA",
+        "duration": 11.961,
+        "currentTime": 0.196502,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - A Site Left Smoke From Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-t-spawn-b650"
+      ],
+      "url": "https://www.youtube.com/watch?v=qagpkD3nDhs",
+      "videoId": "qagpkD3nDhs",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "qagpkD3nDhs",
+        "duration": 19.821,
+        "currentTime": 0.14311,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - A Site Smoke From T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/b-connector--from-mid-0e4b"
+      ],
+      "url": "https://www.youtube.com/watch?v=4XtthUAMLo4",
+      "videoId": "4XtthUAMLo4",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "4XtthUAMLo4",
+        "duration": 10.021,
+        "currentTime": 0.156465,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - B Connector Smoke From Mid - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/b-cross-from-stairs-a167"
+      ],
+      "url": "https://www.youtube.com/watch?v=zlQul2JuktQ",
+      "videoId": "zlQul2JuktQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "zlQul2JuktQ",
+        "duration": 14.121,
+        "currentTime": 0.103628,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - B Cross Smoke From Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/b-cross-from-t-spawn-274d"
+      ],
+      "url": "https://www.youtube.com/watch?v=iRqRHnwizu8",
+      "videoId": "iRqRHnwizu8",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "iRqRHnwizu8",
+        "duration": 12.981,
+        "currentTime": 0.128978,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - B Cross Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/b-headshot-from-stairs-3fbc"
+      ],
+      "url": "https://www.youtube.com/watch?v=ykiNkboWuUA",
+      "videoId": "ykiNkboWuUA",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "ykiNkboWuUA",
+        "duration": 13.781,
+        "currentTime": 0.185192,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - B Headshot Smoke from Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/b-main-from-ct-spawn-75b5"
+      ],
+      "url": "https://www.youtube.com/watch?v=D7NscQC4wJQ",
+      "videoId": "D7NscQC4wJQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "D7NscQC4wJQ",
+        "duration": 12.701,
+        "currentTime": 0.130506,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - B Main Smoke From CT Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/b-main-from-ct-spawn-cb0c"
+      ],
+      "url": "https://www.youtube.com/watch?v=Pv0bYimfLN0",
+      "videoId": "Pv0bYimfLN0",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "Pv0bYimfLN0",
+        "duration": 13.181,
+        "currentTime": 0.00054,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "VERTIGO - B Main Smoke From CT Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/crane-from-a-site-ad0e"
+      ],
+      "url": "https://www.youtube.com/watch?v=pu-EEr_qpmc",
+      "videoId": "pu-EEr_qpmc",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "pu-EEr_qpmc",
+        "duration": 12.161,
+        "currentTime": 0.034178,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Crane Smoke From A Site - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/ct-from-mid-38e3"
+      ],
+      "url": "https://www.youtube.com/watch?v=215Gzn_2Jog",
+      "videoId": "215Gzn_2Jog",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "215Gzn_2Jog",
+        "duration": 11.921,
+        "currentTime": 0.144134,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - CT Smoke From Mid - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/ct-spawn-from-stairs-e997"
+      ],
+      "url": "https://www.youtube.com/watch?v=UNV8n0-OYvQ",
+      "videoId": "UNV8n0-OYvQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "UNV8n0-OYvQ",
+        "duration": 16.381,
+        "currentTime": 0.019888,
+        "readyState": 4,
+        "playerState": 3,
+        "error": null,
+        "title": "VERTIGO - CT Spawn Smoke From Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-stairs-bc18"
+      ],
+      "url": "https://www.youtube.com/watch?v=BGDa4LOSnvQ",
+      "videoId": "BGDa4LOSnvQ",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "BGDa4LOSnvQ",
+        "duration": 14.901,
+        "currentTime": 0.011563,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - EBox Smoke from B Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-t-spawn-5a5b"
+      ],
+      "url": "https://www.youtube.com/watch?v=fdb7gyyKn38",
+      "videoId": "fdb7gyyKn38",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "fdb7gyyKn38",
+        "duration": 14.781,
+        "currentTime": 0.147092,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Generator Right Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/elevator-from-ramp-0d0b"
+      ],
+      "url": "https://www.youtube.com/watch?v=MjkKd-LXPj0",
+      "videoId": "MjkKd-LXPj0",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "MjkKd-LXPj0",
+        "duration": 15.361,
+        "currentTime": 0.129569,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Elevator Smoke From Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/front-elevator-from-ramp-54ee"
+      ],
+      "url": "https://www.youtube.com/watch?v=9UoSx0YZCeU",
+      "videoId": "9UoSx0YZCeU",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "9UoSx0YZCeU",
+        "duration": 14.481,
+        "currentTime": 0.159663,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Front Elevator Smoke From Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/front-elevator-from-ramp-ab1b"
+      ],
+      "url": "https://www.youtube.com/watch?v=8GjeN7YUoa4",
+      "videoId": "8GjeN7YUoa4",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "8GjeN7YUoa4",
+        "duration": 13.561,
+        "currentTime": 0.160133,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Front Elevator Smoke From Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-mid-8750"
+      ],
+      "url": "https://www.youtube.com/watch?v=T_C8mJ6JQrE",
+      "videoId": "T_C8mJ6JQrE",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "T_C8mJ6JQrE",
+        "duration": 14.501,
+        "currentTime": 0.111917,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Generator Left Smoke From Mid Iron - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-stairs-8a4a"
+      ],
+      "url": "https://www.youtube.com/watch?v=4UXMRpyy1FY",
+      "videoId": "4UXMRpyy1FY",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "4UXMRpyy1FY",
+        "duration": 20.301,
+        "currentTime": 0.073795,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Generator Left Smoke From Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-stairs-b2bb"
+      ],
+      "url": "https://www.youtube.com/watch?v=GU-0SVgkbos",
+      "videoId": "GU-0SVgkbos",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "GU-0SVgkbos",
+        "duration": 17.861,
+        "currentTime": 0.149127,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Generator Left Smoke from Stairs - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/generator-left-from-t-spawn-ab3f"
+      ],
+      "url": "https://www.youtube.com/watch?v=CdjOZ-XaDcc",
+      "videoId": "CdjOZ-XaDcc",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "CdjOZ-XaDcc",
+        "duration": 16.181,
+        "currentTime": 0.139047,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Generator Left Smoke From T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/headshot-from-ramp-800d"
+      ],
+      "url": "https://www.youtube.com/watch?v=zCfglYEpPo8",
+      "videoId": "zCfglYEpPo8",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "zCfglYEpPo8",
+        "duration": 16.421,
+        "currentTime": 0.200968,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Headshot Smoke From A Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/mid-from-ct-6e48"
+      ],
+      "url": "https://www.youtube.com/watch?v=YAEPX7MLZBU",
+      "videoId": "YAEPX7MLZBU",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "YAEPX7MLZBU",
+        "duration": 12.641,
+        "currentTime": 0.075616,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Mid Smoke from CT - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/sidewalk-from-t-spawn-741f"
+      ],
+      "url": "https://www.youtube.com/watch?v=-5eAPmaZKnY",
+      "videoId": "-5eAPmaZKnY",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "-5eAPmaZKnY",
+        "duration": 24.261,
+        "currentTime": 0.123399,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Sidewalk Smoke from T Spawn - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/sniper's-nest-from-ramp-88b5"
+      ],
+      "url": "https://www.youtube.com/watch?v=JznkrfdOqcg",
+      "videoId": "JznkrfdOqcg",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "JznkrfdOqcg",
+        "duration": 13.221,
+        "currentTime": 0.114231,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Sniper's Nest Smoke From Ramp - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/top-mid--from-mid-87c7"
+      ],
+      "url": "https://www.youtube.com/watch?v=Eys6HFdWr0k",
+      "videoId": "Eys6HFdWr0k",
+      "oEmbedStatus": 200,
+      "pass": true,
+      "evidence": {
+        "status": "OK",
+        "videoId": "Eys6HFdWr0k",
+        "duration": 14.301,
+        "currentTime": 0.017936,
+        "readyState": 4,
+        "playerState": 1,
+        "error": null,
+        "title": "VERTIGO - Top Mid Smoke From Mid - YouTube"
+      }
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/trophy-from-ramp-5ab6"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/trophy-from-ramp-5ab6",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/88cbb575-6885-4855-9b40-fb3ee18261a8_CounterStrike_2_2025.10.0323.21_2.mp4",
+      "time": 0.325387,
+      "duration": 11.879651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-silo-cccc"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/flashbangs/a-site-from-silo-cccc",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/de6df1a1-e064-407d-8cf9-b72a434e5be9_CounterStrike_2_2026.02.0614.07.mp4",
+      "time": 0.286885,
+      "duration": 19.308984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/heaven-from-t-roof-589a"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/molotovs/heaven-from-t-roof-589a",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/a0eff179-2871-4fb2-96f1-6e0b85f45c59_CounterStrike_2_2026.05.3112.11.mp4",
+      "time": 0.31262,
+      "duration": 15.430317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-silo-4454"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/molotovs/hut-from-silo-4454",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/cba3c782-a587-4015-9688-fab39d538a31_CounterStrike_2_2025.10.0322.49.mp4",
+      "time": 0.297133,
+      "duration": 13.243984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/garage-from-outside-f062"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/garage-from-outside-f062",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/157bd9e1-2f11-4bee-99a7-807fee6b7a0f_CounterStrike_2_2025.10.0322.55.mp4",
+      "time": 0.297284,
+      "duration": 12.651317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-outside-00f3"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-outside-00f3",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/28008a2e-0b98-46d7-8e42-015ab00eecf7_Heaven_Waterfall_smoke_from_T_Spawn.mp4",
+      "time": 0.154742,
+      "duration": 17.141378,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-08f2"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-08f2",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/cdf7d843-10d4-4897-90e7-d35cbe7a74ef_Heaven_Waterfall_smoke_from_T_Roof.mp4",
+      "time": 0.413527,
+      "duration": 18.889211,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-6f9a"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-roof-6f9a",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/ddb201f2-f76f-4b02-bac6-d5c63d674eb8_Heaven_waterfall_smoke_from_roof.mp4",
+      "time": 0.165655,
+      "duration": 19.834,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-spawn-eb88"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-spawn-eb88",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/aa76a541-5467-4252-8cb4-e05d3c5cc91c_20260225_194146__Trim.mp4",
+      "time": 0.204196,
+      "duration": 19.968317,
+      "width": 1536,
+      "height": 864,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-outside-dfc0"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-outside-dfc0",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/59879841-8283-435d-a8bf-6675035e756b_CounterStrike_2_2025.10.0322.58.mp4",
+      "time": 0.303603,
+      "duration": 12.283317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/lockers-from-t-spawn-dffd"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/lockers-from-t-spawn-dffd",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/d6be44ce-0977-4bcc-be57-f9e5ab561658_Lockers_smoke_from_trash_can.mp4",
+      "time": 0.408473,
+      "duration": 18.718,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/molotovs/t-outside-from-ct-box-4351"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/molotovs/t-outside-from-ct-box-4351",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/75154274-9fe9-41d5-9694-196fefc51469_CounterStrike_2_2025.10.0323.24.mp4",
+      "time": 0.198096,
+      "duration": 11.174651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-1f0c"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-1f0c",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/589408dd-6d48-4bbd-9161-d9ef26645d59_CounterStrike_2_2025.10.0323.01_1.mp4",
+      "time": 0.2996,
+      "duration": 14.054651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-39eb"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-39eb",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/24ec3e60-22ab-440c-b66b-c32e24ab117d_CounterStrike_2_2026.05.1523.53.mp4",
+      "time": 0.203179,
+      "duration": 18.318317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-9dfd"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-9dfd",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/f84a9f85-38d6-4e13-bbf9-dbfad12ebfa7_CounterStrike_2_2026.02.0613.53.mp4",
+      "time": 0.296202,
+      "duration": 18.775651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-ddf0"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/main-from-t-spawn-ddf0",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/047491cb-7d45-4691-9025-d9d6417fd985_Mini_Smoke_from_T_Spawn_on_Nuke.mp4",
+      "time": 0.394066,
+      "duration": 21.257522,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-ct-box-7884"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-ct-box-7884",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/e2c84d2c-379b-4254-9d71-2400b4199fd2_CounterStrike_2_2025.10.0323.34.mp4",
+      "time": 0.316101,
+      "duration": 13.713317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-t-spawn-f5a3"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-t-spawn-f5a3",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/3ab1cb1a-feeb-46c2-8d6b-4e0694f473f1_Deeper_outside_smoke_for_secret.mp4",
+      "time": 0.411438,
+      "duration": 19.273956,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-outside-7ee3"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-outside-7ee3",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/c2b96911-b63b-4b0c-bc04-77fa82165105_CounterStrike_2_2026.02.0614.15.mp4",
+      "time": 0.213473,
+      "duration": 19.928651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-cfc0"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-cfc0",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/4e45190e-0d07-4c44-8c3e-dc6996ec1e31_CounterStrike_2_2026.05.1523.55.mp4",
+      "time": 0.293404,
+      "duration": 14.712984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-84d5"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-84d5",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/7b957479-852e-43bf-a1da-5cd01899258e_CounterStrike_2_20251031_204809.mp4",
+      "time": 0.204015,
+      "duration": 20.189417,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-63d2"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-63d2",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/6aa1b16a-8c8d-411a-a511-a0ec514cde79_CounterStrike_2_2026.05.1523.54.mp4",
+      "time": 0.200158,
+      "duration": 21.435984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-cbdb"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-cbdb",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/2c2b5a09-c69a-47b5-8400-edc309a281c4_CounterStrike_2_20251031_203152.mp4",
+      "time": 0.207415,
+      "duration": 19.967217,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-red-14cd"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-red-14cd",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/ae6902d1-ec42-416b-8ba8-6f5ba5a46e8b_CounterStrike_2_2026.05.1600.22.mp4",
+      "time": 0.298108,
+      "duration": 10.683317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-spawn-1eb1"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-spawn-1eb1",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/dc95b936-1e22-44f3-b6dd-ce1d94d1eacf_Far_outside_smoke_for_crossing.mp4",
+      "time": 0.404384,
+      "duration": 19.733656,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/t-red-from-outside-d7c3"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/t-red-from-outside-d7c3",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/301a1bc7-18aa-4bcf-bb65-82649be181df_CounterStrike_2_2025.10.0323.38_1.mp4",
+      "time": 0.26632,
+      "duration": 13.161984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-a-site-0312"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/squeaky-from-a-site-0312",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/267fc3df-c075-4f60-a5d8-efa01fec6ece_CounterStrike_2_2026.05.1523.49_1.mp4",
+      "time": 0.349338,
+      "duration": 12.499317,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/grenades/t-mid-from-mid-2f9a"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/grenades/t-mid-from-mid-2f9a",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/d2343fd7-1021-4b58-8105-df16fda41f70_20260423142202.mp4",
+      "time": 0.28157,
+      "duration": 19.4,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/nuke/smokes/t-outside-from-ct-spawn-a31e"
+      ],
+      "source": "https://www.cs2tricks.com/nades/nuke/smokes/t-outside-from-ct-spawn-a31e",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/9d6d5892-da14-410e-8230-d1e4b65db777_Outside_smoke_from_CT_Spawn.mp4",
+      "time": 0.385329,
+      "duration": 20.839656,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/molotovs/lane-from-ladder-1682"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/molotovs/lane-from-ladder-1682",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/6fcf4ff8-21fc-45fd-b31f-2bedf16471a1_CounterStrike_2_2025.11.0414.01_1.mp4",
+      "time": 0.211688,
+      "duration": 14.342651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/deep-ramp-from-elevator-9cb9"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/smokes/deep-ramp-from-elevator-9cb9",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/0ad3222d-1fce-4d21-aca1-ebd8189dfdb9_CounterStrike_2_2025.11.0412.49.mp4",
+      "time": 0.295788,
+      "duration": 12.781984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-t-spawn-4b77"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ebox-from-t-spawn-4b77",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/c956c2a0-7795-4800-8df0-e640aea9bfd6_CounterStrike_2_2025.11.0413.54_1.mp4",
+      "time": 0.197726,
+      "duration": 13.443651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/mid-from-top-mid-40c8"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/smokes/mid-from-top-mid-40c8",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/df14d285-3602-426f-bfe1-38fe04c5ed8c_CounterStrike_2_2025.11.0413.44.mp4",
+      "time": 0.309843,
+      "duration": 12.206651,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/sidewalk-from-double-f8b2"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/smokes/sidewalk-from-double-f8b2",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/b503a80e-baf7-4bc2-8df8-a007ec096191_CounterStrike_2_2025.11.0412.50_1.mp4",
+      "time": 0.220203,
+      "duration": 12.251984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://www.cs2tricks.com/nades/vertigo/smokes/stairs-from-b-site-252d"
+      ],
+      "source": "https://www.cs2tricks.com/nades/vertigo/smokes/stairs-from-b-site-252d",
+      "url": "https://d1ntlvfrxziqo6.cloudfront.net/74bc0e56-446a-4752-a79b-9e57635e082b_CounterStrike_2_2025.11.0412.52.mp4",
+      "time": 0.308142,
+      "duration": 11.949984,
+      "width": 1920,
+      "height": 1080,
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/a-site-from-heaven"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-rchsSQuW8Z/hq.mp4",
+      "duration": 22.416667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4792
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/mid-from-ct-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-MXoTsiA6QN/hq.mp4",
+      "duration": 19.6,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.48
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/sidewalk-from-headshot"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-UZ1rNN9HqV/hq.mp4",
+      "duration": 17.133333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.476
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/t-mid-from-mid-box"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-bWA6zswYai/hq.mp4",
+      "duration": 14.133333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4769
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/default-a-from-headshot"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-RS5XdyGLLx/hq.mp4",
+      "duration": 15.583333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4763
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/default-a-from-backsite"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-eAdWtexeB1/hq.mp4",
+      "duration": 19.616667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4946
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/default-b-from-generator"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-KBn6S5cuhX/hq.mp4",
+      "duration": 15.433333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4783
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/sandbags-from-crane"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-Rq02neqsMm/hq.mp4",
+      "duration": 19.866667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4767
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/t-mid-from-boost-box"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-OoyKIFKDyG/hq.mp4",
+      "duration": 17.616667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4781
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/default-a-from-heaven"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-MKrcPIM9ev/hq.mp4",
+      "duration": 19.95,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4774
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/default-b-from-ct-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-gF8IVsW8sJ/hq.mp4",
+      "duration": 21.5,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.476
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/default-b-from-connector"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-5BeVdjmj4Q/hq.mp4",
+      "duration": 15.116667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4774
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/ramp-from-crane"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-NxSHrm3gRj/hq.mp4",
+      "duration": 15.35,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4921
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/t-mid-from-sandbags"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-5TooLtgC27/hq.mp4",
+      "duration": 17.65,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4795
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-OCWUxlteIP/hq.mp4",
+      "duration": 22.083333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4815
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-ramp-from-ct-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-u2AcCDRYoM/hq.mp4",
+      "duration": 22.95,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4825
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/b-main-from-ct-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-oUEmuLqsn5/hq.mp4",
+      "duration": 17.15,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4767
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/b-main-from-ct-spawn-b"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-F4Byo6FWod/hq.mp4",
+      "duration": 17.166667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.486
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/bottom-b-main-from-b-site"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-0cna4sznKf/hq.mp4",
+      "duration": 20.166667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4761
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/bottom-ramp-from-elevator"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-Hys7uCz0Qx/hq.mp4",
+      "duration": 21.333333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4823
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/crane-from-a-site"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-GtVlFr6AV1/hq.mp4",
+      "duration": 16.216667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4925
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/mid-from-ct"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-ECkJMakj5x/hq.mp4",
+      "duration": 17.8,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.564
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/top-a-ramp-from-heaven"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-T7wlpObMtB/hq.mp4",
+      "duration": 26.1,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4771
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/tarp-from-a-site"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-qMX7mv9E5v/hq.mp4",
+      "duration": 17.566667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.476
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/b-site-from-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-r5fW7mzj28/hq.mp4",
+      "duration": 22.216667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4783
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/a-short-from-sidewalk"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-VdQpF9Xvip/hq.mp4",
+      "duration": 23.116667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.5863
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/mid-from-iron"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-SW2O8pZHMP/hq.mp4",
+      "duration": 20.866667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4757
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/b-site-from-under-t-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-I9HvO0wJoh/hq.mp4",
+      "duration": 24.15,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 3.433,
+        "end": 3.5585
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/mid-from-t-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-TPzypIlAoj/hq.mp4",
+      "duration": 23.266667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4793
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/sidewalk-from-sidewalk"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-3scH1xEJR3/hq.mp4",
+      "duration": 17.766667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.48
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/flashbangs/whitebox-from-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-flashbang-XvCsfCDHqj/hq.mp4",
+      "duration": 22.6,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4797
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/whitebox-from-under-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-6YAIMfOsVh/hq.mp4",
+      "duration": 16.383333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.5876
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/connector-from-mid-iron"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-LBvUUSiugV/hq.mp4",
+      "duration": 18.933333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4745
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/hegrenades/wood-from-b-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-he-cupHPhyqzo/hq.mp4",
+      "duration": 14.9,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4929
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/default-a-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-h0XTM4tXUi/hq.mp4",
+      "duration": 16.916667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4758
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/headshot-from-area-51"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-iZdnWXJ0b3/hq.mp4",
+      "duration": 16.333333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4929
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/headshot-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-567681fcB0/hq.mp4",
+      "duration": 22.416667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 4.316,
+        "end": 4.4469
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/headshot-from-ramp-b"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-SJ1BAyNw3I/hq.mp4",
+      "duration": 15.9,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.509
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/pillar-from-b-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-MhXEFJqHF9/hq.mp4",
+      "duration": 19.316667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4779
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/headshot-from-sidewalk"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-G3sb93YDAe/hq.mp4",
+      "duration": 21.25,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4775
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/triple-from-b-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-Xqoq5mQWUs/hq.mp4",
+      "duration": 16.633333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4766
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/sidewalk-from-ladder"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-FaEdGwC7yV/hq.mp4",
+      "duration": 19.333333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 5.6,
+        "end": 5.7992
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-conn-from-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-s2EG2EtZWU/hq.mp4",
+      "duration": 22.816667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 4.8,
+        "end": 4.9278
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/molotovs/wood-from-b-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-molotov-xtTrNX5b7Q/hq.mp4",
+      "duration": 16.066667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4918
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-entry-from-tarp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-EkYjo3n3Dj/hq.mp4",
+      "duration": 19.5,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4751
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-site-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-LZ7w8nAhRU/hq.mp4",
+      "duration": 18.833333,
+      "width": 2562,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.499,
+        "end": 2.6709
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-site-from-t-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-TEYNbRIHID/hq.mp4",
+      "duration": 23.966667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4755
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-site-left-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-ynNaNJ7Ga9/hq.mp4",
+      "duration": 16.033333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.5206
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/a-site-right-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-cOpgHeMF27/hq.mp4",
+      "duration": 22.483333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.476
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/b-connector-from-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-IeKwajySMF/hq.mp4",
+      "duration": 18.983333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.5259
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/b-cross-from-t-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-0rGQhkDC5z/hq.mp4",
+      "duration": 22.45,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4764
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/b-cross-from-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-PQ1pgZ84Kb/hq.mp4",
+      "duration": 20.966667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 3.816,
+        "end": 3.9644
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/b-headshot-from-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-eFNgTkYBaM/hq.mp4",
+      "duration": 19.55,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.475
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/ct-from-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-i7KNkUQ8kz/hq.mp4",
+      "duration": 18.316667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4865
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/ebox-from-b-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-kLpQfwtnrZ/hq.mp4",
+      "duration": 19.433333,
+      "width": 2562,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.416,
+        "end": 2.5429
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/ct-spawn-from-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-cdq3ldLxa3/hq.mp4",
+      "duration": 21.416667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.5224
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/front-elevator-from-ramp-a"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-tpGDzrmtUP/hq.mp4",
+      "duration": 17.733333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4789
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/elevator-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-9hmj4yj4R3/hq.mp4",
+      "duration": 20.766667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4784
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/generator-left-from-mid-iron"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-6uslwKvIeA/hq.mp4",
+      "duration": 22.95,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4843
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/front-elevator-from-ramp-b"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-MPtQAQhFSg/hq.mp4",
+      "duration": 22.583333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4849
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/generator-left-from-stairs"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-dYZc5WmSg0/hq.mp4",
+      "duration": 25.2,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4765
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/generator-left-from-stairs-b"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-7i9hAxSqdw/hq.mp4",
+      "duration": 27.966667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4828
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/generator-left-from-t-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-a4G5X7OX8f/hq.mp4",
+      "duration": 21.583333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4788
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/generator-right-from-t-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-d4Fi8e5fMw/hq.mp4",
+      "duration": 20.366667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4882
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/heaven-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-5EXvkuPydU/hq.mp4",
+      "duration": 20,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4914
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/headshot-from-a-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-fgahXx0KyV/hq.mp4",
+      "duration": 23.15,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 3.866,
+        "end": 3.9937
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/ramp-lurk-from-bridge"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-7aaSJs7qds/hq.mp4",
+      "duration": 15.95,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.366,
+        "end": 2.4949
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/heaven-from-ramp-b"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-p7fOlTmomB/hq.mp4",
+      "duration": 19.7,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4894
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/sidewalk-from-t-spawn"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-27bmxMi0pS/hq.mp4",
+      "duration": 25.8,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.476
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/snipers-nest-from-ramp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-p4Sgmzaaw1/hq.mp4",
+      "duration": 18.783333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.5364
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/snipers-nest-from-tarp"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-eya1wSKuCZ/hq.mp4",
+      "duration": 20.716667,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.4767
+      },
+      "pass": true
+    },
+    {
+      "sources": [
+        "https://csnades.gg/vertigo/smokes/top-mid-from-mid"
+      ],
+      "url": "https://assets.csnades.gg/nades/vertigo-smoke-MdynVcVs2e/hq.mp4",
+      "duration": 18.383333,
+      "width": 2560,
+      "height": 1440,
+      "playProgress": {
+        "start": 2.35,
+        "end": 2.5471
+      },
+      "pass": true
+    }
+  ]
+}

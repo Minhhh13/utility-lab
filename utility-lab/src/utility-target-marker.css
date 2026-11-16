@@ -1,0 +1,9 @@
+.ul-target-marker-backplate { fill: var(--surface-raised); }
+.ul-target-marker-divider { stroke: var(--surface-raised); }
+.ul-target-marker-outline { stroke: var(--border); }
+.ul-map-marker.is-selected .ul-target-marker-outline,
+.ul-map-marker:focus-visible .ul-target-marker-outline { stroke: var(--accent); }
+.ul-map-marker:focus-visible .ul-target-marker-outline { stroke-dasharray: 4 3; }
+@media (hover: hover) and (pointer: fine) {
+  .ul-map-marker:hover .ul-target-marker-outline { stroke: var(--accent); }
+}

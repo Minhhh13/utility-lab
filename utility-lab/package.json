@@ -1,20 +1,28 @@
 {
   "name": "utility-lab",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "node scripts/serve-local.mjs",
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc --noEmit && vite build",
+    "catalogue:build": "node --experimental-strip-types scripts/build-expanded-catalogue.mjs && node --experimental-strip-types scripts/build-origin-catalogue.mjs",
+    "build": "npm run catalogue:build && tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "ios:sync": "npm run build && cap sync ios",
     "ios:open": "cap open ios",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:browser": "npm run build && playwright test"
+    "check:local": "node scripts/check-local.mjs",
+    "test:browser": "npm run build && playwright test",
+    "test:webkit": "npm run build && playwright test --config playwright.webkit.config.ts",
+    "package:local": "npm run build && node --experimental-strip-types scripts/package-local.mjs",
+    "prepare:cloudflare": "node scripts/prepare-cloudflare.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^8.0.0",
+    "@capacitor/filesystem": "^8.1.5",
     "@capacitor/ios": "^8.0.0",
+    "@capacitor/share": "^8.0.3",
     "lucide-react": "^1.31.0",
     "react": "19.2.6",
     "react-dom": "19.2.6"

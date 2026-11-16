@@ -1,0 +1,105 @@
+import type { UtilityReference } from "../utility-data";
+
+/** Exact public-source Cache CT guides. NadesDB media stays source-hosted;
+ * credited NartOutHere position/aim/result stills come from the same source clip.
+ * See docs/expanded-cache-completions.md for source inputs and playback evidence.
+ */
+export const EXPANDED_CACHE_COMPLETIONS: UtilityReference[] = [
+  {
+    id: "expanded-nadesdb-cache-electro-a-main-ct-flash",
+    mapId: "cache",
+    levelId: "main",
+    side: "CT",
+    type: "Flash",
+    title: "A Main flash · Electro",
+    from: "Electro",
+    target: "A Main",
+    purpose: "Flash A Main from Electro.",
+    throwType: "Walk + LMB",
+    steps: [
+      "Match the standing photo at Electro.",
+      "Align the crosshair with the aim photo.",
+      "Walk and release LMB.",
+    ],
+    x: 500,
+    y: 500,
+    showMarker: false,
+    userCreated: false,
+    creator: "JohnWeak / NadesDB",
+    source: "https://app.nadesdb.com/maps/cache?nade=41360a2b-812f-433c-9e94-c23651fc3757",
+    videoUrl: "https://media.nadesdb.com/media/9a03777b-ce56-422e-91fe-af56d1e4b50f-processed.mp4",
+    remotePhotos: [
+      {
+        image: "https://media.nadesdb.com/media/b1095f41-2968-47dd-ae65-5b5af2f671a8.webp",
+        kind: "position",
+        caption: "Standing position · Electro",
+        creator: "JohnWeak / NadesDB",
+        source: "https://app.nadesdb.com/maps/cache?nade=41360a2b-812f-433c-9e94-c23651fc3757",
+      },
+      {
+        image: "https://media.nadesdb.com/media/c3095046-7833-4dbd-8cf3-a2b488b58dee.webp",
+        kind: "aim",
+        caption: "Crosshair alignment",
+        creator: "JohnWeak / NadesDB",
+        source: "https://app.nadesdb.com/maps/cache?nade=41360a2b-812f-433c-9e94-c23651fc3757",
+      },
+      {
+        image: "https://media.nadesdb.com/media/4dc5e39a-2c7d-406b-be3a-1cf098d360e0.webp",
+        kind: "landing",
+        caption: "Flash result",
+        creator: "JohnWeak / NadesDB",
+        source: "https://app.nadesdb.com/maps/cache?nade=41360a2b-812f-433c-9e94-c23651fc3757",
+      },
+    ],
+    tags: ["Photo guide", "Video guide", "NadesDB"],
+  },
+  {
+    id: "expanded-nart-cache-white-box-boost-ct-he",
+    mapId: "cache",
+    levelId: "main",
+    side: "CT",
+    type: "HE",
+    title: "Boost HE · White Box",
+    from: "White Box · cable spool",
+    target: "Boost",
+    purpose: "Nade Boost from the cable spool by White Box.",
+    throwType: "LMB",
+    steps: [
+      "Jump onto the cable spool by White Box.",
+      "Match the pictured aim point on the ladder.",
+      "Stand still and release LMB.",
+    ],
+    x: 500,
+    y: 500,
+    showMarker: false,
+    userCreated: false,
+    creator: "NartOutHere",
+    source: "https://www.youtube.com/watch?v=5gbIC3igve8&t=396",
+    videoUrl: "https://www.youtube.com/watch?v=5gbIC3igve8",
+    videoStart: 396,
+    photos: [
+      {
+        image: "/lineup-media/source-video-stills/cache-completions/nart-boost-he-position.jpg",
+        kind: "position",
+        caption: "Stand on the cable spool by White Box",
+        creator: "NartOutHere",
+        source: "https://www.youtube.com/watch?v=5gbIC3igve8&t=396",
+      },
+      {
+        image: "/lineup-media/source-video-stills/cache-completions/nart-boost-he-aim.jpg",
+        kind: "aim",
+        caption: "Aim at the pictured ladder point",
+        creator: "NartOutHere",
+        source: "https://www.youtube.com/watch?v=5gbIC3igve8&t=396",
+      },
+      {
+        image: "/lineup-media/source-video-stills/cache-completions/nart-boost-he-result.jpg",
+        kind: "landing",
+        caption: "Boost landing area",
+        creator: "NartOutHere",
+        source: "https://www.youtube.com/watch?v=5gbIC3igve8&t=396",
+      },
+    ],
+    tags: ["Photo guide", "Video guide", "NartOutHere"],
+  },
+];

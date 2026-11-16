@@ -1,0 +1,122 @@
+[
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/squeaky-door-from-lobby",
+    "mapId": "nuke",
+    "sourceId": "nade_db1b0ccd48ae",
+    "videoUid": "nuke-he-5nJ68A6AsF",
+    "publisherDestination": {
+      "x": 498,
+      "y": 635,
+      "levels": [
+        null
+      ]
+    },
+    "levelId": "upper",
+    "destinationFloor": "upper",
+    "reason": "The original HE detonates at the Lobby Squeaky door beside the orange A-site doorway/rafters room, visible from Lobby. This is the upper A-site entrance, not the lower Decon room.",
+    "evidence": {
+      "photo": "/lineup-media/source-video-stills/csnades/nuke/he-squeaky-door-from-lobby-floor-proof-12700ms.jpg",
+      "time": 12.7,
+      "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-5nJ68A6AsF/hq.mp4",
+      "sourceWidth": 2562,
+      "sourceHeight": 1440,
+      "width": 1280,
+      "height": 720,
+      "extraction": "video-element-screenshot",
+      "sha256": "58656d35ff6159a037aace5a9fde652f377808ef2f7722573668b8caf9b476b0"
+    },
+    "manuallyReviewed": true,
+    "coordinateOverride": false,
+    "reviewedAt": "2026-11-09T16:32:37.643Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/t-red-from-under-silo",
+    "mapId": "nuke",
+    "sourceId": "nade_5b466e16a0da",
+    "videoUid": "nuke-he-ixVQss1Yyg",
+    "publisherDestination": {
+      "x": 588,
+      "y": 883,
+      "levels": [
+        null
+      ]
+    },
+    "levelId": "upper",
+    "destinationFloor": "upper",
+    "reason": "The original HE detonates outside against the red shipping container beside the blue bin, with sky, fence and main building visible. This is outside/upper, not B basement.",
+    "evidence": {
+      "photo": "/lineup-media/source-video-stills/csnades/nuke/he-t-red-from-under-silo-floor-proof-15950ms.jpg",
+      "time": 15.95,
+      "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-ixVQss1Yyg/hq.mp4",
+      "sourceWidth": 2562,
+      "sourceHeight": 1440,
+      "width": 1280,
+      "height": 720,
+      "extraction": "video-element-screenshot",
+      "sha256": "21b4a55dfd4cbeaefff714e760898069d3854140ccd5f83360da38ef1e41462f"
+    },
+    "manuallyReviewed": true,
+    "coordinateOverride": false,
+    "reviewedAt": "2026-11-09T16:32:37.650Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-b",
+    "mapId": "nuke",
+    "sourceId": "nade_f5cf2ebba98a",
+    "videoUid": "nuke-he-PRtJ6ciQkq",
+    "publisherDestination": {
+      "x": 490,
+      "y": 375,
+      "levels": [
+        null
+      ]
+    },
+    "levelId": "upper",
+    "destinationFloor": "upper",
+    "reason": "The original HE detonates on Trophy's white tiled floor beside the red wall, waiting chairs and blue doorway into Trophy. This room is on the upper Ramp/Trophy level, not lower B Ramp.",
+    "evidence": {
+      "photo": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-b-floor-proof-14867ms.jpg",
+      "time": 14.866667,
+      "mediaUrl": "https://assets.csnades.gg/nades/nuke-he-PRtJ6ciQkq/hq.mp4",
+      "sourceWidth": 2562,
+      "sourceHeight": 1440,
+      "width": 1280,
+      "height": 720,
+      "extraction": "video-element-screenshot",
+      "sha256": "090bee8655f7a20a81920c2054da9c2b7a2a5f55a229ef109711030abbc69b9b"
+    },
+    "manuallyReviewed": true,
+    "coordinateOverride": false,
+    "reviewedAt": "2026-11-09T16:32:37.654Z"
+  },
+  {
+    "source": "https://csnades.gg/nuke/molotovs/silo-from-ct-red",
+    "mapId": "nuke",
+    "sourceId": "nade_479e8063ae82",
+    "videoUid": "nuke-molotov-Q1ps8nB2qg",
+    "publisherDestination": {
+      "x": 496,
+      "y": 731,
+      "levels": [
+        null
+      ]
+    },
+    "levelId": "upper",
+    "destinationFloor": "upper",
+    "reason": "The original molotov burns on top of the large outdoor cylindrical Silo with the sky and building visible; its destination is outside/upper, not underground B.",
+    "evidence": {
+      "photo": "/lineup-media/source-video-stills/csnades/nuke/molotov-silo-from-ct-red-floor-proof-14550ms.jpg",
+      "time": 14.55,
+      "mediaUrl": "https://assets.csnades.gg/nades/nuke-molotov-Q1ps8nB2qg/hq.mp4",
+      "sourceWidth": 2562,
+      "sourceHeight": 1440,
+      "width": 1280,
+      "height": 720,
+      "extraction": "video-element-screenshot",
+      "sha256": "540b44a2020d96acab4fc4fa6c4b1bc5de978c87e30f0845f1bbcd52626d7051"
+    },
+    "manuallyReviewed": true,
+    "coordinateOverride": false,
+    "reviewedAt": "2026-11-09T16:32:37.657Z"
+  }
+]

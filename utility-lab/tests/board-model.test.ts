@@ -2,10 +2,12 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   commit,
+  appendPenPoints,
   emptyPlan,
   endpointChanged,
   historyFor,
   redo,
+  penPath,
   samplePlan,
   translated,
   undo,
@@ -13,6 +15,32 @@ import {
   validateSavedTactics,
   validateTacticFile,
 } from "../src/board-model.ts";
+
+test("long pen gestures retain bounded map samples and their final point instead of stopping at 800", () => {
+  const start = { x: 10, y: 400 };
+  const original = [start, start];
+  const samples = Array.from({ length: 3000 }, (_, index) => ({ x: 10 + index * 0.3, y: 400 + Math.sin(index / 8) * 100 }));
+  const points = appendPenPoints(original, samples);
+  assert.ok(points.length <= 800);
+  assert.ok(points.length > 300);
+  assert.deepEqual(points[0], start);
+  assert.deepEqual(points.at(-1), samples.at(-1));
+  assert.deepEqual(original, [start, start]);
+  const plan = { ...emptyPlan("mirage", "main"), objects: [{ id: "pen", kind: "pen" as const, x: 0, y: 0, points }] };
+  const restored = validatePlan(JSON.parse(JSON.stringify(plan)));
+  assert.equal(penPath(restored.objects[0].points!), penPath(points));
+});
+
+test("pen curves interpolate recorded endpoints and handle repeated samples without a stray loop", () => {
+  assert.equal(penPath([{ x: 20, y: 30 }, { x: 20, y: 30 }, { x: 80, y: 90 }]), "M 20 30 L 80 90");
+  const points = [{ x: 0, y: 0 }, { x: 100, y: 120 }, { x: 200, y: 60 }, { x: 300, y: 200 }];
+  const path = penPath(points);
+  assert.match(path, /^M 0 0 C /);
+  assert.match(path, /100 120 C /);
+  assert.match(path, /200 60 C /);
+  assert.match(path, /300 200$/);
+  assert.doesNotMatch(path, /NaN|Infinity/);
+});
 
 test("undo and redo preserve complete board edits and branching discards the old future", () => {
   const first = emptyPlan("mirage", "main");

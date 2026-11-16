@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-10T03:14:24.677Z",
+  "guideId": "expanded-cs2tricks-anubis-street-from-upper-cb18-t",
+  "source": "https://www.cs2tricks.com/nades/anubis/smokes/street-from-upper-cb18",
+  "sourceTitle": "Street Smoke from Upper on Anubis",
+  "sourceAuthor": "jeansRig",
+  "sourceMetadata": {
+    "movement": "running",
+    "technique": "jumpthrow",
+    "descriptionExcerpt": "forward jump throw",
+    "dateModified": "2026-06-06T04:28:02.930764Z"
+  },
+  "matchingVideo": {
+    "url": "https://www.youtube.com/watch?v=lVB0h1Fno5E",
+    "videoId": "lVB0h1Fno5E",
+    "title": "ANUBIS - T Smoke Upper To Street",
+    "author": "NadeKing 2",
+    "durationSeconds": 20.381,
+    "played": true,
+    "captionsListedInPlayerResponse": [],
+    "speechEvidence": "No usable spoken instructions; audio contains game sounds. ASR output is not used as input evidence."
+  },
+  "observations": [
+    {
+      "intervalSeconds": [
+        6.5,
+        7.2
+      ],
+      "observation": "Camera remains at the fixed lineup aim while the grenade is prepared."
+    },
+    {
+      "intervalSeconds": [
+        7.4,
+        7.6
+      ],
+      "observation": "Brief forward jump and grenade release; no sustained running approach is shown."
+    }
+  ],
+  "userClarification": "Single W tap with jump and LMB release.",
+  "limitation": "The video does not expose keyboard input. Exact W key-down/key-up duration is not independently measured. The clarified instruction incorporates the user correction and agrees with source forward-jump prose and brief observed motion.",
+  "correction": {
+    "oldThrowType": "Run + Jump + LMB",
+    "throwType": "Tap W + Jump + LMB",
+    "releaseInstruction": "Tap W once as you jump, then release LMB.",
+    "scope": "This exact source only; one T-side guide. Position, aim, media, attribution and map coordinates unchanged."
+  },
+  "artifacts": [
+    {
+      "path": "outputs/anubis-street-throw-review/source.html",
+      "bytes": 79980,
+      "sha256": "56e7966e083e9f8e2afdae3ead012d083b6920089e3b0ce19e02c9b177c1e837"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/youtube-watch.html",
+      "bytes": 1297447,
+      "sha256": "b37d308961d0b080c7ab15f1852db5c6d8b38071b2b212aafd67b05e47eb8a2b"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/player-response.json",
+      "bytes": 36560,
+      "sha256": "297f9589105b8d7b00ddfa4942b5012c60597300df5b4865285f43571c5f3763"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/release-6.5s.png",
+      "bytes": 888696,
+      "sha256": "3d49c9a00ffbd3e392c2be7fe138f9ffcfddcf1fe0ed630531b4f8d7c1b51f03"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/release-7s.png",
+      "bytes": 846391,
+      "sha256": "d5321162dbcb55ab19996c7eb0e9758059b87b9c78f66cb803cc720386c0b54f"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/release-7.2s.png",
+      "bytes": 844512,
+      "sha256": "e4ef6bb280158718aa7a7ae357fd3dfe526515f2a57c3fb2f494f17739964a70"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/release-7.4s.png",
+      "bytes": 806411,
+      "sha256": "eb67e238f7a2ea42bc3fd7fedc390ea610eccf288c8f53432185e75cd9762b86"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/release-7.6s.png",
+      "bytes": 806116,
+      "sha256": "1d2bda3840c0520b51bf7ddff8cecebcc45e3057bfd56ee44da67eb664e1d155"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/source-audio.wav",
+      "bytes": 647212,
+      "sha256": "847635e9d0ec3ecf9e3ebcfa0e696ba12f7d7e8cda3598c1fe1e6c81d2a50b94"
+    },
+    {
+      "path": "outputs/anubis-street-throw-review/source-transcript.json",
+      "bytes": 270,
+      "sha256": "6e92a963ab9aef864eef1c5f1aae56bc8e606639fb10e47cbe78349a63766454"
+    }
+  ],
+  "gameAccess": false
+}

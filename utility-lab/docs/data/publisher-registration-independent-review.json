@@ -1,0 +1,2221 @@
+{
+  "checkedAt": "2026-11-10",
+  "provider": "CS2Tricks",
+  "totalRows": 1287,
+  "destinationFailures": 0,
+  "coordinateFailures": 0,
+  "registrations": [
+    {
+      "registrationId": "cs2tricks-mirage-main-20261109",
+      "map": "mirage",
+      "level": "main",
+      "records": 234,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-mirage-stairs-from-t-roof-f6b6-t",
+          "target": "Stairs",
+          "from": "T Roof",
+          "x": 539.39,
+          "y": 639.15,
+          "source": "https://www.cs2tricks.com/nades/mirage/grenades/stairs-from-t-roof-f6b6"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-market-window-from-van-7797-t",
+          "target": "Market Window",
+          "from": "Van",
+          "x": 253.09,
+          "y": 398.85,
+          "source": "https://www.cs2tricks.com/nades/mirage/smokes/market-window-from-van-7797"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-window-from-window-6b2c-ct",
+          "target": "Window",
+          "from": "Jungle",
+          "x": 398.74,
+          "y": 454.56,
+          "source": "https://www.cs2tricks.com/nades/mirage/grenades/window-from-window-6b2c"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-deep-jungle-from-underpass-4699-t",
+          "target": "Jungle",
+          "from": "Underpass",
+          "x": 392.08,
+          "y": 600.9,
+          "source": "https://www.cs2tricks.com/nades/mirage/molotovs/deep-jungle-from-underpass-4699"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-bottom-connector-from-top-mid-6ada-t",
+          "target": "Bottom Connector",
+          "from": "Top Mid",
+          "x": 499.44,
+          "y": 496.97,
+          "source": "https://www.cs2tricks.com/nades/mirage/flashbangs/bottom-connector-from-top-mid-6ada"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-top-mid-from-apps-ramp-2d57-t",
+          "target": "Top Mid",
+          "from": "Apps Ramp",
+          "x": 635.94,
+          "y": 417.14,
+          "source": "https://www.cs2tricks.com/nades/mirage/grenades/top-mid-from-apps-ramp-2d57"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-deep-top-mid-from-catwalk-21a4-ct",
+          "target": "Deep Top Mid",
+          "from": "Catwalk",
+          "x": 686.71,
+          "y": 353.11,
+          "source": "https://www.cs2tricks.com/nades/mirage/flashbangs/deep-top-mid-from-catwalk-21a4"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-top-connector-from-a-site-c500-ct",
+          "target": "Top Connector",
+          "from": "A-Site",
+          "x": 500.28,
+          "y": 570.14,
+          "source": "https://www.cs2tricks.com/nades/mirage/flashbangs/top-connector-from-a-site-c500"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-ramp-stairs-from-t-roof-9f36-t",
+          "target": "Ramp stairs",
+          "from": "T Roof",
+          "x": 716.67,
+          "y": 650.8,
+          "source": "https://www.cs2tricks.com/nades/mirage/flashbangs/ramp-stairs-from-t-roof-9f36"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-b-stairs-from-underpass-2a39-ct",
+          "target": "B Stairs",
+          "from": "Underpass",
+          "x": 453.67,
+          "y": 250.84,
+          "source": "https://www.cs2tricks.com/nades/mirage/flashbangs/b-stairs-from-underpass-2a39"
+        },
+        {
+          "id": "expanded-cs2tricks-mirage-deep-jungle-from-underpass-4db5-t",
+          "target": "Deep Jungle",
+          "from": "Underpass",
+          "x": 390.42,
+          "y": 576.79,
+          "source": "https://www.cs2tricks.com/nades/mirage/grenades/deep-jungle-from-underpass-4db5"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/mirage-main.png",
+      "transform": {
+        "scaleX": 0.8322872340425531,
+        "scaleY": 0.8315168866459627,
+        "translateX": 94.95338818705672,
+        "translateY": 90.35326086956523
+      }
+    },
+    {
+      "registrationId": "cs2tricks-dust2-main-20261109",
+      "map": "dust2",
+      "level": "main",
+      "records": 198,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-dust2-car-from-outside-long-ffc6-t",
+          "target": "Car",
+          "from": "Outside Long",
+          "x": 928.64,
+          "y": 254.67,
+          "source": "https://www.cs2tricks.com/nades/dust2/smokes/car-from-outside-long-ffc6"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-b-site-from-outside-b-f9ab-ct",
+          "target": "B Site",
+          "from": "Outside B",
+          "x": 208.54,
+          "y": 193.65,
+          "source": "https://www.cs2tricks.com/nades/dust2/smokes/b-site-from-outside-b-f9ab"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-a-site-from-ramp-2d2f-ct",
+          "target": "A Site",
+          "from": "A Ramp",
+          "x": 812.59,
+          "y": 133.6,
+          "source": "https://www.cs2tricks.com/nades/dust2/flashbangs/a-site-from-ramp-2d2f"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-short-from-ct-mid-f282-ct",
+          "target": "Short",
+          "from": "CT Mid",
+          "x": 517.02,
+          "y": 471.22,
+          "source": "https://www.cs2tricks.com/nades/dust2/grenades/short-from-ct-mid-f282"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-close-mid-doors-from-lower-tunnels-e086-t",
+          "target": "Close Mid Doors",
+          "from": "Lower Tunnels",
+          "x": 478.33,
+          "y": 333.42,
+          "source": "https://www.cs2tricks.com/nades/dust2/molotovs/close-mid-doors-from-lower-tunnels-e086"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-short--from-pit-plat-96b0-ct",
+          "target": "Short ",
+          "from": "Pit Plat",
+          "x": 630.09,
+          "y": 372.79,
+          "source": "https://www.cs2tricks.com/nades/dust2/smokes/short--from-pit-plat-96b0"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-mid-doors-from-ct-mid-4998-ct",
+          "target": "Mid Doors",
+          "from": "CT Mid",
+          "x": 471.39,
+          "y": 378.7,
+          "source": "https://www.cs2tricks.com/nades/dust2/grenades/mid-doors-from-ct-mid-4998"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-ct-spawn-from-outside-tunnels-47f6-t",
+          "target": "CT Spawn",
+          "from": "Outside Tunnels",
+          "x": 518.01,
+          "y": 248.77,
+          "source": "https://www.cs2tricks.com/nades/dust2/smokes/ct-spawn-from-outside-tunnels-47f6"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-short-cross-from-a-ramp-c140-ct",
+          "target": "Short Cross",
+          "from": "A Ramp",
+          "x": 652.9,
+          "y": 255.66,
+          "source": "https://www.cs2tricks.com/nades/dust2/flashbangs/short-cross-from-a-ramp-c140"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-elbow-from-catwalk-493f-t",
+          "target": "Short Boost",
+          "from": "Catwalk",
+          "x": 680.68,
+          "y": 200.54,
+          "source": "https://www.cs2tricks.com/nades/dust2/smokes/elbow-from-catwalk-493f"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-ct-mid-from-outside-long-2429-t",
+          "target": "Ct Mid",
+          "from": "Outside Long",
+          "x": 423.78,
+          "y": 249.75,
+          "source": "https://www.cs2tricks.com/nades/dust2/smokes/ct-mid-from-outside-long-2429"
+        },
+        {
+          "id": "expanded-cs2tricks-dust2-short-stairs-from-short-boost-a03a-ct",
+          "target": "Short Stairs",
+          "from": "Short Boost",
+          "x": 620.17,
+          "y": 328.5,
+          "source": "https://www.cs2tricks.com/nades/dust2/grenades/short-stairs-from-short-boost-a03a"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/dust2-main.png",
+      "transform": {
+        "scaleX": 0.991875,
+        "scaleY": 0.9843048128342246,
+        "translateX": 5.208333333333333,
+        "translateY": 5.645262366310161
+      }
+    },
+    {
+      "registrationId": "cs2tricks-inferno-main-20261109",
+      "map": "inferno",
+      "level": "main",
+      "records": 206,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-inferno-coffin-from-wall-2838-t",
+          "target": "Coffin",
+          "from": "Wall",
+          "x": 509.04,
+          "y": 146.17,
+          "source": "https://www.cs2tricks.com/nades/inferno/grenades/coffin-from-wall-2838"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-ct-from-ct-0e91-ct",
+          "target": "CT",
+          "from": "CT",
+          "x": 607.37,
+          "y": 230.21,
+          "source": "https://www.cs2tricks.com/nades/inferno/grenades/ct-from-ct-0e91"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-moto-from-balcony-6f24-t",
+          "target": "Moto",
+          "from": "Balcony",
+          "x": 871.41,
+          "y": 598.88,
+          "source": "https://www.cs2tricks.com/nades/inferno/smokes/moto-from-balcony-6f24"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-top-banana-from-dark-0279-ct",
+          "target": "Top Banana",
+          "from": "Dark",
+          "x": 527.25,
+          "y": 371.17,
+          "source": "https://www.cs2tricks.com/nades/inferno/grenades/top-banana-from-dark-0279"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-arch-from-door-b0d6-t",
+          "target": "Arch",
+          "from": "Alt Mid",
+          "x": 778.54,
+          "y": 504.91,
+          "source": "https://www.cs2tricks.com/nades/inferno/smokes/arch-from-door-b0d6"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-pit-from-new-location-bdb9-ct",
+          "target": "Pit",
+          "from": "New Location",
+          "x": 917.84,
+          "y": 785.03,
+          "source": "https://www.cs2tricks.com/nades/inferno/molotovs/pit-from-new-location-bdb9"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-banana-from-mid-d4c7-ct",
+          "target": "Banana",
+          "from": "Bottom Mid",
+          "x": 437.11,
+          "y": 562.74,
+          "source": "https://www.cs2tricks.com/nades/inferno/flashbangs/banana-from-mid-d4c7"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-banana-logs-from-b-entrance-467d-ct",
+          "target": "Banana-Logs",
+          "from": "B-Entrance",
+          "x": 440.75,
+          "y": 504.91,
+          "source": "https://www.cs2tricks.com/nades/inferno/grenades/banana-logs-from-b-entrance-467d"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-infront-of-pit-from-mid-f9c9-ct",
+          "target": "Infront Of Pit",
+          "from": "Mid",
+          "x": 849.56,
+          "y": 757.92,
+          "source": "https://www.cs2tricks.com/nades/inferno/smokes/infront-of-pit-from-mid-f9c9"
+        },
+        {
+          "id": "expanded-cs2tricks-inferno-minipit-from-apps-eba4-ct",
+          "target": "MiniPit",
+          "from": "Apps",
+          "x": 829.53,
+          "y": 855.51,
+          "source": "https://www.cs2tricks.com/nades/inferno/flashbangs/minipit-from-apps-eba4"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/inferno-main.png",
+      "transform": {
+        "scaleX": 0.9104771505376343,
+        "scaleY": 0.9036141304347827,
+        "translateX": 57.442176299283155,
+        "translateY": 35.028872282608695
+      }
+    },
+    {
+      "registrationId": "cs2tricks-nuke-upper-20261109",
+      "map": "nuke",
+      "level": "upper",
+      "records": 83,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-nuke-a-site-from-t-roof-d73e",
+          "target": "A Site",
+          "from": "T Roof",
+          "x": 581.99,
+          "y": 479.09,
+          "source": "https://www.cs2tricks.com/nades/nuke/molotovs/a-site-from-t-roof-d73e"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-heaven-from-t-spawn-eb88",
+          "target": "Heaven",
+          "from": "T-Spawn",
+          "x": 628.82,
+          "y": 455.25,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/heaven-from-t-spawn-eb88"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-ramp-box-from-trophy-0bee",
+          "target": "Ramp Box",
+          "from": "Trophy",
+          "x": 552.36,
+          "y": 359.87,
+          "source": "https://www.cs2tricks.com/nades/nuke/molotovs/ramp-box-from-trophy-0bee"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-t-outside-from-ct-spawn-a31e",
+          "target": "T Outside",
+          "from": "CT Spawn",
+          "x": 492.14,
+          "y": 698.47,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/t-outside-from-ct-spawn-a31e"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-secret-far-from-t-spawn-1eb1",
+          "target": "Secret Far",
+          "from": "T Spawn",
+          "x": 638.38,
+          "y": 701.33,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/secret-far-from-t-spawn-1eb1"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-outside-from-t-spawn-f5a3",
+          "target": "Outside",
+          "from": "T Spawn",
+          "x": 610.66,
+          "y": 681.3,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-from-t-spawn-f5a3"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-outside-garage-from-t-spawn-cfc0",
+          "target": "Outside Garage",
+          "from": "T Spawn",
+          "x": 641.25,
+          "y": 670.81,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-garage-from-t-spawn-cfc0"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-outside-main--from-t-spawn-cbdb",
+          "target": "Outside Main",
+          "from": "T Spawn",
+          "x": 620.22,
+          "y": 650.78,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/outside-main--from-t-spawn-cbdb"
+        },
+        {
+          "id": "expanded-cs2tricks-nuke-ramp-from-trophy-b453",
+          "target": "Ramp",
+          "from": "Trophy",
+          "x": 537.07,
+          "y": 357.96,
+          "source": "https://www.cs2tricks.com/nades/nuke/smokes/ramp-from-trophy-b453"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/nuke-upper.png",
+      "transform": {
+        "scaleX": 0.955789695945946,
+        "scaleY": 0.9538020833333334,
+        "translateX": 44.8338963963964,
+        "translateY": 21.267361111111086
+      }
+    },
+    {
+      "registrationId": "cs2tricks-ancient-main-20261109",
+      "map": "ancient",
+      "level": "main",
+      "records": 165,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-ancient-top-mid-from-elbow-5588-t",
+          "target": "Top Mid",
+          "from": "Elbow",
+          "x": 475.49,
+          "y": 380.61,
+          "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-elbow-5588"
+        },
+        {
+          "id": "expanded-cs2tricks-ancient-b-alley-from-door-f2e2-t",
+          "target": "B Alley",
+          "from": "Door",
+          "x": 707.21,
+          "y": 338.52,
+          "source": "https://www.cs2tricks.com/nades/ancient/smokes/b-alley-from-door-f2e2"
+        },
+        {
+          "id": "expanded-cs2tricks-ancient-back-alley-from-door-3671-t",
+          "target": "Back Alley",
+          "from": "Door",
+          "x": 805.05,
+          "y": 361.71,
+          "source": "https://www.cs2tricks.com/nades/ancient/molotovs/back-alley-from-door-3671"
+        },
+        {
+          "id": "expanded-cs2tricks-ancient-a-donut-from-t-spawn-4-f411-t",
+          "target": "A Donut",
+          "from": "T Spawn #4",
+          "x": 308.13,
+          "y": 338.52,
+          "source": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-4-f411"
+        },
+        {
+          "id": "expanded-cs2tricks-ancient-b-site-from-door-4208-t",
+          "target": "B Site",
+          "from": "Door",
+          "x": 807.62,
+          "y": 409.82,
+          "source": "https://www.cs2tricks.com/nades/ancient/grenades/b-site-from-door-4208"
+        },
+        {
+          "id": "expanded-cs2tricks-ancient-cave-from-lamp-6158-ct",
+          "target": "Cave",
+          "from": "Lamp",
+          "x": 662.58,
+          "y": 450.19,
+          "source": "https://www.cs2tricks.com/nades/ancient/molotovs/cave-from-lamp-6158"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/ancient-main.png",
+      "transform": {
+        "scaleX": 0.8582294861963189,
+        "scaleY": 0.8590393518518518,
+        "translateX": 57.52981611068507,
+        "translateY": 66.20129243827161
+      }
+    },
+    {
+      "registrationId": "cs2tricks-anubis-main-20261109",
+      "map": "anubis",
+      "level": "main",
+      "records": 282,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-anubis-heaven-from-water-d2ae-t",
+          "target": "Heaven",
+          "from": "Water",
+          "x": 710.27,
+          "y": 203.4,
+          "source": "https://www.cs2tricks.com/nades/anubis/molotovs/heaven-from-water-d2ae"
+        },
+        {
+          "id": "expanded-cs2tricks-anubis-mid-window-from-top-mid-4389-t",
+          "target": "Mid-Window",
+          "from": "Top Mid",
+          "x": 508.46,
+          "y": 466.94,
+          "source": "https://www.cs2tricks.com/nades/anubis/molotovs/mid-window-from-top-mid-4389"
+        },
+        {
+          "id": "expanded-cs2tricks-anubis-mid-from-mid-7e3c-ct",
+          "target": "Mid",
+          "from": "Mid",
+          "x": 500.31,
+          "y": 573.11,
+          "source": "https://www.cs2tricks.com/nades/anubis/molotovs/mid-from-mid-7e3c"
+        },
+        {
+          "id": "expanded-cs2tricks-anubis-top-mid-from-street-236d-ct",
+          "target": "Top Mid",
+          "from": "Street",
+          "x": 501.22,
+          "y": 613.15,
+          "source": "https://www.cs2tricks.com/nades/anubis/smokes/top-mid-from-street-236d"
+        },
+        {
+          "id": "expanded-cs2tricks-anubis-a-main-from-heaven-c08c-ct",
+          "target": "A Main",
+          "from": "Heaven",
+          "x": 834.26,
+          "y": 359.85,
+          "source": "https://www.cs2tricks.com/nades/anubis/flashbangs/a-main-from-heaven-c08c"
+        },
+        {
+          "id": "expanded-cs2tricks-anubis-b-site-from-b-long-797e-t",
+          "target": "B Site",
+          "from": "B Long",
+          "x": 314.79,
+          "y": 520.96,
+          "source": "https://www.cs2tricks.com/nades/anubis/grenades/b-site-from-b-long-797e"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/anubis-main.png",
+      "transform": {
+        "scaleX": 0.9049999999999999,
+        "scaleY": 0.93125,
+        "translateX": 51.432291666666664,
+        "translateY": 61.848958333333336
+      }
+    },
+    {
+      "registrationId": "cs2tricks-cache-main-20261109",
+      "map": "cache",
+      "level": "main",
+      "records": 80,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-cache-heaven-from-sunroom-1aad-t",
+          "target": "Heaven",
+          "from": "Sunroom",
+          "x": 268.52,
+          "y": 695.77,
+          "source": "https://www.cs2tricks.com/nades/cache/smokes/heaven-from-sunroom-1aad"
+        },
+        {
+          "id": "expanded-cs2tricks-cache-a-main-from-a-main-3c77-t",
+          "target": "A Main",
+          "from": "A Main",
+          "x": 444.64,
+          "y": 278.03,
+          "source": "https://www.cs2tricks.com/nades/cache/grenades/a-main-from-a-main-3c77"
+        },
+        {
+          "id": "expanded-cs2tricks-cache-highway-from-t-truck-6b96-t",
+          "target": "Highway",
+          "from": "T Truck",
+          "x": 318.17,
+          "y": 481.88,
+          "source": "https://www.cs2tricks.com/nades/cache/molotovs/highway-from-t-truck-6b96"
+        },
+        {
+          "id": "expanded-cs2tricks-cache-b-halls-from-b-main-2557-t",
+          "target": "B Main",
+          "from": "B Main",
+          "x": 428.72,
+          "y": 672.01,
+          "source": "https://www.cs2tricks.com/nades/cache/molotovs/b-halls-from-b-main-2557"
+        },
+        {
+          "id": "expanded-cs2tricks-cache-vents-from-outside-a-010b-t",
+          "target": "Vents",
+          "from": "Outside A",
+          "x": 451.2,
+          "y": 618.99,
+          "source": "https://www.cs2tricks.com/nades/cache/molotovs/vents-from-outside-a-010b"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/cache-main.png",
+      "transform": {
+        "scaleX": 0.9368419312169312,
+        "scaleY": 0.9140909090909091,
+        "translateX": 21.19157848324515,
+        "translateY": 50.426136363636374
+      }
+    },
+    {
+      "registrationId": "cs2tricks-vertigo-upper-20261109",
+      "map": "vertigo",
+      "level": "upper",
+      "records": 37,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-vertigo-t-mid-from-mid-2f9a",
+          "target": "T Mid",
+          "from": "Mid",
+          "x": 292.41,
+          "y": 558.25,
+          "source": "https://www.cs2tricks.com/nades/vertigo/grenades/t-mid-from-mid-2f9a"
+        },
+        {
+          "id": "expanded-cs2tricks-vertigo-a-site-left-from-t-spawn-b650",
+          "target": "A Site Left",
+          "from": "T Spawn",
+          "x": 661.79,
+          "y": 546.78,
+          "source": "https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-t-spawn-b650"
+        },
+        {
+          "id": "expanded-cs2tricks-vertigo-ct-spawn-from-stairs-e997",
+          "target": "CT Spawn",
+          "from": "Stairs",
+          "x": 381.28,
+          "y": 244.83,
+          "source": "https://www.cs2tricks.com/nades/vertigo/smokes/ct-spawn-from-stairs-e997"
+        },
+        {
+          "id": "expanded-cs2tricks-vertigo-mid-from-top-mid-40c8",
+          "target": "Mid",
+          "from": "Top Mid",
+          "x": 372,
+          "y": 464.99,
+          "source": "https://www.cs2tricks.com/nades/vertigo/smokes/mid-from-top-mid-40c8"
+        },
+        {
+          "id": "expanded-cs2tricks-vertigo-top-mid--from-mid-87c7",
+          "target": "Top Mid",
+          "from": "Mid",
+          "x": 477.87,
+          "y": 376.32,
+          "source": "https://www.cs2tricks.com/nades/vertigo/smokes/top-mid--from-mid-87c7"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/vertigo-upper.png",
+      "transform": {
+        "scaleX": 0.7727675898203592,
+        "scaleY": 0.7644301470588235,
+        "translateX": 71.39626996007983,
+        "translateY": 115.6460631127451
+      }
+    },
+    {
+      "registrationId": "cs2tricks-nuke-lower-20261109",
+      "map": "nuke",
+      "level": "lower",
+      "records": 1,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "cs2tricks-nuke-new-end-he-from-ramp",
+          "target": "B site (New End)",
+          "from": "Ramp",
+          "x": 603.02,
+          "y": 523.92,
+          "source": "https://www.cs2tricks.com/nades/nuke/grenades/new-end-from-ramp-9e71"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/nuke-lower.png",
+      "transform": {
+        "scaleX": 0.955789695945946,
+        "scaleY": 0.9538020833333334,
+        "translateX": 44.8338963963964,
+        "translateY": 21.267361111111086
+      }
+    },
+    {
+      "registrationId": "cs2tricks-vertigo-lower-20261109",
+      "map": "vertigo",
+      "level": "lower",
+      "records": 1,
+      "allDestinationBindings": true,
+      "allCoordinateValues": true,
+      "selected": [
+        {
+          "id": "expanded-cs2tricks-vertigo-deep-ramp-from-elevator-9cb9",
+          "target": "Deep Ramp",
+          "from": "Elevator",
+          "x": 581.42,
+          "y": 550.61,
+          "source": "https://www.cs2tricks.com/nades/vertigo/smokes/deep-ramp-from-elevator-9cb9"
+        }
+      ],
+      "reviewImage": "outputs/expanded-dma/projection-review/vertigo-lower.png",
+      "transform": {
+        "scaleX": 0.7727675898203592,
+        "scaleY": 0.7644301470588235,
+        "translateX": 71.39626996007983,
+        "translateY": 115.6460631127451
+      }
+    }
+  ],
+  "additionalProviders": {
+    "csnades": {
+      "checkedAt": "2026-11-10",
+      "originalGuideCount": 183,
+      "allExactCanonicalJoins": true,
+      "allOriginalVideoAssetJoins": true,
+      "positionAimGuidesWithExactPhotoSource": 183,
+      "positionAimPhotoSourceFailures": 0,
+      "allProjected": true,
+      "storedRowsAudited": 183,
+      "storedFailures": 0,
+      "sourceImageHashesMatched": 6,
+      "appArtworkHashesMatched": 6,
+      "registrations": [
+        {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "map": "nuke",
+          "level": "upper",
+          "transform": {
+            "scaleX": 0.9535869565217392,
+            "scaleY": 0.525086511299435,
+            "translateX": 39.5118602807971,
+            "translateY": 247.40732771304147
+          },
+          "sourceImage": "https://assets.csnades.gg/nuke_game_radar_9276ffd1a4.webp",
+          "sourceImageWidth": 1558,
+          "sourceImageHeight": 848,
+          "logicalWidth": 1000,
+          "logicalHeight": 1000,
+          "records": 67,
+          "allProjected": true,
+          "allVideoAssetsMatch": true,
+          "storedAudited": 67,
+          "storedFailures": 0,
+          "selected": [
+            {
+              "id": "expanded-csnades-nuke-smoke-t-red-from-under-silo",
+              "target": "T Red",
+              "source": "https://csnades.gg/nuke/smokes/t-red-from-under-silo",
+              "x": 542.05,
+              "y": 692.68,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-nuke-molotov-silo-from-ct-red",
+              "target": "Silo",
+              "source": "https://csnades.gg/nuke/molotovs/silo-from-ct-red",
+              "x": 512.49,
+              "y": 631.25,
+              "levels": [
+                null
+              ],
+              "requiresFloorDecision": true
+            },
+            {
+              "id": "expanded-csnades-nuke-he-squeaky-door-from-lobby",
+              "target": "Squeaky Door",
+              "source": "https://csnades.gg/nuke/hegrenades/squeaky-door-from-lobby",
+              "x": 514.4,
+              "y": 580.84,
+              "levels": [
+                null
+              ],
+              "requiresFloorDecision": true
+            },
+            {
+              "id": "expanded-csnades-nuke-smoke-trophy-from-ramp",
+              "target": "Trophy",
+              "source": "https://csnades.gg/nuke/smokes/trophy-from-ramp",
+              "x": 504.86,
+              "y": 434.86,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-nuke-molotov-behind-t-red-from-under-silo",
+              "target": "Behind T Red",
+              "source": "https://csnades.gg/nuke/molotovs/behind-t-red-from-under-silo",
+              "x": 602.13,
+              "y": 708.96,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-nuke-smoke-ct-red-from-under-silo",
+              "target": "CT Red",
+              "source": "https://csnades.gg/nuke/smokes/ct-red-from-under-silo",
+              "x": 641.23,
+              "y": 614.44,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-nuke-smoke-top-silo-from-ct-spawn",
+              "target": "Top Silo",
+              "source": "https://csnades.gg/nuke/smokes/top-silo-from-ct-spawn",
+              "x": 517.26,
+              "y": 630.72,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            }
+          ],
+          "reviewImage": "outputs/expanded-dma/csnades-projection-review/nuke-upper.png"
+        },
+        {
+          "registrationId": "csnades-nuke-lower-20261109",
+          "map": "nuke",
+          "level": "lower",
+          "transform": {
+            "scaleX": 0.9535869565217392,
+            "scaleY": 0.525086511299435,
+            "translateX": 39.5118602807971,
+            "translateY": 247.40732771304147
+          },
+          "sourceImage": "https://assets.csnades.gg/nuke_game_radar_lower_b42d4863bf.webp",
+          "sourceImageWidth": 1558,
+          "sourceImageHeight": 848,
+          "logicalWidth": 1000,
+          "logicalHeight": 1000,
+          "records": 4,
+          "allProjected": true,
+          "allVideoAssetsMatch": true,
+          "storedAudited": 4,
+          "storedFailures": 0,
+          "selected": [
+            {
+              "id": "expanded-csnades-nuke-molotov-dark-from-b-ramp",
+              "target": "Dark",
+              "source": "https://csnades.gg/nuke/molotovs/dark-from-b-ramp",
+              "x": 609.76,
+              "y": 453.24,
+              "levels": [
+                2
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-nuke-smoke-decon-cross-from-back-vents",
+              "target": "Decon Cross",
+              "source": "https://csnades.gg/nuke/smokes/decon-cross-from-back-vents",
+              "x": 543.96,
+              "y": 566.66,
+              "levels": [
+                2
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-nuke-smoke-double-doors-from-b-ramp",
+              "target": "Double Doors",
+              "source": "https://csnades.gg/nuke/smokes/double-doors-from-b-ramp",
+              "x": 618.34,
+              "y": 539.88,
+              "levels": [
+                2
+              ],
+              "requiresFloorDecision": false
+            }
+          ],
+          "reviewImage": "outputs/expanded-dma/csnades-projection-review/nuke-lower.png"
+        },
+        {
+          "registrationId": "csnades-cache-main-20261109",
+          "map": "cache",
+          "level": "main",
+          "transform": {
+            "scaleX": 0.9662798838797814,
+            "scaleY": 0.7462926136363637,
+            "translateX": 7.307320127504554,
+            "translateY": 137.13304924242422
+          },
+          "sourceImage": "https://assets.csnades.gg/cache_game_radar_78bfffc917.webp",
+          "sourceImageWidth": 2048,
+          "sourceImageHeight": 1596,
+          "logicalWidth": 1000,
+          "logicalHeight": 1000,
+          "records": 36,
+          "allProjected": true,
+          "allVideoAssetsMatch": true,
+          "storedAudited": 36,
+          "storedFailures": 0,
+          "selected": [
+            {
+              "id": "expanded-csnades-cache-molotov-newbox-from-sun-room",
+              "target": "Newbox",
+              "source": "https://csnades.gg/cache/molotovs/newbox-from-sun-room",
+              "x": 380.29,
+              "y": 787.15,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-cache-he-backsite-from-sun-room",
+              "target": "Backsite",
+              "source": "https://csnades.gg/cache/hegrenades/backsite-from-sun-room",
+              "x": 366.76,
+              "y": 830.44,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-cache-smoke-right-mid-from-garage",
+              "target": "Right Mid",
+              "source": "https://csnades.gg/cache/smokes/right-mid-from-garage",
+              "x": 408.31,
+              "y": 510.28,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-cache-smoke-left-mid-from-garage",
+              "target": "Left Mid",
+              "source": "https://csnades.gg/cache/smokes/left-mid-from-garage",
+              "x": 408.31,
+              "y": 549.83,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-cache-smoke-highway-from-truck",
+              "target": "Highway",
+              "source": "https://csnades.gg/cache/smokes/highway-from-truck",
+              "x": 327.15,
+              "y": 392.37,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-cache-smoke-heaven-from-garbage",
+              "target": "Heaven",
+              "source": "https://csnades.gg/cache/smokes/heaven-from-garbage",
+              "x": 280.76,
+              "y": 702.08,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            }
+          ],
+          "reviewImage": "outputs/expanded-dma/csnades-projection-review/cache-main.png"
+        },
+        {
+          "registrationId": "csnades-vertigo-upper-20261109",
+          "map": "vertigo",
+          "level": "upper",
+          "transform": {
+            "scaleX": 0.6906249999999997,
+            "scaleY": 0.7443749999999998,
+            "translateX": 103.84114583333333,
+            "translateY": 119.62890625
+          },
+          "sourceImage": "https://assets.csnades.gg/vertigo_game_radar_fdb7e7081d.webp",
+          "sourceImageWidth": 1135,
+          "sourceImageHeight": 1219,
+          "logicalWidth": 1000,
+          "logicalHeight": 1000,
+          "records": 68,
+          "allProjected": true,
+          "allVideoAssetsMatch": true,
+          "storedAudited": 68,
+          "storedFailures": 0,
+          "selected": [
+            {
+              "id": "expanded-csnades-vertigo-smoke-generator-left-from-t-spawn",
+              "target": "Generator Left",
+              "source": "https://csnades.gg/vertigo/smokes/generator-left-from-t-spawn",
+              "x": 339.34,
+              "y": 199.28,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-vertigo-smoke-generator-right-from-t-spawn",
+              "target": "Generator Right",
+              "source": "https://csnades.gg/vertigo/smokes/generator-right-from-t-spawn",
+              "x": 320.7,
+              "y": 284.88,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-vertigo-smoke-heaven-from-ramp-b",
+              "target": "Heaven",
+              "source": "https://csnades.gg/vertigo/smokes/heaven-from-ramp-b",
+              "x": 708.83,
+              "y": 427.06,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-vertigo-smoke-ramp-lurk-from-bridge",
+              "target": "Ramp Lurk",
+              "source": "https://csnades.gg/vertigo/smokes/ramp-lurk-from-bridge",
+              "x": 594.88,
+              "y": 692.05,
+              "levels": [
+                1,
+                2
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-vertigo-smoke-top-a-ramp-from-heaven",
+              "target": "Top A Ramp",
+              "source": "https://csnades.gg/vertigo/smokes/top-a-ramp-from-heaven",
+              "x": 688.11,
+              "y": 704.71,
+              "levels": [
+                1,
+                2
+              ],
+              "requiresFloorDecision": false
+            }
+          ],
+          "reviewImage": "outputs/expanded-dma/csnades-projection-review/vertigo-upper.png"
+        },
+        {
+          "registrationId": "csnades-vertigo-lower-20261109",
+          "map": "vertigo",
+          "level": "lower",
+          "transform": {
+            "scaleX": 0.6906249999999997,
+            "scaleY": 0.7443749999999998,
+            "translateX": 103.84114583333333,
+            "translateY": 119.62890625
+          },
+          "sourceImage": "https://assets.csnades.gg/vertigo_game_radar_2_1f01133fe9.webp",
+          "sourceImageWidth": 1135,
+          "sourceImageHeight": 1219,
+          "logicalWidth": 1000,
+          "logicalHeight": 1000,
+          "records": 4,
+          "allProjected": true,
+          "allVideoAssetsMatch": true,
+          "storedAudited": 4,
+          "storedFailures": 0,
+          "selected": [
+            {
+              "id": "expanded-csnades-vertigo-smoke-a-ramp-from-ct-mid",
+              "target": "A Ramp",
+              "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-ct-mid",
+              "x": 580.37,
+              "y": 552.11,
+              "levels": [
+                2
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-vertigo-smoke-bottom-b-main-from-b-site",
+              "target": "Bottom B Main",
+              "source": "https://csnades.gg/vertigo/smokes/bottom-b-main-from-b-site",
+              "x": 258.54,
+              "y": 430.03,
+              "levels": [
+                2
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-vertigo-smoke-bottom-ramp-from-elevator",
+              "target": "Bottom Ramp",
+              "source": "https://csnades.gg/vertigo/smokes/bottom-ramp-from-elevator",
+              "x": 580.37,
+              "y": 552.11,
+              "levels": [
+                2
+              ],
+              "requiresFloorDecision": false
+            }
+          ],
+          "reviewImage": "outputs/expanded-dma/csnades-projection-review/vertigo-lower.png"
+        },
+        {
+          "registrationId": "csnades-dust2-main-20261109",
+          "map": "dust2",
+          "level": "main",
+          "transform": {
+            "scaleX": 0.9275436827956989,
+            "scaleY": 0.9839923128342245,
+            "translateX": 41.1486335125448,
+            "translateY": 10.472370766488414
+          },
+          "sourceImage": "https://assets.csnades.gg/dust2_game_radar_1b998342f2.webp",
+          "sourceImageWidth": 1516,
+          "sourceImageHeight": 1619,
+          "logicalWidth": 1000,
+          "logicalHeight": 1000,
+          "records": 4,
+          "allProjected": true,
+          "allVideoAssetsMatch": true,
+          "storedAudited": 4,
+          "storedFailures": 0,
+          "selected": [
+            {
+              "id": "expanded-csnades-dust2-mid-doors-from-xbox-t",
+              "target": "Mid Doors",
+              "source": "https://csnades.gg/dust2/hegrenades/mid-doors-from-xbox",
+              "x": 454.83,
+              "y": 361.76,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-dust2-short-from-lower-tunnels-t",
+              "target": "Short",
+              "source": "https://csnades.gg/dust2/hegrenades/short-from-lower-tunnels",
+              "x": 625.5,
+              "y": 393.25,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-dust2-short-stairs-corner-from-mid-t",
+              "target": "Short Stairs Corner",
+              "source": "https://csnades.gg/dust2/hegrenades/short-stairs-corner-from-mid",
+              "x": 652.4,
+              "y": 341.09,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            },
+            {
+              "id": "expanded-csnades-dust2-back-plat-from-upper-tunnels-t",
+              "target": "Back Plat",
+              "source": "https://csnades.gg/dust2/hegrenades/back-plat-from-upper-tunnels",
+              "x": 97.73,
+              "y": 42.94,
+              "levels": [
+                1
+              ],
+              "requiresFloorDecision": false
+            }
+          ],
+          "reviewImage": "outputs/expanded-dma/csnades-projection-review/dust2-main.png"
+        }
+      ],
+      "floorDecisionStatus": "Resolved: four null-floor Nuke upper/outside decisions independently confirmed against original landing-frame images in docs/data/physical-floor-overrides.json; three Vertigo explicit-floor2 destinations corrected lower.",
+      "cacheLandingEvidence": "docs/data/csnades-cache-destination-evidence.json",
+      "floorOverrideEvidence": "docs/data/physical-floor-overrides.json"
+    }
+  },
+  "finalStoredPinAudit": {
+    "checkedAt": "2026-11-10",
+    "expandedRows": 1500,
+    "expandedPinned": 1500,
+    "mainRows": 1504,
+    "mainPinned": 1504,
+    "communityRows": 27,
+    "communitySources": 26,
+    "communityFailures": 0,
+    "legacyRows": 4,
+    "legacyFailures": 0,
+    "community": [
+      {
+        "id": "expanded-csnades-community-nuke-smoke-1bf7d1a4cd08-garage-from-outside-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/1bf7d1a4cd08-garage-from-outside-t-spawn",
+        "side": "T",
+        "target": "Garage",
+        "from": "Outside T Spawn",
+        "sourceId": "community_1bf7d1a4cd08",
+        "sourceDestination": {
+          "x": 661,
+          "y": 805,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 330,
+          "y": 595,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_1bf7d1a4cd08:target",
+          "x": 661,
+          "y": 805
+        },
+        "appPoint": {
+          "x": 669.83,
+          "y": 670.1
+        },
+        "levelId": "upper",
+        "originalVideoId": "KnFf43jCCg0",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-91afe651d426-t-blue-boxes-from-ct-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/91afe651d426-t-blue-boxes-from-ct-spawn",
+        "side": "CT",
+        "target": "T Blue Boxes",
+        "from": "CT Spawn",
+        "sourceId": "community_91afe651d426",
+        "sourceDestination": {
+          "x": 474,
+          "y": 860,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 730,
+          "y": 483,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_91afe651d426:target",
+          "x": 474,
+          "y": 860
+        },
+        "appPoint": {
+          "x": 491.51,
+          "y": 698.98
+        },
+        "levelId": "upper",
+        "originalVideoId": "jwAgP_XML3Q",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-a43aa7dbae78-heaven-from-silo",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/a43aa7dbae78-heaven-from-silo",
+        "side": "T",
+        "target": "Heaven",
+        "from": "Silo",
+        "sourceId": "community_a43aa7dbae78",
+        "sourceDestination": {
+          "x": 619,
+          "y": 394,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 472,
+          "y": 672,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_a43aa7dbae78:target",
+          "x": 619,
+          "y": 394
+        },
+        "appPoint": {
+          "x": 629.78,
+          "y": 454.29
+        },
+        "levelId": "upper",
+        "originalVideoId": "sCOqNRexQwg",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-f83f1ca67510-outside-heaven-from-under-silo",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/f83f1ca67510-outside-heaven-from-under-silo",
+        "side": "T",
+        "target": "Outside Heaven",
+        "from": "Under Silo",
+        "sourceId": "community_f83f1ca67510",
+        "sourceDestination": {
+          "x": 642,
+          "y": 446,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 444,
+          "y": 874,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_f83f1ca67510:target",
+          "x": 642,
+          "y": 446
+        },
+        "appPoint": {
+          "x": 651.71,
+          "y": 481.6
+        },
+        "levelId": "upper",
+        "originalVideoId": "7qPSz4b1-es",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-e17236b24d3e-garage-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/e17236b24d3e-garage-from-t-spawn",
+        "side": "T",
+        "target": "Garage",
+        "from": "T Spawn",
+        "sourceId": "community_e17236b24d3e",
+        "sourceDestination": {
+          "x": 661,
+          "y": 805,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 191,
+          "y": 599,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_e17236b24d3e:target",
+          "x": 661,
+          "y": 805
+        },
+        "appPoint": {
+          "x": 669.83,
+          "y": 670.1
+        },
+        "levelId": "upper",
+        "originalVideoId": "KYv4kDtzIWc",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-1cd37f5bc35a-outside-garage-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/1cd37f5bc35a-outside-garage-from-t-spawn",
+        "side": "T",
+        "target": "Outside Garage",
+        "from": "T Spawn",
+        "sourceId": "community_1cd37f5bc35a",
+        "sourceDestination": {
+          "x": 643,
+          "y": 757,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 330,
+          "y": 595,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_1cd37f5bc35a:target",
+          "x": 643,
+          "y": 757
+        },
+        "appPoint": {
+          "x": 652.67,
+          "y": 644.9
+        },
+        "levelId": "upper",
+        "originalVideoId": "LUrRDw-iU1s",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-5f786af83ef9-heaven-from-a-site",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/5f786af83ef9-heaven-from-a-site",
+        "side": "T",
+        "target": "Heaven",
+        "from": "A Site",
+        "sourceId": "community_5f786af83ef9",
+        "sourceDestination": {
+          "x": 619,
+          "y": 394,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 566,
+          "y": 460,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_5f786af83ef9:target",
+          "x": 619,
+          "y": 394
+        },
+        "appPoint": {
+          "x": 629.78,
+          "y": 454.29
+        },
+        "levelId": "upper",
+        "originalVideoId": "WRSWb8_AjWg",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-43a71749dfc8-top-a-main-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/43a71749dfc8-top-a-main-from-t-spawn",
+        "side": "T",
+        "target": "Top A Main",
+        "from": "T Spawn",
+        "sourceId": "community_43a71749dfc8",
+        "sourceDestination": {
+          "x": 585,
+          "y": 735,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 232,
+          "y": 588,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_43a71749dfc8:target",
+          "x": 585,
+          "y": 735
+        },
+        "appPoint": {
+          "x": 597.36,
+          "y": 633.35
+        },
+        "levelId": "upper",
+        "originalVideoId": "tKoj_Jwmfpc",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-30436a1163c6-outside-heaven-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/30436a1163c6-outside-heaven-from-t-spawn",
+        "side": "T",
+        "target": "Outside Heaven",
+        "from": "T Spawn",
+        "sourceId": "community_30436a1163c6",
+        "sourceDestination": {
+          "x": 642,
+          "y": 446,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 336,
+          "y": 539,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_30436a1163c6:target",
+          "x": 642,
+          "y": 446
+        },
+        "appPoint": {
+          "x": 651.71,
+          "y": 481.6
+        },
+        "levelId": "upper",
+        "originalVideoId": "E4igASvfdBY",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-1b3d4c065d60-top-a-main-from-silo",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/1b3d4c065d60-top-a-main-from-silo",
+        "side": "T",
+        "target": "Top A Main",
+        "from": "Silo",
+        "sourceId": "community_1b3d4c065d60",
+        "sourceDestination": {
+          "x": 585,
+          "y": 735,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 460,
+          "y": 692,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_1b3d4c065d60:target",
+          "x": 585,
+          "y": 735
+        },
+        "appPoint": {
+          "x": 597.36,
+          "y": 633.35
+        },
+        "levelId": "upper",
+        "originalVideoId": "3GhAU-W-MHk",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-d9705b6c9716-heaven-from-tetris",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/d9705b6c9716-heaven-from-tetris",
+        "side": "T",
+        "target": "Heaven",
+        "from": "Tetris",
+        "sourceId": "community_d9705b6c9716",
+        "sourceDestination": {
+          "x": 619,
+          "y": 394,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 531,
+          "y": 632,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_d9705b6c9716:target",
+          "x": 619,
+          "y": 394
+        },
+        "appPoint": {
+          "x": 629.78,
+          "y": 454.29
+        },
+        "levelId": "upper",
+        "originalVideoId": "GkYHjQTXDk0",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-589895309854-tetris-from-squeaky",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/589895309854-tetris-from-squeaky",
+        "side": "T",
+        "target": "Tetris",
+        "from": "Squeaky",
+        "sourceId": "community_589895309854",
+        "sourceDestination": {
+          "x": 540,
+          "y": 584,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 505,
+          "y": 630,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_589895309854:target",
+          "x": 540,
+          "y": 584
+        },
+        "appPoint": {
+          "x": 554.45,
+          "y": 554.06
+        },
+        "levelId": "upper",
+        "originalVideoId": "ZQUDv7nnuJ4",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-7bd14c78b6e8-top-silo-from-ct-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/7bd14c78b6e8-top-silo-from-ct-spawn",
+        "side": "CT",
+        "target": "Top Silo",
+        "from": "CT Spawn",
+        "sourceId": "community_7bd14c78b6e8",
+        "sourceDestination": {
+          "x": 501,
+          "y": 730,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 751,
+          "y": 509,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_7bd14c78b6e8:target",
+          "x": 501,
+          "y": 730
+        },
+        "appPoint": {
+          "x": 517.26,
+          "y": 630.72
+        },
+        "levelId": "upper",
+        "originalVideoId": "9MW_9uJGAqA",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-a22621a2d6dd-vent-from-outside-lobby",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/a22621a2d6dd-vent-from-outside-lobby",
+        "side": "T",
+        "target": "Vent",
+        "from": "Outside Lobby",
+        "sourceId": "community_a22621a2d6dd",
+        "sourceDestination": {
+          "x": 539,
+          "y": 645,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 336,
+          "y": 539,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_a22621a2d6dd:target",
+          "x": 539,
+          "y": 645
+        },
+        "appPoint": {
+          "x": 553.5,
+          "y": 586.09
+        },
+        "levelId": "upper",
+        "originalVideoId": "M-EEpPpXL08",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-ae3d208f448f-secret-far-from-under-silo",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/ae3d208f448f-secret-far-from-under-silo",
+        "side": "T",
+        "target": "Secret Far",
+        "from": "Under Silo",
+        "sourceId": "community_ae3d208f448f",
+        "sourceDestination": {
+          "x": 628,
+          "y": 893,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 417,
+          "y": 807,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_ae3d208f448f:target",
+          "x": 628,
+          "y": 893
+        },
+        "appPoint": {
+          "x": 638.36,
+          "y": 716.31
+        },
+        "levelId": "upper",
+        "originalVideoId": "uOSNctBaxIE",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-0f1f228313c0-garage-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/0f1f228313c0-garage-from-t-spawn",
+        "side": "T",
+        "target": "Garage",
+        "from": "T Spawn",
+        "sourceId": "community_0f1f228313c0",
+        "sourceDestination": {
+          "x": 661,
+          "y": 805,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 336,
+          "y": 539,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_0f1f228313c0:target",
+          "x": 661,
+          "y": 805
+        },
+        "appPoint": {
+          "x": 669.83,
+          "y": 670.1
+        },
+        "levelId": "upper",
+        "originalVideoId": "0SUe7_8CceU",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-65252c63f56a-heaven-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/65252c63f56a-heaven-from-t-spawn",
+        "side": "T",
+        "target": "Heaven",
+        "from": "T Spawn",
+        "sourceId": "community_65252c63f56a",
+        "sourceDestination": {
+          "x": 619,
+          "y": 394,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 278,
+          "y": 604,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_65252c63f56a:target",
+          "x": 619,
+          "y": 394
+        },
+        "appPoint": {
+          "x": 629.78,
+          "y": 454.29
+        },
+        "levelId": "upper",
+        "originalVideoId": "-XHsyHhm4Eg",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-f79c31cb119f-heaven-from-t-roof",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/f79c31cb119f-heaven-from-t-roof",
+        "side": "T",
+        "target": "Heaven",
+        "from": "T Roof",
+        "sourceId": "community_f79c31cb119f",
+        "sourceDestination": {
+          "x": 619,
+          "y": 394,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 442,
+          "y": 591,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_f79c31cb119f:target",
+          "x": 619,
+          "y": 394
+        },
+        "appPoint": {
+          "x": 629.78,
+          "y": 454.29
+        },
+        "levelId": "upper",
+        "originalVideoId": "52Uc50BNXvs",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-ab7aa245defa-lockers-from-red",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/ab7aa245defa-lockers-from-red",
+        "side": "T",
+        "target": "Lockers",
+        "from": "Red",
+        "sourceId": "community_ab7aa245defa",
+        "sourceDestination": {
+          "x": 631,
+          "y": 520,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 530,
+          "y": 888,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_ab7aa245defa:target",
+          "x": 631,
+          "y": 520
+        },
+        "appPoint": {
+          "x": 641.23,
+          "y": 520.45
+        },
+        "levelId": "upper",
+        "originalVideoId": "cgUGExFRKNU",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-953b039b3932-vent-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/953b039b3932-vent-from-t-spawn",
+        "side": "T",
+        "target": "Vent",
+        "from": "T Spawn",
+        "sourceId": "community_953b039b3932",
+        "sourceDestination": {
+          "x": 539,
+          "y": 645,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 213,
+          "y": 587,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_953b039b3932:target",
+          "x": 539,
+          "y": 645
+        },
+        "appPoint": {
+          "x": 553.5,
+          "y": 586.09
+        },
+        "levelId": "upper",
+        "originalVideoId": "pDq6VlMP1nE",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-638e9956b5d3-outside-from-roof",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/638e9956b5d3-outside-from-roof",
+        "side": "T",
+        "target": "Outside",
+        "from": "Roof",
+        "sourceId": "community_638e9956b5d3",
+        "sourceDestination": {
+          "x": 623,
+          "y": 805,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 396,
+          "y": 580,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_638e9956b5d3:target",
+          "x": 623,
+          "y": 805
+        },
+        "appPoint": {
+          "x": 633.6,
+          "y": 670.1
+        },
+        "levelId": "upper",
+        "originalVideoId": "QhjdgoUG7wk",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-smoke-06ffdba358b5-top-a-main-from-t-spawn",
+        "canonicalSource": "https://csnades.gg/nuke/community/smokes/06ffdba358b5-top-a-main-from-t-spawn",
+        "side": "T",
+        "target": "Top A Main",
+        "from": "T Spawn",
+        "sourceId": "community_06ffdba358b5",
+        "sourceDestination": {
+          "x": 585,
+          "y": 735,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 232,
+          "y": 588,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_06ffdba358b5:target",
+          "x": 585,
+          "y": 735
+        },
+        "appPoint": {
+          "x": 597.36,
+          "y": 633.35
+        },
+        "levelId": "upper",
+        "originalVideoId": "_Ow5i1dDhZc",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-flashbang-b3f09459ad30-ramp-from-trophy-room",
+        "canonicalSource": "https://csnades.gg/nuke/community/flashbangs/b3f09459ad30-ramp-from-trophy-room",
+        "side": "T",
+        "target": "Ramp",
+        "from": "Trophy Room",
+        "sourceId": "community_b3f09459ad30",
+        "sourceDestination": {
+          "x": 540,
+          "y": 182,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 478,
+          "y": 374,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_b3f09459ad30:target",
+          "x": 540,
+          "y": 182
+        },
+        "appPoint": {
+          "x": 554.45,
+          "y": 342.97
+        },
+        "levelId": "upper",
+        "originalVideoId": "-5MWg_lubPY",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-flashbang-0a9c896c653c-outside-from-a-site",
+        "canonicalSource": "https://csnades.gg/nuke/community/flashbangs/0a9c896c653c-outside-from-a-site",
+        "side": "CT",
+        "target": "Outside",
+        "from": "A Site",
+        "sourceId": "community_0a9c896c653c",
+        "sourceDestination": {
+          "x": 554,
+          "y": 720,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 591,
+          "y": 475,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_0a9c896c653c:target",
+          "x": 554,
+          "y": 720
+        },
+        "appPoint": {
+          "x": 567.8,
+          "y": 625.47
+        },
+        "levelId": "upper",
+        "originalVideoId": "8XfHzE0gf0E",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-flashbang-f9e03cfe1f96-silooutside-from-a-site-t",
+        "canonicalSource": "https://csnades.gg/nuke/community/flashbangs/f9e03cfe1f96-silooutside-from-a-site",
+        "side": "T",
+        "target": "Silo/Outside",
+        "from": "A-Site",
+        "sourceId": "community_f9e03cfe1f96",
+        "sourceDestination": {
+          "x": 504,
+          "y": 716,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 540,
+          "y": 478,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_f9e03cfe1f96:target",
+          "x": 504,
+          "y": 716
+        },
+        "appPoint": {
+          "x": 520.12,
+          "y": 623.37
+        },
+        "levelId": "upper",
+        "originalVideoId": "MUgtDfzUCIU",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-flashbang-f9e03cfe1f96-silooutside-from-a-site-ct",
+        "canonicalSource": "https://csnades.gg/nuke/community/flashbangs/f9e03cfe1f96-silooutside-from-a-site",
+        "side": "CT",
+        "target": "Silo/Outside",
+        "from": "A-Site",
+        "sourceId": "community_f9e03cfe1f96",
+        "sourceDestination": {
+          "x": 504,
+          "y": 716,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 540,
+          "y": 478,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_f9e03cfe1f96:target",
+          "x": 504,
+          "y": 716
+        },
+        "appPoint": {
+          "x": 520.12,
+          "y": 623.37
+        },
+        "levelId": "upper",
+        "originalVideoId": "MUgtDfzUCIU",
+        "exactSourcePositionAim": true,
+        "passed": true
+      },
+      {
+        "id": "expanded-csnades-community-nuke-he-bae7574f2486-silo-from-rafters",
+        "canonicalSource": "https://csnades.gg/nuke/community/hegrenades/bae7574f2486-silo-from-rafters",
+        "side": "CT",
+        "target": "Silo",
+        "from": "Rafters",
+        "sourceId": "community_bae7574f2486",
+        "sourceDestination": {
+          "x": 496,
+          "y": 721,
+          "levels": [
+            1
+          ]
+        },
+        "sourceOrigin": {
+          "x": 605,
+          "y": 546,
+          "levels": [
+            1
+          ]
+        },
+        "markerSource": {
+          "registrationId": "csnades-nuke-upper-20261109",
+          "destinationId": "community_bae7574f2486:target",
+          "x": 496,
+          "y": 721
+        },
+        "appPoint": {
+          "x": 512.49,
+          "y": 625.99
+        },
+        "levelId": "upper",
+        "originalVideoId": "pKohBOdIcLo",
+        "exactSourcePositionAim": true,
+        "passed": true
+      }
+    ],
+    "legacy": [
+      {
+        "id": "gonade-nuke-mustang-from-t-roof-molotov",
+        "canonicalSource": "https://gonade.app/nade/nuke-mustang-from-t-roof-molotov",
+        "anchorId": "nuke:upper:mustang",
+        "appPoint": {
+          "x": 524.3,
+          "y": 486.44
+        },
+        "levelId": "upper",
+        "sourcePolygonPointInside": true,
+        "exactCompositeOnly": null,
+        "passed": true
+      },
+      {
+        "id": "gonade-nuke-secret-from-t-outside-molotov",
+        "canonicalSource": "https://gonade.app/nade/nuke-secret-from-t-outside-molotov",
+        "anchorId": "nuke:upper:secret",
+        "appPoint": {
+          "x": 675.8,
+          "y": 723.75
+        },
+        "levelId": "upper",
+        "sourcePolygonPointInside": true,
+        "exactCompositeOnly": null,
+        "passed": true
+      },
+      {
+        "id": "gonade-anubis-t-stairs-from-a-plat-he",
+        "canonicalSource": "https://gonade.app/nade/anubis-t-stairs-from-a-plat-he",
+        "anchorId": "anubis:main:t-stairs",
+        "appPoint": {
+          "x": 675.38,
+          "y": 654.55
+        },
+        "levelId": "main",
+        "sourcePolygonPointInside": true,
+        "exactCompositeOnly": null,
+        "passed": true
+      },
+      {
+        "id": "gonade-anubis-mid-doorswindow-from-ruins-molotov",
+        "canonicalSource": "https://gonade.app/nade/anubis-mid-doorswindow-from-ruins-molotov",
+        "anchorId": "anubis:main:mid-doors",
+        "appPoint": {
+          "x": 560.53,
+          "y": 519.05
+        },
+        "levelId": "main",
+        "sourcePolygonPointInside": true,
+        "exactCompositeOnly": true,
+        "passed": true
+      }
+    ]
+  }
+}

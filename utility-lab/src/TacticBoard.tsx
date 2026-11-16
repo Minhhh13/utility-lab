@@ -1,11 +1,14 @@
 import {
   useEffect,
+  useLayoutEffect,
   useId,
+  useMemo,
   useRef,
   useState,
   type PointerEvent as ReactPointerEvent,
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
+import { exportFile } from "./file-transfer";
 import {
   ArrowDown,
   ArrowDownToLine,
@@ -23,6 +26,7 @@ import {
   FilePlus2,
   Flame,
   FolderOpen,
+  Hand,
   ImagePlus,
   LoaderCircle,
   MousePointer2,
@@ -30,6 +34,7 @@ import {
   Pencil,
   Redo2,
   Save,
+  Share2,
   Shield,
   Trash2,
   Type,
@@ -49,12 +54,15 @@ import {
 import type { GameMap } from "./maps";
 import {
   MAX_OBJECTS,
+  appendPenPoints,
+  boardInkColor,
   clamp,
   commit,
   emptyPlan,
   endpointChanged,
   historyFor,
   objectLabel,
+  penPath,
   redo,
   samplePlan,
   translated,
@@ -68,12 +76,16 @@ import {
   type BoardPlan,
   type ObjectKind,
   type SavedTactic,
+  type TacticFile,
   type XY,
 } from "./board-model";
 import "./tactic-board.css";
 import UtilityIcon, { type UtilityKind } from "./UtilityIcon";
+import TacticShareDialog from "./TacticShareDialog";
+import BoardRoute from "./BoardRoute";
+import { FIT_VIEW, MIN_ZOOM, MAX_ZOOM, boundView, panView, viewBox, zoomView, type BoardView } from "./board-navigation";
 
-type Tool = "select" | "erase" | ObjectKind;
+type Tool = "select" | "hand" | "erase" | ObjectKind;
 type Gesture = {
   pointerId: number;
   mode: "draw" | "move";
@@ -88,8 +100,22 @@ type Props = {
   compact: boolean;
   theme: "light" | "dark";
   openedTactic?: SavedTactic;
+  openedSharedTactic?: TacticFile;
+  onOpenSharedTactic?: (file: TacticFile) => void;
 };
 const SAVED_KEY = "utility-lab:tactics:v1";
+const INK_KEY = "utility-lab:board-ink:v1";
+type InkPreferences = { pen?: string; route?: string };
+const inkSwatches = [
+  { label: "Theme default", color: undefined },
+  { label: "White", color: "#f4f4f5" },
+  { label: "Red", color: "#f16b75" },
+  { label: "Orange", color: "#f4a261" },
+  { label: "Yellow", color: "#f2d16b" },
+  { label: "Green", color: "#79c99e" },
+  { label: "Blue", color: "#72a7f5" },
+  { label: "Purple", color: "#b79afa" },
+];
 const draftKey = (map: string, level: string) =>
   `utility-lab:draft:v1:${map}:${level}`;
 const imageKey = (map: string, level: string) =>
@@ -110,6 +136,7 @@ const colors: Record<ObjectKind, string> = {
 };
 const toolItems = [
   { id: "select", label: "Select / move", key: "V", icon: MousePointer2 },
+  { id: "hand", label: "Pan map", key: "G", icon: Hand },
   { id: "t", label: "T player", key: "T", icon: UserRound },
   { id: "ct", label: "CT player", key: "C", icon: Shield },
   { id: "route", label: "Route arrow", key: "R", icon: MoveUpRight },
@@ -129,6 +156,12 @@ function storedJson(key: string): unknown {
   } catch {
     return null;
   }
+}
+function storedInk(): InkPreferences {
+  const value = storedJson(INK_KEY);
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const raw = value as Record<string, unknown>;
+  return { pen: boardInkColor(raw.pen), route: boardInkColor(raw.route) };
 }
 function storedImage(key: string): string {
   try {
@@ -157,16 +190,7 @@ function initialPlan(
   }
   return useExample ? samplePlan(mapId, levelId) : emptyPlan(mapId, levelId);
 }
-function download(blob: Blob, name: string) {
-  const url = URL.createObjectURL(blob),
-    anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = name;
-  document.body.append(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
+const download = exportFile;
 function filename(name: string) {
   return (
     name
@@ -226,39 +250,19 @@ function createObject(
 }
 function ObjectDrawing({
   object,
-  arrowId,
 }: {
   object: BoardObject;
-  arrowId: string;
 }) {
-  const color = colors[object.kind];
-  if (object.kind === "route" || object.kind === "pen") {
-    const points = object.points
-      ?.map((point) => `${point.x},${point.y}`)
-      .join(" ");
-    return (
-      <g data-object-id={object.id}>
-        <polyline
-          points={points}
-          fill="none"
-          stroke="transparent"
-          strokeWidth="30"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <polyline
-          points={points}
-          fill="none"
-          stroke={color}
-          strokeWidth={object.kind === "route" ? 5 : 4}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray={object.kind === "route" ? "10 8" : undefined}
-          markerEnd={object.kind === "route" ? `url(#${arrowId})` : undefined}
-        />
-      </g>
-    );
+  const color = (object.kind === "pen" || object.kind === "route") && object.color
+    ? object.color : colors[object.kind];
+  if (object.kind === "pen") {
+    const path = penPath(object.points || []);
+    return <g data-object-id={object.id} data-object-kind="pen">
+      <path d={path} fill="none" stroke="transparent" strokeWidth="30" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={path} fill="none" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+    </g>;
   }
+  if (object.kind === "route") return <BoardRoute object={object} color={color} />;
   if (object.kind === "text")
     return (
       <g
@@ -445,20 +449,31 @@ export default function TacticBoard({
   compact,
   theme,
   openedTactic,
+  openedSharedTactic,
+  onOpenSharedTactic,
 }: Props) {
   const [levelId, setLevelId] = useState(
-    openedTactic?.plan.levelId || map.levels[0]?.id || "main",
+    openedSharedTactic?.plan.levelId || openedTactic?.plan.levelId || map.levels[0]?.id || "main",
   );
   const level = map.levels.find((item) => item.id === levelId) || map.levels[0];
-  const [history, setHistory] = useState(() =>
-    historyFor(
-      openedTactic?.plan || initialPlan(map.id, levelId, map.id === "mirage"),
-    ),
-  );
+  const [history, setHistory] = useState(() => {
+    const previous = historyFor(initialPlan(map.id, levelId, map.id === "mirage"));
+    return openedSharedTactic ? commit(previous, openedSharedTactic.plan)
+      : openedTactic ? historyFor(openedTactic.plan) : previous;
+  });
   const plan = history.present;
   const [tool, setTool] = useState<Tool>("select");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = plan.objects.find((object) => object.id === selectedId);
+  const [inkPreferences, setInkPreferences] = useState<InkPreferences>(storedInk);
+  const [inkOpen, setInkOpen] = useState(false);
+  const [inkPosition, setInkPosition] = useState({ left: 8, top: 8 });
+  const inkButton = useRef<HTMLButtonElement>(null);
+  const inkPopover = useRef<HTMLDivElement>(null);
+  const selectedInk = selected && (selected.kind === "pen" || selected.kind === "route") ? selected : undefined;
+  const inkKind = selectedInk?.kind === "route" || tool === "route" ? "route" : "pen";
+  const activeInk = selectedInk ? selectedInk.color : inkPreferences[inkKind];
+  const showInk = tool === "pen" || tool === "route" || !!selectedInk;
   const [saved, setSaved] = useState<SavedTactic[]>(() =>
     validateSavedTactics(storedJson(SAVED_KEY)),
   );
@@ -472,14 +487,32 @@ export default function TacticBoard({
     "saved",
   );
   const [customImage, setCustomImage] = useState(() =>
-    storedImage(imageKey(map.id, levelId)),
+    openedSharedTactic ? openedSharedTactic.mapImage || "" : storedImage(imageKey(map.id, levelId)),
   );
   const [mapFailed, setMapFailed] = useState(false);
-  const [zoom, setZoom] = useState(1);
+  const [view, setView] = useState<BoardView>(FIT_VIEW);
+  const viewRef = useRef(view);
+  viewRef.current = view;
+  const [panning, setPanning] = useState(false);
+  const [spacePan, setSpacePan] = useState(false);
+  const spaceHeld = useRef(false);
+  const panGesture = useRef<{ pointerId: number; x: number; y: number; view: BoardView; scale: number } | null>(null);
+  const touchPoints = useRef(new Map<number, XY>());
+  const touchHistory = useRef<BoardHistory | null>(null);
+  const touchPlacement = useRef<{ pointerId: number; kind: ObjectKind; point: XY } | null>(null);
+  const pinch = useRef<{ distance: number; middle: XY; anchor: XY; view: BoardView; scale: number } | null>(null);
+  const [shareMode, setShareMode] = useState<"share" | "open" | null>(null);
   const [exporting, setExporting] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [inspectorOpen, setInspectorOpen] = useState(false);
   const [inspectorTab, setInspectorTab] = useState<"plan" | "objects">("plan");
+  const [textEditor, setTextEditor] = useState<{ object: BoardObject; value: string; isNew: boolean } | null>(null);
+  const textEditorRef = useRef(textEditor);
+  textEditorRef.current = textEditor;
+  const textInput = useRef<HTMLInputElement>(null);
+  const lastTextPress = useRef<{ id: string; time: number; x: number; y: number } | null>(null);
+  const mapStage = useRef<HTMLDivElement>(null);
+  const [textPosition, setTextPosition] = useState({ left: 8, top: 8, width: 280 });
   const notify = useRef(onNotify);
   notify.current = onNotify;
   const svgRef = useRef<SVGSVGElement>(null),
@@ -488,13 +521,49 @@ export default function TacticBoard({
   const planToggleRef = useRef<HTMLButtonElement>(null);
   const historyRef = useRef(history);
   historyRef.current = history;
+
+  useLayoutEffect(() => {
+    if (!textEditor) return;
+    function placeText() {
+      const matrix = svgRef.current?.getScreenCTM();
+      const stage = mapStage.current?.getBoundingClientRect();
+      const editing = textEditorRef.current;
+      if (!matrix || !stage || !editing) return;
+      const point = new DOMPoint(editing.object.x, editing.object.y).matrixTransform(matrix);
+      const width = Math.min(320, Math.max(180, stage.width - 16));
+      setTextPosition({
+        left: Math.max(8, Math.min(point.x - stage.x - 8, stage.width - width - 8)),
+        top: Math.max(8, Math.min(point.y - stage.y - 26, stage.height - 60)),
+        width,
+      });
+    }
+    placeText();
+    const observer = new ResizeObserver(placeText);
+    if (mapStage.current) observer.observe(mapStage.current);
+    return () => observer.disconnect();
+  }, [textEditor?.object.id, view, inspectorOpen]);
+  useEffect(() => {
+    if (!textEditor) return;
+    textInput.current?.focus({ preventScroll: true });
+    textInput.current?.select();
+  }, [textEditor?.object.id]);
+  // Undoing a load must also restore which saved record the board updates.
+  const historyOwners = useRef(new WeakMap<BoardPlan, string | null>());
+  if (!historyOwners.current.has(plan))
+    historyOwners.current.set(plan, loadedId);
+  const historyImages = useRef(new WeakMap<BoardPlan, string>());
+  historyImages.current.set(plan, customImage);
+  if (openedSharedTactic && history.past.length && !historyImages.current.has(history.past[0]))
+    historyImages.current.set(history.past[0], storedImage(imageKey(map.id, levelId)));
   const gesture = useRef<Gesture | null>(null);
+  const mediaOperation = useRef(0);
+  const mounted = useRef(true);
   const latest = useRef({ key: draftKey(map.id, levelId), plan });
   latest.current = { key: draftKey(map.id, levelId), plan };
   const storageWarningShown = useRef(false);
   sessionDrafts.set(latest.current.key, plan);
-  const uniqueId = useId().replace(/:/g, ""),
-    arrowId = `route-arrow-${uniqueId}`;
+  const uniqueId = useId().replace(/:/g, "");
+  const inkPopoverId = `drawing-colour-${uniqueId}`;
   const originalImage = level?.image || "";
   const image =
     customImage ||
@@ -504,6 +573,7 @@ export default function TacticBoard({
   const visibleSaved = saved.filter(
     (item) => item.plan.mapId === map.id && item.plan.levelId === levelId,
   );
+  const shareFile = useMemo<TacticFile>(() => ({ format: "utility-lab-tactic", version: 1, plan, ...(customImage ? { mapImage: customImage } : {}) }), [plan, customImage]);
 
   useEffect(() => {
     setDraftStatus("saving");
@@ -551,6 +621,50 @@ export default function TacticBoard({
     if (selectedId && !plan.objects.some((object) => object.id === selectedId))
       setSelectedId(null);
   }, [plan.objects, selectedId]);
+  useEffect(() => {
+    if (openedSharedTactic) {
+      try {
+        if (openedSharedTactic.mapImage) localStorage.setItem(imageKey(map.id, levelId), openedSharedTactic.mapImage);
+        else localStorage.removeItem(imageKey(map.id, levelId));
+      } catch { notify.current("The shared radar is held for this session. Export the tactic to keep a copy."); }
+    }
+  }, []);
+  useEffect(() => {
+    mounted.current = true;
+    const blur = () => { cancelGesture(); spaceHeld.current = false; setSpacePan(false); };
+    const refresh = () => {
+      const records = validateSavedTactics(storedJson(SAVED_KEY));
+      setSaved(records);
+      setLoadedId((id) =>
+        id && records.some((item) => item.id === id) ? id : null,
+      );
+    };
+    window.addEventListener("blur", blur);
+    window.addEventListener("storage", refresh);
+    window.addEventListener("utility-lab:workspace-changed", refresh);
+    return () => {
+      mounted.current = false;
+      mediaOperation.current++;
+      window.removeEventListener("blur", blur);
+      window.removeEventListener("storage", refresh);
+      window.removeEventListener("utility-lab:workspace-changed", refresh);
+    };
+  }, []);
+  useEffect(() => {
+    const canvas = svgRef.current;
+    if (!canvas) return;
+    const wheel = (event: WheelEvent) => {
+      if (gesture.current || panGesture.current || pinch.current) return;
+      event.preventDefault();
+      const matrix = canvas.getScreenCTM();
+      if (!matrix) return;
+      const anchor = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
+      const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? canvas.clientHeight : 1);
+      setView(current => zoomView(current, current.zoom * Math.exp(-Math.max(-300, Math.min(300, delta)) * .0015), anchor));
+    };
+    canvas.addEventListener("wheel", wheel, { passive: false });
+    return () => canvas.removeEventListener("wheel", wheel);
+  }, []);
 
   function changePlan(update: (current: BoardPlan) => BoardPlan) {
     setHistory((current) => commit(current, update(current.present)));
@@ -576,8 +690,43 @@ export default function TacticBoard({
     }
   }
   function chooseTool(next: Tool) {
+    inkPopover.current?.hidePopover();
     setTool(next);
     if (next !== "select") setSelectedId(null);
+  }
+  function chooseInk(color: string | undefined) {
+    const next = { ...inkPreferences, [inkKind]: color };
+    setInkPreferences(next);
+    try { localStorage.setItem(INK_KEY, JSON.stringify(next)); } catch { /* The current selection still works when storage is blocked. */ }
+    if (selectedInk) changeObject(selectedInk.id, (object) => {
+      const { color: previousColor, ...rest } = object;
+      void previousColor;
+      return color ? { ...rest, color } : rest;
+    });
+    inkPopover.current?.hidePopover();
+    inkButton.current?.focus({ preventScroll: true });
+  }
+  function editText(object: BoardObject, isNew = false) {
+    setSelectedId(null);
+    setTextEditor({ object, value: isNew ? "" : object.label || "", isNew });
+  }
+  function finishText(save: boolean, returnFocus = false) {
+    const editing = textEditorRef.current;
+    if (!editing) return;
+    textEditorRef.current = null;
+    setTextEditor(null);
+    const label = editing.value.trim();
+    if (save && label) {
+      const object = { ...editing.object, label };
+      changePlan((current) => ({
+        ...current,
+        objects: editing.isNew
+          ? [...current.objects, object]
+          : current.objects.map((item) => item.id === object.id ? object : item),
+      }));
+      setSelectedId(object.id);
+    }
+    if (returnFocus) requestAnimationFrame(() => svgRef.current?.focus({ preventScroll: true }));
   }
   function switchLevel(next: string) {
     if (next === levelId) return;
@@ -596,7 +745,7 @@ export default function TacticBoard({
     setSelectedSavedId("");
     setCustomImage(storedImage(imageKey(map.id, next)));
     setMapFailed(false);
-    setZoom(1);
+    setView(FIT_VIEW);
   }
   function addObject(kind: ObjectKind, point = { x: 500, y: 500 }) {
     if (plan.objects.length >= MAX_OBJECTS) {
@@ -606,15 +755,19 @@ export default function TacticBoard({
       return;
     }
     const object = createObject(kind, point, plan.objects);
+    if ((kind === "pen" || kind === "route") && inkPreferences[kind]) object.color = inkPreferences[kind];
+    if (kind === "text") {
+      editText(object, true);
+      return;
+    }
     changePlan((current) => ({
       ...current,
       objects: [...current.objects, object],
     }));
     setSelectedId(object.id);
     setInspectorTab("plan");
-    if (kind === "text") setInspectorOpen(true);
   }
-  function canvasPoint(event: ReactPointerEvent<SVGSVGElement>): XY {
+  function canvasPoint(event: { clientX: number; clientY: number }): XY {
     const matrix = svgRef.current?.getScreenCTM();
     if (!matrix) return { x: 500, y: 500 };
     const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(
@@ -623,14 +776,52 @@ export default function TacticBoard({
     return { x: clamp(point.x), y: clamp(point.y) };
   }
   function pointerDown(event: ReactPointerEvent<SVGSVGElement>) {
-    if (event.button !== 0 || gesture.current) return;
+    if (textEditorRef.current) finishText(true);
+    if (event.pointerType === "touch") {
+      touchPoints.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      event.currentTarget.setPointerCapture(event.pointerId);
+      if (touchPoints.current.size === 1) touchHistory.current = historyRef.current;
+      if (touchPoints.current.size === 2) {
+        const points = [...touchPoints.current.values()];
+        const middle = { x: (points[0].x + points[1].x) / 2, y: (points[0].y + points[1].y) / 2 };
+        const matrix = event.currentTarget.getScreenCTM();
+        if (!matrix) return;
+        if (gesture.current) { setHistory(gesture.current.original); gesture.current = null; }
+        if (touchHistory.current) setHistory(touchHistory.current);
+        touchPlacement.current = null;
+        panGesture.current = null;
+        setSelectedId(null);
+        pinch.current = { distance: Math.max(1, Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y)), middle,
+          anchor: new DOMPoint(middle.x, middle.y).matrixTransform(matrix.inverse()), view: viewRef.current, scale: matrix.a };
+        setPanning(true);
+        event.preventDefault();
+        return;
+      }
+      if (pinch.current || touchPoints.current.size > 2) return;
+    }
+    if ((event.button !== 0 && event.button !== 1) || gesture.current || panGesture.current) return;
     event.preventDefault();
     event.currentTarget.focus({ preventScroll: true });
     const point = canvasPoint(event),
       objectId = (event.target as Element)
         .closest("[data-object-id]")
         ?.getAttribute("data-object-id");
+    if (event.button === 1 || spaceHeld.current || tool === "hand" || (tool === "select" && !objectId)) {
+      if (tool === "select" && !spaceHeld.current && event.button === 0) setSelectedId(null);
+      panGesture.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, view: viewRef.current, scale: event.currentTarget.getScreenCTM()?.a || 1 };
+      setPanning(true);
+      event.currentTarget.setPointerCapture(event.pointerId);
+      return;
+    }
     if (tool === "select") {
+      const textObject = plan.objects.find((object) => object.id === objectId && object.kind === "text");
+      const previousPress = lastTextPress.current;
+      if (textObject && previousPress && previousPress.id === objectId && event.timeStamp - previousPress.time < 400 && Math.hypot(event.clientX - previousPress.x, event.clientY - previousPress.y) < 8) {
+        lastTextPress.current = null;
+        editText(textObject);
+        return;
+      }
+      lastTextPress.current = textObject ? { id: textObject.id, time: event.timeStamp, x: event.clientX, y: event.clientY } : null;
       setSelectedId(objectId || null);
       if (objectId) setInspectorTab("plan");
       if (objectId) {
@@ -664,6 +855,7 @@ export default function TacticBoard({
         x: 0,
         y: 0,
         points: [point, point],
+        ...(inkPreferences[tool] ? { color: inkPreferences[tool] } : {}),
       };
       gesture.current = {
         pointerId: event.pointerId,
@@ -679,14 +871,38 @@ export default function TacticBoard({
           objects: [...current.present.objects, object],
         },
       }));
-      setSelectedId(object.id);
+      setSelectedId(tool === "pen" ? null : object.id);
       setInspectorTab("plan");
       event.currentTarget.setPointerCapture(event.pointerId);
       return;
     }
-    addObject(tool, point);
+    if (tool === "text" && objectId) {
+      const existing = plan.objects.find((object) => object.id === objectId && object.kind === "text");
+      if (existing) { editText(existing); return; }
+    }
+    if (event.pointerType === "touch") touchPlacement.current = { pointerId: event.pointerId, kind: tool, point };
+    else addObject(tool, point);
   }
   function pointerMove(event: ReactPointerEvent<SVGSVGElement>) {
+    if (event.pointerType === "touch" && touchPoints.current.has(event.pointerId))
+      touchPoints.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    const activePinch = pinch.current;
+    if (activePinch) {
+      if (touchPoints.current.size >= 2) {
+        const points = [...touchPoints.current.values()].slice(0, 2);
+        const middle = { x: (points[0].x + points[1].x) / 2, y: (points[0].y + points[1].y) / 2 };
+        const distance = Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+        const zoomed = zoomView(activePinch.view, activePinch.view.zoom * distance / activePinch.distance, activePinch.anchor);
+        const scale = activePinch.scale * zoomed.zoom / activePinch.view.zoom;
+        setView(boundView({ ...zoomed, x: zoomed.x - (middle.x - activePinch.middle.x) / scale, y: zoomed.y - (middle.y - activePinch.middle.y) / scale }));
+      }
+      return;
+    }
+    const activePan = panGesture.current;
+    if (activePan && activePan.pointerId === event.pointerId) {
+      setView(panView(activePan.view, -(event.clientX - activePan.x) / activePan.scale, -(event.clientY - activePan.y) / activePan.scale));
+      return;
+    }
     const active = gesture.current;
     if (!active || active.pointerId !== event.pointerId) return;
     const point = canvasPoint(event);
@@ -710,6 +926,8 @@ export default function TacticBoard({
         },
       }));
     } else {
+      const coalesced = event.nativeEvent.getCoalescedEvents?.() || [];
+      const samples = [...coalesced, event.nativeEvent].map(canvasPoint);
       setHistory((current) => ({
         ...current,
         present: {
@@ -718,20 +936,34 @@ export default function TacticBoard({
             if (object.id !== active.objectId) return object;
             if (object.kind === "route")
               return { ...object, points: [active.start, point] };
-            const previous = object.points || [active.start],
-              last = previous[previous.length - 1];
-            return previous.length < 800 &&
-              Math.hypot(last.x - point.x, last.y - point.y) > 2
-              ? { ...object, points: [...previous, point] }
-              : object;
+            return { ...object, points: appendPenPoints(object.points || [active.start], samples) };
           }),
         },
       }));
     }
   }
   function pointerUp(event: ReactPointerEvent<SVGSVGElement>) {
+    touchPoints.current.delete(event.pointerId);
+    if (pinch.current) {
+      if (!touchPoints.current.size) { pinch.current = null; touchHistory.current = null; setPanning(false); }
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      return;
+    }
+    if (panGesture.current?.pointerId === event.pointerId) {
+      panGesture.current = null; setPanning(false);
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      return;
+    }
+    const placement = touchPlacement.current;
+    if (placement?.pointerId === event.pointerId) {
+      touchPlacement.current = null;
+      addObject(placement.kind, placement.point);
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      return;
+    }
     const active = gesture.current;
     if (!active || active.pointerId !== event.pointerId) return;
+    if (active.mode === "draw") pointerMove(event);
     gesture.current = null;
     setHistory((current) => {
       let next = current.present;
@@ -758,40 +990,97 @@ export default function TacticBoard({
       event.currentTarget.releasePointerCapture(event.pointerId);
   }
   function cancelGesture() {
+    panGesture.current = null;
+    pinch.current = null;
+    touchPoints.current.clear();
+    touchHistory.current = null;
+    touchPlacement.current = null;
+    setPanning(false);
     const active = gesture.current;
     if (active) {
       gesture.current = null;
       setHistory(active.original);
+      if (svgRef.current?.hasPointerCapture(active.pointerId))
+        svgRef.current.releasePointerCapture(active.pointerId);
     }
+  }
+  function navigateHistory(direction: "undo" | "redo") {
+    const current = gesture.current?.original || historyRef.current;
+    cancelGesture();
+    const next = direction === "undo" ? undo(current) : redo(current);
+    if (next === current) return;
+    setHistory(next);
+    const previousImage = historyImages.current.get(next.present);
+    if (previousImage !== undefined && previousImage !== customImage) {
+      setCustomImage(previousImage);
+      try {
+        if (previousImage) localStorage.setItem(imageKey(map.id, levelId), previousImage);
+        else localStorage.removeItem(imageKey(map.id, levelId));
+      } catch { notify.current("The restored radar is held for this session. Export to keep a copy."); }
+    }
+    const owner = historyOwners.current.get(next.present) || null;
+    setLoadedId(
+      owner && saved.some((item) => item.id === owner) ? owner : null,
+    );
   }
   function keyboard(event: ReactKeyboardEvent<HTMLElement>) {
     const target = event.target as HTMLElement;
-    if (target.matches("input,textarea,select") || target.isContentEditable)
+    if (
+      event.defaultPrevented ||
+      document.querySelector("dialog[open]") ||
+      target.matches("input,textarea,select") ||
+      target.isContentEditable
+      || !!target.closest("[popover]")
+    )
       return;
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "z") {
       event.preventDefault();
-      setHistory((current) => (event.shiftKey ? redo(current) : undo(current)));
+      navigateHistory(event.shiftKey ? "redo" : "undo");
       return;
     }
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "y") {
       event.preventDefault();
-      setHistory(redo);
+      navigateHistory("redo");
       return;
     }
     if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (event.target === svgRef.current) {
+      if (event.key === " ") { event.preventDefault(); spaceHeld.current = true; setSpacePan(true); return; }
+      if (["+", "=", "-", "_", "0"].includes(event.key)) {
+        event.preventDefault();
+        setView(current => event.key === "0" ? FIT_VIEW : zoomView(current, current.zoom * (["-", "_"].includes(event.key) ? 1 / 1.25 : 1.25)));
+        return;
+      }
+      if ((!selected || tool === "hand" || spaceHeld.current) && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+        event.preventDefault();
+        const amount = (event.shiftKey ? 120 : 40) / view.zoom;
+        setView(current => panView(current, event.key === "ArrowLeft" ? -amount : event.key === "ArrowRight" ? amount : 0, event.key === "ArrowUp" ? -amount : event.key === "ArrowDown" ? amount : 0));
+        return;
+      }
+    }
     if (event.key === "Escape") {
       cancelGesture();
       setSelectedId(null);
       chooseTool("select");
       return;
     }
-    if (selected && (event.key === "Delete" || event.key === "Backspace")) {
+    if (event.key === "Enter" && event.target === svgRef.current && selected?.kind === "text" && tool === "select") {
+      event.preventDefault();
+      editText(selected);
+      return;
+    }
+    if (
+      selected &&
+      event.target === svgRef.current &&
+      (event.key === "Delete" || event.key === "Backspace")
+    ) {
       event.preventDefault();
       removeSelected();
       return;
     }
     if (
       selected &&
+      event.target === svgRef.current &&
       ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)
     ) {
       event.preventDefault();
@@ -817,6 +1106,7 @@ export default function TacticBoard({
       event.key === "Enter" &&
       event.target === svgRef.current &&
       tool !== "select" &&
+      tool !== "hand" &&
       tool !== "erase"
     ) {
       event.preventDefault();
@@ -838,10 +1128,13 @@ export default function TacticBoard({
       return;
     }
     const existing = validateSavedTactics(storedJson(SAVED_KEY));
+    const updateId = existing.some((item) => item.id === loadedId)
+      ? loadedId
+      : null;
     if (
       existing.some(
         (item) =>
-          item.id !== loadedId &&
+          item.id !== updateId &&
           item.plan.mapId === map.id &&
           item.plan.levelId === levelId &&
           item.plan.name.toLowerCase() === name.toLowerCase(),
@@ -852,13 +1145,13 @@ export default function TacticBoard({
       );
       return;
     }
-    if (!loadedId && existing.length >= 100) {
+    if (!updateId && existing.length >= 100) {
       notify.current(
         "You have 100 saved tactics. Export and remove one before saving another.",
       );
       return;
     }
-    const id = loadedId || uid(),
+    const id = updateId || uid(),
       record: SavedTactic = {
         id,
         updatedAt: new Date().toISOString(),
@@ -869,9 +1162,10 @@ export default function TacticBoard({
       localStorage.setItem(SAVED_KEY, JSON.stringify(next));
       setSaved(next);
       setLoadedId(id);
+      historyOwners.current.set(plan, id);
       setSelectedSavedId(id);
       notify.current(
-        loadedId
+        updateId
           ? "Saved tactic updated on this device."
           : "Tactic saved on this device.",
       );
@@ -885,6 +1179,7 @@ export default function TacticBoard({
     const item = saved.find((record) => record.id === selectedSavedId);
     if (!item) return;
     cancelGesture();
+    historyOwners.current.set(item.plan, item.id);
     setHistory((current) => commit(current, item.plan));
     setLoadedId(item.id);
     setSelectedId(null);
@@ -928,37 +1223,54 @@ export default function TacticBoard({
     }));
     notify.current("Copy ready. Give it a name and choose Save tactic.");
   }
-  function exportJson() {
-    download(
-      new Blob(
-        [
-          JSON.stringify(
-            {
-              format: "utility-lab-tactic",
-              version: 1,
-              plan,
-              ...(customImage ? { mapImage: customImage } : {}),
-            },
-            null,
-            2,
-          ),
-        ],
-        { type: "application/json" },
-      ),
-      `${filename(plan.name)}.json`,
-    );
-    notify.current("Tactic exported as JSON.");
+  async function exportJson() {
+    setExporting(true);
+    try {
+      await download(
+        new Blob(
+          [
+            JSON.stringify(
+              {
+                format: "utility-lab-tactic",
+                version: 1,
+                plan,
+                ...(customImage ? { mapImage: customImage } : {}),
+              },
+              null,
+              2,
+            ),
+          ],
+          { type: "application/json" },
+        ),
+        `${filename(plan.name)}.json`,
+      );
+      notify.current("Tactic export prepared.");
+    } catch (error) {
+      notify.current(
+        error instanceof Error
+          ? error.message
+          : "Could not export the tactic. Your saved records are unchanged.",
+      );
+    } finally {
+      setExporting(false);
+    }
   }
   async function importJson(file?: File) {
     if (!file) return;
     const expectedKey = latest.current.key;
+    const expectedPlan = latest.current.plan;
+    const operation = ++mediaOperation.current;
     try {
       if (file.size > 3_000_000)
         throw new Error(
           "This file is too large. Choose a tactic JSON smaller than 3 MB.",
         );
       const imported = validateTacticFile(JSON.parse(await file.text()));
-      if (latest.current.key !== expectedKey)
+      if (!mounted.current || operation !== mediaOperation.current) return;
+      if (
+        latest.current.key !== expectedKey ||
+        latest.current.plan !== expectedPlan
+      )
         throw new Error(
           "The board changed while reading this file. Import it again on the intended map level.",
         );
@@ -976,7 +1288,11 @@ export default function TacticBoard({
         );
       if (imported.mapImage) {
         await imageElement(imported.mapImage);
-        if (latest.current.key !== expectedKey)
+        if (!mounted.current || operation !== mediaOperation.current) return;
+        if (
+          latest.current.key !== expectedKey ||
+          latest.current.plan !== expectedPlan
+        )
           throw new Error(
             "The board changed while reading this file. Import it again on the intended map level.",
           );
@@ -991,6 +1307,7 @@ export default function TacticBoard({
         }
       }
       cancelGesture();
+      historyOwners.current.set(imported.plan, null);
       setHistory((current) => commit(current, imported.plan));
       setLoadedId(null);
       setSelectedId(null);
@@ -1009,6 +1326,8 @@ export default function TacticBoard({
   }
   async function uploadImage(file?: File) {
     if (!file) return;
+    const expectedKey = latest.current.key;
+    const operation = ++mediaOperation.current;
     setUploading(true);
     try {
       if (!["image/png", "image/jpeg", "image/webp"].includes(file.type))
@@ -1042,6 +1361,11 @@ export default function TacticBoard({
         throw new Error(
           "This image is still too large after resizing. Try a simpler or smaller radar image.",
         );
+      if (!mounted.current || operation !== mediaOperation.current) return;
+      if (latest.current.key !== expectedKey)
+        throw new Error(
+          "The map level changed while preparing this image. Upload it again on the intended level.",
+        );
       setCustomImage(data);
       setMapFailed(false);
       try {
@@ -1073,23 +1397,37 @@ export default function TacticBoard({
       clone.setAttribute("height", "1600");
       clone.setAttribute("viewBox", "0 0 1000 1000");
       clone.removeAttribute("class");
+      const currentStyle = getComputedStyle(svgRef.current);
+      // A standalone SVG has no app stylesheet: resolve currentColor, variables,
+      // raster appearance filters and inherited text before rasterizing it.
+      const sourceElements = [
+        svgRef.current,
+        ...svgRef.current.querySelectorAll<SVGElement>("*"),
+      ];
+      const clonedElements = [
+        clone,
+        ...clone.querySelectorAll<SVGElement>("*"),
+      ];
+      sourceElements.forEach((source, index) => {
+        const element = clonedElements[index];
+        if (!element) return;
+        const style = getComputedStyle(source);
+        for (const property of [
+          "color",
+          "fill",
+          "stroke",
+          "font-family",
+          "font-size",
+          "font-weight",
+          "filter",
+        ]) {
+          const value = style.getPropertyValue(property);
+          if (value) element.style.setProperty(property, value);
+        }
+      });
       clone
         .querySelectorAll("[data-selection]")
         .forEach((item) => item.remove());
-      const currentStyle = getComputedStyle(svgRef.current);
-      clone.querySelectorAll("[fill],[stroke]").forEach((element) => {
-        for (const attribute of ["fill", "stroke"]) {
-          const value = element.getAttribute(attribute);
-          const match = value?.match(/^var\((--[a-z-]+)(?:,([^)]*))?\)$/);
-          if (match)
-            element.setAttribute(
-              attribute,
-              currentStyle.getPropertyValue(match[1]).trim() ||
-                match[2] ||
-                "#24313b",
-            );
-        }
-      });
       const radar = clone.querySelector("image");
       if (radar && image) {
         if (image.startsWith("data:")) radar.setAttribute("href", image);
@@ -1135,7 +1473,7 @@ export default function TacticBoard({
           "image/png",
         ),
       );
-      download(output, `${filename(plan.name)}.png`);
+      await download(output, `${filename(plan.name)}.png`);
       notify.current("Board exported as PNG.");
     } catch (error) {
       notify.current(
@@ -1150,7 +1488,7 @@ export default function TacticBoard({
 
   const activeTool = toolItems.find((item) => item.id === tool)!;
   const toolGroups = [
-    ["select", "route", "pen", "text", "erase"],
+    ["select", "hand", "route", "pen", "text", "erase"],
     ["t", "ct"],
     ["smoke", "flash", "molotov", "he"],
   ];
@@ -1174,6 +1512,7 @@ export default function TacticBoard({
       }
       aria-label="Tactic editor"
       onKeyDown={keyboard}
+      onKeyUp={event => { if (event.key === " ") { spaceHeld.current = false; setSpacePan(false); } }}
     >
       <header className="tb-titlebar">
         <button
@@ -1238,9 +1577,11 @@ export default function TacticBoard({
               <ChevronDown size={13} />
             </summary>
             <div className="tb-export-menu">
+              <button onClick={event => { setShareMode("open"); event.currentTarget.closest("details")?.removeAttribute("open"); }}><FolderOpen size={17} />Open share code</button>
               <button
+                disabled={exporting}
                 onClick={(event) => {
-                  exportJson();
+                  void exportJson();
                   event.currentTarget
                     .closest("details")
                     ?.removeAttribute("open");
@@ -1289,6 +1630,7 @@ export default function TacticBoard({
               </button>
             </div>
           </details>
+          <button className="tb-button tb-share-button" onClick={() => setShareMode("share")}><Share2 size={17} /><span>Share</span></button>
           <button
             ref={planToggleRef}
             className={
@@ -1353,7 +1695,7 @@ export default function TacticBoard({
               <button
                 className="tb-icon-button"
                 disabled={!history.past.length}
-                onClick={() => setHistory(undo)}
+                onClick={() => navigateHistory("undo")}
                 title="Undo (Ctrl / ⌘ Z)"
                 aria-label="Undo"
               >
@@ -1362,7 +1704,7 @@ export default function TacticBoard({
               <button
                 className="tb-icon-button"
                 disabled={!history.future.length}
-                onClick={() => setHistory(redo)}
+                onClick={() => navigateHistory("redo")}
                 title="Redo (Ctrl / ⌘ Shift Z)"
                 aria-label="Redo"
               >
@@ -1388,20 +1730,11 @@ export default function TacticBoard({
               </button>
             </div>
           </div>
-          <div className="tb-map-stage">
+          <div className="tb-map-stage" ref={mapStage}>
             <svg
               ref={svgRef}
-              className={"tb-map tb-cursor-" + tool}
-              viewBox={
-                500 -
-                500 / zoom +
-                " " +
-                (500 - 500 / zoom) +
-                " " +
-                1000 / zoom +
-                " " +
-                1000 / zoom
-              }
+              className={"tb-map tb-cursor-" + tool + (panning ? " is-panning" : spacePan ? " is-space-pan" : "")}
+              viewBox={viewBox(view)}
               role="img"
               aria-label={
                 map.name +
@@ -1409,28 +1742,25 @@ export default function TacticBoard({
                 (level?.name || "") +
                 " tactic canvas. " +
                 plan.objects.length +
-                " objects. Select a tool and click to place, or press Enter to place at center. Arrow keys move the selected object."
+                " objects. Select a tool and click to place, or press Enter to place at center. Drag empty space, hold Space and drag, or use the hand tool to pan. Wheel or plus/minus to zoom; 0 fits the map. Arrow keys move a selected object, otherwise pan."
               }
               tabIndex={0}
               onPointerDown={pointerDown}
               onPointerMove={pointerMove}
               onPointerUp={pointerUp}
               onPointerCancel={cancelGesture}
-              onLostPointerCapture={cancelGesture}
+              onDoubleClick={(event) => {
+                const id = (event.target as Element).closest("[data-object-id]")?.getAttribute("data-object-id");
+                const object = plan.objects.find((item) => item.id === id && item.kind === "text");
+                if (object && (tool === "select" || tool === "text")) {
+                  event.preventDefault();
+                  cancelGesture();
+                  editText(object);
+                }
+              }}
+              onLostPointerCapture={event => { if (gesture.current?.pointerId === event.pointerId || panGesture.current?.pointerId === event.pointerId) cancelGesture(); }}
+              onBlur={() => { spaceHeld.current = false; setSpacePan(false); }}
             >
-              <defs>
-                <marker
-                  id={arrowId}
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="8"
-                  refY="5"
-                  orient="auto"
-                  markerUnits="userSpaceOnUse"
-                >
-                  <path d="M0 0 L10 5 L0 10 Z" fill={colors.route} />
-                </marker>
-              </defs>
               <rect width="1000" height="1000" fill="var(--canvas)" />
               {image && !mapFailed && (
                 <image
@@ -1447,11 +1777,43 @@ export default function TacticBoard({
                 <ObjectDrawing
                   key={object.id}
                   object={object}
-                  arrowId={arrowId}
                 />
               ))}
-              {selected && <Selection object={selected} />}
+              {selected && tool !== "pen" && !textEditor && <Selection object={selected} />}
             </svg>
+            {textEditor && <div
+              className="tb-inline-text-editor"
+              role="group"
+              aria-label="Edit map label"
+              style={textPosition}
+              onPointerDown={(event) => event.stopPropagation()}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget as Node | null)) finishText(true);
+              }}
+            >
+              <input
+                ref={textInput}
+                aria-label="Map text label"
+                aria-description="Press Enter to save or Escape to cancel."
+                placeholder="Type a label"
+                maxLength={80}
+                value={textEditor.value}
+                onChange={(event) => {
+                  const value = event.currentTarget.value;
+                  setTextEditor((current) => current ? { ...current, value } : null);
+                }}
+                onKeyDown={(event) => {
+                  if (event.nativeEvent.isComposing) return;
+                  if (event.key === "Enter" || event.key === "Escape") {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    finishText(event.key === "Enter", true);
+                  }
+                }}
+              />
+              <button type="button" aria-label="Save map label" onClick={() => finishText(true, true)}><Check size={19} /></button>
+              <button type="button" aria-label="Cancel map label" onClick={() => finishText(false, true)}><X size={18} /></button>
+            </div>}
             {(!image || mapFailed) && (
               <div className="tb-missing-map">
                 <ImagePlus size={30} />
@@ -1485,6 +1847,35 @@ export default function TacticBoard({
             </span>
           </div>
           <div className="tb-toolbox" role="group" aria-label="Drawing tools">
+            {showInk && <div className="tb-ink-control">
+              <button ref={inkButton} className="tb-ink-trigger" aria-label="Drawing colour" aria-expanded={inkOpen}
+                aria-controls={inkPopoverId} popoverTarget={inkPopoverId} title="Drawing colour"
+                onClick={(event) => {
+                  const rect = event.currentTarget.getBoundingClientRect();
+                  const width = Math.min(264, window.innerWidth - 16);
+                  setInkPosition({ left: Math.max(8, Math.min(rect.left, window.innerWidth - width - 8)), top: Math.max(8, rect.top - 184) });
+                }}>
+                <span className="tb-ink-dot" style={{ background: activeInk || colors[inkKind] }} />
+                <span>Colour</span><ChevronDown size={14} />
+              </button>
+              <div ref={inkPopover} id={inkPopoverId} popover="auto" role="dialog" aria-label="Drawing colour choices"
+                className="tb-ink-popover" style={inkPosition}
+                onToggle={(event) => {
+                  const open = event.currentTarget.matches(":popover-open");
+                  setInkOpen(open);
+                  if (open) requestAnimationFrame(() => inkPopover.current?.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus({ preventScroll: true }));
+                }} onKeyDown={(event) => event.stopPropagation()}>
+                <div className="tb-ink-heading"><strong>Drawing colour</strong><span>{selectedInk ? "Selected + new" : "New drawings"}</span></div>
+                <div className="tb-ink-swatches" role="group" aria-label="Ink colours">
+                  {inkSwatches.map((swatch) => <button key={swatch.label} className="tb-ink-swatch"
+                    aria-label={swatch.label} aria-pressed={activeInk === swatch.color} title={swatch.label}
+                    onClick={() => chooseInk(swatch.color)} style={{ background: swatch.color || colors[inkKind] }}>
+                    {!swatch.color && <Pencil size={18} />}
+                    {activeInk === swatch.color && <span className="tb-ink-check"><Check size={14} /></span>}
+                  </button>)}
+                </div>
+              </div>
+            </div>}
             {toolGroups.map((group, index) => (
               <div
                 className="tb-tool-group"
@@ -1545,7 +1936,8 @@ export default function TacticBoard({
               <MousePointer2 size={14} />
               <span>
                 {tool === "select"
-                  ? "Select and drag to move"
+                  ? "Drag empty space to pan · wheel to zoom"
+                  : tool === "hand" ? "Drag to pan · wheel to zoom"
                   : tool === "erase"
                     ? "Click an object to erase"
                     : tool === "route" || tool === "pen"
@@ -1559,23 +1951,24 @@ export default function TacticBoard({
               <button
                 className="tb-icon-button"
                 aria-label="Zoom out"
-                disabled={zoom <= 0.75}
-                onClick={() => setZoom((value) => Math.max(0.75, value - 0.25))}
+                disabled={view.zoom <= MIN_ZOOM}
+                onClick={() => setView(current => zoomView(current, current.zoom / 1.25))}
               >
                 <ZoomOut size={18} />
               </button>
               <button
                 className="tb-zoom-value"
-                onClick={() => setZoom(1)}
-                title="Reset zoom"
+                onClick={() => setView(FIT_VIEW)}
+                title="Fit map (0)"
+                aria-label="Reset map view"
               >
-                {Math.round(zoom * 100)}%
+                {Math.round(view.zoom * 100)}%
               </button>
               <button
                 className="tb-icon-button"
                 aria-label="Zoom in"
-                disabled={zoom >= 2}
-                onClick={() => setZoom((value) => Math.min(2, value + 0.25))}
+                disabled={view.zoom >= MAX_ZOOM}
+                onClick={() => setView(current => zoomView(current, current.zoom * 1.25))}
               >
                 <ZoomIn size={18} />
               </button>
@@ -1583,7 +1976,7 @@ export default function TacticBoard({
               <button
                 className="tb-icon-button tb-reset-zoom"
                 aria-label="Fit map"
-                onClick={() => setZoom(1)}
+                onClick={() => setView(FIT_VIEW)}
               >
                 <Maximize size={17} />
               </button>
@@ -1669,7 +2062,7 @@ export default function TacticBoard({
               Objects <span>{plan.objects.length}</span>
             </button>
           </div>
-          {tool !== "select" && tool !== "erase" && (
+          {tool !== "select" && tool !== "hand" && tool !== "erase" && (
             <div className="tb-quick-add">
               <button className="tb-button" onClick={() => addObject(tool)}>
                 <Plus size={15} />
@@ -2164,6 +2557,23 @@ export default function TacticBoard({
         aria-label="Upload custom radar image"
         onChange={(event) => void uploadImage(event.target.files?.[0])}
       />
+      {shareMode && <TacticShareDialog
+        file={shareMode === "share" ? shareFile : undefined}
+        onClose={() => setShareMode(null)}
+        onNotify={onNotify}
+        onEditCopy={file => {
+          if (onOpenSharedTactic) { onOpenSharedTactic(file); return; }
+          if (file.plan.mapId !== map.id || file.plan.levelId !== levelId) {
+            notify.current("Select the shared tactic’s map and floor before editing a copy."); return;
+          }
+          historyOwners.current.set(file.plan, null);
+          setLoadedId(null);
+          setSelectedSavedId("");
+          setCustomImage(file.mapImage || "");
+          setHistory(current => commit(current, { ...file.plan, name: `${file.plan.name.slice(0, 94)} copy` }));
+          setSelectedId(null);
+        }}
+      />}
     </section>
   );
 }
