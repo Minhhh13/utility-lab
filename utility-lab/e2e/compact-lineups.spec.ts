@@ -105,9 +105,9 @@ for (const viewport of [
   });
 }
 
-test("floating controls leave all eight maps' Fit pins selectable", async ({ page }) => {
+for (const viewport of [{width:1440,height:810},{width:960,height:540}]) test(`floating controls leave all eight maps' Fit pins selectable at ${viewport.width}x${viewport.height}`, async ({ page }) => {
   test.setTimeout(60_000);
-  await page.setViewportSize({ width: 1440, height: 810 });
+  await page.setViewportSize(viewport);
   await isolateOnlineMedia(page);
   for (const map of MAPS) {
     await ready(page, map.id, map.levels[0].id);

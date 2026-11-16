@@ -1,6 +1,7 @@
 import {test,expect,type Page} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import {MAPS} from '../src/maps';
+import {lineupMapFrame} from '../src/lineup-map-layout';
 import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 import {utilityMarkerArea} from '../src/utility-markers';
 import {utilityPhotos} from '../src/utility-data';
@@ -108,15 +109,16 @@ test.describe('phone camera stays under the player’s control',()=>{
 for(const scenario of [{mapId:'nuke',type:'HE'},{mapId:'vertigo',type:'Smoke'}])test(`${scenario.mapId} changes camera only for an actual floor change`,async({page})=>{
  await isolateMedia(page);await ready(page,`/#utilities?map=${scenario.mapId}&level=lower&side=CT`);
  const map=MAPS.find(map=>map.id===scenario.mapId)!;
- const upper=map.levels.find(level=>level.id==='upper')!,frame=upper.contentBounds||{x:0,y:0,width:1000,height:1000};
- const expectedUpper=[frame.x,frame.y,frame.width,frame.height].join(' ');
+ const upper=map.levels.find(level=>level.id==='upper')!,frame=lineupMapFrame(upper.contentBounds||{x:0,y:0,width:1000,height:1000});
+ const expectedUpper=[frame.x,frame.y,frame.width,frame.height].map(value=>Number(value.toFixed(6)));
  await page.getByRole('group',{name:'Utility type',exact:true}).getByRole('button',{name:new RegExp(`^${scenario.type} `)}).click();
  const lowerCamera=await watchCamera(page);
  await page.locator('.ul-map-marker:not(.ul-landing-pin)').first().locator('.ul-marker-hit').click();await waitForUtilityChoice(page,{allowUtilitySkip:true});
  if(await page.locator('.ul-landing-pin').count()){
   await expectCamera(page,lowerCamera);await page.locator('.ul-landing-pin').first().click();
  }
- await expect(origins(page).first()).toHaveAttribute('data-origin-level','upper');await expect(canvas(page)).toHaveAttribute('viewBox',expectedUpper);
+ await expect(origins(page).first()).toHaveAttribute('data-origin-level','upper');
+ await expect.poll(async()=>(await canvas(page).getAttribute('viewBox'))!.split(' ').map(value=>Number(Number(value).toFixed(6)))).toEqual(expectedUpper);
  const upperCamera=await watchCamera(page);
  await origins(page).first().click();await expect(viewer(page)).toBeVisible();await expectCamera(page,upperCamera);
  await viewer(page).getByRole('button',{name:'Close lineup media',exact:true}).click();await expectCamera(page,upperCamera);

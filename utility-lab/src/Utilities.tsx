@@ -40,6 +40,7 @@ import {
 import { MAPS, type GameMap } from "./maps";
 import MediaImage from "./MediaImage";
 import useMapNavigation from "./useMapNavigation";
+import {lineupMapFrame} from "./lineup-map-layout";
 import PhotoZoom from "./PhotoZoom";
 import { withAimPlacement } from "./aim-placement";
 import { portableLineups, storeLineupMedia } from "./media-store";
@@ -740,7 +741,7 @@ export default function Utilities({
   const currentContext = useRef(`${map.id}:${levelId}`);
   currentContext.current = `${map.id}:${levelId}`;
   const level = map.levels.find((item) => item.id === levelId) || map.levels[0];
-  const fit = level?.contentBounds || { x: 0, y: 0, width: 1000, height: 1000 };
+  const fit = lineupMapFrame(level?.contentBounds || { x: 0, y: 0, width: 1000, height: 1000 });
   const navigation = useMapNavigation(
     svgRef,
     fit,
@@ -990,7 +991,7 @@ export default function Utilities({
       if(point) {
         const projections = map.levels.flatMap(floor => {
           const projection = findLineupOrigin(record,lookup,floor.id);
-          return projection?.levelId === floor.id ? [{point:projection,frame:floor.contentBounds || {width:1000,height:1000}}] : [];
+          return projection?.levelId === floor.id ? [{point:projection,frame:lineupMapFrame(floor.contentBounds || {x:0,y:0,width:1000,height:1000})}] : [];
         });
         // Keep real source coordinates. Pick one useful example when two
         // standing points would overlap; never fan them out onto invented spots.

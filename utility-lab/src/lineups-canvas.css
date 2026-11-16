@@ -99,7 +99,7 @@
 .utility-workspace.ul-map-only .ul-map-stage {
   height: 100%;
   min-height: 0;
-  padding: 84px 24px 96px;
+  padding: 0;
 }
 .utility-workspace.ul-map-only .ul-map-top {
   position: absolute;
@@ -121,6 +121,11 @@
   border: 0;
   padding: 8px 10px;
   border-radius: 9px;
+}
+.utility-workspace.ul-map-only .ul-origin-back {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
 }
 .utility-workspace.ul-map-only .ul-levels button.is-active {
   background: var(--accent-soft);
@@ -194,7 +199,6 @@
     left: 16px;
     transform: none;
   }
-  .utility-workspace.ul-map-only .ul-map-stage { padding-top: 144px; padding-bottom: 84px; }
 }
 @media (max-width: 600px) {
   .utility-workspace.ul-map-only .ul-header {
@@ -255,13 +259,26 @@
   .utility-workspace.ul-map-only .ul-map-bottom p { max-width: 100%; font-size: 11px; }
   .utility-workspace.ul-map-only .ul-zoom button { min-width: 44px; }
   .utility-workspace.ul-map-only .ul-map-credit { left: 0; right: 0; bottom: 7px; text-align: center; }
-  .utility-workspace.ul-map-only .ul-map-stage { padding: 140px 12px 142px; }
 }
 @media (max-height: 580px) and (min-width: 601px) {
   .utility-workspace.ul-map-only .ul-header,
   .utility-workspace.ul-map-only .ul-map-top { top: 8px; }
-  .utility-workspace.ul-map-only .ul-filterbar { top: 65px; bottom: auto; left: 12px; transform: none; }
-  .utility-workspace.ul-map-only .ul-map-stage { padding: 122px 16px 62px; }
-  .utility-workspace.ul-map-only .ul-map-bottom { bottom: 13px; }
+  .utility-workspace.ul-map-only .ul-filterbar { top: auto; bottom: 24px; left: 12px; transform: none; }
+  .utility-workspace.ul-map-only .ul-types button { justify-content: center; min-width: 44px; padding: 5px; }
+  .utility-workspace.ul-map-only .ul-types button:not([data-utility="All"]) > span,
+  .utility-workspace.ul-map-only .ul-favorites-filter > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .utility-workspace.ul-map-only .ul-types button small,
+  .utility-workspace.ul-map-only .ul-types .ul-all-icon,
+  .utility-workspace.ul-map-only .ul-favorites-filter small { display: none; }
+  .utility-workspace.ul-map-only .ul-favorites-filter { justify-content: center; min-width: 44px; padding: 5px; }
+  .utility-workspace.ul-map-only .ul-map-bottom { bottom: 13px; justify-content: flex-end; }
+  .utility-workspace.ul-map-only .ul-map-bottom p { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .utility-workspace.ul-map-only .ul-map-credit { bottom: 0; }
 }

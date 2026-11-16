@@ -2,6 +2,7 @@ import { chooseLandingSpot, landingChoices, waitForUtilityChoice, openUtilityGro
 import { test, expect, type Page } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 import { MAPS, type GameMap, type MapLevel } from "../src/maps";
+import { lineupMapFrame } from "../src/lineup-map-layout";
 import { PUBLISHED_LINEUPS } from "./catalogue-fixtures";
 import { normalizeOriginLabel } from "../src/lineup-curation";
 import { findLineupOrigin, parseOriginLookup } from "../src/lineup-origins";
@@ -122,8 +123,8 @@ test("every map, floor and side opens a real target flow or recovers from an emp
       } else {
         const sourceLevel = map.levels.find(candidate => candidate.id === sourceLevelId)!;
         expect(sourceLevel).toBeTruthy();
-        const frame = sourceLevel.contentBounds || {x:0,y:0,width:1000,height:1000};
-        await expect(page.locator('.ul-map-svg')).toHaveAttribute('viewBox', [frame.x,frame.y,frame.width,frame.height].join(' '));
+        const frame = lineupMapFrame(sourceLevel.contentBounds || {x:0,y:0,width:1000,height:1000});
+        await expect.poll(async()=>(await page.locator('.ul-map-svg').getAttribute('viewBox'))!.split(' ').map(value=>Number(Number(value).toFixed(6)))).toEqual([frame.x,frame.y,frame.width,frame.height].map(value=>Number(value.toFixed(6))));
       }
       const sourceCamera = await page.locator('.ul-map-svg').getAttribute('viewBox');
       const selected = await clickFirstOriginAndVerifySource(page);

@@ -86,9 +86,13 @@ test('keyboard and reduced-motion choices are immediate and restore focus on dis
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await pin.click(); await waitForUtilityChoice(page); await expect(picker(page)).toBeVisible();
   expect(await page.evaluate(() => (window as typeof window & { fanAnimations: unknown[] }).fanAnimations.length)).toBe(0);
-  // The map-only layout keeps the heading accessible without a visible header.
-  // Clicking clear canvas outside the chooser must still dismiss it and return focus.
-  await page.locator('.ul-map-stage').click({position:{x:8,y:8}});
+  // A neutral outside click returns focus. The full-canvas SVG is itself a
+  // focusable pan control, so clicking it intentionally transfers focus there.
+  const header=page.locator('.studio-header');
+  const bounds=(await header.boundingBox())!;
+  const outside={x:bounds.x+bounds.width*.62,y:bounds.y+2};
+  expect(await page.evaluate(point=>Boolean(document.elementFromPoint(point.x,point.y)?.closest('button,a[href],[tabindex]')),outside)).toBe(false);
+  await page.mouse.click(outside.x,outside.y);
   await expect(picker(page)).toHaveCount(0); await expect(pin).toBeFocused();
 });
 

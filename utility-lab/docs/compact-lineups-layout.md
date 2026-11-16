@@ -8,6 +8,16 @@ The global navigation, Display settings and other workspaces retain their existi
 
 ## Verification
 
+### Follow-up: full canvas and larger photos
+
+This follow-up removes CSS padding from the interactive SVG viewport. `lineupMapFrame` instead adds stable breathing room in map coordinates: 20% above the artwork and 10% on the other edges, shared by navigation and standing-point spacing. Panned artwork and pointer gestures now reach the actual canvas edges, including with the top bar hidden. The map and source-pin coordinates are unchanged. Short landscape windows use icon filters at the bottom, clear of the map's upper pins. Back to targets uses 12px text while retaining a 44px hit area.
+
+The source-photo dialog has an 8px desktop gutter, 4px phone gutter and safe-area-aware bounds. Compact heading, caption, step and key rows free more height for the uncropped photo. A bundled landscape fixture's actual painted photo height increases from 518 to 619px at 1440×900, 550 to 799px at 1920×1080, and 550 to 1159px at 2560×1440. Fit, crosshairs, video, source credit and throw controls remain available. These are browser measurements; the larger gray frame alone is not counted as a larger photo.
+
+New browser cases cover all four canvas edges, real wheel/drag input in the former top strip, header shown/hidden, selection camera preservation, full-photo containment and control hit-testing from 320px to 2560px. Every map's default Fit pins are also checked in a 960×540 window. Evidence for this follow-up is under ignored `outputs/full-canvas/` and `outputs/larger-photo-viewer/`.
+
+### Original compact-controls release
+
 - Production build and TypeScript pass; all 147 content/model checks pass.
 - Final browser runs pass: **51 Edge checks and 16 WebKit checks**, with zero failures. Logs: `final-edge.log`, `final-webkit.log` and `final-build.log` under `outputs/compact-lineups/`.
 - All eight maps' default Fit pins are checked for actual pointer hit-testing under the floating controls. Separate cases cover Inferno/Nuke at 1440×810, 1280×960, 768×1024, 320×844 and 960×540, plus multi-select and camera preservation through photos and Back.
