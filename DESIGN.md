@@ -16,6 +16,7 @@ The workspaces are **Operate** surfaces. The map and the current task lead. Mark
 - Ordinary controls use one SVG icon family. Smoke, flash, molly and HE share recognizable grenade silhouettes through `UtilityIcon.tsx` across tools, markers, lists and statistics.
 - `BrandMark.tsx` draws the original route symbol with three circular nodes and a diamond endpoint. The displayed glyph is complete and has no square border or background. Its ink follows the accent palette and theme, without a bevel or looping shine. Favicon, web installation icons and prepared native assets share the canonical geometry; installation icons retain a flat platform icon field.
 - Borders separate adjacent working areas. Shadows identify floating controls and overlays; they do not decorate every panel.
+- The global header has no Local workspace connectivity label or green status dot. Workspace storage and backup behavior is explained in the settings and save flows.
 
 ## Composition and behavior
 

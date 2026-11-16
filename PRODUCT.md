@@ -35,7 +35,7 @@ The **Utility Lab** name remains beside the restored route symbol: three circula
 
 ## Operating and Delivery Constraints
 
-The verified public website is hosted on Cloudflare Pages at [utilitylab.au](https://utilitylab.au), following the user’s authorization. Local development remains at http://127.0.0.1:5180. The first public deployment uploaded the filtered static artifact directly; it did not push the current working tree to the [existing public repository](https://github.com/Minhhh13/utility-lab).
+The verified public website is hosted on Cloudflare Pages at [utilitylab.au](https://utilitylab.au), following the user’s authorization. Local development remains at http://127.0.0.1:5180. The complete application source is synchronized to the [public repository](https://github.com/Minhhh13/utility-lab). Production publishing uploads a verified filtered static artifact; Git pushes and website deployments are separate operations.
 
 The runtime is the website and local server. It does not launch CS2, access its installation or game files, inject software or read live gameplay. Reference media comes from online sources; no game capture or gameplay automation is part of the product.
 

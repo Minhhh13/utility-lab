@@ -2,6 +2,12 @@
 
 Utility Lab is published at **[utilitylab.au](https://utilitylab.au)**. The existing Cloudflare Pages project is `utility-lab`, with production branch `main`. The Porkbun-registered custom domain is connected to this existing project; www redirects to the apex. See [domain setup](custom-domain.md). Local development remains available at http://127.0.0.1:5180.
 
+## Latest verified release — 16 November 2026
+
+Production deployment `6e7a19c7-194f-4da3-967a-83ce79fc149d` serves the compact Lineups canvas, grouped photo zoom controls and pointer-centered wheel zoom. The Local workspace label and green dot are removed. Cloudflare records source commit `de86a535b23e9f7eae6f3e61484412e222fdd142` on `main`, with a clean deployment source. The complete application source has been pushed to the public GitHub repository.
+
+The release contains 517 verified static files. The complete release checks pass: 147 model tests, 147 Edge browser tests and five WebKit tests, with two existing browser cases skipped. Post-deployment checks on **utilitylab.au itself** confirm the new desktop and 320px phone canvas, badge removal, combined filters, map wheel/Fit, photo wheel/Fit, aim marker, adjacent zoom buttons and separate Video tab. No application JavaScript errors were observed; www still redirects to the canonical HTTPS domain. Machine evidence and screenshots are in ignored `outputs/compact-lineups/`.
+
 ## Release workflow
 
 The public deployment uses a filtered, verified static package rather than the repository root or unfiltered build. The package excludes unused maps, discarded landscapes, local output, credentials and server source. Deployment does not push Git commits or upload browser workspace records.

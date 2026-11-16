@@ -1,5 +1,7 @@
 # Release verification
 
+**Published and verified, 16 November 2026:** the update is live on [utilitylab.au](https://utilitylab.au), deployment `6e7a19c7-194f-4da3-967a-83ce79fc149d`, from application commit `de86a535b23e9f7eae6f3e61484412e222fdd142` pushed to `main`. Five live-verification groups pass on the custom domain, covering desktop/phone layout, removed badge, combined filters, map/photo zoom, aim, Video and canonical redirection. No application JavaScript errors were observed. [Release details](cloudflare-deployment.md).
+
 **Interface release candidate, 16 November 2026:** the compact Lineups canvas and pointer-centered photo wheel zoom pass the production build/TypeScript check, **147 model checks, 51 targeted Edge browser checks and 16 WebKit checks**. All targeted browser checks pass, including full hit-testing of narrow-phone photo controls and default map pins. The Local workspace badge and green status dot have also been removed. The user authorized publishing these changes to utilitylab.au and pushing the code; the complete release checks gate deployment. See [layout and validation details](compact-lineups-layout.md). Logs and captures are in `outputs/compact-lineups/`.
 
 The complete release workflow also passes: **147 model tests, 147 Edge browser tests and 5 WebKit tests**; two existing browser cases are skipped. Catalogue/origin generation, TypeScript and the production build pass. The final machine report is `outputs/checks/latest.json`, and the complete log is `outputs/compact-lineups/release-checks-final.log`.
