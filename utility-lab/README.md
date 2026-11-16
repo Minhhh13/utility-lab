@@ -35,7 +35,7 @@ Replace the snapshot with the matching authored source when it becomes available
 node tools/published-snapshot/restore.mjs --check
 ```
 
-The requested edits are limited to a larger desktop Lineups map, adjacent
+The earlier Lineups edits are limited to a larger desktop map, adjacent
 minus/plus buttons in the existing map and photo toolbars, and wheel input for the
 existing photo camera. Map wheel zoom/pan already belongs to the published build.
 The photo hook keeps its original 100–400% range and slide-reset behavior.
@@ -43,6 +43,23 @@ The photo hook keeps its original 100–400% range and slide-reset behavior.
 The original Tactic board, Stats, Display, Workspace backup tools, appearance and
 local storage formats are retained. Playbooks remains the published Coming soon
 entry. This branch does not enable a different Playbooks implementation.
+
+## Tactic board rehearsal
+
+Choose **Tactic board → Simulate** to rehearse both sides on the current map and
+floor, or try the built-in flash drill. Players, utility markers and nearby
+route arrows seed an editable rehearsal. Assign waypoints, movement speed, start
+time and facing; set when grenades take effect and scrub the same round forward
+or backward. Icon size is for readability; effect areas and timing use map units.
+See the [Vietnamese setup and calibration guide](docs/tactic-simulation.vi.md).
+
+Rehearsals save separately on this device. They belong to the layout used to
+open them; changing player/utility/route geometry starts a different draft.
+Use **Export rehearsal** to carry a run across layout changes or send it to a
+teammate; **Import rehearsal** requires the same map and floor. Tactic JSON and
+workspace backups do not include rehearsals. The example drill does not replace
+your draft. The simulator uses timed 2D paths and manually drawn cover; compare
+actual throws, sightlines and timing with a practice server.
 
 ## Verification and follow-up
 

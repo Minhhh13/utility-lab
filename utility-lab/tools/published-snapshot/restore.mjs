@@ -170,6 +170,15 @@ function groupZoomButtons(file) {
 }
 
 const files = Object.keys(snapshot.files);
+// Inject a launcher next to the board's own actions; keep the published editor
+// and its undo/save/share flows intact. The original program is hash-pinned above.
+function withBoardSimulation(file) {
+  const original = printer.printFile(file);
+  const anchor = 'className: `tb-title-actions`, children: [';
+  if (original.split(anchor).length !== 2) throw new Error("Expected exactly one board action bar.");
+  const launcher = '(0, k.jsx)(__SimulationLauncher, { plan: x, mapName: i.name, levelName: Ie.name, image: Z, tacticId: Ct }), ';
+  return "import __SimulationLauncher from '../simulation/SimulationLauncher';\n" + original.replace(anchor, anchor + launcher);
+}
 const stem = (name) => name.replace(/-[A-Za-z0-9_-]{8}\.(?:js|css)$/, "");
 for (const name of files) {
   let output = snapshot.files[name];
@@ -178,10 +187,11 @@ for (const name of files) {
     const file = ts.createSourceFile(name, output, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS);
     const css = files.find((css) => css.endsWith(".css") && stem(css) === stem(name));
     output = (css ? `import './${css}';\n` : "")
-      + (name === "Utilities-XNNDiMht.js" ? groupZoomButtons(file) : printer.printFile(file));
+      + (name === "Utilities-XNNDiMht.js" ? groupZoomButtons(file)
+        : name === "TacticBoard-D3Vza291.js" ? withBoardSimulation(file) : printer.printFile(file));
   }
   if (check) {
     if (await readFile(join(target, name), "utf8") !== output) throw new Error(`Generated module differs: ${name}`);
   } else await writeFile(join(target, name), output);
 }
-console.log(`${check ? "Verified" : "Restored"} ${files.length} published modules; two zoom-control groups reordered and one photo-wheel hook added.`);
+console.log(`${check ? "Verified" : "Restored"} ${files.length} published modules with the Lineups controls and the Tactic board simulation launcher.`);

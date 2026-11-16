@@ -26,13 +26,19 @@ The original worker, storage keys, catalogue IDs, map anchors, photo metadata,
 video chapters and UI flows are retained. Old authored components remain in
 `src/` for reference, but the active entry imports `src/published-app/`.
 
-The requested edits are isolated in `src/lineups-layout.css`,
+The Lineups edits are isolated in `src/lineups-layout.css`,
 `src/usePhotoWheelZoom.ts` and an AST transform that places minus and plus next
 to each other in the existing map/photo toolbars and attaches that wheel hook.
 The hook calls the original photo zoom function and retains its 100–400% bounds.
 Map wheel zoom, pan, image annotations, target grouping and the media viewer
 come from the published baseline. Existing button handlers are unchanged.
 
+The Tactic board now mounts a separate, authored simulation launcher in its
+existing action bar. `withBoardSimulation` in the restore script passes the active
+plan, map, floor, image and saved tactic ID. Rehearsal logic, storage, rendering
+and file transfers live in `src/simulation/` and never write to the board model
+or to Lineups storage.
+
 When the matching authored source becomes available, replace this snapshot with
-that source and port only those presentation edits. Do not edit generated modules
+that source and port the presentation edits and launcher. Do not edit generated modules
 by hand or replace the catalogue with the older library from `main`.

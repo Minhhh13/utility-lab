@@ -1,0 +1,643 @@
+.sim-dialog {
+  --sim-pad: clamp(14px, 2vw, 24px);
+  box-sizing: border-box;
+  width: min(1250px, calc(100vw - 32px));
+  height: min(850px, calc(100dvh - 32px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  color: var(--text);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  font: inherit;
+}
+.sim-dialog::backdrop {
+  background: rgb(16 25 37 / 52%);
+}
+.sim-dialog *,
+.sim-dialog *::before,
+.sim-dialog *::after {
+  box-sizing: border-box;
+}
+.sim-dialog button,
+.sim-dialog input,
+.sim-dialog select {
+  font: inherit;
+}
+.sim-dialog button,
+.sim-dialog .sim-select {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 35px;
+  padding: 6px 11px;
+  color: var(--text);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  line-height: 1.15;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.sim-dialog button:hover:not(:disabled),
+.sim-dialog summary:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.sim-dialog button:focus-visible,
+.sim-dialog input:focus-visible,
+.sim-dialog select:focus-visible,
+.sim-dialog svg:focus-visible,
+.sim-dialog summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.sim-dialog button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.sim-dialog button[aria-pressed="true"],
+.sim-dialog .sim-accent {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  background: var(--accent-soft);
+}
+.sim-dialog button[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 0.5px var(--accent);
+}
+.sim-shell {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.sim-header {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  padding: 14px var(--sim-pad);
+  border-bottom: 1px solid var(--border);
+}
+.sim-title-icon {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+}
+.sim-context {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.25;
+}
+.sim-context span {
+  margin: 0 3px;
+  opacity: 0.6;
+}
+.sim-dialog .sim-header h2 {
+  margin: 2px 0 0;
+  font: inherit;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+.sim-header-end {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sim-header-end small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.sim-dialog .sim-icon {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  flex-shrink: 0;
+}
+.sim-body {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 29%);
+}
+.sim-map-panel {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.sim-map-strip,
+.sim-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+}
+.sim-map-strip {
+  justify-content: space-between;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.sim-tactic-name {
+  font-size: 13px;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sim-marker-size {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.sim-map-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.sim-dialog .sim-camera {
+  min-height: 27px;
+  padding: 3px 7px;
+  font-size: 11px;
+}
+.sim-marker-size span {
+  margin-right: 4px;
+}
+.sim-dialog .sim-marker-size button {
+  padding: 0;
+  width: 27px;
+  min-height: 27px;
+  border-radius: 5px;
+}
+.sim-map-stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--canvas);
+}
+.sim-radar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline-offset: -3px !important;
+}
+.sim-radar image[data-raster="true"] {
+  filter: var(--radar-filter, none);
+}
+.sim-map-marker {
+  cursor: pointer;
+}
+.sim-placing .sim-radar,
+.sim-placing .sim-map-marker {
+  cursor: crosshair;
+}
+.sim-radar text {
+  font-family: inherit;
+  user-select: none;
+  pointer-events: none;
+}
+.sim-map-marker > svg {
+  pointer-events: none;
+}
+.sim-route,
+.sim-effect {
+  pointer-events: none;
+}
+.sim-t {
+  color: var(--marker-t, #e5ab48);
+}
+.sim-ct {
+  color: var(--marker-ct, #64a4eb);
+}
+.sim-smoke {
+  color: #677e94;
+}
+.sim-flash {
+  color: #bd8a16;
+}
+.sim-molotov {
+  color: #d75e2a;
+}
+.sim-incendiary {
+  color: #ce4928;
+}
+.sim-he {
+  color: #268e87;
+}
+[data-theme="dark"] .sim-smoke {
+  color: #b0c4d4;
+}
+[data-theme="dark"] .sim-flash {
+  color: #f1c66a;
+}
+[data-theme="dark"] .sim-molotov,
+[data-theme="dark"] .sim-incendiary {
+  color: #ffa477;
+}
+[data-theme="dark"] .sim-he {
+  color: #82d2c9;
+}
+.sim-hint {
+  min-height: 38px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+.sim-hint > svg {
+  flex-shrink: 0;
+}
+.sim-dialog .sim-hint button {
+  margin-left: auto;
+  min-height: 25px;
+  padding: 3px 6px;
+}
+.sim-inspector {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  border-left: 1px solid var(--border);
+}
+.sim-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--border);
+  padding: 0 8px;
+}
+.sim-dialog .sim-tabs button {
+  position: relative;
+  height: 42px;
+  min-width: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-transform: capitalize;
+  color: var(--muted);
+}
+.sim-dialog .sim-tabs button[aria-pressed="true"] {
+  color: var(--accent);
+}
+.sim-tabs button[aria-pressed="true"]::after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  background: var(--accent);
+}
+.sim-scroll {
+  min-height: 0;
+  padding: 15px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.sim-dialog h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+}
+.sim-section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 9px;
+}
+.sim-section-title > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.sim-inline,
+.sim-fields {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.sim-inline > *,
+.sim-fields > * {
+  min-width: 0;
+  flex: 1;
+}
+.sim-roster {
+  display: grid;
+  gap: 3px;
+  margin-top: 10px;
+}
+.sim-dialog .sim-roster-row {
+  justify-content: flex-start;
+  min-height: 32px;
+  padding: 6px 8px;
+  border-color: transparent;
+  text-align: left;
+  gap: 7px;
+}
+.sim-dialog .sim-roster-row[aria-pressed="true"] {
+  color: var(--text);
+  box-shadow: none;
+  border-color: var(--border);
+  background: var(--surface);
+}
+.sim-roster-row strong {
+  font-size: 12px;
+  font-weight: 700;
+}
+.sim-health,
+.sim-actor-state {
+  font-variant-numeric: tabular-nums;
+  font-size: 10.5px;
+  color: var(--muted);
+}
+.sim-health {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.sim-team-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  border: 1px solid rgb(0 0 0 / 18%);
+}
+.sim-edit-group {
+  margin: 14px 0 0;
+  padding-top: 14px;
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+}
+.sim-edit-group .sim-section-title {
+  margin: 0;
+}
+.sim-field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.sim-dialog .sim-field input,
+.sim-dialog .sim-field select {
+  padding: 6px 8px;
+  width: 100%;
+  min-height: 34px;
+  color: var(--text);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+.sim-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.sim-dialog input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+.sim-dialog .sim-text-btn {
+  justify-self: start;
+  min-height: 28px;
+  background: transparent;
+  padding: 3px 0;
+  border: 0;
+  color: var(--muted);
+}
+.sim-note,
+.sim-empty,
+.sim-feedback,
+.sim-details p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.sim-note + .sim-inline,
+.sim-empty,
+.sim-details p {
+  margin-top: 8px;
+}
+.sim-feedback {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 650;
+}
+.sim-details,
+.sim-file-controls {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.sim-details summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+}
+.sim-hold {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.sim-hold .sim-fields {
+  margin-top: 8px;
+}
+.rehearsal-file-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.sim-dialog .sim-select {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+.sim-select select {
+  padding: 6px 26px 6px 9px;
+  width: 100%;
+  height: 100%;
+  min-height: 32px;
+  border: 0;
+  color: var(--text);
+  background: var(--surface-raised);
+  appearance: none;
+  cursor: pointer;
+}
+.sim-select svg {
+  position: absolute;
+  right: 7px;
+  pointer-events: none;
+}
+.sim-transport {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 63px;
+  padding: 11px var(--sim-pad);
+  border-top: 1px solid var(--border);
+}
+.sim-transport-main {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.sim-dialog .sim-play {
+  min-width: 72px;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.sim-dialog .sim-play:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--accent-ink);
+  filter: brightness(0.94);
+}
+.sim-clock,
+.sim-time-end {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.sim-clock {
+  font-weight: 750;
+  font-size: 14px;
+}
+.sim-time-end {
+  font-size: 11px;
+  color: var(--muted);
+}
+.sim-track {
+  position: relative;
+  flex: 1;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  min-width: 25px;
+}
+.sim-dialog .sim-track input {
+  margin: 0;
+  width: 100%;
+  height: 20px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.sim-track-events {
+  pointer-events: none;
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: -1px;
+  height: 3px;
+}
+.sim-track-events i {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.sim-speed {
+  min-width: 60px;
+}
+@media (max-width: 720px) {
+  .sim-dialog {
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0;
+    border: 0;
+  }
+  .sim-header {
+    padding: 9px 12px;
+    gap: 9px;
+  }
+  .sim-title-icon {
+    height: 33px;
+    width: 33px;
+  }
+  .sim-header-end small {
+    max-width: 100px;
+    text-align: right;
+  }
+  .sim-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .sim-map-panel {
+    flex: none;
+    height: clamp(280px, 48dvh, 510px);
+  }
+  .sim-inspector {
+    flex: none;
+    display: block;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .sim-scroll {
+    overflow: visible;
+    padding: 12px;
+  }
+  .sim-hint,
+  .sim-map-strip {
+    padding: 5px 10px;
+  }
+  .sim-tabs {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    background: var(--surface-raised);
+  }
+  .sim-transport {
+    flex-wrap: wrap;
+    gap: 4px 9px;
+    min-height: 70px;
+    padding: 6px 12px max(7px, env(safe-area-inset-bottom));
+  }
+  .sim-transport-main {
+    flex: 1;
+  }
+  .sim-track {
+    order: 3;
+    flex-basis: 100%;
+    height: 20px;
+  }
+  .sim-track-events {
+    bottom: -2px;
+  }
+}
+@media (min-width: 721px) and (max-height: 575px) {
+  .sim-dialog {
+    height: 100dvh;
+    width: 100vw;
+    border: 0;
+    border-radius: 0;
+  }
+  .sim-header {
+    padding-block: 6px;
+  }
+  .sim-transport {
+    min-height: 45px;
+    padding-block: 5px;
+  }
+}
