@@ -4,9 +4,9 @@ Utility Lab is published at **[utilitylab.au](https://utilitylab.au)**. The exis
 
 ## Latest verified release — 16 November 2026
 
-Production deployment `6e7a19c7-194f-4da3-967a-83ce79fc149d` serves the compact Lineups canvas, grouped photo zoom controls and pointer-centered wheel zoom. The Local workspace label and green dot are removed. Cloudflare records source commit `de86a535b23e9f7eae6f3e61484412e222fdd142` on `main`, with a clean deployment source. The complete application source has been pushed to the public GitHub repository.
+Production deployment `c39dd969-a0fd-4e29-8cae-2866af0f8da2` serves the larger photo dialog, full-edge interactive map canvas and smaller Back to targets text. The compact Lineups controls, photo wheel zoom and removed workspace badge remain. Cloudflare records source commit `d93a9e966054973976bae98980857947d3f212d0` on `main`, with a clean deployment source. The application changes have been pushed to the public GitHub repository.
 
-The release contains 517 verified static files. The complete release checks pass: 147 model tests, 147 Edge browser tests and five WebKit tests, with two existing browser cases skipped. Post-deployment checks on **utilitylab.au itself** confirm the new desktop and 320px phone canvas, badge removal, combined filters, map wheel/Fit, photo wheel/Fit, aim marker, adjacent zoom buttons and separate Video tab. No application JavaScript errors were observed; www still redirects to the canonical HTTPS domain. Machine evidence and screenshots are in ignored `outputs/compact-lineups/`.
+The release contains 517 verified static files. The complete release checks pass: 147 model tests, 158 Edge browser tests and five WebKit tests, with two existing browser cases skipped. Twenty-two additional WebKit cases cover the new viewer/canvas and retained wheel zoom. Ten post-deployment verification groups on **utilitylab.au itself** confirm full-edge SVG input with the header shown/hidden, unchanged selection camera, 12px Back text with a 44px hit target, a fully contained 799px-high landscape photo at 1920×1080, reachable controls/keys, combined filters, photo wheel/Fit, aim marker and the separate Video tab. No application JavaScript errors were observed; www still redirects to the canonical HTTPS domain. Machine evidence and screenshots are in ignored `outputs/full-canvas/`.
 
 ## Release workflow
 
@@ -19,7 +19,8 @@ npm run check:local
 node --experimental-strip-types scripts/package-local.mjs > outputs/releases/latest-package.json
 npm run prepare:cloudflare
 $prepared = Get-Content outputs/cloudflare/latest-prepared.json -Raw | ConvertFrom-Json
-npx --yes wrangler@4.159.0 pages deploy $prepared.directory --project-name utility-lab --branch main --commit-dirty=true
+$sourceCommit = git rev-parse HEAD
+npx --yes wrangler@4.159.0 pages deploy $prepared.directory --project-name utility-lab --branch main --commit-hash $sourceCommit --commit-dirty=false
 ```
 
 `prepare:cloudflare` requires successful production checks, compares every packaged asset with the current build using SHA-256, checks file limits and copies the tested security headers and static 404 page. The final release and live verification are recorded in [verification.md](verification.md); machine-readable deployment evidence stays under ignored `outputs/cloudflare/`.
