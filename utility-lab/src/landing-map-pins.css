@@ -1,0 +1,23 @@
+.ul-landing-leaders line { stroke: var(--muted); stroke-opacity: .6; stroke-width: 1; }
+.ul-landing-leaders circle { fill: currentColor; stroke: var(--surface-raised); stroke-width: 1.5; }
+.ul-landing-leaders line.is-active { stroke: currentColor; stroke-width: 1.75; stroke-opacity: 1; }
+.ul-landing-dot { cursor: pointer; }
+.ul-landing-chip-bg { fill: var(--surface-raised); stroke: var(--border); stroke-width: 1; }
+.ul-landing-name { fill: var(--text); font: 600 12px system-ui, sans-serif; }
+.ul-landing-ordinal rect { fill: var(--canvas); }
+.ul-landing-ordinal text { fill: var(--text); font: 650 10px system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.ul-landing-pin.is-highlighted .ul-landing-chip-bg,
+.ul-landing-pin:focus-visible .ul-landing-chip-bg { stroke: currentColor; stroke-width: 2; }
+.ul-landing-pin:focus-visible .ul-landing-chip-bg { stroke-dasharray: 4 2; }
+.ul-landing-pages { display: flex; height: 44px; align-items: center; justify-content: space-between;
+  border-radius: 10px; background: var(--surface-raised); color: var(--text); }
+.ul-landing-pages button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0;
+  border-radius: 8px; background: transparent; color: inherit; }
+.ul-landing-pages span { font: 600 11px system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.ul-landing-pages button:disabled { opacity: .4; }
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-navigation-input="pointer"] .ul-landing-chip.can-animate {
+    transition: opacity var(--workspace-duration) var(--ease-out);
+    @starting-style { opacity: .55; }
+  }
+}

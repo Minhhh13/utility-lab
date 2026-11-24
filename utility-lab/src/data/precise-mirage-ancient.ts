@@ -17,7 +17,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "x": 350.19,
     "y": 589.36,
     "steps": [
-      "CT Spawn 1 only. CT Spawn 1 only. Use the original blue CT Spawn #1 square.",
+      "CT Spawn 1 only. Use the original blue CT Spawn #1 square.",
       "Match spawn 1’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
       "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
     ],
@@ -29,7 +29,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "photos": [
       {
         "image": "/lineup-media/source-video-stills/cs2tricks/ancient/761c8da9-2110-4bbb-a815-e77b46adb59d.jpg",
-        "caption": "CT Spawn 1 only. CT Spawn 1 only. Use the original blue CT Spawn #1 square.",
+        "caption": "CT Spawn 1 only. Use the original blue CT Spawn #1 square.",
         "kind": "position",
         "creator": "StellaraQwQღ / CS2Tricks",
         "annotationId": "source-video-frame:761c8da9-2110-4bbb-a815-e77b46adb59d:0.15",
@@ -95,7 +95,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "x": 350.19,
     "y": 589.36,
     "steps": [
-      "CT Spawn 2 only. CT Spawn 2 only. Use the blue-marked CT Spawn #2 position.",
+      "CT Spawn 2 only. Use the blue-marked CT Spawn #2 position.",
       "Match spawn 2’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
       "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
     ],
@@ -107,7 +107,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "photos": [
       {
         "image": "/lineup-media/source-video-stills/cs2tricks/ancient/bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe.jpg",
-        "caption": "CT Spawn 2 only. CT Spawn 2 only. Use the blue-marked CT Spawn #2 position.",
+        "caption": "CT Spawn 2 only. Use the blue-marked CT Spawn #2 position.",
         "kind": "position",
         "creator": "StellaraQwQღ / CS2Tricks",
         "annotationId": "source-video-frame:bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe:0.5",
@@ -173,7 +173,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "x": 350.19,
     "y": 589.36,
     "steps": [
-      "CT Spawn 3 only. CT Spawn 3 only. Use the original blue CT Spawn #3 box.",
+      "CT Spawn 3 only. Use the original blue CT Spawn #3 box.",
       "Match spawn 3’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
       "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
     ],
@@ -185,7 +185,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "photos": [
       {
         "image": "/lineup-media/source-video-stills/cs2tricks/ancient/7cbf25f4-5710-4974-80f9-abd7a898ad48.jpg",
-        "caption": "CT Spawn 3 only. CT Spawn 3 only. Use the original blue CT Spawn #3 box.",
+        "caption": "CT Spawn 3 only. Use the original blue CT Spawn #3 box.",
         "kind": "position",
         "creator": "StellaraQwQღ / CS2Tricks",
         "annotationId": "source-video-frame:7cbf25f4-5710-4974-80f9-abd7a898ad48:0.15",
@@ -251,7 +251,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "x": 350.19,
     "y": 589.36,
     "steps": [
-      "CT Spawn 4 only. CT Spawn 4 only. Use CT Spawn #4 facing the temple doors.",
+      "CT Spawn 4 only. Use CT Spawn #4 facing the temple doors.",
       "Match spawn 4’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
       "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
     ],
@@ -262,7 +262,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "photos": [
       {
         "image": "/lineup-media/source-video-stills/cs2tricks/ancient/8ee5a6fb-7370-4f53-b423-fb835ef2c990.jpg",
-        "caption": "CT Spawn 4 only. CT Spawn 4 only. Use CT Spawn #4 facing the temple doors.",
+        "caption": "CT Spawn 4 only. Use CT Spawn #4 facing the temple doors.",
         "kind": "position",
         "creator": "Vigil / CS2Tricks",
         "annotationId": "source-video-frame:8ee5a6fb-7370-4f53-b423-fb835ef2c990:0.15",
@@ -328,7 +328,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "x": 350.19,
     "y": 589.36,
     "steps": [
-      "CT Spawn 5 only. CT Spawn 5 only. Use the original blue CT Spawn #5 box.",
+      "CT Spawn 5 only. Use the original blue CT Spawn #5 box.",
       "Match spawn 5’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
       "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
     ],
@@ -340,7 +340,7 @@ export const PRECISE_MIRAGE_ANCIENT:UtilityReference[] = [
     "photos": [
       {
         "image": "/lineup-media/source-video-stills/cs2tricks/ancient/5172e456-1115-4de5-8768-c9d939610d45.jpg",
-        "caption": "CT Spawn 5 only. CT Spawn 5 only. Use the original blue CT Spawn #5 box.",
+        "caption": "CT Spawn 5 only. Use the original blue CT Spawn #5 box.",
         "kind": "position",
         "creator": "StellaraQwQღ / CS2Tricks",
         "annotationId": "source-video-frame:5172e456-1115-4de5-8768-c9d939610d45:0.15",

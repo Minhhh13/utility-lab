@@ -12,6 +12,8 @@ export interface OriginFloorPoint {
 export interface OriginPoint extends OriginFloorPoint {
   label: string;
   basis: 'publisher-origin' | 'callout-area';
+  /** Present when the start comes from the guide's recorded world position. */
+  precision?: 'world';
   sourceId?: string;
   /** Only source-supported floor views; each uses that view's own registration. */
   alternateLevels?: OriginFloorPoint[];
@@ -49,6 +51,7 @@ export function isOriginPoint(value: unknown): value is OriginPoint {
     typeof floor.registrationId === 'string' && !!floor.registrationId;
   return validFloor(point) && typeof point.label === 'string' && !!point.label &&
     ['publisher-origin', 'callout-area'].includes(point.basis) &&
+    (point.precision === undefined || point.precision === 'world') &&
     (point.alternateLevels === undefined || (Array.isArray(point.alternateLevels) && point.alternateLevels.every(validFloor)));
 }
 

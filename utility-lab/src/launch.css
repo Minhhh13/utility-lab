@@ -46,6 +46,19 @@
 .launch-art[data-scene="dust-csgo"] {
   object-position: 52% 50%;
 }
+.launch-art:is([data-scene="dunes"], [data-scene="foundry"], [data-scene="temple"]) {
+  object-position: center;
+}
+.landscape-details {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.foundry-lamps { opacity: .6; }
+.temple-firefly { opacity: .65; }
+.dunes-sand { opacity: 0; }
 .launch-light {
   position: absolute;
   inset: -10%;
@@ -64,8 +77,9 @@
   z-index: 2;
   background: linear-gradient(
     180deg,
-    #07121b94 0%,
-    #07121b00 30%,
+    #07121bb8 0%,
+    #07121b57 max(56px, 9%),
+    #07121b00 32%,
     #07121b00 63%,
     #07121b54 100%
   );
@@ -137,8 +151,7 @@
 .launch-destination:not(:disabled):active {
   background: var(--accent-soft);
 }
-.launch-destination:disabled { color: var(--muted); cursor: default; }
-.launch-destination:disabled .launch-destination-title { opacity: .58; }
+.launch-destination:disabled { color: var(--muted); background: var(--surface); opacity: 1; cursor: default; }
 .launch-destination:disabled .launch-destination-title > svg { color: inherit; }
 .launch-header-slot,
 .launch-header-choice {
@@ -151,6 +164,10 @@
   align-items: center;
   gap: 7px;
   min-height: 44px;
+  padding-inline: 10px;
+  border: 1px solid #ffffff40;
+  border-radius: 8px;
+  background: #14222c66;
   color: #fffdf6;
 }
 .launch-header-choice label {
@@ -163,9 +180,11 @@
   flex: 0 0 auto;
 }
 .launch-header-choice select {
+  appearance: none;
+  -webkit-appearance: none;
   max-width: 148px;
   min-height: 44px;
-  padding: 0 4px;
+  padding: 0 18px 0 0;
   border: 0;
   border-radius: 5px;
   background: transparent;
@@ -176,6 +195,7 @@
   cursor: pointer;
   touch-action: manipulation;
 }
+.landscape-chevron { position: absolute; right: 10px; pointer-events: none; }
 .launch-header-choice option {
   background: var(--surface-raised);
   color: var(--text);
@@ -396,20 +416,41 @@
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .launch-art.is-loaded {
-    animation: landscape-enter 180ms cubic-bezier(0.23, 1, 0.32, 1) both;
-  }
-  .launch-art.launch-art-previous {
-    animation: landscape-leave 180ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  /* Keep the decoded previous painting opaque underneath the incoming one. */
+  .launch-art-previous + .launch-art.is-loaded {
+    animation: landscape-enter 180ms var(--ease-out) both;
   }
   .launch-destination {
     transition: background-color 140ms ease;
   }
-  .launch-destination-arrow {
-    transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+  .launch-destination-arrow,
+  .launch-destination-title > svg,
+  .brand .ul-brand-mark {
+    transition: transform 140ms var(--ease-out);
   }
+  :root[data-navigation-input="pointer"] .launch-destination:active:not(:disabled) .launch-destination-title > svg,
+  :root[data-navigation-input="pointer"] .brand:active .ul-brand-mark {
+    transform: scale(.91);
+  }
+  .launch-screen[data-return="pointer"] .launch-destinations {
+    animation: home-dock-arrives 200ms var(--ease-out) both;
+  }
+  .launch-screen[data-return="pointer"] [data-returned]::after {
+    content: "";
+    position: absolute;
+    inset: auto 16px 0;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
+    pointer-events: none;
+    animation: home-return-cue 260ms var(--ease-out) both;
+  }
+  .foundry-lamps { animation: lamp-glow 8s ease-in-out infinite alternate; }
+  .temple-firefly { animation: firefly-drift 9s ease-in-out infinite alternate; }
+  .dunes-sand { animation: sand-crossing 12s linear -3s infinite; }
+  .scene-paused .landscape-details :is(.foundry-lamps,.temple-firefly,.dunes-sand) { animation-play-state: paused; }
   @media (hover: hover) and (pointer: fine) {
-    .launch-destination:hover .launch-destination-arrow {
+    .launch-destination:not(:disabled):hover .launch-destination-arrow {
       transform: translate(2px, -2px);
     }
   }
@@ -418,9 +459,28 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes landscape-leave {
-  from { opacity: 1; }
-  to { opacity: 0; }
+@keyframes home-dock-arrives {
+  from { opacity: .65; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes home-return-cue {
+  from { transform: scaleX(.42); opacity: .8; }
+  60% { opacity: .7; }
+  to { transform: scaleX(1); opacity: 0; }
+}
+@keyframes lamp-glow {
+  from { opacity: .3; }
+  to { opacity: .72; }
+}
+@keyframes firefly-drift {
+  from { transform: translate(-7px, 5px); opacity: .12; }
+  55% { opacity: .95; }
+  to { transform: translate(10px, -10px); opacity: .24; }
+}
+@keyframes sand-crossing {
+  0%, 55% { transform: translate(-60px, 5px); opacity: 0; }
+  68% { opacity: .55; }
+  88%, 100% { transform: translate(80px, -1px); opacity: 0; }
 }
 @media (max-width: 1100px) {
   .launch-screen {
@@ -539,7 +599,9 @@
     height: 44px;
     justify-content: center;
     border-radius: 8px;
+    padding: 0;
   }
+  .landscape-chevron { display: none; }
   .launch-header-choice select {
     position: absolute;
     inset: 0;
@@ -607,6 +669,26 @@
     padding-top: 17px;
     padding-bottom: 17px;
   }
+}
+@media (max-height: 500px) and (max-width: 800px) {
+  .launch-screen {
+    min-height: 100%;
+    --scene-inset: max(12px, 3%);
+    --destinations-bottom: max(12px, env(safe-area-inset-bottom));
+    --destinations-height: 136px;
+  }
+  .is-home .studio-header { height: 54px; }
+  .launch-destination { min-height: 68px; padding: 10px 14px; gap: 4px; }
+  .launch-destination-title { font-size: 14px; }
+  .launch-destination-description { font-size: 11px; }
+  .launch-destination-arrow { display: none; }
+}
+@media (max-height: 500px) and (min-width: 601px) and (max-width: 800px) {
+  .launch-screen { --destinations-height: 72px; }
+  .launch-destinations { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .launch-destination { min-height: var(--destinations-height); }
+  .launch-destination:nth-child(3) { border-left: 1px solid var(--border); }
+  .launch-destination:nth-child(n + 3) { border-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .launch-art,

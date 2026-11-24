@@ -1,7 +1,7 @@
 import {useEffect,useId,useLayoutEffect,useRef,useState,type KeyboardEvent} from 'react';
 import {createPortal} from 'react-dom';
 import {ChevronLeft,ChevronRight,Crosshair,UserRound,X} from 'lucide-react';
-import type {OriginChoiceGroup} from './origin-options';
+import {spawnInsetLayout,type OriginChoiceGroup} from './origin-options';
 import type {UtilityReference} from './utility-data';
 import './origin-choices.css';
 
@@ -22,18 +22,19 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
   const [position,setPosition]=useState({left:0,top:0,width:328,ready:false});
   const pages=Math.ceil(group.options.length/PAGE_SIZE);
   const options=group.options.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
+  const direct=spawnInsetLayout(group,position.width);
   const span=position.width-88;
   const slots=options.length===2?[{x:0,y:.5},{x:1,y:.5}]
     :options.length===3?[{x:.5,y:0},{x:1,y:.85},{x:0,y:.85}]
     :options.length===4?[{x:.5,y:0},{x:1,y:.5},{x:.5,y:1},{x:0,y:.5}]
     :[{x:.5,y:0},{x:1,y:0},{x:1,y:.5},{x:1,y:1},{x:.5,y:1},{x:0,y:1},{x:0,y:.5},{x:0,y:0}];
-  const points=slots
+  const points=direct?.points ?? slots
     .map(point=>({x:44+span*point.x,y:44+span*point.y}));
   const coordinates=group.options.map(option=>'target' in option?option.target:option.point);
   const minX=Math.min(...coordinates.map(point=>point.x)),maxX=Math.max(...coordinates.map(point=>point.x));
   const minY=Math.min(...coordinates.map(point=>point.y)),maxY=Math.max(...coordinates.map(point=>point.y));
-  const previewSpan=Math.max(80,maxX-minX,maxY-minY)*1.5;
-  const preview={x:(minX+maxX-previewSpan)/2,y:(minY+maxY-previewSpan)/2,size:Math.min(168,position.width-120)};
+  const previewSpan=direct?.span ?? Math.max(80,maxX-minX,maxY-minY)*1.5;
+  const preview=direct?{x:direct.x,y:direct.y,size:position.width}:{x:(minX+maxX-previewSpan)/2,y:(minY+maxY-previewSpan)/2,size:Math.min(168,position.width-120)};
   const previewStart=(position.width-preview.size)/2;
   const sourcePoint=(point:{x:number;y:number})=>({x:previewStart+(point.x-preview.x)/previewSpan*preview.size,y:previewStart+(point.y-preview.y)/previewSpan*preview.size});
   useLayoutEffect(()=>{
@@ -74,7 +75,7 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
     const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+(['ArrowLeft','ArrowUp'].includes(event.key)?-1:1)+buttons.length)%buttons.length;
     buttons[next]?.focus({preventScroll:true});
   }
-  return createPortal(<div ref={panel} className="ul-origin-choices" role="dialog" data-choice-kind={personal?'personal':'origin'}
+  return createPortal(<div ref={panel} className="ul-origin-choices" role="dialog" data-choice-kind={personal?'personal':'origin'} data-inset={direct?'positions':'spokes'}
     aria-label={personal?'Choose your lineup':`Choose throw from ${group.label}`}
     style={{left:position.left,top:position.top,visibility:position.ready?'visible':'hidden',maxHeight:'calc(100svh - 24px)'}}>
     <div className="ul-origin-choices-heading"><h2>{group.label}<span>{group.options.length} {personal?'lineups':'throws'}</span></h2>
@@ -90,22 +91,22 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
         </svg>
         </g>
         <rect className="ul-origin-choice-preview-frame" x={previewStart} y={previewStart} width={preview.size} height={preview.size} rx="10"/>
-        {options.map((option,index)=>{const source=sourcePoint('target' in option?option.target:option.point);return <g key={option.record.id}>
+        {!direct&&options.map((option,index)=>{const source=sourcePoint('target' in option?option.target:option.point);return <g key={option.record.id}>
           <line x1={source.x} y1={source.y} x2={points[index].x} y2={points[index].y}/>
           <circle className="ul-origin-choice-source" cx={source.x} cy={source.y} r="3"/>
         </g>;})}
       </svg>
-      {options.map(({record},index)=><button key={record.id} className="ul-origin-choice-option"
-        style={{left:points[index].x-28,top:points[index].y-22}} data-lineup-id={record.id} data-spawn-slot={personal?undefined:record.spawn?.slot}
-        title={personal?`${record.title} · your saved target`:`${record.from} · ${record.throwType} · ${record.creator||'Original source'}`}
+      {options.map((option,index)=>{const {record}=option;const approximate='point' in option && option.point.precision!=='world';return <button key={record.id} className="ul-origin-choice-option"
+        style={{left:points[index].x-(direct?22:28),top:points[index].y-22}} data-lineup-id={record.id} data-spawn-slot={personal?undefined:record.spawn?.slot} data-approximate={approximate||undefined}
+        title={personal?`${record.title} · your saved target`:`${record.from} · ${approximate?'Approximate area. Match the Position photo.':'Recorded start.'} ${record.throwType} · ${record.creator||'Original source'}`}
         aria-label={personal?`Open your lineup: ${record.title}`:`${record.from} — ${record.throwType}${record.spawn?` (${record.creator||'source'} numbering)`:''}`}
         onClick={()=>onChoose(record)}>
-        <span className="ul-origin-choice-disc">{personal?<UserRound size={20}/>:record.spawn?<span>{record.spawn.slot}</span>:<Crosshair size={20}/>}</span>
-        <span className="ul-origin-choice-label">{personal?record.title:record.spawn?record.spawn.label:record.from}</span>
-      </button>)}
+        <span className="ul-origin-choice-disc">{personal?<UserRound size={20}/>:record.spawn?<span>{record.spawn.slot}</span>:direct?<span>{/pillar/i.test(record.from)?'Pillar':'Area'}</span>:<Crosshair size={20}/>}</span>
+        {!direct&&<span className="ul-origin-choice-label">{personal?record.title:record.spawn?record.spawn.label:record.from}</span>}
+      </button>;})}
     </div>
     <div className="ul-origin-choice-footer">
-      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*PAGE_SIZE+1}–{Math.min((page+1)*PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{personal?'Open your lineup · target preview':'Choose your standing position'}</span>}
+      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*PAGE_SIZE+1}–{Math.min((page+1)*PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
     </div>
   </div>,document.body);
 }

@@ -868,6 +868,7 @@
     "expanded-cs2tricks-ancient-top-mid-from-t-spawn-1-bf6e-t": "ancient",
     "expanded-cs2tricks-ancient-ct-from-outside-main-2cec-t": "ancient",
     "expanded-cs2tricks-ancient-lane-from-ct-spawn-9cc4-ct": "ancient",
+    "expanded-cs2tricks-ancient-top-mid-from-t-spawn-2-2490-t": "ancient",
     "expanded-cs2tricks-ancient-top-mid-from-t-spawn-3-2799-t": "ancient",
     "expanded-cs2tricks-ancient-heaven-from-tspawn1-a7d2-t": "ancient",
     "expanded-cs2tricks-ancient-cave-from-ruins-5963-t": "ancient",
@@ -1620,9 +1621,9 @@
       "pinned": 187
     },
     "ancient": {
-      "records": 165,
+      "records": 166,
       "T": {
-        "Smoke": 63,
+        "Smoke": 64,
         "Flash": 12,
         "Molotov": 24,
         "HE": 2
@@ -1633,7 +1634,7 @@
         "Molotov": 13,
         "HE": 3
       },
-      "pinned": 165
+      "pinned": 166
     },
     "anubis": {
       "records": 308,

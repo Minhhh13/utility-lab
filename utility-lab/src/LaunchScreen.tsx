@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   ArrowUpRight,
   BarChart3,
   BookOpen,
+  ChevronDown,
   FlaskConical,
   Image as LandscapeIcon,
   Layers2,
 } from "lucide-react";
 import "./launch.css";
+import { LAUNCH_SCENES, SMOKE_ART, type SceneId } from "./launch-scenes";
+import LandscapeDetails from "./LandscapeDetails";
 
 type Destination = "board" | "utilities" | "playbooks" | "stats";
 type Props = {
@@ -16,28 +19,8 @@ type Props = {
   theme: "light" | "dark";
   palette: string;
   landscapeHost?: HTMLElement | null;
+  returning?: { from: Destination; keyboard: boolean };
 };
-export const LAUNCH_SCENES = [
-  {
-    id: "dust-cs1999",
-    name: "Dust · CS 1999",
-    src: "/art/launch-dust-cs1999.webp",
-    alt: "Pixel-art recreation of original Counter-Strike Dust: the 1999 bombsite, green crates and two-window sandstone tower.",
-  },
-  {
-    id: "dust-source",
-    name: "Dust · Source",
-    src: "/art/launch-dust-source.webp",
-    alt: "Pixel-art recreation of Counter-Strike Source Dust: wooden crates, stacked blocks, overhead wires and the bombsite arch.",
-  },
-  {
-    id: "dust-csgo",
-    name: "Dust · CS:GO",
-    src: "/art/launch-dust-csgo.webp",
-    alt: "Pixel-art recreation of early Counter-Strike Global Offensive Dust: the underpass stairs, blue domes and raised stone platform.",
-  },
-] as const;
-type SceneId = (typeof LAUNCH_SCENES)[number]["id"];
 const SCENE_KEY = "ul:launch-scene";
 function savedScene(): SceneId {
   try {
@@ -81,7 +64,13 @@ export default function LaunchScreen({
   theme,
   palette,
   landscapeHost,
+  returning,
 }: Props) {
+  const returnButton = useRef<HTMLButtonElement>(null);
+  const returnTo = returning?.from === "playbooks" ? "board" : returning?.from;
+  useLayoutEffect(() => {
+    if (returning?.keyboard) returnButton.current?.focus({ preventScroll: true });
+  }, [returning]);
   const [selectedSceneId, setSelectedSceneId] = useState<SceneId>(savedScene);
   const [visibleSceneId, setVisibleSceneId] =
     useState<SceneId>(selectedSceneId);
@@ -105,7 +94,10 @@ export default function LaunchScreen({
   const previousScene = LAUNCH_SCENES.find((item) => item.id === previousSceneId);
 
   useEffect(() => {
-    if (selectedSceneId === visibleSceneId && artState === "loaded") return;
+    if (selectedSceneId === visibleSceneId && artState === "loaded") {
+      setIsSelecting(false);
+      return;
+    }
     let active = true;
     const next =
       LAUNCH_SCENES.find((item) => item.id === selectedSceneId) ||
@@ -129,7 +121,7 @@ export default function LaunchScreen({
         void navigator.serviceWorker.ready.then((registration) =>
           registration.active?.postMessage({
             type: "CACHE_ART",
-            urls: [next.src, "/art/pixel-smoke.png"],
+            urls: next.group === "Classic Dust" ? [next.src, SMOKE_ART] : [next.src],
           }),
         );
       }
@@ -179,6 +171,7 @@ export default function LaunchScreen({
       data-launch-theme={theme}
       data-launch-palette={palette}
       data-scene={visibleSceneId}
+      data-return={returning ? returning.keyboard ? "keyboard" : "pointer" : undefined}
     >
       <h1 className="sr-only">Utility Lab</h1>
       <div
@@ -210,7 +203,9 @@ export default function LaunchScreen({
             decoding="async"
             hidden={artState === "failed"}
           />
+          {scene.group === "Landscapes" && artState === "loaded" && <LandscapeDetails scene={scene.id} />}
         </div>
+        {scene.group === "Classic Dust" && <>
         <div className="launch-smoke-layers" aria-hidden="true">
           <img
             className="launch-smoke smoke-near"
@@ -257,6 +252,7 @@ export default function LaunchScreen({
             />
           ))}
         </div>
+        </>}
         <div className="launch-scene-shade" aria-hidden="true" />
       </div>
       {landscapeHost &&
@@ -273,16 +269,20 @@ export default function LaunchScreen({
               id="launch-landscape"
               value={selectedSceneId}
               aria-busy={isSelecting}
-              onChange={(event) =>
-                setSelectedSceneId(event.target.value as SceneId)
-              }
+              onChange={(event) => {
+                setSceneMessage("");
+                setSelectedSceneId(event.target.value as SceneId);
+              }}
             >
-              {LAUNCH_SCENES.map((option) => (
-                <option value={option.id} key={option.id}>
-                  {option.name}
-                </option>
+              {(["Classic Dust", "Landscapes"] as const).map(group => (
+                <optgroup key={group} label={group}>
+                  {LAUNCH_SCENES.filter(option => option.group === group).map(option => (
+                    <option key={option.id} value={option.id}>{option.name}</option>
+                  ))}
+                </optgroup>
               ))}
             </select>
+            <ChevronDown size={14} className="landscape-chevron" aria-hidden="true" />
           </div>,
           landscapeHost,
         )}
@@ -300,6 +300,8 @@ export default function LaunchScreen({
             title={id === "playbooks" ? "Coming soon" : undefined}
             key={id}
             className="launch-destination"
+            ref={id === returnTo ? returnButton : undefined}
+            data-returned={id === returnTo || undefined}
             onClick={() => onNavigate(id)}
             aria-label={title}
           >

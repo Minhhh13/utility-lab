@@ -68,7 +68,7 @@ test.describe("landscape network recovery", () => {
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
     expect([...requestedArt]).toEqual(["/art/launch-dust-cs1999.webp"]);
     const landscape = page.getByLabel("Landscape", { exact: true });
-    await expect(landscape.locator("option")).toHaveCount(3);
+    await expect(landscape.locator("option")).toHaveCount(6);
     for (const choice of ["dust-csgo"]) {
       await landscape.selectOption(choice);
       await expect(page.locator(".launch-screen")).toHaveAttribute(

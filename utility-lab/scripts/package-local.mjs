@@ -8,6 +8,7 @@ import {
 import { fileURLToPath } from "node:url";
 import { join, basename, relative, sep } from "node:path";
 import { MAPS } from "../src/maps.ts";
+import { LAUNCH_SCENES } from "../src/launch-scenes.ts";
 import { BUNDLED_GUIDE_PHOTOS } from "../src/guide-library.ts";
 
 const project = fileURLToPath(new URL("../", import.meta.url));
@@ -33,6 +34,7 @@ const mapFiles = new Set(
   ),
 );
 const photoFiles = new Set(BUNDLED_GUIDE_PHOTOS);
+const landscapeFiles = new Set(LAUNCH_SCENES.map((scene) => scene.src));
 let files = 0,
   bytes = 0;
 async function copyTree(source, destination) {
@@ -49,7 +51,7 @@ async function copyTree(source, destination) {
     if (path.startsWith("lineup-media/") && !entry.isDirectory() && !photoFiles.has(`/${path}`)) continue;
     if (
       path.startsWith("art/launch-") &&
-      !/^art\/launch-dust-(cs1999|source|csgo)\.webp$/.test(path)
+      !landscapeFiles.has(`/${path}`)
     )
       continue;
     if (entry.isDirectory()) {

@@ -29,10 +29,17 @@ export async function startPersonalLineup(page:Page){
  await expect(page.getByLabel('Lineup screenshot file',{exact:true})).toBeAttached();
 }
 
-export const landingChoices = (page:Page) => page.getByRole('group',{name:'Landing locations',exact:true}).getByRole('button');
+export const landingChoices = (page:Page) => page.locator('.ul-landing-pin[role=button]');
 export const mainMarkers = (page:Page) => page.locator('.ul-map-marker:not(.ul-landing-pin)');
 export const mainMarkerGroupsForArea = (page:Page,areaId:string) => page.locator(`.ul-map-marker:not(.ul-landing-pin)[data-group-area-ids*=${JSON.stringify('"'+areaId+'"')}]`);
 export const landingChoicesForArea = (page:Page,areaId:string) => page.locator(`.ul-landing-pin[data-target-area=${JSON.stringify(areaId)}]`);
+export async function showLandingForArea(page:Page,areaId:string) {
+ const pin=landingChoicesForArea(page,areaId).first();
+ const next=page.getByRole('button',{name:'Next landing spots',exact:true});
+ while(!await pin.count()&&await next.count()&&await next.isEnabled())await next.click();
+ await expect(pin).toBeVisible();
+ return pin;
+}
 export async function expectReferenceCount(page:Page,count:number){
  await expect(page.locator('.utility-workspace')).toHaveAttribute('aria-busy','false');
  await expect(page.locator('.utility-workspace')).toHaveAttribute('data-reference-count',String(count));
@@ -101,7 +108,7 @@ export async function chooseLandingSpot(page:Page, options:{keyboard?:boolean;to
  }
  const choices=landingChoices(page);
  expect(await choices.count()).toBeGreaterThanOrEqual(1);
- const first=(options.areaId ? landingChoicesForArea(page,options.areaId) : choices).first();
+ const first=options.areaId ? await showLandingForArea(page,options.areaId) : choices.first();
  await expect(first).toBeVisible();
  const selected={id:await first.getAttribute('data-landing-id'),x:Number(await first.getAttribute('data-landing-x')),y:Number(await first.getAttribute('data-landing-y')),levelId:await first.getAttribute('data-landing-level'),label:await first.getAttribute('data-target-label')};
   if(options.keyboard){await expect(choices.first()).toBeFocused();if(options.areaId)await first.focus();await first.press('Enter');}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T13:11:11.720Z",
+  "generatedAt": "2026-11-24T14:42:11.646Z",
   "generatedLocalDate": "2026-11-25",
   "timeZone": "Australia/Sydney",
   "method": "Normalize every generated per-map JSON, then mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded). Counts are side-specific browsing records; unique source pages and image/video resources are counted separately.",
@@ -30,9 +30,9 @@
     },
     {
       "path": "src/data/expanded/ancient.json",
-      "bytes": 285223,
-      "sha256": "4733b11f402bdf63e3162c400c904c99b4d1a2b3debe89b71039355b34180240",
-      "rows": 165
+      "bytes": 288301,
+      "sha256": "8622d3bf8f0713792933aba9e53be613f3aa68e129661bcd83c6c6f04e35d002",
+      "rows": 166
     },
     {
       "path": "src/data/expanded/anubis.json",
@@ -56,44 +56,44 @@
   "generatedOrigins": [
     {
       "path": "src/data/lineup-origins/origins-mirage.json",
-      "bytes": 56130,
-      "sha256": "c0cb96fe39f9b26503b494fcad514396fccde6587119cc247d38c6e7908b7879",
+      "bytes": 56164,
+      "sha256": "7435142630dcd197dda292f11ac3287bb6b426df7c21f5930fb416c9a478254b",
       "sources": 213
     },
     {
       "path": "src/data/lineup-origins/origins-dust2.json",
-      "bytes": 49360,
-      "sha256": "e3fc77d8e94e9cbad833f279598f68ab77766a1e1f7209af6f42744fea272f62",
+      "bytes": 49507,
+      "sha256": "8de329fdc612cb072a75021c30c3931d88bc7210104a5cb964052f54d5416b33",
       "sources": 191
     },
     {
       "path": "src/data/lineup-origins/origins-inferno.json",
-      "bytes": 49213,
-      "sha256": "616de8ba616f0d30e01648d203e622393398263f84b47f52edf7f59095615abc",
+      "bytes": 49333,
+      "sha256": "114dfafb9b9bbd2799c6ba139e61ea2d1ec13bad9544e4229acd8184a65319bf",
       "sources": 189
     },
     {
       "path": "src/data/lineup-origins/origins-nuke.json",
-      "bytes": 45153,
-      "sha256": "81341fe7fe08fac4050d603fc32e2304b82c34ce557de6666293b5aa17433794",
+      "bytes": 45233,
+      "sha256": "3711e2c82657f0b861ed8bd4e012c11809f0560a356f2b4abc58565945a5bb99",
       "sources": 188
     },
     {
       "path": "src/data/lineup-origins/origins-ancient.json",
-      "bytes": 40658,
-      "sha256": "21408a97b423ee1d9162a34b94aaebd3572ffeba324c4616c9a85f6d866a19be",
-      "sources": 156
+      "bytes": 41016,
+      "sha256": "6229abfb9b1e421e9c226a5cca2399a06de024f6099d522acdba845baf65e392",
+      "sources": 157
     },
     {
       "path": "src/data/lineup-origins/origins-anubis.json",
-      "bytes": 77294,
-      "sha256": "2de04477d86bf89e99065ed72142e9e2320d229cc2278d594025dd868e517a93",
+      "bytes": 77754,
+      "sha256": "c8fd817d6e510d6527c0d381a1d8ab454caf9f70729c133516419869aecb3241",
       "sources": 306
     },
     {
       "path": "src/data/lineup-origins/origins-cache.json",
-      "bytes": 30042,
-      "sha256": "0d4a7c267737fd2b35304865ded9596b6eba8a2c9250e47eea61415a166c495a",
+      "bytes": 30242,
+      "sha256": "1d75bdab0481eca240390f06cd17a574b416e2b8defc8bd7a8658c232af38294",
       "sources": 124
     },
     {
@@ -104,15 +104,15 @@
     }
   ],
   "mainPublished": {
-    "rows": 1557,
-    "uniqueSources": 1477,
-    "completeMediaRows": 1557,
+    "rows": 1558,
+    "uniqueSources": 1478,
+    "completeMediaRows": 1558,
     "mapRows": {
       "mirage": 234,
       "dust2": 209,
       "inferno": 212,
       "nuke": 189,
-      "ancient": 165,
+      "ancient": 166,
       "anubis": 310,
       "cache": 128,
       "vertigo": 110
@@ -176,7 +176,7 @@
       },
       "ancient": {
         "T": {
-          "Smoke": 63,
+          "Smoke": 64,
           "Flash": 12,
           "Molotov": 24,
           "HE": 2
@@ -334,11 +334,11 @@
       "ancient": {
         "main": {
           "name": "Overview",
-          "rows": 165,
-          "uniqueSources": 156,
-          "registeredPins": 165,
+          "rows": 166,
+          "uniqueSources": 157,
+          "registeredPins": 166,
           "T": {
-            "Smoke": 63,
+            "Smoke": 64,
             "Flash": 12,
             "Molotov": 24,
             "HE": 2
@@ -431,40 +431,40 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1557,
-      "rowsWithAim": 1557,
-      "rowsWithPositionAndAim": 1557,
-      "mediaReferences": 5064,
-      "uniqueImages": 4791,
-      "remoteReferences": 4683,
-      "uniqueRemoteImages": 4415,
-      "bundledReferences": 381,
-      "uniqueBundledImages": 376,
+      "rowsWithPosition": 1558,
+      "rowsWithAim": 1558,
+      "rowsWithPositionAndAim": 1558,
+      "mediaReferences": 5067,
+      "uniqueImages": 4797,
+      "remoteReferences": 4685,
+      "uniqueRemoteImages": 4417,
+      "bundledReferences": 382,
+      "uniqueBundledImages": 380,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2133,
-        "landing": 1349,
-        "position": 1557,
+        "aim": 2134,
+        "landing": 1350,
+        "position": 1558,
         "release": 25
       },
       "kinds": {
         "aim": {
-          "references": 2133,
-          "uniqueImages": 2022,
-          "uniqueRemoteImages": 1993,
+          "references": 2134,
+          "uniqueImages": 2023,
+          "uniqueRemoteImages": 1994,
           "uniqueBundledImages": 29
         },
         "landing": {
-          "references": 1349,
-          "uniqueImages": 1270,
-          "uniqueRemoteImages": 1263,
+          "references": 1350,
+          "uniqueImages": 1271,
+          "uniqueRemoteImages": 1264,
           "uniqueBundledImages": 7
         },
         "position": {
-          "references": 1557,
-          "uniqueImages": 1474,
+          "references": 1558,
+          "uniqueImages": 1478,
           "uniqueRemoteImages": 1137,
-          "uniqueBundledImages": 337
+          "uniqueBundledImages": 341
         },
         "release": {
           "references": 25,
@@ -475,23 +475,23 @@
       }
     },
     "videos": {
-      "playableSourceRows": 1557,
-      "nativePrimaryRows": 751,
+      "playableSourceRows": 1558,
+      "nativePrimaryRows": 752,
       "youtubePrimaryRows": 806,
-      "uniqueNativePrimaryClips": 713,
+      "uniqueNativePrimaryClips": 714,
       "uniqueYouTubePrimaryClips": 761,
-      "uniquePrimaryClips": 1474,
-      "uniquePrimarySegments": 1474,
-      "fallbackRows": 563,
-      "uniqueFallbackClips": 525,
-      "uniquePrimaryAndFallbackClips": 1999
+      "uniquePrimaryClips": 1475,
+      "uniquePrimarySegments": 1475,
+      "fallbackRows": 564,
+      "uniqueFallbackClips": 526,
+      "uniquePrimaryAndFallbackClips": 2001
     },
     "pins": {
-      "registered": 1557,
-      "publisherDestinationRows": 1549,
+      "registered": 1558,
+      "publisherDestinationRows": 1550,
       "namedAnchorRows": 8,
       "registrationRows": {
-        "cs2tricks-ancient-main-20261109": 165,
+        "cs2tricks-ancient-main-20261109": 166,
         "cs2tricks-anubis-main-20261109": 282,
         "cs2tricks-cache-main-20261109": 80,
         "cs2tricks-dust2-main-20261109": 198,
@@ -517,8 +517,8 @@
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1557,
-      "publisherStartRows": 1549,
+      "sourceBackedRows": 1558,
+      "publisherStartRows": 1550,
       "namedOriginAreaRows": 8,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 24,
@@ -526,7 +526,7 @@
     },
     "sourceHosts": {
       "app.nadesdb.com": 1,
-      "cs2tricks.com": 1287,
+      "cs2tricks.com": 1288,
       "csnades.gg": 212,
       "gonade.app": 4,
       "setpos.gg": 50,
@@ -869,10 +869,10 @@
       "rowsWithPositionAndAim": 1283,
       "mediaReferences": 4152,
       "uniqueImages": 3903,
-      "remoteReferences": 3844,
-      "uniqueRemoteImages": 3597,
-      "bundledReferences": 308,
-      "uniqueBundledImages": 306,
+      "remoteReferences": 3843,
+      "uniqueRemoteImages": 3596,
+      "bundledReferences": 309,
+      "uniqueBundledImages": 307,
       "regionViewReferences": 1,
       "referencesByKind": {
         "aim": 1767,
@@ -896,8 +896,8 @@
         "position": {
           "references": 1283,
           "uniqueImages": 1209,
-          "uniqueRemoteImages": 938,
-          "uniqueBundledImages": 271
+          "uniqueRemoteImages": 937,
+          "uniqueBundledImages": 272
         },
         "release": {
           "references": 12,
@@ -966,15 +966,15 @@
     }
   },
   "generatedExpanded": {
-    "rows": 1553,
-    "uniqueSources": 1473,
-    "completeMediaRows": 1553,
+    "rows": 1554,
+    "uniqueSources": 1474,
+    "completeMediaRows": 1554,
     "mapRows": {
       "mirage": 234,
       "dust2": 209,
       "inferno": 212,
       "nuke": 187,
-      "ancient": 165,
+      "ancient": 166,
       "anubis": 308,
       "cache": 128,
       "vertigo": 110
@@ -1038,7 +1038,7 @@
       },
       "ancient": {
         "T": {
-          "Smoke": 63,
+          "Smoke": 64,
           "Flash": 12,
           "Molotov": 24,
           "HE": 2
@@ -1196,11 +1196,11 @@
       "ancient": {
         "main": {
           "name": "Overview",
-          "rows": 165,
-          "uniqueSources": 156,
-          "registeredPins": 165,
+          "rows": 166,
+          "uniqueSources": 157,
+          "registeredPins": 166,
           "T": {
-            "Smoke": 63,
+            "Smoke": 64,
             "Flash": 12,
             "Molotov": 24,
             "HE": 2
@@ -1293,40 +1293,40 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1553,
-      "rowsWithAim": 1553,
-      "rowsWithPositionAndAim": 1553,
-      "mediaReferences": 5049,
-      "uniqueImages": 4776,
-      "remoteReferences": 4668,
-      "uniqueRemoteImages": 4400,
-      "bundledReferences": 381,
-      "uniqueBundledImages": 376,
+      "rowsWithPosition": 1554,
+      "rowsWithAim": 1554,
+      "rowsWithPositionAndAim": 1554,
+      "mediaReferences": 5052,
+      "uniqueImages": 4782,
+      "remoteReferences": 4670,
+      "uniqueRemoteImages": 4402,
+      "bundledReferences": 382,
+      "uniqueBundledImages": 380,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2129,
-        "landing": 1345,
-        "position": 1553,
+        "aim": 2130,
+        "landing": 1346,
+        "position": 1554,
         "release": 22
       },
       "kinds": {
         "aim": {
-          "references": 2129,
-          "uniqueImages": 2018,
-          "uniqueRemoteImages": 1989,
+          "references": 2130,
+          "uniqueImages": 2019,
+          "uniqueRemoteImages": 1990,
           "uniqueBundledImages": 29
         },
         "landing": {
-          "references": 1345,
-          "uniqueImages": 1266,
-          "uniqueRemoteImages": 1259,
+          "references": 1346,
+          "uniqueImages": 1267,
+          "uniqueRemoteImages": 1260,
           "uniqueBundledImages": 7
         },
         "position": {
-          "references": 1553,
-          "uniqueImages": 1470,
+          "references": 1554,
+          "uniqueImages": 1474,
           "uniqueRemoteImages": 1133,
-          "uniqueBundledImages": 337
+          "uniqueBundledImages": 341
         },
         "release": {
           "references": 22,
@@ -1337,23 +1337,23 @@
       }
     },
     "videos": {
-      "playableSourceRows": 1553,
-      "nativePrimaryRows": 747,
+      "playableSourceRows": 1554,
+      "nativePrimaryRows": 748,
       "youtubePrimaryRows": 806,
-      "uniqueNativePrimaryClips": 709,
+      "uniqueNativePrimaryClips": 710,
       "uniqueYouTubePrimaryClips": 761,
-      "uniquePrimaryClips": 1470,
-      "uniquePrimarySegments": 1470,
-      "fallbackRows": 563,
-      "uniqueFallbackClips": 525,
-      "uniquePrimaryAndFallbackClips": 1995
+      "uniquePrimaryClips": 1471,
+      "uniquePrimarySegments": 1471,
+      "fallbackRows": 564,
+      "uniqueFallbackClips": 526,
+      "uniquePrimaryAndFallbackClips": 1997
     },
     "pins": {
-      "registered": 1553,
-      "publisherDestinationRows": 1549,
+      "registered": 1554,
+      "publisherDestinationRows": 1550,
       "namedAnchorRows": 4,
       "registrationRows": {
-        "cs2tricks-ancient-main-20261109": 165,
+        "cs2tricks-ancient-main-20261109": 166,
         "cs2tricks-anubis-main-20261109": 282,
         "cs2tricks-cache-main-20261109": 80,
         "cs2tricks-dust2-main-20261109": 198,
@@ -1379,8 +1379,8 @@
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1553,
-      "publisherStartRows": 1549,
+      "sourceBackedRows": 1554,
+      "publisherStartRows": 1550,
       "namedOriginAreaRows": 4,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 24,
@@ -1388,18 +1388,18 @@
     },
     "sourceHosts": {
       "app.nadesdb.com": 1,
-      "cs2tricks.com": 1287,
+      "cs2tricks.com": 1288,
       "csnades.gg": 212,
       "setpos.gg": 50,
       "youtube.com": 3
     }
   },
   "offlineBundledGuidePhotos": {
-    "count": 478,
-    "existingCount": 478,
-    "bytes": 106643019,
+    "count": 482,
+    "existingCount": 482,
+    "bytes": 107618070,
     "missingPaths": [],
-    "mainReferencedUniqueImages": 376,
+    "mainReferencedUniqueImages": 380,
     "assets": [
       {
         "path": "/lineup-media/kielson/cache/drzwi_1.webp",
@@ -2782,8 +2782,13 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/5962b8c2-dcb9-42f1-95dc-839db8982fa1.jpg",
-        "bytes": 211067,
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/c94e2a0b-41bd-4794-b115-3bbadc4eedfd.jpg",
+        "bytes": 244156,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/320fa0ad-84b3-471c-ab19-ddde14f7f8b5.jpg",
+        "bytes": 232577,
         "exists": true
       },
       {
@@ -2792,13 +2797,13 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/2a7f83bf-472e-4bd5-b377-91a1ea39a4aa.jpg",
-        "bytes": 171760,
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/ed1de931-69d0-460a-bdf3-502ff518d3cf.jpg",
+        "bytes": 247153,
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/06d734c7-0b48-4b06-9f03-da47caed4d09.jpg",
-        "bytes": 197921,
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/00e79293-89ce-4def-9eb1-e730df15ef35.jpg",
+        "bytes": 251165,
         "exists": true
       },
       {
@@ -2809,6 +2814,11 @@
       {
         "path": "/lineup-media/source-video-stills/cs2tricks/ancient/c3a03cfa-631a-49b0-8543-50091cf7723d.jpg",
         "bytes": 232870,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/06d734c7-0b48-4b06-9f03-da47caed4d09.jpg",
+        "bytes": 197921,
         "exists": true
       },
       {
@@ -2824,6 +2834,16 @@
       {
         "path": "/lineup-media/source-video-stills/cs2tricks/ancient/efd56b35-10d3-4502-86fb-d944861ff2c2.jpg",
         "bytes": 214137,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/5962b8c2-dcb9-42f1-95dc-839db8982fa1.jpg",
+        "bytes": 211067,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/2a7f83bf-472e-4bd5-b377-91a1ea39a4aa.jpg",
+        "bytes": 171760,
         "exists": true
       },
       {

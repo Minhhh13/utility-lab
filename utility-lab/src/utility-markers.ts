@@ -14,12 +14,6 @@ export type UtilityMarkerGroup = {
   records: UtilityReference[];
 };
 export type MarkerLayoutBounds = { x: number; y: number; width: number; height: number };
-export type LaidOutUtilityMarker = UtilityMarkerGroup & {
-  /** Badge-only position. Draw its leader back to unchanged x/y when offset. */
-  displayX: number;
-  displayY: number;
-  inView: boolean;
-};
 export type UtilityAreaCluster = UtilityMarkerGroup & {
   /** Every named area stays available behind this fixed-position badge. */
   areas: UtilityMarkerGroup[];
@@ -173,52 +167,4 @@ export function clusterUtilityAreas(
       areas,
     };
   });
-}
-
-/** Deterministic badge layout, never altered grenade positions. Effective
- * bounds include SVG letterboxing. Offscreen anchors remain offscreen. */
-export function layoutUtilityMarkers(groups: UtilityMarkerGroup[], mapUnit: number, bounds: MarkerLayoutBounds): LaidOutUtilityMarker[] {
-  const results = groups.map(group => ({ ...group, displayX: group.x, displayY: group.y, inView: false }));
-  if (![bounds.x, bounds.y, bounds.width, bounds.height, mapUnit].every(Number.isFinite) ||
-      bounds.width <= 0 || bounds.height <= 0 || mapUnit <= 0) return results;
-  const spacing = 46 * mapUnit, radius = spacing / 2;
-  const minX = bounds.x + Math.min(radius, bounds.width / 2), maxX = bounds.x + bounds.width - Math.min(radius, bounds.width / 2);
-  const minY = bounds.y + Math.min(radius, bounds.height / 2), maxY = bounds.y + bounds.height - Math.min(radius, bounds.height / 2);
-  const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value));
-  const visible = results.filter(group => group.x >= bounds.x && group.x <= bounds.x + bounds.width &&
-    group.y >= bounds.y && group.y <= bounds.y + bounds.height).sort((a, b) =>
-      a.areaId.localeCompare(b.areaId, "en") || a.x - b.x || a.y - b.y || a.id.localeCompare(b.id, "en"));
-  const cells: {x: number; y: number}[] = [];
-  for (let y = minY; y <= maxY + .001; y += spacing)
-    for (let x = minX; x <= maxX + .001; x += spacing) cells.push({ x, y });
-  const placed: {x: number; y: number}[] = [];
-  const clear = (point: {x: number; y: number}) => placed.every(old =>
-    (point.x - old.x) ** 2 + (point.y - old.y) ** 2 >= spacing ** 2 - .001);
-  let needsGrid = false;
-  for (const group of visible) {
-    const desired = { x: clamp(group.x, minX, maxX), y: clamp(group.y, minY, maxY) };
-    const ranked = clear(desired) ? [desired] : [...cells].sort((a, b) =>
-      ((a.x - group.x) ** 2 + (a.y - group.y) ** 2) - ((b.x - group.x) ** 2 + (b.y - group.y) ** 2) || a.y - b.y || a.x - b.x);
-    const point = ranked.find(clear);
-    if (!point) { needsGrid = true; break; }
-    group.displayX = point.x; group.displayY = point.y; group.inView = true; placed.push(point);
-  }
-  // Exact positions can block a grid despite sufficient space. Assign all
-  // visible badges to nearest free cells only in that dense fallback case.
-  if (needsGrid && cells.length >= visible.length) {
-    const free = [...cells];
-    for (const group of visible) {
-      let best = 0, distance = Infinity;
-      for (let i = 0; i < free.length; i++) {
-        const next = (free[i].x - group.x) ** 2 + (free[i].y - group.y) ** 2;
-        if (next < distance) { best = i; distance = next; }
-      }
-      const [point] = free.splice(best, 1);
-      group.displayX = point.x; group.displayY = point.y; group.inView = true;
-    }
-  } else if (needsGrid) {
-    // Impossible caller bounds must not silently discard locations.
-    for (const group of visible) group.inView = true;
-  }
-  return results;
 }

@@ -27,10 +27,18 @@
   :root[data-navigation-input="pointer"] .ul-media-tabs button:not([aria-pressed="true"])>svg {
     opacity:.75;
   }
+  .app-shell[data-entered-from-home="pointer"] :is(.global-nav-item,.phone-tabs button)[aria-selected="true"]>svg {
+    animation:workspace-icon-arrives 180ms var(--ease-out);
+  }
   :root[data-navigation-input="pointer"] .ul-origin-choices {
     transition:opacity var(--workspace-duration) var(--ease-out);
     @starting-style {opacity:.64;}
   }
+}
+
+@keyframes workspace-icon-arrives {
+  from { transform:translateY(3px) scale(.9); opacity:.55; }
+  to { transform:translateY(0) scale(1); opacity:1; }
 }
 
 /* Keyboard input cancels any pointer feedback immediately, including release. */

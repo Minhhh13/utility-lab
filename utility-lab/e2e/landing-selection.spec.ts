@@ -62,7 +62,11 @@ test('keyboard group, utility, landing and source selection keeps focus and skip
  await landing.press('Enter');
  const source=sourcePins(page).first();await expect(source).toBeVisible();await expect(source).toBeFocused();
  await expect(page.locator('.ul-origin-glyph.can-animate')).toHaveCount(0);
- await openOriginPhoto(page,{keyboard:true});await expect(page.locator('.ul-media-dialog')).toBeVisible();
+ const opened = await openOriginPhoto(page,{keyboard:true});await expect(page.locator('.ul-media-dialog')).toBeVisible();
+ await page.keyboard.press('Escape');
+ await expect(opened.pin).toBeFocused();
+ await opened.pin.press('Escape');
+ await expect(mainMarkerGroupsForArea(page,'cache:main:mid').first()).toBeFocused();
 });
 
 test('a singleton saved guide opens standing positions directly and still waits before photos',async({page})=>{
@@ -94,4 +98,25 @@ test('320px phone can select a landing spot before a source without overflow',as
  await expect(page.getByRole('button',{name:'Close lineup media',exact:true})).toBeInViewport();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(320);
  await page.screenshot({path:info.outputPath('landing-phone-viewer-320.png')});
+});
+
+test('a queued native dialog close cannot blank a newly opened guide', async ({page}) => {
+ const record = PUBLISHED_LINEUPS.find(row => row.id === 'expanded-cs2tricks-cache-a-main-from-quad-b906-ct')!;
+ await isolateMedia(page);
+ await page.addInitScript(({key,id}) => localStorage.setItem(key, JSON.stringify([id])), {key:FAVORITE_UTILITIES_KEY,id:record.id});
+ await page.goto('/#utilities?map=cache&level=main&side=CT');
+ await expect(page.locator('.utility-workspace')).toHaveAttribute('aria-busy','false');
+ await page.getByRole('button',{name:/^Saved /}).click();
+ await page.locator('.ul-map-marker .ul-marker-hit').click();
+ const {pin} = await openOriginPhoto(page, {recordId:record.id});
+ const viewer = page.getByRole('dialog',{name:record.title,exact:true});
+ await viewer.getByRole('button',{name:'Close lineup media',exact:true}).click();
+ await pin.press('Enter');
+ await expect(viewer).toBeVisible();
+ // A dialog close event is queued by the browser. Deliver one after reopen
+ // deterministically, independent of the two automation calls' frame timing.
+ await viewer.dispatchEvent('close');
+ await expect(viewer.locator('.ul-photo-canvas img')).toHaveAttribute('src',utilityPhotos(record)[0].image);
+ await page.keyboard.press('Escape');
+ await expect(viewer).toBeHidden();
 });

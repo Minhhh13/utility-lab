@@ -17,4 +17,11 @@
 .ul-origin-choice-disc{flex:0 0 44px;font-size:16px;font-weight:650;font-variant-numeric:tabular-nums}
 .ul-origin-choice-label{position:relative;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;box-sizing:border-box;width:max-content;max-width:80px;min-width:56px;padding:2px 4px;border-radius:4px;background:var(--surface-raised);color:var(--text);font-size:11px;line-height:1.3;font-weight:500;overflow-wrap:anywhere}
 .ul-origin-choice-footer{display:flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;min-height:44px;padding:0 4px;border-radius:12px;background:var(--surface-raised);color:var(--muted);font-size:12px}
+.ul-origin-choices[data-inset="positions"]{background:var(--surface-raised);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 28px rgb(0 0 0 / 14%);box-sizing:content-box}
+.ul-origin-choices[data-inset="positions"] .ul-origin-choice-options{margin:0}
+.ul-origin-choices[data-inset="positions"] .ul-origin-choice-option{width:44px;height:44px;justify-content:center;border-radius:50%;clip-path:circle(50%)}
+.ul-origin-choices[data-inset="positions"] .ul-origin-choice-option:focus-visible .ul-origin-choice-disc{outline:2px solid var(--accent);outline-offset:2px}
+.ul-origin-choices[data-inset="positions"] .ul-origin-choice-disc{width:32px;height:32px;flex-basis:32px;font-size:14px}
+.ul-origin-choices[data-inset="positions"] .ul-origin-choice-option:where(:not([data-spawn-slot])) .ul-origin-choice-disc{width:40px;font-size:11px}
+.ul-origin-choice-option[data-approximate] .ul-origin-choice-disc{border-style:dashed}
 @media(hover:hover) and (pointer:fine){.ul-origin-choice-option:hover .ul-origin-choice-disc{background:var(--accent-soft)}.ul-origin-choices-heading>button:hover,.ul-origin-choice-footer>button:hover{background:var(--accent-soft)}}

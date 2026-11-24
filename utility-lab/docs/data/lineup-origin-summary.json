@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-24",
-  "completeGuides": 1557,
-  "withOrigins": 1557,
-  "uniqueSources": 1477,
-  "publisherOrigins": 1549,
+  "checkedAt": "2026-11-25",
+  "completeGuides": 1558,
+  "withOrigins": 1558,
+  "uniqueSources": 1478,
+  "publisherOrigins": 1550,
   "namedOriginAreas": 8,
   "crossFloorGuides": [
     "cs2tricks-nuke-new-end-he-from-ramp",
@@ -35,44 +35,44 @@
     "mirage": {
       "entries": 234,
       "uniqueSources": 213,
-      "bytes": 56130,
-      "sha256": "c0cb96fe39f9b26503b494fcad514396fccde6587119cc247d38c6e7908b7879"
+      "bytes": 56164,
+      "sha256": "7435142630dcd197dda292f11ac3287bb6b426df7c21f5930fb416c9a478254b"
     },
     "dust2": {
       "entries": 209,
       "uniqueSources": 191,
-      "bytes": 49360,
-      "sha256": "e3fc77d8e94e9cbad833f279598f68ab77766a1e1f7209af6f42744fea272f62"
+      "bytes": 49507,
+      "sha256": "8de329fdc612cb072a75021c30c3931d88bc7210104a5cb964052f54d5416b33"
     },
     "inferno": {
       "entries": 212,
       "uniqueSources": 189,
-      "bytes": 49213,
-      "sha256": "616de8ba616f0d30e01648d203e622393398263f84b47f52edf7f59095615abc"
+      "bytes": 49333,
+      "sha256": "114dfafb9b9bbd2799c6ba139e61ea2d1ec13bad9544e4229acd8184a65319bf"
     },
     "nuke": {
       "entries": 189,
       "uniqueSources": 188,
-      "bytes": 45153,
-      "sha256": "81341fe7fe08fac4050d603fc32e2304b82c34ce557de6666293b5aa17433794"
+      "bytes": 45233,
+      "sha256": "3711e2c82657f0b861ed8bd4e012c11809f0560a356f2b4abc58565945a5bb99"
     },
     "ancient": {
-      "entries": 165,
-      "uniqueSources": 156,
-      "bytes": 40658,
-      "sha256": "21408a97b423ee1d9162a34b94aaebd3572ffeba324c4616c9a85f6d866a19be"
+      "entries": 166,
+      "uniqueSources": 157,
+      "bytes": 41016,
+      "sha256": "6229abfb9b1e421e9c226a5cca2399a06de024f6099d522acdba845baf65e392"
     },
     "anubis": {
       "entries": 310,
       "uniqueSources": 306,
-      "bytes": 77294,
-      "sha256": "2de04477d86bf89e99065ed72142e9e2320d229cc2278d594025dd868e517a93"
+      "bytes": 77754,
+      "sha256": "c8fd817d6e510d6527c0d381a1d8ab454caf9f70729c133516419869aecb3241"
     },
     "cache": {
       "entries": 128,
       "uniqueSources": 124,
-      "bytes": 30042,
-      "sha256": "0d4a7c267737fd2b35304865ded9596b6eba8a2c9250e47eea61415a166c495a"
+      "bytes": 30242,
+      "sha256": "1d75bdab0481eca240390f06cd17a574b416e2b8defc8bd7a8658c232af38294"
     },
     "vertigo": {
       "entries": 110,

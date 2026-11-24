@@ -5,6 +5,7 @@ const PHOTO_CACHE = "ul-viewed-photos-v1";
 const PHOTO_LIMIT = 12;
 const PHOTO_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
 const PHOTO_PENDING_AGE = 2 * 60 * 1000;
+const launchArt = /^\/art\/(?:pixel-smoke\.png|launch-(?:dust-(?:cs1999|source|csgo)|dunes|foundry|temple)\.webp)$/;
 const pendingPhotos = new Map();
 const photoRetries = new Map();
 let photoWrites = Promise.resolve();
@@ -197,8 +198,7 @@ self.addEventListener("message", (event) => {
       (url) =>
         typeof url === "string" &&
         (/^\/(maps|map-thumbnails)\/[a-zA-Z0-9_.-]+\.(svg|png)$/.test(url) ||
-          url === "/art/pixel-smoke.png" ||
-          /^\/art\/launch-dust-(cs1999|source|csgo)\.webp$/.test(url) ||
+          launchArt.test(url) ||
           /^\/lineup-media\/(?:[a-zA-Z0-9_-]+\/)+[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/.test(
             url,
           )),
@@ -236,13 +236,14 @@ self.addEventListener("message", (event) => {
     const urls = event.data.urls.filter(
       (url) =>
         typeof url === "string" &&
-        (url === "/art/pixel-smoke.png" ||
-          /^\/art\/launch-dust-(cs1999|source|csgo)\.webp$/.test(url)),
+        launchArt.test(url),
     );
     event.waitUntil(
       caches
         .open(CACHE)
-        .then((cache) => cache.addAll(urls))
+        .then((cache) => Promise.all(urls.map(async (url) => {
+          if (!await cache.match(url, { ignoreVary: true })) await cache.add(url);
+        })))
         .catch(() => {}),
     );
     return;

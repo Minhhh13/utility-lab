@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { clusterUtilityAreas, groupUtilityMarkers, layoutUtilityMarkers, splitUtilityDestinations, utilityMarkerArea } from "../src/utility-markers.ts";
+import { clusterUtilityAreas, groupUtilityMarkers, splitUtilityDestinations, utilityMarkerArea } from "../src/utility-markers.ts";
+import { layoutLandingSpots, nameLandingSpots } from "../src/landing-map-layout.ts";
 import { UTILITY_REFERENCES } from "../src/utility-data.ts";
 import { PHOTO_GUIDE_LIBRARY } from "../src/guide-library.ts";
 import { normalizeExpandedGuides, mergePhotoGuides } from "../src/expanded-guide-model.ts";
@@ -71,7 +72,7 @@ test("nearby different callouts never combine; zoom only separates qualifiers of
 });
 
 test("every researched main area and every plotted guide remains represented across zoom on all maps", () => {
-  assert.equal(published.length, 1557);
+  assert.equal(published.length, 1558);
   for (const records of contexts) {
     const pinned = records.filter(record => record.showMarker !== false);
     const expectedAreas = [...new Set(pinned.map(record => utilityMarkerArea(record).id))].sort();
@@ -87,36 +88,65 @@ test("every researched main area and every plotted guide remains represented acr
   }
 });
 
-test("all-map overview badges have separate 46px hit centres while source anchors remain unchanged", () => {
-  for (const records of contexts) for (const unit of [1.5, 2, 3]) {
-    const groups = groupUtilityMarkers(records, unit);
-    const before = JSON.stringify(groups);
-    const layout = layoutUtilityMarkers(groups, unit, { x: 0, y: 0, width: 1000, height: 1000 });
-    assert.equal(layout.length, groups.length);
-    assert.equal(JSON.stringify(groups), before, "layout does not mutate target records");
-    assert.deepEqual(layoutUtilityMarkers(groups, unit, { x: 0, y: 0, width: 1000, height: 1000 }), layout);
-    for (const [index, marker] of layout.entries()) {
-      assert.equal(marker.x, groups[index].x); assert.equal(marker.y, groups[index].y);
-      assert.ok(marker.inView);
-      assert.ok(marker.displayX >= 23 * unit && marker.displayX <= 1000 - 23 * unit);
-      assert.ok(marker.displayY >= 23 * unit && marker.displayY <= 1000 - 23 * unit);
-      for (const other of layout.slice(index + 1))
-        assert.ok(Math.hypot(marker.displayX - other.displayX, marker.displayY - other.displayY) >= 46 * unit - .001,
-          `${records[0].mapId}/${records[0].side}/${unit}: ${marker.label} and ${other.label}`);
+test("all maps retain every landing and its coordinates behind separated, labelled touch targets", () => {
+  const checked = new Set<string>();
+  let paginated = 0;
+  for (const map of maps) for (const side of ["T", "CT"]) {
+    const mapSide = published.filter(record => record.mapId === map && record.side === side);
+    for (const level of new Set(mapSide.map(record => record.levelId))) for (const width of [320, 1440]) {
+      const unit = 1000 / width, bounds = { x: 0, y: 0, width: 1000, height: 1000 + 200 * unit };
+      const groups = groupUtilityMarkers(mapSide.filter(record => record.levelId === level), unit, true);
+      for (const area of clusterUtilityAreas(groups, unit)) for (const type of ["Smoke", "Flash", "Molotov", "HE"]) {
+        const destinations = splitUtilityDestinations(area.records.filter(record => record.type === type));
+        if (destinations.length < 2) continue;
+        const names = nameLandingSpots(destinations), seen: string[] = [];
+        const dock = { x: 0, y: 0, width, height: width === 320 ? 136 : 48 };
+        const layout = (page: number) => layoutLandingSpots(names, bounds, unit, 144, [dock], page);
+        const first = layout(0);
+        if (first.pages > 1) paginated++;
+        for (let page = 0; page < first.pages; page++) {
+          const current = layout(page);
+          assert.deepEqual(current.pager, first.pager, "paging controls stay still");
+          const positions = current.callouts.map(item => item.center);
+          if (current.pager) positions.push(current.pager);
+          for (const [index, point] of positions.entries()) {
+            assert.ok(point.y - 22 >= dock.height && point.x >= current.chipWidth / 2);
+            assert.ok(point.x <= width - current.chipWidth / 2 && point.y + 22 <= bounds.height / unit);
+            for (const other of positions.slice(index + 1))
+              assert.ok(Math.abs(point.x-other.x) >= current.chipWidth || Math.abs(point.y-other.y) >= 44);
+          }
+          for (const {group, point} of current.callouts) {
+            seen.push(group.id);
+            assert.ok(Math.abs(group.x - point.x * unit) < .0001 && Math.abs(group.y - point.y * unit) < .0001);
+          }
+        }
+        assert.deepEqual(seen.sort(), destinations.map(item => item.id).sort());
+        checked.add(map);
+      }
     }
   }
+  assert.deepEqual([...checked].sort(), [...maps].sort());
+  assert.ok(paginated > 0);
 });
 
-test("zoomed offscreen locations stay offscreen rather than being clamped into visible badges", () => {
-  const base = { ...UTILITY_REFERENCES[0], mapId: "dust2", levelId: "main", side: "T" as const };
-  const groups = groupUtilityMarkers([
-    { ...base, id: "visible", target: "Mid Doors", x: 300, y: 300 },
-    { ...base, id: "outside", target: "Long Doors", x: 900, y: 900 },
-  ], 1);
-  const layout = layoutUtilityMarkers(groups, 1, { x: 200, y: 200, width: 400, height: 400 });
-  assert.equal(layout[0].inView, true);
-  assert.equal(layout[1].inView, false);
-  assert.equal(layout[1].displayX, 900); assert.equal(layout[1].displayY, 900);
+test("landing captions follow a normal pan and never clamp an offscreen destination into view", () => {
+  const base = { ...UTILITY_REFERENCES[0], mapId: "nuke", levelId: "upper", side: "T" as const };
+  const groups = splitUtilityDestinations([
+    { ...base, id: "outside-one", target: "Outside", x: 600, y: 600 },
+    { ...base, id: "outside-two", target: "Outside", x: 605, y: 609 },
+    { ...base, id: "invisible", target: "Outside Garage", x: 1400, y: 300 },
+  ]);
+  const names = nameLandingSpots(groups), reversed = nameLandingSpots([...groups].reverse());
+  assert.deepEqual(names.map(item => item.ordinal), [1, 2, undefined]);
+  assert.deepEqual(names.map(item => item.ordinal), reversed.reverse().map(item => item.ordinal));
+  const view = { x: 0, y: 0, width: 1280, height: 960 };
+  const before = layoutLandingSpots(names, view, 1, 144, []);
+  const after = layoutLandingSpots(names, { ...view, x: 12, y: 8 }, 1, 144, []);
+  assert.deepEqual(before.callouts.map(item => item.group.id), groups.slice(0,2).map(item => item.id));
+  for (const [i, item] of after.callouts.entries()) {
+    assert.equal(item.center.x, before.callouts[i].center.x - 12);
+    assert.equal(item.center.y, before.callouts[i].center.y - 8);
+  }
 });
 
 test("grouping follows the 46px target hit area at each map scale", () => {

@@ -1,0 +1,424 @@
+{
+  "reviewDate": "2026-11-25",
+  "radars": {
+    "ancient": {
+      "page": "https://setpos.gg/ancient",
+      "radar": "https://setpos.gg/radars/ancient/radar.svg?v=9d932c8926c7",
+      "sourceRadarSha256": "9d932c8926c764a673f2e4fec9679d2557767aa418dea3843743a7feca310270",
+      "artwork": "/maps/ancient.svg",
+      "artworkSha256": "20cd3ba00d5b63475c95da3056ed332fe0434762317967fb29c56bf054bb9e2b",
+      "levelId": "main",
+      "posX": -2953,
+      "posY": 2164,
+      "scale": 5,
+      "radarSize": 1024
+    },
+    "mirage": {
+      "page": "https://setpos.gg/mirage",
+      "radar": "https://setpos.gg/radars/mirage/radar.svg?v=fd84771c40bd",
+      "sourceRadarSha256": "fd84771c40bd3241f1bee943322cbac8f3e095a3c1f5a2656a6677caf12566ba",
+      "artwork": "/maps/mirage.svg",
+      "artworkSha256": "296afd4af266486cf19a81201f38d45091b5e6911a95be1a87330d6bd7ba8046",
+      "levelId": "main",
+      "posX": -3230,
+      "posY": 1713,
+      "scale": 5,
+      "radarSize": 1024
+    },
+    "dust2": {
+      "page": "https://setpos.gg/dust2",
+      "radar": "https://setpos.gg/radars/dust2/radar.svg?v=67567a57127c",
+      "sourceRadarSha256": "67567a57127ca82b0d3d3c7e84fad353611f6ab8c34e5751587389dbcb889a1c",
+      "artwork": "/maps/dust2.svg",
+      "artworkSha256": "ae4e029057aea36ac33376d5cdf9d1765b70d1059eb87f4ef6cdfd1b06d9ee56",
+      "levelId": "main",
+      "posX": -2476,
+      "posY": 3239,
+      "scale": 4.4,
+      "radarSize": 1024
+    }
+  },
+  "records": [
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e",
+      "mapId": "ancient",
+      "guideId": "c94e2a0b-41bd-4794-b115-3bbadc4eedfd",
+      "originId": "d52e8b13-6bd2-4f8a-bb0f-891e7905d527",
+      "creatorSlot": 1,
+      "world": {
+        "x": -328,
+        "y": -2288
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/71dc8905-6070-4b62-bc4d-3cc5a2b50771_spawn%201.mp4",
+      "frameSeconds": 0.15,
+      "frameSha256": "507c298d11de03a7c0ca09af565300b62665eafc63ea3b884aaddd51bc165c50",
+      "reference": "https://setpos.gg/ancient/donut/t5",
+      "referenceSlot": 5,
+      "referenceLineupId": 177,
+      "referenceFrame": "https://media.setpos.gg/renders/f60ad1ae-8eb4-415b-ac69-bb65a6e2d9eb/18fef646-cb6f-451c-8b6c-beaf9d7c1fe7/guide-aim-aim-93b80597e30be0f4d63c8f63704f2763110db63bcb3127355e1e51457a88da3b.webp",
+      "referenceFrameSha256": "93b80597e30be0f4d63c8f63704f2763110db63bcb3127355e1e51457a88da3b",
+      "viewMatch": {
+        "descriptorMatches": 976,
+        "rotationInliers": 946,
+        "frameCoverage": 0.6,
+        "medianBearingErrorDegrees": 0.039,
+        "highestOtherSpawnInliers": 12
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-2-2490",
+      "mapId": "ancient",
+      "guideId": "320fa0ad-84b3-471c-ab19-ddde14f7f8b5",
+      "originId": "8a9c6593-4a57-4b45-a0ce-342e5a412c66",
+      "creatorSlot": 2,
+      "world": {
+        "x": -456,
+        "y": -2288
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/50132c87-8c56-474d-aaf2-ad0a6f3f73f7_spawn%202.mp4",
+      "frameSeconds": 0.15,
+      "frameSha256": "3e6b97b3fdd10f31be61d82aa167152c38e4da5942e24e0492852291a4a8b9cf",
+      "reference": "https://setpos.gg/ancient/red-room/t3",
+      "referenceSlot": 3,
+      "referenceLineupId": 51,
+      "referenceFrame": "https://media.setpos.gg/renders/c87fe713-39be-4d7b-9e81-98af1aab0d94/ceb223a0-e60a-41a5-9e50-6f6737146b94/guide-aim-aim-85eb1a1490bc6b26aa997d6807a0690f2ba965046414c0a97deba99a2b9149a5.webp",
+      "referenceFrameSha256": "85eb1a1490bc6b26aa997d6807a0690f2ba965046414c0a97deba99a2b9149a5",
+      "viewMatch": {
+        "descriptorMatches": 1078,
+        "rotationInliers": 1048,
+        "frameCoverage": 0.62,
+        "medianBearingErrorDegrees": 0.038,
+        "highestOtherSpawnInliers": 40
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799",
+      "mapId": "ancient",
+      "guideId": "31f68cca-bf4a-44c4-99e4-394f022eb550",
+      "originId": "16fddf2a-408b-4960-a172-231e37856443",
+      "creatorSlot": 3,
+      "world": {
+        "x": -584,
+        "y": -2288
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/409b0208-2470-4544-9fa0-7b5bef1b48aa_spawn%203.mp4",
+      "frameSeconds": 0.15,
+      "frameSha256": "d006c6dbce49a3c0f96bcbd2cce6deee02bbb10c80796817900fd21dfd654595",
+      "reference": "https://setpos.gg/ancient/donut/t1",
+      "referenceSlot": 1,
+      "referenceLineupId": 119,
+      "referenceFrame": "https://media.setpos.gg/renders/d459f2e2-4732-4f01-abf2-00afb1be6a40/507c7d1d-12cb-4f86-b7a2-e9e350dbc135/guide-aim-aim-16f36d3ddfb4a01e397bb6d6557e224dc80700a634b69bf3aa13da697348ef4b.webp",
+      "referenceFrameSha256": "16f36d3ddfb4a01e397bb6d6557e224dc80700a634b69bf3aa13da697348ef4b",
+      "viewMatch": {
+        "descriptorMatches": 190,
+        "rotationInliers": 184,
+        "frameCoverage": 0.18,
+        "medianBearingErrorDegrees": 0.063,
+        "highestOtherSpawnInliers": 71
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20",
+      "mapId": "ancient",
+      "guideId": "ed1de931-69d0-460a-bdf3-502ff518d3cf",
+      "originId": "41f2735e-2f69-464f-8fdc-8a8fbf1fcff2",
+      "creatorSlot": 4,
+      "world": {
+        "x": -392,
+        "y": -2224
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/8ab42b4c-45c7-419d-b13e-36828c3e2f3a_spawn%204.mp4",
+      "frameSeconds": 0.15,
+      "frameSha256": "f4d41d60091cda2f015b3eb9cd6aeab8fe76a68f92c522a88401db5a69d6e52c",
+      "reference": "https://setpos.gg/ancient/red-room/t4",
+      "referenceSlot": 4,
+      "referenceLineupId": 49,
+      "referenceFrame": "https://media.setpos.gg/renders/4970006b-5dbb-4646-b9eb-99f5bca51a20/8350dac6-307d-4a75-b999-27c80c50b635/guide-aim-aim-c8eb079adff7c1e8db25d897346e287ec694d2dbc23acbebf0e16770985e6366.webp",
+      "referenceFrameSha256": "c8eb079adff7c1e8db25d897346e287ec694d2dbc23acbebf0e16770985e6366",
+      "viewMatch": {
+        "descriptorMatches": 763,
+        "rotationInliers": 739,
+        "frameCoverage": 0.6,
+        "medianBearingErrorDegrees": 0.038,
+        "highestOtherSpawnInliers": 36
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3",
+      "mapId": "ancient",
+      "guideId": "00e79293-89ce-4def-9eb1-e730df15ef35",
+      "originId": "ca6a50cd-a94a-45d6-8eac-8b6db5160e9b",
+      "creatorSlot": 5,
+      "world": {
+        "x": -520,
+        "y": -2224
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/2a0df7cd-6f5e-4a4b-9623-383387f2394a_spawn%205.mp4",
+      "frameSeconds": 0.15,
+      "frameSha256": "e6be8383593018b24dbb59cdaa218a0ec2832a08b2269d05fd7ef90aafdf0c34",
+      "reference": "https://setpos.gg/ancient/red-room/t2",
+      "referenceSlot": 2,
+      "referenceLineupId": 48,
+      "referenceFrame": "https://media.setpos.gg/renders/88eca167-e089-4969-bd5f-999f5e96c369/f576d5aa-63dc-486a-b646-97f68935fc28/guide-aim-aim-92735f70c9823c3b074c45274ae74b0e54ad627ed039bc2b74191e9c85d9600e.webp",
+      "referenceFrameSha256": "92735f70c9823c3b074c45274ae74b0e54ad627ed039bc2b74191e9c85d9600e",
+      "viewMatch": {
+        "descriptorMatches": 1109,
+        "rotationInliers": 1051,
+        "frameCoverage": 0.64,
+        "medianBearingErrorDegrees": 0.039,
+        "highestOtherSpawnInliers": 33
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
+      "mapId": "ancient",
+      "guideId": "761c8da9-2110-4bbb-a815-e77b46adb59d",
+      "originId": "0b097990-4cb4-4519-b2d0-b933f0470baf",
+      "creatorSlot": 1,
+      "world": {
+        "x": -192,
+        "y": 1696
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/0e7363fb-fac9-47f1-9aa3-f8d723641c05_0919(8).mp4",
+      "frameSeconds": 1.75,
+      "frameSha256": "e19cbd84417bf6ea8fc7319ab70611bd996c8f8846f2ad3bbbcd5bcbc050edd4",
+      "reference": "https://setpos.gg/ancient/catwalk/ct1",
+      "referenceSlot": 1,
+      "referenceLineupId": 152,
+      "referenceFrame": "https://media.setpos.gg/renders/19e468b8-04cd-440c-9709-da8e2d1af07c/a803f840-35d9-47fe-a8c6-7a8368650020/guide-aim-aim-69ce5e20cd551f76ba9dfeb3b439b96ea89bef3b746008ee135c49bd87a26763.webp",
+      "referenceFrameSha256": "69ce5e20cd551f76ba9dfeb3b439b96ea89bef3b746008ee135c49bd87a26763",
+      "viewMatch": {
+        "descriptorMatches": 225,
+        "rotationInliers": 210,
+        "frameCoverage": 0.33,
+        "medianBearingErrorDegrees": 0.06,
+        "highestOtherSpawnInliers": 33
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
+      "mapId": "ancient",
+      "guideId": "bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe",
+      "originId": "7a8635c3-1238-4c8b-82ab-131fb59c18d9",
+      "creatorSlot": 2,
+      "world": {
+        "x": -256,
+        "y": 1728
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/174f2407-a14c-4b86-b3cc-de47a317b4da_0919(7).mp4",
+      "frameSeconds": 2.5,
+      "frameSha256": "e0538ace5881a0c6210d61f289ae97f9501a48fd0cc7a0cbd88d75a414fd1c39",
+      "reference": "https://setpos.gg/ancient/elbow/ct2",
+      "referenceSlot": 2,
+      "referenceLineupId": 45,
+      "referenceFrame": "https://media.setpos.gg/renders/6efe6acd-27bb-4702-909f-9b1dbed13ef3/d54c8ac4-2ade-4d43-9955-5c8f8caf65e4/guide-aim-aim-3792dbe8bb2b9189f1a80a9a540f74c2ad608a21e6bb0c3f0177d6ac0e386cb4.webp",
+      "referenceFrameSha256": "3792dbe8bb2b9189f1a80a9a540f74c2ad608a21e6bb0c3f0177d6ac0e386cb4",
+      "viewMatch": {
+        "descriptorMatches": 593,
+        "rotationInliers": 574,
+        "frameCoverage": 0.67,
+        "medianBearingErrorDegrees": 0.05,
+        "highestOtherSpawnInliers": 56
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
+      "mapId": "ancient",
+      "guideId": "7cbf25f4-5710-4974-80f9-abd7a898ad48",
+      "originId": "19ef3ed2-1c1e-446b-9f16-eb34b5c0656e",
+      "creatorSlot": 3,
+      "world": {
+        "x": -352,
+        "y": 1728
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/8933dadc-c1c6-43f5-8ff1-538898e34eb1_0919(6).mp4",
+      "frameSeconds": 1.75,
+      "frameSha256": "0e4490b91b3ed20a0fb324a149886f8638a141b18b98fadd9d9db355e5aceb60",
+      "reference": "https://setpos.gg/ancient/elbow/ct3",
+      "referenceSlot": 3,
+      "referenceLineupId": 44,
+      "referenceFrame": "https://media.setpos.gg/renders/a8a8c66f-3e85-44d4-b051-ad505b6fca14/f022b380-e609-40cf-97f6-b2741a7287e7/guide-aim-aim-e77dfc48e5c3b4e55928515ded440f7769daa5c8e53e5efff767bca9891994df.webp",
+      "referenceFrameSha256": "e77dfc48e5c3b4e55928515ded440f7769daa5c8e53e5efff767bca9891994df",
+      "viewMatch": {
+        "descriptorMatches": 463,
+        "rotationInliers": 449,
+        "frameCoverage": 0.6,
+        "medianBearingErrorDegrees": 0.043,
+        "highestOtherSpawnInliers": 55
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
+      "mapId": "ancient",
+      "guideId": "8ee5a6fb-7370-4f53-b423-fb835ef2c990",
+      "originId": "7a434967-a7e5-41a1-8d3d-05fa467c83c2",
+      "creatorSlot": 4,
+      "world": {
+        "x": -448,
+        "y": 1728
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://www.youtube.com/watch?v=C5maGnbNbPM",
+      "frameSeconds": 1,
+      "frameSha256": "9156fb749c1f3d202d1349e0b8ca227110ade31e004834870dd6f1896e83f55c",
+      "reference": "https://setpos.gg/ancient/elbow/ct4",
+      "referenceSlot": 4,
+      "referenceLineupId": 43,
+      "referenceFrame": "https://media.setpos.gg/renders/0559d93a-1f51-4ccf-a693-f9d481cf8e85/5fb30571-17d4-4ecb-afa0-7e18c027540a/guide-aim-aim-521ef3b4c26050e3c339d88618f13b5df38f026b23eb6a0b6b93a5ad6d7e9028.webp",
+      "referenceFrameSha256": "521ef3b4c26050e3c339d88618f13b5df38f026b23eb6a0b6b93a5ad6d7e9028",
+      "viewMatch": {
+        "descriptorMatches": 654,
+        "rotationInliers": 624,
+        "frameCoverage": 0.7,
+        "medianBearingErrorDegrees": 0.031,
+        "highestOtherSpawnInliers": 71
+      },
+      "alsoHasPublishedPose": true
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
+      "mapId": "ancient",
+      "guideId": "5172e456-1115-4de5-8768-c9d939610d45",
+      "originId": "d7007d90-3d8d-4aa2-ad37-098c116ad428",
+      "creatorSlot": 5,
+      "world": {
+        "x": -512,
+        "y": 1696
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/b9e4e9ba-5592-49e8-aa3a-613955121b64_0919(4).mp4",
+      "frameSeconds": 1.75,
+      "frameSha256": "a87b57a25a89034fa3925fee882c02e30edaf0268f9fd3572680139e5578ffbf",
+      "reference": "https://setpos.gg/ancient/elbow/ct5",
+      "referenceSlot": 5,
+      "referenceLineupId": 46,
+      "referenceFrame": "https://media.setpos.gg/renders/9ea16376-212c-439a-b590-609bb7d9ce7c/045232e0-cd28-4cda-a343-eea6c24bd8e0/guide-aim-aim-bbb6482735b53c22f3dd46e6fb5366466d1d549b5ff990101a4f7b28c12486d3.webp",
+      "referenceFrameSha256": "bbb6482735b53c22f3dd46e6fb5366466d1d549b5ff990101a4f7b28c12486d3",
+      "viewMatch": {
+        "descriptorMatches": 402,
+        "rotationInliers": 388,
+        "frameCoverage": 0.68,
+        "medianBearingErrorDegrees": 0.045,
+        "highestOtherSpawnInliers": 52
+      }
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/b-doors-from-ct-spawn-5-4f33",
+      "mapId": "ancient",
+      "guideId": "7773422f-8c6b-4959-892b-40a00b1bbc4f",
+      "originId": "d7007d90-3d8d-4aa2-ad37-098c116ad428",
+      "world": {
+        "x": -512.0,
+        "y": 1696.0
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/heaven-from-tspawn1-a7d2",
+      "mapId": "ancient",
+      "guideId": "b816fb12-5d60-4110-a110-0b511fe52d05",
+      "originId": "b6c16130-cba0-401b-81d4-037f074c634f",
+      "world": {
+        "x": -391.968628,
+        "y": -2103.894775
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/mid-donut-from-tspawn1-9fa2",
+      "mapId": "ancient",
+      "guideId": "276f722d-065e-4356-8a13-63759594235f",
+      "originId": "b6c16130-cba0-401b-81d4-037f074c634f",
+      "world": {
+        "x": -391.967682,
+        "y": -2103.207764
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/ancient/flashbangs/mid-from-tspawn2-3513",
+      "mapId": "ancient",
+      "guideId": "27a9dc62-4aab-40ad-888e-64f199b9e4bb",
+      "originId": "b82cdfc8-5110-41ea-b3f8-d432111bf0db",
+      "world": {
+        "x": -735.969849,
+        "y": -1870.217651
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-1-d3bd",
+      "mapId": "mirage",
+      "guideId": "3bc7338a-a20b-4dfb-9b40-91afd3979b40",
+      "originId": "cf348a96-3709-488d-8af8-7740bcca36ea",
+      "world": {
+        "x": 1296.0,
+        "y": -352.0
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2-e54c",
+      "mapId": "mirage",
+      "guideId": "ca867623-b9fc-4efa-83e6-d6dcaa44d768",
+      "originId": "7afa0115-d38d-4bfb-b51e-f4a7f00e8a9c",
+      "world": {
+        "x": 1216.0,
+        "y": -211.0
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-3-e1f4",
+      "mapId": "mirage",
+      "guideId": "65af0eb3-4692-45bc-8288-3cc2a5c28ac1",
+      "originId": "224ae3ad-380e-4491-89ac-da0726b6f844",
+      "world": {
+        "x": 1216.0,
+        "y": -115.0
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-4-000c",
+      "mapId": "mirage",
+      "guideId": "7f5111a7-5fe7-468a-be99-97b40914ea65",
+      "originId": "9ad26433-3371-4ffd-b3e8-14fe2e1062e5",
+      "world": {
+        "x": 1216.0,
+        "y": -16.0
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-5-a08b",
+      "mapId": "mirage",
+      "guideId": "2c379a31-66b1-438d-a9ef-adcaa115aac8",
+      "originId": "fe3dd5fc-e89a-46e9-a43f-7eb5989382ec",
+      "world": {
+        "x": 1296.0,
+        "y": 32.0
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/x-box-from-t-spawn-2-391d",
+      "mapId": "dust2",
+      "guideId": "8950637a-9600-4c7e-844c-2500e719e549",
+      "originId": "ab916a41-89ea-4b52-946f-6265eeb3e58e",
+      "world": {
+        "x": -438.515564,
+        "y": -1042.761841
+      },
+      "sourceMethod": "guide-standing-pose"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import {
   WifiOff,
 } from "lucide-react";
 import { MAPS } from "./maps";
+import { LAUNCH_SCENES, SMOKE_ART } from "./launch-scenes";
 import { BUNDLED_GUIDE_PHOTOS } from "./guide-library";
 import {
   captureWorkspace,
@@ -149,10 +150,8 @@ export default function WorkspaceSettings({
                 ]),
               ),
             ),
-            "/art/launch-dust-cs1999.webp",
-            "/art/launch-dust-source.webp",
-            "/art/launch-dust-csgo.webp",
-            "/art/pixel-smoke.png",
+            ...LAUNCH_SCENES.map((scene) => scene.src),
+            SMOKE_ART,
           ];
       await new Promise<void>((resolve, reject) => {
         const channel = new MessageChannel();

@@ -156,6 +156,8 @@ export default function App() {
   const lineupRouteRequest = useRef(0);
   const workspaceElement = useRef<HTMLElement>(null);
   const currentView = useRef(activeTab);
+  const homeReturn = useRef<{ from: Exclude<View, "home">; keyboard: boolean } | undefined>(undefined);
+  const enteredFromHome = useRef<"pointer" | "keyboard" | undefined>(undefined);
   const workspaceTransition = useRef<ViewTransition | null>(null);
   const workspaceFade = useRef<Animation | null>(null);
   const transitionRequest = useRef(0);
@@ -229,6 +231,10 @@ export default function App() {
   }
   function changeWorkspace(view: View, animate = true) {
     if (currentView.current === view) return;
+    const from = currentView.current;
+    enteredFromHome.current = from === "home" ? navigationInput.current : undefined;
+    homeReturn.current = view === "home" && from !== "home"
+      ? { from, keyboard: navigationInput.current === "keyboard" } : undefined;
     currentView.current = view;
     const request = ++transitionRequest.current;
     workspaceTransition.current?.skipTransition();
@@ -449,6 +455,9 @@ export default function App() {
   }, []);
 
   useLayoutEffect(() => {
+    if (activeTab !== "home" && enteredFromHome.current === "keyboard") {
+      workspaceElement.current?.focus({ preventScroll: true });
+    }
     if (
       !fadeNextWorkspace.current ||
       !workspaceElement.current ||
@@ -584,6 +593,7 @@ export default function App() {
   return (
     <div
       className={`app-shell${compact ? " is-compact" : ""}${headerHidden ? " is-header-hidden" : ""}${activeTab === "home" ? " is-home" : ""}`}
+      data-entered-from-home={activeTab !== "home" ? enteredFromHome.current : undefined}
     >
       <a
         className="skip-link"
@@ -852,6 +862,7 @@ export default function App() {
             {activeTab === "home" ? (
               <LaunchScreen
                 onNavigate={navigate}
+                returning={homeReturn.current}
                 theme={theme}
                 palette={appearance.palette}
                 landscapeHost={landscapeHost}

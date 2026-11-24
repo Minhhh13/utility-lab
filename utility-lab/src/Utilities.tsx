@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -49,7 +50,6 @@ import { lineupLink } from "./routes";
 import { exportFile } from "./file-transfer";
 import {
   groupUtilityMarkers,
-  layoutUtilityMarkers,
   splitUtilityDestinations,
   clusterUtilityAreas,
   type UtilityMarkerGroup,
@@ -58,6 +58,7 @@ import { PHOTO_GUIDE_LIBRARY } from "./guide-library";
 import { cachedMapGuides, loadMapGuides } from "./expanded-catalogue";
 import { mergePhotoGuides } from "./expanded-guide-model";
 import MarkerChoices from "./MarkerChoices";
+import LandingMapPins from "./LandingMapPins";
 import OriginChoices from "./OriginChoices";
 import {groupOriginOptions,groupPersonalGuides,layoutPersonalGuides,originRecipeOptions,type OriginChoiceGroup} from "./origin-options";
 import GuideActions from "./GuideActions";
@@ -742,6 +743,8 @@ export default function Utilities({
   const screenshotRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const mediaDialog = useRef<HTMLDialogElement>(null);
+  const mediaTrigger = useRef<SVGElement | null>(null);
+  const overviewTrigger = useRef("");
   const alive = useRef(true);
   const currentContext = useRef(`${map.id}:${levelId}`);
   currentContext.current = `${map.id}:${levelId}`;
@@ -836,11 +839,7 @@ export default function Utilities({
   const mainClusters = useMemo(() => clusterUtilityAreas(markerGroups.filter(group =>
     group.x >= markerBounds.x && group.x <= markerBounds.x+markerBounds.width &&
     group.y >= markerBounds.y && group.y <= markerBounds.y+markerBounds.height),mapUnit), [markerGroups,markerBounds,mapUnit]);
-  const clusterById = useMemo(() => new Map(mainClusters.map(group=>[group.id,group])), [mainClusters]);
   const destinationCounts = useMemo(() => new Map(mainClusters.map(group => [group.id,splitUtilityDestinations(group.records).length])), [mainClusters]);
-  const laidOutMarkers = useMemo(() => landingSelection ? layoutUtilityMarkers(landingGroups,mapUnit,markerBounds) :
-    mainClusters.map(group=>({...group,displayX:group.x,displayY:group.y,inView:true})),
-    [landingSelection,landingGroups,mapUnit,markerBounds,mainClusters]);
   useEffect(() => setMarkerFilter([]), [side]);
   const sourceImage = level?.image || "";
   const preferredImage =
@@ -850,17 +849,31 @@ export default function Utilities({
   const mapImage = mapFallback ? sourceImage : preferredImage;
   const draftPhotos = draft.photos || [];
 
+  // Synchronize the native dialog after React commits its contents. Browsers
+  // queue a close event, which can arrive after a different guide has opened.
+  useLayoutEffect(() => {
+    const dialog = mediaDialog.current;
+    if (!dialog) return;
+    if (mediaRecord && !dialog.open) dialog.showModal();
+    if (!mediaRecord && dialog.open) {
+      dialog.close();
+      if (!editing && mediaTrigger.current?.isConnected) {
+        mediaTrigger.current.focus({ preventScroll: true });
+      }
+      mediaTrigger.current = null;
+    }
+  }, [mediaRecord, editing]);
+
   useEffect(() => {
     if (!initialLineup) return;
     setLevelId(initialLineup.levelId);
     setSelectedId(initialLineup.id);
     if (initialLineup.userCreated || initialLineup.videoUrl || utilityPhotos(initialLineup).length) {
       setMediaRecord(initialLineup);
-      requestAnimationFrame(() => mediaDialog.current?.showModal());
     }
   }, [initialLineup]);
   useEffect(() => {
-    if (!initialLineup) mediaDialog.current?.close();
+    if (!initialLineup) setMediaRecord(null);
   }, [map.id, side, initialLevelId, initialLineup]);
 
   useEffect(() => {
@@ -878,7 +891,6 @@ export default function Utilities({
         "main",
     );
     setSelectedId(initialLineup?.id || null);
-    navigation.reset();
     setFormError("");
     setPlacing(false);
   }, [map.id, initialLevelId, side]);
@@ -930,7 +942,7 @@ export default function Utilities({
     }
     setSelectedId(item.id);
     history.replaceState(null, "", lineupLink(item, location.href));
-    if (item.userCreated || item.videoUrl || utilityPhotos(item).length) openMedia(item);
+    if (item.userCreated || item.videoUrl || utilityPhotos(item).length) setMediaRecord(item);
   }
   function selectMarker(group: UtilityMarkerGroup, trigger: SVGElement, animate = true) {
     if (editing) {
@@ -938,6 +950,7 @@ export default function Utilities({
       return;
     }
     const box = trigger.getBoundingClientRect();
+    overviewTrigger.current = group.id;
     selectionRequest.current++;
     setLoadingStanding(false);
     const choice = {
@@ -1027,13 +1040,20 @@ export default function Utilities({
     setSelectedId(null);
   }
   function chooseOriginGroup(group:OriginChoiceGroup,trigger:SVGElement){
-    if(group.options.length===1){selectRecord(group.options[0].record);return;}
+    if(group.options.length===1){mediaTrigger.current=trigger;selectRecord(group.options[0].record);return;}
     const bounds=trigger.getBoundingClientRect();
     setOriginChoice({group,trigger,anchor:{x:bounds.x+bounds.width/2,y:bounds.y+bounds.height/2}});
   }
-  function openMedia(item: UtilityReference) {
-    setMediaRecord(item);
-    requestAnimationFrame(() => mediaDialog.current?.showModal());
+  function returnToOverview() {
+    backToTargets();
+    requestAnimationFrame(() => {
+      const svg = svgRef.current;
+      if (!svg) return;
+      const original = svg.querySelector<SVGGElement>(
+        `[data-overview-id="${CSS.escape(overviewTrigger.current)}"]`
+      );
+      (original || svg).focus({preventScroll:true});
+    });
   }
   async function copyLineup(item: UtilityReference) {
     try {
@@ -1049,6 +1069,7 @@ export default function Utilities({
     }
   }
   function changeLevel(id: string) {
+    if (id === levelId) return;
     setMarkerFilter([]);
     setLevelId(id);
     setSelectedId(null);
@@ -1200,7 +1221,7 @@ export default function Utilities({
       onSideChange(record.side);
       cancelEditor();
       history.replaceState(null, "", lineupLink(record, location.href));
-      openMedia(record);
+      setMediaRecord(record);
       onNotify(
         editingId
           ? "Your lineup was updated on this device."
@@ -1309,7 +1330,7 @@ export default function Utilities({
       localStorage.setItem(USER_UTILITIES_KEY, JSON.stringify(next));
       setCustom(next);
       setSelectedId(null);
-      if(mediaRecord?.id === item.id) mediaDialog.current?.close();
+      if(mediaRecord?.id === item.id) setMediaRecord(null);
       onNotify("Your saved lineup was removed from this device.");
     } catch {
       onNotify(
@@ -1425,6 +1446,31 @@ export default function Utilities({
       ...(["x", "y"].includes(key) ? { showMarker: true } : {}),
     }));
 
+  const sideSelector = (
+    <div className="ul-side-toggle" role="group" aria-label="Utility side" data-side={side}>
+      {(["T", "CT"] as const).map(team => {
+        const Icon = team === "T" ? UserRound : Shield;
+        return (
+          <button
+            key={team}
+            type="button"
+            aria-pressed={side === team}
+            disabled={editing}
+            className={side === team ? "is-active" : ""}
+            onClick={() => {
+              if (team === side) return;
+              if (originSelection || landingSelection) backToTargets();
+              onSideChange(team);
+            }}
+          >
+            <Icon size={15} aria-hidden="true" />
+            <span>{team}<span className="ul-side-suffix"> side</span></span>
+          </button>
+        );
+      })}
+    </div>
+  );
+
   return (
     <section
       className={`utility-workspace${compact ? " ul-compact" : ""}${!editing ? " ul-map-only" : ""}`}
@@ -1447,30 +1493,7 @@ export default function Utilities({
             <span>{map.name}</span>
             <ChevronDown size={14} />
           </button>
-          <div
-            className="ul-side-toggle"
-            role="group"
-            aria-label="Utility side"
-          >
-            <button
-              aria-pressed={side === "T"}
-              disabled={editing}
-              className={side === "T" ? "is-active" : ""}
-              onClick={() => {if(originSelection || landingSelection) backToTargets();onSideChange("T");}}
-            >
-              <UserRound size={15} />
-              <span>T side</span>
-            </button>
-            <button
-              aria-pressed={side === "CT"}
-              disabled={editing}
-              className={side === "CT" ? "is-active" : ""}
-              onClick={() => {if(originSelection || landingSelection) backToTargets();onSideChange("CT");}}
-            >
-              <Shield size={15} />
-              <span>CT side</span>
-            </button>
-          </div>
+          {editing && sideSelector}
           <LineupSuggestions map={map} side={side} onNotify={onNotify} />
         </div>
       </header>
@@ -1557,7 +1580,7 @@ export default function Utilities({
                 <span>{level?.name || "Overview"}</span>
               )}
             </div>
-            {originSelection || landingSelection || loadingStanding ? <button className="ul-origin-back ul-text-button" onClick={backToTargets}><ArrowLeft size={16}/>Back to targets</button> : <span className="ul-map-count">{visibleRecords.length} {visibleRecords.length === 1 ? "reference" : "references"}</span>}
+            {originSelection || landingSelection || loadingStanding ? <button className="ul-origin-back ul-text-button" onClick={returnToOverview}><ArrowLeft size={16}/>Back to targets</button> : <span className="ul-map-count">{visibleRecords.length} {visibleRecords.length === 1 ? "reference" : "references"}</span>}
           </div>
           <div className={`ul-map-stage${placing ? " is-placing" : ""}`}>
             <svg
@@ -1569,6 +1592,14 @@ export default function Utilities({
               aria-describedby="utility-map-navigation-help"
               tabIndex={0}
               {...navigation.handlers}
+              onKeyDown={event => {
+                if (event.key === "Escape" && !originChoice && (landingSelection || originSelection || loadingStanding)) {
+                  event.preventDefault();
+                  returnToOverview();
+                  return;
+                }
+                navigation.handlers.onKeyDown(event);
+              }}
               onClick={(event) => {
                 if (!navigation.shouldIgnoreClick()) setTargetOnMap(event);
               }}
@@ -1591,32 +1622,28 @@ export default function Utilities({
               <g role={landingSelection ? "group" : undefined} aria-label={landingSelection ? "Landing locations" : undefined} aria-busy={landingSelection ? loadingStanding : undefined}
                 visibility={markerChoice || loadingStanding ? "hidden" : undefined}
                 aria-hidden={markerChoice || loadingStanding ? true : undefined}>
-              {!mapFailed && !originSelection && !!landingSelection && <g className="ul-target-leaders" aria-hidden="true" pointerEvents="none">
-                {laidOutMarkers.filter(group => group.inView && Math.hypot(group.displayX-group.x,group.displayY-group.y)>mapUnit).map(group => <g key={group.id}>
-                  <line x1={group.x} y1={group.y} x2={group.displayX} y2={group.displayY} strokeWidth={mapUnit}/>
-                  <circle cx={group.x} cy={group.y} r={2.5*mapUnit}/>
-                </g>)}
-              </g>}
-              {!mapFailed && !originSelection && laidOutMarkers.filter(group => group.inView).map((group,index) => {
+              {!mapFailed && !originSelection && landingSelection && <LandingMapPins
+                groups={landingGroups} bounds={markerBounds} unit={mapUnit} type={landingSelection.type}
+                levelId={landingSelection.target.levelId} animate={landingSelection.animate} busy={loadingStanding}
+                onChoose={chooseLandingSpot} shouldIgnoreClick={() => placing || navigation.shouldIgnoreClick()}/>}
+              {!mapFailed && !originSelection && !landingSelection && mainClusters.map(group => {
                 const available = UTILITY_TYPES.filter(type => group.records.some(record => record.type === type));
-                const active = !landingSelection && !!selectedId && group.records.some(record => record.id === selectedId);
-                const groupedAreas = !landingSelection ? clusterById.get(group.id)?.areas || [group] : [];
+                const active = !!selectedId && group.records.some(record => record.id === selectedId);
+                const groupedAreas = group.areas;
                 const grouped = groupedAreas.length > 1;
                 const locationNames = groupedAreas.map(area=>area.label).join(", ");
-                return <g key={group.id} className={`ul-map-marker${landingSelection ? " ul-landing-pin" : ""}${active ? " is-selected" : ""}`}
-                  transform={`translate(${group.displayX} ${group.displayY})`} role="button" tabIndex={markerChoice || loadingStanding ? -1 : 0}
+                return <g key={group.id} className={`ul-map-marker${active ? " is-selected" : ""}`}
+                  data-overview-id={group.id}
+                  transform={`translate(${group.x} ${group.y})`} role="button" tabIndex={markerChoice || loadingStanding ? -1 : 0}
                   data-target-area={group.areaId} data-target-label={group.label}
-                  data-group-area-ids={!landingSelection ? JSON.stringify(groupedAreas.map(area=>area.areaId)) : undefined}
-                  data-group-area-labels={!landingSelection ? JSON.stringify(groupedAreas.map(area=>area.label)) : undefined}
-                  data-group-size={!landingSelection ? groupedAreas.length : undefined}
-                  data-target-destinations={landingSelection ? undefined : destinationCounts.get(group.id)}
+                  data-group-area-ids={JSON.stringify(groupedAreas.map(area=>area.areaId))}
+                  data-group-area-labels={JSON.stringify(groupedAreas.map(area=>area.label))}
+                  data-group-size={groupedAreas.length}
+                  data-target-destinations={destinationCounts.get(group.id)}
                   data-target-x={group.x} data-target-y={group.y}
-                  data-landing-id={landingSelection ? group.id : undefined}
-                  data-landing-x={landingSelection ? group.x : undefined} data-landing-y={landingSelection ? group.y : undefined}
-                  data-landing-level={landingSelection?.target.levelId}
-                  aria-label={landingSelection ? `${group.label}, landing spot ${index+1}, choose throw-from location` : `${grouped ? locationNames : group.label}: ${available.map(utilityLabel).join(", ")}, choose utility`}
-                  aria-pressed={landingSelection ? undefined : active} aria-haspopup={landingSelection ? undefined : "dialog"} aria-controls={landingSelection ? undefined : "ul-map-lineup-choices"}
-                  aria-expanded={landingSelection ? undefined : !!markerChoice?.records.some(record => group.records.some(item => item.id === record.id))}
+                  aria-label={`${grouped ? locationNames : group.label}: ${available.map(utilityLabel).join(", ")}, choose utility`}
+                  aria-pressed={active} aria-haspopup="dialog" aria-controls="ul-map-lineup-choices"
+                  aria-expanded={!!markerChoice?.records.some(record => group.records.some(item => item.id === record.id))}
                   onPointerEnter={() => setTargetLabelId(group.id)}
                   onPointerLeave={() => setTargetLabelId(null)}
                   onFocus={() => setTargetLabelId(group.id)}
@@ -1624,27 +1651,25 @@ export default function Utilities({
                   onClick={event => {
                     if(navigation.shouldIgnoreClick() || placing) return;
                     event.stopPropagation();
-                    if(landingSelection) chooseLandingSpot(group); else selectMarker(group,event.currentTarget);
+                    selectMarker(group,event.currentTarget);
                   }}
                   onKeyDown={event => {
                     if(event.key === "Enter" || event.key === " ") {
                       event.preventDefault();
-                      if(landingSelection) chooseLandingSpot(group,true); else selectMarker(group,event.currentTarget,false);
+                      selectMarker(group,event.currentTarget,false);
                     }
                   }}>
-                  <title>{grouped ? locationNames : group.label} — {landingSelection ? "choose throw-from location" : "choose utility"}</title>
+                  <title>{grouped ? locationNames : group.label} — choose utility</title>
                   <circle className="ul-marker-hit" r={23 * mapUnit} fill="transparent"/>
-                  <g className={landingSelection?.animate ? "ul-origin-glyph can-animate" : undefined}>
                   {grouped && <circle cx={3*mapUnit} cy={-3*mapUnit} r={18*mapUnit} className="ul-group-stack" strokeWidth={mapUnit}/>}
-                  <UtilityTargetMarker types={available} radius={18 * mapUnit} compact={!landingSelection}/>
-                  </g>
+                  <UtilityTargetMarker types={available} radius={18 * mapUnit} compact/>
                 </g>;
               })}
-              {!mapFailed && !originSelection && !markerChoice && !loadingStanding && <g aria-hidden="true" pointerEvents="none">
-                {laidOutMarkers.filter(group => group.inView && (group.id === targetLabelId || (!!landingSelection && laidOutMarkers.length <= 6))).map(group => <text
+              {!mapFailed && !landingSelection && !originSelection && !markerChoice && !loadingStanding && <g aria-hidden="true" pointerEvents="none">
+                {mainClusters.filter(group => group.id === targetLabelId).map(group => <text
                   key={group.id} className="ul-target-label" textAnchor="middle"
-                  x={group.displayX} y={group.displayY+33*mapUnit} fontSize={11*mapUnit}
-                  strokeWidth={4*mapUnit}>{!landingSelection && (clusterById.get(group.id)?.areas.length || 0)>1 ? `${clusterById.get(group.id)!.areas.length} locations` : group.label}</text>)}
+                  x={group.x} y={group.y+33*mapUnit} fontSize={11*mapUnit}
+                  strokeWidth={4*mapUnit}>{group.areas.length > 1 ? `${group.areas.length} locations` : group.label}</text>)}
               </g>}
               </g>
               {!mapFailed && originSelection && <g role="group" aria-label={originChoices.length?'Throw-from locations':'Your lineup targets'}
@@ -1665,10 +1690,11 @@ export default function Utilities({
                   data-origin-recipes={JSON.stringify(group.options.map(option=>option.record.id))}
                   onClick={event => {if(navigation.shouldIgnoreClick())return;event.stopPropagation();chooseOriginGroup(group,event.currentTarget);}}
                   onKeyDown={event => {if(event.key === "Enter" || event.key === " "){event.preventDefault();chooseOriginGroup(group,event.currentTarget);}}}>
-                  <title>{group.label} — {group.options.length>1?`${group.options.length} throws`:'open photos'}</title>
+                  <title>{group.label} — {group.options.length>1?`${group.options.length} throws`:group.point.precision==='world'?'Recorded standing position':'Approximate area. Match the Position photo.'}</title>
                   <circle r={23 * mapUnit} fill="transparent"/>
                   <g className={originSelection.animate ? "ul-origin-glyph can-animate" : "ul-origin-glyph"} style={{animationDelay:`${index * 30}ms`}}>
-                    <circle className="ul-origin-disc" r={15 * mapUnit} strokeWidth={1.5 * mapUnit}/>
+                    <circle className="ul-origin-disc" r={15 * mapUnit} strokeWidth={1.5 * mapUnit}
+                      strokeDasharray={group.options.length===1&&group.point.precision!=='world'?`${4*mapUnit} ${2*mapUnit}`:undefined}/>
                     <Crosshair x={-9 * mapUnit} y={-9 * mapUnit} size={18 * mapUnit} strokeWidth={2}/>
                     {group.options.length>1&&<g className="ul-origin-count"><circle cx={13*mapUnit} cy={-12*mapUnit} r={8*mapUnit}/><text x={13*mapUnit} y={-9*mapUnit} textAnchor="middle" fontSize={9*mapUnit}>{group.options.length}</text></g>}
                     <text className="ul-origin-label" textAnchor="middle" y={-23 * mapUnit} fontSize={11 * mapUnit} strokeWidth={3 * mapUnit}>{group.label.length > 23 ? `${group.label.slice(0,22)}…` : group.label}</text>
@@ -1758,6 +1784,7 @@ export default function Utilities({
               <Info size={14} />
               <span>{landingSelection ? "Choose the exact landing spot." : originSelection ? "Choose where to throw from." : "Choose a target, then utility."}</span>
             </p>
+            {!editing && sideSelector}
             <div className="ul-zoom">
               <button
                 className={navigation.hand ? "is-active" : ""}
@@ -2292,15 +2319,16 @@ export default function Utilities({
       )}
       {originChoice && <OriginChoices key={originChoice.group.id} {...originChoice} mapImage={mapImage}
         onClose={()=>setOriginChoice(null)}
-        onChoose={record=>{setOriginChoice(null);selectRecord(record);}}/>}
+        onChoose={record=>{mediaTrigger.current=originChoice.trigger;setOriginChoice(null);selectRecord(record);}}/>}
       <dialog
         className="ul-media-dialog"
         ref={mediaDialog}
         aria-labelledby="lineup-media-title"
-        onClose={() => setMediaRecord(null)}
+        onCancel={event => { event.preventDefault(); setMediaRecord(null); }}
+        onClose={event => { if (!event.currentTarget.open) setMediaRecord(null); }}
         onClick={(event) => {
           if (event.target === event.currentTarget)
-            mediaDialog.current?.close();
+            setMediaRecord(null);
         }}
       >
         <div className="ul-media-dialog-heading">
@@ -2323,13 +2351,13 @@ export default function Utilities({
             onToggleSaved={() => toggleFavorite(mediaRecord)}
             onCopyLink={() => void copyLineup(mediaRecord)}
             onDownload={() => void downloadLineup(mediaRecord).catch(error => onNotify(error instanceof Error ? error.message : "This lineup could not be exported."))}
-            onEdit={() => {const record=mediaRecord;mediaDialog.current?.close();startEditor(record);}}
+            onEdit={() => {const record=mediaRecord;setMediaRecord(null);startEditor(record);}}
             onDelete={mediaRecord.userCreated ? () => deleteLineup(mediaRecord) : undefined}
           />}
           <button
             className="ul-icon-button"
             aria-label="Close lineup media"
-            onClick={() => mediaDialog.current?.close()}
+            onClick={() => setMediaRecord(null)}
           >
             <X size={22} />
           </button>

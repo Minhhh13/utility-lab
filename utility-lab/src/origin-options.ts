@@ -7,6 +7,26 @@ export type OriginGroup={kind?:'origin';id:string;label:string;point:OriginPoint
 export type PersonalGuideOption={record:UtilityReference;target:{x:number;y:number;levelId:string}};
 export type PersonalGuideGroup={kind:'personal';id:string;label:string;target:PersonalGuideOption['target'];options:PersonalGuideOption[]};
 export type OriginChoiceGroup=OriginGroup|PersonalGuideGroup;
+
+/** Fit the source positions into a square crop. Keep the numbered buttons on
+ * the map coordinates only when every button has its own 44px touch target. */
+export function spawnInsetLayout(group: OriginChoiceGroup, width: number) {
+  if (group.kind === 'personal' || group.options.length < 2 || group.options.length > 8 ||
+    !group.options.some(option => option.record.spawn && option.point.precision === 'world') ||
+    group.options.filter(option => !option.record.spawn).length > 1) return;
+  const coords = group.options.map(option => option.point);
+  const xs = coords.map(point => point.x), ys = coords.map(point => point.y);
+  const left = Math.min(...xs), right = Math.max(...xs), top = Math.min(...ys), bottom = Math.max(...ys);
+  const usable = width - 64;
+  if (usable <= 0) return;
+  const span = Math.max(32, right-left, bottom-top) * width / usable;
+  const x = (left + right - span) / 2, y = (top + bottom - span) / 2;
+  const points = coords.map(point => ({x:(point.x-x)/span*width, y:(point.y-y)/span*width}));
+  // The direct buttons have circular hit regions, including on diagonal rows.
+  if (points.some((point,i) => points.slice(i+1).some(other =>
+    Math.hypot(point.x-other.x,point.y-other.y) < 46))) return;
+  return {x, y, span, points};
+}
 export type PersonalGuideMarker=PersonalGuideGroup&{displayX:number;displayY:number};
 const personalBadgeOffsets=Array.from({length:25*25},(_,index)=>({x:index%25-12,y:Math.floor(index/25)-12}))
   .sort((a,b)=>a.x*a.x+a.y*a.y-b.x*b.x-b.y*b.y||b.x-a.x||a.y-b.y);

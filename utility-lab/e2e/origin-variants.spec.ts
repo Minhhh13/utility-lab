@@ -52,6 +52,51 @@ async function choicesOnEveryPage(panel:Locator,personal=false){
   return ids;
 }
 
+test('Ancient Top Mid buttons sit over their actual creator-numbered spawn positions on desktop and phone',async({page})=>{
+  await isolate(page);
+  const guides=PUBLISHED_LINEUPS.filter(row=>row.spawn?.family==='ancient-t-top-mid-flockwglock');
+  const lookup=parseOriginLookup(JSON.parse(await readFile('src/data/lineup-origins/origins-ancient.json','utf8')));
+  for(const size of [{width:1440,height:1080},{width:320,height:720}]){
+    await page.goto('about:blank');
+    await page.setViewportSize(size);
+    await ready(page,'ancient','T');
+    const camera=await page.locator('.ul-map-svg').getAttribute('viewBox');
+    await mainMarkerGroupsForArea(page,'ancient:main:mid').first().locator('.ul-marker-hit').click();
+    await chooseUtilityType(page,'Smoke');
+    if(await page.locator('.ul-landing-pin').count()){
+      const landing=page.locator('.ul-landing-pin').filter({hasText:/Top Mid/i}).first();
+      const more=page.getByRole('button',{name:'Next landing spots'});
+      while(!await landing.count()&&await more.count()&&await more.isEnabled())await more.click();
+      await landing.click();
+    }
+    const represented=await pins(page).evaluateAll(nodes=>nodes.flatMap(node=>JSON.parse(node.getAttribute('data-origin-recipes')||'[]')));
+    for(const guide of guides)expect(represented).toContain(guide.id);
+    const selected=guides.find(row=>row.spawn!.slot===2)!;
+    await page.locator(`.ul-origin-pin[data-origin-recipes*="${selected.id}"]`).click();
+    await expect(popup(page)).toHaveAttribute('data-inset','positions');
+    const positions=await popup(page).evaluate(panel=>{
+      const crop=panel.querySelector<SVGSVGElement>('.ul-origin-choice-preview')!;
+      const transform=crop.getScreenCTM()!.inverse();
+      return [...panel.querySelectorAll<HTMLElement>('button[data-spawn-slot]')].map(node=>{
+        const box=node.getBoundingClientRect();
+        const x=box.x+box.width/2,y=box.y+box.height/2;
+        const radar=new DOMPoint(x,y).matrixTransform(transform);
+        return {id:node.dataset.lineupId,x:radar.x,y:radar.y,hit:document.elementFromPoint(x,y)?.closest('button')===node};
+      });
+    });
+    expect(positions.length).toBeGreaterThan(1);
+    for(const marker of positions){
+      const point=findLineupOrigin(guides.find(row=>row.id===marker.id)!,lookup)!;
+      expect(marker.hit).toBe(true);
+      expect(marker.x).toBeCloseTo(point.x,0);
+      expect(marker.y).toBeCloseTo(point.y,0);
+    }
+    await popup(page).locator('[data-spawn-slot="2"]').click();
+    await verifyPhoto(page,selected,camera!);
+    await page.keyboard.press('Escape');
+  }
+});
+
 test("Dust II Mid Doors exposes every existing T recipe on source-backed non-overlapping pins, and a grouped choice opens its exact Position photo",async({page})=>{
   await isolate(page);await ready(page);
   const camera=(await page.locator(".ul-map-svg").getAttribute("viewBox"))!;

@@ -10,6 +10,6 @@ Updated 9 November 2026. The three decorative pixel-art recreations use public s
 
 All are 1672 × 941. The built-in image-generation tool performed a style-transfer recreation using the inspected reference image; the result was encoded as WebP without resizing. The underlying game environment belongs to its original creators. These are decorative fan artworks, **not** game screenshots, map-coordinate evidence, or lineup photos. No game installation, local game asset or running game was accessed.
 
-The header’s compact Landscape selector exposes these three options. On phones the control becomes a 44px icon with the same accessible label and native selection menu. Selection is remembered; only the chosen art loads. The old Courtyard option is removed. Motion remains automatic, with reduced-motion and hidden-page support.
+The header’s Landscape selector groups these three options under Classic Dust. A Landscapes group offers Dunes at sunset, Foundry at dusk and Temple gardens. On narrow phones the control becomes a 44px icon with the same accessible label and native menu. The selected landscape is saved on this device.
 
 Reviewed screenshots: `outputs/classic-map-art/review/`. Asset dimensions/source paths: `outputs/classic-map-art/assets.json`. Prompts: `outputs/classic-map-art/prompts.md`. Generated originals remain in the built-in tool’s generated-images directory.

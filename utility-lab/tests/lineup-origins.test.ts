@@ -12,8 +12,8 @@ const all = mergePhotoGuides(PHOTO_GUIDE_LIBRARY,maps.flatMap(map => normalizeEx
 const lookups = Object.fromEntries(maps.map(map => [map,parseOriginLookup(json(`src/data/lineup-origins/origins-${map}.json`))]));
 
 test('every complete guide has an independently recorded standing location', () => {
-  assert.equal(all.length,1557);
-  assert.equal(new Set(all.map(row => row.source)).size,1477);
+  assert.equal(all.length,1558);
+  assert.equal(new Set(all.map(row => row.source)).size,1478);
   let publisher = 0, area = 0;
   for (const record of all) {
     const point = findLineupOrigin(record,lookups[record.mapId]);
@@ -22,15 +22,27 @@ test('every complete guide has an independently recorded standing location', () 
     assert.ok(point.label);
     if (point.basis === 'publisher-origin') publisher++; else area++;
   }
-  assert.equal(publisher,1549); assert.equal(area,8);
+  assert.equal(publisher,1550); assert.equal(area,8);
 });
 
 test('standing pins use publisher origin coordinates and the origin floor registration, not target coordinates', () => {
   const evidence = json('docs/data/publisher-destination-evidence.json');
+  const world = json('docs/data/reviewed-world-origins.json');
   let distinct = 0;
   for (const raw of evidence) {
     const point = lookups[raw.map][originSourceKey(raw.source)];
     if (!point) continue; // one research-only incomplete source is not primary browsing
+    const reviewed = world.records.find((record: {source:string}) => record.source === raw.source);
+    if (reviewed) {
+      const radar = world.radars[raw.map];
+      const units = radar.scale * radar.radarSize;
+      assert.equal(point.precision,'world');
+      assert.equal(point.registrationId,`world-${raw.map}-${radar.levelId}`);
+      assert.equal(point.sourceId,raw.origin.id);
+      assert.ok(Math.abs(point.x-(reviewed.world.x-radar.posX)*1000/units)<=.00501,raw.source);
+      assert.ok(Math.abs(point.y-(radar.posY-reviewed.world.y)*1000/units)<=.00501,raw.source);
+      continue;
+    }
     const reg = PUBLISHER_MAP_REGISTRATIONS.find(item => item.id === point.registrationId)!;
     assert.ok(reg,raw.source);
     assert.deepEqual({x:point.x,y:point.y,levelId:point.levelId,registrationId:point.registrationId},projectPublisherOrigin(raw.origin,reg));
@@ -45,6 +57,28 @@ test('standing pins use publisher origin coordinates and the origin floor regist
   const mirage = evidence.find((row: {map:string}) => row.map === 'mirage');
   const point = lookups.mirage[mirage.source];
   assert.notDeepEqual([point.x,point.y],[mirage.origin.x,mirage.origin.y],'raw radar pixels cannot be used as app points');
+});
+
+test('Ancient Top Mid keeps the creator’s numbers on the five matched physical starts and the pillar as its own setup', () => {
+  const guides=all.filter(row=>row.spawn?.family==='ancient-t-top-mid-flockwglock').sort((a,b)=>a.spawn!.slot-b.spawn!.slot);
+  assert.equal(guides.length,5);
+  // Values use the independently published Ancient radar grid (-2953,2164; 5120 world units).
+  const expected=[[512.70,869.53],[487.70,869.53],[462.70,869.53],[500.20,857.03],[475.20,857.03]];
+  const evidence=json('docs/data/reviewed-world-origins.json').records;
+  for (const [index,row] of guides.entries()) {
+    const point=findLineupOrigin(row,lookups.ancient)!;
+    assert.equal(row.spawn!.slot,index+1);
+    assert.deepEqual([point.x,point.y],expected[index]);
+    assert.equal(point.precision,'world');
+    assert.ok(row.photos?.every(photo=>photo.source===row.source),'Own starting frame, aim and landing');
+    const proof=evidence.find((r:{source:string})=>r.source===row.source);
+    assert.equal(proof.referenceSlot,[5,3,1,4,2][index]);
+    assert.ok(proof.viewMatch.rotationInliers>=150 && proof.viewMatch.medianBearingErrorDegrees<.08);
+  }
+  const pillar=all.find(row=>row.id.endsWith('ancient-top-mid-from-t-spawn-5bc0-t'))!;
+  assert.equal(pillar.from,'T Spawn pillar');
+  assert.equal(pillar.spawn,undefined);
+  assert.equal(findLineupOrigin(pillar,lookups.ancient)?.precision,undefined);
 });
 
 test('cross-floor origins remain on their own floor and only explicit source levels offer an alternate view', () => {

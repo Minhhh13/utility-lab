@@ -1,8 +1,8 @@
 # Launch landscape artwork
 
-Original decorative art for Utility Lab's launch screen. These images are not game screenshots, map geometry or lineup evidence. The existing courtyard remains the default. Three new scenes were generated with the built-in image generation tool on 9 November 2026; no CLI/API fallback was used. Original outputs remain in the tool's generated-images directory; selected final WebPs are copied into `public/art/`.
+The Landscape selector includes three original environments alongside the three classic Dust scenes. Dust · CS 1999 is the default. The original environments were generated on 9 November 2026 and ship as optional WebP backgrounds.
 
-The app requests only the selected landscape. Each final asset is below 1 MB; conversion changes the encoding without changing the artwork's dimensions. `launch-pixel.png` remains the original courtyard source.
+Each painting measures 1672 × 941 and loads when selected. Dunes has windblown sand, Foundry has breathing lamplight, and Temple has drifting fireflies. These effects follow the painting when it crops on a phone. They pause in hidden tabs and settle into a still image under reduced motion. The explicit offline map download includes all six landscapes.
 
 ## Dunes
 

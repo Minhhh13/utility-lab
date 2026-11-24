@@ -16,9 +16,6 @@ outputs/
 /HANDOFF.md
 /utility-lab/docs/handoffs/
 /utility-lab/public/art/launch-courtyard.webp
-/utility-lab/public/art/launch-dunes.webp
-/utility-lab/public/art/launch-foundry.webp
-/utility-lab/public/art/launch-temple.webp
 # Unused original generated framework template (local-only)
 utility-lab/app/
 utility-lab/components/

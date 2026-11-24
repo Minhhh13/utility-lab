@@ -48,15 +48,54 @@
   background: transparent;
 }
 .utility-workspace.ul-map-only .ul-side-toggle {
-  grid-area: auto;
-  padding: 2px;
-  gap: 2px;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: repeat(2, 44px);
+  gap: 0;
+  padding: 4px;
   border: 0;
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: 0 4px 18px #0b182414;
+  pointer-events: auto;
+}
+.utility-workspace.ul-map-only .ul-side-toggle::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 4px 4px auto;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  pointer-events: none;
+}
+.utility-workspace.ul-map-only .ul-side-toggle[data-side="CT"]::before {
+  transform: translateY(100%);
 }
 .utility-workspace.ul-map-only .ul-side-toggle button {
   min-height: 44px;
-  padding: 0 10px;
+  min-width: 44px;
+  padding: 0;
+  gap: 3px;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.utility-workspace.ul-map-only .ul-side-toggle button.is-active {
+  background: transparent;
+}
+.utility-workspace.ul-map-only .ul-side-suffix {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: pre;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-navigation-input="pointer"] .utility-workspace.ul-map-only .ul-side-toggle::before {
+    transition: transform var(--workspace-duration) var(--ease-out);
+  }
 }
 .utility-workspace.ul-map-only .ul-suggest-trigger {
   grid-area: auto;
@@ -150,7 +189,9 @@
   transform: translateY(-50%);
   min-height: 0;
   padding: 0;
-  gap: 12px;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  gap: 8px;
   pointer-events: none;
 }
 .utility-workspace.ul-map-only .ul-map-bottom p {
@@ -220,19 +261,22 @@
   .utility-workspace.ul-map-only .ul-header {
     top: 12px;
     left: 12px;
-    width: calc(100% - 24px);
-    max-width: none;
+    max-width: calc(100% - 24px);
     padding: 4px;
   }
   .utility-workspace.ul-map-only .ul-context-controls {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto 44px;
+    grid-template-columns: minmax(0, 1fr) 44px;
     width: 100%;
     gap: 4px;
   }
   .utility-workspace.ul-map-only .ul-map-chip { min-width: 0; padding: 0 6px; gap: 6px; }
   .utility-workspace.ul-map-only .ul-map-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .utility-workspace.ul-map-only .ul-side-toggle button { min-width: 54px; padding: 0 3px; gap: 3px; font-size: 11px; }
+  .utility-workspace.ul-map-only .ul-side-toggle {
+    grid-template: 44px / repeat(2, 44px);
+  }
+  .utility-workspace.ul-map-only .ul-side-toggle::before { width: 44px; }
+  .utility-workspace.ul-map-only .ul-side-toggle[data-side="CT"]::before { transform: translateX(100%); }
   .utility-workspace.ul-map-only .ul-filterbar {
     top: 74px;
     left: 50%;
@@ -274,6 +318,10 @@
     top: auto;
     bottom: 28px;
     transform:translateX(-50%);
+    flex-direction: row;
+    width: max-content;
+    max-width: calc(100% - 12px);
+    gap: 6px;
   }
   .utility-workspace.ul-map-only .ul-zoom {flex-direction:row;}
   .utility-workspace.ul-map-only .ul-map-bottom p { max-width: 100%; font-size: 11px; }
@@ -302,4 +350,45 @@
   .utility-workspace.ul-map-only .ul-map-bottom { top:50%; bottom:auto; }
   .utility-workspace.ul-map-only .ul-map-bottom p { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .utility-workspace.ul-map-only .ul-map-credit { bottom: 0; }
+}
+
+/* A phone on its side has enough width for two columns on each edge. Keep
+   every tool visible and leave the floor controls their own row above. */
+@media (max-height: 510px) and (min-width: 601px),
+       (min-width: 430px) and (max-width: 600px) and (max-height: 420px) and (orientation: landscape) {
+  .utility-workspace.ul-map-only .ul-filterbar {
+    display: grid;
+    grid-template-columns: repeat(2, 44px);
+    gap: 2px;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+  }
+  .utility-workspace.ul-map-only .ul-types { display: contents; }
+  .utility-workspace.ul-map-only .ul-map-bottom,
+  .utility-workspace.ul-map-only .ul-filterbar { top: calc(50% + 18px); }
+  .utility-workspace.ul-map-only .ul-side-toggle,
+  .utility-workspace.ul-map-only .ul-zoom {
+    display: grid;
+    grid-template-columns: repeat(2, 44px);
+    grid-template-rows: auto;
+  }
+  .utility-workspace.ul-map-only .ul-side-toggle::before { width: 44px; }
+  .utility-workspace.ul-map-only .ul-side-toggle[data-side="CT"]::before { transform: translateX(100%); }
+  .utility-workspace.ul-map-only .ul-zoom button[aria-label="Reset utility map zoom"] {min-width:44px;}
+}
+
+/* Narrow landscape phones still have two global navigation rows. Dock the
+   tools below the corner controls in the remaining 200px of canvas. */
+@media (min-width: 430px) and (max-width: 600px) and (max-height: 420px) and (orientation: landscape) {
+  .utility-workspace.ul-map-only .ul-header { top: 2px; left: 4px; padding: 2px; }
+  .utility-workspace.ul-map-only .ul-map-top { top: 2px; right: 4px; bottom: auto; left: auto; gap: 4px; }
+  .utility-workspace.ul-map-only .ul-filterbar,
+  .utility-workspace.ul-map-only .ul-map-bottom { top: auto; bottom: 2px; transform: none; }
+  .utility-workspace.ul-map-only .ul-filterbar { left: 4px; padding: 2px; }
+  .utility-workspace.ul-map-only .ul-map-bottom { left: auto; right: 4px; flex-direction: column; gap: 2px; }
+  .utility-workspace.ul-map-only .ul-zoom,
+  .utility-workspace.ul-map-only .ul-side-toggle { padding: 2px; }
+  .utility-workspace.ul-map-only .ul-side-toggle::before { top: 2px; left: 2px; }
+  .utility-workspace.ul-map-only .ul-map-credit { left: 50%; right: auto; bottom: 2px; transform: translateX(-50%); }
 }

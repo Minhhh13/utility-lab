@@ -1,8 +1,26 @@
 # Throw-from map locations
 
-The origin catalogue checked on 24 November 2026 resolves all **1,557 complete guides / 1,477 original source pages**. Of these entries, **1,549** use the original publisher's distinct start/throwFrom coordinate, and **8** use an explicitly named, registered origin area. The Position photo remains the exact standing reference; a map pin is a navigation aid, not a claim of centimetre-level foot placement. Counts describe side-specific published guides, not personal records.
+The origin catalogue checked on 25 November 2026 resolves all **1,558 complete guides / 1,478 original source pages**. Of these entries, **1,550** use the original publisher's distinct start/throwFrom coordinate, and **8** use an explicitly named, registered origin area. The Position photo remains the exact standing reference; a map pin is a navigation aid, not a claim of centimetre-level foot placement. Counts describe side-specific published guides, not personal records.
 
-Only public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. The precision update adds 53 recipes and improves 16 existing IDs, retaining original source attribution and coordinates. Media playback reviews do not establish independent throw accuracy on the current game build.
+Only public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. The 24 November update added 53 recipes and refined 16 existing IDs. The 25 November review restored Ancient Top Mid spawn #2 from the creator’s clip and original photos, and corrected 20 guide starting positions. Media playback reviews do not establish independent throw accuracy on the current game build.
+
+## Spawn coordinates reviewed on 25 November 2026
+
+Ancient Top Mid now has all five T Spawn recipes recorded by FlockwGlock. The T Spawn pillar is a separate setup that requires moving to the pillar. On the enlarged inset, tap a number at its actual radar position. When the available space cannot accommodate independent 44 px targets, the connected choices remain available. The guide’s Position slide shows its own first-person starting frame. A dashed ring denotes an approximate setup area.
+
+| Creator’s spawn | Matching setpos.gg spawn | World X, Y | Radar X, Y (0–1000) |
+| --- | --- | --- | --- |
+| #1 | T5 | −328, −2288 | 512.70, 869.53 |
+| #2 | T3 | −456, −2288 | 487.70, 869.53 |
+| #3 | T1 | −584, −2288 | 462.70, 869.53 |
+| #4 | T4 | −392, −2224 | 500.20, 857.03 |
+| #5 | T2 | −520, −2224 | 475.20, 857.03 |
+
+Source names, assigned slots, first-frame time and SHA-256, independently matched replay URL and image, calibration, projection evidence and alternate-spawn results are captured per guide. Direct poses were also available for Mirage Window and individual Ancient and Dust II guides. The generator binds each correction to the canonical guide URL, source origin ID, map, floor and displayed artwork hash. It preserves the original category pin alongside the corrected world position in the projection report. [Review data](data/reviewed-world-origins.json) · [Creator’s Top Mid #3](https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799) · [Independent Ancient radar and replays](https://setpos.gg/ancient)
+
+To reproduce the Ancient image comparison, decode the creator’s native clip at the recorded timestamp, and compare against the original Aim images of every available same-side start. Use OpenCV SIFT with up to 5,000 features on grayscale 960×540 frames. Mask the bottom 24 px and the lower-right first-person weapon area (x≥460 and y≥355). Apply a 0.72 nearest-neighbour distance ratio. Convert pixel coordinates to normalized unit bearings with center (479.5,269.5) and focal length 360. Fit 450 three-pair rotation hypotheses using SVD and seed 20261125, retain rotations with positive determinant, then refit with all inliers. Inliers have unit-bearing residual below 0.006. Compare inlier counts, convex-hull coverage and median angular error with the strongest different physical spawn. This test preserves the camera center and allows looking in another direction. Top Mid’s five correct matches have 184–1,051 inliers and median angular errors below 0.064°. The five CT Elbow clips were checked against separate recordings in the same way. All 85 Ancient and 187 Mirage distinct SVG path geometries match the reference artwork exactly. Dust II uses its previously reviewed registration. [Source frames and match statistics](data/reviewed-world-origins.json)
+
+World coordinates convert to radar coordinates as `x=(worldX−posX)×1000/(scale×radarSize)` and `y=(posY−worldY)×1000/(scale×radarSize)`. Published replay starts and individually reviewed poses carry `precision: "world"`. Other publisher category markers and named areas show an approximate starting area, with the Position photo providing the standing reference.
 
 ## Evidence and projection
 
@@ -40,11 +58,11 @@ After generating the expanded catalogue, run:
 node --experimental-strip-types scripts/build-origin-catalogue.mjs
 ```
 
-The generator refuses missing origins, missing independent floor proof, invalid coordinates, missing floor registration, or any incomplete 1,557-guide origin join before writing runtime files. The eight runtime tables contain primary catalogue sources only. Reading or regenerating the documentation report does not rebuild those tables.
+The generator refuses missing origins, missing independent floor proof, invalid coordinates, missing floor registration, or any incomplete 1,558-guide origin join before writing runtime files. The eight runtime tables contain primary catalogue sources only. Reading or regenerating the documentation report does not rebuild those tables.
 
 ## Overview preferences and complete origin choices
 
-`src/lineup-curation.ts` exports `curateLineups(records, maxPerSpot = 4)`. Its **1,283-record preference subset** controls ordering in the quiet overview. The UI appends every other matching record before grouping map destinations. It therefore exposes all **1,557 published records** in normal browsing; the preference subset is not a landing, origin or numbered-spawn availability limit.
+`src/lineup-curation.ts` exports `curateLineups(records, maxPerSpot = 4)`. Its **1,283-record preference subset** controls ordering in the quiet overview. The UI appends every other matching record before grouping map destinations. It therefore exposes all **1,558 published records** in normal browsing; the preference subset is not a landing, origin or numbered-spawn availability limit.
 
 Preference grouping includes map, target floor, team side and utility type. A registered target callout is canonical; otherwise a valid publisher destination ID is used; otherwise the exact target name and point are kept. Simpler throws and distinct named approaches rank first, and numbered variants count as one family only for that preference calculation. No source array or saved ID is removed.
 

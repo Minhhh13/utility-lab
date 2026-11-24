@@ -20992,13 +20992,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Top Mid smoke · T Spawn",
-    "from": "T Spawn",
+    "title": "Top Mid smoke · T Spawn pillar",
+    "from": "T Spawn pillar",
     "target": "Top Mid",
     "purpose": "Cover Top Mid from T Spawn.",
     "throwType": "Stand still + Jump + left click",
     "steps": [
-      "Stand at T Spawn. Match the Position photo.",
+      "Move to the center of the spawn pillar shown in Position.",
       "Match the crosshair in the Aim photo.",
       "Stand still. Jump + left click."
     ],
@@ -21012,7 +21012,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/5e30edb9-e923-43d6-bc4b-bb388d1db987.webp",
         "kind": "position",
-        "caption": "Stand at T Spawn; match this position.",
+        "caption": "Move to the center of the spawn pillar shown in Position.",
         "creator": "L1SSU / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-5bc0"
       },
@@ -21867,11 +21867,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "T Spawn #1",
     "target": "Top Mid",
     "purpose": "Cover Top Mid from T Spawn #1.",
-    "throwType": "Walk + Tap W + jump + left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn #1. Match the Position photo.",
+      "Start at FlockwGlock’s T Spawn #1 and match the pillar and overhead slats in Position.",
       "Match the crosshair in the Aim photo.",
-      "Walk. Tap W + jump + left click."
+      "Tap W as you jump and release LMB. See the creator’s clip for the timing."
     ],
     "x": 0,
     "y": 0,
@@ -21881,31 +21881,41 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e",
     "photos": [
       {
-        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/5962b8c2-dcb9-42f1-95dc-839db8982fa1.jpg",
+        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/c94e2a0b-41bd-4794-b115-3bbadc4eedfd.jpg",
         "kind": "position",
-        "caption": "Use T Spawn #1 shown here.",
-        "creator": "Kobrick / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-1-5e7e",
-        "annotationId": "source-video-frame:5962b8c2-dcb9-42f1-95dc-839db8982fa1:1"
+        "caption": "FlockwGlock’s T Spawn #1. Match the pillar and overhead slats from this starting view.",
+        "creator": "FlockwGlock / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e",
+        "annotationId": "source-video-frame:c94e2a0b-41bd-4794-b115-3bbadc4eedfd:0.15"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/72592beb-5110-4bc7-9f41-60b2b831d73d.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e"
+        "caption": "Match the creator’s marked crosshair.",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e",
+        "creator": "FlockwGlock / CS2Tricks"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/ec692eb2-78c5-4c88-b328-ce82d81c4f18.webp",
         "kind": "landing",
-        "caption": "Landing result.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e"
+        "caption": "Top Mid at the end of the throw.",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-1-bf6e",
+        "creator": "FlockwGlock / CS2Tricks"
       }
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/71dc8905-6070-4b62-bc4d-3cc5a2b50771_spawn%201.mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=tAlG0CoLtuI"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=tAlG0CoLtuI",
+    "spawn": {
+      "family": "ancient-t-top-mid-flockwglock",
+      "slot": 1,
+      "total": 5,
+      "label": "T Spawn #1"
+    }
   },
   {
     "id": "expanded-cs2tricks-ancient-ct-from-outside-main-2cec-t",
@@ -22054,6 +22064,66 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "videoFallbackUrl": "https://www.youtube.com/watch?v=rSxjcDvrxAg"
   },
   {
+    "id": "expanded-cs2tricks-ancient-top-mid-from-t-spawn-2-2490-t",
+    "mapId": "ancient",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "title": "Top Mid smoke · T Spawn #2",
+    "from": "T Spawn #2",
+    "target": "Top Mid",
+    "purpose": "Cover Top Mid from T Spawn #2.",
+    "throwType": "Tap W + Jump + LMB",
+    "steps": [
+      "Start at FlockwGlock’s T Spawn #2 and match the pillar and overhead slats in Position.",
+      "Match the crosshair in the Aim photo.",
+      "Tap W as you jump and release LMB. See the creator’s clip for the timing."
+    ],
+    "x": 0,
+    "y": 0,
+    "showMarker": false,
+    "userCreated": false,
+    "creator": "FlockwGlock / CS2Tricks",
+    "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-2-2490",
+    "photos": [
+      {
+        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/320fa0ad-84b3-471c-ab19-ddde14f7f8b5.jpg",
+        "kind": "position",
+        "caption": "FlockwGlock’s T Spawn #2. Match the pillar and overhead slats from this starting view.",
+        "creator": "FlockwGlock / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-2-2490",
+        "annotationId": "source-video-frame:320fa0ad-84b3-471c-ab19-ddde14f7f8b5:0.15"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/34c05703-3ecd-466d-82e8-dcc8b4e55344.webp",
+        "kind": "aim",
+        "caption": "Match the creator’s marked crosshair.",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-2-2490",
+        "creator": "FlockwGlock / CS2Tricks"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/b55ffb0e-18b1-4099-b045-1e0e0b614c51.webp",
+        "kind": "landing",
+        "caption": "Top Mid at the end of the throw.",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-2-2490",
+        "creator": "FlockwGlock / CS2Tricks"
+      }
+    ],
+    "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/50132c87-8c56-474d-aaf2-ad0a6f3f73f7_spawn%202.mp4",
+    "videoStart": 0,
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=mX7lB5Ed-bM",
+    "spawn": {
+      "family": "ancient-t-top-mid-flockwglock",
+      "slot": 2,
+      "total": 5,
+      "label": "T Spawn #2"
+    }
+  },
+  {
     "id": "expanded-cs2tricks-ancient-top-mid-from-t-spawn-3-2799-t",
     "mapId": "ancient",
     "levelId": "main",
@@ -22063,11 +22133,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "T Spawn #3",
     "target": "Top Mid",
     "purpose": "Cover Top Mid from T Spawn #3.",
-    "throwType": "Walk + Tap W + jump + left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn #3. Match the Position photo.",
+      "Start at FlockwGlock’s T Spawn #3 and match the pillar and overhead slats in Position.",
       "Match the crosshair in the Aim photo.",
-      "Walk. Tap W + jump + left click."
+      "Tap W as you jump and release LMB. See the creator’s clip for the timing."
     ],
     "x": 0,
     "y": 0,
@@ -22079,7 +22149,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "/lineup-media/source-video-stills/cs2tricks/ancient/31f68cca-bf4a-44c4-99e4-394f022eb550.jpg",
         "kind": "position",
-        "caption": "Start at T Spawn #3 beneath the wooden slats.",
+        "caption": "FlockwGlock’s T Spawn #3. Match the pillar and overhead slats from this starting view.",
         "creator": "FlockwGlock / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799",
         "annotationId": "source-video-frame:31f68cca-bf4a-44c4-99e4-394f022eb550:0.15"
@@ -22087,21 +22157,31 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/a8bc04ec-ff87-4894-b0f7-830cf87c46dc.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799"
+        "caption": "Match the creator’s marked crosshair.",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799",
+        "creator": "FlockwGlock / CS2Tricks"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/7650ac76-e54f-4efe-94ae-3755be454dd9.webp",
         "kind": "landing",
-        "caption": "Landing result.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799"
+        "caption": "Top Mid at the end of the throw.",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-3-2799",
+        "creator": "FlockwGlock / CS2Tricks"
       }
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/409b0208-2470-4544-9fa0-7b5bef1b48aa_spawn%203.mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=THDt9MIaQsk"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=THDt9MIaQsk",
+    "spawn": {
+      "family": "ancient-t-top-mid-flockwglock",
+      "slot": 3,
+      "total": 5,
+      "label": "T Spawn #3"
+    }
   },
   {
     "id": "expanded-cs2tricks-ancient-heaven-from-tspawn1-a7d2-t",
@@ -22452,11 +22532,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "T Spawn #4",
     "target": "Top Mid",
     "purpose": "Cover Top Mid from T Spawn #4.",
-    "throwType": "Walk + Left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn #4. Match the Position photo.",
+      "Start at FlockwGlock’s T Spawn #4 and match the pillar and overhead slats in Position.",
       "Match the crosshair in the Aim photo.",
-      "Walk. Left click."
+      "Tap W as you jump and release LMB. See the creator’s clip for the timing."
     ],
     "x": 0,
     "y": 0,
@@ -22466,31 +22546,41 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20",
     "photos": [
       {
-        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/2a7f83bf-472e-4bd5-b377-91a1ea39a4aa.jpg",
+        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/ed1de931-69d0-460a-bdf3-502ff518d3cf.jpg",
         "kind": "position",
-        "caption": "Use T Spawn #4 shown here.",
-        "creator": "Kobrick / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-4-659b",
-        "annotationId": "source-video-frame:2a7f83bf-472e-4bd5-b377-91a1ea39a4aa:2.5"
+        "caption": "FlockwGlock’s T Spawn #4. Match the pillar and overhead slats from this starting view.",
+        "creator": "FlockwGlock / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20",
+        "annotationId": "source-video-frame:ed1de931-69d0-460a-bdf3-502ff518d3cf:0.15"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/8f130623-bbfa-4d4a-a05a-4695e8ef5c73.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20"
+        "caption": "Match the creator’s marked crosshair.",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20",
+        "creator": "FlockwGlock / CS2Tricks"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/83e2447a-5289-4436-add8-8b9e1baae555.webp",
         "kind": "landing",
-        "caption": "Landing result.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20"
+        "caption": "Top Mid at the end of the throw.",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-t-spawn-4-cf20",
+        "creator": "FlockwGlock / CS2Tricks"
       }
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/8ab42b4c-45c7-419d-b13e-36828c3e2f3a_spawn%204.mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=nUlhOdt2RZ4"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=nUlhOdt2RZ4",
+    "spawn": {
+      "family": "ancient-t-top-mid-flockwglock",
+      "slot": 4,
+      "total": 5,
+      "label": "T Spawn #4"
+    }
   },
   {
     "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-2-9550-ct",
@@ -23089,11 +23179,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "T Spawn #5",
     "target": "Top Mid",
     "purpose": "Cover Top Mid from T Spawn #5.",
-    "throwType": "Run + Jump + left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn #5. Match the Position photo.",
+      "Start at FlockwGlock’s T Spawn #5 and match the pillar and overhead slats in Position.",
       "Match the crosshair in the Aim photo.",
-      "Run. Jump + left click."
+      "Tap W as you jump and release LMB. See the creator’s clip for the timing."
     ],
     "x": 0,
     "y": 0,
@@ -23103,31 +23193,41 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3",
     "photos": [
       {
-        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/06d734c7-0b48-4b06-9f03-da47caed4d09.jpg",
+        "image": "/lineup-media/source-video-stills/cs2tricks/ancient/00e79293-89ce-4def-9eb1-e730df15ef35.jpg",
         "kind": "position",
-        "caption": "Use T Spawn #5 shown here.",
-        "creator": "Kobrick / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/a-donut-from-t-spawn-5-aa01",
-        "annotationId": "source-video-frame:06d734c7-0b48-4b06-9f03-da47caed4d09:2.5"
+        "caption": "FlockwGlock’s T Spawn #5. Match the pillar and overhead slats from this starting view.",
+        "creator": "FlockwGlock / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3",
+        "annotationId": "source-video-frame:00e79293-89ce-4def-9eb1-e730df15ef35:0.15"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/a884436f-c414-41e8-b080-c68ece3a539f.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3"
+        "caption": "Match the creator’s marked crosshair.",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3",
+        "creator": "FlockwGlock / CS2Tricks"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/1610967a-447c-4971-b82d-a99e9938b2a7.webp",
         "kind": "landing",
-        "caption": "Landing result.",
-        "creator": "FlockwGlock / CS2Tricks",
-        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3"
+        "caption": "Top Mid at the end of the throw.",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/top-mid-from-spawn-5-f2a3",
+        "creator": "FlockwGlock / CS2Tricks"
       }
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/2a0df7cd-6f5e-4a4b-9623-383387f2394a_spawn%205.mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=wVOfJ0zjfx0"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=wVOfJ0zjfx0",
+    "spawn": {
+      "family": "ancient-t-top-mid-flockwglock",
+      "slot": 5,
+      "total": 5,
+      "label": "T Spawn #5"
+    }
   },
   {
     "id": "expanded-cs2tricks-ancient-a-site-from-a-site-526f-ct",

@@ -72,7 +72,11 @@ test("code preview is read only, opens the correct shared floor as a copy, and u
   await expect(code).toHaveValue(/^UL1\./);
   await page.getByRole("button", { name: "Close tactic sharing" }).click();
   const shared = await encodeTacticShareCode({ format: "utility-lab-tactic", version: 1,
-    plan: { ...emptyPlan("nuke", "lower"), name: "Shared lower split", notes: "Flash before the drop.", objects: [{ id: "s", kind: "smoke", x: 400, y: 300 }] } });
+    plan: { ...emptyPlan("nuke", "lower"), name: "Shared lower split", notes: "Flash before the drop.", objects: [
+      { id: "s", kind: "smoke", x: 400, y: 300 },
+      { id: "red-pen", kind: "pen", x: 200, y: 200, color: "#f16b75", points: [{x:200,y:200},{x:220,y:260},{x:280,y:215}] },
+      { id: "blue-route", kind: "route", x: 350, y: 350, color: "#72a7f5", points: [{x:350,y:350},{x:650,y:470}] },
+    ] } });
   const prior = await page.evaluate(() => localStorage.getItem("utility-lab:draft:v1:mirage:main"));
   await page.locator(".tb-export summary").click();
   await page.getByRole("button", { name: "Open share code", exact: true }).click();
@@ -83,12 +87,19 @@ test("code preview is read only, opens the correct shared floor as a copy, and u
   await page.getByRole("button", { name: "Preview tactic", exact: true }).click();
   await expect(page.getByLabel("Read-only shared tactic preview")).toBeVisible();
   await expect(page.locator(".ts-preview-map image")).toHaveAttribute("href", /nuke_lower/);
+  const preview = page.locator(".ts-preview-map");
+  await expect(preview.locator('[data-object-kind="pen"] path').last()).toHaveAttribute("stroke", "#f16b75");
+  await expect(preview.locator("[data-route-head]")).toHaveAttribute("fill", "#72a7f5");
+  const previewStroke = await preview.locator('[data-object-kind="pen"] path').last().getAttribute("d");
+  const previewArrow = await preview.locator("[data-route-head]").getAttribute("d");
   await expect(page.getByRole("heading", { name: "Shared lower split" })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem("utility-lab:draft:v1:mirage:main"))).toBe(prior);
   await expect(page.getByLabel("Strategy name", { exact: true })).toHaveValue("Local workspace retained");
   await page.getByRole("button", { name: "Edit a copy", exact: true }).click();
   await expect(page.getByLabel("Strategy name", { exact: true })).toHaveValue(/Shared lower split/);
   await expect(page.locator("svg.tb-map image")).toHaveAttribute("href", /nuke_lower/);
+  await expect(page.locator('svg.tb-map [data-object-kind="pen"] path').last()).toHaveAttribute("d", previewStroke!);
+  await expect(page.locator("svg.tb-map [data-route-head]")).toHaveAttribute("d", previewArrow!);
   await page.getByRole("button", { name: "Undo", exact: true }).click();
   await expect(page.getByLabel("Strategy name", { exact: true })).toHaveValue("Existing lower draft");
   await expect(page.locator("svg.tb-map image")).toHaveAttribute("href", previousRadar);
