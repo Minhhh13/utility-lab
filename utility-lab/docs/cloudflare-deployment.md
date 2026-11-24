@@ -2,7 +2,13 @@
 
 Utility Lab is published at **[utilitylab.au](https://utilitylab.au)**. The existing Cloudflare Pages project is `utility-lab`, with production branch `main`. The Porkbun-registered custom domain is connected to this existing project; www redirects to the apex. See [domain setup](custom-domain.md). Local development remains available at http://127.0.0.1:5180.
 
-## Latest verified release — 16 November 2026
+## Latest verified release — 25 November 2026
+
+Production deployment `1f17cc40-5a46-480d-ac32-e94955057c88` serves application commit `5bf41586ef922cbdc5003a50aabbaf60c9775044` on `main`, with `commit_dirty: false`. Source changes are pushed to the existing GitHub repository. The [immutable deployment](https://1f17cc40.utility-lab-8b0.pages.dev) and **utilitylab.au** serve the checked 575-file / 115,180,083-byte static artifact.
+
+The release adds 53 source recipes, improves 16 existing guides, retains all origin choices, moves desktop controls to the map edges and adds subtle pointer feedback and bounded browser photo caching. All 386 automated tests pass: 172 model, 183 Edge and 31 WebKit. All 575 packaged HTTP asset hashes match. Eight public functional groups, three real-photo WebKit cache checks and live artifact/redirect/404 checks also pass, with actual sampled native and Camera YouTube playback. Cloudflare's canonical deployment, production branch and exact source commit were read back through the connected API. [Detailed verification](release-2026-11-25.md).
+
+## Previous verified release — 16 November 2026
 
 Production deployment `c39dd969-a0fd-4e29-8cae-2866af0f8da2` serves the larger photo dialog, full-edge interactive map canvas and smaller Back to targets text. The compact Lineups controls, photo wheel zoom and removed workspace badge remain. Cloudflare records source commit `d93a9e966054973976bae98980857947d3f212d0` on `main`, with a clean deployment source. The application changes have been pushed to the public GitHub repository.
 
