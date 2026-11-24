@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 import {FAVORITE_UTILITIES_KEY,utilityPhotos} from '../src/utility-data';
 import {utilityMarkerArea} from '../src/utility-markers';
-import {mainMarkers,mainMarkerGroupsForArea,landingChoices,expectReferenceCount,waitForUtilityChoice} from './lineup-helpers';
+import {mainMarkers,mainMarkerGroupsForArea,landingChoices,expectReferenceCount,waitForUtilityChoice,openOriginPhoto} from './lineup-helpers';
 
 test.use({serviceWorkers:'block'});
 const sources=(page:Page)=>page.locator('.ul-origin-pin');
@@ -22,7 +22,7 @@ async function saveOnly(page:Page,rows:typeof PUBLISHED_LINEUPS){
 }
 async function verifyOpenedSource(page:Page,expected?:typeof PUBLISHED_LINEUPS[number]){
  await expect(viewer(page)).not.toBeVisible();await expect(sources(page).first()).toBeVisible();
- await sources(page).first().click();await expect(viewer(page)).toBeVisible();
+ await openOriginPhoto(page,{recordId:expected?.id});await expect(viewer(page)).toBeVisible();
  const id=await page.evaluate(()=>new URLSearchParams(location.hash.split('?')[1]).get('lineup'));
  const row=PUBLISHED_LINEUPS.find(row=>row.id===id)!;expect(row).toBeTruthy();if(expected)expect(row.id).toBe(expected.id);
  await expect(viewer(page).getByRole('button',{name:/^Photos/})).toHaveAttribute('aria-pressed','true');

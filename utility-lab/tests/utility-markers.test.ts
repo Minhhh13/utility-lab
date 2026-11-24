@@ -71,7 +71,7 @@ test("nearby different callouts never combine; zoom only separates qualifiers of
 });
 
 test("every researched main area and every plotted guide remains represented across zoom on all maps", () => {
-  assert.equal(published.length, 1504);
+  assert.equal(published.length, 1557);
   for (const records of contexts) {
     const pinned = records.filter(record => record.showMarker !== false);
     const expectedAreas = [...new Set(pinned.map(record => utilityMarkerArea(record).id))].sort();
@@ -191,7 +191,7 @@ test("Dust II exact destinations never cross Mid Doors, Lower Tunnels or Xbox fa
   }
 });
 
-test("the complete all-map destination catalogue preserves every typed floor/side point and source variant", () => {
+test("all-map choices preserve every source point while source-confirmed spawn families share their named landing", () => {
   const pinned = published.filter(record => record.showMarker !== false);
   const pointKey = (record: typeof pinned[number]) => JSON.stringify([
     record.mapId, record.levelId, record.side, record.type, utilityMarkerArea(record).id,
@@ -199,14 +199,17 @@ test("the complete all-map destination catalogue preserves every typed floor/sid
   ]);
   const expected = new Set(pinned.map(pointKey));
   const groups = splitUtilityDestinations(published);
-  assert.equal(groups.length, expected.size);
+  assert.ok(groups.length<=expected.size);
   assert.equal(new Set(groups.map(group => group.id)).size, groups.length);
-  assert.deepEqual(new Set(groups.map(group => pointKey(group.records[0]))), expected);
+  assert.deepEqual(new Set(groups.flatMap(group=>group.records.map(pointKey))), expected);
   assert.deepEqual(groups.flatMap(group => group.records.map(record => record.id)).sort(), pinned.map(record => record.id).sort());
   assert.ok(groups.some(group => group.records.length > 4), "source variants are not dropped to satisfy the later origin-view limit");
   for (const group of groups) {
     const first = group.records[0];
-    assert.ok(group.records.every(record => pointKey(record) === pointKey(first)));
+    if(group.records.some(record=>record.spawn)) {
+      assert.ok(group.records.every(record=>record.mapId===first.mapId&&record.levelId===first.levelId&&record.side===first.side&&record.type===first.type&&utilityMarkerArea(record).id===group.areaId));
+      assert.equal(new Set(group.records.map(record=>`${record.target.toLowerCase().trim()}|${record.landingVariant||''}`)).size,1);
+    } else assert.ok(group.records.every(record => pointKey(record) === pointKey(first)));
     assert.equal(group.x, first.x); assert.equal(group.y, first.y);
   }
   assert.deepEqual(new Set(splitUtilityDestinations([...published].reverse()).map(group => group.id)), new Set(groups.map(group => group.id)));

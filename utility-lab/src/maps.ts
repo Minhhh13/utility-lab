@@ -31,11 +31,12 @@ const contentBounds: Record<string, NonNullable<MapLevel["contentBounds"]>> = {
   anubis: { x: 129, y: 0, width: 754, height: 980 },
   cache: { x: 13, y: 150, width: 950, height: 723 },
 };
+const vectorPath=(id:string)=>`/maps/${id}${id==='anubis'?'-v22':''}.svg`;
 const vector = (id: string): MapLevel[] => [
   {
     id: "main",
     name: "Overview",
-    image: `/maps/${id}.svg`,
+    image: vectorPath(id),
     radarImage: `/maps/de_${id}_radar_psd.png`,
     contentBounds: contentBounds[id],
   },
@@ -50,7 +51,7 @@ const active = (id: string, name: string): GameMap => ({
   faceit: true,
   levels: vector(id),
   credit: "Minimaps by setpos.gg",
-  vectorImage: `/maps/${id}.svg`,
+  vectorImage: vectorPath(id),
 });
 export const MAPS: GameMap[] = [
   active("mirage", "Mirage"),

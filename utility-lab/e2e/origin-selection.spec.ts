@@ -1,10 +1,9 @@
-import { chooseLandingSpot, landingChoices, waitForUtilityChoice, openUtilityGroupForArea, mainMarkerGroupsForArea, expectReferenceCount, chooseUtilityType } from "./lineup-helpers";
+import { chooseLandingSpot, landingChoices, waitForUtilityChoice, openUtilityGroupForArea, mainMarkerGroupsForArea, expectReferenceCount, chooseUtilityType,openOriginPhoto,expectOriginRecipes } from "./lineup-helpers";
 import { test, expect, type Page } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 import { MAPS, type GameMap, type MapLevel } from "../src/maps";
 import { lineupMapFrame } from "../src/lineup-map-layout";
 import { PUBLISHED_LINEUPS } from "./catalogue-fixtures";
-import { normalizeOriginLabel } from "../src/lineup-curation";
 import { findLineupOrigin, parseOriginLookup } from "../src/lineup-origins";
 import { FAVORITE_UTILITIES_KEY, utilityPhotos } from "../src/utility-data";
 
@@ -47,18 +46,21 @@ async function openFirstTarget(page: Page) {
   await expect(picker(page)).toHaveCount(0);
   await chooseLandingSpot(page);
   await expect(origins(page).first()).toBeVisible();
-  expect(await origins(page).count()).toBeLessThanOrEqual(4);
+  await expectOriginRecipes(page);
   await expect(viewer(page)).not.toBeVisible();
 }
 
-async function clickFirstOriginAndVerifySource(page: Page) {
-  const first = origins(page).first();
+async function clickFirstOriginAndVerifySource(page: Page, recordId?: string) {
+  const pins = origins(page);
+  const first = recordId
+    ? pins.nth(await pins.evaluateAll((nodes,id)=>nodes.findIndex(node=>JSON.parse(node.getAttribute('data-origin-recipes')||'[]').includes(id)),recordId))
+    : pins.first();
   const plotted = {
     x: Number(await first.getAttribute("data-origin-x")),
     y: Number(await first.getAttribute("data-origin-y")),
     levelId: (await first.getAttribute("data-origin-level"))!,
   };
-  await first.click({ timeout: 5_000 });
+  await openOriginPhoto(page,{recordId});
   await expect(viewer(page)).toBeVisible();
   await expect(viewer(page).getByRole("button", { name: /^Photos/ })).toHaveAttribute("aria-pressed", "true");
   await expect(viewer(page).locator("iframe, video")).toHaveCount(0);
@@ -88,12 +90,14 @@ test("Cache CT overlapping Quad variants yield one clickable standing point", as
   await openUtilityGroupForArea(page,"cache:main:a-main");
   await chooseUtilityType(page,'Smoke');
   await chooseLandingSpot(page,{areaId:'cache:main:a-main'});
-  await expect(origins(page).filter({ has: page.locator("title", { hasText: /^Quad — open photos$/ }) })).toHaveCount(1);
-  const labels = (await origins(page).all()).map(async pin => normalizeOriginLabel((await pin.getAttribute("aria-label"))!.replace(/^Throw from /, "")));
-  const names = await Promise.all(labels);
-  expect(new Set(names).size).toBe(names.length);
+  const retained=await expectOriginRecipes(page);
+  const quadIds=retained.records.filter(record=>/Quad/i.test(record.from)).map(record=>record.id);
+  expect(quadIds.length).toBeGreaterThan(0);
+  const quadGroups=retained.groups.filter(group=>group.ids.some(id=>quadIds.includes(id)));
+  expect(quadGroups).toHaveLength(1);
+  for(const id of quadIds)expect(quadGroups[0].ids).toContain(id);
   await expectDistinctSourceHitAreas(page);
-  const selected = await clickFirstOriginAndVerifySource(page);
+  const selected = await clickFirstOriginAndVerifySource(page,quadIds[0]);
   expect(selected.record.from).toMatch(/Quad/i);
 });
 
@@ -280,9 +284,7 @@ test("pending origins wait after choosing a landing and Back cancels the request
     held.release();await(await response).finished();
     await expect(landingChoices(page)).toHaveCount(0);
     await expect(origins(page).first()).toBeVisible();
-    expect(await origins(page).count()).toBeLessThanOrEqual(4);
-    const names=await Promise.all((await origins(page).all()).map(async pin=>normalizeOriginLabel((await pin.getAttribute("aria-label"))!.replace(/^Throw from /,""))));
-    expect(new Set(names).size).toBe(names.length);
+    await expectOriginRecipes(page);
     await expectDistinctSourceHitAreas(page);
     const opened=await clickFirstOriginAndVerifySource(page);
     expect(opened.record.type).toBe("Smoke");
@@ -328,7 +330,7 @@ test("keyboard group, utility and landing selection focuses an immediate origin 
   await expect(page.locator(".ul-origin-glyph.can-animate")).toHaveCount(0);
   expect(await origins(page).first().locator(".ul-origin-glyph").evaluate(element => getComputedStyle(element).animationName)).toBe("none");
   await expect(viewer(page)).not.toBeVisible();
-  await origins(page).first().press("Enter");
+  await openOriginPhoto(page,{keyboard:true});
   await expect(viewer(page)).toBeVisible();
   await expect(viewer(page).getByRole("button", { name: /^Photos/ })).toHaveAttribute("aria-pressed", "true");
 });
@@ -347,7 +349,7 @@ test("unsaving the last Saved source removes its pin and returns to the empty ta
   await expectReferenceCount(page,1);
   await openFirstTarget(page);
   await expect(origins(page)).toHaveCount(1);
-  await origins(page).first().click();
+  await openOriginPhoto(page,{recordId:guide.id});
   await expect(viewer(page)).toBeVisible();
   await viewer(page).getByRole("button", { name: `Unsave ${guide.title}`, exact: true }).click();
   await viewer(page).getByRole("button", { name: "Close lineup media", exact: true }).click();

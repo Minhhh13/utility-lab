@@ -2,7 +2,16 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./e2e",
-  testMatch: ["webkit.spec.ts", "map-focus.spec.ts"],
+  testMatch: [
+    "webkit.spec.ts",
+    "map-focus.spec.ts",
+    "board-edge-controls.spec.ts",
+    "edge-controls.spec.ts",
+    "interaction-motion.spec.ts",
+    "map-full-canvas.spec.ts",
+    "origin-variants.spec.ts",
+    "personal-lineup-targets.spec.ts",
+  ],
   workers: 1,
   timeout: 45_000,
   reporter: "list",

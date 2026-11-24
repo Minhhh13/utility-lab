@@ -1,18 +1,21 @@
 # Throw-from map locations
 
-The 10 November 2026 origin catalogue resolves all **1,504 complete guides / 1,424 original source pages**. Of these entries, **1,497** use the original publisher's distinct start/throwFrom coordinate, and **7** use an explicitly named, registered origin area. The Position photo remains the exact standing reference; a map pin is a navigation aid, not a claim of centimetre-level foot placement.
+The origin catalogue checked on 24 November 2026 resolves all **1,557 complete guides / 1,477 original source pages**. Of these entries, **1,549** use the original publisher's distinct start/throwFrom coordinate, and **8** use an explicitly named, registered origin area. The Position photo remains the exact standing reference; a map pin is a navigation aid, not a claim of centimetre-level foot placement. Counts describe side-specific published guides, not personal records.
 
-Only existing public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. Existing photos, videos, targets and catalogue IDs are unchanged by this work.
+Only public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. The precision update adds 53 recipes and improves 16 existing IDs, retaining original source attribution and coordinates. Media playback reviews do not establish independent throw accuracy on the current game build.
 
 ## Evidence and projection
 
 - `docs/data/publisher-destination-evidence.json`: CS2Tricks `origin.id/x/y` comes from the published category's `start_positions`, separate from `destination`.
 - The four `docs/data/csnades-*-destination-evidence.json` files: CSNADES `throwFrom.x/y/levels`, separate from `throwTo` and trajectory bounces.
+- `docs/data/precise-other-maps-evidence.json` and `docs/data/precise-anubis-evidence.json`: reviewed setpos.gg, GO NADE and additional CSNADES raw start points, source IDs, original media and recorded inputs. The generator projects these origins independently from their destinations. See [other-map evidence](precise-other-maps.md), [Anubis evidence](precise-anubis.md) and [Mirage/Ancient precision evidence](precise-mirage-ancient.md).
 - `src/publisher-map-registrations.ts`: the same reviewed publisher radar→displayed artwork registration used for targets. Start coordinates are transformed independently through the **source floor's** registration. CSNADES normalized axes remain independent of the non-square source bitmap's pixel dimensions.
 - `docs/data/lineup-origin-floor-evidence.json`: 122 CS2Tricks Nuke/Vertigo sources plus four CSNADES null-source-floor cases. Each binds the source ID, original standing photo and named source callout to a source floor. The existing destination-floor evidence is not reused as origin-floor evidence.
-- `docs/data/lineup-origin-area-evidence.json`: seven exact-guide fallbacks retain the original guide's named standing area, Position photo, author callout polygon/interior point and calibrated registration. Cache Electro, White Box/spool, Nuke T Roof, Outside, Decon, Anubis A Plat/Plateau and Ruins are kept as **areas**, rather than invented precise feet.
+- `docs/data/lineup-origin-area-evidence.json`: seven original exact-guide fallbacks retain the original guide's named standing area, Position photo, author callout polygon/interior point and calibrated registration. `docs/data/precise-anubis-named-origins.json` adds the running Camera guide's reviewed Upper steps area. Cache Electro, White Box/spool, Nuke T Roof, Outside, Decon, Anubis A Plat/Plateau, Ruins and Upper steps remain **areas**, rather than invented precise feet. The running Camera guide's Position/Release frames show its moving throw.
 - `docs/data/lineup-origin-projection-proof.json`: raw start point, floor basis and independently transformed result for each researched publisher source.
 - `docs/data/lineup-origin-summary.json`: counts, cross-floor records, per-map bytes and hashes.
+
+Anubis uses the reviewed setpos.gg v22 radar dated 19 November 2026. Provider-specific registrations align each source's radar with that displayed artwork; original raw points and the projection proof stay separate.
 
 For multilevel maps the floor is resolved from the source, not the landing. All CS2Tricks Nuke origins in this batch are upper/outdoor/Ramp-room sources; the Nuke New End HE still starts upper and lands lower. Vertigo T Spawn, the lower B-stair approach and Under Stairs are lower sources; CT/Mid/site, upper ladder landing and upper-facing A ramp are upper sources. Standing references and named areas determine that classification. Source-published height, when available, is supporting evidence only; no world-Z threshold is guessed or executed in the game.
 
@@ -37,22 +40,26 @@ After generating the expanded catalogue, run:
 node --experimental-strip-types scripts/build-origin-catalogue.mjs
 ```
 
-The generator refuses missing origins, missing independent floor proof, invalid coordinates, missing floor registration, or any incomplete 1,504-guide origin join before writing runtime files. The eight runtime tables contain primary catalogue sources only.
+The generator refuses missing origins, missing independent floor proof, invalid coordinates, missing floor registration, or any incomplete 1,557-guide origin join before writing runtime files. The eight runtime tables contain primary catalogue sources only. Reading or regenerating the documentation report does not rebuild those tables.
 
-## Default curation
+## Overview preferences and complete origin choices
 
-`src/lineup-curation.ts` exports `curateLineups(records, maxPerSpot = 4)`. This is a display selection; the source array stays complete for saved guides, favorites and links.
+`src/lineup-curation.ts` exports `curateLineups(records, maxPerSpot = 4)`. Its **1,283-record preference subset** controls ordering in the quiet overview. The UI appends every other matching record before grouping map destinations. It therefore exposes all **1,557 published records** in normal browsing; the preference subset is not a landing, origin or numbered-spawn availability limit.
 
-Grouping includes map, target floor, team side and utility type. An exact registered target callout is canonical; otherwise a valid publisher destination ID is used; otherwise the exact target name and point are kept. Neighbouring named close/far/left/right targets are not averaged together. Distinct input target positions remain intact.
+Preference grouping includes map, target floor, team side and utility type. A registered target callout is canonical; otherwise a valid publisher destination ID is used; otherwise the exact target name and point are kept. Simpler throws and distinct named approaches rank first, and numbered variants count as one family only for that preference calculation. No source array or saved ID is removed.
 
-Within one target/side/type group, standing LMB/RMB throws rank before crouch, jump, walking and running variants. Distinct named origins are selected first. Numbered spawn variants such as Top Mid Spawn #1–#4 count as one origin family, so they cannot crowd out other approaches. Remaining spaces may be filled from the same family up to four total. Ordering is deterministic across file/provider input order. A user's custom guides are retained separately from the publisher limit.
+Destination choices use the complete filtered catalogue. Public scopes containing a source-confirmed spawn family share a landing choice only when map, floor, side, utility, semantic area, exact normalized target name and coverage qualifier match. Provider impact variation then stays within that one named destination. Other point-specific destinations, neighbouring names, close/far/inside/outside variants and personal guides remain separate. Raw target coordinates are retained, with a real member as the representative anchor.
 
-Current defaults select **1,258 of 1,504** complete entries; all 1,504 remain available in the original catalogue.
+Every standing recipe remains accessible. Near-overlapping source hit areas share a genuine source point and open a visual map chooser in pages of eight; a singleton opens its Position-first viewer directly. Standing points are not displaced to create spacing. The chooser's inset map links each option to its original start point, and source-confirmed spawn slots show their publisher's numbering. Mirage Window and Ancient Elbow each retain five explicit slots. Dust II Mid Doors exposes 18 T and two CT recipes. Anubis's new T-spawn families collectively cover 11 source slots without claiming that every destination supports every slot. See [the complete coverage review](catalogue-coverage-2026-11-24.md).
+
+Personal guides follow their own saved target. A lone personal guide opens directly from that target; several saved guides use a visual **Your lineups** target action. This is a guide-opening action, not a claimed standing coordinate. Copying a publisher URL does not give a personal record that publisher's standing location. An action badge may move slightly with a leader for tap clearance, while the owner's target and published source points remain unchanged; offscreen actions remain hidden during panning.
+
+Desktop utility filters sit on the left and zoom/pan controls on the right. Phones use compact top filters and bottom zoom controls. These controls and same-floor selections preserve the current camera. Map/origin JSON loads only for the selected map; photos load after guide selection. A separate browser-only cache can reuse 12 successfully viewed publisher photos for seven days, without a database or bulk gallery download. See [image caching](image-caching.md).
 
 ## Focused validation
 
 ```sh
-node --experimental-strip-types --test tests/lineup-origins.test.ts tests/lineup-curation.test.ts
+node --experimental-strip-types --test tests/lineup-origins.test.ts tests/lineup-curation.test.ts tests/origin-options.test.ts
 ```
 
-Ten tests pass. They check all-guide coverage, every CS2Tricks and CSNADES source-point reprojection rather than copied targets, cross-floor cases and supported alternates, independent null-floor proof, seven area registrations, query-identified source keys, nonmutation, invalid coordinate rejection, four-per-spot defaults, simple/distinct-origin preference and retention of custom records.
+The focused models check all-guide coverage, independent source-point reprojection rather than copied targets, cross-floor cases and supported alternates, null-floor proof, named-area registration, query-identified source keys, nonmutation, invalid-coordinate rejection, preference ordering and complete origin-family retention. Browser suites additionally cover exact source photos, source-floor/camera preservation, pagination, keyboard focus and phone containment. Current release-gate results belong in [verification](verification.md); source media reviews and model coverage are not in-game execution.

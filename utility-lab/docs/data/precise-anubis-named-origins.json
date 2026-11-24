@@ -1,0 +1,91 @@
+[
+  {
+    "guideId": "precise-noctrl-anubis-camera-running-upper-t",
+    "source": "https://www.youtube.com/watch?v=YiiypSiuFkE&t=313",
+    "mapId": "anubis",
+    "levelId": "main",
+    "registrationId": "anubis-main-totalcs",
+    "positionPhoto": "/lineup-media/precise-anubis/camera-running-position.jpg",
+    "referenceSource": "https://totalcsgo.com/callouts/anubis",
+    "referencePoint": [
+      590,
+      556
+    ],
+    "referencePolygon": [
+      [
+        615.625,
+        410.15625
+      ],
+      [
+        643.75,
+        410.15625
+      ],
+      [
+        644.53125,
+        503.125
+      ],
+      [
+        642.96875,
+        571.09375
+      ],
+      [
+        638.28125,
+        572.65625
+      ],
+      [
+        636.71875,
+        576.5625
+      ],
+      [
+        565.625,
+        576.5625
+      ],
+      [
+        541.40625,
+        557.8125
+      ],
+      [
+        542.96875,
+        547.65625
+      ],
+      [
+        558.59375,
+        538.28125
+      ],
+      [
+        617.96875,
+        536.71875
+      ],
+      [
+        617.96875,
+        514.84375
+      ],
+      [
+        611.71875,
+        513.28125
+      ],
+      [
+        610.15625,
+        503.90625
+      ],
+      [
+        610.9375,
+        446.09375
+      ],
+      [
+        614.84375,
+        446.09375
+      ]
+    ],
+    "x": 737.5,
+    "y": 695,
+    "label": "Upper steps",
+    "basis": "callout-area",
+    "sourceRegionId": "anubis:Upper",
+    "publisherRegionId": 983,
+    "sourceCallout": "Upper",
+    "review": "The original chapter starts through Carpets and approaches the short steps beside the red shutters above the canal/drop. Total CS names that broad elevated T approach Upper/T Side Upper. The selected point is inside the published Upper polygon and is explicitly representative; original Position/Release frames identify the moving throw, not exact map pixels.",
+    "reviewImage": "outputs/research/precise-anubis/camera-running-origin-proof.png",
+    "checkedAt": "2026-11-24"
+  }
+]

@@ -11,11 +11,13 @@ export default function PhotoZoom({
   title,
   onSwipe,
   formats,
+  onReady,
 }: {
   photo: UtilityPhoto;
   title: string;
   onSwipe?: (direction: number) => void;
   formats?: ReactNode;
+  onReady?:()=>void;
 }) {
   const [scale, setScale] = useState(1);
   const [dragging, setDragging] = useState(false);
@@ -241,6 +243,7 @@ export default function PhotoZoom({
               setLoaded(current => current.image === photo.image &&
                 current.width === image.naturalWidth && current.height === image.naturalHeight
                 ? current : { image: photo.image, width: image.naturalWidth, height: image.naturalHeight });
+              onReady?.();
             }}
             onError={() => setLoaded({ image: "", width: 0, height: 0 })}
             style={region ? {

@@ -12,8 +12,8 @@ const all = mergePhotoGuides(PHOTO_GUIDE_LIBRARY,maps.flatMap(map => normalizeEx
 const lookups = Object.fromEntries(maps.map(map => [map,parseOriginLookup(json(`src/data/lineup-origins/origins-${map}.json`))]));
 
 test('every complete guide has an independently recorded standing location', () => {
-  assert.equal(all.length,1504);
-  assert.equal(new Set(all.map(row => row.source)).size,1424);
+  assert.equal(all.length,1557);
+  assert.equal(new Set(all.map(row => row.source)).size,1477);
   let publisher = 0, area = 0;
   for (const record of all) {
     const point = findLineupOrigin(record,lookups[record.mapId]);
@@ -22,7 +22,7 @@ test('every complete guide has an independently recorded standing location', () 
     assert.ok(point.label);
     if (point.basis === 'publisher-origin') publisher++; else area++;
   }
-  assert.equal(publisher,1497); assert.equal(area,7);
+  assert.equal(publisher,1549); assert.equal(area,8);
 });
 
 test('standing pins use publisher origin coordinates and the origin floor registration, not target coordinates', () => {

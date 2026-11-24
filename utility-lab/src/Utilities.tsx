@@ -39,6 +39,7 @@ import {
 } from "lucide-react";
 import { MAPS, type GameMap } from "./maps";
 import MediaImage from "./MediaImage";
+import {preloadPhoto} from "./photo-preload";
 import useMapNavigation from "./useMapNavigation";
 import {lineupMapFrame} from "./lineup-map-layout";
 import PhotoZoom from "./PhotoZoom";
@@ -57,10 +58,12 @@ import { PHOTO_GUIDE_LIBRARY } from "./guide-library";
 import { cachedMapGuides, loadMapGuides } from "./expanded-catalogue";
 import { mergePhotoGuides } from "./expanded-guide-model";
 import MarkerChoices from "./MarkerChoices";
+import OriginChoices from "./OriginChoices";
+import {groupOriginOptions,groupPersonalGuides,layoutPersonalGuides,originRecipeOptions,type OriginChoiceGroup} from "./origin-options";
 import GuideActions from "./GuideActions";
 import UtilityTargetMarker from "./UtilityTargetMarker";
 import { loadMapOrigins, findLineupOrigin, type OriginLookup } from "./lineup-origins";
-import { curateLineups, normalizeOriginLabel } from "./lineup-curation";
+import { curateLineups } from "./lineup-curation";
 import LineupSuggestions from "./LineupSuggestions";
 import { photoStepName } from "./lineup-copy";
 import { nativePhotoRecord } from "./native-photo-library";
@@ -103,7 +106,7 @@ export type UtilitiesProps = {
 type MapSelection = {
   records: UtilityReference[];
   type: UtilityType;
-  target: {x:number;y:number;levelId:string;label:string};
+  target: {x:number;y:number;levelId:string;label:string;name?:string;variant?:string};
   animate: boolean;
 };
 type Draft = {
@@ -205,7 +208,7 @@ const uid = () =>
     ? crypto.randomUUID()
     : `lineup-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 const boundedPosition = (value: number) =>
-  Math.max(0, Math.min(1000, Math.round(value)));
+  Math.max(0, Math.min(1000, Math.round(value*100)/100));
 const utilityLabel = (type: UtilityType) =>
   type === "Molotov" ? "Molly" : type === "HE" ? "HE grenade" : type;
 function blankDraft(levelId: string, side: "T" | "CT"): Draft {
@@ -520,6 +523,7 @@ function LineupMedia({ record }: { record: UtilityReference }) {
               photo={photos[index]}
               title={`${record.title}, photo ${index + 1}`}
               onSwipe={photos.length > 1 ? changePhoto : undefined}
+              onReady={()=>{const next=photos[(index+1)%photos.length];if(next&&next.image!==photos[index].image)preloadPhoto(next.image);}}
             />
             {photos.length > 1 && (
               <>
@@ -703,6 +707,7 @@ export default function Utilities({
     trigger: SVGElement;
     animate: boolean;
   } | null>(null);
+  const [originChoice,setOriginChoice]=useState<{group:OriginChoiceGroup;anchor:{x:number;y:number};trigger:SVGElement}|null>(null);
   const [savedOnly, setSavedOnly] = useState(false);
   const [custom, setCustom] = useState(readUserUtilities);
   const [favorites, setFavorites] = useState(readUtilityFavorites);
@@ -749,7 +754,7 @@ export default function Utilities({
     placing,
   );
   const zoom = navigation.zoom;
-  useEffect(() => { selectionRequest.current++;setMarkerChoice(null);setLoadingStanding(false); }, [map.id, levelId, side, types, zoom]);
+  useEffect(() => { selectionRequest.current++;setMarkerChoice(null);setOriginChoice(null);setLoadingStanding(false); }, [map.id, levelId, side, types, zoom]);
   useEffect(() => { selectionRequest.current++;setOriginSelection(null);setLandingSelection(null);setLoadingStanding(false); }, [map.id, side, types, savedOnly, initialLevelId]);
   const viewWidth = fit.width / zoom;
   const viewHeight = fit.height / zoom;
@@ -781,22 +786,30 @@ export default function Utilities({
   const originRecords = originSelection?.records.filter(record => !savedOnly || favorites.includes(record.id)) || [];
   const visibleRecords = originSelection ? originRecords : mapMarkerRecords;
   const originChoices = originRecords.flatMap(record => {
+    if(record.userCreated)return [];
     const point = findLineupOrigin(record, origins.mapId === map.id ? origins.lookup : {}, levelId);
     return point?.levelId === levelId ? [{record,point}] : [];
   });
+  const originGroups=groupOriginOptions(originChoices,mapUnit);
+  const personalGroups=groupPersonalGuides(originRecords.filter(record=>record.levelId===levelId),mapUnit);
   const originFloors = originSelection ? map.levels.filter(floor => originRecords.some(record =>
-    findLineupOrigin(record,origins.lookup,floor.id)?.levelId === floor.id)) : [];
+    record.userCreated ? record.levelId===floor.id : findLineupOrigin(record,origins.lookup,floor.id)?.levelId === floor.id)) : [];
+  const spawnAlternatives=mediaRecord?.spawn ? originRecipeOptions(mapRecords.filter(record=>
+    record.spawn?.family===mediaRecord.spawn?.family && record.side===mediaRecord.side && record.type===mediaRecord.type && !record.userCreated)) : [];
+  const spawnIndex=spawnAlternatives.findIndex(record=>record.id===mediaRecord?.id);
   useEffect(() => {
-    if(!originSelection || !originRecords.length || originChoices.length) return;
-    const point = findLineupOrigin(originRecords[0],origins.lookup,levelId);
-    if(point && point.levelId !== levelId) setLevelId(point.levelId);
+    if(!originSelection || !originRecords.length || originChoices.length || personalGroups.length) return;
+    const original=originRecords.find(record=>!record.userCreated&&findLineupOrigin(record,origins.lookup));
+    const sourceLevel=original?findLineupOrigin(original,origins.lookup,levelId)?.levelId:
+      originRecords.find(record=>record.userCreated)?.levelId;
+    if(sourceLevel && sourceLevel !== levelId) setLevelId(sourceLevel);
   }, [originSelection, origins.lookup, levelId, favorites, savedOnly]);
   useEffect(() => {
     if(savedOnly && originSelection && !originSelection.records.some(record => favorites.includes(record.id))) backToTargets();
     if(savedOnly && landingSelection && !landingGroups.length) backToTargets();
   }, [savedOnly, originSelection, landingSelection, favorites]);
   useEffect(() => {
-    if(originSelection && !originSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-origin-pin")?.focus({preventScroll:true}));
+    if(originSelection && !originSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-origin-pin,.ul-personal-guide-pin")?.focus({preventScroll:true}));
   }, [originSelection, levelId, origins.lookup]);
   useEffect(() => {
     if(landingSelection && !landingSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-landing-pin")?.focus({preventScroll:true}));
@@ -819,6 +832,7 @@ export default function Utilities({
       width:visibleWidth,height:visibleHeight,
     };
   }, [mapUnit,mapSize,navigation.viewBox]);
+  const personalMarkers=layoutPersonalGuides(personalGroups,originGroups,mapUnit,markerBounds);
   const mainClusters = useMemo(() => clusterUtilityAreas(markerGroups.filter(group =>
     group.x >= markerBounds.x && group.x <= markerBounds.x+markerBounds.width &&
     group.y >= markerBounds.y && group.y <= markerBounds.y+markerBounds.height),mapUnit), [markerGroups,markerBounds,mapUnit]);
@@ -840,7 +854,7 @@ export default function Utilities({
     if (!initialLineup) return;
     setLevelId(initialLineup.levelId);
     setSelectedId(initialLineup.id);
-    if (initialLineup.videoUrl || utilityPhotos(initialLineup).length) {
+    if (initialLineup.userCreated || initialLineup.videoUrl || utilityPhotos(initialLineup).length) {
       setMediaRecord(initialLineup);
       requestAnimationFrame(() => mediaDialog.current?.showModal());
     }
@@ -916,7 +930,7 @@ export default function Utilities({
     }
     setSelectedId(item.id);
     history.replaceState(null, "", lineupLink(item, location.href));
-    if (item.videoUrl || utilityPhotos(item).length) openMedia(item);
+    if (item.userCreated || item.videoUrl || utilityPhotos(item).length) openMedia(item);
   }
   function selectMarker(group: UtilityMarkerGroup, trigger: SVGElement, animate = true) {
     if (editing) {
@@ -952,60 +966,44 @@ export default function Utilities({
       setLandingSelection(null);
       const destination = destinations[0];
       void openThrowFrom(destination.records,type,{
-        x:destination.x,y:destination.y,levelId:choice.target.levelId,label:destination.label,
+        x:destination.x,y:destination.y,levelId:choice.target.levelId,label:destination.label,name:destination.records[0]?.target,variant:destination.variant,
       },animate);
     }
   }
   function chooseLandingSpot(group: UtilityMarkerGroup, keyboard = false) {
     if(!landingSelection) return;
     void openThrowFrom(group.records,landingSelection.type,{
-      x:group.x,y:group.y,levelId:landingSelection.target.levelId,label:group.label,
+      x:group.x,y:group.y,levelId:landingSelection.target.levelId,label:group.label,name:group.records[0]?.target,variant:group.variant,
     },landingSelection.animate && !keyboard && !document.activeElement?.matches(":focus-visible"));
   }
   async function openThrowFrom(input: UtilityReference[], type: UtilityType, target: MapSelection["target"], animate: boolean) {
     const request = ++selectionRequest.current;
+    const choices=originRecipeOptions(input);
+    if(!choices.length)return;
+    if(choices.length===1&&choices[0].userCreated){
+      setOriginSelection(null);setOriginChoice(null);setLandingSelection(null);setMarkerChoice(null);
+      setLoadingStanding(false);setMarkerFilter([]);selectRecord(choices[0]);return;
+    }
     let lookup = origins.mapId === map.id ? origins.lookup : {};
-    if(!Object.keys(lookup).length) {
+    if(choices.some(record=>!record.userCreated)&&!Object.keys(lookup).length) {
       setLoadingStanding(true);
       try {
         lookup = await loadMapOrigins(map.id);
         if(!alive.current || selectionRequest.current !== request) return;
         setOrigins({mapId:map.id,lookup,error:""});
       } catch {
+        if(!alive.current || selectionRequest.current!==request)return;
         if(alive.current && selectionRequest.current === request)
           onNotify("Standing locations couldn’t load. Choose the spot again to retry.");
-        return;
+        if(!choices.some(record=>record.userCreated))return;
       } finally {
         if(alive.current && selectionRequest.current === request) setLoadingStanding(false);
       }
     }
-    const records = curateLineups(input);
-    // A target offers a small set of genuinely different standing points.
-    const known = new Set<string>();
-    const positions: {x:number;y:number;levelId:string}[] = [];
-    const bounds = svgRef.current?.getBoundingClientRect();
-    const choices = records.filter(record => {
-      const point = findLineupOrigin(record,lookup);
-      const key = normalizeOriginLabel(record.from);
-      if(known.has(key)) return false;
-      if(point) {
-        const projections = map.levels.flatMap(floor => {
-          const projection = findLineupOrigin(record,lookup,floor.id);
-          return projection?.levelId === floor.id ? [{point:projection,frame:lineupMapFrame(floor.contentBounds || {x:0,y:0,width:1000,height:1000})}] : [];
-        });
-        // Keep real source coordinates. Pick one useful example when two
-        // standing points would overlap; never fan them out onto invented spots.
-        if(projections.some(({point,frame}) => {
-          const unit = bounds ? Math.max(frame.width / bounds.width,frame.height / bounds.height) : mapUnit * zoom;
-          return positions.some(previous => previous.levelId === point.levelId && Math.hypot(previous.x-point.x,previous.y-point.y) < 46 * unit);
-        })) return false;
-        positions.push(...projections.map(({point}) => point));
-      }
-      known.add(key); return true;
-    }).slice(0,4);
-    if (!choices.length) return;
-    const first = choices[0];
-    const point = findLineupOrigin(first,lookup,levelId);
+    // All source recipes remain available. Nearby hit areas form an expandable
+    // map choice instead of deleting numbered spawns or limiting origins to four.
+    const first = choices.find(record=>!record.userCreated&&findLineupOrigin(record,lookup));
+    const point = first?findLineupOrigin(first,lookup,levelId):undefined;
     setOriginSelection({records:choices,type,target,animate});
     setLoadingStanding(false);
     setLandingSelection(null);
@@ -1023,9 +1021,15 @@ export default function Utilities({
       history.replaceState(null,"",`#utilities?${new URLSearchParams({map:map.id,level:selection.target.levelId,side})}`);
     }
     setOriginSelection(null);
+    setOriginChoice(null);
     setLandingSelection(null);
     
     setSelectedId(null);
+  }
+  function chooseOriginGroup(group:OriginChoiceGroup,trigger:SVGElement){
+    if(group.options.length===1){selectRecord(group.options[0].record);return;}
+    const bounds=trigger.getBoundingClientRect();
+    setOriginChoice({group,trigger,anchor:{x:bounds.x+bounds.width/2,y:bounds.y+bounds.height/2}});
   }
   function openMedia(item: UtilityReference) {
     setMediaRecord(item);
@@ -1643,28 +1647,52 @@ export default function Utilities({
                   strokeWidth={4*mapUnit}>{!landingSelection && (clusterById.get(group.id)?.areas.length || 0)>1 ? `${clusterById.get(group.id)!.areas.length} locations` : group.label}</text>)}
               </g>}
               </g>
-              {!mapFailed && originSelection && <g role="group" aria-label="Throw-from locations"
+              {!mapFailed && originSelection && <g role="group" aria-label={originChoices.length?'Throw-from locations':'Your lineup targets'}
                 data-target-x={originSelection.target.x} data-target-y={originSelection.target.y}
                 data-target-level={originSelection.target.levelId} data-target-label={originSelection.target.label}
+                data-target-name={originSelection.target.name||originSelection.target.label} data-target-variant={originSelection.target.variant}
                 data-target-utility={originSelection.type}>
                 {originSelection.target.levelId === levelId && <g className="ul-origin-target" transform={`translate(${originSelection.target.x} ${originSelection.target.y})`} aria-hidden="true">
                   <circle r={13 * mapUnit} fill="var(--surface-raised)" stroke={utilityColor(originSelection.type)} strokeWidth={2 * mapUnit}/>
                   <circle r={4 * mapUnit} fill={utilityColor(originSelection.type)}/>
                   <text className="ul-origin-label" textAnchor="middle" y={25*mapUnit} fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{originSelection.target.label}</text>
                 </g>}
-                {originChoices.map(({record,point},index) => <g key={record.id}
-                  className="ul-origin-pin" transform={`translate(${point.x} ${point.y})`}
-                  role="button" tabIndex={0} aria-label={`Throw from ${record.from}`}
-                  data-origin-x={point.x} data-origin-y={point.y} data-origin-level={point.levelId}
-                  onClick={event => {if(navigation.shouldIgnoreClick())return;event.stopPropagation();selectRecord(record);}}
-                  onKeyDown={event => {if(event.key === "Enter" || event.key === " "){event.preventDefault();selectRecord(record);}}}>
-                  <title>{record.from} — open photos</title>
+                {originGroups.map((group,index) => <g key={group.id}
+                  visibility={originChoice?"hidden":undefined} aria-hidden={originChoice?true:undefined}
+                  className="ul-origin-pin" transform={`translate(${group.point.x} ${group.point.y})`}
+                  role="button" tabIndex={originChoice?-1:0} aria-label={`Throw from ${group.label}${group.options.length>1?`, ${group.options.length} options`:''}`}
+                  data-origin-x={group.point.x} data-origin-y={group.point.y} data-origin-level={group.point.levelId}
+                  data-origin-recipes={JSON.stringify(group.options.map(option=>option.record.id))}
+                  onClick={event => {if(navigation.shouldIgnoreClick())return;event.stopPropagation();chooseOriginGroup(group,event.currentTarget);}}
+                  onKeyDown={event => {if(event.key === "Enter" || event.key === " "){event.preventDefault();chooseOriginGroup(group,event.currentTarget);}}}>
+                  <title>{group.label} — {group.options.length>1?`${group.options.length} throws`:'open photos'}</title>
                   <circle r={23 * mapUnit} fill="transparent"/>
                   <g className={originSelection.animate ? "ul-origin-glyph can-animate" : "ul-origin-glyph"} style={{animationDelay:`${index * 30}ms`}}>
                     <circle className="ul-origin-disc" r={15 * mapUnit} strokeWidth={1.5 * mapUnit}/>
                     <Crosshair x={-9 * mapUnit} y={-9 * mapUnit} size={18 * mapUnit} strokeWidth={2}/>
-                    <text className="ul-origin-label" textAnchor="middle" y={-23 * mapUnit} fontSize={11 * mapUnit} strokeWidth={3 * mapUnit}>{record.from.length > 23 ? `${record.from.slice(0,22)}…` : record.from}</text>
+                    {group.options.length>1&&<g className="ul-origin-count"><circle cx={13*mapUnit} cy={-12*mapUnit} r={8*mapUnit}/><text x={13*mapUnit} y={-9*mapUnit} textAnchor="middle" fontSize={9*mapUnit}>{group.options.length}</text></g>}
+                    <text className="ul-origin-label" textAnchor="middle" y={-23 * mapUnit} fontSize={11 * mapUnit} strokeWidth={3 * mapUnit}>{group.label.length > 23 ? `${group.label.slice(0,22)}…` : group.label}</text>
                   </g>
+                </g>)}
+                {!originChoice&&personalMarkers.some(group=>group.displayX!==group.target.x||group.displayY!==group.target.y)&&<g aria-hidden="true" pointerEvents="none">
+                  {personalMarkers.filter(group=>group.displayX!==group.target.x||group.displayY!==group.target.y).map(group=><line key={group.id}
+                    x1={group.target.x} y1={group.target.y} x2={group.displayX} y2={group.displayY}
+                    stroke="var(--muted)" strokeWidth={mapUnit}/>)}</g>}
+                {personalMarkers.map(group=><g key={group.id}
+                  visibility={originChoice?"hidden":undefined} aria-hidden={originChoice?true:undefined}
+                  className="ul-personal-guide-pin" transform={`translate(${group.displayX} ${group.displayY})`}
+                  style={{color:'var(--accent)',cursor:'pointer'}}
+                  role="button" tabIndex={originChoice?-1:0}
+                  aria-label={`${group.label}${group.options.length>1?`, ${group.options.length} saved lineups`:''}`}
+                  data-personal-target-x={group.target.x} data-personal-target-y={group.target.y}
+                  data-personal-recipes={JSON.stringify(group.options.map(option=>option.record.id))}
+                  onClick={event=>{if(navigation.shouldIgnoreClick())return;event.stopPropagation();chooseOriginGroup(group,event.currentTarget);}}
+                  onKeyDown={event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();chooseOriginGroup(group,event.currentTarget);}}}>
+                  <title>{group.label} — open your saved guide at its target</title>
+                  <circle r={23*mapUnit} fill="transparent"/>
+                  <circle className="ul-origin-disc" r={15*mapUnit} strokeWidth={1.5*mapUnit}/>
+                  <UserRound x={-9*mapUnit} y={-9*mapUnit} size={18*mapUnit} strokeWidth={2}/>
+                  <text className="ul-origin-label" textAnchor="middle" y={-23*mapUnit} fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{group.label}</text>
                 </g>)}
               </g>}
 
@@ -1947,6 +1975,7 @@ export default function Utilities({
                         name="lineup-x"
                         min={0}
                         max={1000}
+                        step={.01}
                         value={draft.x}
                         onChange={(event) =>
                           setDraftField(
@@ -1963,6 +1992,7 @@ export default function Utilities({
                         name="lineup-y"
                         min={0}
                         max={1000}
+                        step={.01}
                         value={draft.y}
                         onChange={(event) =>
                           setDraftField(
@@ -2260,6 +2290,9 @@ export default function Utilities({
           onSelectType={chooseTargetUtility}
         />
       )}
+      {originChoice && <OriginChoices key={originChoice.group.id} {...originChoice} mapImage={mapImage}
+        onClose={()=>setOriginChoice(null)}
+        onChoose={record=>{setOriginChoice(null);selectRecord(record);}}/>}
       <dialog
         className="ul-media-dialog"
         ref={mediaDialog}
@@ -2280,6 +2313,11 @@ export default function Utilities({
             </h2>
           </div>
           <div className="ul-media-heading-actions">
+          {mediaRecord?.spawn&&<div className="ul-spawn-switch" role="group" aria-label="Spawn lineup" title="Numbering matches this guide’s original spawn sheet">
+            <button aria-label="Previous spawn lineup" disabled={spawnIndex<=0} onClick={()=>selectRecord(spawnAlternatives[spawnIndex-1])}><ChevronLeft size={18}/></button>
+            <span>{mediaRecord.spawn.label}</span>
+            <button aria-label="Next spawn lineup" disabled={spawnIndex<0||spawnIndex>=spawnAlternatives.length-1} onClick={()=>selectRecord(spawnAlternatives[spawnIndex+1])}><ChevronRight size={18}/></button>
+          </div>}
           {mediaRecord && <GuideActions
             record={mediaRecord} saved={favorites.includes(mediaRecord.id)}
             onToggleSaved={() => toggleFavorite(mediaRecord)}

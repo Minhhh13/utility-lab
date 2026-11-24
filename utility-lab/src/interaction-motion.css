@@ -1,0 +1,39 @@
+/* State indication lives in the navigation, never in map or photo geometry. */
+.has-tab-indicator {position:relative;}
+.has-tab-indicator [role="tab"].is-active::after {display:none;}
+.nav-active-indicator {
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:1px;
+  height:3px;
+  border-radius:3px 3px 0 0;
+  background:var(--accent);
+  transform-origin:left bottom;
+  opacity:0;
+  pointer-events:none;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  :root[data-navigation-input="pointer"] .nav-active-indicator {
+    transition:transform var(--workspace-duration) var(--ease-out),opacity 120ms var(--ease-out);
+  }
+  :root[data-navigation-input="pointer"] :is(.global-nav-item,.phone-tabs button,.ul-media-tabs button)>svg {
+    transition:transform 120ms var(--ease-out),opacity 120ms var(--ease-out);
+  }
+  :root[data-navigation-input="pointer"] :is(.global-nav-item,.phone-tabs button,.ul-media-tabs button):active:not(:disabled)>svg {
+    transform:scale(.94);
+  }
+  :root[data-navigation-input="pointer"] .ul-media-tabs button:not([aria-pressed="true"])>svg {
+    opacity:.75;
+  }
+  :root[data-navigation-input="pointer"] .ul-origin-choices {
+    transition:opacity var(--workspace-duration) var(--ease-out);
+    @starting-style {opacity:.64;}
+  }
+}
+
+/* Keyboard input cancels any pointer feedback immediately, including release. */
+:root[data-navigation-input="keyboard"] :is(.nav-active-indicator,.global-nav-item>svg,.phone-tabs button>svg,.ul-media-tabs button>svg,.ul-origin-choices) {
+  transition:none;
+}

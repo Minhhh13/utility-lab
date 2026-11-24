@@ -34860,6 +34860,1384 @@
     ]
   },
   {
+    "source": "https://setpos.gg/dust2/long-doors/ct1",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "CT Spawn 1",
+    "sourceId": "69",
+    "rawOrigin": {
+      "x": 627.53,
+      "y": 196.66
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 627.53,
+        "y": 196.66,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-doors/ct2",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "CT Spawn 2",
+    "sourceId": "5",
+    "rawOrigin": {
+      "x": 623.75,
+      "y": 178.73
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 623.75,
+        "y": 178.73,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-doors/ct3",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "CT Spawn 3",
+    "sourceId": "6",
+    "rawOrigin": {
+      "x": 606.84,
+      "y": 168.33
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 606.84,
+        "y": 168.33,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/mid-doors/t12",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 12",
+    "sourceId": "2",
+    "rawOrigin": {
+      "x": 440.12,
+      "y": 898.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 440.12,
+        "y": 898.22,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/mid-doors/t14",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 14",
+    "sourceId": "1",
+    "rawOrigin": {
+      "x": 468.08,
+      "y": 898.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 468.08,
+        "y": 898.22,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/mid-doors/t15",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 15",
+    "sourceId": "110",
+    "rawOrigin": {
+      "x": 475.85,
+      "y": 886.23
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 475.85,
+        "y": 886.23,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/mid-doors/t3",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 3",
+    "sourceId": "169",
+    "rawOrigin": {
+      "x": 310.72,
+      "y": 905.98
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 310.72,
+        "y": 905.98,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/mid/ct1",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 1",
+    "sourceId": "85",
+    "rawOrigin": {
+      "x": 872.74,
+      "y": 367.17
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 872.74,
+        "y": 367.17,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/mid/ct2",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 2",
+    "sourceId": "82",
+    "rawOrigin": {
+      "x": 884.89,
+      "y": 377.27
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 884.89,
+        "y": 377.27,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/mid/ct3",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 3",
+    "sourceId": "84",
+    "rawOrigin": {
+      "x": 893.65,
+      "y": 356.94
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 893.65,
+        "y": 356.94,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/mid/ct4",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 4",
+    "sourceId": "11",
+    "rawOrigin": {
+      "x": 908.67,
+      "y": 371.5
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 908.67,
+        "y": 371.5,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/mid/ct5",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 5",
+    "sourceId": "10",
+    "rawOrigin": {
+      "x": 912.79,
+      "y": 354.75
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 912.79,
+        "y": 354.75,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/mid/ct6",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 6",
+    "sourceId": "83",
+    "rawOrigin": {
+      "x": 905.58,
+      "y": 342.16
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 905.58,
+        "y": 342.16,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/vent/t5",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 5",
+    "sourceId": "107",
+    "rawOrigin": {
+      "x": 220.28,
+      "y": 552.87
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 220.28,
+        "y": 552.87,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/vent/t6",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 6",
+    "sourceId": "79",
+    "rawOrigin": {
+      "x": 229.49,
+      "y": 554.69
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 229.49,
+        "y": 554.69,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/vent/t7",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 7",
+    "sourceId": "80",
+    "rawOrigin": {
+      "x": 210.1,
+      "y": 556.52
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 210.1,
+        "y": 556.52,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/vent/t8",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 8",
+    "sourceId": "137",
+    "rawOrigin": {
+      "x": 226.14,
+      "y": 564.59
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 226.14,
+        "y": 564.59,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t1",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 1",
+    "sourceId": "128",
+    "rawOrigin": {
+      "x": 887.05,
+      "y": 606.89
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 887.05,
+        "y": 606.89,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t10",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 10",
+    "sourceId": "166",
+    "rawOrigin": {
+      "x": 874.03,
+      "y": 547.64
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 874.03,
+        "y": 547.64,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t2",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 2",
+    "sourceId": "20",
+    "rawOrigin": {
+      "x": 904.52,
+      "y": 604.15
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 904.52,
+        "y": 604.15,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t3",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 3",
+    "sourceId": "129",
+    "rawOrigin": {
+      "x": 918.26,
+      "y": 594.96
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 918.26,
+        "y": 594.96,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t4",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 4",
+    "sourceId": "125",
+    "rawOrigin": {
+      "x": 878.73,
+      "y": 585.4
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 878.73,
+        "y": 585.4,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t5",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 5",
+    "sourceId": "19",
+    "rawOrigin": {
+      "x": 895.2,
+      "y": 580.8
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 895.2,
+        "y": 580.8,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t6",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 6",
+    "sourceId": "127",
+    "rawOrigin": {
+      "x": 916.57,
+      "y": 577.95
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 916.57,
+        "y": 577.95,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t7",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 7",
+    "sourceId": "18",
+    "rawOrigin": {
+      "x": 873.01,
+      "y": 564.73
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 873.01,
+        "y": 564.73,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t8",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 8",
+    "sourceId": "122",
+    "rawOrigin": {
+      "x": 894.51,
+      "y": 565.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 894.51,
+        "y": 565.22,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/b-main/t9",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 9",
+    "sourceId": "17",
+    "rawOrigin": {
+      "x": 901.59,
+      "y": 552.93
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 901.59,
+        "y": 552.93,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t1",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 1",
+    "sourceId": "61",
+    "rawOrigin": {
+      "x": 445.2526340996169,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 445.25,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/outside-conn/t1",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 1",
+    "sourceId": "130",
+    "rawOrigin": {
+      "x": 445.2526340996169,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 445.25,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t10",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 10",
+    "sourceId": "162",
+    "rawOrigin": {
+      "x": 496.1386494252874,
+      "y": 915.9482758620691
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 496.14,
+        "y": 915.95,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/outside-conn/t11",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 11",
+    "sourceId": "71",
+    "rawOrigin": {
+      "x": 499.13119082249904,
+      "y": 927.9214559386974
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 499.13,
+        "y": 927.92,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t11",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 11",
+    "sourceId": "151",
+    "rawOrigin": {
+      "x": 499.13119082249904,
+      "y": 927.9214559386974
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 499.13,
+        "y": 927.92,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t11",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 11",
+    "sourceId": "161",
+    "rawOrigin": {
+      "x": 499.13119082249904,
+      "y": 927.9214559386974
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 499.13,
+        "y": 927.92,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t2",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 2",
+    "sourceId": "62",
+    "rawOrigin": {
+      "x": 445.2526340996169,
+      "y": 939.8946360153258
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 445.25,
+        "y": 939.89,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/outside-conn/t2",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 2",
+    "sourceId": "72",
+    "rawOrigin": {
+      "x": 445.2526340996169,
+      "y": 939.8946360153258
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 445.25,
+        "y": 939.89,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t2",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 2",
+    "sourceId": "145",
+    "rawOrigin": {
+      "x": 445.2526340996169,
+      "y": 939.8946360153258
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 445.25,
+        "y": 939.89,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t3",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 3",
+    "sourceId": "59",
+    "rawOrigin": {
+      "x": 451.23922413793105,
+      "y": 912.9549808429119
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 451.24,
+        "y": 912.95,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t4",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 4",
+    "sourceId": "63",
+    "rawOrigin": {
+      "x": 461.7157567049809,
+      "y": 908.4650383141762
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 461.72,
+        "y": 908.47,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t4",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 4",
+    "sourceId": "142",
+    "rawOrigin": {
+      "x": 461.7157567049809,
+      "y": 908.4650383141762
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 461.72,
+        "y": 908.47,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/outside-conn/t5",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 5",
+    "sourceId": "92",
+    "rawOrigin": {
+      "x": 466.20569923371653,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 466.21,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t5",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 5",
+    "sourceId": "93",
+    "rawOrigin": {
+      "x": 466.20569923371653,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 466.21,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t5",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 5",
+    "sourceId": "146",
+    "rawOrigin": {
+      "x": 466.20569923371653,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 466.21,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t6",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 6",
+    "sourceId": "60",
+    "rawOrigin": {
+      "x": 473.68893678160924,
+      "y": 914.4516283524905
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 473.69,
+        "y": 914.45,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/outside-conn/t6",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 6",
+    "sourceId": "96",
+    "rawOrigin": {
+      "x": 473.68893678160924,
+      "y": 914.4516283524905
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 473.69,
+        "y": 914.45,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t6",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 6",
+    "sourceId": "143",
+    "rawOrigin": {
+      "x": 473.68893678160924,
+      "y": 914.4516283524905
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 473.69,
+        "y": 914.45,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t7",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 7",
+    "sourceId": "57",
+    "rawOrigin": {
+      "x": 479.3013649425288,
+      "y": 903.8029731005088
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 479.3,
+        "y": 903.8,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t7",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 7",
+    "sourceId": "138",
+    "rawOrigin": {
+      "x": 479.3013649425288,
+      "y": 903.8029731005088
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 479.3,
+        "y": 903.8,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/outside-conn/t8",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 8",
+    "sourceId": "94",
+    "rawOrigin": {
+      "x": 487.15876436781616,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 487.16,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/mid/t8",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 8",
+    "sourceId": "139",
+    "rawOrigin": {
+      "x": 487.15876436781616,
+      "y": 923.4315134099618
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 487.16,
+        "y": 923.43,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/conn/t9",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "T spawn 9",
+    "sourceId": "95",
+    "rawOrigin": {
+      "x": 494.2678400383142,
+      "y": 903.8029731005088
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 494.27,
+        "y": 903.8,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/molotovs/window-from-alley",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "Alley",
+    "sourceId": "nade_5570f9514ea9",
+    "rawOrigin": {
+      "x": 725,
+      "y": 730
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 721.67,
+        "y": 717.7,
+        "levelId": "main",
+        "registrationId": "csnades-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/molotovs/window-from-ruins",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "Ruins",
+    "sourceId": "nade_ef1740113445",
+    "rawOrigin": {
+      "x": 299,
+      "y": 858
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 308.79,
+        "y": 841.42,
+        "levelId": "main",
+        "registrationId": "csnades-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://gonade.app/nade/anubis-camera-from-outside-a-main-smoke",
+    "mapId": "anubis",
+    "provider": "gonade",
+    "label": "Outside A Main",
+    "sourceId": "1017",
+    "rawOrigin": {
+      "x": 756.2814070351759,
+      "y": 530.9882747068677
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 756.28,
+        "y": 530.99,
+        "levelId": "main",
+        "registrationId": "gonade-anubis-main-20261124"
+      }
+    ]
+  },
+  {
     "source": "https://gonade.app/nade/nuke-mustang-from-t-roof-molotov",
     "mapId": "nuke",
     "label": "T Roof",
@@ -34991,5 +36369,24 @@
       }
     ],
     "referenceSource": "https://totalcsgo.com/callouts/nuke"
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=YiiypSiuFkE&t=313",
+    "mapId": "anubis",
+    "label": "Upper steps",
+    "floorBasis": "reviewed-named-origin-area",
+    "basis": "callout-area",
+    "projected": [
+      {
+        "x": 737.5,
+        "y": 695,
+        "levelId": "main",
+        "registrationId": "anubis-main-totalcs",
+        "label": "Upper steps",
+        "basis": "callout-area",
+        "sourceId": "anubis:Upper"
+      }
+    ],
+    "referenceSource": "https://totalcsgo.com/callouts/anubis"
   }
 ]

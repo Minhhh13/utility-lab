@@ -1,0 +1,30 @@
+[
+  {
+    "id": "anubis-camera-running-upper-reviewed-area-20261124",
+    "guideId": "precise-noctrl-anubis-camera-running-upper-t",
+    "source": "https://www.youtube.com/watch?v=YiiypSiuFkE&t=313",
+    "mapId": "anubis",
+    "levelId": "main",
+    "side": "T",
+    "type": "Smoke",
+    "target": "A Connector",
+    "destinationArea": "anubis:main:named:a connector",
+    "reference": {
+      "guideId": "expanded-cs2tricks-anubis-a-connector-from-upper-7667-t",
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667",
+      "markerSource": {
+        "registrationId": "cs2tricks-anubis-main-20261109",
+        "destinationId": "dbdb87e6-0c94-4a91-ac82-7bc91d9c50bf",
+        "x": 627,
+        "y": 328
+      }
+    },
+    "referenceSourceSha256": "0a0494acf4b880d061970c2e2a1f2dbfedd04da83d0f2cda7e1b2465b2fd2a1a",
+    "referenceHashBasis": "SHA256 of JSON.stringify of the exact source-specific endpoint record in referenceEvidence",
+    "referenceEvidence": "docs/data/publisher-destination-evidence.json",
+    "evidence": "docs/precise-anubis.md",
+    "reviewImage": "docs/map-registration-precision/anubis-reviewed-camera-destination.svg",
+    "checkedAt": "2026-11-24",
+    "review": "Original result photos and the matching running chapter show the same Camera/A Connector hall doorway, columns and hieroglyph trim. This binds only this exact guide to the named navigation area; it does not claim an original YouTube radar point or identical smoke impact."
+  }
+]

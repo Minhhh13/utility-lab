@@ -80,6 +80,7 @@ import {
   type XY,
 } from "./board-model";
 import "./tactic-board.css";
+import "./board-edge-controls.css";
 import UtilityIcon, { type UtilityKind } from "./UtilityIcon";
 import TacticShareDialog from "./TacticShareDialog";
 import BoardRoute from "./BoardRoute";
@@ -1853,7 +1854,11 @@ export default function TacticBoard({
                 onClick={(event) => {
                   const rect = event.currentTarget.getBoundingClientRect();
                   const width = Math.min(264, window.innerWidth - 16);
-                  setInkPosition({ left: Math.max(8, Math.min(rect.left, window.innerWidth - width - 8)), top: Math.max(8, rect.top - 184) });
+                  const edgeDock = window.matchMedia("(min-width: 801px)").matches;
+                  setInkPosition({
+                    left: Math.max(8, Math.min(edgeDock ? rect.right + 12 : rect.left, window.innerWidth - width - 8)),
+                    top: Math.max(8, Math.min(edgeDock ? rect.top : rect.top - 184, window.innerHeight - 192)),
+                  });
                 }}>
                 <span className="tb-ink-dot" style={{ background: activeInk || colors[inkKind] }} />
                 <span>Colour</span><ChevronDown size={14} />
@@ -1864,7 +1869,14 @@ export default function TacticBoard({
                   const open = event.currentTarget.matches(":popover-open");
                   setInkOpen(open);
                   if (open) requestAnimationFrame(() => inkPopover.current?.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus({ preventScroll: true }));
-                }} onKeyDown={(event) => event.stopPropagation()}>
+                }} onKeyDown={(event) => {
+                  event.stopPropagation();
+                  if(event.key === "Escape") {
+                    event.preventDefault();
+                    event.currentTarget.hidePopover();
+                    inkButton.current?.focus({preventScroll:true});
+                  }
+                }}>
                 <div className="tb-ink-heading"><strong>Drawing colour</strong><span>{selectedInk ? "Selected + new" : "New drawings"}</span></div>
                 <div className="tb-ink-swatches" role="group" aria-label="Ink colours">
                   {inkSwatches.map((swatch) => <button key={swatch.label} className="tb-ink-swatch"
@@ -1947,7 +1959,7 @@ export default function TacticBoard({
               </span>
               <kbd>{activeTool.key}</kbd>
             </div>
-            <div className="tb-zoom">
+            <div className="tb-zoom" role="group" aria-label="Map zoom">
               <button
                 className="tb-icon-button"
                 aria-label="Zoom out"

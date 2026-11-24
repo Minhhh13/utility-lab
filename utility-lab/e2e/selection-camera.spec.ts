@@ -5,7 +5,7 @@ import {lineupMapFrame} from '../src/lineup-map-layout';
 import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 import {utilityMarkerArea} from '../src/utility-markers';
 import {utilityPhotos} from '../src/utility-data';
-import {mainMarkerGroupsForArea,landingChoicesForArea,waitForUtilityChoice,chooseUtilityType,chooseLandingSpot} from './lineup-helpers';
+import {mainMarkerGroupsForArea,landingChoicesForArea,waitForUtilityChoice,chooseUtilityType,chooseLandingSpot,openOriginPhoto} from './lineup-helpers';
 
 test.use({serviceWorkers:'block'});
 const area='dust2:main:mid-doors';
@@ -66,9 +66,7 @@ async function throughSameFloorSelection(page:Page,input:Input,camera:string){
  await expectCamera(page,camera);
  await chooseLandingSpot(page,{areaId:area,keyboard:input==='keyboard',touch:input==='touch'});
  await expect(origins(page).first()).toBeVisible();await expectCamera(page,camera);
- const lower=origins(page).filter({has:page.locator('title',{hasText:/^Lower Tunnels? —/})});
- const source=await lower.count()?lower.first():origins(page).first();
- await activate(source,input);await expect(viewer(page)).toBeVisible();await expectCamera(page,camera);
+ await openOriginPhoto(page,{from:'Lower Tunnels',keyboard:input==='keyboard',touch:input==='touch'});await expect(viewer(page)).toBeVisible();await expectCamera(page,camera);
  const id=await page.evaluate(()=>new URLSearchParams(location.hash.split('?')[1]).get('lineup'));
  const row=PUBLISHED_LINEUPS.find(row=>row.id===id)!;expect(row).toBeTruthy();expect(row).toMatchObject({mapId:'dust2',levelId:'main',side:'T',type:'Smoke'});expect(utilityMarkerArea(row).id).toBe(area);
  await expect(viewer(page).locator('.ul-photo-canvas img')).toHaveAttribute('src',utilityPhotos(row)[0].image);
@@ -120,7 +118,7 @@ for(const scenario of [{mapId:'nuke',type:'HE'},{mapId:'vertigo',type:'Smoke'}])
  await expect(origins(page).first()).toHaveAttribute('data-origin-level','upper');
  await expect.poll(async()=>(await canvas(page).getAttribute('viewBox'))!.split(' ').map(value=>Number(Number(value).toFixed(6)))).toEqual(expectedUpper);
  const upperCamera=await watchCamera(page);
- await origins(page).first().click();await expect(viewer(page)).toBeVisible();await expectCamera(page,upperCamera);
+ await openOriginPhoto(page);await expect(viewer(page)).toBeVisible();await expectCamera(page,upperCamera);
  await viewer(page).getByRole('button',{name:'Close lineup media',exact:true}).click();await expectCamera(page,upperCamera);
  await page.getByRole('button',{name:'Back to targets',exact:true}).click();
  await expect(page.getByRole('group',{name:'Utility map level',exact:true}).getByRole('button',{name:'Lower',exact:true})).toHaveAttribute('aria-pressed','true');

@@ -1,0 +1,1000 @@
+{
+  "checkedAt": "2026-11-24",
+  "scope": "Five Mirage T Window and five Ancient CT Elbow original publisher spawn variants",
+  "records": [
+    {
+      "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-1-35af-ct",
+      "mapId": "ancient",
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
+      "checkedAt": "2026-11-24",
+      "publisherId": "761c8da9-2110-4bbb-a815-e77b46adb59d",
+      "publisherUpdatedAt": "2026-07-16T21:09:49.882916Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "ancient-ct-elbow-cs2tricks",
+        "slot": 1,
+        "total": 5,
+        "label": "CT Spawn 1"
+      },
+      "movement": "walking",
+      "technique": "jumpthrow",
+      "publishedConsoleReference": null,
+      "publisherOrigin": {
+        "id": "0b097990-4cb4-4519-b2d0-b933f0470baf",
+        "x": 559,
+        "y": 49,
+        "sourceTeam": "counter_terrorist"
+      },
+      "publisherDestination": {
+        "id": "1fc1f913-1897-4294-a3cd-8ecdcf7d3721",
+        "x": 341,
+        "y": 609
+      },
+      "reviewedInstructions": {
+        "position": "CT Spawn 1 only. CT Spawn 1 only. Use the original blue CT Spawn #1 square.",
+        "aim": "Match spawn 1’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
+        "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
+        "sourceId": "761c8da9-2110-4bbb-a815-e77b46adb59d",
+        "capturedSourceId": "761c8da9-2110-4bbb-a815-e77b46adb59d",
+        "mapId": "ancient",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/ancient/761c8da9-2110-4bbb-a815-e77b46adb59d.jpg",
+        "time": 0.15,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1280,
+        "outputHeight": 720,
+        "mediaUrl": "https://d1ntlvfrxziqo6.cloudfront.net/0e7363fb-fac9-47f1-9aa3-f8d723641c05_0919(8).mp4",
+        "extraction": "video-element-screenshot",
+        "sha256": "e37a71d02abfc4d49aa6461b3dd512862d4a1563488f66846d790bda02697aab",
+        "bytes": 198605,
+        "caption": "Use the original blue CT Spawn #1 square.",
+        "review": "The original blue floor square is fully visible before the source turns toward its aim.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/4d3cda89-e884-4380-abe4-e5597b030089.webp",
+        "caption": "Match spawn 1’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/f2fe1f99-ef8f-4eda-b0a6-9c23a547ae86.webp",
+        "httpStatus": 200,
+        "sha256": "7224e3a60ca20d3d0287d530ce4d8cfbbeab213fb4f849f466c2bb0b577a7cc7",
+        "bytes": 85314,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://d1ntlvfrxziqo6.cloudfront.net/0e7363fb-fac9-47f1-9aa3-f8d723641c05_0919(8).mp4",
+        "httpStatus": 200,
+        "contentType": "video/mp4",
+        "browserPlayback": {
+          "provider": "mp4",
+          "duration": 18.367007,
+          "width": 1920,
+          "height": 1080,
+          "readyState": 4,
+          "playedTo": 0.220077
+        },
+        "youtubeId": "mPzOVG7yODE",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "ANCIENT - Elbow Smoke from CT Spawn #1"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-2-9550-ct",
+      "mapId": "ancient",
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
+      "checkedAt": "2026-11-24",
+      "publisherId": "bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe",
+      "publisherUpdatedAt": "2026-06-02T19:31:54.759926Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "ancient-ct-elbow-cs2tricks",
+        "slot": 2,
+        "total": 5,
+        "label": "CT Spawn 2"
+      },
+      "movement": "walking",
+      "technique": "jumpthrow",
+      "publishedConsoleReference": null,
+      "publisherOrigin": {
+        "id": "7a8635c3-1238-4c8b-82ab-131fb59c18d9",
+        "x": 534,
+        "y": 38,
+        "sourceTeam": "counter_terrorist"
+      },
+      "publisherDestination": {
+        "id": "1fc1f913-1897-4294-a3cd-8ecdcf7d3721",
+        "x": 341,
+        "y": 609
+      },
+      "reviewedInstructions": {
+        "position": "CT Spawn 2 only. CT Spawn 2 only. Use the blue-marked CT Spawn #2 position.",
+        "aim": "Match spawn 2’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
+        "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
+        "sourceId": "bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe",
+        "capturedSourceId": "bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe",
+        "mapId": "ancient",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/ancient/bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe.jpg",
+        "time": 0.5,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1280,
+        "outputHeight": 720,
+        "mediaUrl": "https://d1ntlvfrxziqo6.cloudfront.net/174f2407-a14c-4b86-b3cc-de47a317b4da_0919(7).mp4",
+        "extraction": "video-element-screenshot",
+        "sha256": "d7f8935159b5ae8c6d5323a395def4a08b25f839b96d79d8e5b4b451a16ed705",
+        "bytes": 204349,
+        "caption": "Use the blue-marked CT Spawn #2 position.",
+        "review": "The pre-aim view shows the original marked spawn squares and nearby broken-wall landmark.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/f0a6a904-be13-4749-9e35-e4edeaecda48.webp",
+        "caption": "Match spawn 2’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/6261e009-9bb3-4771-a09a-979fde5df1b7.webp",
+        "httpStatus": 200,
+        "sha256": "a321be9a66b6834aeaeaa3f8295ad0b6c8487050ed37807f9a27da32574514b5",
+        "bytes": 58644,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://d1ntlvfrxziqo6.cloudfront.net/174f2407-a14c-4b86-b3cc-de47a317b4da_0919(7).mp4",
+        "httpStatus": 200,
+        "contentType": "video/mp4",
+        "browserPlayback": {
+          "provider": "mp4",
+          "duration": 20.039002,
+          "width": 1920,
+          "height": 1080,
+          "readyState": 4,
+          "playedTo": 0.210565
+        },
+        "youtubeId": "uh_X9k0XIck",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "ANCIENT - Elbow Smoke from CT Spawn #2"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-3-494a-ct",
+      "mapId": "ancient",
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
+      "checkedAt": "2026-11-24",
+      "publisherId": "7cbf25f4-5710-4974-80f9-abd7a898ad48",
+      "publisherUpdatedAt": "2026-06-02T19:31:52.305049Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "ancient-ct-elbow-cs2tricks",
+        "slot": 3,
+        "total": 5,
+        "label": "CT Spawn 3"
+      },
+      "movement": "walking",
+      "technique": "jumpthrow",
+      "publishedConsoleReference": null,
+      "publisherOrigin": {
+        "id": "19ef3ed2-1c1e-446b-9f16-eb34b5c0656e",
+        "x": 509,
+        "y": 39,
+        "sourceTeam": "counter_terrorist"
+      },
+      "publisherDestination": {
+        "id": "1fc1f913-1897-4294-a3cd-8ecdcf7d3721",
+        "x": 341,
+        "y": 609
+      },
+      "reviewedInstructions": {
+        "position": "CT Spawn 3 only. CT Spawn 3 only. Use the original blue CT Spawn #3 box.",
+        "aim": "Match spawn 3’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
+        "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
+        "sourceId": "7cbf25f4-5710-4974-80f9-abd7a898ad48",
+        "capturedSourceId": "7cbf25f4-5710-4974-80f9-abd7a898ad48",
+        "mapId": "ancient",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/ancient/7cbf25f4-5710-4974-80f9-abd7a898ad48.jpg",
+        "time": 0.15,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1280,
+        "outputHeight": 720,
+        "mediaUrl": "https://d1ntlvfrxziqo6.cloudfront.net/8933dadc-c1c6-43f5-8ff1-538898e34eb1_0919(6).mp4",
+        "extraction": "video-element-screenshot",
+        "sha256": "cc532941a54a1ff576b894f34f6dfe201e48f81021fbba007e4cb93c3ea7da8e",
+        "bytes": 207781,
+        "caption": "Use the original blue CT Spawn #3 box.",
+        "review": "The original marked blue floor square and nearby wall identify the starting spawn before the camera raises toward the roofline.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/ae9c5635-cc95-4652-bde9-f7b8df7dc048.webp",
+        "caption": "Match spawn 3’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/c82c5839-0062-418b-b023-2d7d4a9b35ef.webp",
+        "httpStatus": 200,
+        "sha256": "758e719e12faaa74bdb0f703c087204c30cf9ee3160f5859475b78ca946366aa",
+        "bytes": 64606,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://d1ntlvfrxziqo6.cloudfront.net/8933dadc-c1c6-43f5-8ff1-538898e34eb1_0919(6).mp4",
+        "httpStatus": 200,
+        "contentType": "video/mp4",
+        "browserPlayback": {
+          "provider": "mp4",
+          "duration": 22.290998,
+          "width": 1920,
+          "height": 1080,
+          "readyState": 4,
+          "playedTo": 0.210572
+        },
+        "youtubeId": "rSxjcDvrxAg",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "ANCIENT - Elbow Smoke from CT Spawn #3"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-4-8b27-ct",
+      "mapId": "ancient",
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
+      "checkedAt": "2026-11-24",
+      "publisherId": "8ee5a6fb-7370-4f53-b423-fb835ef2c990",
+      "publisherUpdatedAt": "2026-07-16T21:10:06.666013Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "ancient-ct-elbow-cs2tricks",
+        "slot": 4,
+        "total": 5,
+        "label": "CT Spawn 4"
+      },
+      "movement": "walking",
+      "technique": "jumpthrow",
+      "publishedConsoleReference": "setpos -448 1728 30.7397079467773; setang -29.480103 -103.03528;",
+      "publisherOrigin": {
+        "id": "7a434967-a7e5-41a1-8d3d-05fa467c83c2",
+        "x": 492,
+        "y": 40,
+        "sourceTeam": "counter_terrorist"
+      },
+      "publisherDestination": {
+        "id": "1fc1f913-1897-4294-a3cd-8ecdcf7d3721",
+        "x": 341,
+        "y": 609
+      },
+      "reviewedInstructions": {
+        "position": "CT Spawn 4 only. CT Spawn 4 only. Use CT Spawn #4 facing the temple doors.",
+        "aim": "Match spawn 4’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
+        "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
+        "sourceId": "8ee5a6fb-7370-4f53-b423-fb835ef2c990",
+        "capturedSourceId": "8ee5a6fb-7370-4f53-b423-fb835ef2c990",
+        "mapId": "ancient",
+        "creator": "Vigil / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/ancient/8ee5a6fb-7370-4f53-b423-fb835ef2c990.jpg",
+        "time": 0.15,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1920,
+        "outputHeight": 1080,
+        "mediaUrl": "https://www.youtube.com/watch?v=C5maGnbNbPM",
+        "extraction": "decoded-video-canvas",
+        "sha256": "3553626dd4e51d2021b24d1e1856692e7cd4a935d6535cdf3ca76650aca7d747",
+        "bytes": 408975,
+        "caption": "Use CT Spawn #4 facing the temple doors.",
+        "review": "Initial first-person standing overview shows the local floor and adjacent courtyard walls before the camera tilts toward the aim point. Source ads completed normally before capture.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/01af94e8-0886-4e9b-9da5-0d22f1c5cfa7.webp",
+        "caption": "Match spawn 4’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "Vigil / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/619373b7-10d7-407a-8c7d-d5da1cb01b05.webp",
+        "httpStatus": 200,
+        "sha256": "614f04e908cb443570cc8200bd5ba32dd925b9f654991af0b2e4760b6507073e",
+        "bytes": 77540,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=C5maGnbNbPM",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "browserPlayback": {
+          "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-4-8b27-ct",
+          "youtubeId": "C5maGnbNbPM",
+          "checkedAt": "2026-11-24",
+          "state": 1,
+          "time": 0.7965469542236329,
+          "duration": 14.501,
+          "error": null,
+          "states": [
+            {
+              "state": 1,
+              "time": 0.056589093460083006
+            }
+          ]
+        },
+        "youtubeId": "C5maGnbNbPM",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "ANCIENT - Elbow Smoke from CT Spawn #4"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-5-0e13-ct",
+      "mapId": "ancient",
+      "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
+      "checkedAt": "2026-11-24",
+      "publisherId": "5172e456-1115-4de5-8768-c9d939610d45",
+      "publisherUpdatedAt": "2026-06-02T19:31:16.983563Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "ancient-ct-elbow-cs2tricks",
+        "slot": 5,
+        "total": 5,
+        "label": "CT Spawn 5"
+      },
+      "movement": "walking",
+      "technique": "jumpthrow",
+      "publishedConsoleReference": null,
+      "publisherOrigin": {
+        "id": "d7007d90-3d8d-4aa2-ad37-098c116ad428",
+        "x": 477,
+        "y": 35,
+        "sourceTeam": "counter_terrorist"
+      },
+      "publisherDestination": {
+        "id": "1fc1f913-1897-4294-a3cd-8ecdcf7d3721",
+        "x": 341,
+        "y": 609
+      },
+      "reviewedInstructions": {
+        "position": "CT Spawn 5 only. CT Spawn 5 only. Use the original blue CT Spawn #5 box.",
+        "aim": "Match spawn 5’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
+        "photoSource": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
+        "sourceId": "5172e456-1115-4de5-8768-c9d939610d45",
+        "capturedSourceId": "5172e456-1115-4de5-8768-c9d939610d45",
+        "mapId": "ancient",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/ancient/5172e456-1115-4de5-8768-c9d939610d45.jpg",
+        "time": 0.15,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1280,
+        "outputHeight": 720,
+        "mediaUrl": "https://d1ntlvfrxziqo6.cloudfront.net/b9e4e9ba-5592-49e8-aa3a-613955121b64_0919(4).mp4",
+        "extraction": "video-element-screenshot",
+        "sha256": "4fb1c341c7daf5b5375978c19a0fbfcb5a603cc305a04fdde7f77b7f8af42981",
+        "bytes": 173166,
+        "caption": "Use the original blue CT Spawn #5 box.",
+        "review": "The first-person downward view clearly shows the original marked floor square, ground and adjacent vegetation before aiming.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/1f16d949-b225-40b6-8339-5baed8e0b6b8.webp",
+        "caption": "Match spawn 5’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/7f3424f1-0575-49fc-97ac-66a4a267c5cf.webp",
+        "httpStatus": 200,
+        "sha256": "1b885f05b38a187de8828a57dbedc1ceb6ec181a8f9c2ddd579e6cd098756449",
+        "bytes": 104600,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://d1ntlvfrxziqo6.cloudfront.net/b9e4e9ba-5592-49e8-aa3a-613955121b64_0919(4).mp4",
+        "httpStatus": 200,
+        "contentType": "video/mp4",
+        "browserPlayback": {
+          "provider": "mp4",
+          "duration": 23.010998,
+          "width": 1920,
+          "height": 1080,
+          "readyState": 4,
+          "playedTo": 0.210532
+        },
+        "youtubeId": "rvuC6YKxXpk",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "ANCIENT - Elbow Smoke from CT Spawn #5"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-mirage-window-from-t-spawn-1-d3bd-t",
+      "mapId": "mirage",
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-1-d3bd",
+      "checkedAt": "2026-11-24",
+      "publisherId": "3bc7338a-a20b-4dfb-9b40-91afd3979b40",
+      "publisherUpdatedAt": "2026-07-03T20:30:04.83443Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "mirage-t-window-cs2tricks",
+        "slot": 1,
+        "total": 5,
+        "label": "T Spawn 1"
+      },
+      "movement": "stationary",
+      "technique": "jumpthrow_left_w",
+      "publishedConsoleReference": "setpos 1296.000000 -352.000000 -104.128754;setang -42.405090 -173.729736 0.000000",
+      "publisherOrigin": {
+        "id": "cf348a96-3709-488d-8af8-7740bcca36ea",
+        "x": 948,
+        "y": 401,
+        "sourceTeam": "terrorist"
+      },
+      "publisherDestination": {
+        "id": "c0307fd3-c446-407e-8752-80a9cc47f77c",
+        "x": 365,
+        "y": 438
+      },
+      "reviewedInstructions": {
+        "position": "T Spawn 1 only. Use the spawn tile beside the raised stone edge.",
+        "aim": "Aim at the round crack just left of the upper window.",
+        "release": "Hold LMB, then jump, tap W once and release LMB together."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-1-d3bd",
+        "photoSource": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-1-d3bd",
+        "sourceId": "3bc7338a-a20b-4dfb-9b40-91afd3979b40",
+        "capturedSourceId": "3bc7338a-a20b-4dfb-9b40-91afd3979b40",
+        "mapId": "mirage",
+        "creator": "15ak / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/mirage/3bc7338a-a20b-4dfb-9b40-91afd3979b40.jpg",
+        "time": 1.75,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1920,
+        "outputHeight": 1080,
+        "mediaUrl": "https://www.youtube.com/watch?v=4SBlvShzhZU",
+        "extraction": "decoded-video-canvas",
+        "sha256": "6f84765933c03152e978a6e50f5ff9a6fab4a805b6a8eee877f036da9dfefde1",
+        "bytes": 331079,
+        "caption": "Match the spawn tile beside the raised stone edge.",
+        "review": "Original first-person look-down view clearly shows the player's feet, tile joint and stone border before aiming.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/e3f0413c-d682-45e6-adb3-bce6ffa55a19.webp",
+        "caption": "Aim at the round crack just left of the upper window.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "15ak / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-1-d3bd",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/37742074-7bdb-4be6-93cf-c3ad8db407ee.webp",
+        "httpStatus": 200,
+        "sha256": "6cfe34af0fca6ffac7ca01a162c935f12909267a2ab9357757b6c247df5032ef",
+        "bytes": 53272,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=4SBlvShzhZU",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "browserPlayback": {
+          "id": "expanded-cs2tricks-mirage-window-from-t-spawn-1-d3bd-t",
+          "youtubeId": "4SBlvShzhZU",
+          "checkedAt": "2026-11-24",
+          "state": 1,
+          "time": 0.8335879771118164,
+          "duration": 19.541,
+          "error": null,
+          "states": [
+            {
+              "state": 1,
+              "time": 0.04415285504150391
+            }
+          ]
+        },
+        "youtubeId": "4SBlvShzhZU",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "MIRAGE - Smoke from T-Spawn to Window Insta#1"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-mirage-window-from-t-spawn-2-e54c-t",
+      "mapId": "mirage",
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2-e54c",
+      "checkedAt": "2026-11-24",
+      "publisherId": "ca867623-b9fc-4efa-83e6-d6dcaa44d768",
+      "publisherUpdatedAt": "2026-06-17T04:56:49.209289Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "mirage-t-window-cs2tricks",
+        "slot": 2,
+        "total": 5,
+        "label": "T Spawn 2"
+      },
+      "movement": "stationary",
+      "technique": "jumpthrow_left_w",
+      "publishedConsoleReference": "setpos 1216.000000 -211.000000 -100.616211;setang -46.108231 -170.285889 0.000000",
+      "publisherOrigin": {
+        "id": "7afa0115-d38d-4bfb-b51e-f4a7f00e8a9c",
+        "x": 926,
+        "y": 381,
+        "sourceTeam": "terrorist"
+      },
+      "publisherDestination": {
+        "id": "c0307fd3-c446-407e-8752-80a9cc47f77c",
+        "x": 365,
+        "y": 438
+      },
+      "reviewedInstructions": {
+        "position": "T Spawn 2 only. Use the stone tile at the cobblestone edge.",
+        "aim": "Aim at the railing curl immediately left of the white paint patch.",
+        "release": "Hold LMB, then jump, tap W once and release LMB together."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2-e54c",
+        "photoSource": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2-e54c",
+        "sourceId": "ca867623-b9fc-4efa-83e6-d6dcaa44d768",
+        "capturedSourceId": "ca867623-b9fc-4efa-83e6-d6dcaa44d768",
+        "mapId": "mirage",
+        "creator": "15ak / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/mirage/ca867623-b9fc-4efa-83e6-d6dcaa44d768.jpg",
+        "time": 1,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1920,
+        "outputHeight": 1080,
+        "mediaUrl": "https://www.youtube.com/watch?v=1Cu8p9CigYY",
+        "extraction": "decoded-video-canvas",
+        "sha256": "718fa59706503f9d28bbcbbf1bb05e15448e2a40fe47d65613aa4c09fac686cb",
+        "bytes": 305274,
+        "caption": "Use the stone tile at the cobblestone edge.",
+        "review": "Original look-down view shows the player's feet on the stone/cobblestone boundary before camera turns toward aim.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/3c05b16d-7da6-4c18-b793-2342fd384750.webp",
+        "caption": "Aim at the railing curl immediately left of the white paint patch.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "15ak / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2-e54c",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/91e62ed6-0155-4581-b561-9bd4c1668127.webp",
+        "httpStatus": 200,
+        "sha256": "0509f49f34b981907dbb50f2942783f4a4a8d26a4a1c79e391d9338f4dd50555",
+        "bytes": 66350,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=1Cu8p9CigYY",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "browserPlayback": {
+          "id": "expanded-cs2tricks-mirage-window-from-t-spawn-2-e54c-t",
+          "youtubeId": "1Cu8p9CigYY",
+          "checkedAt": "2026-11-24",
+          "state": 1,
+          "time": 0.649456005722046,
+          "duration": 20.281,
+          "error": null,
+          "states": [
+            {
+              "state": 1,
+              "time": 0.03644285504150391
+            }
+          ]
+        },
+        "youtubeId": "1Cu8p9CigYY",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "MIRAGE - Smoke from T-Spawn to Window Insta#2"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-mirage-window-from-t-spawn-3-e1f4-t",
+      "mapId": "mirage",
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-3-e1f4",
+      "checkedAt": "2026-11-24",
+      "publisherId": "65af0eb3-4692-45bc-8288-3cc2a5c28ac1",
+      "publisherUpdatedAt": "2026-07-16T19:28:22.535275Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "mirage-t-window-cs2tricks",
+        "slot": 3,
+        "total": 5,
+        "label": "T Spawn 3"
+      },
+      "movement": "stationary",
+      "technique": "jumpthrow_left_w",
+      "publishedConsoleReference": "setpos 1216.000000 -115.000000 -101.936905;setang -45.045853 -168.244492 0.000000",
+      "publisherOrigin": {
+        "id": "224ae3ad-380e-4491-89ac-da0726b6f844",
+        "x": 923,
+        "y": 350,
+        "sourceTeam": "terrorist"
+      },
+      "publisherDestination": {
+        "id": "c0307fd3-c446-407e-8752-80a9cc47f77c",
+        "x": 365,
+        "y": 438
+      },
+      "reviewedInstructions": {
+        "position": "T Spawn 3 only. Remain on the exact T spawn 3 position shown in the Position photo.",
+        "aim": "Cross the butterfly pattern’s vertical line with the flower pattern’s horizontal line.",
+        "release": "Hold LMB, then jump, tap W once and release LMB together."
+      },
+      "position": {
+        "photo": {
+          "image": "https://d1ntlvfrxziqo6.cloudfront.net/90181586-c793-4f60-8546-a6f7bbc16b62.webp",
+          "caption": "T Spawn 3 only. Remain on the exact T spawn 3 position shown in the Position photo.",
+          "kind": "position",
+          "creator": "15ak / CS2Tricks",
+          "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-3-e1f4"
+        },
+        "review": "Existing original publisher position photo retained."
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/da209e07-a3a6-447b-92f6-dd7f32b8a07a.webp",
+        "caption": "Cross the butterfly pattern’s vertical line with the flower pattern’s horizontal line.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "15ak / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-3-e1f4",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/8311a472-274f-4a43-a87f-0800dcd17ae3.webp",
+        "httpStatus": 200,
+        "sha256": "600505f4894a20894b45ce4ec4297770ba1bbffdf5b9be97ee6f91e0b1f3827a",
+        "bytes": 116480,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=IoiLUU4iFvE",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "browserPlayback": {
+          "id": "expanded-cs2tricks-mirage-window-from-t-spawn-3-e1f4-t",
+          "youtubeId": "IoiLUU4iFvE",
+          "checkedAt": "2026-11-24",
+          "state": 1,
+          "time": 0.9268638626708985,
+          "duration": 20.241,
+          "error": null,
+          "states": [
+            {
+              "state": 1,
+              "time": 0.03495209346008301
+            }
+          ]
+        },
+        "youtubeId": "IoiLUU4iFvE",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "MIRAGE - Smoke from T-Spawn to Window Insta#3"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-mirage-window-from-t-spawn-4-000c-t",
+      "mapId": "mirage",
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-4-000c",
+      "checkedAt": "2026-11-24",
+      "publisherId": "7f5111a7-5fe7-468a-be99-97b40914ea65",
+      "publisherUpdatedAt": "2026-07-03T17:04:21.750459Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "mirage-t-window-cs2tricks",
+        "slot": 4,
+        "total": 5,
+        "label": "T Spawn 4"
+      },
+      "movement": "stationary",
+      "technique": "jumpthrow_left_w",
+      "publishedConsoleReference": "setpos 1216.000000 -16.000000 -101.936905;setang -43.421059 -166.397964 0.000000",
+      "publisherOrigin": {
+        "id": "9ad26433-3371-4ffd-b3e8-14fe2e1062e5",
+        "x": 926,
+        "y": 320,
+        "sourceTeam": "terrorist"
+      },
+      "publisherDestination": {
+        "id": "c0307fd3-c446-407e-8752-80a9cc47f77c",
+        "x": 365,
+        "y": 438
+      },
+      "reviewedInstructions": {
+        "position": "T Spawn 4 only. Use the cobblestone edge beside the metal gate.",
+        "aim": "Follow the white door frame down; aim just below the first sandstone lip.",
+        "release": "Hold LMB, then jump, tap W once and release LMB together."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-4-000c",
+        "photoSource": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-4-000c",
+        "sourceId": "7f5111a7-5fe7-468a-be99-97b40914ea65",
+        "capturedSourceId": "7f5111a7-5fe7-468a-be99-97b40914ea65",
+        "mapId": "mirage",
+        "creator": "15ak / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/mirage/7f5111a7-5fe7-468a-be99-97b40914ea65.jpg",
+        "time": 2.7,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1920,
+        "outputHeight": 1080,
+        "mediaUrl": "https://www.youtube.com/watch?v=OEo3iFsv-ik",
+        "extraction": "decoded-video-canvas",
+        "sha256": "b98d3d1aec17493e7974f43e6d035440928c8db281a35ec250d6d15d8469364e",
+        "bytes": 253890,
+        "caption": "Match the cobblestone edge beside the metal gate.",
+        "review": "Refined downward view identifies the floor transition and gate corner before aiming; the full unchanged source frame is retained.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/fdbf1cd4-5f0c-4ac7-8447-abe634f8c6b2.webp",
+        "caption": "Follow the white door frame down; aim just below the first sandstone lip.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "15ak / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-4-000c",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/7924391a-bf42-40c5-bc43-8c16283b4377.webp",
+        "httpStatus": 200,
+        "sha256": "66e1bdcf1b20fac8824358544b08e78548ad36102cd85fca2963002ee0d2f288",
+        "bytes": 93866,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=OEo3iFsv-ik",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "browserPlayback": {
+          "id": "expanded-cs2tricks-mirage-window-from-t-spawn-4-000c-t",
+          "youtubeId": "OEo3iFsv-ik",
+          "checkedAt": "2026-11-24",
+          "state": 1,
+          "time": 0.9520611316070556,
+          "duration": 18.941,
+          "error": null,
+          "states": [
+            {
+              "state": 1,
+              "time": 0.05091809346008301
+            }
+          ]
+        },
+        "youtubeId": "OEo3iFsv-ik",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "MIRAGE - Smoke from T-Spawn to Window Insta#4"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    },
+    {
+      "id": "expanded-cs2tricks-mirage-window-from-t-spawn-5-a08b-t",
+      "mapId": "mirage",
+      "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-5-a08b",
+      "checkedAt": "2026-11-24",
+      "publisherId": "2c379a31-66b1-438d-a9ef-adcaa115aac8",
+      "publisherUpdatedAt": "2026-07-16T19:32:29.378541Z",
+      "publisherStatus": "approved",
+      "spawn": {
+        "family": "mirage-t-window-cs2tricks",
+        "slot": 5,
+        "total": 5,
+        "label": "T Spawn 5"
+      },
+      "movement": "stationary",
+      "technique": "jumpthrow_left_w",
+      "publishedConsoleReference": "setpos 1296.000000 32.000000 -104.128754;setang -31.099054 -165.573624 0.000000",
+      "publisherOrigin": {
+        "id": "fe3dd5fc-e89a-46e9-a43f-7eb5989382ec",
+        "x": 944,
+        "y": 295,
+        "sourceTeam": "terrorist"
+      },
+      "publisherDestination": {
+        "id": "c0307fd3-c446-407e-8752-80a9cc47f77c",
+        "x": 365,
+        "y": 438
+      },
+      "reviewedInstructions": {
+        "position": "T Spawn 5 only. Use the spawn tile beside the stairs.",
+        "aim": "Aim at the balcony’s outside edge, at the point marked in the detail photo.",
+        "release": "Hold LMB, then jump, tap W once and release LMB together."
+      },
+      "position": {
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-5-a08b",
+        "photoSource": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-5-a08b",
+        "sourceId": "2c379a31-66b1-438d-a9ef-adcaa115aac8",
+        "capturedSourceId": "2c379a31-66b1-438d-a9ef-adcaa115aac8",
+        "mapId": "mirage",
+        "creator": "15ak / CS2Tricks",
+        "publicPath": "/lineup-media/source-video-stills/cs2tricks/mirage/2c379a31-66b1-438d-a9ef-adcaa115aac8.jpg",
+        "time": 2.5,
+        "nativeWidth": 1920,
+        "nativeHeight": 1080,
+        "outputWidth": 1920,
+        "outputHeight": 1080,
+        "mediaUrl": "https://www.youtube.com/watch?v=2XuJa0GqHL0",
+        "extraction": "decoded-video-canvas",
+        "sha256": "edf883f4be11f985424bd427ec9e66a9b7ec710d12f8f9cb411139e59e5c2d67",
+        "bytes": 246605,
+        "caption": "Match this spawn tile beside the stairs.",
+        "review": "Clear settled downward view of the floor tile and stair/doorway edge before returning to the aim point; no web-player chrome.",
+        "manuallyReviewed": true,
+        "noAddedMarkers": true
+      },
+      "originalAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/bc4401e4-8bbb-4a4b-9fe7-a3d1e890aabc.webp",
+        "caption": "Aim at the balcony’s outside edge, at the point marked in the detail photo.",
+        "kind": "aim",
+        "aimPoint": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "creator": "15ak / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-5-a08b",
+        "httpStatus": 200,
+        "visuallyReviewed": true,
+        "review": "Original camera aim view; source-centered crosshair registration retained."
+      },
+      "detailAim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/2b380ff5-5cc9-4b0a-9b0e-34841df5da59.webp",
+        "httpStatus": 200,
+        "sha256": "78923d6c488bf73e297f7eba9c19f4b2b0022364e5227499f624cfb8409b3630",
+        "bytes": 92210,
+        "visuallyReviewed": true,
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+      },
+      "video": {
+        "url": "https://www.youtube.com/watch?v=2XuJa0GqHL0",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "browserPlayback": {
+          "id": "expanded-cs2tricks-mirage-window-from-t-spawn-5-a08b-t",
+          "youtubeId": "2XuJa0GqHL0",
+          "checkedAt": "2026-11-24",
+          "state": 1,
+          "time": 0.8681739637603759,
+          "duration": 21,
+          "error": null,
+          "states": [
+            {
+              "state": 1,
+              "time": 0.021999855041503907
+            }
+          ]
+        },
+        "youtubeId": "2XuJa0GqHL0",
+        "youtubeOembedStatus": 200,
+        "youtubeTitle": "MIRAGE - Smoke from T-Spawn to Window Insta#5"
+      },
+      "verificationBoundary": "Public publisher data/media and browser playback only; not independently validated in CS2. Spawn labels use this publisher’s numbering, not another site’s ordering."
+    }
+  ],
+  "secondaryChecks": [
+    {
+      "source": "https://www.cs2tricks.com/posts/ancient-cs2-smokes-mid-a-and-b-executes-and-ct-side-5db9",
+      "finding": "Publisher’s current Ancient article explicitly links five CT-spawn Elbow variants."
+    },
+    {
+      "source": "https://gonade.app/nade/ancient-mid-elbow-from-5-smoke",
+      "finding": "Separate publisher documents Shift+W and half-step walk for its own Spawn5 recipe; not substituted for another publisher’s numbering or timing."
+    },
+    {
+      "source": "https://nades.ai/guides/ancient/spawn-instas",
+      "finding": "Current pro-reference index lists five CT Elbow spawn recipes; public data corroborates ongoing use but does not certify these other publishers’ exact aim pixels."
+    }
+  ]
+}

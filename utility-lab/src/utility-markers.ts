@@ -7,6 +7,7 @@ export type UtilityMarkerGroup = {
   areaId: string;
   label: string;
   detailTargets: string[];
+  variant?: string;
   /** A real member's registered destination, never an averaged/display point. */
   x: number;
   y: number;
@@ -41,7 +42,9 @@ const trailingQualifier = new RegExp(`(?: ${qualifier})+$`);
  * Composite destinations and distinct nearby places remain independent. */
 export function utilityMarkerArea(record: UtilityReference): { id: string; label: string } {
   const target = normalize(record.target);
-  let anchor = resolveUtilityAnchor(record) || aliases.get(scope(record) + target);
+  const reviewed=!record.userCreated&&record.destinationArea ? UTILITY_MAP_ANCHORS.find(anchor=>
+    anchor.id===record.destinationArea&&anchor.mapId===record.mapId&&anchor.levelId===record.levelId) : undefined;
+  let anchor = reviewed || resolveUtilityAnchor(record) || aliases.get(scope(record) + target);
   if (!anchor && !/[\/&+]/.test(record.target)) {
     const unqualified = target.replace(leadingQualifier, "").replace(trailingQualifier, "");
     if (unqualified !== target && !["a", "b", "default"].includes(unqualified))
@@ -84,22 +87,29 @@ export function groupUtilityMarkers(records: UtilityReference[], mapUnit: number
 
 /** The next navigation step after choosing an area and utility: expose EVERY
  * distinct registered destination, independent of zoom and origin-count caps.
- * Source variants share a destination only at the same area/floor/side/type and
- * published two-decimal point. Keep the preferred first source's real x/y;
- * rounding supplies identity only, never an averaged or synthetic target. */
+ * A source-confirmed spawn family shares its explicitly named destination with
+ * the other recipes for that same name. Small recorded impact variations must
+ * not become new landing choices. Qualified names (close/far/left/right) remain
+ * separate. Other guides retain their published two-decimal point identity.
+ * Keep a real first member's anchor; never average or rewrite source points. */
 export function splitUtilityDestinations(records: readonly UtilityReference[]): UtilityMarkerGroup[] {
   const destinations = new Map<string, UtilityMarkerGroup>();
+  const namedKey=(record:UtilityReference,areaId:string)=>`${record.mapId}:${record.levelId}:${record.side}:${record.type}:${encodeURIComponent(areaId)}:${encodeURIComponent(normalize(record.target))}:${encodeURIComponent(normalize(record.landingVariant||''))}`;
+  const spawnDestinations=new Set(records.filter(record=>record.spawn&&!record.userCreated)
+    .map(record=>namedKey(record,utilityMarkerArea(record).id)));
   for (const record of records) {
     if (record.showMarker === false || !Number.isFinite(record.x) || !Number.isFinite(record.y)) continue;
     const area = utilityMarkerArea(record);
     const pointX = Number(record.x.toFixed(2)).toFixed(2);
     const pointY = Number(record.y.toFixed(2)).toFixed(2);
-    const id = `destination:${record.mapId}:${record.levelId}:${record.side}:${record.type}:${encodeURIComponent(area.id)}:${pointX}:${pointY}`;
-    const originalTarget = record.target.trim();
+    const named=namedKey(record,area.id);
+    const id = spawnDestinations.has(named)&&!record.userCreated ? `destination:spawn:${named}` :
+      `destination:${record.mapId}:${record.levelId}:${record.side}:${record.type}:${encodeURIComponent(area.id)}:${pointX}:${pointY}`;
+    const originalTarget = `${record.target.trim()}${record.landingVariant?` · ${record.landingVariant}`:''}`;
     const previous = destinations.get(id);
     if (!previous) {
       destinations.set(id, { id, areaId: area.id, label: originalTarget || area.label,
-        detailTargets: [originalTarget], x: record.x, y: record.y, records: [record] });
+        detailTargets: [originalTarget], x: record.x, y: record.y, records: [record],...(record.landingVariant?{variant:record.landingVariant}:{}) });
     } else {
       previous.records.push(record);
       if (!previous.detailTargets.includes(originalTarget)) previous.detailTargets.push(originalTarget);

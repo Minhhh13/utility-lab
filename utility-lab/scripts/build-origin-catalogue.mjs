@@ -11,7 +11,7 @@ const maps = ['mirage','dust2','inferno','nuke','ancient','anubis','cache','vert
 const expanded = (await Promise.all(maps.map(async map => normalizeExpandedGuides(await json(`src/data/expanded/${map}.json`), map)))).flat();
 const catalogue = mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded);
 const floorReviews = new Map((await json('docs/data/lineup-origin-floor-evidence.json')).map(row => [originSourceKey(row.source), row]));
-const namedOrigins = await json('docs/data/lineup-origin-area-evidence.json');
+const namedOrigins = [...await json('docs/data/lineup-origin-area-evidence.json'),...await json('docs/data/precise-anubis-named-origins.json')];
 const lookups = Object.fromEntries(maps.map(map => [map, {}]));
 const proof = [];
 const reject = [];
@@ -52,6 +52,14 @@ for (const file of ['csnades-publisher','csnades-cache','csnades-dust2','csnades
     publisher('csnades', row.source, row.mapId, row.titleFrom, row.throwFrom, row.throwFrom?.levels, row.sourceId);
   }
 }
+for(const file of ['precise-other-maps-evidence','precise-anubis-evidence']){
+ const evidence=await json(`docs/data/${file}.json`);
+ for(const row of evidence.records||evidence){
+  if(!['setpos','gonade','csnades'].includes(row.provider)||!row.origin)continue;
+  publisher(row.provider,row.source,row.mapId,row.label||row.from||row.titleFrom||row.origin.label,
+   row.origin,row.origin.levels||row.throwFrom?.levels,row.sourceId||row.publisherId);
+ }
+}
 for (const row of namedOrigins) {
   const record = catalogue.find(item => item.id === row.guideId && item.source === row.source && item.mapId === row.mapId);
   const registration = UTILITY_MAP_REGISTRATIONS.find(item => item.id === row.registrationId && item.mapId === row.mapId && item.levelId === row.levelId);
@@ -78,7 +86,7 @@ for (const mapId of maps) {
   await writeFile(`src/data/lineup-origins/origins-${mapId}.json`,text+'\n');
   perMap[mapId] = {entries:catalogue.filter(row => row.mapId === mapId).length, uniqueSources:Object.keys(data).length, bytes:Buffer.byteLength(text+'\n'), sha256:createHash('sha256').update(text+'\n').digest('hex')};
 }
-const summary = {checkedAt:'2026-11-10',completeGuides:catalogue.length,withOrigins:catalogue.length-missing.length,uniqueSources:new Set(catalogue.map(row => row.source)).size,publisherOrigins:catalogue.filter(row => lookups[row.mapId][originSourceKey(row.source || '')].basis === 'publisher-origin').length,namedOriginAreas:catalogue.filter(row => lookups[row.mapId][originSourceKey(row.source || '')].basis === 'callout-area').length,crossFloorGuides:catalogue.filter(row => ![lookups[row.mapId][originSourceKey(row.source || '')].levelId,...(lookups[row.mapId][originSourceKey(row.source || '')].alternateLevels || []).map(point => point.levelId)].includes(row.levelId)).map(row => row.id),perMap};
+const summary = {checkedAt:'2026-11-24',completeGuides:catalogue.length,withOrigins:catalogue.length-missing.length,uniqueSources:new Set(catalogue.map(row => row.source)).size,publisherOrigins:catalogue.filter(row => lookups[row.mapId][originSourceKey(row.source || '')].basis === 'publisher-origin').length,namedOriginAreas:catalogue.filter(row => lookups[row.mapId][originSourceKey(row.source || '')].basis === 'callout-area').length,crossFloorGuides:catalogue.filter(row => ![lookups[row.mapId][originSourceKey(row.source || '')].levelId,...(lookups[row.mapId][originSourceKey(row.source || '')].alternateLevels || []).map(point => point.levelId)].includes(row.levelId)).map(row => row.id),perMap};
 await writeFile('docs/data/lineup-origin-projection-proof.json',JSON.stringify(proof,null,2)+'\n');
 await writeFile('docs/data/lineup-origin-summary.json',JSON.stringify(summary,null,2)+'\n');
 console.log(JSON.stringify(summary,null,2));

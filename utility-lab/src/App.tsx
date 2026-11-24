@@ -39,6 +39,8 @@ const TacticShareDialog = lazy(() => import("./TacticShareDialog"));
 import WorkspaceBoundary from "./WorkspaceBoundary";
 import BrandMark from "./BrandMark";
 import AppNotice from "./AppNotice";
+import NavigationIndicator from "./NavigationIndicator";
+import "./interaction-motion.css";
 import { parseRoute, lineupLink, type View } from "./routes";
 import {
   readUserUtilities,
@@ -312,6 +314,7 @@ export default function App() {
     const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
     if (!keys.includes(event.key)) return;
     navigationInput.current = "keyboard";
+    document.documentElement.dataset.navigationInput = "keyboard";
     event.preventDefault();
     event.stopPropagation();
     const available = navigation.map((item, itemIndex) => item.id === "playbooks" ? -1 : itemIndex).filter(itemIndex => itemIndex >= 0);
@@ -608,7 +611,7 @@ export default function App() {
             <span className="brand-dot">.</span>
           </span>
         </a>
-        <nav className="global-nav" aria-label="Main navigation" role="tablist">
+        <nav className="global-nav has-tab-indicator" aria-label="Main navigation" role="tablist">
           {navigation.map(({ id, name, Icon }, index) => (
             <button
               key={id}
@@ -628,6 +631,7 @@ export default function App() {
               <span className="global-nav-copy"><span>{name}</span>{id === "playbooks" && <small id="playbooks-desktop-status">Coming soon</small>}</span>
             </button>
           ))}
+          <NavigationIndicator activeView={activeTab} />
         </nav>
         <div className="global-actions">
           {activeTab === "home" && (
@@ -790,7 +794,7 @@ export default function App() {
         </div>
       </header>
       {activeTab !== "home" && (
-        <div className="phone-tabs" role="tablist" aria-label="Workspace tabs">
+        <div className="phone-tabs has-tab-indicator" role="tablist" aria-label="Workspace tabs">
           {navigation.map(({ id, name, Icon }, index) => (
             <button
               key={id}
@@ -811,6 +815,7 @@ export default function App() {
               {id === "playbooks" && <small id="playbooks-phone-status">Coming soon</small>}
             </button>
           ))}
+          <NavigationIndicator activeView={activeTab} />
         </div>
       )}
       <button

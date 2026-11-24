@@ -1,4 +1,4 @@
-import { chooseLandingSpot, waitForUtilityChoice } from "./lineup-helpers";
+import { chooseLandingSpot, waitForUtilityChoice,openOriginPhoto,expectOriginRecipes } from "./lineup-helpers";
 import { test, expect, type Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 
@@ -60,9 +60,9 @@ test('target group opens utility choices, then actual throw locations, then phot
   await chooseLandingSpot(page);
   const origins = page.getByRole('group', { name: 'Throw-from locations', exact: true }).getByRole('button', { name: /^Throw from / });
   await expect(origins.first()).toBeVisible();
-  expect(await origins.count()).toBeLessThanOrEqual(4);
+  await expectOriginRecipes(page);
   await expect(page.locator('.ul-media-dialog')).not.toBeVisible();
-  await origins.first().click();
+  await openOriginPhoto(page);
   const viewer = page.locator('.ul-media-dialog');
   await expect(viewer).toBeVisible();
   await expect(viewer.getByRole('button', { name: /^Photos/ })).toHaveAttribute('aria-pressed', 'true');

@@ -141,6 +141,12 @@ export type UtilityReference = {
   markerBasis?: "callout-area";
   /** Publisher destination point, in its audited 1000-unit radar frame. */
   markerSource?: { registrationId: string; destinationId: string; x: number; y: number };
+  /** Numbering belongs to this publisher's spawn sheet, not a universal map order. */
+  spawn?: { family: string; slot: number; total: number; label: string };
+  /** A source-confirmed coverage qualifier within the same named target area. */
+  landingVariant?: string;
+  /** Reviewed existing callout family; source coordinates remain independent. */
+  destinationArea?: string;
   site?: "A" | "B" | "Mid" | "Other";
   tags?: string[];
   photoEmbed?: UtilityPhotoEmbed;
@@ -633,6 +639,8 @@ export function validateUtility(value: unknown): UtilityReference | null {
   )
     return null;
   if (value.creator !== undefined && !bounded(value.creator, 120)) return null;
+  if (value.landingVariant !== undefined && (!bounded(value.landingVariant,60)||!value.landingVariant.trim())) return null;
+  if (value.destinationArea !== undefined && (!bounded(value.destinationArea,120)||!value.destinationArea.trim())) return null;
   if (value.showMarker !== undefined && typeof value.showMarker !== "boolean")
     return null;
   if (value.markerBasis !== undefined && value.markerBasis !== "callout-area")
@@ -647,6 +655,15 @@ export function validateUtility(value: unknown): UtilityReference | null {
         point.x < 0 || point.x > 1000 || point.y < 0 || point.y > 1000) return null;
     markerSource = { registrationId: point.registrationId as string,
       destinationId: point.destinationId as string, x: point.x, y: point.y };
+  }
+  let spawn: UtilityReference["spawn"];
+  if (value.spawn !== undefined) {
+    const item=value.spawn as Record<string,unknown>;
+    if (!object(item) || !bounded(item.family,100) || !item.family ||
+        !bounded(item.label,100) || !item.label || typeof item.slot!=="number" ||
+        !Number.isInteger(item.slot) || item.slot<0 || typeof item.total!=="number" ||
+        !Number.isInteger(item.total) || item.total<1 || item.total>32 || item.slot>item.total) return null;
+    spawn={family:item.family,slot:item.slot,total:item.total,label:item.label};
   }
   if (
     value.site !== undefined &&
@@ -736,6 +753,9 @@ export function validateUtility(value: unknown): UtilityReference | null {
       ? { markerBasis: "callout-area" as const }
       : {}),
     ...(markerSource ? { markerSource } : {}),
+    ...(spawn ? { spawn } : {}),
+    ...(value.landingVariant ? {landingVariant:value.landingVariant as string} : {}),
+    ...(value.destinationArea ? {destinationArea:value.destinationArea as string} : {}),
     ...(value.site ? { site: value.site as UtilityReference["site"] } : {}),
     ...(Array.isArray(value.tags) ? { tags: value.tags as string[] } : {}),
     ...(photoEmbed ? { photoEmbed } : {}),

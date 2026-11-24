@@ -1,55 +1,55 @@
 {
-  "generatedAt": "2026-11-10T03:52:21.971Z",
-  "generatedLocalDate": "2026-11-10",
+  "generatedAt": "2026-11-24T13:11:11.720Z",
+  "generatedLocalDate": "2026-11-25",
   "timeZone": "Australia/Sydney",
   "method": "Normalize every generated per-map JSON, then mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded). Counts are side-specific browsing records; unique source pages and image/video resources are counted separately.",
   "generatedInputs": [
     {
       "path": "src/data/expanded/mirage.json",
-      "bytes": 405409,
-      "sha256": "522070590e48c0f46b8033da39c550dbb4a062de781948949b7a0588dca4623b",
+      "bytes": 408462,
+      "sha256": "08beaf05ffe0d658366b7b9b75ac5a1fe005fd251de2f55b795ef6038da79d11",
       "rows": 234
     },
     {
       "path": "src/data/expanded/dust2.json",
-      "bytes": 351574,
-      "sha256": "3ca70cd1bbd84aa53dcb4f0174b83714f0a8954ae99adf3d7d6e73908dc8fe6c",
-      "rows": 202
+      "bytes": 370510,
+      "sha256": "2d535405f4d8ad0ea9247cdf391805867d50631ea9793cf4181d3a1f976e3f1d",
+      "rows": 209
     },
     {
       "path": "src/data/expanded/inferno.json",
-      "bytes": 410377,
-      "sha256": "9d72f6dba1afd884ed47db059fd96be58b743a387e9b284b143cd5e0f0ed41fb",
-      "rows": 206
+      "bytes": 424787,
+      "sha256": "43fd68dad628a30de7ed52974940eb122f4434925dd697cd6469a008eb108634",
+      "rows": 212
     },
     {
       "path": "src/data/expanded/nuke.json",
-      "bytes": 285443,
-      "sha256": "e0d98b9ecd3443e660f55eb90379b871b318b65b06c3f8c7b83e4fd93efd2ef6",
-      "rows": 183
+      "bytes": 297071,
+      "sha256": "0e3502071cef6daf762b11e013866263a6c1e832c460ddc024bf474bc781e440",
+      "rows": 187
     },
     {
       "path": "src/data/expanded/ancient.json",
-      "bytes": 280900,
-      "sha256": "1b7c5c0d7316a73b6a94b7429fc04931f0bfe7c4f4512d53de45c942846d4aab",
+      "bytes": 285223,
+      "sha256": "4733b11f402bdf63e3162c400c904c99b4d1a2b3debe89b71039355b34180240",
       "rows": 165
     },
     {
       "path": "src/data/expanded/anubis.json",
-      "bytes": 550335,
-      "sha256": "ad194293911b8d05166643c58791e7aa82d291d0cbc42fd2040f4fd652b4e0ad",
-      "rows": 282
+      "bytes": 612568,
+      "sha256": "81206b58522322cf04e5b4ebdb0b489e589f7856b36d6bb62e832e996479f6c5",
+      "rows": 308
     },
     {
       "path": "src/data/expanded/cache.json",
-      "bytes": 211470,
-      "sha256": "bb515c5aa13084e1f922c47bf39794fca68ebe7d58d6ffaa17d0ff9e66dfe773",
-      "rows": 118
+      "bytes": 241252,
+      "sha256": "5284f4ebb6031e4a87162fe927a6574c77dd2228c55a7ca65d186c1925adb424",
+      "rows": 128
     },
     {
       "path": "src/data/expanded/vertigo.json",
-      "bytes": 161708,
-      "sha256": "0e5627d39b959206a6c683ea0b10c859888d44a8edf9c7986480c6b4a1f73d3c",
+      "bytes": 164063,
+      "sha256": "b52050d8b7d5056066a30fc6985ce99d2b1be0017bca8a040e8d9916aed8fe98",
       "rows": 110
     }
   ],
@@ -62,21 +62,21 @@
     },
     {
       "path": "src/data/lineup-origins/origins-dust2.json",
-      "bytes": 48024,
-      "sha256": "f3decbcf2005855a9363c13dac82a0681eeade30938dc6c13b9e852a12481e3d",
-      "sources": 184
+      "bytes": 49360,
+      "sha256": "e3fc77d8e94e9cbad833f279598f68ab77766a1e1f7209af6f42744fea272f62",
+      "sources": 191
     },
     {
       "path": "src/data/lineup-origins/origins-inferno.json",
-      "bytes": 48080,
-      "sha256": "7db1ba67247e92079ed898778c5d93f2dc12b9bd70d9e0274663f69b207782a6",
-      "sources": 183
+      "bytes": 49213,
+      "sha256": "616de8ba616f0d30e01648d203e622393398263f84b47f52edf7f59095615abc",
+      "sources": 189
     },
     {
       "path": "src/data/lineup-origins/origins-nuke.json",
-      "bytes": 44416,
-      "sha256": "126edb26017e18e031a8fbb304a1056a68e111b553bebc0134923e298fb56e3d",
-      "sources": 184
+      "bytes": 45153,
+      "sha256": "81341fe7fe08fac4050d603fc32e2304b82c34ce557de6666293b5aa17433794",
+      "sources": 188
     },
     {
       "path": "src/data/lineup-origins/origins-ancient.json",
@@ -86,15 +86,15 @@
     },
     {
       "path": "src/data/lineup-origins/origins-anubis.json",
-      "bytes": 72328,
-      "sha256": "05f66ce5935c6d4537a0b1814e9de8796887e65fcaafb6366233c42c58b9e338",
-      "sources": 280
+      "bytes": 77294,
+      "sha256": "2de04477d86bf89e99065ed72142e9e2320d229cc2278d594025dd868e517a93",
+      "sources": 306
     },
     {
       "path": "src/data/lineup-origins/origins-cache.json",
-      "bytes": 28177,
-      "sha256": "90010c1eabee8f621f513b027c6f88edb537d35f2d61a58bd046f816b6bf2d86",
-      "sources": 114
+      "bytes": 30042,
+      "sha256": "0d4a7c267737fd2b35304865ded9596b6eba8a2c9250e47eea61415a166c495a",
+      "sources": 124
     },
     {
       "path": "src/data/lineup-origins/origins-vertigo.json",
@@ -104,17 +104,17 @@
     }
   ],
   "mainPublished": {
-    "rows": 1504,
-    "uniqueSources": 1424,
-    "completeMediaRows": 1504,
+    "rows": 1557,
+    "uniqueSources": 1477,
+    "completeMediaRows": 1557,
     "mapRows": {
       "mirage": 234,
-      "dust2": 202,
-      "inferno": 206,
-      "nuke": 185,
+      "dust2": 209,
+      "inferno": 212,
+      "nuke": 189,
       "ancient": 165,
-      "anubis": 284,
-      "cache": 118,
+      "anubis": 310,
+      "cache": 128,
       "vertigo": 110
     },
     "mapSideType": {
@@ -134,13 +134,13 @@
       },
       "dust2": {
         "T": {
-          "Smoke": 84,
+          "Smoke": 88,
           "Flash": 22,
           "Molotov": 17,
           "HE": 4
         },
         "CT": {
-          "Smoke": 29,
+          "Smoke": 32,
           "Flash": 25,
           "Molotov": 13,
           "HE": 8
@@ -154,7 +154,7 @@
           "HE": 6
         },
         "CT": {
-          "Smoke": 36,
+          "Smoke": 42,
           "Flash": 20,
           "Molotov": 20,
           "HE": 9
@@ -162,7 +162,7 @@
       },
       "nuke": {
         "T": {
-          "Smoke": 92,
+          "Smoke": 96,
           "Flash": 12,
           "Molotov": 24,
           "HE": 5
@@ -190,9 +190,9 @@
       },
       "anubis": {
         "T": {
-          "Smoke": 88,
+          "Smoke": 112,
           "Flash": 45,
-          "Molotov": 44,
+          "Molotov": 46,
           "HE": 7
         },
         "CT": {
@@ -204,7 +204,7 @@
       },
       "cache": {
         "T": {
-          "Smoke": 59,
+          "Smoke": 69,
           "Flash": 4,
           "Molotov": 20,
           "HE": 3
@@ -256,17 +256,17 @@
       "dust2": {
         "main": {
           "name": "Overview",
-          "rows": 202,
-          "uniqueSources": 184,
-          "registeredPins": 202,
+          "rows": 209,
+          "uniqueSources": 191,
+          "registeredPins": 209,
           "T": {
-            "Smoke": 84,
+            "Smoke": 88,
             "Flash": 22,
             "Molotov": 17,
             "HE": 4
           },
           "CT": {
-            "Smoke": 29,
+            "Smoke": 32,
             "Flash": 25,
             "Molotov": 13,
             "HE": 8
@@ -276,9 +276,9 @@
       "inferno": {
         "main": {
           "name": "Overview",
-          "rows": 206,
-          "uniqueSources": 183,
-          "registeredPins": 206,
+          "rows": 212,
+          "uniqueSources": 189,
+          "registeredPins": 212,
           "T": {
             "Smoke": 65,
             "Flash": 19,
@@ -286,7 +286,7 @@
             "HE": 6
           },
           "CT": {
-            "Smoke": 36,
+            "Smoke": 42,
             "Flash": 20,
             "Molotov": 20,
             "HE": 9
@@ -296,11 +296,11 @@
       "nuke": {
         "upper": {
           "name": "Upper",
-          "rows": 179,
-          "uniqueSources": 178,
-          "registeredPins": 179,
+          "rows": 183,
+          "uniqueSources": 182,
+          "registeredPins": 183,
           "T": {
-            "Smoke": 91,
+            "Smoke": 95,
             "Flash": 12,
             "Molotov": 24,
             "HE": 5
@@ -354,13 +354,13 @@
       "anubis": {
         "main": {
           "name": "Overview",
-          "rows": 284,
-          "uniqueSources": 280,
-          "registeredPins": 284,
+          "rows": 310,
+          "uniqueSources": 306,
+          "registeredPins": 310,
           "T": {
-            "Smoke": 88,
+            "Smoke": 112,
             "Flash": 45,
-            "Molotov": 44,
+            "Molotov": 46,
             "HE": 7
           },
           "CT": {
@@ -374,11 +374,11 @@
       "cache": {
         "main": {
           "name": "Overview",
-          "rows": 118,
-          "uniqueSources": 114,
-          "registeredPins": 118,
+          "rows": 128,
+          "uniqueSources": 124,
+          "registeredPins": 128,
           "T": {
-            "Smoke": 59,
+            "Smoke": 69,
             "Flash": 4,
             "Molotov": 20,
             "HE": 3
@@ -431,65 +431,65 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1504,
-      "rowsWithAim": 1504,
-      "rowsWithPositionAndAim": 1504,
-      "mediaReferences": 4870,
-      "uniqueImages": 4597,
-      "remoteReferences": 4547,
-      "uniqueRemoteImages": 4279,
-      "bundledReferences": 323,
-      "uniqueBundledImages": 318,
+      "rowsWithPosition": 1557,
+      "rowsWithAim": 1557,
+      "rowsWithPositionAndAim": 1557,
+      "mediaReferences": 5064,
+      "uniqueImages": 4791,
+      "remoteReferences": 4683,
+      "uniqueRemoteImages": 4415,
+      "bundledReferences": 381,
+      "uniqueBundledImages": 376,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2065,
-        "landing": 1298,
-        "position": 1504,
-        "release": 3
+        "aim": 2133,
+        "landing": 1349,
+        "position": 1557,
+        "release": 25
       },
       "kinds": {
         "aim": {
-          "references": 2065,
-          "uniqueImages": 1954,
-          "uniqueRemoteImages": 1926,
-          "uniqueBundledImages": 28
+          "references": 2133,
+          "uniqueImages": 2022,
+          "uniqueRemoteImages": 1993,
+          "uniqueBundledImages": 29
         },
         "landing": {
-          "references": 1298,
-          "uniqueImages": 1219,
-          "uniqueRemoteImages": 1213,
-          "uniqueBundledImages": 6
+          "references": 1349,
+          "uniqueImages": 1270,
+          "uniqueRemoteImages": 1263,
+          "uniqueBundledImages": 7
         },
         "position": {
-          "references": 1504,
-          "uniqueImages": 1421,
+          "references": 1557,
+          "uniqueImages": 1474,
           "uniqueRemoteImages": 1137,
-          "uniqueBundledImages": 284
+          "uniqueBundledImages": 337
         },
         "release": {
-          "references": 3,
-          "uniqueImages": 3,
-          "uniqueRemoteImages": 3,
-          "uniqueBundledImages": 0
+          "references": 25,
+          "uniqueImages": 25,
+          "uniqueRemoteImages": 22,
+          "uniqueBundledImages": 3
         }
       }
     },
     "videos": {
-      "playableSourceRows": 1504,
-      "nativePrimaryRows": 699,
-      "youtubePrimaryRows": 805,
-      "uniqueNativePrimaryClips": 661,
-      "uniqueYouTubePrimaryClips": 760,
-      "uniquePrimaryClips": 1421,
-      "uniquePrimarySegments": 1421,
-      "fallbackRows": 511,
-      "uniqueFallbackClips": 473,
-      "uniquePrimaryAndFallbackClips": 1894
+      "playableSourceRows": 1557,
+      "nativePrimaryRows": 751,
+      "youtubePrimaryRows": 806,
+      "uniqueNativePrimaryClips": 713,
+      "uniqueYouTubePrimaryClips": 761,
+      "uniquePrimaryClips": 1474,
+      "uniquePrimarySegments": 1474,
+      "fallbackRows": 563,
+      "uniqueFallbackClips": 525,
+      "uniquePrimaryAndFallbackClips": 1999
     },
     "pins": {
-      "registered": 1504,
-      "publisherDestinationRows": 1497,
-      "namedAnchorRows": 7,
+      "registered": 1557,
+      "publisherDestinationRows": 1549,
+      "namedAnchorRows": 8,
       "registrationRows": {
         "cs2tricks-ancient-main-20261109": 165,
         "cs2tricks-anubis-main-20261109": 282,
@@ -501,19 +501,25 @@
         "cs2tricks-nuke-upper-20261109": 83,
         "cs2tricks-vertigo-lower-20261109": 1,
         "cs2tricks-vertigo-upper-20261109": 37,
+        "csnades-anubis-main-20261124": 2,
         "csnades-cache-main-20261109": 36,
         "csnades-dust2-main-20261109": 4,
         "csnades-nuke-lower-20261109": 4,
         "csnades-nuke-upper-20261109": 94,
         "csnades-vertigo-lower-20261109": 4,
-        "csnades-vertigo-upper-20261109": 68
+        "csnades-vertigo-upper-20261109": 68,
+        "setpos-anubis-main-20261124": 23,
+        "setpos-cache-main-20261124": 10,
+        "setpos-dust2-main-20261124": 7,
+        "setpos-inferno-main-20261124": 6,
+        "setpos-nuke-upper-20261124": 4
       },
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1504,
-      "publisherStartRows": 1497,
-      "namedOriginAreaRows": 7,
+      "sourceBackedRows": 1557,
+      "publisherStartRows": 1549,
+      "namedOriginAreaRows": 8,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 24,
       "missingIds": []
@@ -521,25 +527,27 @@
     "sourceHosts": {
       "app.nadesdb.com": 1,
       "cs2tricks.com": 1287,
-      "csnades.gg": 210,
+      "csnades.gg": 212,
       "gonade.app": 4,
-      "youtube.com": 2
+      "setpos.gg": 50,
+      "youtube.com": 3
     }
   },
   "defaultCurated": {
-    "policy": "At most four per registered target spot, floor, side and utility; simpler throws and distinct standing areas first. Full catalogue retained for saved guides and links.",
-    "maxPerTargetSideType": 4,
-    "rows": 1258,
-    "uniqueSources": 1184,
-    "completeMediaRows": 1258,
+    "policy": "Overview preference subset only: up to four preferred recipes per target, floor, side and utility determine ordering. Main browsing restores every matching catalogue record before grouping destinations and origins; all numbered spawns and other origin recipes remain available.",
+    "preferenceSubsetMaxPerTargetSideType": 4,
+    "actualOriginAvailability": "All matching records in mainPublished; this subset is not a browsing or standing-recipe limit.",
+    "rows": 1283,
+    "uniqueSources": 1209,
+    "completeMediaRows": 1283,
     "mapRows": {
       "mirage": 173,
       "dust2": 166,
-      "inferno": 178,
-      "nuke": 168,
+      "inferno": 182,
+      "nuke": 172,
       "ancient": 126,
-      "anubis": 247,
-      "cache": 90,
+      "anubis": 262,
+      "cache": 92,
       "vertigo": 110
     },
     "mapSideType": {
@@ -579,7 +587,7 @@
           "HE": 6
         },
         "CT": {
-          "Smoke": 23,
+          "Smoke": 27,
           "Flash": 20,
           "Molotov": 20,
           "HE": 9
@@ -587,7 +595,7 @@
       },
       "nuke": {
         "T": {
-          "Smoke": 78,
+          "Smoke": 82,
           "Flash": 12,
           "Molotov": 22,
           "HE": 5
@@ -615,9 +623,9 @@
       },
       "anubis": {
         "T": {
-          "Smoke": 61,
+          "Smoke": 74,
           "Flash": 44,
-          "Molotov": 41,
+          "Molotov": 43,
           "HE": 7
         },
         "CT": {
@@ -629,7 +637,7 @@
       },
       "cache": {
         "T": {
-          "Smoke": 42,
+          "Smoke": 44,
           "Flash": 4,
           "Molotov": 20,
           "HE": 3
@@ -701,9 +709,9 @@
       "inferno": {
         "main": {
           "name": "Overview",
-          "rows": 178,
-          "uniqueSources": 157,
-          "registeredPins": 178,
+          "rows": 182,
+          "uniqueSources": 161,
+          "registeredPins": 182,
           "T": {
             "Smoke": 53,
             "Flash": 18,
@@ -711,7 +719,7 @@
             "HE": 6
           },
           "CT": {
-            "Smoke": 23,
+            "Smoke": 27,
             "Flash": 20,
             "Molotov": 20,
             "HE": 9
@@ -721,11 +729,11 @@
       "nuke": {
         "upper": {
           "name": "Upper",
-          "rows": 162,
-          "uniqueSources": 161,
-          "registeredPins": 162,
+          "rows": 166,
+          "uniqueSources": 165,
+          "registeredPins": 166,
           "T": {
-            "Smoke": 77,
+            "Smoke": 81,
             "Flash": 12,
             "Molotov": 22,
             "HE": 5
@@ -779,13 +787,13 @@
       "anubis": {
         "main": {
           "name": "Overview",
-          "rows": 247,
-          "uniqueSources": 243,
-          "registeredPins": 247,
+          "rows": 262,
+          "uniqueSources": 258,
+          "registeredPins": 262,
           "T": {
-            "Smoke": 61,
+            "Smoke": 74,
             "Flash": 44,
-            "Molotov": 41,
+            "Molotov": 43,
             "HE": 7
           },
           "CT": {
@@ -799,11 +807,11 @@
       "cache": {
         "main": {
           "name": "Overview",
-          "rows": 90,
-          "uniqueSources": 87,
-          "registeredPins": 90,
+          "rows": 92,
+          "uniqueSources": 89,
+          "registeredPins": 92,
           "T": {
-            "Smoke": 42,
+            "Smoke": 44,
             "Flash": 4,
             "Molotov": 20,
             "HE": 3
@@ -856,65 +864,65 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1258,
-      "rowsWithAim": 1258,
-      "rowsWithPositionAndAim": 1258,
-      "mediaReferences": 4065,
-      "uniqueImages": 3816,
-      "remoteReferences": 3787,
-      "uniqueRemoteImages": 3540,
-      "bundledReferences": 278,
-      "uniqueBundledImages": 276,
+      "rowsWithPosition": 1283,
+      "rowsWithAim": 1283,
+      "rowsWithPositionAndAim": 1283,
+      "mediaReferences": 4152,
+      "uniqueImages": 3903,
+      "remoteReferences": 3844,
+      "uniqueRemoteImages": 3597,
+      "bundledReferences": 308,
+      "uniqueBundledImages": 306,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 1737,
-        "landing": 1067,
-        "position": 1258,
-        "release": 3
+        "aim": 1767,
+        "landing": 1090,
+        "position": 1283,
+        "release": 12
       },
       "kinds": {
         "aim": {
-          "references": 1737,
-          "uniqueImages": 1635,
-          "uniqueRemoteImages": 1611,
-          "uniqueBundledImages": 24
+          "references": 1767,
+          "uniqueImages": 1665,
+          "uniqueRemoteImages": 1640,
+          "uniqueBundledImages": 25
         },
         "landing": {
-          "references": 1067,
-          "uniqueImages": 994,
-          "uniqueRemoteImages": 988,
-          "uniqueBundledImages": 6
+          "references": 1090,
+          "uniqueImages": 1017,
+          "uniqueRemoteImages": 1010,
+          "uniqueBundledImages": 7
         },
         "position": {
-          "references": 1258,
-          "uniqueImages": 1184,
+          "references": 1283,
+          "uniqueImages": 1209,
           "uniqueRemoteImages": 938,
-          "uniqueBundledImages": 246
+          "uniqueBundledImages": 271
         },
         "release": {
-          "references": 3,
-          "uniqueImages": 3,
-          "uniqueRemoteImages": 3,
-          "uniqueBundledImages": 0
+          "references": 12,
+          "uniqueImages": 12,
+          "uniqueRemoteImages": 9,
+          "uniqueBundledImages": 3
         }
       }
     },
     "videos": {
-      "playableSourceRows": 1258,
-      "nativePrimaryRows": 561,
-      "youtubePrimaryRows": 697,
-      "uniqueNativePrimaryClips": 528,
-      "uniqueYouTubePrimaryClips": 656,
-      "uniquePrimaryClips": 1184,
-      "uniquePrimarySegments": 1184,
-      "fallbackRows": 384,
-      "uniqueFallbackClips": 351,
-      "uniquePrimaryAndFallbackClips": 1535
+      "playableSourceRows": 1283,
+      "nativePrimaryRows": 585,
+      "youtubePrimaryRows": 698,
+      "uniqueNativePrimaryClips": 552,
+      "uniqueYouTubePrimaryClips": 657,
+      "uniquePrimaryClips": 1209,
+      "uniquePrimarySegments": 1209,
+      "fallbackRows": 408,
+      "uniqueFallbackClips": 375,
+      "uniquePrimaryAndFallbackClips": 1584
     },
     "pins": {
-      "registered": 1258,
-      "publisherDestinationRows": 1251,
-      "namedAnchorRows": 7,
+      "registered": 1283,
+      "publisherDestinationRows": 1275,
+      "namedAnchorRows": 8,
       "registrationRows": {
         "cs2tricks-ancient-main-20261109": 126,
         "cs2tricks-anubis-main-20261109": 245,
@@ -926,19 +934,24 @@
         "cs2tricks-nuke-upper-20261109": 73,
         "cs2tricks-vertigo-lower-20261109": 1,
         "cs2tricks-vertigo-upper-20261109": 37,
+        "csnades-anubis-main-20261124": 2,
         "csnades-cache-main-20261109": 28,
         "csnades-dust2-main-20261109": 4,
         "csnades-nuke-lower-20261109": 4,
         "csnades-nuke-upper-20261109": 87,
         "csnades-vertigo-lower-20261109": 4,
-        "csnades-vertigo-upper-20261109": 68
+        "csnades-vertigo-upper-20261109": 68,
+        "setpos-anubis-main-20261124": 12,
+        "setpos-cache-main-20261124": 2,
+        "setpos-inferno-main-20261124": 4,
+        "setpos-nuke-upper-20261124": 4
       },
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1258,
-      "publisherStartRows": 1251,
-      "namedOriginAreaRows": 7,
+      "sourceBackedRows": 1283,
+      "publisherStartRows": 1275,
+      "namedOriginAreaRows": 8,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 24,
       "missingIds": []
@@ -946,23 +959,24 @@
     "sourceHosts": {
       "app.nadesdb.com": 1,
       "cs2tricks.com": 1056,
-      "csnades.gg": 195,
+      "csnades.gg": 197,
       "gonade.app": 4,
-      "youtube.com": 2
+      "setpos.gg": 22,
+      "youtube.com": 3
     }
   },
   "generatedExpanded": {
-    "rows": 1500,
-    "uniqueSources": 1420,
-    "completeMediaRows": 1500,
+    "rows": 1553,
+    "uniqueSources": 1473,
+    "completeMediaRows": 1553,
     "mapRows": {
       "mirage": 234,
-      "dust2": 202,
-      "inferno": 206,
-      "nuke": 183,
+      "dust2": 209,
+      "inferno": 212,
+      "nuke": 187,
       "ancient": 165,
-      "anubis": 282,
-      "cache": 118,
+      "anubis": 308,
+      "cache": 128,
       "vertigo": 110
     },
     "mapSideType": {
@@ -982,13 +996,13 @@
       },
       "dust2": {
         "T": {
-          "Smoke": 84,
+          "Smoke": 88,
           "Flash": 22,
           "Molotov": 17,
           "HE": 4
         },
         "CT": {
-          "Smoke": 29,
+          "Smoke": 32,
           "Flash": 25,
           "Molotov": 13,
           "HE": 8
@@ -1002,7 +1016,7 @@
           "HE": 6
         },
         "CT": {
-          "Smoke": 36,
+          "Smoke": 42,
           "Flash": 20,
           "Molotov": 20,
           "HE": 9
@@ -1010,7 +1024,7 @@
       },
       "nuke": {
         "T": {
-          "Smoke": 92,
+          "Smoke": 96,
           "Flash": 12,
           "Molotov": 22,
           "HE": 5
@@ -1038,9 +1052,9 @@
       },
       "anubis": {
         "T": {
-          "Smoke": 88,
+          "Smoke": 112,
           "Flash": 45,
-          "Molotov": 43,
+          "Molotov": 45,
           "HE": 7
         },
         "CT": {
@@ -1052,7 +1066,7 @@
       },
       "cache": {
         "T": {
-          "Smoke": 59,
+          "Smoke": 69,
           "Flash": 4,
           "Molotov": 20,
           "HE": 3
@@ -1104,17 +1118,17 @@
       "dust2": {
         "main": {
           "name": "Overview",
-          "rows": 202,
-          "uniqueSources": 184,
-          "registeredPins": 202,
+          "rows": 209,
+          "uniqueSources": 191,
+          "registeredPins": 209,
           "T": {
-            "Smoke": 84,
+            "Smoke": 88,
             "Flash": 22,
             "Molotov": 17,
             "HE": 4
           },
           "CT": {
-            "Smoke": 29,
+            "Smoke": 32,
             "Flash": 25,
             "Molotov": 13,
             "HE": 8
@@ -1124,9 +1138,9 @@
       "inferno": {
         "main": {
           "name": "Overview",
-          "rows": 206,
-          "uniqueSources": 183,
-          "registeredPins": 206,
+          "rows": 212,
+          "uniqueSources": 189,
+          "registeredPins": 212,
           "T": {
             "Smoke": 65,
             "Flash": 19,
@@ -1134,7 +1148,7 @@
             "HE": 6
           },
           "CT": {
-            "Smoke": 36,
+            "Smoke": 42,
             "Flash": 20,
             "Molotov": 20,
             "HE": 9
@@ -1144,11 +1158,11 @@
       "nuke": {
         "upper": {
           "name": "Upper",
-          "rows": 177,
-          "uniqueSources": 176,
-          "registeredPins": 177,
+          "rows": 181,
+          "uniqueSources": 180,
+          "registeredPins": 181,
           "T": {
-            "Smoke": 91,
+            "Smoke": 95,
             "Flash": 12,
             "Molotov": 22,
             "HE": 5
@@ -1202,13 +1216,13 @@
       "anubis": {
         "main": {
           "name": "Overview",
-          "rows": 282,
-          "uniqueSources": 278,
-          "registeredPins": 282,
+          "rows": 308,
+          "uniqueSources": 304,
+          "registeredPins": 308,
           "T": {
-            "Smoke": 88,
+            "Smoke": 112,
             "Flash": 45,
-            "Molotov": 43,
+            "Molotov": 45,
             "HE": 7
           },
           "CT": {
@@ -1222,11 +1236,11 @@
       "cache": {
         "main": {
           "name": "Overview",
-          "rows": 118,
-          "uniqueSources": 114,
-          "registeredPins": 118,
+          "rows": 128,
+          "uniqueSources": 124,
+          "registeredPins": 128,
           "T": {
-            "Smoke": 59,
+            "Smoke": 69,
             "Flash": 4,
             "Molotov": 20,
             "HE": 3
@@ -1279,58 +1293,65 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1500,
-      "rowsWithAim": 1500,
-      "rowsWithPositionAndAim": 1500,
-      "mediaReferences": 4855,
-      "uniqueImages": 4582,
-      "remoteReferences": 4532,
-      "uniqueRemoteImages": 4264,
-      "bundledReferences": 323,
-      "uniqueBundledImages": 318,
+      "rowsWithPosition": 1553,
+      "rowsWithAim": 1553,
+      "rowsWithPositionAndAim": 1553,
+      "mediaReferences": 5049,
+      "uniqueImages": 4776,
+      "remoteReferences": 4668,
+      "uniqueRemoteImages": 4400,
+      "bundledReferences": 381,
+      "uniqueBundledImages": 376,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2061,
-        "landing": 1294,
-        "position": 1500
+        "aim": 2129,
+        "landing": 1345,
+        "position": 1553,
+        "release": 22
       },
       "kinds": {
         "aim": {
-          "references": 2061,
-          "uniqueImages": 1950,
-          "uniqueRemoteImages": 1922,
-          "uniqueBundledImages": 28
+          "references": 2129,
+          "uniqueImages": 2018,
+          "uniqueRemoteImages": 1989,
+          "uniqueBundledImages": 29
         },
         "landing": {
-          "references": 1294,
-          "uniqueImages": 1215,
-          "uniqueRemoteImages": 1209,
-          "uniqueBundledImages": 6
+          "references": 1345,
+          "uniqueImages": 1266,
+          "uniqueRemoteImages": 1259,
+          "uniqueBundledImages": 7
         },
         "position": {
-          "references": 1500,
-          "uniqueImages": 1417,
+          "references": 1553,
+          "uniqueImages": 1470,
           "uniqueRemoteImages": 1133,
-          "uniqueBundledImages": 284
+          "uniqueBundledImages": 337
+        },
+        "release": {
+          "references": 22,
+          "uniqueImages": 22,
+          "uniqueRemoteImages": 19,
+          "uniqueBundledImages": 3
         }
       }
     },
     "videos": {
-      "playableSourceRows": 1500,
-      "nativePrimaryRows": 695,
-      "youtubePrimaryRows": 805,
-      "uniqueNativePrimaryClips": 657,
-      "uniqueYouTubePrimaryClips": 760,
-      "uniquePrimaryClips": 1417,
-      "uniquePrimarySegments": 1417,
-      "fallbackRows": 511,
-      "uniqueFallbackClips": 473,
-      "uniquePrimaryAndFallbackClips": 1890
+      "playableSourceRows": 1553,
+      "nativePrimaryRows": 747,
+      "youtubePrimaryRows": 806,
+      "uniqueNativePrimaryClips": 709,
+      "uniqueYouTubePrimaryClips": 761,
+      "uniquePrimaryClips": 1470,
+      "uniquePrimarySegments": 1470,
+      "fallbackRows": 563,
+      "uniqueFallbackClips": 525,
+      "uniquePrimaryAndFallbackClips": 1995
     },
     "pins": {
-      "registered": 1500,
-      "publisherDestinationRows": 1497,
-      "namedAnchorRows": 3,
+      "registered": 1553,
+      "publisherDestinationRows": 1549,
+      "namedAnchorRows": 4,
       "registrationRows": {
         "cs2tricks-ancient-main-20261109": 165,
         "cs2tricks-anubis-main-20261109": 282,
@@ -1342,19 +1363,25 @@
         "cs2tricks-nuke-upper-20261109": 83,
         "cs2tricks-vertigo-lower-20261109": 1,
         "cs2tricks-vertigo-upper-20261109": 37,
+        "csnades-anubis-main-20261124": 2,
         "csnades-cache-main-20261109": 36,
         "csnades-dust2-main-20261109": 4,
         "csnades-nuke-lower-20261109": 4,
         "csnades-nuke-upper-20261109": 94,
         "csnades-vertigo-lower-20261109": 4,
-        "csnades-vertigo-upper-20261109": 68
+        "csnades-vertigo-upper-20261109": 68,
+        "setpos-anubis-main-20261124": 23,
+        "setpos-cache-main-20261124": 10,
+        "setpos-dust2-main-20261124": 7,
+        "setpos-inferno-main-20261124": 6,
+        "setpos-nuke-upper-20261124": 4
       },
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1500,
-      "publisherStartRows": 1497,
-      "namedOriginAreaRows": 3,
+      "sourceBackedRows": 1553,
+      "publisherStartRows": 1549,
+      "namedOriginAreaRows": 4,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 24,
       "missingIds": []
@@ -1362,16 +1389,17 @@
     "sourceHosts": {
       "app.nadesdb.com": 1,
       "cs2tricks.com": 1287,
-      "csnades.gg": 210,
-      "youtube.com": 2
+      "csnades.gg": 212,
+      "setpos.gg": 50,
+      "youtube.com": 3
     }
   },
   "offlineBundledGuidePhotos": {
-    "count": 420,
-    "existingCount": 420,
-    "bytes": 90424612,
+    "count": 478,
+    "existingCount": 478,
+    "bytes": 106643019,
     "missingPaths": [],
-    "mainReferencedUniqueImages": 318,
+    "mainReferencedUniqueImages": 376,
     "assets": [
       {
         "path": "/lineup-media/kielson/cache/drzwi_1.webp",
@@ -1884,16 +1912,6 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/mirage/2c379a31-66b1-438d-a9ef-adcaa115aac8.jpg",
-        "bytes": 246605,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/mirage/7f5111a7-5fe7-468a-be99-97b40914ea65.jpg",
-        "bytes": 253890,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/source-video-stills/cs2tricks/mirage/3bc7338a-a20b-4dfb-9b40-91afd3979b40.jpg",
         "bytes": 331079,
         "exists": true
@@ -1904,6 +1922,16 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/source-video-stills/cs2tricks/mirage/7f5111a7-5fe7-468a-be99-97b40914ea65.jpg",
+        "bytes": 253890,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/mirage/2c379a31-66b1-438d-a9ef-adcaa115aac8.jpg",
+        "bytes": 246605,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/source-video-stills/cs2tricks/mirage/23f46f1f-5b37-49ad-bb9e-97e7c4eb45fc.jpg",
         "bytes": 272629,
         "exists": true
@@ -1911,6 +1939,41 @@
       {
         "path": "/lineup-media/source-video-stills/cs2tricks/mirage/fa516ded-0ca2-42ba-b60d-7f2d7ae52319.jpg",
         "bytes": 96877,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-69-position.jpg",
+        "bytes": 239235,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-5-position.jpg",
+        "bytes": 243890,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-6-position.jpg",
+        "bytes": 207967,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-2-position.jpg",
+        "bytes": 174281,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-1-position.jpg",
+        "bytes": 164011,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-110-position.jpg",
+        "bytes": 162395,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/dust2-169-position.jpg",
+        "bytes": 154027,
         "exists": true
       },
       {
@@ -1959,6 +2022,36 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/precise-other-maps/inferno-85-position.jpg",
+        "bytes": 224980,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/inferno-82-position.jpg",
+        "bytes": 232089,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/inferno-84-position.jpg",
+        "bytes": 224146,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/inferno-11-position.jpg",
+        "bytes": 230268,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/inferno-10-position.jpg",
+        "bytes": 203306,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/inferno-83-position.jpg",
+        "bytes": 203016,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/expanded-iac/inferno-shallow-mid-from-ct-spawn-4-4585-position.jpg",
         "bytes": 204103,
         "exists": true
@@ -1991,6 +2084,26 @@
       {
         "path": "/lineup-media/expanded-iac/inferno-shallow-mid-from-ct-spawn-1-75fd-position.jpg",
         "bytes": 193782,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/nuke-107-position.jpg",
+        "bytes": 257890,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/nuke-79-position.jpg",
+        "bytes": 260530,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/nuke-80-position.jpg",
+        "bytes": 288495,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/nuke-137-position.jpg",
+        "bytes": 236866,
         "exists": true
       },
       {
@@ -2644,33 +2757,8 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/5962b8c2-dcb9-42f1-95dc-839db8982fa1.jpg",
-        "bytes": 211067,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/7cbf25f4-5710-4974-80f9-abd7a898ad48.jpg",
-        "bytes": 207781,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/31f68cca-bf4a-44c4-99e4-394f022eb550.jpg",
-        "bytes": 249344,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/8ee5a6fb-7370-4f53-b423-fb835ef2c990.jpg",
-        "bytes": 408975,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/source-video-stills/cs2tricks/ancient/761c8da9-2110-4bbb-a815-e77b46adb59d.jpg",
         "bytes": 198605,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/2a7f83bf-472e-4bd5-b377-91a1ea39a4aa.jpg",
-        "bytes": 171760,
         "exists": true
       },
       {
@@ -2679,8 +2767,33 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/7cbf25f4-5710-4974-80f9-abd7a898ad48.jpg",
+        "bytes": 207781,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/8ee5a6fb-7370-4f53-b423-fb835ef2c990.jpg",
+        "bytes": 408975,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/source-video-stills/cs2tricks/ancient/5172e456-1115-4de5-8768-c9d939610d45.jpg",
         "bytes": 173166,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/5962b8c2-dcb9-42f1-95dc-839db8982fa1.jpg",
+        "bytes": 211067,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/31f68cca-bf4a-44c4-99e4-394f022eb550.jpg",
+        "bytes": 249344,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/ancient/2a7f83bf-472e-4bd5-b377-91a1ea39a4aa.jpg",
+        "bytes": 171760,
         "exists": true
       },
       {
@@ -2726,6 +2839,211 @@
       {
         "path": "/lineup-media/source-video-stills/cs2tricks/ancient/049d0b20-3dd0-4523-bd05-2c8b1f25f8b3.jpg",
         "bytes": 496418,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-61-position.jpg",
+        "bytes": 288473,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-130-position.jpg",
+        "bytes": 228104,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-162-position.jpg",
+        "bytes": 246718,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-71-position.jpg",
+        "bytes": 322624,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-151-position.jpg",
+        "bytes": 376807,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-161-position.jpg",
+        "bytes": 273436,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-62-position.jpg",
+        "bytes": 426878,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-72-position.jpg",
+        "bytes": 390370,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-145-position.jpg",
+        "bytes": 336062,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-59-position.jpg",
+        "bytes": 338209,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-63-position.jpg",
+        "bytes": 283899,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-142-position.jpg",
+        "bytes": 413790,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-92-position.jpg",
+        "bytes": 343720,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-93-position.jpg",
+        "bytes": 266340,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-146-position.jpg",
+        "bytes": 433133,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-60-position.jpg",
+        "bytes": 290576,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-96-position.jpg",
+        "bytes": 422558,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-143-position.jpg",
+        "bytes": 421197,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-57-position.jpg",
+        "bytes": 295482,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-138-position.jpg",
+        "bytes": 398357,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-94-position.jpg",
+        "bytes": 399807,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-139-position.jpg",
+        "bytes": 415808,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/setpos-95-position.jpg",
+        "bytes": 274480,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/csnades-window-from-alley-position.jpg",
+        "bytes": 408246,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/csnades-window-from-alley-release.jpg",
+        "bytes": 551673,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/csnades-window-from-ruins-position.jpg",
+        "bytes": 386441,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/csnades-window-from-ruins-release.jpg",
+        "bytes": 560610,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/camera-running-position.jpg",
+        "bytes": 346458,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/camera-running-aim.jpg",
+        "bytes": 373947,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/camera-running-release.jpg",
+        "bytes": 297293,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-anubis/camera-running-landing.jpg",
+        "bytes": 262690,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-128-position.jpg",
+        "bytes": 146377,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-166-position.jpg",
+        "bytes": 143674,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-20-position.jpg",
+        "bytes": 143265,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-129-position.jpg",
+        "bytes": 121435,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-125-position.jpg",
+        "bytes": 145738,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-19-position.jpg",
+        "bytes": 136362,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-127-position.jpg",
+        "bytes": 133946,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-18-position.jpg",
+        "bytes": 174439,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-122-position.jpg",
+        "bytes": 155706,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/precise-other-maps/cache-17-position.jpg",
+        "bytes": 135887,
         "exists": true
       },
       {
@@ -2924,6 +3242,31 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ct-spawn-from-stairs-e997-position-1500ms.jpg",
+        "bytes": 169687,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-stairs-bc18-position-1500ms.jpg",
+        "bytes": 150020,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-t-spawn-4b77-position-750ms.jpg",
+        "bytes": 125846,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/front-elevator-from-ramp-ab1b-position-1500ms.jpg",
+        "bytes": 292645,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-stairs-b2bb-position-2500ms.jpg",
+        "bytes": 120119,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/t-mid-from-mid-2f9a-position-4000ms.png",
         "bytes": 925372,
         "exists": true
@@ -3014,23 +3357,8 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ct-spawn-from-stairs-e997-position-1500ms.jpg",
-        "bytes": 169687,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/deep-ramp-from-elevator-9cb9-position-2500ms.jpg",
         "bytes": 111788,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-stairs-bc18-position-1500ms.jpg",
-        "bytes": 150020,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ebox-from-t-spawn-4b77-position-750ms.jpg",
-        "bytes": 125846,
         "exists": true
       },
       {
@@ -3049,11 +3377,6 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/front-elevator-from-ramp-ab1b-position-1500ms.jpg",
-        "bytes": 292645,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-mid-8750-position-1500ms.jpg",
         "bytes": 110213,
         "exists": true
@@ -3061,11 +3384,6 @@
       {
         "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-stairs-8a4a-position-1500ms.jpg",
         "bytes": 265608,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/generator-left-from-stairs-b2bb-position-2500ms.jpg",
-        "bytes": 120119,
         "exists": true
       },
       {

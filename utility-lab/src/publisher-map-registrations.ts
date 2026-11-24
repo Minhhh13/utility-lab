@@ -1,6 +1,10 @@
 import type {UtilityReference} from './utility-data.ts';
-export interface PublisherMapRegistration {id:string;provider?:"cs2tricks"|"csnades";mapId:string;levelId:string;artwork:string;sourceImage:string;sourceImageSha256:string;artworkSha256:string;sourceImageWidth?:number;sourceImageHeight?:number;logicalWidth?:number;logicalHeight?:number;transform:{scaleX:number;scaleY:number;translateX:number;translateY:number};checkedAt:string;evidence:string;reviewImage:string}
+import preciseRegistrations from './data/precise-map-registrations.json' with {type:'json'};
+import reviewedDestinationLinks from './data/reviewed-destination-links.json' with {type:'json'};
+export type PublisherProvider='cs2tricks'|'csnades'|'setpos'|'gonade';
+export interface PublisherMapRegistration {id:string;provider?:PublisherProvider;mapId:string;levelId:string;artwork:string;sourceImage:string;sourceImageSha256:string;artworkSha256:string;sourceImageWidth?:number;sourceImageHeight?:number;logicalWidth?:number;logicalHeight?:number;transform:{scaleX:number;scaleY:number;translateX:number;translateY:number};checkedAt:string;evidence:string;reviewImage:string}
 export const PUBLISHER_MAP_REGISTRATIONS: PublisherMapRegistration[] = [
+  ...preciseRegistrations as PublisherMapRegistration[],
   {
     "id": "cs2tricks-mirage-main-20261109",
     "mapId": "mirage",
@@ -95,10 +99,10 @@ export const PUBLISHER_MAP_REGISTRATIONS: PublisherMapRegistration[] = [
     "id": "cs2tricks-anubis-main-20261109",
     "mapId": "anubis",
     "levelId": "main",
-    "artwork": "/maps/anubis.svg",
+    "artwork": "/maps/anubis-v22.svg",
     "sourceImage": "https://www.cs2tricks.com/minimap/anubis.webp",
     "sourceImageSha256": "3d52c055322a2fa78f40e36c1ad3418e83e86f050b0b5465f5128ee596f8c413",
-    "artworkSha256": "99ae93d3c660c567ff13f5028ddf0395ce15f728aae3af0c3b148c089f7c2beb",
+    "artworkSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
     "transform": {
       "scaleX": 0.9049999999999999,
       "scaleY": 0.93125,
@@ -330,8 +334,26 @@ export function projectPublisherDestination(guide: UtilityReference): {x:number;
   const url=new URL(guide.source);
   if(registration.provider==='csnades'){
    if(url.origin!=='https://csnades.gg'||!url.pathname.startsWith(`/${guide.mapId}/`))return null;
+  }else if(registration.provider==='setpos'){
+   if(url.origin!=='https://setpos.gg'||!url.pathname.startsWith(`/${guide.mapId}/`))return null;
+  }else if(registration.provider==='gonade'){
+   if(url.origin!=='https://gonade.app'||!url.pathname.startsWith(`/nade/${guide.mapId}-`))return null;
   }else if(url.origin!=='https://www.cs2tricks.com'||!url.pathname.startsWith(`/nades/${guide.mapId}/`))return null;
  }catch{return null;}
  const t=registration.transform;const x=point.x*t.scaleX+t.translateX,y=point.y*t.scaleY+t.translateY;
  return Number.isFinite(x)&&Number.isFinite(y)&&x>=0&&x<=1000&&y>=0&&y<=1000?{x:Math.round(x*100)/100,y:Math.round(y*100)/100}:null;
+}
+
+/** An exact-source visual review can reuse a known named navigation area.
+ * It does not turn the new source into a publisher, or assert a raw impact.
+ * The reference still passes the publisher's unchanged URL and floor checks. */
+export function projectReviewedDestination(guide: UtilityReference): {x:number;y:number}|null {
+ if(guide.userCreated)return null;
+ const link=reviewedDestinationLinks.find(link=>link.guideId===guide.id &&
+  link.source===guide.source && link.mapId===guide.mapId &&
+  link.levelId===guide.levelId && link.side===guide.side &&
+  link.type===guide.type && link.target===guide.target);
+ if(!link)return null;
+ return projectPublisherDestination({...guide,id:link.reference.guideId,
+  source:link.reference.source,markerSource:link.reference.markerSource,userCreated:false});
 }

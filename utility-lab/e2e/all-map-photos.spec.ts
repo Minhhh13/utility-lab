@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {MAPS} from '../src/maps';
 import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 import {utilityPhotos} from '../src/utility-data';
-import {expectReferenceCount,waitForUtilityChoice,chooseLandingSpot} from './lineup-helpers';
+import {expectReferenceCount,waitForUtilityChoice,chooseLandingSpot,openOriginPhoto} from './lineup-helpers';
 
 test.use({serviceWorkers:'block'});
 test('each supported map exposes photo-first map flows for both sides and every utility',async({page})=>{
@@ -27,7 +27,7 @@ test('each supported map exposes photo-first map flows for both sides and every 
      await expectReferenceCount(page,records.length);
      await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page,{allowUtilitySkip:true});
      await expect(page.getByRole('dialog',{name:'Choose utility',exact:true})).toHaveCount(0);
-     await chooseLandingSpot(page);await page.locator('.ul-origin-pin').first().click();
+     await chooseLandingSpot(page);await openOriginPhoto(page);
      const viewer=page.locator('.ul-media-dialog');await expect(viewer).toBeVisible();
      const id=await page.evaluate(()=>new URLSearchParams(location.hash.split('?')[1]).get('lineup'));
      const selected=records.find(record=>record.id===id);expect(selected).toBeTruthy();

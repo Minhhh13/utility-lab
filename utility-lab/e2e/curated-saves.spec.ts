@@ -3,7 +3,7 @@ import { PUBLISHED_LINEUPS } from "./catalogue-fixtures";
 import { curateLineups } from "../src/lineup-curation";
 import { hasCompleteGuideMedia } from "../src/expanded-guide-model";
 import { FAVORITE_UTILITIES_KEY, utilityPhotos } from "../src/utility-data";
-import {expectReferenceCount,waitForUtilityChoice,chooseLandingSpot,chooseUtilityType} from './lineup-helpers';
+import {expectReferenceCount,waitForUtilityChoice,chooseLandingSpot,chooseUtilityType,openOriginPhoto} from './lineup-helpers';
 
 test.use({ serviceWorkers: "block" });
 const guide = PUBLISHED_LINEUPS.find(row => row.id === "expanded-cs2tricks-mirage-stairs-from-a-ramp-door-a722-t")!;
@@ -66,7 +66,7 @@ test("saving a complete guide outside the curated four preserves its count, filt
 
   await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page);
   await chooseUtilityType(page,'Smoke');
-  await chooseLandingSpot(page);await page.locator('.ul-origin-pin').first().click();
+  await chooseLandingSpot(page);await openOriginPhoto(page,{recordId:guide.id});
   const viewer = page.getByRole("dialog", { name: guide.title, exact: true });
   await expect(viewer).toBeVisible();
   await expect(viewer.getByRole('button',{name:`Unsave ${guide.title}`,exact:true})).toHaveAttribute('aria-pressed','true');

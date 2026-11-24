@@ -1,4 +1,4 @@
-import {chooseLandingSpot,landingChoices,landingChoicesForArea,mainMarkers,mainMarkerGroupsForArea,waitForUtilityChoice,openUtilityGroupForArea,expectReferenceCount,chooseUtilityType} from './lineup-helpers';
+import {chooseLandingSpot,landingChoices,landingChoicesForArea,mainMarkers,mainMarkerGroupsForArea,waitForUtilityChoice,openUtilityGroupForArea,expectReferenceCount,chooseUtilityType,openOriginPhoto,expectOriginRecipes} from './lineup-helpers';
 import {test,expect,type Page} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import {MAPS,type GameMap,type MapLevel} from '../src/maps';
@@ -63,9 +63,9 @@ test('Mid Doors is selected on the map after choosing Smoke without mixing Lower
  await expect(landingChoicesForArea(page,'dust2:main:mid-doors').first()).toBeVisible();
  await expect(page.locator('.ul-origin-pin')).toHaveCount(0);
  const landing=await chooseLandingSpot(page,{areaId:'dust2:main:mid-doors'});
- const origins=page.getByRole('group',{name:'Throw-from locations',exact:true}).getByRole('button');expect(await origins.count()).toBeLessThanOrEqual(4);
+ await expectOriginRecipes(page);
  await expect(page.locator('.ul-origin-target .ul-origin-label')).toHaveText(landing.label!);
- await origins.first().click();const viewer=page.locator('.ul-media-dialog');await expect(viewer).toBeVisible();
+ await openOriginPhoto(page);const viewer=page.locator('.ul-media-dialog');await expect(viewer).toBeVisible();
  const id=await page.evaluate(()=>new URLSearchParams(location.hash.split('?')[1]).get('lineup'));const record=PUBLISHED_LINEUPS.find(record=>record.id===id)!;
  expect(record.type).toBe('Smoke');expect(utilityMarkerArea(record).id).toBe('dust2:main:mid-doors');expect(record).toMatchObject({x:landing.x,y:landing.y,levelId:landing.levelId});
  await expect(viewer.locator('.ul-photo-canvas img')).toHaveAttribute('src',utilityPhotos(record)[0].image);
@@ -116,7 +116,7 @@ test('a single Smoke filter goes from the overview directly to landing locations
  await expect(filters.getByRole('button',{name:/^Smoke /})).toHaveAttribute('aria-pressed','true');
  await openUtilityGroupForArea(page,'dust2:main:mid-doors',{allowUtilitySkip:true});await expect(picker(page)).toHaveCount(0);await expect(page.locator('.ul-origin-pin')).toHaveCount(0);
  const landing=await chooseLandingSpot(page,{areaId:'dust2:main:mid-doors'});await expect(page.locator('.ul-origin-target .ul-origin-label')).toHaveText(landing.label!);
- await page.locator('.ul-origin-pin').first().click();await expect(page.locator('.ul-media-dialog')).toBeVisible();
+ await openOriginPhoto(page);await expect(page.locator('.ul-media-dialog')).toBeVisible();
  const id=await page.evaluate(()=>new URLSearchParams(location.hash.split('?')[1]).get('lineup'));const selected=PUBLISHED_LINEUPS.find(record=>record.id===id)!;expect(selected.type).toBe('Smoke');expect(utilityMarkerArea(selected).id).toBe('dust2:main:mid-doors');
 });
 

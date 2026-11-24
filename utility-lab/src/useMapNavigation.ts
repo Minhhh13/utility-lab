@@ -53,7 +53,7 @@ export default function useMapNavigation(svg: RefObject<SVGSVGElement | null>, f
 
   function pointerDown(event: ReactPointerEvent<SVGSVGElement>) {
     if (!touches.current.size) ignoredClick.current = false;
-    const marker = (event.target as Element).closest(".ul-map-marker, .ul-origin-pin");
+    const marker = (event.target as Element).closest(".ul-map-marker, .ul-origin-pin, .ul-personal-guide-pin");
     const explicitPan = hand || spaceHeld.current || event.button === 1;
     if (event.pointerType === "touch") {
       touches.current.set(event.pointerId, { x: event.clientX, y: event.clientY });

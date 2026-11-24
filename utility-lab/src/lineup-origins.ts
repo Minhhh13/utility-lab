@@ -1,5 +1,5 @@
 import { PUBLISHER_MAP_REGISTRATIONS } from './publisher-map-registrations.ts';
-import type { PublisherMapRegistration } from './publisher-map-registrations.ts';
+import type { PublisherMapRegistration,PublisherProvider } from './publisher-map-registrations.ts';
 
 export interface OriginFloorPoint {
   x: number;
@@ -98,6 +98,6 @@ export function attachLineupOrigins<T extends OriginRecord>(records: T[], lookup
 }
 
 /** Verify a published point's floor rather than borrowing a destination's floor. */
-export function publisherOriginRegistration(provider: 'cs2tricks' | 'csnades', mapId: string, levelId: string): PublisherMapRegistration | undefined {
+export function publisherOriginRegistration(provider: PublisherProvider, mapId: string, levelId: string): PublisherMapRegistration | undefined {
   return PUBLISHER_MAP_REGISTRATIONS.find(item => (item.provider || 'cs2tricks') === provider && item.mapId === mapId && item.levelId === levelId);
 }

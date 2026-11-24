@@ -1,0 +1,137 @@
+/* Keep editing and navigation at opposite edges of the working map. */
+.tactic-board .tb-toolbox .tb-tool,
+.tactic-board .tb-history .tb-icon-button,
+.tactic-board .tb-zoom .tb-icon-button,
+.tactic-board .tb-zoom-value {
+  min-width: 44px;
+  min-height: 44px;
+}
+.tactic-board .tb-history .tb-icon-button {
+  width: 44px;
+  height: 44px;
+}
+.tactic-board .tb-title-actions .tb-button,
+.tactic-board .tb-levels > button {
+  min-height: 44px;
+}
+
+@media (min-width: 801px) {
+  .tactic-board .tb-map-stage {
+    inset: 12px 84px 44px 140px;
+  }
+  .tactic-board .tb-toolbox {
+    top: 50%;
+    bottom: auto;
+    left: 16px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 104px;
+    max-width: none;
+    max-height: calc(100% - 112px);
+    gap: 8px;
+    padding: 6px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .tactic-board .tb-toolbox .tb-tool-group {
+    display: grid;
+    grid-template-columns: repeat(2, 44px);
+    align-items: center;
+    flex-shrink: 0;
+    gap: 4px;
+    padding: 0;
+  }
+  .tactic-board .tb-toolbox .tb-tool-group + .tb-tool-group {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding: 8px 0 0;
+  }
+  .tactic-board .tb-toolbox .tb-tool {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+  }
+  .tactic-board .tb-toolbox .tb-utility-tool {
+    height: 54px;
+    padding: 4px 1px;
+  }
+  .tactic-board .tb-ink-control {
+    position: static;
+    flex-shrink: 0;
+  }
+  .tactic-board .tb-ink-trigger {
+    justify-content: center;
+    width: 100%;
+    padding: 8px 4px;
+    gap: 4px;
+  }
+  .tactic-board .tb-tool[data-tooltip]::after {
+    display: none;
+  }
+  .tactic-board .tb-canvas-bottom {
+    inset: 0;
+    display: block;
+    min-height: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+  .tactic-board .tb-zoom {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    padding: 4px;
+    border-radius: 12px;
+    background: var(--surface-raised);
+    box-shadow: var(--shadow);
+    pointer-events: auto;
+  }
+  .tactic-board .tb-zoom .tb-icon-button {
+    width: 44px;
+    height: 44px;
+  }
+  .tactic-board .tb-zoom .tb-divider {
+    width: 28px;
+    height: 1px;
+    margin: 4px 0;
+  }
+  .tactic-board .tb-canvas-hint {
+    position: absolute;
+    left: 140px;
+    bottom: 12px;
+    max-width: calc(100% - 420px);
+  }
+  .tactic-board .tb-canvas-hint > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tactic-board .tb-map-credit {
+    left: auto;
+    right: 84px;
+    bottom: 12px;
+    transform: none;
+    max-width: 28%;
+    text-align: right;
+  }
+}
+
+@media (max-width: 800px) {
+  .tactic-board .tb-toolbox {
+    max-width: calc(100% - 16px);
+    column-gap: 2px;
+    padding: 6px;
+  }
+  .tactic-board .tb-ink-control {
+    position: static;
+    grid-column: 1 / -1;
+  }
+  .tactic-board .tb-ink-trigger {
+    justify-content: center;
+    width: 100%;
+  }
+}

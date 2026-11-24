@@ -5,6 +5,9 @@ import {GUIDE_LIBRARY} from '../src/guide-library.ts';
 import {normalizeExpandedGuides} from '../src/expanded-guide-model.ts';
 import {isBundledPhoto,utilityPhotos} from '../src/utility-data.ts';
 const sources=[
+ ['../src/data/precise-mirage-ancient.ts','PRECISE_MIRAGE_ANCIENT'],
+ ['../src/data/precise-other-maps.ts','PRECISE_OTHER_MAPS'],
+ ['../src/data/precise-anubis.ts','PRECISE_ANUBIS'],
  ['../src/data/expanded-dust2-mirage-ancient.ts','EXPANDED_DUST2_MIRAGE_ANCIENT'],
  ['../src/data/expanded-inferno-anubis-cache.ts','EXPANDED_INFERNO_ANUBIS_CACHE'],
  ['../src/data/expanded-nuke-vertigo.ts','EXPANDED_NUKE_VERTIGO'],
@@ -15,6 +18,9 @@ const sources=[
  ['../src/data/expanded-cache-completions.ts','EXPANDED_CACHE_COMPLETIONS'],
 ];
 const rows=[];
+const preciseEvidence=(await Promise.all(['docs/data/precise-other-maps-evidence.json','docs/data/precise-anubis-evidence.json']
+ .map(async file=>{const data=JSON.parse(await readFile(file,'utf8'));return Array.isArray(data)?data:data.records;}))).flat();
+const preciseEndpoints=new Map(preciseEvidence.map(row=>[row.source,row]));
 const endpointEvidence=JSON.parse(await readFile('docs/data/publisher-destination-evidence.json','utf8'));
 const endpoints=new Map(endpointEvidence.map(row=>[row.source,row]));
 const csnadesEvidence=(await Promise.all([
@@ -39,6 +45,19 @@ for(const map of MAPS){
   if(sourcesSeen.has(key))continue;sourcesSeen.add(key);
   const existing=GUIDE_LIBRARY.find(old=>old.source===row.source&&old.side===row.side);
   let record=existing?{...row,id:existing.id}:row;
+  const precise=preciseEndpoints.get(record.source);
+  if(precise?.mapId===record.mapId && precise.destination && precise.registrationId){
+   const destination=precise.destination;
+   record={...record,markerSource:{registrationId:precise.registrationId,
+    destinationId:destination.id||`${precise.provider}:${precise.sourceId||precise.publisherId}:target`,x:destination.x,y:destination.y}};
+   const match=precise.targetMatch;
+   if(match?.existingGuideId){
+    const original=GUIDE_LIBRARY.find(guide=>guide.id===match.existingGuideId)||rows.find(guide=>guide.id===match.existingGuideId);
+    if(!original||original.mapId!==record.mapId||original.levelId!==record.levelId||original.type!==record.type)
+     throw Error(`Invalid existing destination match: ${record.id}`);
+    record={...record,target:match.target,...(match.areaId?{destinationArea:match.areaId}:{}),...(match.distinctVariant?{landingVariant:match.distinctVariant}:{})};
+   }
+  }
   const evidence=endpoints.get(record.source);
   if(evidence?.map===record.mapId && evidence.destination){
    record={...record,markerSource:{

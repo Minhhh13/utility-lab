@@ -1,5 +1,5 @@
 import type { UtilityReference } from "./utility-data.ts";
-import { projectPublisherDestination } from "./publisher-map-registrations.ts";
+import { projectPublisherDestination, projectReviewedDestination } from "./publisher-map-registrations.ts";
 
 /** Pins identify named map areas, never measured grenade landings or effect radii. */
 export const CALLOUT_MARKER_NOTE = "Pins identify target callout areas. Watch the guide for the demonstrated landing and coverage.";
@@ -1863,6 +1863,8 @@ export function applyRegisteredUtilityAnchor<T extends UtilityReference>(guide:T
  if(guide.userCreated)return guide;
  const destination=projectPublisherDestination(guide);
  if(destination)return {...guide,...destination,showMarker:true,markerBasis:"callout-area"};
+ const reviewed=projectReviewedDestination(guide);
+ if(reviewed)return {...guide,...reviewed,showMarker:true,markerBasis:"callout-area"};
  const anchor=resolveUtilityAnchor(guide);
  return anchor?{...guide,x:anchor.x,y:anchor.y,showMarker:true,markerBasis:"callout-area"}:{...guide,showMarker:false};
 }

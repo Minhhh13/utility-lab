@@ -40,6 +40,7 @@ test('shared standing references identify the exact predefined spawn, with origi
 test('source endpoints project through matching, unchanged radar artwork and never use the throw origin',()=>{
  const evidence=read('../docs/data/publisher-destination-evidence.json');
  const csnades=['csnades-publisher-destination-evidence','csnades-cache-destination-evidence','csnades-dust2-destination-evidence','csnades-nuke-community-destination-evidence'].flatMap(name=>read('../docs/data/'+name+'.json'));
+ const precision=['precise-other-maps-evidence','precise-anubis-evidence'].flatMap(name=>read('../docs/data/'+name+'.json').records);
  const floorOverrides=read('../docs/data/physical-floor-overrides.json');
  for(const proof of floorOverrides){assert.equal(proof.manuallyReviewed,true);assert.equal(createHash('sha256').update(readFileSync(new URL('../public'+proof.evidence.photo,import.meta.url))).digest('hex'),proof.evidence.sha256);}
  for(const registration of PUBLISHER_MAP_REGISTRATIONS){
@@ -48,7 +49,12 @@ test('source endpoints project through matching, unchanged radar artwork and nev
  }
  for(const row of records.filter(row=>row.markerSource)){
   const original=evidence.find(item=>item.source===row.source);
-  if(row.source?.startsWith('https://csnades.gg/')){
+  const reviewed=precision.find(item=>item.source===row.source&&item.registrationId&&item.destination);
+  if(reviewed){
+   assert.equal(row.markerSource!.registrationId,reviewed.registrationId,row.id);
+   assert.deepEqual([row.markerSource!.x,row.markerSource!.y],[reviewed.destination.x,reviewed.destination.y],row.id);
+   assert.ok(reviewed.origin||original?.origin,row.id);
+  }else if(row.source?.startsWith('https://csnades.gg/')){
    const published=csnades.find(item=>item.source===row.source);assert.ok(published?.throwTo,row.id);
    assert.deepEqual([row.markerSource!.destinationId,row.markerSource!.x,row.markerSource!.y],[published.sourceId+':target',published.throwTo.x,published.throwTo.y],row.id);
    const floor=row.levelId==='lower'?2:1;assert.ok(published.throwTo.levels.includes(floor)||floorOverrides.some(item=>item.source===row.source&&item.levelId===row.levelId),row.id);
@@ -69,6 +75,24 @@ test('broken or duplicate source records fail before they reach browsing',()=>{
  assert.throws(()=>normalizeExpandedGuides([{...row,throwType:'Shown in video'}],row.mapId));
  assert.throws(()=>normalizeExpandedGuides([row,row],row.mapId));
  assert.throws(()=>normalizeExpandedGuides([row],'outside-pool'));
+});
+
+test('a reviewed replacement gallery removes earlier remote slides while preserving the saved guide ID',()=>{
+ const reviewed=records.find(row=>row.spawn?.family==='mirage-t-window-cs2tricks')!;
+ assert.ok(reviewed);
+ const position=utilityPhotos(reviewed).find(photo=>photo.kind==='position')!;
+ const aim=utilityPhotos(reviewed).find(photo=>photo.kind==='aim')!;
+ const earlier={...reviewed,id:'saved-before-gallery-review',photos:undefined,
+  remotePhotos:[{...position,title:'Earlier standing reference'},{...aim,title:'Earlier aim reference'}],
+  image:position.image};
+ const replacement={...reviewed,photos:[position,aim],remotePhotos:undefined,image:undefined};
+ const merged=mergePhotoGuides([earlier],[replacement]);
+ assert.equal(merged.length,1);
+ assert.equal(merged[0].id,earlier.id,'Existing favorites and shared links retain their original ID');
+ assert.deepEqual(utilityPhotos(merged[0]),[position,aim],'Old remotePhotos must not prepend duplicate or stale slides');
+ assert.equal(merged[0].remotePhotos,undefined);
+ assert.deepEqual(merged[0].spawn,replacement.spawn);
+ assert.equal(merged[0].videoUrl,replacement.videoUrl);
 });
 
 test('same-guide video fallback and publisher provenance survive portable validation; unsafe URLs are rejected',()=>{

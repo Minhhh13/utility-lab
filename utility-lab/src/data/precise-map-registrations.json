@@ -1,0 +1,163 @@
+[
+  {
+    "id": "setpos-dust2-main-20261124",
+    "provider": "setpos",
+    "mapId": "dust2",
+    "levelId": "main",
+    "artwork": "/maps/dust2.svg",
+    "sourceImage": "https://setpos.gg/radars/dust2/radar.svg?v=67567a57127c",
+    "sourceImageSha256": "67567a57127ca82b0d3d3c7e84fad353611f6ab8c34e5751587389dbcb889a1c",
+    "artworkSha256": "ae4e029057aea36ac33376d5cdf9d1765b70d1059eb87f4ef6cdfd1b06d9ee56",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "Exterior boundaries and widely separated landmarks are registration evidence, not independent in-game throw validation. Current source artwork may have newer interior detail.",
+    "reviewImage": "docs/map-registration-precision/setpos-dust2-main.png"
+  },
+  {
+    "id": "setpos-inferno-main-20261124",
+    "provider": "setpos",
+    "mapId": "inferno",
+    "levelId": "main",
+    "artwork": "/maps/inferno.svg",
+    "sourceImage": "https://setpos.gg/radars/inferno/radar.svg?v=120634a40963",
+    "sourceImageSha256": "120634a409633b1cbb18642fdf64554f85b8ae7905a0bf0eaa47feb4f560b971",
+    "artworkSha256": "19c6def41e9ccc8bf1f8eb1af9ceab10c8839a2f29c88457ff295db6aa1c78d3",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "Exterior boundaries and widely separated landmarks are registration evidence, not independent in-game throw validation. Current source artwork may have newer interior detail.",
+    "reviewImage": "docs/map-registration-precision/setpos-inferno-main.png"
+  },
+  {
+    "id": "setpos-nuke-upper-20261124",
+    "provider": "setpos",
+    "mapId": "nuke",
+    "levelId": "upper",
+    "artwork": "/maps/nuke.svg",
+    "sourceImage": "https://setpos.gg/radars/nuke/radar.svg?v=662f949928df",
+    "sourceImageSha256": "662f949928df353462e6612bf06c6dab046507490c9b4b87caa89455e2348d91",
+    "artworkSha256": "b5d7db39cc01e30dbc66f7697b2386de3538bc2d859e53a75ac8536b71ec5372",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "Exterior boundaries and widely separated landmarks are registration evidence, not independent in-game throw validation. Current source artwork may have newer interior detail.",
+    "reviewImage": "docs/map-registration-precision/setpos-nuke-upper.png"
+  },
+  {
+    "id": "setpos-cache-main-20261124",
+    "provider": "setpos",
+    "mapId": "cache",
+    "levelId": "main",
+    "artwork": "/maps/cache.svg",
+    "sourceImage": "https://setpos.gg/radars/cache/radar.svg?v=808d84b8ae99",
+    "sourceImageSha256": "808d84b8ae991ff5834bcdc7939565efd57b8cfa188fd6fb3f69a72b3b3de492",
+    "artworkSha256": "8107ffb12c794832c689cf6cb8326fa8168b60b723c232064dc79bc8ca5a3a34",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "Exterior boundaries and widely separated landmarks are registration evidence, not independent in-game throw validation. Current source artwork may have newer interior detail.",
+    "reviewImage": "docs/map-registration-precision/setpos-cache-main.png"
+  },
+  {
+    "id": "setpos-anubis-main-20261124",
+    "provider": "setpos",
+    "mapId": "anubis",
+    "levelId": "main",
+    "artwork": "/maps/anubis-v22.svg",
+    "sourceImage": "https://setpos.gg/radars/anubis/radar.svg?v=43192fdef65d",
+    "sourceImageSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+    "artworkSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "docs/precise-anubis.md Displayed radar refreshed to original setpos v22; the reviewed coordinate grid remains unchanged.",
+    "reviewImage": "docs/map-registration-precision/setpos-anubis-main.png"
+  },
+  {
+    "id": "gonade-anubis-main-20261124",
+    "provider": "gonade",
+    "mapId": "anubis",
+    "levelId": "main",
+    "artwork": "/maps/anubis-v22.svg",
+    "sourceImage": "https://gonade.app/images/radars/anubis_radar.webp?v=1789062370",
+    "sourceImageSha256": "c74d5f63dc29e65ec6ab87625621e007deafb90690d222920c08437fa552bb93",
+    "artworkSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "docs/precise-anubis.md Displayed radar refreshed to original setpos v22; the reviewed coordinate grid remains unchanged.",
+    "reviewImage": "docs/map-registration-precision/gonade-anubis-main.png"
+  },
+  {
+    "id": "csnades-anubis-main-20261124",
+    "provider": "csnades",
+    "mapId": "anubis",
+    "levelId": "main",
+    "artwork": "/maps/anubis-v22.svg",
+    "sourceImage": "https://assets.csnades.gg/anubis_game_radar_7bada7b5e9.webp",
+    "sourceImageSha256": "b99ba4701b589ea8ffb60083ca5cefb1c301233291e800cb48f6b02e6846818e",
+    "artworkSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+    "sourceImageWidth": 2048,
+    "sourceImageHeight": 2048,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 0.9692168644693478,
+      "scaleY": 0.9665770101697745,
+      "translateX": 18.990077114310395,
+      "translateY": 12.09787080948064
+    },
+    "checkedAt": "2026-11-24",
+    "evidence": "docs/precise-anubis.md Displayed radar refreshed to original setpos v22; the reviewed coordinate grid remains unchanged.",
+    "reviewImage": "docs/map-registration-precision/csnades-anubis-main.png"
+  }
+]

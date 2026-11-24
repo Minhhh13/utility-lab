@@ -31,6 +31,12 @@ export function mergePhotoGuides(base: UtilityReference[], expanded: UtilityRefe
   const records=new Map<string,UtilityReference>();
   const key=(guide:UtilityReference)=>`${guide.source||guide.id}|${guide.side}`;
   for(const guide of base) if(hasCompleteGuideMedia(guide))records.set(key(guide),guide);
-  for(const guide of expanded){const previous=records.get(key(guide));records.set(key(guide),previous?{...previous,...guide,id:previous.id}:guide);}
+  for(const guide of expanded){
+    const previous=records.get(key(guide));
+    // A complete newer source gallery replaces the earlier one. Retaining its
+    // old remotePhotos would prepend stale or duplicate aim/setup slides.
+    records.set(key(guide),previous?{...previous,...guide,id:previous.id,
+      photos:guide.photos,remotePhotos:guide.remotePhotos,image:guide.image,photoEmbed:guide.photoEmbed}:guide);
+  }
   return [...records.values()];
 }

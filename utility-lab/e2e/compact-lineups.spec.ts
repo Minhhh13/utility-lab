@@ -6,6 +6,7 @@ import {
   chooseUtilityType,
   mainMarkerGroupsForArea,
   waitForUtilityChoice,
+  openOriginPhoto,
 } from "./lineup-helpers";
 
 test.use({ serviceWorkers: "block" });
@@ -105,7 +106,7 @@ for (const viewport of [
   });
 }
 
-for (const viewport of [{width:1440,height:810},{width:960,height:540}]) test(`floating controls leave all eight maps' Fit pins selectable at ${viewport.width}x${viewport.height}`, async ({ page }) => {
+for (const viewport of [{width:1440,height:810},{width:960,height:540},{width:320,height:844}]) test(`floating controls leave all eight maps' Fit pins selectable at ${viewport.width}x${viewport.height}`, async ({ page }) => {
   test.setTimeout(60_000);
   await page.setViewportSize(viewport);
   await isolateOnlineMedia(page);
@@ -175,7 +176,7 @@ test("floating utility filters and the full visual selection path preserve manua
   await waitForUtilityChoice(page);
   await chooseUtilityType(page, "Smoke");
   await chooseLandingSpot(page, { areaId: "dust2:main:mid-doors" });
-  await page.locator(".ul-origin-pin").first().click();
+  await openOriginPhoto(page);
   const viewer = page.locator(".ul-media-dialog");
   await expect(viewer).toBeVisible();
   await expect(svg).toHaveAttribute("viewBox", camera!);

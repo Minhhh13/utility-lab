@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 import {utilityMarkerArea} from '../src/utility-markers';
 import {FAVORITE_UTILITIES_KEY,utilityPhotos} from '../src/utility-data';
-import {landingChoices,landingChoicesForArea,openUtilityGroupForArea,mainMarkerGroupsForArea,waitForUtilityChoice,expectReferenceCount} from './lineup-helpers';
+import {landingChoices,landingChoicesForArea,openUtilityGroupForArea,mainMarkerGroupsForArea,waitForUtilityChoice,expectReferenceCount,openOriginPhoto,expectOriginRecipes} from './lineup-helpers';
 
 test.use({serviceWorkers:'block'});
 const radial=(page:Page)=>page.getByRole('dialog',{name:'Choose utility',exact:true});
@@ -38,9 +38,9 @@ test('Cache Mid smoke shows every exact landing before sources and opens only th
  const point={x:Number(await chosen.getAttribute('data-landing-x')),y:Number(await chosen.getAttribute('data-landing-y')),levelId:await chosen.getAttribute('data-landing-level')};
  await chosen.click();
  await expect(landingChoices(page)).toHaveCount(0);
- await expect(sourcePins(page).first()).toBeVisible();expect(await sourcePins(page).count()).toBeLessThanOrEqual(4);
+ await expect(sourcePins(page).first()).toBeVisible();await expectOriginRecipes(page,expected.filter(record=>record.x===point.x&&record.y===point.y&&record.levelId===point.levelId).map(record=>record.id));
  await expect(page.locator('.ul-media-dialog')).not.toBeVisible();
- await sourcePins(page).first().click();
+ await openOriginPhoto(page);
  const viewer=page.locator('.ul-media-dialog');await expect(viewer).toBeVisible();
  const id=await page.evaluate(()=>new URLSearchParams(location.hash.split('?')[1]).get('lineup'));
  const record=PUBLISHED_LINEUPS.find(record=>record.id===id)!;
@@ -62,7 +62,7 @@ test('keyboard group, utility, landing and source selection keeps focus and skip
  await landing.press('Enter');
  const source=sourcePins(page).first();await expect(source).toBeVisible();await expect(source).toBeFocused();
  await expect(page.locator('.ul-origin-glyph.can-animate')).toHaveCount(0);
- await source.press('Enter');await expect(page.locator('.ul-media-dialog')).toBeVisible();
+ await openOriginPhoto(page,{keyboard:true});await expect(page.locator('.ul-media-dialog')).toBeVisible();
 });
 
 test('a singleton saved guide opens standing positions directly and still waits before photos',async({page})=>{
@@ -79,9 +79,9 @@ test('a singleton saved guide opens standing positions directly and still waits 
  await expect(page.getByRole('group',{name:'Throw-from locations',exact:true})).toHaveAttribute('data-target-x',String(record.x));
  await expect(page.getByRole('group',{name:'Throw-from locations',exact:true})).toHaveAttribute('data-target-y',String(record.y));
  await expect(sourcePins(page).first()).toBeVisible();
- await expect(landingChoices(page)).toHaveCount(0);expect(await sourcePins(page).count()).toBeLessThanOrEqual(4);
+ await expect(landingChoices(page)).toHaveCount(0);await expect(sourcePins(page)).toHaveCount(1);await expectOriginRecipes(page,[record.id]);
  await expect(page.locator('.ul-media-dialog')).not.toBeVisible();
- await sourcePins(page).first().click();await expect(page.locator('.ul-media-dialog')).toBeVisible();
+ await openOriginPhoto(page,{recordId:record.id});await expect(page.locator('.ul-media-dialog')).toBeVisible();
  await expect(page.locator('.ul-media-dialog .ul-photo-canvas img')).toHaveAttribute('src',utilityPhotos(record)[0].image);
 });
 
@@ -89,7 +89,7 @@ test('320px phone can select a landing spot before a source without overflow',as
  await page.setViewportSize({width:320,height:844});await isolateMedia(page);await openMidLandings(page);
  for(const choice of await landingChoices(page).all())await expect(choice).toBeInViewport();
  await landingChoices(page).last().click();
- await expect(sourcePins(page).first()).toBeVisible();await sourcePins(page).first().click();
+ await expect(sourcePins(page).first()).toBeVisible();await openOriginPhoto(page);
  await expect(page.locator('.ul-media-dialog')).toBeVisible();
  await expect(page.getByRole('button',{name:'Close lineup media',exact:true})).toBeInViewport();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(320);

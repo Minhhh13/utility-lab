@@ -1,0 +1,5412 @@
+{
+  "checkedAt": "2026-11-24",
+  "records": [
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t1",
+      "sourceId": "61",
+      "titleFrom": "T spawn 1",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 445.2526340996169,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -416,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -728.6403198242188,
+        "y": 57.89051818847656,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -416.000000 -1608.000000 2.031250; setang -36.128204 97.228668 0.000000",
+      "sourceTechnique": "W-jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "w_jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Tap W + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.125,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.13,
+          "description": "Hold W as you jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.13,
+              "kind": "jump",
+              "tick": 25241,
+              "inputs": [
+                "w",
+                "jump"
+              ],
+              "fraction": 0.3125,
+              "description": "Jump.",
+              "command_number": 37260
+            },
+            {
+              "t": 0.16,
+              "kind": "mouse-release",
+              "tick": 25243,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.265625,
+              "description": "Release left mouse button.",
+              "command_number": 37262
+            },
+            {
+              "t": 0.184,
+              "kind": "movement",
+              "tick": 25244,
+              "inputs": [
+                "w"
+              ],
+              "fraction": 0.75,
+              "description": "Release JUMP.",
+              "command_number": 37263
+            },
+            {
+              "t": 0.188,
+              "kind": "movement",
+              "tick": 25245,
+              "inputs": [],
+              "fraction": 0.0625,
+              "description": "Release W.",
+              "command_number": 37264
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "LNZ",
+        "round": 5,
+        "event": "FISSURE Playground 3",
+        "eventId": "8266",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-16",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/2b596469-5dc1-4f01-8365-ec372ca4dd7c/12d20ec2-5e1e-461a-92b4-d41aa133fcab/video-44ed4f348e14d6fb97e952852d5fc478b821e5d98f34189ffa4fbc100cefdd38.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/2b596469-5dc1-4f01-8365-ec372ca4dd7c/12d20ec2-5e1e-461a-92b4-d41aa133fcab/video-sd-351f66889f5bc79b7912beb1d2590897c94b85aa5f6eabb80e0562c7c39c2b9b.mp4",
+      "videoMetadata": {
+        "duration": 19.916667,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 61,
+        "filename": "setpos-61-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/2b596469-5dc1-4f01-8365-ec372ca4dd7c/12d20ec2-5e1e-461a-92b4-d41aa133fcab/video-44ed4f348e14d6fb97e952852d5fc478b821e5d98f34189ffa4fbc100cefdd38.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 19.916667,
+        "readyState": 4,
+        "sha256": "4fe43babf81b71d615b8eb17e5626f6cb420d0876a3bd3ae35d7966d9c4d9d74"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/2b596469-5dc1-4f01-8365-ec372ca4dd7c/12d20ec2-5e1e-461a-92b4-d41aa133fcab/guide-aim-aim-93c8d935ea35d34245e349f0452cfcd5943d65747f1db216a3bedfdf61dfc3ce.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-61-t",
+      "guideId": "precise-setpos-anubis-61-t",
+      "label": "T spawn 1",
+      "from": "T spawn 1",
+      "origin": {
+        "x": 445.2526340996169,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 1,
+        "total": 11,
+        "label": "T spawn 1"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/outside-conn/t1",
+      "sourceId": "130",
+      "titleFrom": "T spawn 1",
+      "titleTo": "Outside Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 445.2526340996169,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -416,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -422.77142333984375,
+        "y": 78.54864883422852
+      },
+      "worldImpact": {
+        "x": -412.08258056640625,
+        "y": 51.7554817199707,
+        "z": -117.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -416.000000 -1608.000000 2.031250; setang -39.142227 93.539673 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.266,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.271,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.271,
+              "kind": "jump",
+              "tick": 31279,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.359375,
+              "description": "Jump.",
+              "command_number": 57513
+            },
+            {
+              "t": 0.271,
+              "kind": "movement",
+              "tick": 31279,
+              "inputs": [],
+              "fraction": 0.359375,
+              "description": "Release JUMP.",
+              "command_number": 57513
+            },
+            {
+              "t": 0.306,
+              "kind": "mouse-release",
+              "tick": 31281,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.5625,
+              "description": "Release left mouse button.",
+              "command_number": 57515
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "m1QUSE",
+        "round": 5,
+        "event": "WINLINE MPKBK CIS LAN Season 7",
+        "eventId": "9345",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-19",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/9b756b9b-3cab-4b52-8d9e-c15049b34e6d/aba7ffc1-dbf7-4682-b5f4-21ce7ad05280/video-d3acb53923193f5a04387ac69fcbe4b8e5f913b240e05e3fd5f1f3b9d936635f.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/9b756b9b-3cab-4b52-8d9e-c15049b34e6d/aba7ffc1-dbf7-4682-b5f4-21ce7ad05280/video-sd-8bdc46990551cc0da601dddaed91af3d5028e47a7d3d7b0938ef377149c4a691.mp4",
+      "videoMetadata": {
+        "duration": 19.283333,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 130,
+        "filename": "setpos-130-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/9b756b9b-3cab-4b52-8d9e-c15049b34e6d/aba7ffc1-dbf7-4682-b5f4-21ce7ad05280/video-d3acb53923193f5a04387ac69fcbe4b8e5f913b240e05e3fd5f1f3b9d936635f.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 19.283333,
+        "readyState": 4,
+        "sha256": "3b745920aec35fc55f0bd6e93f8b06ee0213ed95c77dba584b7678438e3e2eaa"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/9b756b9b-3cab-4b52-8d9e-c15049b34e6d/aba7ffc1-dbf7-4682-b5f4-21ce7ad05280/guide-aim-aim-33444dc947cdd13a6f017017f2703dca5edc01bd253f9f66dc12638cc8f671d6.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-130-t",
+      "guideId": "precise-setpos-anubis-130-t",
+      "label": "T spawn 1",
+      "from": "T spawn 1",
+      "origin": {
+        "x": 445.2526340996169,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ],
+        "id": "71"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-outside-conn",
+        "slot": 1,
+        "total": 11,
+        "label": "T spawn 1"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Outside Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Outside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t10",
+      "sourceId": "162",
+      "titleFrom": "T spawn 10",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 496.1386494252874,
+        "y": 915.9482758620691,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -144,
+        "y": -1568
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -596.410400390625,
+        "y": 80.01094055175781,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -144.000000 -1568.000000 -11.968750; setang -40.040359 109.318787 0.000000",
+      "sourceTechnique": "Crouched w-jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "w_jumpthrow",
+        "stance": "crouched"
+      },
+      "throwType": "Crouch + Tap W + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.688,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.691,
+          "description": "Crouch and hold W as you jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "ctrl",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.691,
+              "kind": "jump",
+              "tick": 196651,
+              "inputs": [
+                "ctrl",
+                "jump"
+              ],
+              "fraction": 0.234375,
+              "description": "Jump.",
+              "command_number": 205794
+            },
+            {
+              "t": 0.699,
+              "kind": "movement",
+              "tick": 196651,
+              "inputs": [
+                "w",
+                "ctrl",
+                "jump"
+              ],
+              "fraction": 0.734375,
+              "description": "Press W.",
+              "command_number": 205794
+            },
+            {
+              "t": 0.723,
+              "kind": "mouse-release",
+              "tick": 196653,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.25,
+              "description": "Release left mouse button.",
+              "command_number": 205796
+            },
+            {
+              "t": 0.777,
+              "kind": "movement",
+              "tick": 196656,
+              "inputs": [
+                "w",
+                "ctrl"
+              ],
+              "fraction": 0.71875,
+              "description": "Release JUMP.",
+              "command_number": 205799
+            },
+            {
+              "t": 0.791,
+              "kind": "movement",
+              "tick": 196657,
+              "inputs": [
+                "ctrl"
+              ],
+              "fraction": 0.59375,
+              "description": "Release W.",
+              "command_number": 205800
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "Ex1st",
+        "round": 24,
+        "event": "Stake Pulse Beat III",
+        "eventId": "9223",
+        "eventLogo": "/media/event-logos/9223-9b0cd45545e87ae3.webp"
+      },
+      "sourceAddedAt": "2026-10-05",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/29abf096-cd86-435c-8912-293254b7bb43/fae9141d-5937-4945-84c6-49454b76ed4a/video-17b199b7f844126df8ba8cff8d1267103de9a4acc4fb653a99dc37a2195b1a01.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/29abf096-cd86-435c-8912-293254b7bb43/fae9141d-5937-4945-84c6-49454b76ed4a/video-sd-0b92296fff6553917fa1e923aaeaa69eb00027ecf8246493d3808bf4d6f3b3f8.mp4",
+      "videoMetadata": {
+        "duration": 19.533333,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 162,
+        "filename": "setpos-162-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/29abf096-cd86-435c-8912-293254b7bb43/fae9141d-5937-4945-84c6-49454b76ed4a/video-17b199b7f844126df8ba8cff8d1267103de9a4acc4fb653a99dc37a2195b1a01.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 19.533333,
+        "readyState": 4,
+        "sha256": "1790189df8903d9104aac67471e63da016a841822b33e8fabd6a1a414da69de1"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/29abf096-cd86-435c-8912-293254b7bb43/fae9141d-5937-4945-84c6-49454b76ed4a/guide-aim-aim-3b1a1c7d74b38567e6228fedd28b710cd0cd888c8ebed17a5fec245d5a8c77b1.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-162-t",
+      "guideId": "precise-setpos-anubis-162-t",
+      "label": "T spawn 10",
+      "from": "T spawn 10",
+      "origin": {
+        "x": 496.1386494252874,
+        "y": 915.9482758620691,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 10,
+        "total": 11,
+        "label": "T spawn 10"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/outside-conn/t11",
+      "sourceId": "71",
+      "titleFrom": "T spawn 11",
+      "titleTo": "Outside Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 499.13119082249904,
+        "y": 927.9214559386974,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -128.0040283203125,
+        "y": -1632
+      },
+      "worldDestination": {
+        "x": -422.77142333984375,
+        "y": 78.54864883422852
+      },
+      "worldImpact": {
+        "x": -404.1795654296875,
+        "y": 147.85104370117188,
+        "z": -117.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -128.004028 -1632.000000 -0.960938; setang -11.018600 100.994568 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.016,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.02,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.02,
+              "kind": "jump",
+              "tick": 94506,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.265625,
+              "description": "Jump.",
+              "command_number": 183727
+            },
+            {
+              "t": 0.07,
+              "kind": "mouse-release",
+              "tick": 94509,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.484375,
+              "description": "Release left mouse button.",
+              "command_number": 183730
+            },
+            {
+              "t": 0.146,
+              "kind": "movement",
+              "tick": 94514,
+              "inputs": [],
+              "fraction": 0.328125,
+              "description": "Release JUMP.",
+              "command_number": 183735
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "kelieN",
+        "round": 15,
+        "event": "WINLINE MPKBK CIS LAN Season 7",
+        "eventId": "9345",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-19",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/1505d0bf-cf44-4fa8-a797-ba507cba9419/29e14d36-a35c-42a0-800c-12914d2aff0a/video-a1303ea7f03ee86ebe26953c0d6a2c9d25bb575d5b81ff2b9d408a8e6f1964a5.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/1505d0bf-cf44-4fa8-a797-ba507cba9419/29e14d36-a35c-42a0-800c-12914d2aff0a/video-sd-8193432075eb8539c81dbce3bdd488e48d0420406e028c1bf65c0c96e0b629d2.mp4",
+      "videoMetadata": {
+        "duration": 15.333008,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 71,
+        "filename": "setpos-71-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/1505d0bf-cf44-4fa8-a797-ba507cba9419/29e14d36-a35c-42a0-800c-12914d2aff0a/video-a1303ea7f03ee86ebe26953c0d6a2c9d25bb575d5b81ff2b9d408a8e6f1964a5.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 15.333008,
+        "readyState": 4,
+        "sha256": "42bd36d9b21dcf05ada70d64bdf9299e7cf3028553785742219f04fd27170326"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/1505d0bf-cf44-4fa8-a797-ba507cba9419/29e14d36-a35c-42a0-800c-12914d2aff0a/guide-aim-aim-563295c29d27a9985841af3ef0e63e0579abe0bd635860125dec1e3c32ee1735.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-71-t",
+      "guideId": "precise-setpos-anubis-71-t",
+      "label": "T spawn 11",
+      "from": "T spawn 11",
+      "origin": {
+        "x": 499.13119082249904,
+        "y": 927.9214559386974,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ],
+        "id": "71"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-outside-conn",
+        "slot": 11,
+        "total": 11,
+        "label": "T spawn 11"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Outside Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Outside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t11",
+      "sourceId": "151",
+      "titleFrom": "T spawn 11",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 499.13119082249904,
+        "y": 927.9214559386974,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -128.0040283203125,
+        "y": -1632
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -126.58556365966797,
+        "y": 888.2982788085938,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -128.004028 -1632.000000 -0.960938; setang -11.506119 89.967712 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.281,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.294,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.294,
+              "kind": "jump",
+              "tick": 169005,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.828125,
+              "description": "Jump.",
+              "command_number": 194188
+            },
+            {
+              "t": 0.318,
+              "kind": "mouse-release",
+              "tick": 169007,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.375,
+              "description": "Release left mouse button.",
+              "command_number": 194190
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "bonce",
+        "round": 24,
+        "event": "Tipsport Open Cup 2",
+        "eventId": "9272",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-24",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/ad07125d-9adc-4173-908d-ab7e2dbb67ac/ab5642b3-e5a6-4f65-abae-261d17488767/video-1cf3710208266576a5ee38fcc28724eff029d3aacd955bfa1aea400135467c31.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/ad07125d-9adc-4173-908d-ab7e2dbb67ac/ab5642b3-e5a6-4f65-abae-261d17488767/video-sd-4a354cd57060343da8c2d9acc214967de778e7b3a08b96dca9814ec956cc5bb4.mp4",
+      "videoMetadata": {
+        "duration": 19.166667,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 151,
+        "filename": "setpos-151-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/ad07125d-9adc-4173-908d-ab7e2dbb67ac/ab5642b3-e5a6-4f65-abae-261d17488767/video-1cf3710208266576a5ee38fcc28724eff029d3aacd955bfa1aea400135467c31.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 19.166667,
+        "readyState": 4,
+        "sha256": "a52c5e642d9377d1ac862b95eca9ccb4b824ab7b39bd5a5dd17d40e9d172cd66"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/ad07125d-9adc-4173-908d-ab7e2dbb67ac/ab5642b3-e5a6-4f65-abae-261d17488767/guide-aim-aim-8c96f20f10c812cfbb92235cb9bfe1e83f325e1f52a02a2b4ddf9e64c55ab0f8.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-151-t",
+      "guideId": "precise-setpos-anubis-151-t",
+      "label": "T spawn 11",
+      "from": "T spawn 11",
+      "origin": {
+        "x": 499.13119082249904,
+        "y": 927.9214559386974,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 11,
+        "total": 11,
+        "label": "T spawn 11"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t11",
+      "sourceId": "161",
+      "titleFrom": "T spawn 11",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 499.13119082249904,
+        "y": 927.9214559386974,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -128.0040283203125,
+        "y": -1632
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -765.399169921875,
+        "y": 81.4701156616211,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -128.004028 -1632.000000 -0.960938; setang -37.397797 106.433136 0.000000",
+      "sourceTechnique": "W-jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "w_jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Tap W + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.781,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.79,
+          "description": "Hold W as you jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.79,
+              "kind": "jump",
+              "tick": 157460,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.578125,
+              "description": "Jump.",
+              "command_number": 180785
+            },
+            {
+              "t": 0.79,
+              "kind": "movement",
+              "tick": 157460,
+              "inputs": [
+                "w",
+                "jump"
+              ],
+              "fraction": 0.578125,
+              "description": "Press W.",
+              "command_number": 180785
+            },
+            {
+              "t": 0.843,
+              "kind": "mouse-release",
+              "tick": 157463,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.953125,
+              "description": "Release left mouse button.",
+              "command_number": 180788
+            },
+            {
+              "t": 0.865,
+              "kind": "movement",
+              "tick": 157465,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.375,
+              "description": "Release W.",
+              "command_number": 180790
+            },
+            {
+              "t": 0.897,
+              "kind": "movement",
+              "tick": 157467,
+              "inputs": [],
+              "fraction": 0.40625,
+              "description": "Release JUMP.",
+              "command_number": 180792
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "apEX",
+        "round": 18,
+        "event": "ESL Pro League Season 24",
+        "eventId": "8244",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-10-05",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/bbe2be54-4813-42a3-8dae-454f7093ec16/3d5d7fb1-61a6-4081-919a-e20bec27ff1c/video-bb1fc253456965f8ce877920b9922f753b8bfb6a95b8e5d8a12661c7b628c6b7.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/bbe2be54-4813-42a3-8dae-454f7093ec16/3d5d7fb1-61a6-4081-919a-e20bec27ff1c/video-sd-dcfd2fb657e7ad7b0020205a03fa4691351d0b1f090620c78f3a2e6b72df01ca.mp4",
+      "videoMetadata": {
+        "duration": 20.2,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 161,
+        "filename": "setpos-161-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/bbe2be54-4813-42a3-8dae-454f7093ec16/3d5d7fb1-61a6-4081-919a-e20bec27ff1c/video-bb1fc253456965f8ce877920b9922f753b8bfb6a95b8e5d8a12661c7b628c6b7.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 20.2,
+        "readyState": 4,
+        "sha256": "be3e31c12e03b76f46b9350c84c1af4975adaee6df63fc20f99132292f024772"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/bbe2be54-4813-42a3-8dae-454f7093ec16/3d5d7fb1-61a6-4081-919a-e20bec27ff1c/guide-aim-aim-b0f183bc9f6259e2addca40a03c3e3ece6b315c90baed17cbce4fc6b84b9feeb.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-161-t",
+      "guideId": "precise-setpos-anubis-161-t",
+      "label": "T spawn 11",
+      "from": "T spawn 11",
+      "origin": {
+        "x": 499.13119082249904,
+        "y": 927.9214559386974,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 11,
+        "total": 11,
+        "label": "T spawn 11"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t2",
+      "sourceId": "62",
+      "titleFrom": "T spawn 2",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 445.2526340996169,
+        "y": 939.8946360153258,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -416,
+        "y": -1696
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -699.2218017578125,
+        "y": 53.91426086425781,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -416.000000 -1696.000000 2.031250; setang -36.800766 97.084106 0.000000",
+      "sourceTechnique": "W-jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "w_jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Tap W + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.203,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.209,
+          "description": "Hold W as you jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.209,
+              "kind": "mouse-release",
+              "tick": 217226,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.390625,
+              "description": "Release left mouse button.",
+              "command_number": 219471
+            },
+            {
+              "t": 0.215,
+              "kind": "jump",
+              "tick": 217226,
+              "inputs": [
+                "w",
+                "jump"
+              ],
+              "fraction": 0.765625,
+              "description": "Jump.",
+              "command_number": 219471
+            },
+            {
+              "t": 0.336,
+              "kind": "movement",
+              "tick": 217234,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.53125,
+              "description": "Release W.",
+              "command_number": 219479
+            },
+            {
+              "t": 0.34,
+              "kind": "movement",
+              "tick": 217234,
+              "inputs": [],
+              "fraction": 0.75,
+              "description": "Release JUMP.",
+              "command_number": 219479
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "MisteM",
+        "round": 27,
+        "event": "Stake Pulse Beat II",
+        "eventId": "9222",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-14",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/93bd3560-5ab0-4b51-b71a-bb93289e2155/6d7251d5-e9fc-4a22-8203-7f2314fbdd05/video-7c29c4dc55dd7405497f93dc8e2fe89b504f87dd8a1d600d07ef8ada05c1bb8f.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/93bd3560-5ab0-4b51-b71a-bb93289e2155/6d7251d5-e9fc-4a22-8203-7f2314fbdd05/video-sd-55cf081de95c25c8673921d3ddedd98a7f2c5cfe37c693e6bde84cbe4604e910.mp4",
+      "videoMetadata": {
+        "duration": 18.833008,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 62,
+        "filename": "setpos-62-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/93bd3560-5ab0-4b51-b71a-bb93289e2155/6d7251d5-e9fc-4a22-8203-7f2314fbdd05/video-7c29c4dc55dd7405497f93dc8e2fe89b504f87dd8a1d600d07ef8ada05c1bb8f.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 18.833008,
+        "readyState": 4,
+        "sha256": "09715ab722112ab42aaf77cb6abc7a8bd2cc1254a18f3f3d184be62ba04e49d0"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/93bd3560-5ab0-4b51-b71a-bb93289e2155/6d7251d5-e9fc-4a22-8203-7f2314fbdd05/guide-aim-aim-52129ef68bcc0b3bff73b2b2d5c7fce9750f6379e76cc1b44bd1deddc9f4363b.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-62-t",
+      "guideId": "precise-setpos-anubis-62-t",
+      "label": "T spawn 2",
+      "from": "T spawn 2",
+      "origin": {
+        "x": 445.2526340996169,
+        "y": 939.8946360153258,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 2,
+        "total": 11,
+        "label": "T spawn 2"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/outside-conn/t2",
+      "sourceId": "72",
+      "titleFrom": "T spawn 2",
+      "titleTo": "Outside Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 445.2526340996169,
+        "y": 939.8946360153258,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -416,
+        "y": -1696
+      },
+      "worldDestination": {
+        "x": -422.77142333984375,
+        "y": 78.54864883422852
+      },
+      "worldImpact": {
+        "x": -441.1145935058594,
+        "y": 44.161964416503906,
+        "z": -117.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -416.000000 -1696.000000 2.031250; setang -9.845123 90.614899 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.156,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.167,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.167,
+              "kind": "jump",
+              "tick": 204256,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.671875,
+              "description": "Jump.",
+              "command_number": 269175
+            },
+            {
+              "t": 0.177,
+              "kind": "mouse-release",
+              "tick": 204257,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.328125,
+              "description": "Release left mouse button.",
+              "command_number": 269176
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "donk",
+        "round": 26,
+        "event": null,
+        "eventId": null,
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-14",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/e7001d3f-5e53-40db-84a9-40d6d0a43a97/3f8f8a0e-061a-430e-9f19-06e55d04b17d/video-6e29eb3ae44376146c0f87fe3031faca715380f7f98047bdbefaf0f0de35a8f6.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/e7001d3f-5e53-40db-84a9-40d6d0a43a97/3f8f8a0e-061a-430e-9f19-06e55d04b17d/video-sd-7af1dc6a58a913b5766a7e590ca565a4e5f59a2cbe4b7becdda878109e4d1a2a.mp4",
+      "videoMetadata": {
+        "duration": 14.733008,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 72,
+        "filename": "setpos-72-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/e7001d3f-5e53-40db-84a9-40d6d0a43a97/3f8f8a0e-061a-430e-9f19-06e55d04b17d/video-6e29eb3ae44376146c0f87fe3031faca715380f7f98047bdbefaf0f0de35a8f6.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 14.733008,
+        "readyState": 4,
+        "sha256": "fcb203ef67ac59607bad5633922d6c81a2c1e75cd3f06a6550c4e0cb30459d4e"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/e7001d3f-5e53-40db-84a9-40d6d0a43a97/3f8f8a0e-061a-430e-9f19-06e55d04b17d/guide-aim-aim-464c7cf79ade116d40bbb4bfe0cee0e06e6c618ec1f035dfd12f4eb21bbe9c9c.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-72-t",
+      "guideId": "precise-setpos-anubis-72-t",
+      "label": "T spawn 2",
+      "from": "T spawn 2",
+      "origin": {
+        "x": 445.2526340996169,
+        "y": 939.8946360153258,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ],
+        "id": "71"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-outside-conn",
+        "slot": 2,
+        "total": 11,
+        "label": "T spawn 2"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Outside Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Outside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t2",
+      "sourceId": "145",
+      "titleFrom": "T spawn 2",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 445.2526340996169,
+        "y": 939.8946360153258,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -416,
+        "y": -1696
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -52.166629791259766,
+        "y": 842.2272338867188,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -416.000000 -1696.000000 2.031250; setang -13.009872 81.842316 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.156,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.162,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.162,
+              "kind": "jump",
+              "tick": 11014,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.359375,
+              "description": "Jump.",
+              "command_number": 16907
+            },
+            {
+              "t": 0.17,
+              "kind": "mouse-release",
+              "tick": 11014,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.890625,
+              "description": "Release left mouse button.",
+              "command_number": 16907
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "Damsi",
+        "round": 2,
+        "event": "Tipsport Open Cup 2",
+        "eventId": "9272",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-24",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/05c056da-a5b5-4b8f-9e11-9f7bc2aab62e/23fcf623-1034-4f7c-b5f3-15d7f003d967/video-2af46bd0ee8b3cd5f76bc4fc98e2dbd6c05a95d0d9b54d0669f565b8f64976d0.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/05c056da-a5b5-4b8f-9e11-9f7bc2aab62e/23fcf623-1034-4f7c-b5f3-15d7f003d967/video-sd-5a30d88fdaadc521a9d6f13081c251ab2750b110ea924c59291adb8fb7b59ef4.mp4",
+      "videoMetadata": {
+        "duration": 21.466667,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 145,
+        "filename": "setpos-145-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/05c056da-a5b5-4b8f-9e11-9f7bc2aab62e/23fcf623-1034-4f7c-b5f3-15d7f003d967/video-2af46bd0ee8b3cd5f76bc4fc98e2dbd6c05a95d0d9b54d0669f565b8f64976d0.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 21.466667,
+        "readyState": 4,
+        "sha256": "c9abd5fca15e035764137bce4804ec7149a0b7635e3f0c038e5c8b423135483a"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/05c056da-a5b5-4b8f-9e11-9f7bc2aab62e/23fcf623-1034-4f7c-b5f3-15d7f003d967/guide-aim-aim-814ab3a7ef6b9575b7c8912b10200eebd321d30e16c91bca244da583724a9230.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-145-t",
+      "guideId": "precise-setpos-anubis-145-t",
+      "label": "T spawn 2",
+      "from": "T spawn 2",
+      "origin": {
+        "x": 445.2526340996169,
+        "y": 939.8946360153258,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 2,
+        "total": 11,
+        "label": "T spawn 2"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t3",
+      "sourceId": "59",
+      "titleFrom": "T spawn 3",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 451.23922413793105,
+        "y": 912.9549808429119,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -384,
+        "y": -1552
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -710.5317993164062,
+        "y": 44.069820404052734,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -384.000000 -1552.000000 -11.968750; setang -40.865021 97.900208 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.766,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.771,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.771,
+              "kind": "jump",
+              "tick": 156770,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.375,
+              "description": "Jump.",
+              "command_number": 166372
+            },
+            {
+              "t": 0.786,
+              "kind": "mouse-release",
+              "tick": 156771,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.28125,
+              "description": "Release left mouse button.",
+              "command_number": 166373
+            },
+            {
+              "t": 0.848,
+              "kind": "movement",
+              "tick": 156775,
+              "inputs": [],
+              "fraction": 0.25,
+              "description": "Release JUMP.",
+              "command_number": 166377
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "Smash",
+        "round": 22,
+        "event": "HyperX Retake Season 12",
+        "eventId": "9341",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-20",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/90312eb8-48d8-4a3b-8fdf-92b5e3a701d0/e1fb88f9-e587-407b-b4ab-d1ff8d025b40/video-518efb96fe3a9813bf265cb80187b01e769451b392e72f9b682133bd8259f7ac.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/90312eb8-48d8-4a3b-8fdf-92b5e3a701d0/e1fb88f9-e587-407b-b4ab-d1ff8d025b40/video-sd-68186c70113424cfb8f999da87f28ff3715a941a04f0994c7b1919dd5b840811.mp4",
+      "videoMetadata": {
+        "duration": 17.366667,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 59,
+        "filename": "setpos-59-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/90312eb8-48d8-4a3b-8fdf-92b5e3a701d0/e1fb88f9-e587-407b-b4ab-d1ff8d025b40/video-518efb96fe3a9813bf265cb80187b01e769451b392e72f9b682133bd8259f7ac.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 17.366667,
+        "readyState": 4,
+        "sha256": "f86f40ad4aa9447a4819c2838bc3988012bdc09a9d8e2f9152ab80be655ad79f"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/90312eb8-48d8-4a3b-8fdf-92b5e3a701d0/e1fb88f9-e587-407b-b4ab-d1ff8d025b40/guide-aim-aim-d4ae9e63f503af7dd16823d2797e4cc8392b67c3baac3777afd14acb7798240c.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-59-t",
+      "guideId": "precise-setpos-anubis-59-t",
+      "label": "T spawn 3",
+      "from": "T spawn 3",
+      "origin": {
+        "x": 451.23922413793105,
+        "y": 912.9549808429119,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 3,
+        "total": 11,
+        "label": "T spawn 3"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t4",
+      "sourceId": "63",
+      "titleFrom": "T spawn 4",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 461.7157567049809,
+        "y": 908.4650383141762,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -328,
+        "y": -1528
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -704.7096557617188,
+        "y": 45.24972152709961,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -328.000000 -1528.000000 -11.968750; setang -40.459900 99.720825 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.375,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.377,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.377,
+              "kind": "jump",
+              "tick": 55712,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.109375,
+              "description": "Jump.",
+              "command_number": 64347
+            },
+            {
+              "t": 0.379,
+              "kind": "mouse-release",
+              "tick": 55712,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.25,
+              "description": "Release left mouse button.",
+              "command_number": 64347
+            },
+            {
+              "t": 0.441,
+              "kind": "movement",
+              "tick": 55716,
+              "inputs": [],
+              "fraction": 0.21875,
+              "description": "Release JUMP.",
+              "command_number": 64351
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "Aleksib",
+        "round": 6,
+        "event": "BLAST Open Porto 2026",
+        "eventId": "8249",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-19",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/2751c630-13cf-4ec4-b9df-b116fc8945b9/e9c0a9c8-3652-4e90-b48b-9474a09163c4/video-8679a23eecc45d54e9bb1dbec04d574d07d8bac8c2c6bb5f95984063ea821a57.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/2751c630-13cf-4ec4-b9df-b116fc8945b9/e9c0a9c8-3652-4e90-b48b-9474a09163c4/video-sd-6e4c67080e66c8dbf1c25cf3338f449a77e3fcf6485ec2fa4d3cd06ab8f46077.mp4",
+      "videoMetadata": {
+        "duration": 18.283333,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 63,
+        "filename": "setpos-63-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/2751c630-13cf-4ec4-b9df-b116fc8945b9/e9c0a9c8-3652-4e90-b48b-9474a09163c4/video-8679a23eecc45d54e9bb1dbec04d574d07d8bac8c2c6bb5f95984063ea821a57.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 18.283333,
+        "readyState": 4,
+        "sha256": "8ce74887b15216833fea15bfeeddea0f2916d5a97d037bdd3fe24b7e1dc841ca"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/2751c630-13cf-4ec4-b9df-b116fc8945b9/e9c0a9c8-3652-4e90-b48b-9474a09163c4/guide-aim-aim-b051ce52a6ee458ff8956e801b5308199f6a3f718c9faa5da3ad7685bbf78264.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-63-t",
+      "guideId": "precise-setpos-anubis-63-t",
+      "label": "T spawn 4",
+      "from": "T spawn 4",
+      "origin": {
+        "x": 461.7157567049809,
+        "y": 908.4650383141762,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 4,
+        "total": 11,
+        "label": "T spawn 4"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t4",
+      "sourceId": "142",
+      "titleFrom": "T spawn 4",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 461.7157567049809,
+        "y": 908.4650383141762,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -328,
+        "y": -1528
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -102.0682601928711,
+        "y": 870.293212890625,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -328.000000 -1528.000000 -11.968750; setang -10.120117 84.725891 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.281,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.283,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.283,
+              "kind": "jump",
+              "tick": 116622,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.109375,
+              "description": "Jump.",
+              "command_number": 159520
+            },
+            {
+              "t": 0.308,
+              "kind": "mouse-release",
+              "tick": 116623,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.6875,
+              "description": "Release left mouse button.",
+              "command_number": 159521
+            },
+            {
+              "t": 0.381,
+              "kind": "movement",
+              "tick": 116628,
+              "inputs": [],
+              "fraction": 0.40625,
+              "description": "Release JUMP.",
+              "command_number": 159526
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "bonce",
+        "round": 17,
+        "event": "Tipsport Open Cup 2",
+        "eventId": "9272",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-24",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/c45c2d95-9d90-4bc7-a240-0bf45e6e596e/9b8c140d-838e-4c1d-a1f8-d139d10421d9/video-949298da2a374e174a14d2eacf3bc90a27e1142864cf54abbe9a6b293da0583f.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/c45c2d95-9d90-4bc7-a240-0bf45e6e596e/9b8c140d-838e-4c1d-a1f8-d139d10421d9/video-sd-b3e33e7c59d06817ca476d02b4a3566cfa792573d78af7ec3ecc84177ad55637.mp4",
+      "videoMetadata": {
+        "duration": 17.733333,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 142,
+        "filename": "setpos-142-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/c45c2d95-9d90-4bc7-a240-0bf45e6e596e/9b8c140d-838e-4c1d-a1f8-d139d10421d9/video-949298da2a374e174a14d2eacf3bc90a27e1142864cf54abbe9a6b293da0583f.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 17.733333,
+        "readyState": 4,
+        "sha256": "07be7aadad580fcaba606861535a9e268589f9d2b70f1c2769a50270c57295d1"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/c45c2d95-9d90-4bc7-a240-0bf45e6e596e/9b8c140d-838e-4c1d-a1f8-d139d10421d9/guide-aim-aim-63d5e77d3e7219f67ada0775a68e78692e3e8fd9e3b136b36ef5b78ee1d3816e.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-142-t",
+      "guideId": "precise-setpos-anubis-142-t",
+      "label": "T spawn 4",
+      "from": "T spawn 4",
+      "origin": {
+        "x": 461.7157567049809,
+        "y": 908.4650383141762,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 4,
+        "total": 11,
+        "label": "T spawn 4"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/outside-conn/t5",
+      "sourceId": "92",
+      "titleFrom": "T spawn 5",
+      "titleTo": "Outside Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 466.20569923371653,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -304,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -422.77142333984375,
+        "y": 78.54864883422852
+      },
+      "worldImpact": {
+        "x": -387.58172607421875,
+        "y": 48.20949935913086,
+        "z": -117.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -304.000000 -1608.000000 -11.968750; setang -7.414063 92.121735 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.25,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.251,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.251,
+              "kind": "jump",
+              "tick": 64822,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.078125,
+              "description": "Jump.",
+              "command_number": 70793
+            },
+            {
+              "t": 0.271,
+              "kind": "mouse-release",
+              "tick": 64823,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.34375,
+              "description": "Release left mouse button.",
+              "command_number": 70794
+            },
+            {
+              "t": 0.349,
+              "kind": "movement",
+              "tick": 64828,
+              "inputs": [],
+              "fraction": 0.328125,
+              "description": "Release JUMP.",
+              "command_number": 70799
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "snow",
+        "round": 7,
+        "event": "Circuit X Curitiba Season 3",
+        "eventId": "9335",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-19",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/f29482ad-0ca9-4421-a26f-29460be7a7c6/591f568c-08e6-45d2-ac26-6670ec551f95/video-dde211a91183702a7e864c7a72e175ea29082c7132cf8f6307e1f0e34179f8cd.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/f29482ad-0ca9-4421-a26f-29460be7a7c6/591f568c-08e6-45d2-ac26-6670ec551f95/video-sd-8af33feb6b8396bfa2db91a8bc7f78086394207428f6d8b0f2350a15d74e8cc7.mp4",
+      "videoMetadata": {
+        "duration": 14.583008,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 92,
+        "filename": "setpos-92-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/f29482ad-0ca9-4421-a26f-29460be7a7c6/591f568c-08e6-45d2-ac26-6670ec551f95/video-dde211a91183702a7e864c7a72e175ea29082c7132cf8f6307e1f0e34179f8cd.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 14.583008,
+        "readyState": 4,
+        "sha256": "b95f3834270832c74b02cdc9512564c6e85f4ddfebd7d475dc96a0e102c61401"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/f29482ad-0ca9-4421-a26f-29460be7a7c6/591f568c-08e6-45d2-ac26-6670ec551f95/guide-aim-aim-69001ad381161cbdc0b50fa18643a70cdbd0bc9f0867a18edad316bb3a0a36f1.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-92-t",
+      "guideId": "precise-setpos-anubis-92-t",
+      "label": "T spawn 5",
+      "from": "T spawn 5",
+      "origin": {
+        "x": 466.20569923371653,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ],
+        "id": "71"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-outside-conn",
+        "slot": 5,
+        "total": 11,
+        "label": "T spawn 5"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Outside Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Outside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t5",
+      "sourceId": "93",
+      "titleFrom": "T spawn 5",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 466.20569923371653,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -304,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -692.9658813476562,
+        "y": 54.42373275756836,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -304.000000 -1608.000000 -11.968750; setang -36.190002 100.305847 0.000000",
+      "sourceTechnique": "Walking jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "walking_jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Walk + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.453,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.457,
+          "description": "Walk while holding W + Shift, then jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "shift",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.457,
+              "kind": "jump",
+              "tick": 28032,
+              "inputs": [
+                "shift",
+                "jump"
+              ],
+              "fraction": 0.25,
+              "description": "Jump.",
+              "command_number": 53830
+            },
+            {
+              "t": 0.457,
+              "kind": "mouse-release",
+              "tick": 28032,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.25,
+              "description": "Release left mouse button.",
+              "command_number": 53830
+            },
+            {
+              "t": 0.476,
+              "kind": "movement",
+              "tick": 28033,
+              "inputs": [
+                "w",
+                "shift",
+                "jump"
+              ],
+              "fraction": 0.46875,
+              "description": "Press W.",
+              "command_number": 53831
+            },
+            {
+              "t": 0.59,
+              "kind": "movement",
+              "tick": 28040,
+              "inputs": [
+                "w",
+                "shift"
+              ],
+              "fraction": 0.75,
+              "description": "Release JUMP.",
+              "command_number": 53838
+            },
+            {
+              "t": 0.612,
+              "kind": "movement",
+              "tick": 28042,
+              "inputs": [
+                "shift"
+              ],
+              "fraction": 0.15625,
+              "description": "Release W.",
+              "command_number": 53840
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "R4DYX",
+        "round": 5,
+        "event": "Urban Riga Open Season 7",
+        "eventId": "9339",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-16",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/042e7f53-cb3b-45c3-863e-8fadd74cdac8/2a93e5c5-5af7-450c-8d93-30aca20b9cde/video-9480f9a80cb04e15df237418949948b988479e80026e2f35c28edb23dbff1499.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/042e7f53-cb3b-45c3-863e-8fadd74cdac8/2a93e5c5-5af7-450c-8d93-30aca20b9cde/video-sd-aec9bbc999ee1a13ae4b90fbb8271ef1b1f7f80e449cc37de77e8fc6d3067cea.mp4",
+      "videoMetadata": {
+        "duration": 17.1,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 93,
+        "filename": "setpos-93-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/042e7f53-cb3b-45c3-863e-8fadd74cdac8/2a93e5c5-5af7-450c-8d93-30aca20b9cde/video-9480f9a80cb04e15df237418949948b988479e80026e2f35c28edb23dbff1499.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 17.1,
+        "readyState": 4,
+        "sha256": "a089965297ac2cf5c2dfe88ca02730010603a609bae9ec2cb41604a3e0283868"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/042e7f53-cb3b-45c3-863e-8fadd74cdac8/2a93e5c5-5af7-450c-8d93-30aca20b9cde/guide-aim-aim-3e9777530cda84e9b626709ef8de1fe2fc06707f14578ec9fe7d3ba4cff962d9.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-93-t",
+      "guideId": "precise-setpos-anubis-93-t",
+      "label": "T spawn 5",
+      "from": "T spawn 5",
+      "origin": {
+        "x": 466.20569923371653,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 5,
+        "total": 11,
+        "label": "T spawn 5"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t5",
+      "sourceId": "146",
+      "titleFrom": "T spawn 5",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 466.20569923371653,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -304,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -68.53034973144531,
+        "y": 842.0809326171875,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -304.000000 -1608.000000 -11.968750; setang -9.048615 84.509918 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.063,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.068,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.068,
+              "kind": "jump",
+              "tick": 79826,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.359375,
+              "description": "Jump.",
+              "command_number": 84446
+            },
+            {
+              "t": 0.149,
+              "kind": "mouse-release",
+              "tick": 79831,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.515625,
+              "description": "Release left mouse button.",
+              "command_number": 84451
+            },
+            {
+              "t": 0.203,
+              "kind": "movement",
+              "tick": 79835,
+              "inputs": [],
+              "fraction": 0.015625,
+              "description": "Release JUMP.",
+              "command_number": 84455
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "jackasmo",
+        "round": 10,
+        "event": "Stake Pulse Beat II",
+        "eventId": "9222",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-24",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/3bc74206-5e52-42c4-93b4-16b4e11f8c33/37c87224-955a-47dd-a48c-fdf1cfeff203/video-4545b16de609b51814a71dfeb261fd224db99123f2d15d354fdf678c4d171f2f.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/3bc74206-5e52-42c4-93b4-16b4e11f8c33/37c87224-955a-47dd-a48c-fdf1cfeff203/video-sd-22566bf2712cbb13606a111fc13fbea42ad0cf18d02d6ef8c29bd129f8232482.mp4",
+      "videoMetadata": {
+        "duration": 22.233008,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 146,
+        "filename": "setpos-146-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/3bc74206-5e52-42c4-93b4-16b4e11f8c33/37c87224-955a-47dd-a48c-fdf1cfeff203/video-4545b16de609b51814a71dfeb261fd224db99123f2d15d354fdf678c4d171f2f.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 22.233008,
+        "readyState": 4,
+        "sha256": "ba2df3f1632caf8d065389df5f5fbd5df6f3032ab11d5378295b81063954cb23"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/3bc74206-5e52-42c4-93b4-16b4e11f8c33/37c87224-955a-47dd-a48c-fdf1cfeff203/guide-aim-aim-8ad0174935b673847d4a43d0e17c3676e0a5189460843e73b9b7f355cea68920.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-146-t",
+      "guideId": "precise-setpos-anubis-146-t",
+      "label": "T spawn 5",
+      "from": "T spawn 5",
+      "origin": {
+        "x": 466.20569923371653,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 5,
+        "total": 11,
+        "label": "T spawn 5"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t6",
+      "sourceId": "60",
+      "titleFrom": "T spawn 6",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 473.68893678160924,
+        "y": 914.4516283524905,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -264,
+        "y": -1560
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -693.586669921875,
+        "y": 51.465641021728516,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -264.000000 -1560.000000 -11.968750; setang -35.829163 101.668854 0.000000",
+      "sourceTechnique": "Crouched w-jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "w_jumpthrow",
+        "stance": "crouched"
+      },
+      "throwType": "Crouch + Tap W + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.578,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "input-change",
+          "t": 0.578,
+          "description": "Crouch and stand still. Keep the crosshair lined up.",
+          "inputs": [
+            "ctrl"
+          ]
+        },
+        {
+          "type": "throw",
+          "t": 0.599,
+          "description": "Crouch and hold W as you jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "ctrl",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.599,
+              "kind": "jump",
+              "tick": 16990,
+              "inputs": [
+                "w",
+                "ctrl",
+                "jump"
+              ],
+              "fraction": 0.328125,
+              "description": "Jump.",
+              "command_number": 29009
+            },
+            {
+              "t": 0.602,
+              "kind": "mouse-release",
+              "tick": 16990,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.5,
+              "description": "Release left mouse button.",
+              "command_number": 29009
+            },
+            {
+              "t": 0.65,
+              "kind": "movement",
+              "tick": 16993,
+              "inputs": [
+                "ctrl",
+                "jump"
+              ],
+              "fraction": 0.609375,
+              "description": "Release W.",
+              "command_number": 29012
+            },
+            {
+              "t": 0.666,
+              "kind": "movement",
+              "tick": 16994,
+              "inputs": [
+                "ctrl"
+              ],
+              "fraction": 0.59375,
+              "description": "Release JUMP.",
+              "command_number": 29013
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "LNZ",
+        "round": 4,
+        "event": "FISSURE Playground 3",
+        "eventId": "8266",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-16",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/f97a2aae-3545-442e-bdfc-6eb2bb1bad7d/0bff760a-8fea-41bb-a1b9-387e75c0e1aa/video-7a3102ecf412f1261003e9ebc76607972ca592cf8ef7b90313c599d3dc61427b.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/f97a2aae-3545-442e-bdfc-6eb2bb1bad7d/0bff760a-8fea-41bb-a1b9-387e75c0e1aa/video-sd-2fbbc8f3c35547238b835c018f3b7dd6ae2a6bc8066e47e3feaed762b60bad21.mp4",
+      "videoMetadata": {
+        "duration": 16.85,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 60,
+        "filename": "setpos-60-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/f97a2aae-3545-442e-bdfc-6eb2bb1bad7d/0bff760a-8fea-41bb-a1b9-387e75c0e1aa/video-7a3102ecf412f1261003e9ebc76607972ca592cf8ef7b90313c599d3dc61427b.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 16.85,
+        "readyState": 4,
+        "sha256": "3fcd725dbaa16ddb17509e9928e993359a022f4540ad713bde31e6697d5bca10"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/f97a2aae-3545-442e-bdfc-6eb2bb1bad7d/0bff760a-8fea-41bb-a1b9-387e75c0e1aa/guide-aim-aim-0a43115ba45707bbd4b63efab24055561a7bf946ee339444fe3c462e1785b366.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "image": "https://media.setpos.gg/renders/f97a2aae-3545-442e-bdfc-6eb2bb1bad7d/0bff760a-8fea-41bb-a1b9-387e75c0e1aa/guide-pre-gesture-release-0a43115ba45707bbd4b63efab24055561a7bf946ee339444fe3c462e1785b366.webp",
+          "role": "pre-gesture",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "grenade-reticle"
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-60-t",
+      "guideId": "precise-setpos-anubis-60-t",
+      "label": "T spawn 6",
+      "from": "T spawn 6",
+      "origin": {
+        "x": 473.68893678160924,
+        "y": 914.4516283524905,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 6,
+        "total": 11,
+        "label": "T spawn 6"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/outside-conn/t6",
+      "sourceId": "96",
+      "titleFrom": "T spawn 6",
+      "titleTo": "Outside Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 473.68893678160924,
+        "y": 914.4516283524905,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -264,
+        "y": -1560
+      },
+      "worldDestination": {
+        "x": -422.77142333984375,
+        "y": 78.54864883422852
+      },
+      "worldImpact": {
+        "x": -472.1462097167969,
+        "y": 106.89860534667969,
+        "z": -117.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -264.000000 -1560.000000 -11.968750; setang -8.536041 95.367493 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.875,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.89,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.89,
+              "kind": "jump",
+              "tick": 130207,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.953125,
+              "description": "Jump.",
+              "command_number": 162399
+            },
+            {
+              "t": 0.955,
+              "kind": "mouse-release",
+              "tick": 130212,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.109375,
+              "description": "Release left mouse button.",
+              "command_number": 162404
+            },
+            {
+              "t": 0.978,
+              "kind": "movement",
+              "tick": 130213,
+              "inputs": [],
+              "fraction": 0.609375,
+              "description": "Release JUMP.",
+              "command_number": 162405
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "d1Ledez",
+        "round": 16,
+        "event": "FISSURE Playground 3",
+        "eventId": "8266",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-16",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/e9f1fdde-5c34-424e-bb3f-ed3bdb172ee9/76887683-67b4-4583-9e80-a36e422bbd44/video-94056e168e9b0778051aca106e04fc7d69813a6abebb52a586ac65e9e6e3a442.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/e9f1fdde-5c34-424e-bb3f-ed3bdb172ee9/76887683-67b4-4583-9e80-a36e422bbd44/video-sd-97d1ccbec68cce98f212fe9e82cdb9822370a625b733ca58325fd503e36af7de.mp4",
+      "videoMetadata": {
+        "duration": 17.6,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 96,
+        "filename": "setpos-96-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/e9f1fdde-5c34-424e-bb3f-ed3bdb172ee9/76887683-67b4-4583-9e80-a36e422bbd44/video-94056e168e9b0778051aca106e04fc7d69813a6abebb52a586ac65e9e6e3a442.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 17.6,
+        "readyState": 4,
+        "sha256": "6e57764da542495877a84433ad5c4c0b2ab38f9906e7b80c7b03c0f39e36996d"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/e9f1fdde-5c34-424e-bb3f-ed3bdb172ee9/76887683-67b4-4583-9e80-a36e422bbd44/guide-aim-aim-2f48e0977db503ed85e1f338946ee0e43db6616909db4498d18fa435624da5fa.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-96-t",
+      "guideId": "precise-setpos-anubis-96-t",
+      "label": "T spawn 6",
+      "from": "T spawn 6",
+      "origin": {
+        "x": 473.68893678160924,
+        "y": 914.4516283524905,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ],
+        "id": "71"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-outside-conn",
+        "slot": 6,
+        "total": 11,
+        "label": "T spawn 6"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Outside Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Outside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t6",
+      "sourceId": "143",
+      "titleFrom": "T spawn 6",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 473.68893678160924,
+        "y": 914.4516283524905,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -264,
+        "y": -1560
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -48.26625061035156,
+        "y": 898.4913330078125,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -264.000000 -1560.000000 -11.968750; setang -14.981918 85.094269 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.328,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.339,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.339,
+              "kind": "jump",
+              "tick": 124068,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.703125,
+              "description": "Jump.",
+              "command_number": 166966
+            },
+            {
+              "t": 0.339,
+              "kind": "mouse-release",
+              "tick": 124068,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.703125,
+              "description": "Release left mouse button.",
+              "command_number": 166966
+            },
+            {
+              "t": 0.414,
+              "kind": "movement",
+              "tick": 124073,
+              "inputs": [],
+              "fraction": 0.515625,
+              "description": "Release JUMP.",
+              "command_number": 166971
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "bonce",
+        "round": 18,
+        "event": "Tipsport Open Cup 2",
+        "eventId": "9272",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-24",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/9b0076c5-218c-41c5-89df-cefe5963c6ea/befef624-c48a-4178-b685-2fd42b3e7c7b/video-c3e31a383c3c5b06dc98e7b15ace9b8b67fe3a6b3a4062318976321eb626ec80.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/9b0076c5-218c-41c5-89df-cefe5963c6ea/befef624-c48a-4178-b685-2fd42b3e7c7b/video-sd-e36cbd065804e5502ae0bf969cd6819e16813359937dc741abe17e02590ed95c.mp4",
+      "videoMetadata": {
+        "duration": 19.866667,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 143,
+        "filename": "setpos-143-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/9b0076c5-218c-41c5-89df-cefe5963c6ea/befef624-c48a-4178-b685-2fd42b3e7c7b/video-c3e31a383c3c5b06dc98e7b15ace9b8b67fe3a6b3a4062318976321eb626ec80.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 19.866667,
+        "readyState": 4,
+        "sha256": "80944a3f01461736c83bce76de0f121669c9dcd1ba3397856ba1c4c5994014e8"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/9b0076c5-218c-41c5-89df-cefe5963c6ea/befef624-c48a-4178-b685-2fd42b3e7c7b/guide-aim-aim-3b852aebdcc953c446e98a628dbeea343afebc99c24d1b3ef5bf79bdf838c748.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-143-t",
+      "guideId": "precise-setpos-anubis-143-t",
+      "label": "T spawn 6",
+      "from": "T spawn 6",
+      "origin": {
+        "x": 473.68893678160924,
+        "y": 914.4516283524905,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 6,
+        "total": 11,
+        "label": "T spawn 6"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t7",
+      "sourceId": "57",
+      "titleFrom": "T spawn 7",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 479.3013649425288,
+        "y": 903.8029731005088,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -234,
+        "y": -1503.0799560546875
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -670.1072998046875,
+        "y": 34.66429901123047,
+        "z": -85.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -234.000000 -1503.079956 -11.968750; setang -37.184265 104.997711 0.000000",
+      "sourceTechnique": "Walking jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "walking_jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Walk + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.281,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "input-change",
+          "t": 0.281,
+          "description": "Stand still. Keep the crosshair lined up.",
+          "inputs": [
+            "shift"
+          ]
+        },
+        {
+          "type": "throw",
+          "t": 0.315,
+          "description": "Walk while holding W + Shift, then jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "shift",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.315,
+              "kind": "jump",
+              "tick": 142477,
+              "inputs": [
+                "w",
+                "shift",
+                "jump"
+              ],
+              "fraction": 0.15625,
+              "description": "Jump.",
+              "command_number": 149749
+            },
+            {
+              "t": 0.385,
+              "kind": "mouse-release",
+              "tick": 142481,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.671875,
+              "description": "Release left mouse button.",
+              "command_number": 149753
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "Demho",
+        "round": 18,
+        "event": "Stake Pulse Beat III",
+        "eventId": "9223",
+        "eventLogo": "/media/event-logos/9223-9b0cd45545e87ae3.webp"
+      },
+      "sourceAddedAt": "2026-09-20",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/f5d355dc-12cf-4bef-ae15-499165415211/ecd5c96e-f221-46cf-a236-3a8db942c1a7/video-b63ed01e032561de692559cedead0d1efcf5b8a9b045574b90af51605ed1d388.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/f5d355dc-12cf-4bef-ae15-499165415211/ecd5c96e-f221-46cf-a236-3a8db942c1a7/video-sd-2761c2e0822383c6df23b512f6ef49ad44cf0f4b3474de49e4e45daabee56c5d.mp4",
+      "videoMetadata": {
+        "duration": 17.85,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 57,
+        "filename": "setpos-57-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/f5d355dc-12cf-4bef-ae15-499165415211/ecd5c96e-f221-46cf-a236-3a8db942c1a7/video-b63ed01e032561de692559cedead0d1efcf5b8a9b045574b90af51605ed1d388.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 17.85,
+        "readyState": 4,
+        "sha256": "b4407cfbfba4d398a38f281a21170d25573068ecc77ddc5a2bd917065248d8b7"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/f5d355dc-12cf-4bef-ae15-499165415211/ecd5c96e-f221-46cf-a236-3a8db942c1a7/guide-aim-aim-fea366fdac3bc951a30b872df3554446f2f8bd341803166a430e38db74922737.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "image": "https://media.setpos.gg/renders/f5d355dc-12cf-4bef-ae15-499165415211/ecd5c96e-f221-46cf-a236-3a8db942c1a7/guide-pre-gesture-release-fea366fdac3bc951a30b872df3554446f2f8bd341803166a430e38db74922737.webp",
+          "role": "pre-gesture",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "grenade-reticle"
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-57-t",
+      "guideId": "precise-setpos-anubis-57-t",
+      "label": "T spawn 7",
+      "from": "T spawn 7",
+      "origin": {
+        "x": 479.3013649425288,
+        "y": 903.8029731005088,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 7,
+        "total": 11,
+        "label": "T spawn 7"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t7",
+      "sourceId": "138",
+      "titleFrom": "T spawn 7",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 479.3013649425288,
+        "y": 903.8029731005088,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -234,
+        "y": -1503.0799560546875
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -68.26710510253906,
+        "y": 831.8151245117188,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -234.000000 -1503.079956 -11.968750; setang -17.817764 86.235107 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.234,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.249,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.249,
+              "kind": "mouse-release",
+              "tick": 48045,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.953125,
+              "description": "Release left mouse button.",
+              "command_number": 63245
+            },
+            {
+              "t": 0.256,
+              "kind": "jump",
+              "tick": 48046,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.375,
+              "description": "Jump.",
+              "command_number": 63246
+            },
+            {
+              "t": 0.256,
+              "kind": "movement",
+              "tick": 48046,
+              "inputs": [],
+              "fraction": 0.375,
+              "description": "Release JUMP.",
+              "command_number": 63246
+            },
+            {
+              "t": 0.268,
+              "kind": "jump",
+              "tick": 48047,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.140625,
+              "description": "Jump.",
+              "command_number": 63247
+            },
+            {
+              "t": 0.268,
+              "kind": "movement",
+              "tick": 48047,
+              "inputs": [],
+              "fraction": 0.140625,
+              "description": "Release JUMP.",
+              "command_number": 63247
+            },
+            {
+              "t": 0.285,
+              "kind": "jump",
+              "tick": 48048,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.25,
+              "description": "Jump.",
+              "command_number": 63248
+            },
+            {
+              "t": 0.285,
+              "kind": "movement",
+              "tick": 48048,
+              "inputs": [],
+              "fraction": 0.25,
+              "description": "Release JUMP.",
+              "command_number": 63248
+            },
+            {
+              "t": 0.3,
+              "kind": "jump",
+              "tick": 48049,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.171875,
+              "description": "Jump.",
+              "command_number": 63249
+            },
+            {
+              "t": 0.3,
+              "kind": "movement",
+              "tick": 48049,
+              "inputs": [],
+              "fraction": 0.171875,
+              "description": "Release JUMP.",
+              "command_number": 63249
+            },
+            {
+              "t": 0.321,
+              "kind": "jump",
+              "tick": 48050,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.546875,
+              "description": "Jump.",
+              "command_number": 63250
+            },
+            {
+              "t": 0.321,
+              "kind": "movement",
+              "tick": 48050,
+              "inputs": [],
+              "fraction": 0.546875,
+              "description": "Release JUMP.",
+              "command_number": 63250
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "GeGo",
+        "round": 7,
+        "event": "Tipsport Open Cup 2",
+        "eventId": "9272",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-23",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/165b3ba9-53ad-42fc-a54a-10b0452daa40/8ed8bb05-d5ca-4218-b94a-174f0f1004e7/video-1825eacd6aaf92ddc3121d3497c2502ddb8392804ed93d57f99f84f680ccbc33.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/165b3ba9-53ad-42fc-a54a-10b0452daa40/8ed8bb05-d5ca-4218-b94a-174f0f1004e7/video-sd-8f418554f8ac2ac043734c86ec30e0bb426a8fbd0e772c0cf2e60c0fb4663512.mp4",
+      "videoMetadata": {
+        "duration": 19.3,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 138,
+        "filename": "setpos-138-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/165b3ba9-53ad-42fc-a54a-10b0452daa40/8ed8bb05-d5ca-4218-b94a-174f0f1004e7/video-1825eacd6aaf92ddc3121d3497c2502ddb8392804ed93d57f99f84f680ccbc33.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 19.3,
+        "readyState": 4,
+        "sha256": "562ab8071fee2507dde5a0a907f978dd193d90acc4127fb560a2f7f1d95489a3"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/165b3ba9-53ad-42fc-a54a-10b0452daa40/8ed8bb05-d5ca-4218-b94a-174f0f1004e7/guide-aim-aim-5315ce0bbd65a39e6baa55894a1b931af2ce9fba0aba29372741a8967362e195.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-138-t",
+      "guideId": "precise-setpos-anubis-138-t",
+      "label": "T spawn 7",
+      "from": "T spawn 7",
+      "origin": {
+        "x": 479.3013649425288,
+        "y": 903.8029731005088,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 7,
+        "total": 11,
+        "label": "T spawn 7"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/outside-conn/t8",
+      "sourceId": "94",
+      "titleFrom": "T spawn 8",
+      "titleTo": "Outside Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 487.15876436781616,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -192,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -422.77142333984375,
+        "y": 78.54864883422852
+      },
+      "worldImpact": {
+        "x": -419.52386474609375,
+        "y": 72.41529846191406,
+        "z": -117.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -192.000000 -1608.000000 -11.968750; setang -9.679993 95.697784 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.125,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.125,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.125,
+              "kind": "jump",
+              "tick": 171142,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0,
+              "description": "Jump.",
+              "command_number": 231998
+            },
+            {
+              "t": 0.125,
+              "kind": "movement",
+              "tick": 171142,
+              "inputs": [],
+              "fraction": 0,
+              "description": "Release JUMP.",
+              "command_number": 231998
+            },
+            {
+              "t": 0.162,
+              "kind": "mouse-release",
+              "tick": 171144,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.359375,
+              "description": "Release left mouse button.",
+              "command_number": 232000
+            },
+            {
+              "t": 0.176,
+              "kind": "jump",
+              "tick": 171145,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.28125,
+              "description": "Jump.",
+              "command_number": 232001
+            },
+            {
+              "t": 0.176,
+              "kind": "movement",
+              "tick": 171145,
+              "inputs": [],
+              "fraction": 0.28125,
+              "description": "Release JUMP.",
+              "command_number": 232001
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "Magnojez",
+        "round": 21,
+        "event": "FISSURE Playground 3",
+        "eventId": "8266",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-16",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/2755b20f-da0b-403f-8ef6-9f3fc3cc38e2/533451f0-007d-4d81-a169-c98be1a4296a/video-ea5170b66e1d8fc3149a322139065ce56948a21ab4834f88715e7a6a8d4bad17.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/2755b20f-da0b-403f-8ef6-9f3fc3cc38e2/533451f0-007d-4d81-a169-c98be1a4296a/video-sd-5c8af007cbc16017a05b2a4ba19311fc733c14db9f928b061ad4ebdc322319ba.mp4",
+      "videoMetadata": {
+        "duration": 15.133008,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 94,
+        "filename": "setpos-94-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/2755b20f-da0b-403f-8ef6-9f3fc3cc38e2/533451f0-007d-4d81-a169-c98be1a4296a/video-ea5170b66e1d8fc3149a322139065ce56948a21ab4834f88715e7a6a8d4bad17.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 15.133008,
+        "readyState": 4,
+        "sha256": "cfd7dbca3bdb1303988a72c3a058984bd63f92c20363c86e1954fe2bafbb4e4c"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/2755b20f-da0b-403f-8ef6-9f3fc3cc38e2/533451f0-007d-4d81-a169-c98be1a4296a/guide-aim-aim-3333eef091e6e03b5e4afb3ba83e68d9b672e023fde4c272f9ee27d6a5843748.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-94-t",
+      "guideId": "precise-setpos-anubis-94-t",
+      "label": "T spawn 8",
+      "from": "T spawn 8",
+      "origin": {
+        "x": 487.15876436781616,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 443.985829864882,
+        "y": 607.910409027361,
+        "levels": [
+          1
+        ],
+        "id": "71"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-outside-conn",
+        "slot": 8,
+        "total": 11,
+        "label": "T spawn 8"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Outside Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Outside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/mid/t8",
+      "sourceId": "139",
+      "titleFrom": "T spawn 8",
+      "titleTo": "Mid",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 487.15876436781616,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -192,
+        "y": -1608
+      },
+      "worldDestination": {
+        "x": -76.43009458269391,
+        "y": 850.2086530412946
+      },
+      "worldImpact": {
+        "x": -69.12650299072266,
+        "y": 778.2544555664062,
+        "z": 2.2665443420410156
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -192.000000 -1608.000000 -11.968750; setang -6.292084 87.052246 0.000000",
+      "sourceTechnique": "Jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.328,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 0.331,
+          "description": "Jump and release the left mouse button.",
+          "inputs": [
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 0.331,
+              "kind": "jump",
+              "tick": 129073,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.171875,
+              "description": "Jump.",
+              "command_number": 154257
+            },
+            {
+              "t": 0.35,
+              "kind": "mouse-release",
+              "tick": 129074,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.375,
+              "description": "Release left mouse button.",
+              "command_number": 154258
+            },
+            {
+              "t": 0.443,
+              "kind": "movement",
+              "tick": 129080,
+              "inputs": [],
+              "fraction": 0.375,
+              "description": "Release JUMP.",
+              "command_number": 154264
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "bonce",
+        "round": 18,
+        "event": "Tipsport Open Cup 2",
+        "eventId": "9272",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-23",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/ab149284-43bc-405f-9f8b-4665c4fa6101/ea7a7d88-d167-4f31-b776-5047b3236dac/video-6c9d7e011379fc10d1701e89f72bd199a0c34edc79640bdc26f4857f289148c9.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/ab149284-43bc-405f-9f8b-4665c4fa6101/ea7a7d88-d167-4f31-b776-5047b3236dac/video-sd-de7040bd82091b7ffd2150a9682a01f6937c6b04c1316da624347fa8282e3574.mp4",
+      "videoMetadata": {
+        "duration": 17.5,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 139,
+        "filename": "setpos-139-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/ab149284-43bc-405f-9f8b-4665c4fa6101/ea7a7d88-d167-4f31-b776-5047b3236dac/video-6c9d7e011379fc10d1701e89f72bd199a0c34edc79640bdc26f4857f289148c9.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 17.5,
+        "readyState": 4,
+        "sha256": "22a90601f7ae6079f792db73e867ecf45ec7b21a694e491cd8bfd5fd8edb3ccd"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/ab149284-43bc-405f-9f8b-4665c4fa6101/ea7a7d88-d167-4f31-b776-5047b3236dac/guide-aim-aim-613a5394adaf00bfb19d867df940d623c479fd5346948ffd68d3d0b750cfee3d.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-139-t",
+      "guideId": "precise-setpos-anubis-139-t",
+      "label": "T spawn 8",
+      "from": "T spawn 8",
+      "origin": {
+        "x": 487.15876436781616,
+        "y": 923.4315134099618,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 508.77969075844595,
+        "y": 463.54753108512665,
+        "levels": [
+          1
+        ],
+        "id": "138"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-mid",
+        "slot": 8,
+        "total": 11,
+        "label": "T spawn 8"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-mid-window-from-t-spawn-92ad-t",
+        "target": "Mid-Window",
+        "areaId": null,
+        "proof": "Source Mid destination projects to508.78,463.55, within3.4 logical units of the existing publisher-registered Mid-Window smoke point508.46,466.94. Preserve the distinct Window drop molly target."
+      }
+    },
+    {
+      "provider": "setpos",
+      "registrationId": "setpos-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://setpos.gg/anubis/conn/t9",
+      "sourceId": "95",
+      "titleFrom": "T spawn 9",
+      "titleTo": "Conn",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 494.2678400383142,
+        "y": 903.8029731005088,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ]
+      },
+      "worldOrigin": {
+        "x": -154,
+        "y": -1503.0799560546875
+      },
+      "worldDestination": {
+        "x": -701.7353820800781,
+        "y": 57.07765121459961
+      },
+      "worldImpact": {
+        "x": -755.7808227539062,
+        "y": 67.61746215820312,
+        "z": -93.96875
+      },
+      "calibration": {
+        "posX": -2796,
+        "posY": 3328,
+        "scale": 5.22,
+        "radarSize": 1024
+      },
+      "console": "setpos -154.000000 -1503.079956 -11.968750; setang -35.574066 105.327637 0.000000",
+      "sourceTechnique": "W-jumpthrow",
+      "sourceTechniqueText": {
+        "id": "technique",
+        "technique": "w_jumpthrow",
+        "stance": "standing"
+      },
+      "throwType": "Tap W + Jump + LMB",
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "description": "Stand at the recorded spawn position.",
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 1.828,
+          "description": "Finish matching the recorded crosshair placement while still on spawn.",
+          "inputs": []
+        },
+        {
+          "type": "throw",
+          "t": 1.85,
+          "description": "Hold W as you jump and release the left mouse button.",
+          "inputs": [
+            "w",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 1.85,
+              "kind": "jump",
+              "tick": 108795,
+              "inputs": [
+                "w",
+                "jump"
+              ],
+              "fraction": 0.375,
+              "description": "Jump.",
+              "command_number": 157557
+            },
+            {
+              "t": 1.879,
+              "kind": "mouse-release",
+              "tick": 108797,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.265625,
+              "description": "Release left mouse button.",
+              "command_number": 157559
+            },
+            {
+              "t": 1.901,
+              "kind": "movement",
+              "tick": 108798,
+              "inputs": [
+                "jump"
+              ],
+              "fraction": 0.671875,
+              "description": "Release W.",
+              "command_number": 157560
+            },
+            {
+              "t": 1.919,
+              "kind": "movement",
+              "tick": 108799,
+              "inputs": [],
+              "fraction": 0.84375,
+              "description": "Release JUMP.",
+              "command_number": 157561
+            }
+          ]
+        }
+      ],
+      "sourceProvenance": {
+        "player": "DAN9ARMATURA",
+        "round": 16,
+        "event": "WINLINE MPKBK CIS LAN Season 7",
+        "eventId": "9345",
+        "eventLogo": null
+      },
+      "sourceAddedAt": "2026-09-19",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://media.setpos.gg/renders/3602e5da-42e1-4446-b1d7-ab8cf5c6c348/9d706e4f-5ed3-4c66-a9be-be2b14f935fc/video-31ba142e2e560c13a4ad6ac7d8f70d7e2ea01a7be28c1829884ef02e0dd0c9f5.mp4",
+      "videoUrl": "https://media.setpos.gg/renders/3602e5da-42e1-4446-b1d7-ab8cf5c6c348/9d706e4f-5ed3-4c66-a9be-be2b14f935fc/video-sd-d281c4394e5427a41e0fab24b4ab4faa32a9d007d18c9ed394f0fb6079d6534c.mp4",
+      "videoMetadata": {
+        "duration": 18.15,
+        "width": 1920,
+        "height": 1080,
+        "readyState": 4
+      },
+      "positionFrame": {
+        "id": 95,
+        "filename": "setpos-95-position.jpg",
+        "sourceVideo": "https://media.setpos.gg/renders/3602e5da-42e1-4446-b1d7-ab8cf5c6c348/9d706e4f-5ed3-4c66-a9be-be2b14f935fc/video-31ba142e2e560c13a4ad6ac7d8f70d7e2ea01a7be28c1829884ef02e0dd0c9f5.mp4",
+        "width": 1920,
+        "height": 1080,
+        "time": 0.2,
+        "duration": 18.15,
+        "readyState": 4,
+        "sha256": "d1b79888b9dfe3237ca8be48c35035410b7de641bb03c6d75547c486dbccb72d"
+      },
+      "aimImages": [
+        {
+          "image": "https://media.setpos.gg/renders/3602e5da-42e1-4446-b1d7-ab8cf5c6c348/9d706e4f-5ed3-4c66-a9be-be2b14f935fc/guide-aim-aim-186a1cd170bee5b6ce135e98719489c0200231b1d25b158bdcc034d276df8811.webp",
+          "role": "aim",
+          "fov": 90,
+          "width": 1920,
+          "height": 1080,
+          "overlayStyle": "crosshair",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "notes": [
+        "Original public source data and footage; no independent game execution or throw validation.",
+        "Spawn numbers follow setpos.gg and must not be mixed with another publisher’s numbering.",
+        "Starting photo is the unchanged first-person video frame at0.2s, not a separately captured third-person standing photograph."
+      ],
+      "id": "precise-setpos-anubis-95-t",
+      "guideId": "precise-setpos-anubis-95-t",
+      "label": "T spawn 9",
+      "from": "T spawn 9",
+      "origin": {
+        "x": 494.2678400383142,
+        "y": 903.8029731005088,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 391.79699060103906,
+        "y": 611.9272234168089,
+        "levels": [
+          1
+        ],
+        "id": "57"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "spawn": {
+        "family": "setpos-anubis-t-conn",
+        "slot": 9,
+        "total": 11,
+        "label": "T spawn 9"
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-connector-from-t-spawn-162f-t",
+        "target": "B Connector",
+        "areaId": "anubis:main:named:b connector",
+        "variant": "Conn",
+        "proof": "Original result photos confirm the same B Connector choke, with materially distinct coverage. Current Conn fills the inner grey-walled connector doorway/stairs; Outside Conn fills the outer orange approach. Existing CS2Tricks162f straddles the orange exterior entrance. Preserve Inside and Outside as separate coverage choices within the existing choke area; do not merge them as identical landings. Overview family follows the existing unqualified B Connector name; Inside/Outside remain distinct landing choices.",
+        "distinctVariant": "Inside",
+        "reviewImage": "outputs/research/precise-anubis/conn-target-comparison.png"
+      }
+    },
+    {
+      "provider": "csnades",
+      "registrationId": "csnades-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://csnades.gg/anubis/molotovs/window-from-alley",
+      "sourceId": "nade_5570f9514ea9",
+      "titleFrom": "Alley",
+      "titleTo": "Window",
+      "type": "molotov",
+      "team": "t",
+      "throwFrom": {
+        "x": 725,
+        "y": 730,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 572,
+        "y": 529,
+        "levels": [
+          1
+        ]
+      },
+      "console": "setpos 1063.957031 -519.620422 37.883110;setang 3.795336 122.898972 0.000000",
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "running",
+      "sourceCaptions": "WEBVTT\n\n1\n00:00:00.500 --> 00:00:02.500\nStand in corner\n\n2\n00:00:03.933 --> 00:00:07.916\nAlign at tip and top of arch\n\n3\n00:00:08.750 --> 00:00:11.500\nRun + Jump + Left click throw\n\n",
+      "sourcePublishedAt": "2026-04-19T21:48:14.303Z",
+      "sourceUpdatedAt": "2026-07-12T05:03:54.976Z",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-jgloionOWp/hq.mp4",
+      "videoUrl": "https://assets.csnades.gg/nades/anubis-molotov-jgloionOWp/hq.mp4",
+      "positionFrame": {
+        "slug": "window-from-alley",
+        "kind": "position",
+        "filename": "csnades-window-from-alley-position.jpg",
+        "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-jgloionOWp/hq.mp4",
+        "width": 2560,
+        "height": 1440,
+        "time": 1.6,
+        "duration": 18.3,
+        "readyState": 4,
+        "sha256": "17e911e21f12ad208de823e6356cae2f5d5768e2b584385b6d25980ce0b1fa4e"
+      },
+      "releaseFrame": {
+        "slug": "window-from-alley",
+        "kind": "release",
+        "filename": "csnades-window-from-alley-release.jpg",
+        "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-jgloionOWp/hq.mp4",
+        "width": 2560,
+        "height": 1440,
+        "time": 9.588454,
+        "duration": 18.3,
+        "readyState": 4,
+        "sha256": "99b26a0307c5266663ce0f5afa650d17eb5ba4e99bb486711b0b61ce5013e60c"
+      },
+      "mapArt": [
+        "https://assets.csnades.gg/anubis_game_radar_7bada7b5e9.webp"
+      ],
+      "mapSourceDimensions": {
+        "width": 2048,
+        "height": 2048,
+        "logical": 1000
+      },
+      "notes": [
+        "Post-January2026 reference, publishedApril19 and updatedJuly12. Running jump throw is intentional; never rewrite as a one-tap W jump throw.",
+        "Ruins release cue is the second stair in the publisher’s original VTT."
+      ],
+      "id": "precise-csnades-anubis-window-from-alley-t",
+      "guideId": "precise-csnades-anubis-window-from-alley-t",
+      "label": "Alley",
+      "from": "Alley",
+      "origin": {
+        "x": 725,
+        "y": 730,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 572,
+        "y": 529,
+        "levels": [
+          1
+        ],
+        "id": "window"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "targetMatch": {
+        "existingGuideId": "gonade-anubis-mid-doorswindow-from-ruins-molotov",
+        "target": "Mid Doors/Window",
+        "areaId": "anubis:main:mid-doors",
+        "proof": "GO NADE1014 names Mid Doors/Window and starts Ruins at world(-1151.943,-1144.012), matching CSNADES Ruins(-1151.926,-1143.984) to0.04 world units. Both original sources specify Run. The new drop/doors molly is distinct from the Mid-Window smoke destination."
+      }
+    },
+    {
+      "provider": "csnades",
+      "registrationId": "csnades-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://csnades.gg/anubis/molotovs/window-from-ruins",
+      "sourceId": "nade_ef1740113445",
+      "titleFrom": "Ruins",
+      "titleTo": "Window",
+      "type": "molotov",
+      "team": "t",
+      "throwFrom": {
+        "x": 299,
+        "y": 858,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 572,
+        "y": 529,
+        "levels": [
+          1
+        ]
+      },
+      "console": "setpos -1151.926025 -1143.983887 128.031250;setang 9.258119 47.988346 0.000000",
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "running",
+      "sourceCaptions": "WEBVTT\n\n1\n00:00:00.500 --> 00:00:02.500\nStand in corner\n\n2\n00:00:03.350 --> 00:00:06.049\nAim left of corner of stairs\n\n3\n00:00:06.950 --> 00:00:09.699\nRun + Jump + Left click throw\nRelease at 2nd stair\n\n",
+      "sourcePublishedAt": "2026-04-19T21:44:10.235Z",
+      "sourceUpdatedAt": "2026-07-12T05:03:44.939Z",
+      "checkedAt": "2026-11-24",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-0AQRja0EZK/hq.mp4",
+      "videoUrl": "https://assets.csnades.gg/nades/anubis-molotov-0AQRja0EZK/hq.mp4",
+      "positionFrame": {
+        "slug": "window-from-ruins",
+        "kind": "position",
+        "filename": "csnades-window-from-ruins-position.jpg",
+        "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-0AQRja0EZK/hq.mp4",
+        "width": 2560,
+        "height": 1440,
+        "time": 1.6,
+        "duration": 16.616667,
+        "readyState": 4,
+        "sha256": "79c4b506a5d85e04461c60441428927146fed7751c529c303f0eec658aec0ccd"
+      },
+      "releaseFrame": {
+        "slug": "window-from-ruins",
+        "kind": "release",
+        "filename": "csnades-window-from-ruins-release.jpg",
+        "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-0AQRja0EZK/hq.mp4",
+        "width": 2560,
+        "height": 1440,
+        "time": 8.133069,
+        "duration": 16.616667,
+        "readyState": 4,
+        "sha256": "496395e726ddd1906debf24648d405a4eb8a0d8034dd2ba18af5c37937cd9c91"
+      },
+      "mapArt": [
+        "https://assets.csnades.gg/anubis_game_radar_7bada7b5e9.webp"
+      ],
+      "mapSourceDimensions": {
+        "width": 2048,
+        "height": 2048,
+        "logical": 1000
+      },
+      "notes": [
+        "Post-January2026 reference, publishedApril19 and updatedJuly12. Running jump throw is intentional; never rewrite as a one-tap W jump throw.",
+        "Ruins release cue is the second stair in the publisher’s original VTT."
+      ],
+      "id": "precise-csnades-anubis-window-from-ruins-t",
+      "guideId": "precise-csnades-anubis-window-from-ruins-t",
+      "label": "Ruins",
+      "from": "Ruins",
+      "origin": {
+        "x": 299,
+        "y": 858,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 572,
+        "y": 529,
+        "levels": [
+          1
+        ],
+        "id": "window"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": true,
+      "targetMatch": {
+        "existingGuideId": "gonade-anubis-mid-doorswindow-from-ruins-molotov",
+        "target": "Mid Doors/Window",
+        "areaId": "anubis:main:mid-doors",
+        "proof": "GO NADE1014 names Mid Doors/Window and starts Ruins at world(-1151.943,-1144.012), matching CSNADES Ruins(-1151.926,-1143.984) to0.04 world units. Both original sources specify Run. The new drop/doors molly is distinct from the Mid-Window smoke destination."
+      }
+    },
+    {
+      "provider": "gonade",
+      "registrationId": "gonade-anubis-main-20261124",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://gonade.app/nade/anubis-camera-from-outside-a-main-smoke",
+      "sourceId": "1017",
+      "titleFrom": "Outside A Main",
+      "titleTo": "Camera",
+      "type": "smoke",
+      "team": "t",
+      "throwFrom": {
+        "x": 756.2814070351759,
+        "y": 530.9882747068677,
+        "levels": [
+          1
+        ]
+      },
+      "throwTo": {
+        "x": 628.978211676056,
+        "y": 383.58457683518515,
+        "levels": [
+          1
+        ]
+      },
+      "console": "setpos 1259.969116 600.045166 -52.000000;setang -22.009529 125.524048 0.000000",
+      "sourceThrowInfo": {
+        "click": "Left",
+        "altClick": false,
+        "move": "Stand"
+      },
+      "sourceMediaVersion": 1784807939,
+      "checkedAt": "2026-11-24",
+      "videoUrl": "https://gonade.app/videos/1017.mp4",
+      "mapArt": "https://gonade.app/images/radars/anubis_radar.webp?v=1789062370",
+      "mapSourceDimensions": {
+        "width": 1024,
+        "height": 1024,
+        "logical": 1000
+      },
+      "apiSource": "https://gonade.app/api/nades/2?layer=all",
+      "notes": [
+        "Original standing, aim and landing photos visually inspected. Original red crosshair is centered in1920×1080 aim image.",
+        "Navigation point follows the publisher’s radar marker; exact world start/aim is retained in console evidence.",
+        "Map callout Camera is the central A connector route; do not confuse it with B Cave."
+      ],
+      "id": "gonade-anubis-camera-from-outside-a-main-smoke",
+      "guideId": "gonade-anubis-camera-from-outside-a-main-smoke",
+      "label": "Outside A Main",
+      "from": "Outside A Main",
+      "origin": {
+        "x": 756.2814070351759,
+        "y": 530.9882747068677,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 628.978211676056,
+        "y": 383.58457683518515,
+        "levels": [
+          1
+        ],
+        "id": "camera"
+      },
+      "mediaCheckedAt": "2026-11-24",
+      "videoDecoded": false,
+      "targetMatch": {
+        "existingGuideId": "gonade-anubis-camera-from-outside-a-main-smoke",
+        "target": "Camera",
+        "areaId": null,
+        "proof": "Preserves the identical existing guide ID and original GO NADE1017 source, improving origin/aim/landing metadata and registered radar navigation."
+      },
+      "videoCheck": {
+        "decoded": false,
+        "status": 302,
+        "location": "/",
+        "checkedAt": "2026-11-24",
+        "proof": "Original source video URL redirects to the homepage even in its own page. A matching playable original alternative is still being investigated."
+      }
+    },
+    {
+      "id": "expanded-cs2tricks-anubis-a-connector-from-upper-7667-t",
+      "guideId": "expanded-cs2tricks-anubis-a-connector-from-upper-7667-t",
+      "provider": "cs2tricks",
+      "registrationId": "cs2tricks-anubis-main-20261109",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667",
+      "sourceId": "7667",
+      "label": "Upper ledge",
+      "from": "Upper ledge",
+      "origin": {
+        "id": "e544b86c-51ad-438e-b661-4634dcb69131",
+        "x": 785,
+        "y": 487,
+        "sourceTeam": "terrorist"
+      },
+      "destination": {
+        "id": "dbdb87e6-0c94-4a91-ac82-7bc91d9c50bf",
+        "x": 627,
+        "y": 328
+      },
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-a-connector-from-upper-7667-t",
+        "target": "A Connector",
+        "areaId": null,
+        "proof": "Original GO NADE Camera1017 and CS2Tricks7667 result photos show the same hall doorway, columns and hieroglyph trim; Jan24 Running landing shows that identical entrance. Target is reused as a named coverage family, not a claim of identical smoke-center pixels.",
+        "reviewImage": "outputs/research/precise-anubis/camera-family-results.png"
+      },
+      "console": "setpos 1279.9349365234375 571.9703369140625 2.03125; setang -12.473938 125.58093;",
+      "throwType": "LMB",
+      "sourcePublishedAt": "2026-02-16T19:55:02.765133Z",
+      "sourceUpdatedAt": "2026-06-06T03:48:54.016295Z",
+      "sourceVideoPublishedAt": "2026-02-16T11:54:43-08:00",
+      "videoUrl": "https://www.youtube.com/watch?v=puzAZR3NyGk",
+      "videoDecoded": true,
+      "videoCheck": {
+        "readyState": 4,
+        "width": 854,
+        "height": 480,
+        "duration": 14.233,
+        "status": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "miniplayer": {
+            "miniplayerRenderer": {
+              "playbackMode": "PLAYBACK_MODE_ALLOW"
+            }
+          },
+          "contextParams": "Q0FFU0FnZ0M="
+        }
+      },
+      "sourcePhotos": [
+        {
+          "image": "https://d1ntlvfrxziqo6.cloudfront.net/d0a39416-17df-4118-b353-0e309e676cae.webp",
+          "caption": "Stand on the narrow ledge, tight to the stone corner beside the double doors.",
+          "kind": "position",
+          "creator": "Vigil / CS2Tricks",
+          "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667"
+        },
+        {
+          "image": "https://d1ntlvfrxziqo6.cloudfront.net/523e7108-3f16-4a5a-916f-ade4ef3d225b.webp",
+          "caption": "Aim at the marked trim above the balcony window; use the detail photo for precision.",
+          "kind": "aim",
+          "creator": "Vigil / CS2Tricks",
+          "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "image": "https://d1ntlvfrxziqo6.cloudfront.net/3701415d-2691-4bb0-afd4-fafefd5557e7.webp",
+          "caption": "Close view of the same marked balcony-window trim.",
+          "kind": "aim",
+          "creator": "Vigil / CS2Tricks",
+          "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667",
+          "aimPoint": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "image": "https://d1ntlvfrxziqo6.cloudfront.net/de8fa620-a075-481c-b421-a9ad6e1086fe.webp",
+          "caption": "The Camera / A Connector doorway is covered by the recorded smoke.",
+          "kind": "landing",
+          "creator": "Vigil / CS2Tricks",
+          "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667"
+        }
+      ],
+      "checkedAt": "2026-11-24",
+      "embeddedVideoCheck": {
+        "checkedAt": "2026-11-24",
+        "host": "www.youtube-nocookie.com",
+        "id": "puzAZR3NyGk",
+        "start": 0,
+        "readyState": 4,
+        "width": 640,
+        "height": 360,
+        "duration": 14.233,
+        "currentTime": 0.01248,
+        "playerState": 1,
+        "decoded": true,
+        "basis": "Actual privacy-enhanced iframe in an ephemeral local HTTP page, with normal play activation."
+      }
+    },
+    {
+      "id": "precise-noctrl-anubis-camera-running-upper-t",
+      "guideId": "precise-noctrl-anubis-camera-running-upper-t",
+      "provider": "youtube",
+      "mapId": "anubis",
+      "levelId": "main",
+      "source": "https://www.youtube.com/watch?v=YiiypSiuFkE&t=313",
+      "sourceId": "YiiypSiuFkE:313",
+      "label": "Upper steps · running",
+      "from": "Upper steps · running",
+      "targetMatch": {
+        "existingGuideId": "expanded-cs2tricks-anubis-a-connector-from-upper-7667-t",
+        "target": "A Connector",
+        "areaId": "anubis:main:named:a connector",
+        "proof": "Original GO NADE Camera1017 and CS2Tricks7667 result photos show the same hall doorway, columns and hieroglyph trim; Jan24 Running landing shows that identical entrance. Target is reused as a named coverage family, not a claim of identical smoke-center pixels.",
+        "reviewImage": "outputs/research/precise-anubis/camera-family-results.png"
+      },
+      "namedOriginEvidence": "docs/data/precise-anubis-named-origins.json",
+      "throwType": "Run + LMB",
+      "sourceTechnique": "Running throw, primed while moving; no jump",
+      "sourceNarrationSummary": "The creator describes running through Carpets, pulling the pin while moving, aligning the throw and releasing while continuing with the team. Precise moving timing is shown in the original chapter and release reference; no new console angle or exact world origin is invented.",
+      "sourceTranscriptResearchPath": "outputs/research/precise-anubis/camera-transcript-ui.json",
+      "sourceChapter": {
+        "start": 313,
+        "end": 339,
+        "label": "A-site execute - Camera smoke - Running"
+      },
+      "sourcePublishedAt": "2026-01-24T13:45:03-08:00",
+      "videoUrl": "https://www.youtube.com/watch?v=YiiypSiuFkE&t=313",
+      "videoStart": 313,
+      "videoDecoded": true,
+      "videoCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "miniplayer": {
+          "miniplayerRenderer": {
+            "playbackMode": "PLAYBACK_MODE_ALLOW"
+          }
+        },
+        "contextParams": "Q0FFU0FnZ0M="
+      },
+      "sourceFrames": [
+        {
+          "kind": "position",
+          "requestedTime": 323,
+          "filename": "camera-running-position.jpg",
+          "time": 323,
+          "currentTime": 323,
+          "width": 1920,
+          "height": 1080,
+          "duration": 687.801,
+          "sha256": "edcaaff20960cb2038ae8772995931026e6b7f28b411d568ae10926be8159d07"
+        },
+        {
+          "kind": "aim",
+          "requestedTime": 325,
+          "filename": "camera-running-aim.jpg",
+          "time": 325,
+          "currentTime": 325,
+          "width": 1920,
+          "height": 1080,
+          "duration": 687.801,
+          "sha256": "265f602129f1fcff0ac746634790c2f17e4c77ce015cc10b1db2e20c12f7c0d5"
+        },
+        {
+          "kind": "release",
+          "requestedTime": 326.65,
+          "filename": "camera-running-release.jpg",
+          "time": 326.633333,
+          "currentTime": 326.65,
+          "width": 1920,
+          "height": 1080,
+          "duration": 687.801,
+          "sha256": "c1eacf20702e820c4d24f5acda1a676d0619935a9af305335b4a8c228f2386f2"
+        },
+        {
+          "kind": "landing",
+          "requestedTime": 335.8,
+          "filename": "camera-running-landing.jpg",
+          "time": 335.8,
+          "currentTime": 335.8,
+          "width": 1920,
+          "height": 1080,
+          "duration": 687.801,
+          "sha256": "d5dee058e7807ecab28cb248dbd0122d1e0d52a8d4cf4c5446bbabd934763962"
+        }
+      ],
+      "checkedAt": "2026-11-24",
+      "notes": [
+        "Map point is a representative published Upper callout area, not measured feet. Position/aim/release photos are unchanged1920x1080 decoded frames from the matching original chapter.",
+        "Crosshair is visibly baked into the original aim frame at center; explicit overlay uses the same point.",
+        "Release frame is the last selected pre-throw movement checkpoint at326.633333s; the clip remains the timing reference.",
+        "No borrowed markerSource or raw publisher destination is attached to this YouTube guide. Its exact-scope reviewed link reuses the registered reference area only."
+      ],
+      "embeddedVideoCheck": {
+        "checkedAt": "2026-11-24",
+        "host": "www.youtube-nocookie.com",
+        "id": "YiiypSiuFkE",
+        "start": 313,
+        "readyState": 4,
+        "width": 640,
+        "height": 360,
+        "duration": 687.801,
+        "currentTime": 313.027944,
+        "playerState": 1,
+        "decoded": true,
+        "basis": "Actual privacy-enhanced iframe in an ephemeral local HTTP page, with normal play activation."
+      },
+      "reviewedDestinationLink": "anubis-camera-running-upper-reviewed-area-20261124",
+      "destinationReview": {
+        "basis": "reviewed-existing-named-area",
+        "referenceGuideId": "expanded-cs2tricks-anubis-a-connector-from-upper-7667-t",
+        "referenceSource": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667",
+        "referenceSourceSha256": "0a0494acf4b880d061970c2e2a1f2dbfedd04da83d0f2cda7e1b2465b2fd2a1a",
+        "reviewImage": "docs/map-registration-precision/anubis-reviewed-camera-destination.svg",
+        "referenceLandingImage": {
+          "source": "https://d1ntlvfrxziqo6.cloudfront.net/de8fa620-a075-481c-b421-a9ad6e1086fe.webp",
+          "sha256": "c73b0e1877fe34ef0b39243eaa87cbe3eaf4928ab3a2c5111789c0accc53d2b7",
+          "width": 1400,
+          "height": 788
+        },
+        "reviewedLandingImage": {
+          "source": "https://www.youtube.com/watch?v=YiiypSiuFkE&t=313",
+          "frame": 335.8,
+          "sha256": "d5dee058e7807ecab28cb248dbd0122d1e0d52a8d4cf4c5446bbabd934763962",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    }
+  ],
+  "registrations": [
+    {
+      "checkedAt": "2026-11-24",
+      "source": "https://setpos.gg/radars/anubis/radar.svg?v=43192fdef65d",
+      "sourceSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+      "artwork": "/maps/anubis.svg",
+      "artworkSha256": "99ae93d3c660c567ff13f5028ddf0395ce15f728aae3af0c3b148c089f7c2beb",
+      "viewBoxApp": "0 0 1024 1024",
+      "viewBoxSource": "0 0 1024 1024",
+      "landmarks": [
+        {
+          "name": "B-side exterior square corner",
+          "app": {
+            "x": 177,
+            "y": 668
+          },
+          "current": {
+            "x": 177.7779998779297,
+            "y": 667.7911376953125
+          },
+          "distancePixels": 0.8055478088716912
+        },
+        {
+          "name": "T-side approach stair corner",
+          "app": {
+            "x": 700,
+            "y": 786
+          },
+          "current": {
+            "x": 699.7421875,
+            "y": 786.9730224609375
+          },
+          "distancePixels": 1.0065982290095283
+        },
+        {
+          "name": "T spawn long lower edge",
+          "app": {
+            "x": 500,
+            "y": 972
+          },
+          "current": {
+            "x": 499.740478515625,
+            "y": 970.8820190429688
+          },
+          "distancePixels": 1.147707637482958
+        }
+      ],
+      "transform": {
+        "scaleX": 1,
+        "scaleY": 1,
+        "translateX": 0,
+        "translateY": 0
+      },
+      "note": "Both artwork versions use the same 1024-unit world calibration/grid. Geometry is not byte-identical: the current source is a newer drawing. Three widely separated exterior landmarks support coordinate-grid alignment within 2 source pixels. This does not independently validate a throw or every local geometry change.",
+      "id": "setpos-anubis-main-20261124",
+      "provider": "setpos",
+      "mapId": "anubis",
+      "levelId": "main",
+      "sourceImage": "https://setpos.gg/radars/anubis/radar.svg?v=43192fdef65d",
+      "sourceImageSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+      "sourceImageWidth": 1024,
+      "sourceImageHeight": 1024,
+      "logicalWidth": 1000,
+      "logicalHeight": 1000,
+      "evidence": "docs/precise-anubis.md",
+      "reviewImage": "outputs/research/precise-anubis/map-proof.png"
+    },
+    {
+      "id": "gonade-anubis-main-20261124",
+      "mapId": "anubis",
+      "provider": "gonade",
+      "checkedAt": "2026-11-24",
+      "source": "https://gonade.app/images/radars/anubis_radar.webp?v=1789062370",
+      "sourceSha256": "c74d5f63dc29e65ec6ab87625621e007deafb90690d222920c08437fa552bb93",
+      "sourceDimensions": {
+        "width": 1024,
+        "height": 1024,
+        "logical": 1000
+      },
+      "artwork": "/maps/anubis.svg",
+      "artworkSha256": "99ae93d3c660c567ff13f5028ddf0395ce15f728aae3af0c3b148c089f7c2beb",
+      "artworkDimensions": {
+        "width": 1024,
+        "height": 1024,
+        "logical": 1000
+      },
+      "transform": {
+        "scaleX": 1,
+        "scaleY": 1,
+        "translateX": 0,
+        "translateY": 0
+      },
+      "controls": [
+        {
+          "name": "A-site circular column",
+          "appPixel": {
+            "x": 765.7,
+            "y": 273.2
+          },
+          "sourcePixel": {
+            "x": 765.3629173989456,
+            "y": 272.6423550087873
+          },
+          "pixels": 569,
+          "colour": [
+            158,
+            115,
+            88,
+            255
+          ],
+          "residualAppPixels": 0.6516077164661488
+        },
+        {
+          "name": "B-site north circular pillar",
+          "appPixel": {
+            "x": 383,
+            "y": 506
+          },
+          "sourcePixel": {
+            "x": 384.03076923076924,
+            "y": 505.88461538461536
+          },
+          "pixels": 130,
+          "colour": [
+            1,
+            0,
+            0,
+            255
+          ],
+          "residualAppPixels": 1.0372072196856652
+        },
+        {
+          "name": "B-site south circular pillar",
+          "appPixel": {
+            "x": 315,
+            "y": 568
+          },
+          "sourcePixel": {
+            "x": 317,
+            "y": 565.741935483871
+          },
+          "pixels": 124,
+          "colour": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "residualAppPixels": 3.016430897435081
+        }
+      ],
+      "note": "Identity coordinate-grid registration reviewed on three circular landmarks and the full-map source/app overlay. Different artwork detail is retained. Publisher API marker coordinates are fractional image coordinates converted to logical1000; navigation is not a claim of independently game-tested physics.",
+      "levelId": "main",
+      "sourceImage": "https://gonade.app/images/radars/anubis_radar.webp?v=1789062370",
+      "sourceImageSha256": "c74d5f63dc29e65ec6ab87625621e007deafb90690d222920c08437fa552bb93",
+      "sourceImageWidth": 1024,
+      "sourceImageHeight": 1024,
+      "logicalWidth": 1000,
+      "logicalHeight": 1000,
+      "evidence": "docs/precise-anubis.md",
+      "reviewImage": "outputs/research/precise-anubis/gonade-registration-overlay.png"
+    },
+    {
+      "id": "csnades-anubis-main-20261124",
+      "checkedAt": "2026-11-24",
+      "source": "https://assets.csnades.gg/anubis_game_radar_7bada7b5e9.webp",
+      "sourceSha256": "b99ba4701b589ea8ffb60083ca5cefb1c301233291e800cb48f6b02e6846818e",
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 2048,
+        "logical": 1000
+      },
+      "artwork": "/maps/anubis.svg",
+      "artworkSha256": "99ae93d3c660c567ff13f5028ddf0395ce15f728aae3af0c3b148c089f7c2beb",
+      "artworkDimensions": {
+        "width": 1024,
+        "height": 1024,
+        "logical": 1000
+      },
+      "currentArtworkSource": "https://setpos.gg/radars/anubis/radar.svg?v=43192fdef65d",
+      "currentArtworkSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+      "transform": {
+        "scaleX": 0.9692168644693478,
+        "scaleY": 0.9665770101697745,
+        "translateX": 18.990077114310395,
+        "translateY": 12.09787080948064
+      },
+      "controls": [
+        {
+          "name": "A-site circular column",
+          "sourcePixel": {
+            "x": 1540.031499202552,
+            "y": 539.2667464114833
+          },
+          "appPixel": {
+            "x": 765.7000122070312,
+            "y": 273.20001220703125
+          },
+          "source": {
+            "x": 751.9685054699961,
+            "y": 263.31384102123207
+          },
+          "app": {
+            "x": 747.753918170929,
+            "y": 266.79688692092896
+          },
+          "projected": {
+            "x": 747.8106341656417,
+            "y": 266.6109760001025
+          },
+          "residualAppPixels": 0.19903455768181338
+        },
+        {
+          "name": "B-site north circular pillar",
+          "sourcePixel": {
+            "x": 749.3995633187773,
+            "y": 1023.2816593886463
+          },
+          "appPixel": {
+            "x": 383,
+            "y": 506.00001525878906
+          },
+          "source": {
+            "x": 365.9177555267467,
+            "y": 499.6492477483624
+          },
+          "app": {
+            "x": 374.0234375,
+            "y": 494.1406399011612
+          },
+          "projected": {
+            "x": 373.6437367796052,
+            "y": 495.0473468316697
+          },
+          "residualAppPixels": 1.0065925702837109
+        },
+        {
+          "name": "B-site south circular pillar",
+          "sourcePixel": {
+            "x": 610.5648967551623,
+            "y": 1148.1209439528025
+          },
+          "appPixel": {
+            "x": 315,
+            "y": 567.9999694824219
+          },
+          "source": {
+            "x": 298.1273909937316,
+            "y": 560.6059296644544
+          },
+          "app": {
+            "x": 307.6171875,
+            "y": 554.6874701976776
+          },
+          "projected": {
+            "x": 307.9401722256822,
+            "y": 553.9666741879957
+          },
+          "residualAppPixels": 0.8088083434373304
+        }
+      ],
+      "projected": [
+        {
+          "label": "Alley origin",
+          "x": 725,
+          "y": 730,
+          "projected": {
+            "x": 721.6723038545877,
+            "y": 717.699088233416
+          }
+        },
+        {
+          "label": "Ruins origin",
+          "x": 299,
+          "y": 858,
+          "projected": {
+            "x": 308.7859195906454,
+            "y": 841.4209455351472
+          }
+        },
+        {
+          "label": "Window target",
+          "x": 572,
+          "y": 529,
+          "projected": {
+            "x": 573.3821235907774,
+            "y": 523.4171091892913
+          }
+        }
+      ],
+      "note": "Separable affine fit from three noncollinear circular landmarks spanning A and B. Reviewed whole-map overlay including distant CT and T-spawn boundaries. This registers navigation points between source radar drawings, not independently tested in-game grenade physics.",
+      "provider": "csnades",
+      "mapId": "anubis",
+      "levelId": "main",
+      "sourceImage": "https://assets.csnades.gg/anubis_game_radar_7bada7b5e9.webp",
+      "sourceImageSha256": "b99ba4701b589ea8ffb60083ca5cefb1c301233291e800cb48f6b02e6846818e",
+      "sourceImageWidth": 2048,
+      "sourceImageHeight": 2048,
+      "logicalWidth": 1000,
+      "logicalHeight": 1000,
+      "evidence": "docs/precise-anubis.md",
+      "reviewImage": "outputs/research/precise-anubis/csnades-registration-overlay.png"
+    }
+  ]
+}

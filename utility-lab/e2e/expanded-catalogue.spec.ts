@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';import {readFile} from 'node:fs/promises';import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 
-import {expectReferenceCount,waitForUtilityChoice,chooseLandingSpot,chooseUtilityType} from './lineup-helpers';
+import {expectReferenceCount,waitForUtilityChoice,chooseLandingSpot,chooseUtilityType,openOriginPhoto} from './lineup-helpers';
 test.use({serviceWorkers:'block'});
 async function imagesOnly(page){const bytes=await readFile('public/icons/icon-192.png');await page.route(/^https:\/\//,route=>route.request().resourceType()==='image'?route.fulfill({contentType:'image/png',body:bytes}):route.abort());}
 const find=(check)=>{const row=PUBLISHED_LINEUPS.find(check);if(!row)throw Error('Missing published source fixture');return row;};
@@ -9,7 +9,7 @@ test('DustII molly browsing has multiple registered choices and opens standing p
  await imagesOnly(page);await page.goto('/#utilities?map=dust2&level=main&side=T');await expect(page.locator('.utility-workspace')).toHaveAttribute('aria-busy','false');
  await page.getByRole('group',{name:'Utility type',exact:true}).getByRole('button',{name:/^Molly /}).click();
  expect(Number(await page.locator('.utility-workspace').getAttribute('data-reference-count'))).toBeGreaterThan(10);expect(await page.locator('.ul-map-marker').count()).toBeGreaterThan(2);
- await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page,{allowUtilitySkip:true});await expect(page.getByRole('dialog',{name:'Choose utility',exact:true})).toHaveCount(0);await chooseLandingSpot(page);await page.locator('.ul-origin-pin').first().click();
+ await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page,{allowUtilitySkip:true});await expect(page.getByRole('dialog',{name:'Choose utility',exact:true})).toHaveCount(0);await chooseLandingSpot(page);await openOriginPhoto(page);
  const viewer=page.locator('.ul-media-dialog');await expect(viewer).toBeVisible();await expect(viewer.getByRole('button',{name:/^Photos/})).toHaveAttribute('aria-pressed','true');
  await expect(viewer.locator('.ul-photo-kind')).toHaveText('Position');await expect(viewer.locator('video,iframe')).toHaveCount(0);await expect(viewer.getByRole('button',{name:'Video',exact:true})).toBeEnabled();await expect(viewer.locator('.ul-viewer-keys')).toContainText(/LMB|left/i);
  await viewer.getByRole('button',{name:'Next photo',exact:true}).click();await expect(viewer.locator('.ul-photo-kind')).toHaveText('Aim');
@@ -27,7 +27,7 @@ test('expanded guide links resolve the real context and survive Saved navigation
  await page.addInitScript(row=>{localStorage.setItem('utility-lab:utility-favorites:v1',JSON.stringify([row.id]));localStorage.setItem('utility-lab:playbooks:v1',JSON.stringify([{id:'expanded-book',name:'Expanded source round',notes:'',tacticIds:[],lineupIds:[row.id],steps:[]}]))},row);
  await page.goto(`/#utilities?map=mirage&level=main&side=T&lineup=${row.id}`);await expect(page.getByRole('dialog',{name:row.title,exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Change map',exact:true})).toContainText('Cache');await expect(page.getByRole('button',{name:'CT side',exact:true})).toHaveAttribute('aria-pressed','true');
  await page.getByRole('button',{name:'Close lineup media',exact:true}).click();await expect(page.getByRole('tab',{name:'Playbooks',exact:true})).toBeDisabled();
- await page.getByRole('button',{name:/^Saved /}).click();await expectReferenceCount(page,1);await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page);await chooseUtilityType(page,'Flash');await chooseLandingSpot(page);await page.locator('.ul-origin-pin').first().click();await expect(page.getByRole('dialog',{name:row.title,exact:true})).toBeVisible();
+ await page.getByRole('button',{name:/^Saved /}).click();await expectReferenceCount(page,1);await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page);await chooseUtilityType(page,'Flash');await chooseLandingSpot(page);await openOriginPhoto(page,{recordId:row.id});await expect(page.getByRole('dialog',{name:row.title,exact:true})).toBeVisible();
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('utility-lab:playbooks:v1'))[0].lineupIds)).toEqual([row.id]);
 });
 

@@ -68,23 +68,32 @@
 }
 .utility-workspace.ul-map-only .ul-suggest-trigger > span { display: none; }
 .utility-workspace.ul-map-only .ul-filterbar {
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  bottom: auto;
+  left: 16px;
+  transform: translateY(-50%);
+  flex-direction: column;
+  align-items: stretch;
   flex-wrap: nowrap;
+  max-height: calc(100% - 160px);
+  overflow: auto;
 }
 .utility-workspace.ul-map-only .ul-types {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
   gap: 2px;
   padding: 0;
 }
 .utility-workspace.ul-map-only .ul-types button {
+  justify-content: flex-start;
   min-height: 44px;
   gap: 6px;
   padding: 6px 10px;
   font-size: 12px;
 }
 .utility-workspace.ul-map-only .ul-favorites-filter {
-  width: auto;
+  width: 100%;
   flex: 0 0 auto;
   min-height: 44px;
   padding: 6px 10px;
@@ -134,22 +143,22 @@
 .utility-workspace.ul-map-only .ul-map-bottom {
   position: absolute;
   z-index: 4;
-  left: 16px;
+  left: auto;
   right: 16px;
-  bottom: 24px;
-  min-height: 44px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  min-height: 0;
   padding: 0;
   gap: 12px;
   pointer-events: none;
 }
 .utility-workspace.ul-map-only .ul-map-bottom p {
-  max-width: 230px;
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.5;
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
 }
 .utility-workspace.ul-map-only .ul-zoom {
   display: flex;
+  flex-direction: column;
   gap: 0;
   padding: 4px;
   border: 0;
@@ -178,6 +187,8 @@
   text-align: left;
   font-size: 10px;
 }
+.ul-origin-count circle{fill:var(--accent);stroke:var(--surface-raised);stroke-width:1px}
+.ul-origin-count text{fill:var(--accent-ink);font-weight:650;pointer-events:none}
 .utility-workspace.ul-map-only .ul-navigation-help {
   position: absolute;
   width: 1px;
@@ -192,13 +203,18 @@
 .utility-workspace.ul-map-only .ul-zoom button:active {
   background: var(--accent-soft);
 }
-@media (max-width: 1100px) {
-  .utility-workspace.ul-map-only .ul-filterbar {
-    top: 78px;
-    bottom: auto;
-    left: 16px;
-    transform: none;
-  }
+@media (min-width: 601px) and (max-width: 1100px) {
+  .utility-workspace.ul-map-only .ul-filterbar {left:8px;max-width:54px;}
+  .utility-workspace.ul-map-only .ul-types button {justify-content:center;min-width:44px;padding:5px;}
+  .utility-workspace.ul-map-only .ul-types button:not([data-utility="All"])>span,
+  .utility-workspace.ul-map-only .ul-favorites-filter>span {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+  .utility-workspace.ul-map-only .ul-types button small,
+  .utility-workspace.ul-map-only .ul-types .ul-all-icon,
+  .utility-workspace.ul-map-only .ul-favorites-filter small {display:none;}
+  .utility-workspace.ul-map-only .ul-favorites-filter {justify-content:center;min-width:44px;padding:5px;}
+  .utility-workspace.ul-map-only .ul-map-bottom {right:8px;}
+  .utility-workspace.ul-map-only .ul-zoom button,
+  .utility-workspace.ul-map-only .ul-zoom button[aria-label="Reset utility map zoom"] {width:44px;min-width:44px;font-size:11px;}
 }
 @media (max-width: 600px) {
   .utility-workspace.ul-map-only .ul-header {
@@ -221,11 +237,15 @@
     top: 74px;
     left: 50%;
     transform: translateX(-50%);
+    flex-direction: row;
+    align-items: center;
     max-width: calc(100% - 24px);
+    max-height: none;
+    overflow: visible;
     padding: 4px;
     gap: 4px;
   }
-  .utility-workspace.ul-map-only .ul-types { flex: 0 1 auto; overflow: visible; }
+  .utility-workspace.ul-map-only .ul-types { flex: 0 1 auto; flex-direction:row; overflow: visible; }
   .utility-workspace.ul-map-only .ul-types button { justify-content: center; min-width: 44px; padding: 5px; }
   .utility-workspace.ul-map-only .ul-types button:not([data-utility="All"]) > span,
   .utility-workspace.ul-map-only .ul-favorites-filter > span {
@@ -239,7 +259,7 @@
   .utility-workspace.ul-map-only .ul-types button small,
   .utility-workspace.ul-map-only .ul-types .ul-all-icon,
   .utility-workspace.ul-map-only .ul-favorites-filter small { display: none; }
-  .utility-workspace.ul-map-only .ul-favorites-filter { justify-content: center; min-width: 44px; padding: 5px; }
+  .utility-workspace.ul-map-only .ul-favorites-filter { justify-content: center; width:44px; min-width: 44px; padding: 5px; }
   .utility-workspace.ul-map-only .ul-map-top {
     top: auto;
     bottom: 96px;
@@ -249,21 +269,22 @@
     min-height: 32px;
   }
   .utility-workspace.ul-map-only .ul-map-bottom {
-    left: 12px;
-    right: 12px;
+    left: 50%;
+    right: auto;
+    top: auto;
     bottom: 28px;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    transform:translateX(-50%);
   }
+  .utility-workspace.ul-map-only .ul-zoom {flex-direction:row;}
   .utility-workspace.ul-map-only .ul-map-bottom p { max-width: 100%; font-size: 11px; }
-  .utility-workspace.ul-map-only .ul-zoom button { min-width: 44px; }
+  .utility-workspace.ul-map-only .ul-zoom button { min-width: 44px; width: 44px; }
+  .utility-workspace.ul-map-only .ul-zoom button[aria-label="Reset utility map zoom"] { min-width:44px; font-size:11px; }
   .utility-workspace.ul-map-only .ul-map-credit { left: 0; right: 0; bottom: 7px; text-align: center; }
 }
 @media (max-height: 580px) and (min-width: 601px) {
   .utility-workspace.ul-map-only .ul-header,
   .utility-workspace.ul-map-only .ul-map-top { top: 8px; }
-  .utility-workspace.ul-map-only .ul-filterbar { top: auto; bottom: 24px; left: 12px; transform: none; }
+  .utility-workspace.ul-map-only .ul-filterbar { max-height: calc(100% - 96px); }
   .utility-workspace.ul-map-only .ul-types button { justify-content: center; min-width: 44px; padding: 5px; }
   .utility-workspace.ul-map-only .ul-types button:not([data-utility="All"]) > span,
   .utility-workspace.ul-map-only .ul-favorites-filter > span {
@@ -278,7 +299,7 @@
   .utility-workspace.ul-map-only .ul-types .ul-all-icon,
   .utility-workspace.ul-map-only .ul-favorites-filter small { display: none; }
   .utility-workspace.ul-map-only .ul-favorites-filter { justify-content: center; min-width: 44px; padding: 5px; }
-  .utility-workspace.ul-map-only .ul-map-bottom { bottom: 13px; justify-content: flex-end; }
+  .utility-workspace.ul-map-only .ul-map-bottom { top:50%; bottom:auto; }
   .utility-workspace.ul-map-only .ul-map-bottom p { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .utility-workspace.ul-map-only .ul-map-credit { bottom: 0; }
 }

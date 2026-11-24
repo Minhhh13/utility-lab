@@ -1,4 +1,4 @@
-import { startPersonalLineup, chooseLandingSpot, waitForUtilityChoice } from "./lineup-helpers";
+import { startPersonalLineup, chooseLandingSpot, waitForUtilityChoice,openOriginPhoto } from "./lineup-helpers";
 import { test, expect } from "@playwright/test";
 
 test.use({ hasTouch: true });
@@ -72,7 +72,7 @@ test("phone marker taps still select while two fingers navigate and controls fit
   if(await choices.count())await choices.getByRole('group',{name:'Utility types at this target',exact:true}).getByRole('button').first().click();
   await chooseLandingSpot(page,{touch:true});
   await expect(page.locator('.ul-origin-pin').first()).toBeVisible();
-  await page.locator('.ul-origin-pin').first().tap();
+  await openOriginPhoto(page,{touch:true});
   await expect(page.locator('.ul-media-dialog')).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(page.locator("dialog[open]")).toHaveCount(0);

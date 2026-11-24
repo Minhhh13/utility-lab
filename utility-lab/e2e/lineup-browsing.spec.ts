@@ -1,4 +1,4 @@
-import { chooseLandingSpot, waitForUtilityChoice, expectReferenceCount, mainMarkers } from "./lineup-helpers";
+import { chooseLandingSpot, waitForUtilityChoice, expectReferenceCount, mainMarkers,openOriginPhoto,expectOriginRecipes } from "./lineup-helpers";
 import { test, expect, type Locator, type Page } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 import { MAPS } from "../src/maps";
@@ -41,7 +41,7 @@ async function showThrowLocations(page: Page) {
   await expect(choices(page)).toHaveCount(0);
   await chooseLandingSpot(page);
   await expect(originOptions(page).first()).toBeVisible();
-  expect(await originOptions(page).count()).toBeLessThanOrEqual(4);
+  await expectOriginRecipes(page);
   await expect(page.locator(".ul-media-dialog")).not.toBeVisible();
   return originOptions(page);
 }
@@ -143,12 +143,12 @@ test("target utility selection plots publisher standing coordinates and opens so
   await chooseLandingSpot(page);
   const origins = originOptions(page);
   await expect(origins.first()).toBeVisible();
-  expect(await origins.count()).toBeLessThanOrEqual(4);
+  await expectOriginRecipes(page);
   await expect(page.locator(".ul-media-dialog")).not.toBeVisible();
   const first = origins.first();
   const plotted = { x: Number(await first.getAttribute("data-origin-x")), y: Number(await first.getAttribute("data-origin-y")), levelId: (await first.getAttribute("data-origin-level"))! };
   await expect(first).toHaveAttribute("transform", `translate(${plotted.x} ${plotted.y})`);
-  await first.click();
+  await openOriginPhoto(page);
   const viewer = page.locator(".ul-media-dialog");
   await expect(viewer).toBeVisible();
   await expect(viewer.getByRole("button", { name: /^Photos/ })).toHaveAttribute("aria-pressed", "true");
@@ -172,7 +172,7 @@ test("actual origin choices and photo viewer fit a 320px phone viewport", async 
   const origins = await showThrowLocations(page);
   await expect(page.getByRole("button", { name: "Back to targets", exact: true })).toBeInViewport();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(320);
-  await origins.first().click();
+  await openOriginPhoto(page);
   const viewer = page.locator(".ul-media-dialog");
   await expect(viewer).toBeVisible();
   await expect(viewer.locator(".ul-photo-canvas img")).toBeVisible();

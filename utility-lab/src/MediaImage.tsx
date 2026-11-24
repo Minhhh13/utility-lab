@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import { isStoredMedia, localPhotoSource } from "./media-store";
+import { confirmPhotoLoaded, forgetCachedPhoto } from "./photo-preload";
 
 export default function MediaImage({
   src = "",
@@ -41,9 +42,11 @@ export default function MediaImage({
     };
   }, [src, stored, identity]);
   useEffect(() => {
-    if (imageRef.current?.complete && imageRef.current.naturalWidth > 0)
+    if (imageRef.current?.complete && imageRef.current.naturalWidth > 0) {
+      confirmPhotoLoaded(src);
       setStatus({ identity, state: "loaded" });
-  }, [identity, resolved]);
+    }
+  }, [identity, resolved, src]);
   if (state === "failed")
     return (
       <div
@@ -56,7 +59,9 @@ export default function MediaImage({
             ? "Couldn’t load this photo."
             : "Photo unavailable on this device."}
         </p>
-        <button type="button" onClick={() => setAttempt((value) => value + 1)}>
+        <button type="button" onClick={() => {
+          void forgetCachedPhoto(src).finally(()=>setAttempt((value) => value + 1));
+        }}>
           Retry photo
         </button>
       </div>
@@ -78,10 +83,12 @@ export default function MediaImage({
           referrerPolicy="strict-origin-when-cross-origin"
           style={{ ...props.style, opacity: state === "loaded" ? 1 : 0 }}
           onLoad={(event) => {
+            confirmPhotoLoaded(src);
             setStatus({ identity, state: "loaded" });
             props.onLoad?.(event);
           }}
           onError={(event) => {
+            void forgetCachedPhoto(src);
             setStatus({ identity, state: "failed" });
             props.onError?.(event);
           }}

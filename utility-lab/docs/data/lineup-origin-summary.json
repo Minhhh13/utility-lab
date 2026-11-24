@@ -1,12 +1,16 @@
 {
-  "checkedAt": "2026-11-10",
-  "completeGuides": 1504,
-  "withOrigins": 1504,
-  "uniqueSources": 1424,
-  "publisherOrigins": 1497,
-  "namedOriginAreas": 7,
+  "checkedAt": "2026-11-24",
+  "completeGuides": 1557,
+  "withOrigins": 1557,
+  "uniqueSources": 1477,
+  "publisherOrigins": 1549,
+  "namedOriginAreas": 8,
   "crossFloorGuides": [
     "cs2tricks-nuke-new-end-he-from-ramp",
+    "expanded-cs2tricks-vertigo-ct-spawn-from-stairs-e997",
+    "expanded-cs2tricks-vertigo-ebox-from-stairs-bc18",
+    "expanded-cs2tricks-vertigo-ebox-from-t-spawn-4b77",
+    "expanded-cs2tricks-vertigo-generator-left-from-stairs-b2bb",
     "expanded-cs2tricks-vertigo-b-headshot-from-stairs-2d80",
     "expanded-cs2tricks-vertigo-pillar-from-stairs-cb99",
     "expanded-cs2tricks-vertigo-wood-from-stairs-848c",
@@ -14,13 +18,9 @@
     "expanded-cs2tricks-vertigo-b-cross-from-stairs-a167",
     "expanded-cs2tricks-vertigo-b-cross-from-t-spawn-274d",
     "expanded-cs2tricks-vertigo-b-headshot-from-stairs-3fbc",
-    "expanded-cs2tricks-vertigo-ct-spawn-from-stairs-e997",
     "expanded-cs2tricks-vertigo-deep-ramp-from-elevator-9cb9",
-    "expanded-cs2tricks-vertigo-ebox-from-stairs-bc18",
-    "expanded-cs2tricks-vertigo-ebox-from-t-spawn-4b77",
     "expanded-cs2tricks-vertigo-ebox-from-t-spawn-5a5b",
     "expanded-cs2tricks-vertigo-generator-left-from-stairs-8a4a",
-    "expanded-cs2tricks-vertigo-generator-left-from-stairs-b2bb",
     "expanded-cs2tricks-vertigo-generator-left-from-t-spawn-ab3f",
     "expanded-cs2tricks-vertigo-sidewalk-from-t-spawn-741f",
     "expanded-csnades-vertigo-flashbang-b-site-from-under-t-mid",
@@ -39,22 +39,22 @@
       "sha256": "c0cb96fe39f9b26503b494fcad514396fccde6587119cc247d38c6e7908b7879"
     },
     "dust2": {
-      "entries": 202,
-      "uniqueSources": 184,
-      "bytes": 48024,
-      "sha256": "f3decbcf2005855a9363c13dac82a0681eeade30938dc6c13b9e852a12481e3d"
+      "entries": 209,
+      "uniqueSources": 191,
+      "bytes": 49360,
+      "sha256": "e3fc77d8e94e9cbad833f279598f68ab77766a1e1f7209af6f42744fea272f62"
     },
     "inferno": {
-      "entries": 206,
-      "uniqueSources": 183,
-      "bytes": 48080,
-      "sha256": "7db1ba67247e92079ed898778c5d93f2dc12b9bd70d9e0274663f69b207782a6"
+      "entries": 212,
+      "uniqueSources": 189,
+      "bytes": 49213,
+      "sha256": "616de8ba616f0d30e01648d203e622393398263f84b47f52edf7f59095615abc"
     },
     "nuke": {
-      "entries": 185,
-      "uniqueSources": 184,
-      "bytes": 44416,
-      "sha256": "126edb26017e18e031a8fbb304a1056a68e111b553bebc0134923e298fb56e3d"
+      "entries": 189,
+      "uniqueSources": 188,
+      "bytes": 45153,
+      "sha256": "81341fe7fe08fac4050d603fc32e2304b82c34ce557de6666293b5aa17433794"
     },
     "ancient": {
       "entries": 165,
@@ -63,16 +63,16 @@
       "sha256": "21408a97b423ee1d9162a34b94aaebd3572ffeba324c4616c9a85f6d866a19be"
     },
     "anubis": {
-      "entries": 284,
-      "uniqueSources": 280,
-      "bytes": 72328,
-      "sha256": "05f66ce5935c6d4537a0b1814e9de8796887e65fcaafb6366233c42c58b9e338"
+      "entries": 310,
+      "uniqueSources": 306,
+      "bytes": 77294,
+      "sha256": "2de04477d86bf89e99065ed72142e9e2320d229cc2278d594025dd868e517a93"
     },
     "cache": {
-      "entries": 118,
-      "uniqueSources": 114,
-      "bytes": 28177,
-      "sha256": "90010c1eabee8f621f513b027c6f88edb537d35f2d61a58bd046f816b6bf2d86"
+      "entries": 128,
+      "uniqueSources": 124,
+      "bytes": 30042,
+      "sha256": "0d4a7c267737fd2b35304865ded9596b6eba8a2c9250e47eea61415a166c495a"
     },
     "vertigo": {
       "entries": 110,
