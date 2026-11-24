@@ -4,6 +4,12 @@ Utility Lab is published at **[utilitylab.au](https://utilitylab.au)**. The exis
 
 ## Latest verified release — 25 November 2026
 
+Cloudflare Pages reports a successful production deployment on `main` for application commit `ca220422faf352c0c0300b6a9e8d67d64d702d1a`, with a clean source tree. The deployment ID is `2737877e-7863-4221-a4f7-7504158ccf53`. The prepared release contains 583 files totalling 117,863,404 bytes. [Production website](https://utilitylab.au) · [Immutable deployment](https://2737877e.utility-lab-8b0.pages.dev) · [Application commit](https://github.com/Minhhh13/utility-lab/commit/ca220422faf352c0c0300b6a9e8d67d64d702d1a)
+
+The public domain served 103 checked files byte-for-byte, including the HTML entry, all application bundles and map catalogues, the service worker, maps, backgrounds and Ancient source stills. The www host returned a 301 to the apex. A missing asset returned 404. [Release verification](verification.md)
+
+## Earlier release — 25 November 2026
+
 Production deployment `1f17cc40-5a46-480d-ac32-e94955057c88` serves application commit `5bf41586ef922cbdc5003a50aabbaf60c9775044` on `main`, with `commit_dirty: false`. Source changes are pushed to the existing GitHub repository. The [immutable deployment](https://1f17cc40.utility-lab-8b0.pages.dev) and **utilitylab.au** serve the checked 575-file / 115,180,083-byte static artifact.
 
 The release adds 53 source recipes, improves 16 existing guides, retains all origin choices, moves desktop controls to the map edges and adds subtle pointer feedback and bounded browser photo caching. All 386 automated tests pass: 172 model, 183 Edge and 31 WebKit. All 575 packaged HTTP asset hashes match. Eight public functional groups, three real-photo WebKit cache checks and live artifact/redirect/404 checks also pass, with actual sampled native and Camera YouTube playback. Cloudflare's canonical deployment, production branch and exact source commit were read back through the connected API. [Detailed verification](release-2026-11-25.md).

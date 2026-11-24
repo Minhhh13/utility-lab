@@ -1,8 +1,26 @@
 # Release verification
 
+## Current production release — 25 November 2026
+
+The custom domain serves application commit `ca220422faf352c0c0300b6a9e8d67d64d702d1a`. Cloudflare confirmed production deployment `2737877e-7863-4221-a4f7-7504158ccf53`. [Open Utility Lab](https://utilitylab.au) · [Immutable deployment](https://2737877e.utility-lab-8b0.pages.dev)
+
+| Check | Result |
+| --- | --- |
+| Release suite | TypeScript and production build passed. 173 model tests, 192 Edge tests and 45 WebKit tests passed. The two Playbooks editor tests remain skipped while that editor is marked Coming soon. |
+| Full Lineups walkthrough on the release build | All 1,558 published guides opened through the map on a 1440×1080 desktop and a 320×844 touch viewport. The walkthrough visited all 20 side/floor contexts at each size, including the empty Vertigo lower T-side view. It made 5,125 slide visits per viewport, including repeat visits through alternate floors. External photo requests used a local image fixture in this walkthrough. |
+| Live Nuke and Cache | All 58 landing actions checked across five Edge and WebKit scenarios had reachable hit targets and distinct labels. The selected throw locations and camera matched after selection and Back, including on a 568×320 screen. |
+| Live spawns and media | Matched all five Ancient Top Mid buttons to their recorded coordinates on desktop and phone. The priority sample decoded 43 distinct creator photos. The restored Ancient #2 clip played at 1920×1080. Also checked all five Mirage Window and Ancient CT Elbow spawns, Dust II Mid Doors, the Anubis T instant guides and both Window mollies. The native Ancient clip and the Anubis Camera YouTube chapter both played. [Spawn evidence](lineup-origins.md) |
+| Live Tactic Board | All eight maps and ten floor views passed with mouse and touch. Exercised all 12 tools in each of 20 contexts, saved and updated tactics, reimported 20 JSON exports, produced 20 PNGs, and compared every shared drawing with its editor counterpart. |
+| Live home and caching | Desktop Edge and phone-sized WebKit decoded all six backgrounds and checked navigation, keyboard focus and reduced motion. WebKit reopened a viewed creator photo offline and recovered from a corrupted cache entry on Retry. |
+| Live delivery | 103 public file hashes matched the prepared release, including every application bundle, map catalogue, map and home artwork. Confirmed the canonical redirect and static 404. [Deployment details](cloudflare-deployment.md) |
+
+These checks exercise the website and public creator recordings. Independent gameplay verification in the current CS2 build remains untested. Browser reports for this release are in the local `outputs/polish-audit/` and `outputs/spawn-review/` directories.
+
+## Earlier release — 25 November 2026
+
 **Published and verified, 25 November 2026 (Australia/Sydney):** [utilitylab.au](https://utilitylab.au) now serves deployment `1f17cc40-5a46-480d-ac32-e94955057c88` from application commit `5bf41586ef922cbdc5003a50aabbaf60c9775044`, pushed to `main`. The release adds precise throw origins, complete visual recipe choices, desktop side controls, subtle pointer feedback and bounded photo caching. **172 model, 183 Edge and 31 WebKit tests pass**, plus all 575 packaged HTTP asset hashes, eight public functional groups and three real-photo WebKit cache checks. The live initial JS/CSS, Anubis radar and service worker match the checked artifact. Both native video and the exact Camera chapter actually played. [Current release evidence and limits](release-2026-11-25.md).
 
-The current library contains **1,557 primary guides / 1,477 sources**, with all 1,557 origins resolved. There are 53 new recipes and 16 precision improvements; the previous four-origin availability cap is removed. [Current coverage](catalogue-coverage-2026-11-24.md) and [current interface contract](compact-overview.md).
+That release contained **1,557 primary guides / 1,477 sources**, with all 1,557 origins resolved. It added 53 recipes and 16 precision improvements and removed the earlier four-origin availability cap. [Coverage at that release](catalogue-coverage-2026-11-24.md) and [current interface contract](compact-overview.md).
 
 ## Archived release — 16 November 2026
 
