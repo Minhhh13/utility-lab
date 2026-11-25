@@ -48,7 +48,7 @@ const destinations = [
   {
     id: "playbooks",
     title: "Playbooks",
-    description: "Coming soon",
+    description: "Five-player round plans",
     icon: BookOpen,
   },
   {
@@ -67,7 +67,7 @@ export default function LaunchScreen({
   returning,
 }: Props) {
   const returnButton = useRef<HTMLButtonElement>(null);
-  const returnTo = returning?.from === "playbooks" ? "board" : returning?.from;
+  const returnTo = returning?.from;
   useLayoutEffect(() => {
     if (returning?.keyboard) returnButton.current?.focus({ preventScroll: true });
   }, [returning]);
@@ -296,8 +296,6 @@ export default function LaunchScreen({
         {destinations.map(({ id, title, description, icon: Icon }) => (
           <button
             type="button"
-            disabled={id === "playbooks"}
-            title={id === "playbooks" ? "Coming soon" : undefined}
             key={id}
             className="launch-destination"
             ref={id === returnTo ? returnButton : undefined}
@@ -312,12 +310,12 @@ export default function LaunchScreen({
             <span className="launch-destination-description">
               {description}
             </span>
-            {id !== "playbooks" && <ArrowUpRight
+            <ArrowUpRight
               className="launch-destination-arrow"
               size={19}
               strokeWidth={1.7}
               aria-hidden="true"
-            />}
+            />
           </button>
         ))}
       </nav>

@@ -238,10 +238,10 @@ test("videos, arbitrary hosts and query-bearing/private image URLs bypass persis
 test("app-shell service worker activation preserves the independently bounded viewed-photo cache",async()=>{
   const w=await worker();
   await w.load(photo(1));await w.confirm(photo(1));
-  w.stores.set("utility-lab-v15",new TestCache());
   w.stores.set("utility-lab-v16",new TestCache());
+  w.stores.set("utility-lab-v17",new TestCache());
   await w.activate();
-  assert.equal(w.stores.has("utility-lab-v15"),false);
-  assert.equal(w.stores.has("utility-lab-v16"),true);
+  assert.equal(w.stores.has("utility-lab-v16"),false);
+  assert.equal(w.stores.has("utility-lab-v17"),true);
   assert.ok(await w.stores.get("ul-viewed-photos-v1")!.match(photo(1)));
 });

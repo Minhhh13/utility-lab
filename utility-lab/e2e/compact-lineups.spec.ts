@@ -134,7 +134,7 @@ test("compact mode keeps global navigation behavior and the mounted map camera",
   const navigation = page.getByRole("tablist", { name: "Main navigation", exact: true });
   await expect(navigation).toBeVisible();
   await expect(navigation.getByRole("tab", { name: "Lineups", exact: true })).toHaveAttribute("aria-selected", "true");
-  await expect(navigation.getByRole("tab", { name: "Playbooks", exact: true })).toBeDisabled();
+  await expect(navigation.getByRole("tab", { name: "Playbooks", exact: true })).toBeEnabled();
   await page.getByRole("button", { name: "Reset utility map zoom", exact: true }).click();
   await expectUsableCanvas(page, false);
   await navigation.getByRole("tab", { name: "Stats", exact: true }).click();

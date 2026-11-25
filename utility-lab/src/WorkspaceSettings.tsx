@@ -102,12 +102,13 @@ export default function WorkspaceSettings({
     setBusy(true);
     setError("");
     try {
-      const current = captureWorkspace(localStorage);
+      const expected: Record<string, string | null> = {};
+      const current = captureWorkspace(localStorage, expected);
       current.lineups = await portableLineups(current.lineups);
       const next = mergeWorkspace(current, pending);
       next.lineups = await storeLineupMedia(next.lineups);
       if (appearance) next.appearance = pending.appearance;
-      persistWorkspace(localStorage, next, appearance);
+      persistWorkspace(localStorage, next, appearance, expected);
       window.dispatchEvent(new Event("utility-lab:workspace-changed"));
       setPending(null);
       setMessage(

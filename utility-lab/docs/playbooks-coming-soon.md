@@ -1,4 +1,6 @@
-# Playbooks availability
+# Archived Playbooks staging note
+
+The local five-player planner supersedes this November 10 staging decision. See the [workspace guide](../README.md#workspaces) for the current workflow.
 
 The user requested a greyed-out **Coming soon** state on10November2026.
 

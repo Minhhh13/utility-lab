@@ -124,16 +124,13 @@ test("WebKit phone lineups load video on demand and retain local photo slides", 
   expect(errors).toEqual([]);
 });
 
-test("WebKit phone Playbooks is Coming soon and retains existing saved records", async ({ page }) => {
+test("WebKit phone opens existing saved rounds through Home", async ({ page }) => {
   const errors=[];page.on("pageerror",error=>errors.push(error.message));
   await page.addInitScript(()=>localStorage.setItem("utility-lab:playbooks:v1",JSON.stringify([{id:"stored-book",name:"Saved round",notes:"",tacticIds:[],lineupIds:[],steps:[]}])));
   await page.goto("/#home");
-  await expect(page.getByRole("button",{name:"Playbooks",exact:true})).toBeDisabled();
-  await expect(page.getByRole("button",{name:"Playbooks",exact:true})).toContainText("Coming soon");
-  await page.goto("/#playbooks");
-  await expect(page.locator(".playbooks-coming-soon")).toContainText("Coming soon");
-  await expect(page.getByRole("tab",{name:"Playbooks",exact:true})).toBeDisabled();
-  await expect(page.getByRole("button",{name:"New playbook",exact:true})).toHaveCount(0);
+  await page.getByRole("button",{name:"Playbooks",exact:true}).tap();
+  await expect(page.getByRole("heading",{name:"Saved round",exact:true})).toBeVisible();
+  await expect(page.getByRole("tab",{name:"Playbooks",exact:true})).toHaveAttribute("aria-selected","true");
   await page.getByRole("tab",{name:"Stats",exact:true}).tap();
   await expect(page.locator(".stats-summary>div").filter({hasText:"Playbooks"}).locator("strong")).toHaveText("1");
   await page.setViewportSize({width:320,height:800});

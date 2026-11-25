@@ -12,6 +12,7 @@ import {
   BOOKS_KEY,
   TACTICS_KEY,
   persistPlaybookImport,
+  remapPlaybookReferences,
 } from "./playbook-model.ts";
 import {
   validateUtility,
@@ -50,8 +51,16 @@ const read = (
   }
 };
 export function captureWorkspace(
-  storage: Pick<Storage, "getItem">,
+  source: Pick<Storage, "getItem">,
+  expected?: Record<string, string | null>,
 ): WorkspaceBackup {
+  const storage = expected ? {
+    getItem(key: string) {
+      const value = source.getItem(key);
+      expected[key] = value;
+      return value;
+    },
+  } : source;
   const rawLineups = read(storage, USER_UTILITIES_KEY, []);
   const drafts: TacticFile[] = [];
   for (const map of MAPS)
@@ -61,16 +70,18 @@ export function captureWorkspace(
         `utility-lab:draft:v1:${map.id}:${level.id}`,
         null,
       );
-      if (!plan) continue;
+      const radarKey = `utility-lab:radar:v1:${map.id}:${level.id}`;
+      if (!plan) {
+        if (expected) storage.getItem(radarKey);
+        continue;
+      }
       try {
         drafts.push(
           validateTacticFile({
             format: "utility-lab-tactic",
             version: 1,
             plan,
-            mapImage:
-              storage.getItem(`utility-lab:radar:v1:${map.id}:${level.id}`) ||
-              undefined,
+            mapImage: storage.getItem(radarKey) || undefined,
           }),
         );
       } catch {
@@ -247,16 +258,7 @@ export function mergeWorkspace(
   };
   const bookIds = new Set(next.books.map((item) => item.id));
   for (const item of incoming.books) {
-    const mapped = {
-      ...item,
-      tacticIds: item.tacticIds.map(mapTactic),
-      lineupIds: item.lineupIds.map(mapLineup),
-      steps: item.steps.map((step) => ({
-        ...step,
-        ...(step.tacticId ? { tacticId: mapTactic(step.tacticId) } : {}),
-        ...(step.lineupId ? { lineupId: mapLineup(step.lineupId) } : {}),
-      })),
-    };
+    const mapped = remapPlaybookReferences(item, mapTactic, mapLineup);
     if (next.books.some((v) => JSON.stringify(v) === JSON.stringify(mapped)))
       continue;
     const id = bookIds.has(mapped.id) ? fresh(bookIds) : mapped.id;
@@ -293,6 +295,7 @@ export function persistWorkspace(
   storage: Pick<Storage, "getItem" | "setItem" | "removeItem">,
   value: WorkspaceBackup,
   includeAppearance = false,
+  expected?: Record<string, string | null>,
 ): void {
   const values: Record<string, string> = {
     [TACTICS_KEY]: JSON.stringify(value.tactics),
@@ -308,5 +311,5 @@ export function persistWorkspace(
   }
   if (includeAppearance)
     values["ul:appearance"] = JSON.stringify(value.appearance);
-  persistPlaybookImport(storage, values);
+  persistPlaybookImport(storage, values, expected);
 }

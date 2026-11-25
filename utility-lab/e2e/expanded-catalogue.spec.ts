@@ -22,11 +22,11 @@ test('a source MP4 error switches only to that same guide’s published alternat
  await viewer.getByRole('button',{name:/^Photos/}).click();await expect(viewer.locator('iframe')).toHaveCount(0);await expect(viewer.locator('.ul-photo-kind')).toHaveText('Position');
 });
 
-test('expanded guide links resolve the real context and survive Saved navigation while Playbooks is staged',async({page})=>{
+test('expanded guide links resolve the real context and remain in saved playbooks',async({page})=>{
  const row=find(row=>row.mapId==='cache'&&row.side==='CT'&&row.type==='Flash');await imagesOnly(page);
  await page.addInitScript(row=>{localStorage.setItem('utility-lab:utility-favorites:v1',JSON.stringify([row.id]));localStorage.setItem('utility-lab:playbooks:v1',JSON.stringify([{id:'expanded-book',name:'Expanded source round',notes:'',tacticIds:[],lineupIds:[row.id],steps:[]}]))},row);
  await page.goto(`/#utilities?map=mirage&level=main&side=T&lineup=${row.id}`);await expect(page.getByRole('dialog',{name:row.title,exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Change map',exact:true})).toContainText('Cache');await expect(page.getByRole('button',{name:'CT side',exact:true})).toHaveAttribute('aria-pressed','true');
- await page.getByRole('button',{name:'Close lineup media',exact:true}).click();await expect(page.getByRole('tab',{name:'Playbooks',exact:true})).toBeDisabled();
+ await page.getByRole('button',{name:'Close lineup media',exact:true}).click();await expect(page.getByRole('tab',{name:'Playbooks',exact:true})).toBeEnabled();
  await page.getByRole('button',{name:/^Saved /}).click();await expectReferenceCount(page,1);await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page);await chooseUtilityType(page,'Flash');await chooseLandingSpot(page);await openOriginPhoto(page,{recordId:row.id});await expect(page.getByRole('dialog',{name:row.title,exact:true})).toBeVisible();
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('utility-lab:playbooks:v1'))[0].lineupIds)).toEqual([row.id]);
 });

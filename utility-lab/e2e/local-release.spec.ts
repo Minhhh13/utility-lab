@@ -128,7 +128,7 @@ test("workspace backups carry actual photos into a clean browser and preserve li
     await receiving
       .getByRole("button", { name: "Close workspace settings", exact: true })
       .click();
-    await expect(receiving.locator(".playbooks-coming-soon")).toContainText("Coming soon");
+    await expect(receiving.getByRole("heading", { name: "Round plan", exact: true })).toBeVisible();
     const restored = await receiving.evaluate(() => ({
       books: JSON.parse(localStorage.getItem("utility-lab:playbooks:v1")!),
       lineups: JSON.parse(localStorage.getItem("utility-lab:utilities:v1")!),

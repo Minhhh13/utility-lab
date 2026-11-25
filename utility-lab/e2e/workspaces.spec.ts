@@ -177,7 +177,7 @@ test("personal photo slides retain captions and both-button throw instructions",
   await expect(page.getByAltText('Standing position',{exact:true})).toBeVisible();
 });
 
-test("Coming soon Playbooks preserves saved records and stats count them", async ({ page }) => {
+test("Playbooks opens an existing round and Stats counts it", async ({ page }) => {
   await page.goto("/#board");
   await page.getByRole("button", { name: "Save tactic", exact: true }).click();
   await page.evaluate(() => {
@@ -185,9 +185,8 @@ test("Coming soon Playbooks preserves saved records and stats count them", async
     localStorage.setItem("utility-lab:playbooks:v1",JSON.stringify([{id:"staged-book",name:"Mirage match plan",notes:"Take space together.",tacticIds:[tactic.id],lineupIds:[],steps:[]}]))
   });
   await page.goto("/#playbooks");
-  await expect(page.locator(".playbooks-coming-soon")).toContainText("Coming soon");
-  await expect(page.getByRole("tab",{name:"Playbooks",exact:true})).toBeDisabled();
-  await expect(page.getByRole("button",{name:"New playbook",exact:true})).toHaveCount(0);
+  await expect(page.getByRole("heading",{name:"Mirage match plan",exact:true})).toBeVisible();
+  await expect(page.getByRole("tab",{name:"Playbooks",exact:true})).toHaveAttribute("aria-selected","true");
   await page.getByRole("tab", { name: "Stats", exact: true }).click();
   await expect(page.locator(".stats-summary>div").filter({hasText:"Saved tactics"}).locator("strong")).toHaveText("1");
   await expect(page.locator(".stats-summary>div").filter({hasText:"Playbooks"}).locator("strong")).toHaveText("1");

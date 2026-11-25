@@ -160,7 +160,7 @@ test("Stats content remains scrollable and Playbooks stays contained in the fitt
   });
   expect(scrolled).toBe(true);
   await page.goto("/#playbooks");
-  await expect(page.locator(".playbooks-coming-soon")).toContainText("Coming soon");
+  await expect(page.getByRole("button", { name: "New playbook", exact: true })).toBeVisible();
   await expectFit(page, "4:3");
-  expect(await page.locator("#workspace").evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBe(true);
+  expect(await page.locator("#workspace").evaluate((element) => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
 });

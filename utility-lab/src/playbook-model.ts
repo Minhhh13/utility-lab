@@ -1,4 +1,5 @@
 import { uid, validateSavedTactics, type SavedTactic } from "./board-model.ts";
+import { getMap } from "./maps.ts";
 import {
   MAX_USER_UTILITIES,
   validateUtility,
@@ -9,14 +10,27 @@ export const BOOKS_KEY = "utility-lab:playbooks:v1";
 export const PLAYBOOK_DRAFT_KEY = "utility-lab:playbook-draft:v1";
 export const TACTICS_KEY = "utility-lab:tactics:v1";
 export const MAX_PLAYBOOKS = 100;
+export const MAX_PLAYBOOK_REFERENCES = 100;
 export const MAX_PLAYBOOK_STEPS = 40;
 export const MAX_PLAYBOOK_FILE_BYTES = 250_000_000;
+export const PLAYER_IDS = ["p1", "p2", "p3", "p4", "p5"] as const;
+export const ROUND_CLOCK_SECONDS = 115;
+export const MAX_CUE_SECONDS = 600;
+export type PlayerId = (typeof PLAYER_IDS)[number];
+export type RoundPlayer = { id: PlayerId; name: string; role: string };
+export type RoundSetup = {
+  mapId: string;
+  levelId: string;
+  players: RoundPlayer[];
+};
 export type PlaybookStep = {
   id: string;
   title: string;
   role: string;
   timing: string;
   notes: string;
+  playerId?: PlayerId;
+  atSeconds?: number;
   tacticId?: string;
   lineupId?: string;
 };
@@ -27,6 +41,12 @@ export type Playbook = {
   tacticIds: string[];
   lineupIds: string[];
   steps: PlaybookStep[];
+  round?: RoundSetup;
+};
+export type RoundStep = PlaybookStep & { atSeconds: number };
+export type RoundPlan<T extends Playbook = Playbook> = Omit<T, "round" | "steps"> & {
+  round: RoundSetup;
+  steps: RoundStep[];
 };
 export type PlaybookDraft = Playbook & { editingId: string | null };
 export type PlaybookFile = {
@@ -45,10 +65,69 @@ const record = (value: unknown): value is Record<string, unknown> =>
   !!value && typeof value === "object" && !Array.isArray(value);
 const text = (value: unknown, max: number): value is string =>
   typeof value === "string" && value.length <= max;
+const isPlayerId = (id: unknown): id is PlayerId =>
+  PLAYER_IDS.some((playerId) => playerId === id);
+
+export function createRoundSetup(mapId = "mirage", levelId?: string): RoundSetup {
+  const map = getMap(mapId);
+  const level = map.levels.find((item) => item.id === levelId) ?? map.levels[0];
+  return {
+    mapId: map.id,
+    levelId: level.id,
+    players: PLAYER_IDS.map((id, index) => ({ id, name: `Player ${index + 1}`, role: "" })),
+  };
+}
+
+function validateRoundSetup(raw: unknown): RoundSetup | null {
+  if (!record(raw) || typeof raw.mapId !== "string" || !Array.isArray(raw.players) ||
+    raw.players.length !== PLAYER_IDS.length) return null;
+  const map = getMap(raw.mapId);
+  if (map.id !== raw.mapId || typeof raw.levelId !== "string" ||
+    !map.levels.some((item) => item.id === raw.levelId)) return null;
+  const players: RoundPlayer[] = [];
+  for (const id of PLAYER_IDS) {
+    const player = raw.players.find((candidate) => record(candidate) && candidate.id === id);
+    if (!record(player) || !text(player.name, 60) || !text(player.role, 100)) return null;
+    players.push({ id, name: player.name, role: player.role });
+  }
+  return { mapId: map.id, levelId: raw.levelId, players };
+}
+
+// Old playbooks store the displayed countdown and trigger as one free-text field.
+function legacyCueTime(timing: string, fallback: number): number {
+  const match = /^\s*(\d{1,2}):([0-5]\d)(?=$|[\s·,–—-])/.exec(timing);
+  if (match) {
+    const elapsed = ROUND_CLOCK_SECONDS - (Number(match[1]) * 60 + Number(match[2]));
+    if (elapsed >= 0) return elapsed;
+  }
+  return Math.min(MAX_CUE_SECONDS, fallback);
+}
+
+/** Project old collections onto a timeline without rewriting their stored text or links. */
+export function getRoundPlan<T extends Playbook>(book: T, tactics: SavedTactic[] = []): RoundPlan<T> {
+  let round = book.round;
+  if (!round) {
+    const byId = new Map(tactics.map((item) => [item.id, item]));
+    const linked = [...book.steps.map((step) => step.tacticId), ...book.tacticIds]
+      .find((id): id is string => id !== undefined && byId.has(id));
+    const plan = linked ? byId.get(linked)?.plan : undefined;
+    round = createRoundSetup(plan?.mapId, plan?.levelId);
+  }
+  let nextTime = 0;
+  const steps = book.steps.map((step) => {
+    const atSeconds = step.atSeconds ?? legacyCueTime(step.timing, nextTime);
+    nextTime = atSeconds + 5;
+    // Generic legacy roles can describe several teammates. Only bind an explicit slot.
+    const slot = !book.round && /^(?:[^\d·,;&/]+·\s*)?player\s*([1-5])$/i.exec(step.role.trim());
+    const playerId = step.playerId ?? (slot ? PLAYER_IDS[Number(slot[1]) - 1] : undefined);
+    return { ...step, atSeconds, ...(playerId ? { playerId } : {}) };
+  });
+  return { ...book, round, steps };
+}
 function ids(value: unknown): string[] | null {
   if (
     !Array.isArray(value) ||
-    value.length > 100 ||
+    value.length > MAX_PLAYBOOK_REFERENCES ||
     !value.every((id) => text(id, 160) && !!id.trim())
   )
     return null;
@@ -66,7 +145,9 @@ export function validatePlaybook(value: unknown): Playbook | null {
     return null;
   const tacticIds = ids(value.tacticIds ?? []),
     lineupIds = ids(value.lineupIds ?? []);
+  const round = value.round === undefined ? undefined : validateRoundSetup(value.round);
   if (
+    round === null ||
     !tacticIds ||
     !lineupIds ||
     (value.steps !== undefined &&
@@ -89,6 +170,9 @@ export function validatePlaybook(value: unknown): Playbook | null {
     )
       return null;
     if (
+      (raw.playerId !== undefined && !isPlayerId(raw.playerId)) ||
+      (raw.atSeconds !== undefined && (typeof raw.atSeconds !== "number" ||
+        !Number.isInteger(raw.atSeconds) || raw.atSeconds < 0 || raw.atSeconds > MAX_CUE_SECONDS)) ||
       (raw.tacticId !== undefined &&
         (!text(raw.tacticId, 160) || !raw.tacticId.trim())) ||
       (raw.lineupId !== undefined &&
@@ -102,6 +186,8 @@ export function validatePlaybook(value: unknown): Playbook | null {
       role: (raw.role ?? "") as string,
       timing: (raw.timing ?? "") as string,
       notes: (raw.notes ?? "") as string,
+      ...(raw.playerId !== undefined ? { playerId: raw.playerId as PlayerId } : {}),
+      ...(raw.atSeconds !== undefined ? { atSeconds: raw.atSeconds as number } : {}),
       ...(raw.tacticId ? { tacticId: raw.tacticId as string } : {}),
       ...(raw.lineupId ? { lineupId: raw.lineupId as string } : {}),
     });
@@ -110,7 +196,7 @@ export function validatePlaybook(value: unknown): Playbook | null {
     if (raw.lineupId && !lineupIds.includes(raw.lineupId as string))
       lineupIds.push(raw.lineupId as string);
   }
-  if (tacticIds.length > 100 || lineupIds.length > 100) return null;
+  if (tacticIds.length > MAX_PLAYBOOK_REFERENCES || lineupIds.length > MAX_PLAYBOOK_REFERENCES) return null;
   return {
     id: value.id,
     name: value.name.trim(),
@@ -118,6 +204,7 @@ export function validatePlaybook(value: unknown): Playbook | null {
     tacticIds,
     lineupIds,
     steps,
+    ...(round ? { round } : {}),
   };
 }
 export function validatePlaybooks(value: unknown): Playbook[] {
@@ -139,49 +226,46 @@ export function readPlaybooks(): Playbook[] {
     return [];
   }
 }
-export function readPlaybookDraft(): PlaybookDraft | null {
+export function readPlaybookDraft(storage?: Pick<Storage, "getItem">): PlaybookDraft | null {
   try {
     const raw: unknown = JSON.parse(
-      sessionStorage.getItem(PLAYBOOK_DRAFT_KEY) || "null",
+      (storage ?? sessionStorage).getItem(PLAYBOOK_DRAFT_KEY) || "null",
     );
     if (!record(raw) || !(raw.editingId === null || text(raw.editingId, 100)))
       return null;
-    // Untitled/empty steps are valid while editing, but never persisted as saved playbooks.
+    // Keep temporary form values recoverable even when the saved-plan validator
+    // would reject an unfinished title or an out-of-range number.
     const editingId = raw.editingId as string | null;
+    const rawSteps: unknown[] = Array.isArray(raw.steps) ? raw.steps : [];
     const candidate = validatePlaybook({
       ...raw,
-      name:
-        text(raw.name, 100) && raw.name.trim() ? raw.name : "Untitled playbook",
-      steps: Array.isArray(raw.steps)
-        ? raw.steps.map((step) =>
-            record(step)
-              ? {
-                  ...step,
-                  title:
-                    text(step.title, 120) && step.title.trim()
-                      ? step.title
-                      : "Untitled step",
-                }
-              : step,
-          )
-        : [],
+      name: "Untitled playbook",
+      steps: rawSteps.map((step) => {
+        if (!record(step)) return step;
+        const elapsed = step.atSeconds;
+        return {
+          ...step,
+          title: "Untitled step",
+          atSeconds: elapsed == null || (typeof elapsed === "number" && Number.isFinite(elapsed))
+            ? undefined : elapsed,
+        };
+      }),
     });
     if (!candidate) return null;
     return {
       ...candidate,
       name: text(raw.name, 100) ? raw.name : "",
-      steps: candidate.steps.map((step, index) => ({
-        ...step,
-        title:
-          record((raw.steps as unknown[])?.[index]) &&
-          text(
-            ((raw.steps as unknown[])[index] as Record<string, unknown>).title,
-            120,
-          )
-            ? (((raw.steps as unknown[])[index] as Record<string, unknown>)
-                .title as string)
-            : step.title,
-      })),
+      // Cue-only links remain distinct from resources attached by hand in the editor.
+      tacticIds: ids(raw.tacticIds ?? [])!,
+      lineupIds: ids(raw.lineupIds ?? [])!,
+      steps: candidate.steps.map((step, index) => {
+        const original = rawSteps[index] as Record<string, unknown>;
+        return {
+          ...step,
+          title: text(original.title, 120) ? original.title : step.title,
+          ...(typeof original.atSeconds === "number" ? { atSeconds: original.atSeconds } : {}),
+        };
+      }),
       editingId,
     };
   } catch {
@@ -193,12 +277,14 @@ export function createPlaybookFile(
   tactics: SavedTactic[],
   lineups: UtilityReference[],
 ): PlaybookFile {
+  const normalized = validatePlaybook(book);
+  if (!normalized) throw new Error("Give the playbook and its cues valid names, players and times before exporting.");
   return {
     format: "utility-lab-playbook",
     version: 1,
-    book,
-    tactics: tactics.filter((item) => book.tacticIds.includes(item.id)),
-    lineups: lineups.filter((item) => book.lineupIds.includes(item.id)),
+    book: normalized,
+    tactics: tactics.filter((item) => normalized.tacticIds.includes(item.id)),
+    lineups: lineups.filter((item) => normalized.lineupIds.includes(item.id)),
   };
 }
 export function parsePlaybookFile(value: unknown): PlaybookFile {
@@ -257,6 +343,24 @@ export function parsePlaybookFile(value: unknown): PlaybookFile {
 }
 const sameLineup = (a: UtilityReference, b: UtilityReference) =>
   JSON.stringify(validateUtility(a)) === JSON.stringify(validateUtility(b));
+/** Keep every cue bound to its own imported resources, including after ID conflicts. */
+export function remapPlaybookReferences(
+  book: Playbook,
+  mapTactic: (id: string) => string,
+  mapLineup: (id: string) => string,
+): Playbook {
+  return {
+    ...book,
+    tacticIds: book.tacticIds.map(mapTactic),
+    lineupIds: book.lineupIds.map(mapLineup),
+    steps: book.steps.map((step) => ({
+      ...step,
+      ...(step.tacticId ? { tacticId: mapTactic(step.tacticId) } : {}),
+      ...(step.lineupId ? { lineupId: mapLineup(step.lineupId) } : {}),
+    })),
+  };
+}
+
 export function mergePlaybookFile(
   file: PlaybookFile,
   existing: PlaybookWorkspace,
@@ -331,15 +435,8 @@ export function mergePlaybookFile(
     ? unique(new Set(books.map((item) => item.id)))
     : file.book.id;
   const importedBook: Playbook = {
-    ...file.book,
+    ...remapPlaybookReferences(file.book, (id) => tacticMap.get(id)!, (id) => lineupMap.get(id)!),
     id: bookId,
-    tacticIds: file.book.tacticIds.map((id) => tacticMap.get(id)!),
-    lineupIds: file.book.lineupIds.map((id) => lineupMap.get(id)!),
-    steps: file.book.steps.map((step) => ({
-      ...step,
-      ...(step.tacticId ? { tacticId: tacticMap.get(step.tacticId)! } : {}),
-      ...(step.lineupId ? { lineupId: lineupMap.get(step.lineupId)! } : {}),
-    })),
   };
   books.unshift(importedBook);
   const missingReferences =
@@ -355,10 +452,14 @@ export function mergePlaybookFile(
 export function persistPlaybookImport(
   storage: Pick<Storage, "getItem" | "setItem" | "removeItem">,
   values: Record<string, string>,
+  expected?: Record<string, string | null>,
 ): void {
   const previous = Object.fromEntries(
     Object.keys(values).map((key) => [key, storage.getItem(key)]),
   );
+  if (expected && Object.keys(previous).some((key) => previous[key] !== expected[key])) {
+    throw new Error("Your workspace changed while the import was being prepared. Please retry to include those changes.");
+  }
   const written: string[] = [];
   try {
     for (const [key, value] of Object.entries(values)) {

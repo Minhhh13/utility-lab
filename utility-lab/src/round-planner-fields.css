@@ -1,0 +1,104 @@
+.round-map-fields, .round-lineup-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.round-map-fields label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.round-roster-row, .round-roster-head {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.round-roster-head {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.round-slot-number {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+}
+.planner-cue-list {
+  display: grid;
+  margin: 14px 0;
+}
+.planner-cue-list button {
+  width: 100%;
+  min-height: 44px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) minmax(55px, 25%);
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.planner-cue-list button[aria-pressed=true] {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.planner-cue-list button > span {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.planner-cue-list strong { font-size: 14px; }
+.planner-cue-list small { text-align: right; }
+.planner-active-cue {
+  background: var(--surface);
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.playbook-form .planner-active-cue :is(input, select, textarea) { background: var(--surface-raised); }
+.planner-add-cue { margin-top: 14px; }
+.playbook-empty-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.playbook-list > .planner-example-link {
+  min-height: 44px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.planner-resources { margin: 24px 0; border-block: 1px solid var(--border); }
+.planner-resources summary {
+  min-height: 44px;
+  padding: 14px 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.planner-resources .playbook-resource-heading { margin: 6px 0; }
+.planner-resources > fieldset:last-of-type { margin-bottom: 14px; }
+.planner-links { margin: 16px 0; }
+.planner-links h4 { margin-top: 12px; }
+.planner-selected-heading { flex-wrap: wrap; }
+@media (max-width: 650px) {
+  .round-map-fields, .round-lineup-picker { grid-template-columns: 1fr; }
+  .round-roster-row, .round-roster-head {
+    grid-template-columns: 24px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 6px;
+  }
+  .round-slot-number { width: 23px; height: 23px; font-size: 11px; }
+  .playbook-form .round-roster-row input { padding: 9px 6px; }
+  .planner-active-cue { padding: 12px; }
+  .playbook-layout:has(.playbook-form) .playbook-list { display: none; }
+}

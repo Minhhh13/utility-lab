@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { exportFile } from "./file-transfer";
 import {
-  ArrowDown,
   ArrowRight,
-  ArrowUp,
   BookOpen,
   Check,
   ChevronRight,
@@ -29,17 +27,24 @@ import {
   type UtilityReference,
 } from "./utility-data";
 import UtilityIcon, { type UtilityKind } from "./UtilityIcon";
-import { GUIDE_LIBRARY } from "./guide-library";
-import { expandedMapForId, loadLinkedGuides } from "./expanded-catalogue";
+import { GUIDE_LIBRARY, PHOTO_GUIDE_LIBRARY } from "./guide-library";
+import { expandedMapForId, loadLinkedGuides, loadMapGuides } from "./expanded-catalogue";
+import { mergePhotoGuides } from "./expanded-guide-model";
+import { createMirageExample, MIRAGE_EXAMPLE_LINEUP, MIRAGE_EXAMPLE_NAME } from "./example-playbook";
+import RoundPlannerFields from "./RoundPlannerFields";
+import PlaybookPlayback from "./PlaybookPlayback";
 import { portableLineups, storeLineupMedia } from "./media-store";
 import {
   BOOKS_KEY,
   PLAYBOOK_DRAFT_KEY,
   TACTICS_KEY,
   MAX_PLAYBOOKS,
-  MAX_PLAYBOOK_STEPS,
+  MAX_PLAYBOOK_REFERENCES,
+  MAX_CUE_SECONDS,
   MAX_PLAYBOOK_FILE_BYTES,
   createPlaybookFile,
+  createRoundSetup,
+  getRoundPlan,
   mergePlaybookFile,
   parsePlaybookFile,
   persistPlaybookImport,
@@ -48,7 +53,6 @@ import {
   validatePlaybook,
   type Playbook,
   type PlaybookDraft,
-  type PlaybookStep,
 } from "./playbook-model";
 import "./workspace-library.css";
 
@@ -57,6 +61,7 @@ const BASE_BUILTIN_LINEUPS: UtilityReference[] = [
   ...GUIDE_LIBRARY,
   ...UTILITY_REFERENCES,
 ];
+const SELECTED_PLAYBOOK_KEY = "utility-lab:selected-playbook:v1";
 const kinds = ["smoke", "flash", "molotov", "he"] as const;
 const typeNames = {
   smoke: "Smoke",
@@ -86,6 +91,7 @@ function emptyDraft(): PlaybookDraft {
     editingId: null,
     name: "",
     notes: "",
+    round: createRoundSetup(),
     tacticIds: [],
     lineupIds: [],
     steps: [],
@@ -98,6 +104,7 @@ const exportJson = (value: unknown, name: string) =>
   );
 type Props = {
   view: "playbooks" | "stats";
+  initialBookId?: string;
   onNavigate: (view: "board" | "utilities") => void;
   onOpenTactic: (record: SavedTactic) => void;
   onOpenLineup: (record: UtilityReference) => void;
@@ -105,6 +112,7 @@ type Props = {
 };
 export default function WorkspaceLibrary({
   view,
+  initialBookId,
   onNavigate,
   onOpenTactic,
   onOpenLineup,
@@ -112,7 +120,10 @@ export default function WorkspaceLibrary({
 }: Props) {
   const [workspace, setWorkspace] = useState(readWorkspace);
   const { books, tactics, personal, favorites } = workspace;
-  const [draft, setDraft] = useState<PlaybookDraft | null>(readPlaybookDraft);
+  const [draft, setDraft] = useState<PlaybookDraft | null>(() => {
+    const restored = readPlaybookDraft();
+    return restored && !restored.round ? getRoundPlan(restored, tactics) : restored;
+  });
   const [expandedLinks, setExpandedLinks] = useState<UtilityReference[]>([]);
   const [linksLoading, setLinksLoading] = useState(true);
   const [linksError, setLinksError] = useState("");
@@ -132,10 +143,38 @@ export default function WorkspaceLibrary({
     }).catch(() => { if (current) { setLinksLoading(false); setLinksError("Couldn’t load your linked lineups."); } });
     return () => { current = false; };
   }, [linkedIds, linksRetry]);
-  const BUILTIN_LINEUPS = [...new Map([...BASE_BUILTIN_LINEUPS, ...expandedLinks].map(record => [record.id, record])).values()];
-  const [selectedId, setSelectedId] = useState<string | null>(
-    () => readPlaybookDraft()?.editingId || null,
-  );
+  const [selectedId, setSelectedId] = useState<string | null>(() => {
+    if (initialBookId) return initialBookId;
+    try { return sessionStorage.getItem(SELECTED_PLAYBOOK_KEY); }
+    catch { return null; }
+  });
+  useEffect(() => {
+    if (initialBookId) setSelectedId(initialBookId);
+  }, [initialBookId]);
+  const selected = books.find((book) => book.id === selectedId) || books[0];
+  useEffect(() => {
+    if (view !== "playbooks" || !selected) return;
+    try { sessionStorage.setItem(SELECTED_PLAYBOOK_KEY, selected.id); }
+    catch { /* The open book is still kept in this tab's React state. */ }
+  }, [view, selected?.id]);
+  const roundMap = view === "playbooks" ? draft?.round?.mapId : undefined;
+  const [catalogue, setCatalogue] = useState<{ mapId: string; records: UtilityReference[] } | null>(null);
+  const [catalogueError, setCatalogueError] = useState("");
+  useEffect(() => {
+    if (!roundMap) return;
+    let current = true;
+    setCatalogueError("");
+    void loadMapGuides(roundMap).then(records => {
+      if (current) setCatalogue({ mapId: roundMap, records });
+    }).catch(() => { if (current) setCatalogueError("Some lineup guides could not load."); });
+    return () => { current = false; };
+  }, [roundMap, linksRetry]);
+  const mapGuides = useMemo(() => roundMap ? mergePhotoGuides(
+    PHOTO_GUIDE_LIBRARY.filter(item => item.mapId === roundMap),
+    catalogue?.mapId === roundMap ? catalogue.records : [],
+  ) : [], [roundMap, catalogue]);
+  const BUILTIN_LINEUPS = useMemo(() => [...new Map([...BASE_BUILTIN_LINEUPS, ...expandedLinks, ...mapGuides]
+    .map(record => [record.id, record])).values()], [expandedLinks, mapGuides]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [draftWarning, setDraftWarning] = useState("");
@@ -166,19 +205,20 @@ export default function WorkspaceLibrary({
       );
     }
   }, [draft]);
-  const allLineups = [
+  const allLineups = useMemo(() => [
     ...new Map(
       [...BUILTIN_LINEUPS, ...personal].map((item) => [item.id, item]),
     ).values(),
-  ];
-  const selected = books.find((book) => book.id === selectedId) || books[0];
+  ], [BUILTIN_LINEUPS, personal]);
   const attachedIds = draft?.lineupIds || selected?.lineupIds || [];
   const lineups = allLineups.filter(
     (item) =>
       item.userCreated ||
       favorites.includes(item.id) ||
-      attachedIds.includes(item.id),
+      attachedIds.includes(item.id) || draft?.steps.some(step => step.lineupId === item.id),
   );
+  const cueLineups = draft ? [...new Map([...mapGuides, ...lineups].map(item => [item.id, item])).values()]
+    .sort((a, b) => a.title.localeCompare(b.title)) : [];
   const editing = draft !== null;
   const baseline = draft?.editingId
     ? books.find((book) => book.id === draft.editingId)
@@ -187,13 +227,14 @@ export default function WorkspaceLibrary({
     !!draft &&
     (baseline
       ? JSON.stringify({ ...draft, editingId: undefined }) !==
-        JSON.stringify({ ...baseline, editingId: undefined })
+        JSON.stringify({ ...getRoundPlan(baseline, tactics), editingId: undefined })
       : !!(
           draft.name ||
           draft.notes ||
           draft.tacticIds.length ||
           draft.lineupIds.length ||
-          draft.steps.length
+          draft.steps.length ||
+          JSON.stringify(draft.round) !== JSON.stringify(createRoundSetup())
         ));
   useEffect(() => {
     if (!dirty) return;
@@ -206,7 +247,7 @@ export default function WorkspaceLibrary({
   }, [dirty]);
   function begin(book?: Playbook) {
     setDraft(
-      book ? { ...structuredClone(book), editingId: book.id } : emptyDraft(),
+      book ? { ...getRoundPlan(structuredClone(book), tactics), editingId: book.id } : emptyDraft(),
     );
     setError("");
     setResourceSearch("");
@@ -223,7 +264,16 @@ export default function WorkspaceLibrary({
     setError("");
   }
   function update(values: Partial<PlaybookDraft>) {
-    setDraft((current) => (current ? { ...current, ...values } : current));
+    if (!draft) return;
+    const next = { ...draft, ...values };
+    const tacticCount = new Set([...next.tacticIds, ...next.steps.flatMap(step => step.tacticId || [])]).size;
+    const lineupCount = new Set([...next.lineupIds, ...next.steps.flatMap(step => step.lineupId || [])]).size;
+    if (Math.max(tacticCount, lineupCount) > MAX_PLAYBOOK_REFERENCES) {
+      setError(`A playbook can include up to ${MAX_PLAYBOOK_REFERENCES} tactics and ${MAX_PLAYBOOK_REFERENCES} lineups. Remove a link before adding another.`);
+      return;
+    }
+    setError("");
+    setDraft(next);
   }
   function persistBooks(next: Playbook[]) {
     localStorage.setItem(BOOKS_KEY, JSON.stringify(next));
@@ -232,10 +282,16 @@ export default function WorkspaceLibrary({
   function save(event: FormEvent) {
     event.preventDefault();
     if (!draft) return;
+    const invalidCue = draft.steps.findIndex(step => !step.title.trim() ||
+      step.atSeconds === undefined || !Number.isInteger(step.atSeconds) || step.atSeconds < 0 || step.atSeconds > MAX_CUE_SECONDS);
+    if (invalidCue >= 0) {
+      setError(`Give cue ${invalidCue + 1} a call and an elapsed time between 0 and ${MAX_CUE_SECONDS} whole seconds.`);
+      return;
+    }
     const book = validatePlaybook(draft);
     if (!book) {
       setError(
-        "Give the playbook and every round step a name. Keep names and notes within their shown limits.",
+        "Check the playbook name, player details and cue fields.",
       );
       return;
     }
@@ -255,6 +311,26 @@ export default function WorkspaceLibrary({
       setError(
         "Browser storage is full or unavailable. Your draft is still here; export it before closing the page.",
       );
+    }
+  }
+  function addExample() {
+    const current = readWorkspace();
+    const { book, tactics: exampleTactics } = createMirageExample();
+    if (current.books.length >= MAX_PLAYBOOKS || current.tactics.length + exampleTactics.length > 100) {
+      setError("The Mirage example needs room for one playbook and two saved tactics.");
+      return;
+    }
+    try {
+      persistPlaybookImport(localStorage, {
+        [TACTICS_KEY]: JSON.stringify([...exampleTactics, ...current.tactics]),
+        [BOOKS_KEY]: JSON.stringify([book, ...current.books]),
+      });
+      setWorkspace(readWorkspace());
+      setSelectedId(book.id);
+      setError("");
+      onNotify("Mirage example and both tactics saved on this device.");
+    } catch {
+      setError("Browser storage is unavailable. The example could not be saved.");
     }
   }
   function remove() {
@@ -322,21 +398,37 @@ export default function WorkspaceLibrary({
       if (file.size > MAX_PLAYBOOK_FILE_BYTES)
         throw new Error("Choose a playbook file smaller than 250 MB.");
       const parsed = parsePlaybookFile(JSON.parse(await file.text()));
+      const expected = Object.fromEntries([BOOKS_KEY, TACTICS_KEY, USER_UTILITIES_KEY, FAVORITE_UTILITIES_KEY]
+        .map(key => [key, localStorage.getItem(key)]));
       const current = readWorkspace();
       // Resolve library IDs before collision checks; a portable file can still
       // restore its full record payload while offline.
       const incoming = await loadLinkedGuides(parsed.book.lineupIds).catch(() => []);
       const knownLineups = [...new Map([...BUILTIN_LINEUPS, ...incoming].map(record => [record.id, record])).values()];
+      const collisionIds = new Set(parsed.lineups.map(item => item.id));
+      // Compare identical photos in the same representation, even when one side
+      // uses an IndexedDB reference and the other carries portable image bytes.
+      async function comparable(records: UtilityReference[]) {
+        return Promise.all(records.map(async item => {
+          if (!collisionIds.has(item.id)) return item;
+          try { return (await portableLineups([item]))[0]; }
+          catch { return item; }
+        }));
+      }
+      const [personalForMerge, knownForMerge] = await Promise.all([
+        comparable(current.personal), comparable(knownLineups),
+      ]);
       const merged = mergePlaybookFile(
         parsed,
         {
           books: current.books,
           tactics: current.tactics,
-          lineups: current.personal,
+          lineups: personalForMerge,
         },
-        knownLineups,
+        knownForMerge,
       );
-      const restoredLineups = await storeLineupMedia(merged.lineups);
+      const addedLineups = await storeLineupMedia(merged.lineups.slice(current.personal.length));
+      const restoredLineups = [...current.personal, ...addedLineups];
       const restoredFavorites = [
         ...new Set([
           ...current.favorites,
@@ -350,7 +442,7 @@ export default function WorkspaceLibrary({
         [USER_UTILITIES_KEY]: JSON.stringify(restoredLineups),
         [FAVORITE_UTILITIES_KEY]: JSON.stringify(restoredFavorites),
         [BOOKS_KEY]: JSON.stringify(merged.books),
-      });
+      }, expected);
       setWorkspace(readWorkspace());
       setSelectedId(merged.importedBook.id);
       window.dispatchEvent(new Event("utility-lab:workspace-changed"));
@@ -389,23 +481,6 @@ export default function WorkspaceLibrary({
           )
         : draft.steps,
     });
-  }
-  function updateStep(id: string, values: Partial<PlaybookStep>) {
-    if (!draft) return;
-    update({
-      steps: draft.steps.map((step) =>
-        step.id === id ? { ...step, ...values } : step,
-      ),
-    });
-  }
-  function moveStep(index: number, direction: number) {
-    if (!draft) return;
-    const next = [...draft.steps];
-    [next[index], next[index + direction]] = [
-      next[index + direction],
-      next[index],
-    ];
-    update({ steps: next });
   }
   function renderTactic(id: string) {
     const record = tactics.find((item) => item.id === id);
@@ -735,10 +810,8 @@ export default function WorkspaceLibrary({
     <section className="workspace-library">
       <header className="library-heading">
         <div>
-          <h2>Keep the team on the same page.</h2>
-          <p>
-            Sequence the round. Keep its tactics, lineups, and calls together.
-          </p>
+          <h2>Playbooks</h2>
+          <p>Five-player round planner</p>
         </div>
         <div className="library-heading-actions">
           <input
@@ -772,7 +845,7 @@ export default function WorkspaceLibrary({
           {error}
         </p>
       )}
-      {linksError && <p className="library-error" role="alert">{linksError} <button className="library-text-link" onClick={() => setLinksRetry(attempt => attempt + 1)}>Try again</button></p>}
+      {(linksError || catalogueError) && <p className="library-error" role="alert">{linksError || catalogueError} <button className="library-text-link" onClick={() => setLinksRetry(attempt => attempt + 1)}>Try again</button></p>}
       <div className="playbook-layout">
         <aside className="playbook-list" aria-label="Your playbooks">
           <div className="playbook-list-heading">
@@ -804,7 +877,7 @@ export default function WorkspaceLibrary({
               <span>
                 <strong>{book.name}</strong>
                 <small>
-                  {book.steps.length} steps · {book.tacticIds.length} tactics ·{" "}
+                  {book.steps.length} cues · {book.tacticIds.length} tactics ·{" "}
                   {book.lineupIds.length} lineups
                 </small>
               </span>
@@ -815,6 +888,11 @@ export default function WorkspaceLibrary({
           {books.length > 0 && !visibleBooks.length && (
             <p>No playbooks match “{bookSearch}”.</p>
           )}
+          {books.length > 0 && !editing && !books.some(book => book.name === MIRAGE_EXAMPLE_NAME &&
+            book.lineupIds.includes(MIRAGE_EXAMPLE_LINEUP)) &&
+            <button className="planner-example-link" onClick={addExample} disabled={busy}>
+              <Plus size={15} />Add Mirage example
+            </button>}
         </aside>
         <div className="playbook-content">
           {draft ? (
@@ -859,185 +937,10 @@ export default function WorkspaceLibrary({
                   placeholder="The calls and priorities your team needs."
                 />
               </label>
-              <fieldset className="round-sequence-editor">
-                <legend>Round sequence</legend>
-                <p>
-                  Order your calls, assign a role, and link the plan or lineup
-                  to open during practice. Up to 40 steps.
-                </p>
-                {draft.steps.map((step, index) => (
-                  <div className="round-step-editor" key={step.id}>
-                    <div className="round-step-heading">
-                      <strong>Step {index + 1}</strong>
-                      <div>
-                        <button
-                          type="button"
-                          className="icon-button"
-                          aria-label={`Move step ${index + 1} up`}
-                          disabled={index === 0}
-                          onClick={() => moveStep(index, -1)}
-                        >
-                          <ArrowUp size={17} />
-                        </button>
-                        <button
-                          type="button"
-                          className="icon-button"
-                          aria-label={`Move step ${index + 1} down`}
-                          disabled={index === draft.steps.length - 1}
-                          onClick={() => moveStep(index, 1)}
-                        >
-                          <ArrowDown size={17} />
-                        </button>
-                        <button
-                          type="button"
-                          className="icon-button"
-                          aria-label={`Remove step ${index + 1}`}
-                          onClick={() =>
-                            update({
-                              steps: draft.steps.filter(
-                                (item) => item.id !== step.id,
-                              ),
-                            })
-                          }
-                        >
-                          <Trash2 size={17} />
-                        </button>
-                      </div>
-                    </div>
-                    <label>
-                      Call
-                      <input
-                        aria-label={`Step ${index + 1} title`}
-                        required
-                        maxLength={120}
-                        value={step.title}
-                        onChange={(event) =>
-                          updateStep(step.id, { title: event.target.value })
-                        }
-                        placeholder="e.g. Throw the execute smokes"
-                      />
-                    </label>
-                    <div className="round-step-pair">
-                      <label>
-                        Role / player
-                        <input
-                          aria-label={`Step ${index + 1} role`}
-                          maxLength={100}
-                          value={step.role}
-                          onChange={(event) =>
-                            updateStep(step.id, { role: event.target.value })
-                          }
-                          placeholder="e.g. Support · Player 3"
-                        />
-                      </label>
-                      <label>
-                        Timing / trigger
-                        <input
-                          aria-label={`Step ${index + 1} timing`}
-                          maxLength={80}
-                          value={step.timing}
-                          onChange={(event) =>
-                            updateStep(step.id, { timing: event.target.value })
-                          }
-                          placeholder="e.g. 1:35 · on the call"
-                        />
-                      </label>
-                    </div>
-                    <label>
-                      Instructions
-                      <textarea
-                        aria-label={`Step ${index + 1} notes`}
-                        rows={2}
-                        maxLength={1000}
-                        value={step.notes}
-                        onChange={(event) =>
-                          updateStep(step.id, { notes: event.target.value })
-                        }
-                      />
-                    </label>
-                    <div className="round-step-pair">
-                      <label>
-                        Tactic
-                        <select
-                          aria-label={`Step ${index + 1} tactic`}
-                          value={step.tacticId || ""}
-                          onChange={(event) =>
-                            updateStep(step.id, {
-                              tacticId: event.target.value || undefined,
-                            })
-                          }
-                        >
-                          <option value="">No linked tactic</option>
-                          {step.tacticId &&
-                            !tactics.some(
-                              (item) => item.id === step.tacticId,
-                            ) && (
-                              <option value={step.tacticId}>
-                                Missing tactic — replace or clear
-                              </option>
-                            )}
-                          {tactics.map((record) => (
-                            <option key={record.id} value={record.id}>
-                              {mapName(record.plan.mapId)} · {record.plan.name}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                      <label>
-                        Lineup
-                        <select
-                          aria-label={`Step ${index + 1} lineup`}
-                          value={step.lineupId || ""}
-                          onChange={(event) =>
-                            updateStep(step.id, {
-                              lineupId: event.target.value || undefined,
-                            })
-                          }
-                        >
-                          <option value="">No linked lineup</option>
-                          {step.lineupId &&
-                            !allLineups.some(
-                              (item) => item.id === step.lineupId,
-                            ) && (
-                              <option value={step.lineupId}>
-                                Missing lineup — replace or clear
-                              </option>
-                            )}
-                          {lineups.map((item) => (
-                            <option key={item.id} value={item.id}>
-                              {mapName(item.mapId)} · {item.side} · {item.title}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                    </div>
-                  </div>
-                ))}
-                <button
-                  className="secondary-button"
-                  type="button"
-                  disabled={draft.steps.length >= MAX_PLAYBOOK_STEPS}
-                  onClick={() =>
-                    update({
-                      steps: [
-                        ...draft.steps,
-                        {
-                          id: uid(),
-                          title: "",
-                          role: "",
-                          timing: "",
-                          notes: "",
-                        },
-                      ],
-                    })
-                  }
-                >
-                  <Plus size={16} />
-                  Add round step
-                </button>
-              </fieldset>
+              <RoundPlannerFields draft={draft} update={update} tactics={tactics} lineups={cueLineups} />
+              <details className="planner-resources">
+                <summary>Attached resources</summary>
               <div className="playbook-resource-heading">
-                <h4>Attached resources</h4>
                 <label className="library-search">
                   <Search size={16} />
                   <input
@@ -1049,8 +952,7 @@ export default function WorkspaceLibrary({
                 </label>
               </div>
               <p className="library-scope-note">
-                Step links are included automatically when you save. Unchecking
-                an attached resource clears its step links.
+                Cue links are included when you save. Unchecking a resource clears it from every cue.
               </p>
               <fieldset>
                 <legend>Saved tactics</legend>
@@ -1153,6 +1055,7 @@ export default function WorkspaceLibrary({
                     search to see the full list.
                   </p>
                 )}
+              </details>
               {error && (
                 <p className="library-error" role="alert">
                   {error}
@@ -1211,7 +1114,7 @@ export default function WorkspaceLibrary({
             </form>
           ) : selected ? (
             <>
-              <div className="playbook-content-heading">
+              <div className="playbook-content-heading planner-selected-heading">
                 <div>
                   <BookOpen size={22} />
                   <h3>{selected.name}</h3>
@@ -1226,49 +1129,13 @@ export default function WorkspaceLibrary({
               {selected.notes && (
                 <p className="playbook-notes">{selected.notes}</p>
               )}
-              <h4>Round sequence</h4>
-              {selected.steps.length ? (
-                <ol className="round-sequence">
-                  {selected.steps.map((step, index) => (
-                    <li key={step.id}>
-                      <span className="round-step-number">{index + 1}</span>
-                      <div>
-                        <h5>{step.title}</h5>
-                        {(step.role || step.timing) && (
-                          <p className="round-step-meta">
-                            {[step.role, step.timing]
-                              .filter(Boolean)
-                              .join(" · ")}
-                          </p>
-                        )}
-                        {step.notes && (
-                          <p className="round-step-notes">{step.notes}</p>
-                        )}
-                        {step.tacticId && renderTactic(step.tacticId)}
-                        {step.lineupId && renderLineup(step.lineupId)}
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              ) : (
-                <p className="library-empty-note">
-                  No round steps yet. Edit this playbook to order calls, roles,
-                  and timing.
-                </p>
-              )}
-              <h4>Round plans</h4>
-              {selected.tacticIds.map(renderTactic)}
-              {!selected.tacticIds.length && (
-                <p className="library-empty-note">
-                  No saved tactics in this playbook yet. Edit it to add your
-                  round plans.
-                </p>
-              )}
-              <h4>Lineups</h4>
-              {selected.lineupIds.map(renderLineup)}
-              {!selected.lineupIds.length && (
-                <p className="library-empty-note">No saved lineups added.</p>
-              )}
+              <PlaybookPlayback key={selected.id} book={selected} tactics={tactics} lineups={allLineups}
+                guidesPending={linksLoading} />
+              {(selected.tacticIds.length > 0 || selected.lineupIds.length > 0) &&
+                <section className="planner-links" aria-label="Attached resources">
+                  {selected.tacticIds.length > 0 && <><h4>Linked tactics</h4>{selected.tacticIds.map(renderTactic)}</>}
+                  {selected.lineupIds.length > 0 && <><h4>Linked lineups</h4>{selected.lineupIds.map(renderLineup)}</>}
+                </section>}
               <div className="playbook-bottom-actions">
                 <div>
                   <button
@@ -1299,15 +1166,14 @@ export default function WorkspaceLibrary({
               <span>
                 <BookOpen size={36} strokeWidth={1.4} />
               </span>
-              <h3>A good plan is worth keeping.</h3>
+              <h3>Plan your first round</h3>
               <p>
-                Build a playbook from saved tactics, personal lineups, and team
-                calls. Import a shared playbook to restore its resources.
+                Start with the five-player Mirage A split, or create a playbook with your own roles and cues.
               </p>
-              <button className="primary-button" onClick={() => begin()}>
-                <FilePlus2 size={17} />
-                Create your first playbook
-              </button>
+              <div className="playbook-empty-actions">
+                <button className="primary-button" onClick={addExample} disabled={busy}><BookOpen size={17} />Add Mirage example</button>
+                <button className="secondary-button" onClick={() => begin()} disabled={busy}><FilePlus2 size={17} />Create blank playbook</button>
+              </div>
             </div>
           )}
         </div>

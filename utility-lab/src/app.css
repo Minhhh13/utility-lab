@@ -280,19 +280,6 @@ kbd {
   border-radius: 4px;
   color: #737d86;
 }
-.global-nav-copy { display: grid; gap: 1px; text-align: left; }
-.global-nav .global-nav-item:disabled,
-.global-nav .global-nav-item:disabled:hover,
-.phone-tabs button[role="tab"]:disabled { color: var(--muted); opacity: .6; cursor: default; }
-.global-nav .global-nav-item:disabled > svg { color: inherit; }
-.global-nav .global-nav-item:disabled::after,
-.phone-tabs button[role="tab"]:disabled::after { display: none; }
-.global-nav .global-nav-copy small { display: block; padding: 0; border-radius: 0; background: none; color: inherit; font-size: 11px; font-weight: 400; }
-.phone-tabs button:disabled { gap: 1px; }
-.phone-tabs button small { color: inherit; font-size: 11px; font-weight: 400; }
-.playbooks-coming-soon { display: flex; min-height: calc(100dvh - 130px); flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; color: var(--muted); text-align: center; }
-.playbooks-coming-soon h2 { margin: 0; color: var(--text); font-size: 28px; font-weight: 600; letter-spacing: -.025em; }
-.playbooks-coming-soon p { margin: 0; font-size: 14px; }
 .global-actions {
   display: flex;
   align-items: center;
@@ -1071,9 +1058,6 @@ dialog::backdrop {
     height: auto;
     min-height: 100%;
   }
-}
-.workspace-viewport .playbooks-coming-soon {
-  min-height: 100%;
 }
 .app-shell > .phone-tabs {
   flex-shrink: 0;

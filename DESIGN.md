@@ -4,7 +4,7 @@ Utility Lab pairs a planning studio with a distinct pixel-art entry. Its name re
 
 ## Surface roles
 
-The fullscreen launch is an **Experience** surface with three pixel recreations of Dust: original CS, Source and early CS:GO. The compact landscape selector belongs in the top bar. A slow 48-second drift, restrained light, three localized rising smoke wisps, two low sand gusts and drifting dust move only in the decorative scene; selected landscapes crossfade after decoding. Tactic board, Lineups and Stats remain available while artwork loads. Playbooks stays visible, greyed out and marked Coming soon. The Utility Lab identity leads without a marketing slogan or readiness phrase. Decorative motion stops while the page is hidden and becomes static under reduced motion.
+The fullscreen launch is an **Experience** surface with three pixel recreations of Dust: original CS, Source and early CS:GO. The compact landscape selector belongs in the top bar. A slow 48-second drift, restrained light, three localized rising smoke wisps, two low sand gusts and drifting dust move only in the decorative scene; selected landscapes crossfade after decoding. Tactic board, Lineups, Playbooks and Stats remain available while artwork loads. The Utility Lab identity leads without a marketing slogan or readiness phrase. Decorative motion stops while the page is hidden and becomes static under reduced motion.
 
 The workspaces are **Operate** surfaces. The map and the current task lead. Marketing heroes, decorative metrics, nested cards and tiny pseudo-technical labels do not belong in the editor.
 
@@ -42,7 +42,7 @@ The photo dialog uses nearly the full viewport, with safe-area gutters and compa
 
 Place Save/Unsave in the viewer header as a star, beside the ellipsis menu. The menu keeps Copy lineup link, Download lineup and Make my own close to the guide. Personal guides expose Edit personal lineup and Delete your lineup. Opening the personal form is an explicit editing action; it does not bring back a reference sidebar during normal browsing. Saving a personal guide returns to its viewer. Keep these actions in the native dialog's top layer, with keyboard focus, Escape/outside dismissal and narrow-screen fit.
 
-Playbooks is staged as **Coming soon**. Its Home destination and navigation tabs are grey and disabled; keyboard arrows skip it. Direct routes show a clean placeholder. Preserve existing data and backup/export models, with no editor or destructive migration. Stats remain active and describe the local workspace.
+Playbooks opens from Home, keyboard navigation and direct links. Rehearsal reuses the tactic-board radar and markers. Timed cues show the assigned player or the whole team. Each player can open an individual phone cue sheet. Stats describe the local workspace.
 
 Workspace settings collect backup, restore and offline-map actions in one place. Restore previews the import and explains that conflicts become copies. Storage messages must distinguish saved records, draft recovery and an exported file; a recovery mechanism is not a permanent backup.
 

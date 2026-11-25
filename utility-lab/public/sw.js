@@ -1,6 +1,6 @@
 // App assets plus a bounded cache of publisher photos the viewer has decoded.
 // No background catalogue fetch, video cache, polling, database or media proxy.
-const CACHE = "utility-lab-v16";
+const CACHE = "utility-lab-v17";
 const PHOTO_CACHE = "ul-viewed-photos-v1";
 const PHOTO_LIMIT = 12;
 const PHOTO_MAX_AGE = 7 * 24 * 60 * 60 * 1000;

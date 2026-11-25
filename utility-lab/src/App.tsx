@@ -34,6 +34,7 @@ const TacticBoard = lazy(() => import("./TacticBoard"));
 const Utilities = lazy(() => import("./Utilities"));
 const LaunchScreen = lazy(() => import("./LaunchScreen"));
 const WorkspaceLibrary = lazy(() => import("./WorkspaceLibrary"));
+const SharedCueSheet = lazy(() => import("./PlaybookPlayback").then(({ SharedCueSheet }) => ({ default: SharedCueSheet })));
 const WorkspaceSettings = lazy(() => import("./WorkspaceSettings"));
 const TacticShareDialog = lazy(() => import("./TacticShareDialog"));
 import WorkspaceBoundary from "./WorkspaceBoundary";
@@ -107,6 +108,7 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [mode, setMode] = useState("All maps");
   const [activeTab, setActiveTab] = useState<View>(readView);
+  const [playbookRoute, setPlaybookRoute] = useState(() => parseRoute(location.hash));
   const [openedTactic, setOpenedTactic] = useState<{
     record: SavedTactic;
     token: string;
@@ -323,18 +325,11 @@ export default function App() {
     document.documentElement.dataset.navigationInput = "keyboard";
     event.preventDefault();
     event.stopPropagation();
-    const available = navigation.map((item, itemIndex) => item.id === "playbooks" ? -1 : itemIndex).filter(itemIndex => itemIndex >= 0);
-    const position = available.indexOf(index);
-    const next = available[
-      event.key === "Home"
+    const next = event.key === "Home"
         ? 0
         : event.key === "End"
-          ? available.length - 1
-          : (position +
-              (event.key === "ArrowRight" ? 1 : -1) +
-              available.length) %
-            available.length
-    ];
+          ? navigation.length - 1
+          : (index + (event.key === "ArrowRight" ? 1 : -1) + navigation.length) % navigation.length;
     navigate(navigation[next].id);
     event.currentTarget.parentElement
       ?.querySelectorAll<HTMLButtonElement>('[role="tab"]')
@@ -384,6 +379,7 @@ export default function App() {
       }
       setShareRoute("");
       const route = parseRoute(location.hash);
+      setPlaybookRoute(route);
       setRouteLevelId(route.levelId);
       changeWorkspace(route.view);
       if (route.mapId) setMapId(route.mapId);
@@ -628,17 +624,14 @@ export default function App() {
               role="tab"
               aria-label={name}
               aria-selected={activeTab === id}
-              disabled={id === "playbooks"}
-              aria-describedby={id === "playbooks" ? "playbooks-desktop-status" : undefined}
-              title={id === "playbooks" ? "Coming soon" : undefined}
-              tabIndex={id !== "playbooks" && (activeTab === id || activeTab === "playbooks" && id === "board") ? 0 : -1}
+              tabIndex={activeTab === id ? 0 : -1}
               onKeyDown={(event) => navigateKey(event, index)}
               aria-controls="workspace"
               className={`global-nav-item${activeTab === id ? " is-active" : ""}`}
               onClick={() => navigate(id)}
             >
               <Icon size={17} />
-              <span className="global-nav-copy"><span>{name}</span>{id === "playbooks" && <small id="playbooks-desktop-status">Coming soon</small>}</span>
+              <span>{name}</span>
             </button>
           ))}
           <NavigationIndicator activeView={activeTab} />
@@ -811,10 +804,7 @@ export default function App() {
               role="tab"
               aria-label={name}
               aria-selected={activeTab === id}
-              disabled={id === "playbooks"}
-              aria-describedby={id === "playbooks" ? "playbooks-phone-status" : undefined}
-              title={id === "playbooks" ? "Coming soon" : undefined}
-              tabIndex={id !== "playbooks" && (activeTab === id || activeTab === "playbooks" && id === "board") ? 0 : -1}
+              tabIndex={activeTab === id ? 0 : -1}
               onKeyDown={(event) => navigateKey(event, index)}
               aria-controls="workspace"
               onClick={() => navigate(id)}
@@ -822,7 +812,6 @@ export default function App() {
             >
               <Icon size={16} />
               <span>{name}</span>
-              {id === "playbooks" && <small id="playbooks-phone-status">Coming soon</small>}
             </button>
           ))}
           <NavigationIndicator activeView={activeTab} />
@@ -900,16 +889,13 @@ export default function App() {
                 initialLevelId={routeLevelId}
                 onOpenLineup={openLineup}
               />
-            ) : activeTab === "playbooks" ? (
-              <section className="playbooks-coming-soon" aria-labelledby="playbooks-coming-soon-title">
-                <BookOpen size={32} strokeWidth={1.5} aria-hidden="true" />
-                <h2 id="playbooks-coming-soon-title">Playbooks</h2>
-                <p>Coming soon</p>
-              </section>
+            ) : activeTab === "playbooks" && playbookRoute.cueSheet !== undefined ? (
+              <SharedCueSheet key={playbookRoute.cueSheet} payload={playbookRoute.cueSheet} />
             ) : (
               <WorkspaceLibrary
                 key={activeTab}
                 view={activeTab}
+                initialBookId={playbookRoute.bookId}
                 onNavigate={navigate}
                 onOpenTactic={openSavedTactic}
                 onNotify={setNotice}

@@ -44,7 +44,7 @@ test("pointer tab switching moves one underline without changing the map frame",
   expect(await page.locator("svg.tb-map").evaluate(element=>element.getAnimations().length)).toBe(0);
 });
 
-test("keyboard navigation cancels pointer motion and skips the disabled tab instantly",async({page})=>{
+test("keyboard navigation cancels pointer motion and opens Playbooks instantly",async({page})=>{
   await page.goto("/#board");
   const nav=page.getByRole("tablist",{name:"Main navigation",exact:true});
   await nav.getByRole("tab",{name:"Stats",exact:true}).click();
@@ -55,7 +55,7 @@ test("keyboard navigation cancels pointer motion and skips the disabled tab inst
   await nav.getByRole("tab",{name:"Tactic board",exact:true}).press("ArrowRight");
   await expect(nav.getByRole("tab",{name:"Lineups",exact:true})).toHaveAttribute("aria-selected","true");
   await nav.getByRole("tab",{name:"Lineups",exact:true}).press("ArrowRight");
-  await expect(nav.getByRole("tab",{name:"Stats",exact:true})).toBeFocused();
+  await expect(nav.getByRole("tab",{name:"Playbooks",exact:true})).toBeFocused();
   await expect(page.locator("html")).toHaveAttribute("data-navigation-input","keyboard");
   expect(await page.evaluate(()=>(window as unknown as {tabMotionEvents:unknown[]}).tabMotionEvents)).toEqual([]);
   expect(await nav.locator(".nav-active-indicator").evaluate(element=>element.getAnimations().length)).toBe(0);

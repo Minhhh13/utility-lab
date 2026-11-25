@@ -14,6 +14,7 @@ export default defineConfig({
     "map-full-canvas.spec.ts",
     "origin-variants.spec.ts",
     "personal-lineup-targets.spec.ts",
+    "playbook-rehearsal.spec.ts",
   ],
   workers: 1,
   timeout: 45_000,

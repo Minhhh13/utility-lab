@@ -7,6 +7,7 @@ import {
   persistWorkspace,
 } from "../src/workspace-backup.ts";
 import { emptyPlan } from "../src/board-model.ts";
+import { createRoundSetup } from "../src/playbook-model.ts";
 const pixel =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jS1sAAAAASUVORK5CYII=";
 const storage = (seed: Record<string, string> = {}) => {
@@ -119,6 +120,7 @@ test("conflicting imports become copies and every round reference follows its im
       notes: "",
       tacticIds: [],
       lineupIds: ["lineup"],
+      round: createRoundSetup("vertigo", "lower"),
       steps: [
         {
           id: "step",
@@ -127,6 +129,8 @@ test("conflicting imports become copies and every round reference follows its im
           timing: "",
           notes: "",
           lineupId: "lineup",
+          playerId: "p4",
+          atSeconds: 20,
         },
       ],
     },
@@ -137,6 +141,11 @@ test("conflicting imports become copies and every round reference follows its im
   assert.equal(result.lineups[0].title, "Personal smoke");
   assert.equal(result.books[0].steps[0].lineupId, "new-lineup");
   assert.deepEqual(result.favorites, ["new-lineup"]);
+  const device = storage();
+  persistWorkspace(device, result);
+  const restored = parseWorkspaceBackup(JSON.parse(JSON.stringify(captureWorkspace(device))));
+  assert.deepEqual(restored.books[0].round, incoming.books[0].round);
+  assert.deepEqual(restored.books[0].steps[0], { ...incoming.books[0].steps[0], lineupId: "new-lineup" });
 });
 test("re-importing an identical backup is idempotent and preserves an existing map draft", () => {
   const current = blank();
@@ -182,4 +191,23 @@ test("an import cannot relink a missing payload to an unrelated local ID", () =>
   const next = mergeWorkspace(current, incoming, () => "missing-reference");
   assert.deepEqual(next.books[0].lineupIds, ["missing-reference"]);
   assert.equal(next.lineups.length, 1);
+});
+
+test("an import yields to a draft saved on another tab during photo conversion", () => {
+  const device = storage();
+  const initial: Record<string, string | null> = {};
+  const current = captureWorkspace(device, initial);
+  const incoming = blank();
+  const incomingPlan = emptyPlan("mirage", "main");
+  incoming.drafts = [{ format: "utility-lab-tactic", version: 1, plan: incomingPlan, mapImage: pixel }];
+  const merged = mergeWorkspace(current, incoming);
+  const key = "utility-lab:draft:v1:mirage:main";
+  const concurrent = JSON.stringify({ ...incomingPlan, name: "Fresh edits from another tab" });
+  device.setItem(key, concurrent);
+  assert.throws(() => persistWorkspace(device, merged, false, initial), /workspace changed/);
+  assert.deepEqual([...device.map.entries()], [[key, concurrent]]);
+  const retry: Record<string, string | null> = {};
+  const newCapture = captureWorkspace(device, retry);
+  persistWorkspace(device, mergeWorkspace(newCapture, incoming), false, retry);
+  assert.equal(captureWorkspace(device).drafts[0].plan.name, "Fresh edits from another tab");
 });

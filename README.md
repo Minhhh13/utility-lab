@@ -2,7 +2,7 @@
 
 Public website: **[utilitylab.au](https://utilitylab.au)**, hosted on Cloudflare Pages. Local development remains available at **http://127.0.0.1:5180**.
 
-A local-first Counter-Strike 2 planning workspace: tactic board, map-based photo/video lineups and local statistics, with Playbooks staged as Coming soon.
+A local-first Counter-Strike 2 workspace for tactic boards, map-based photo and video lineups, five-player round rehearsal and local statistics.
 
 ## Start the local release
 
@@ -33,7 +33,7 @@ Public releases use a verified filtered static artifact uploaded to Cloudflare P
 - The viewer's Save star and ellipsis menu preserve favorites, Copy lineup link, Download lineup and Make my own. Personal guides also expose Edit personal lineup and Delete your lineup; saving an edit reopens its viewer.
 - Lineups controls float over a larger map canvas, with responsive utility/filter docks. Photo zoom buttons sit together, and the mouse wheel or trackpad zooms around the pointer from 100–400%. The header has no Local workspace badge or green status dot.
 - A small **Suggest lineup** action stores up to 50 suggestions locally and exports JSON. It does not submit to a backend. Personal records and uploaded media retain their portable files and direct links.
-- Playbooks is greyed out and marked **Coming soon**. Existing round-plan data remains in local storage and workspace backups.
+- **Playbooks** assigns five players roles and timed cues. Open **Add Mirage example** to rehearse a complete round, scrub the radar and open a cue sheet for each player. Export and import a playbook to transfer its linked resources.
 - Filtered local statistics, four accent palettes, Light/Dark/System appearance, workspace backups and an all-maps offline action.
 - A compact **Display settings** menu groups In-game view, persistent **Auto / 16:9 / 4:3** desktop frames and **Hide top bar**. A floating 44px **Show top bar** control restores the header. Narrow phones fit automatically; map geometry and editing state stay intact. Home stays full-screen; the saved ratio applies to the working tabs.
 - A responsive web app and a prepared Capacitor iOS project. The native project has not been compiled or signed.

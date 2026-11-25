@@ -2,7 +2,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { emptyPlan } from "../src/board-model.ts";
 import { UTILITY_REFERENCES } from "../src/utility-data.ts";
-import { createPlaybookFile, mergePlaybookFile, parsePlaybookFile, persistPlaybookImport, validatePlaybook, validatePlaybooks, type Playbook } from "../src/playbook-model.ts";
+import {
+  createPlaybookFile, createRoundSetup, getRoundPlan, MAX_CUE_SECONDS, mergePlaybookFile,
+  parsePlaybookFile, persistPlaybookImport, PLAYBOOK_DRAFT_KEY, readPlaybookDraft,
+  validatePlaybook, validatePlaybooks, type Playbook,
+} from "../src/playbook-model.ts";
 
 const tactic = { id: "plan-1", updatedAt: "2026-11-09T00:00:00Z", plan: emptyPlan("mirage", "main") };
 const lineup = { ...UTILITY_REFERENCES[0], id: "lineup-1", userCreated: true };
@@ -37,6 +41,65 @@ test("portable playbooks restore payloads and ordered links without overwriting 
   assert.equal(result.lineups.find((item) => item.id === step.lineupId)?.title, lineup.title);
   assert.equal(result.missingReferences, 0);
   assert.equal(book.steps[0].tacticId, tactic.id);
+});
+
+test("legacy timing and explicit slots become a rehearsal timeline without changing the original", () => {
+  const steps = [
+    { ...book.steps[0], role: "Support · Player 3", timing: "1:35 · On the call" },
+    { ...book.steps[0], id: "s2", role: "Support", timing: "When the site is clear" },
+    { ...book.steps[0], id: "s3", role: "Team", timing: "1:30" },
+  ];
+  const old = { ...book, steps };
+  const linked = { ...tactic, plan: emptyPlan("nuke", "lower") };
+  const result = getRoundPlan(old, [linked]);
+  assert.deepEqual(result.steps.map((step) => step.atSeconds), [20, 25, 25]);
+  assert.deepEqual(result.steps.map((step) => step.playerId), ["p3", undefined, undefined]);
+  assert.deepEqual(result.steps.map((step) => step.timing), old.steps.map((step) => step.timing));
+  assert.deepEqual(result.round, createRoundSetup("nuke", "lower"));
+  assert.equal(result.round.players.length, 5);
+  assert.equal("round" in old, false);
+  assert.equal("atSeconds" in old.steps[0], false);
+});
+
+test("five-player round files preserve cues and collect links made directly on a cue", () => {
+  const round = createRoundSetup("vertigo", "lower");
+  round.players[3] = { id: "p4", name: "Lee", role: "Support" };
+  const cue = { ...book.steps[0], playerId: "p4" as const, atSeconds: 0 };
+  const plan = { ...book, round, steps: [cue], tacticIds: [], lineupIds: [] };
+  const file = parsePlaybookFile(JSON.parse(JSON.stringify(createPlaybookFile(plan, [tactic], [lineup]))));
+  assert.deepEqual(file.book.round, round);
+  assert.deepEqual(file.book.steps, [cue]);
+  assert.deepEqual(file.tactics.map((item) => item.id), [tactic.id]);
+  assert.deepEqual(file.lineups.map((item) => item.id), [lineup.id]);
+  assert.deepEqual(getRoundPlan(file.book).steps, [cue]);
+});
+
+test("invalid round floors, duplicate slots, oversized labels and out-of-range cues reject the whole plan", () => {
+  const round = createRoundSetup("nuke");
+  const player = round.players[0];
+  for (const invalid of [
+    null, { ...round, mapId: "unknown" }, { ...round, levelId: "main" },
+    { ...round, players: round.players.slice(0, 4) },
+    { ...round, players: [player, ...round.players.slice(0, 4)] },
+    { ...round, players: [{ ...player, name: "x".repeat(61) }, ...round.players.slice(1)] },
+  ]) assert.equal(validatePlaybook({ ...book, round: invalid }), null);
+  for (const invalid of [
+    { playerId: "p6" }, { atSeconds: -1 }, { atSeconds: Infinity }, { atSeconds: 0.5 },
+    { atSeconds: "20" }, { atSeconds: MAX_CUE_SECONDS + 1 },
+  ]) assert.equal(validatePlaybook({ ...book, round, steps: [{ ...book.steps[0], ...invalid }] }), null);
+  assert.equal(validatePlaybook({ ...book, round, steps: [{ ...book.steps[0], atSeconds: MAX_CUE_SECONDS }] })?.steps[0].atSeconds, MAX_CUE_SECONDS);
+});
+
+test("draft recovery keeps unfinished times, empty titles, the full roster and cue-only links", () => {
+  const round = createRoundSetup();
+  for (const time of [0, undefined, -1, 0.5, MAX_CUE_SECONDS + 1]) {
+    const raw = {
+      ...book, name: "", editingId: book.id, round, tacticIds: [], lineupIds: [],
+      steps: [{ ...book.steps[0], title: "", playerId: "p1", ...(time === undefined ? {} : { atSeconds: time }) }],
+    };
+    const recovered = readPlaybookDraft({ getItem: (key) => key === PLAYBOOK_DRAFT_KEY ? JSON.stringify(raw) : null });
+    assert.deepEqual(recovered, raw);
+  }
 });
 
 test("identical records and bundled reference payloads are reused rather than using personal capacity", () => {

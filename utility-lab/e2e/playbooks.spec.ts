@@ -1,8 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
-// The editor is retained for development, but the user has made Playbooks a
-// disabled Coming soon feature. Public availability is covered separately.
-test.skip(true, "Playbooks editor is staged behind the Coming soon placeholder.");
 const photo = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=";
 const tactic = { id: "local-plan", updatedAt: "2026-11-09T00:00:00Z", plan: { version: 1, mapId: "mirage", levelId: "main", name: "Mirage local plan", side: "T", notes: "Trade.", illustrative: false, objects: [{ id: "smoke", kind: "smoke", x: 500, y: 500 }] } };
 const lineup = { id: "local-lineup", mapId: "nuke", levelId: "lower", side: "CT", type: "Smoke", title: "Nuke lower personal smoke", from: "Ramp", target: "Decon", purpose: "Practice retake", throwType: "Both buttons (LMB + RMB)", steps: ["Use my uploaded standing reference."], x: 500, y: 500, userCreated: true, photos: [{ image: photo, caption: "Standing position" }] };
@@ -21,29 +18,40 @@ test("playbook round sequence recovers on reload, edits, duplicates and opens th
   await page.getByRole("button", { name: "New playbook", exact: true }).click();
   await page.getByLabel("Playbook name", { exact: true }).fill("Team round calls");
   await page.getByLabel("Team notes", { exact: true }).fill("Wait for the support call.");
-  await page.getByRole("checkbox", { name: /Mirage local plan/ }).check();
-  await page.getByRole("checkbox", { name: /Nuke lower personal smoke/ }).check();
-  await page.getByRole("button", { name: "Add round step", exact: true }).click();
-  await page.getByLabel("Step 1 title", { exact: true }).fill("Throw the retake smoke");
-  await page.getByLabel("Step 1 role", { exact: true }).fill("Support");
-  await page.getByLabel("Step 1 timing", { exact: true }).fill("On the call");
-  await page.getByLabel("Step 1 lineup", { exact: true }).selectOption(lineup.id);
-  await page.getByRole("button", { name: "Add round step", exact: true }).click();
-  await page.getByLabel("Step 2 title", { exact: true }).fill("Take space together");
-  await page.getByLabel("Step 2 tactic", { exact: true }).selectOption(tactic.id);
-  await page.getByRole("button", { name: "Move step 2 up", exact: true }).click();
+  await page.getByLabel("Player 4 name", { exact: true }).fill("Sam");
+  await page.getByLabel("Player 4 role", { exact: true }).fill("Support");
+  await page.getByRole("button", { name: "Add cue", exact: true }).click();
+  await page.getByLabel("Cue 1 call", { exact: true }).fill("Throw the retake smoke");
+  await page.getByLabel("Cue 1 player", { exact: true }).selectOption("p4");
+  await page.getByLabel("Cue 1 elapsed seconds", { exact: true }).fill("12");
+  await page.getByLabel("Cue 1 trigger", { exact: true }).fill("On the call");
+  await page.getByLabel("Cue 1 lineup", { exact: true }).selectOption(lineup.id);
+  await page.getByRole("button", { name: "Add cue", exact: true }).click();
+  await page.getByLabel("Cue 2 call", { exact: true }).fill("Take space together");
+  await page.getByLabel("Cue 2 elapsed seconds", { exact: true }).fill("4");
+  await page.getByLabel("Cue 2 tactic", { exact: true }).selectOption(tactic.id);
+  await page.getByRole("button", { name: "Move cue 2 up", exact: true }).click();
   await page.reload();
-  await expect(page.getByLabel("Step 1 title", { exact: true })).toHaveValue("Take space together");
-  await expect(page.getByLabel("Step 2 lineup", { exact: true })).toHaveValue(lineup.id);
+  await expect(page.getByLabel("Cue 1 call", { exact: true })).toHaveValue("Take space together");
+  await page.getByRole("button", { name: /Edit cue 2/ }).click();
+  await expect(page.getByLabel("Cue 2 lineup", { exact: true })).toHaveValue(lineup.id);
+  await expect(page.getByLabel("Cue 2 elapsed seconds", { exact: true })).toHaveValue("12");
+  await expect(page.getByLabel("Cue 2 player", { exact: true })).toHaveValue("p4");
   await page.getByRole("button", { name: "Save playbook", exact: true }).click();
-  await expect(page.locator(".round-sequence h5")).toHaveText(["Take space together", "Throw the retake smoke"]);
+  await expect(page.getByRole("link", { name: "Open Sam’s cue sheet" })).toBeVisible();
   await page.getByRole("button", { name: "Duplicate", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Team round calls (copy)", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Edit playbook", exact: true }).click();
   await page.getByLabel("Playbook name", { exact: true }).fill("Retake practice");
   await page.getByRole("button", { name: "Save playbook", exact: true }).click();
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("utility-lab:playbooks:v1")!).length)).toBe(2);
-  await page.locator(".playbook-content > .playbook-lineup").click();
+  await page.getByRole("complementary", { name: "Your playbooks" }).getByRole("button", { name: /Team round calls/ }).click();
+  await page.getByRole("link", { name: "Open Sam’s cue sheet" }).click();
+  const sheet = page.getByRole("region", { name: "Player cue sheet" });
+  await expect(sheet.getByText("On the call", { exact: true })).toBeVisible();
+  await sheet.getByRole("link", { name: "Playbooks", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Team round calls", exact: true })).toBeVisible();
+  await page.getByRole("region", { name: "Attached resources" }).getByRole("button", { name: /Nuke lower personal smoke/ }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(page.getByRole("dialog").getByRole("heading", { name: lineup.title, exact: true })).toBeVisible();
   await expect(page.getByRole("dialog").getByAltText("Standing position", { exact: true })).toBeVisible();
@@ -83,10 +91,21 @@ test("portable import remaps conflicts, exports real photos, and shows missing l
   expect(exported.lineups[0].photos[0].caption).toBe("Standing position");
   await page.getByLabel("Import playbook JSON", { exact: true }).setInputFiles({ name: "missing.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ ...payload, book: { ...payload.book, id: "missing-book", name: "Missing resources" }, tactics: [], lineups: [] })) });
   await expect(page.getByRole("heading", { name: "Missing resources", exact: true })).toBeVisible();
-  await expect(page.locator(".playbook-content > .library-missing")).toHaveCount(2);
+  await expect(page.getByRole("region", { name: "Attached resources" }).locator(".library-missing")).toHaveCount(2);
   await page.getByLabel("Import playbook JSON", { exact: true }).setInputFiles({ name: "bad.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ ...payload, lineups: [{ ...lineup, photos: [{ image: "ul-media:other-device", caption: "Missing" }] }] })) });
   await expect(page.getByRole("alert")).toContainText("device-only image references");
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("utility-lab:playbooks:v1")!).length)).toBe(2);
+  await page.getByLabel("Import playbook JSON", { exact: true }).setInputFiles({
+    name: "roundtrip.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(exported)),
+  });
+  await expect(page.getByRole("heading", { name: "Imported execute", exact: true })).toBeVisible();
+  const afterReimport = await page.evaluate(() => ({
+    books: JSON.parse(localStorage.getItem("utility-lab:playbooks:v1")!),
+    lineups: JSON.parse(localStorage.getItem("utility-lab:utilities:v1")!),
+  }));
+  expect(afterReimport.books).toHaveLength(3);
+  expect(afterReimport.lineups).toHaveLength(2);
+  expect(afterReimport.books[0].steps[0].lineupId).toBe(importedLineup.id);
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
   await page.screenshot({ path: "outputs/overhaul/playbook-import-complete-390.png", fullPage: true });

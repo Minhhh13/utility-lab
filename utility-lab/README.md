@@ -2,7 +2,7 @@
 
 Public website: **[utilitylab.au](https://utilitylab.au)**, hosted on Cloudflare Pages. Local development remains at **http://127.0.0.1:5180**.
 
-A local-first Counter-Strike 2 planning app for desktop and phone-sized screens, with a compact in-game view, a fullscreen pixel-art entry, a tactic board, map-based lineups and local statistics. Playbooks is staged as Coming soon.
+A local-first Counter-Strike 2 planning app for desktop and phone-sized screens, with a compact in-game view, a fullscreen pixel-art entry, a tactic board, map-based lineups, five-player Playbooks and local statistics.
 
 Home offers six backgrounds. Choose a classic Dust scene, Dunes at sunset, Foundry at dusk or Temple gardens from the Landscape control. It remembers your selection and loads the selected artwork on demand. A brief highlight shows which workspace you returned from. Keyboard navigation restores focus to that workspace. Reduced motion keeps the scene still, and switching away pauses the background.
 
@@ -66,7 +66,7 @@ Direct lineup links retain map, level, side and record selection. A personal lin
 
 Creator demonstrations are not independent validation against the current game build; map pins identify target callout areas. Source dates, evidence and limitations are documented separately from the short in-app instructions. See [creator sources and content limits](docs/lineup-sources.md).
 
-**Playbooks.** Marked **Coming soon** and greyed out on Home and in navigation. Direct links show a placeholder. Existing plans, linked records, models and portable backup data are retained for development; the editor is not exposed in this release.
+**Playbooks.** Create a playbook or use **Add Mirage example**. Name five players, assign roles and add team or individual cues in seconds from round start. Cues can link to a saved tactic or lineup. Play or scrub the rehearsal, then open a player’s cue sheet to copy its link or save it as text. On a phone, use a link from an address the phone can reach. For local testing, start the launcher with `-LAN` and use its printed network address on the desktop when copying links. **Export playbook** and **Import playbook** transfer the editable round, including saved tactics and personal lineup media. Workspace backups also include playbooks.
 
 **Stats.** Filter saved workspace counts and coverage by map, side and utility. Map/side scope tactics and lineups; utility scopes lineups and placements. Playbooks shows the device total. The figures come from browser records, not Steam/FACEIT match history or player performance.
 
