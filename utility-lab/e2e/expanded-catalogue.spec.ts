@@ -12,6 +12,8 @@ test('DustII molly browsing has multiple registered choices and opens standing p
  await page.locator('.ul-map-marker').first().click();await waitForUtilityChoice(page,{allowUtilitySkip:true});await expect(page.getByRole('dialog',{name:'Choose utility',exact:true})).toHaveCount(0);await chooseLandingSpot(page);await openOriginPhoto(page);
  const viewer=page.locator('.ul-media-dialog');await expect(viewer).toBeVisible();await expect(viewer.getByRole('button',{name:/^Photos/})).toHaveAttribute('aria-pressed','true');
  await expect(viewer.locator('.ul-photo-kind')).toHaveText('Position');await expect(viewer.locator('video,iframe')).toHaveCount(0);await expect(viewer.getByRole('button',{name:'Video',exact:true})).toBeEnabled();await expect(viewer.locator('.ul-viewer-keys')).toContainText(/LMB|left/i);
+ await viewer.getByRole('button',{name:'Next photo',exact:true}).click();
+ await expect(viewer.getByRole('button',{name:'Step 2: First-person standing view',exact:true})).toHaveAttribute('aria-pressed','true');
  await viewer.getByRole('button',{name:'Next photo',exact:true}).click();await expect(viewer.locator('.ul-photo-kind')).toHaveText('Aim');
 });
 

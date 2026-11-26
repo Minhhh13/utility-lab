@@ -33,6 +33,7 @@ utility-lab/scripts/*
 !utility-lab/scripts/serve-local.mjs
 !utility-lab/scripts/package-local.mjs
 !utility-lab/scripts/prepare-cloudflare.mjs
+!utility-lab/scripts/report-catalogue.mjs
 utility-lab/.openai/
 utility-lab/.sites-runtime/
 utility-lab/cloudflare-env.d.ts

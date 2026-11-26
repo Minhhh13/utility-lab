@@ -1,6 +1,6 @@
 # Expanded lineup catalogue
 
-Generated **2026-11-25**. The app lazy-loads a local JSON catalogue for the selected map, normalizes its records, then runs `mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded)`. Current generated files contribute **1,554 rows**; after the same merge, the complete catalogue contains **1,558 rows / 1,478 unique source pages**. Exact source-and-side matches preserve established lineup IDs.
+Generated **2026-11-26**. The app lazy-loads a local JSON catalogue for the selected map, normalizes its records, then runs `mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded)`. Current generated files contribute **1,554 rows**; after the same merge, the complete catalogue contains **1,558 rows / 1,478 unique source pages**. Exact source-and-side matches preserve established lineup IDs.
 
 Main browsing exposes all **1,558 guides**, including every matching origin recipe and numbered spawn. A **1,283-record preference subset** orders the quiet overview; its up-to-four preference per target, floor, side and utility does not limit landing or standing availability. The UI restores the complete matching catalogue before map grouping. Simpler throws and distinct standing areas rank first, while shared standing pins open a visual map chooser in pages of eight. Singleton standing recipes open directly.
 
@@ -36,14 +36,16 @@ A zero denotes a source gap for that floor, side and utility. The map-wide matri
 
 ## Media inventory
 
+Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim** and **Landing**. **1,555** guides have stills or a registered standing map for all four steps. The other **3** open their source video for the starting view. The walkthroughs use 6,450 distinct images and 2,134 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
+
 - Position + Aim + matching video: 1,558 of 1,558 published rows.
-- Photo references: 5,067; unique image resources: 4,797 (4,417 remote, 380 local).
+- Original gallery photo references: 5,067; unique image resources: 4,797 (4,417 remote, 380 local).
 - Position references: 1,558 / 1,478 unique images; Aim references: 2,134 / 2,023 unique images.
 - Native primary videos: 752 rows / 714 unique files.
 - YouTube primary videos: 806 rows / 761 unique video IDs.
 - All primary videos: 1,475 unique clips / 1,475 distinct configured start segments.
 - Same-guide fallback links: 564 rows / 526 unique clips. Primary and fallback together reference 2,001 unique clips.
-- Offline BUNDLED_GUIDE_PHOTOS: 482 listed files, 107,618,070 bytes; 482 exist.
+- Offline BUNDLED_GUIDE_PHOTOS: 2,069 listed files, 171,559,750 bytes; 2,069 exist.
 
 Source-hosted HTTPS images and clips remain online resources. Only bundled local images belong to the explicit offline photo pack. A separate browser cache reuses at most 12 successfully viewed publisher photos for seven days, and only the next adjacent slide is warmed after the current image loads. No database, image proxy, video download or whole-catalogue media prefetch is added. See [image caching](image-caching.md). Some local images are exact stills extracted from the corresponding public video; their source and timestamp evidence are retained in the research manifests. Slide references, original image files and actual video resources have separate counts to avoid treating panels or repeated T/CT rows as new captures.
 

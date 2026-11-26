@@ -147,6 +147,7 @@ export default function App() {
   const [workspaceSize, setWorkspaceSize] = useState({ width: 0, height: 0 });
   const [notice, setNotice] = useState<string | null>(null);
   const mapsDialog = useRef<HTMLDialogElement>(null);
+  const mapGrid = useRef<HTMLElement>(null);
   const helpDialog = useRef<HTMLDialogElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   const appearanceMenu = useRef<HTMLDetailsElement>(null);
@@ -193,6 +194,21 @@ export default function App() {
         (mode === "Active Duty" ? map.activeDuty : map.faceit)),
   );
 
+  useLayoutEffect(() => {
+    const grid = mapGrid.current;
+    if (!grid) return;
+    const updateEdges = () => {
+      grid.toggleAttribute("data-scroll-before", grid.scrollTop > 1);
+      grid.toggleAttribute("data-scroll-after", grid.clientHeight > 0 && grid.scrollTop + grid.clientHeight < grid.scrollHeight - 1);
+    };
+    grid.scrollTop = 0;
+    updateEdges();
+    const observer = new ResizeObserver(updateEdges);
+    observer.observe(grid);
+    grid.addEventListener("scroll", updateEdges, { passive: true });
+    return () => { observer.disconnect(); grid.removeEventListener("scroll", updateEdges); };
+  }, [query, mode]);
+
   function toggleHeader(hidden: boolean) {
     displayMenu.current?.removeAttribute("open");
     appearanceMenu.current?.removeAttribute("open");
@@ -203,6 +219,7 @@ export default function App() {
   function openMaps() {
     setQuery("");
     mapsDialog.current?.showModal();
+    if (mapGrid.current) mapGrid.current.scrollTop = 0;
     requestAnimationFrame(() => searchInput.current?.focus());
   }
   function chooseMap(id: string) {
@@ -984,7 +1001,7 @@ export default function App() {
             CS2 <span className="meta-dot" /> Competitive pool
           </span>
         </div>
-        <nav className="map-grid" aria-label="Choose map">
+        <nav className="map-grid" ref={mapGrid} tabIndex={0} aria-label="Choose map">
           {visibleMaps.map((map) => (
             <button
               className={`map-tile${selectedMap.id === map.id ? " is-selected" : ""}`}

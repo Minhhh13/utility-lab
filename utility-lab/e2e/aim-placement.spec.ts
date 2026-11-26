@@ -4,9 +4,10 @@ import { utilityPhotos, type UtilityReference } from "../src/utility-data";
 import { withAimPlacement } from "../src/aim-placement";
 
 test.use({ serviceWorkers: "block" });
-const generated: UtilityReference[] = ["ancient", "anubis", "cache", "nuke"].flatMap(map =>
+const generated: UtilityReference[] = ["ancient", "anubis", "cache", "mirage", "nuke"].flatMap(map =>
   JSON.parse(readFileSync(new URL(`../src/data/expanded/${map}.json`, import.meta.url), "utf8")));
 const ids = [
+  "expanded-cs2tricks-mirage-window-from-back-alley-61ab-t",
   "expanded-cs2tricks-ancient-b-alley-from-ruins-6af7-t",
   "expanded-cs2tricks-anubis-heaven-from-water-d678-t",
   "expanded-cs2nades-nuke-b-retake-flash-ambxvjoxmg8",
@@ -89,7 +90,13 @@ for (const guide of guides) {
     const photos = utilityPhotos(withAimPlacement(guide));
     for (const [index, photo] of photos.entries()) {
       if (!photo.aimPoint) continue;
-      await viewer.getByRole("group", { name: "Choose lineup photo", exact: true }).getByRole("button").nth(index).click();
+      const chooser = viewer.getByRole("group", { name: "Choose lineup photo", exact: true });
+      await chooser.getByRole("button", { name: "Step 3: First-person aim", exact: true }).click();
+      const views = photos.filter(p => p.kind === "aim" || p.kind === "release");
+      const subview = views.indexOf(photo);
+      if (subview > 0) {
+        await viewer.getByRole("group", { name: "Where to aim photos", exact: true }).getByRole("button").nth(subview).click();
+      }
       await aligned(viewer, guide, index);
       await page.screenshot({ path: testInfo.outputPath(`aim-${index}-desktop.png`) });
       await viewer.getByRole("button", { name: "Zoom in photo", exact: true }).click();

@@ -1,13 +1,46 @@
 import type { UtilityPhoto, UtilityReference } from "./utility-data.ts";
 
 const center = { x: 0.5, y: 0.5 };
-// These original captures have a visible, reviewed camera-centre reticle.
+// Exact source assets whose baked-in reticles have been checked at full resolution.
 // A portrait source retains full-image coordinates even when a panel is shown.
-const reviewedImages = new Set([
+const centeredImages = new Set([
   "https://gonade.app/images/maps/webp/3038/lineup1.webp?v=1784807957",
   "https://gonade.app/images/maps/webp/1008/lineup1.webp?v=1784807938",
   "/lineup-media/source-video-stills/cache-completions/nart-boost-he-aim.jpg",
   "/lineup-media/source-video-stills/cs2nades/nuke/b-retake-flash-aim-7000ms.jpg",
+  "https://gonade.app/images/maps/webp/3039/lineup1.webp?v=1784807957",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1bf7d1a4cd08-garage-from-outside-t-spawn-aim-4500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-91afe651d426-t-blue-boxes-from-ct-spawn-aim-4500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-a43aa7dbae78-heaven-from-silo-aim-5500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-e17236b24d3e-garage-from-t-spawn-aim-3500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1cd37f5bc35a-outside-garage-from-t-spawn-aim-9000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-5f786af83ef9-heaven-from-a-site-aim-5500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-43a71749dfc8-top-a-main-from-t-spawn-aim-4500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-30436a1163c6-outside-heaven-from-t-spawn-aim-7000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-1b3d4c065d60-top-a-main-from-silo-aim-4500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-d9705b6c9716-heaven-from-tetris-aim-9000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-589895309854-tetris-from-squeaky-aim-7000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-a22621a2d6dd-vent-from-outside-lobby-aim-9000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-ae3d208f448f-secret-far-from-under-silo-aim-3500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-65252c63f56a-heaven-from-t-spawn-aim-5500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-ab7aa245defa-lockers-from-red-aim-7000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-953b039b3932-vent-from-t-spawn-aim-10000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-638e9956b5d3-outside-from-roof-aim-4500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-smoke-06ffdba358b5-top-a-main-from-t-spawn-aim-4500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-b3f09459ad30-ramp-from-trophy-room-aim-3500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-0a9c896c653c-outside-from-a-site-aim-5500ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-flashbang-f9e03cfe1f96-silooutside-from-a-site-aim-13000ms.jpg",
+  "/lineup-media/source-video-stills/csnades/nuke/community-he-bae7574f2486-silo-from-rafters-aim-7000ms.jpg",
+  "https://gonade.app/images/maps/webp/1014/lineup1.webp?v=1784807939",
+  "https://media.nadesdb.com/media/c3095046-7833-4dbd-8cf3-a2b488b58dee.webp",
+]);
+
+// Camera edits in these four video frames move the reticle away from the midpoint.
+const offsetImages = new Map<string, {x: number; y: number}>([
+  ["/lineup-media/source-video-stills/csnades/nuke/community-smoke-f83f1ca67510-outside-heaven-from-under-silo-aim-5500ms.jpg", {x: 975 / 1920, y: 561 / 1080}],
+  ["/lineup-media/source-video-stills/csnades/nuke/community-smoke-7bd14c78b6e8-top-silo-from-ct-spawn-aim-2500ms.jpg", {x: 961 / 1920, y: 540 / 1080}],
+  ["/lineup-media/source-video-stills/csnades/nuke/community-smoke-0f1f228313c0-garage-from-t-spawn-aim-7000ms.jpg", {x: 957 / 1920, y: 540 / 1080}],
+  ["/lineup-media/source-video-stills/csnades/nuke/community-smoke-f79c31cb119f-heaven-from-t-roof-aim-18000ms.jpg", {x: 639 / 1280, y: 360 / 720}],
 ]);
 
 function publisher(url: string | undefined) {
@@ -41,8 +74,8 @@ export function withAimPlacement<T extends UtilityReference>(record: T): T {
       provider === "csnades" && index === 0 &&
         /^https:\/\/assets\.csnades\.gg\/nades\/[a-zA-Z0-9_-]+\/lineup\.webp$/.test(photo.image)
     );
-    if (!sourceCamera && !reviewedImages.has(photo.image)) return photo;
-    return { ...photo, aimPoint: { ...center } };
+    const point = offsetImages.get(photo.image) ?? (sourceCamera || centeredImages.has(photo.image) ? center : undefined);
+    return point ? { ...photo, aimPoint: { ...point } } : photo;
   });
   // Keep the same ordering as utilityPhotos(): source photos, then personal.
   const remotePhotos = annotate(record.remotePhotos);

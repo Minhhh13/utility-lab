@@ -35,7 +35,7 @@ async function verifyPhoto(page:Page,record:UtilityReference,camera:string){
   expect(await page.evaluate(()=>new URLSearchParams(location.hash.split("?")[1]).get("lineup"))).toBe(record.id);
   await expect(page.locator(".ul-map-svg")).toHaveAttribute("viewBox",camera);
 }
-async function choicesOnEveryPage(panel:Locator,personal=false){
+async function choicesOnEveryPage(panel:Locator,personal=false,expectedSources=new Map<string,{x:number;y:number}>()){
   const ids:string[]=[];
   for(;;){
     const options=panel.locator(".ul-origin-choice-option");
@@ -45,6 +45,42 @@ async function choicesOnEveryPage(panel:Locator,personal=false){
     }));
     expect(actual.length).toBeGreaterThan(0);expect(actual.length).toBeLessThanOrEqual(8);
     for(const option of actual){expect(option.height).toBeGreaterThanOrEqual(44);expect(option.width).toBeGreaterThanOrEqual(44);expect(option.hit,option.id).toBe(true);ids.push(option.id);}
+    if(await panel.getAttribute("data-inset")==="spokes"){
+      const rendered=await panel.evaluate(node=>{
+        const buttons=[...node.querySelectorAll<HTMLElement>(".ul-origin-choice-option")];
+        const crop=node.querySelector<SVGSVGElement>(".ul-origin-choice-preview")!.getScreenCTM()!.inverse();
+        const wires=[...node.querySelectorAll<SVGLineElement>("line[data-recipe-id]")].map(line=>{
+          const id=line.dataset.recipeId!;
+          const matrix=line.getScreenCTM()!;
+          const start=new DOMPoint(line.x1.baseVal.value,line.y1.baseVal.value).matrixTransform(matrix);
+          const end=new DOMPoint(line.x2.baseVal.value,line.y2.baseVal.value).matrixTransform(matrix);
+          const source=start.matrixTransform(crop);
+          const button=buttons.find(item=>item.dataset.lineupId===id)!;
+          const disc=button.querySelector(".ul-origin-choice-disc")!.getBoundingClientRect();
+          const caption=button.querySelector(".ul-origin-choice-label")!.getBoundingClientRect();
+          const captionHit=document.elementFromPoint(caption.x+caption.width/2,caption.y+caption.height/2)?.closest("button")===button;
+          let obstruction="";
+          const samples=Math.ceil(Math.hypot(start.x-end.x,start.y-end.y));
+          for(let n=0;n<samples;n++){
+            const t=n/samples;
+            const hit=document.elementFromPoint(start.x+(end.x-start.x)*t,start.y+(end.y-start.y)*t);
+            const other=hit?.closest<HTMLElement>(".ul-origin-choice-option");
+            if(other && (other!==button || hit?.closest(".ul-origin-choice-label"))){ obstruction=other.dataset.lineupId!;break; }
+          }
+          return{id,source:{x:source.x,y:source.y},endError:Math.hypot(end.x-disc.x-disc.width/2,end.y-disc.y-disc.height/2),captionHit,obstruction};
+        });
+        return{wires,dots:node.querySelectorAll(".ul-origin-choice-source").length};
+      });
+      expect(rendered.wires.map(wire=>wire.id)).toEqual(actual.map(option=>option.id));
+      expect(rendered.dots).toBe(new Set(rendered.wires.map(wire=>`${wire.source.x},${wire.source.y}`)).size);
+      for(const wire of rendered.wires){
+        expect(wire.endError,wire.id).toBeLessThan(.75);
+        expect(wire.captionHit,wire.id).toBe(true);
+        expect(wire.obstruction,wire.id).toBe("");
+        const original=expectedSources.get(wire.id);
+        if(original){expect(wire.source.x).toBeCloseTo(original.x,2);expect(wire.source.y).toBeCloseTo(original.y,2);}
+      }
+    }
     const more=panel.getByRole("button",{name:personal?"More lineups":"More throws",exact:true});
     if(!(await more.count())||!(await more.isEnabled()))break;
     await more.click();
@@ -118,7 +154,8 @@ test("Dust II Mid Doors exposes every existing T recipe on source-backed non-ove
   }
   const index=groups.findIndex(group=>group.ids.length>1);expect(index).toBeGreaterThanOrEqual(0);
   await pins(page).nth(index).click();await expect(popup(page)).toBeVisible();
-  expect(await choicesOnEveryPage(popup(page))).toEqual(groups[index].ids);
+  const sources=new Map(dustRows.map(record=>[record.id,findLineupOrigin(record,lookup)!]));
+  expect(await choicesOnEveryPage(popup(page),false,sources)).toEqual(groups[index].ids);
   const id=(await popup(page).locator(".ul-origin-choice-option").last().getAttribute("data-lineup-id"))!;
   await popup(page).locator(".ul-origin-choice-option").last().click();
   await verifyPhoto(page,dustRows.find(row=>row.id===id)!,camera);
@@ -193,7 +230,7 @@ test.describe("320px origin recipe popup",()=>{
     await page.keyboard.press("Home");await expect(options.first()).toBeFocused();await page.keyboard.press("ArrowRight");await expect(options.nth(1)).toBeFocused();
     await page.keyboard.press("Escape");await expect(popup(page)).toHaveCount(0);await expect(pin).toBeFocused();
     await pin.press("Enter");
-    expect((await choicesOnEveryPage(popup(page),true)).sort()).toEqual(records.map(row=>row.id).sort());
+    expect((await choicesOnEveryPage(popup(page),true,new Map(records.map(record=>[record.id,record])))).sort()).toEqual(records.map(row=>row.id).sort());
     await expect(page.locator(".ul-map-svg")).toHaveAttribute("viewBox",camera);
     const chosenId=await popup(page).locator('[data-lineup-id]').last().getAttribute('data-lineup-id');
     const chosen=records.find(record=>record.id===chosenId)!;

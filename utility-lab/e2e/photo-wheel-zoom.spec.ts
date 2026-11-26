@@ -123,13 +123,14 @@ test("rapid wheel bursts, line/page deltas and photo changes stay bounded withou
 test("photo zoom controls stay grouped and fit a narrow phone",async({page})=>{
   await page.setViewportSize({width:320,height:640});
   const viewer=await openPhotos(page,aimGuide);
-  await viewer.getByRole("button",{name:"Next photo",exact:true}).click();
+  await viewer.getByRole("button",{name:"Step 3: First-person aim",exact:true}).click();
   await expect(viewer.getByRole("img",{name:"Aim here",exact:true})).toBeVisible();
   const toolbar=viewer.locator(".ul-photo-toolbar");
   await expect(toolbar.getByRole("button",{name:/^Photos/})).toBeVisible();
   await expect(toolbar.getByRole("button",{name:"Video",exact:true})).toBeVisible();
+  await expect(toolbar.getByRole("button",{name:"Crosshair settings",exact:true})).toBeVisible();
   const buttons=await toolbar.getByRole("button").all();
-  expect(buttons).toHaveLength(6);
+  expect(buttons).toHaveLength(7);
   for(const button of buttons){
     await expect(button).toBeInViewport();
     const geometry=await button.evaluate(element=>{

@@ -538,6 +538,22 @@ dialog::backdrop {
   overflow-y: auto;
   overscroll-behavior: contain;
   min-height: 100px;
+  scrollbar-width: none;
+  scroll-padding-block: 18px;
+  --fade-start: 0px;
+  --fade-end: 0px;
+}
+.map-grid::-webkit-scrollbar { display: none; }
+.map-grid[data-scroll-before] { --fade-start: 16px; }
+.map-grid[data-scroll-after] { --fade-end: 16px; }
+.map-grid:is([data-scroll-before], [data-scroll-after]) {
+  mask-image: linear-gradient(to bottom, transparent, black var(--fade-start), black calc(100% - var(--fade-end)), transparent);
+}
+.map-grid:focus-visible { outline-offset: -3px; }
+@media (forced-colors: active) {
+  .map-grid { scrollbar-width: auto; }
+  .map-grid::-webkit-scrollbar { display: block; }
+  .map-grid:is([data-scroll-before], [data-scroll-after]) { mask-image: none; }
 }
 .map-tile {
   position: relative;

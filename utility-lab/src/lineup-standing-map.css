@@ -1,0 +1,37 @@
+.ul-standing-map {
+  background: #121a22;
+  isolation: isolate;
+}
+.ul-standing-map > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ul-standing-map-pin { color: #55e3cb; }
+.ul-standing-map-halo {
+  fill: #102c2c80;
+  stroke: currentColor;
+  stroke-width: 2px;
+}
+.ul-standing-map-location {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  max-width: calc(100% - 24px);
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.ul-standing-map-credits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  line-height: 1.7;
+  font-size: 11px;
+  font-weight: 400;
+}
+.ul-standing-map-credits a { color: inherit; text-underline-offset: 2px; }

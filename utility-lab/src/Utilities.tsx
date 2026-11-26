@@ -40,10 +40,10 @@ import {
 } from "lucide-react";
 import { MAPS, type GameMap } from "./maps";
 import MediaImage from "./MediaImage";
-import {preloadPhoto} from "./photo-preload";
+import LineupGallery from "./LineupGallery";
+import { lineupWalkthrough } from "./lineup-walkthrough";
 import useMapNavigation from "./useMapNavigation";
 import {lineupMapFrame} from "./lineup-map-layout";
-import PhotoZoom from "./PhotoZoom";
 import { withAimPlacement } from "./aim-placement";
 import { portableLineups, storeLineupMedia } from "./media-store";
 import { lineupLink } from "./routes";
@@ -66,7 +66,6 @@ import UtilityTargetMarker from "./UtilityTargetMarker";
 import { loadMapOrigins, findLineupOrigin, type OriginLookup } from "./lineup-origins";
 import { curateLineups } from "./lineup-curation";
 import LineupSuggestions from "./LineupSuggestions";
-import { photoStepName } from "./lineup-copy";
 import { nativePhotoRecord } from "./native-photo-library";
 import GrenadeIcon, { type UtilityKind } from "./UtilityIcon";
 import {
@@ -435,9 +434,24 @@ function LineupMedia({ record }: { record: UtilityReference }) {
     photos.length ? "photos" : "video",
   );
   const [loaded, setLoaded] = useState(false);
-  const [index, setIndex] = useState(0);
-  const changePhoto = (offset: number) =>
-    setIndex((current) => (current + offset + photos.length) % photos.length);
+  const steps = useMemo(() => lineupWalkthrough(record, photos), [record, photos]);
+  const [[stepIndex, viewIndex], setView] = useState([0, 0]);
+  const current = steps[stepIndex]?.views[viewIndex];
+  const mediaElement = useRef<HTMLDivElement>(null);
+  const focusStep = () => mediaElement.current?.querySelector<HTMLButtonElement>('.ul-photo-dots button[aria-pressed="true"]')?.focus({ preventScroll: true });
+  useLayoutEffect(() => {
+    if (mode === "photos" && loaded && !current?.photo) focusStep();
+  }, [mode, loaded, current]);
+  function select(step: number, view = 0) {
+    setLoaded(false);
+    setView([step, view]);
+  }
+  function changePhoto(direction: number) {
+    const view = viewIndex + direction;
+    if (view >= 0 && view < steps[stepIndex].views.length) return select(stepIndex, view);
+    const next = (stepIndex + direction + steps.length) % steps.length;
+    select(next, direction < 0 ? steps[next].views.length - 1 : 0);
+  }
   const source = video
     ? video.kind === "youtube"
       ? `https://www.youtube.com/watch?v=${video.id}${video.start ? `&t=${video.start}s` : ""}`
@@ -446,24 +460,70 @@ function LineupMedia({ record }: { record: UtilityReference }) {
   const formats = photos.length > 0 ? (
     <div className="ul-media-tabs" role="group" aria-label="Lineup media type">
       <button title="Photos" aria-pressed={mode === "photos"} onClick={() => { setMode("photos"); setLoaded(false); }}>
-        <Images size={16} />Photos <span>{photos.length}</span>
+        <Images size={16} />Photos <span>{steps.flatMap(step => step.views).filter(view => view.photo).length}</span>
       </button>
       <button aria-pressed={mode === "video"} disabled={!video} title={video ? "Watch video" : "No video for this guide"} onClick={() => { setMode("video"); setLoaded(false); }}>
         <Video size={16} />Video
       </button>
     </div>
   ) : null;
+  const videoPlayer = video && (
+    <div className="ul-video-stage">
+      {!loaded ? (
+        <div className="ul-video-ready">
+          <button className="ul-video-load" onClick={() => setLoaded(true)}>
+            <Play size={29} fill="currentColor" />
+            <span>{mode === "photos" ? (steps[stepIndex]?.stage === "setup" ? "Watch standing setup" : "Watch landing in guide") : "Load video"}</span>
+          </button>
+          <p>
+            {record.creator
+              ? `Guide by ${record.creator}`
+              : "Original video guide"}
+            {video.start > 0
+              ? ` · starts at ${Math.floor(video.start / 60)}:${String(video.start % 60).padStart(2, "0")}`
+              : ""}
+          </p>
+        </div>
+      ) : fileFailed && video.kind === "file" && !record.videoFallbackUrl ? (
+        <div className="ul-video-ready" role="status">
+          <p>The video couldn’t load.</p>
+          <button className="ul-video-load" onClick={() => setFileFailed(false)}>Try video again</button>
+        </div>
+      ) : video.kind === "youtube" ? (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${video.id}?start=${video.start}&rel=0${mode === "photos" ? "&autoplay=1" : ""}`}
+          title={`${record.title} video guide`}
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      ) : (
+        <video
+          src={`${video.url.split("#")[0]}${video.start ? `#t=${video.start}` : ""}`}
+          controls
+          playsInline
+          autoPlay={mode === "photos"}
+          preload="metadata"
+          onError={() => setFileFailed(true)}
+          aria-label={`${record.title} video guide`}
+        />
+      )}
+    </div>
+  );
   return (
     <div
       className={`ul-lineup-media is-${mode}`}
+      ref={mediaElement}
       onKeyDown={(event) => {
         if (
           mode === "photos" &&
-          photos.length > 1 &&
+          steps.length > 1 &&
+          !(event.target instanceof Element && event.target.closest("video, input, select, .ul-crosshair-dialog")) &&
           ["ArrowLeft", "ArrowRight"].includes(event.key)
         ) {
           event.preventDefault();
           changePhoto(event.key === "ArrowLeft" ? -1 : 1);
+          if (event.target instanceof Element && event.target.closest(".ul-photo-dots")) requestAnimationFrame(focusStep);
         }
       }}
     >
@@ -473,169 +533,16 @@ function LineupMedia({ record }: { record: UtilityReference }) {
         {record.purpose && <p>{record.purpose}</p>}
         <ol className="ul-instructions">{record.steps.map((step,index) => <li key={index}><span>{index+1}</span><p>{step}</p></li>)}</ol>
       </div>}
-      {mode === "video" && video && (
-        <div className="ul-video-stage">
-          {!loaded ? (
-            <div className="ul-video-ready">
-              <button className="ul-video-load" onClick={() => setLoaded(true)}>
-                <Play size={29} fill="currentColor" />
-                <span>Load video</span>
-              </button>
-              <p>
-                {record.creator
-                  ? `Guide by ${record.creator}`
-                  : "Original video guide"}
-                {video.start > 0
-                  ? ` · starts at ${Math.floor(video.start / 60)}:${String(video.start % 60).padStart(2, "0")}`
-                  : ""}
-              </p>
-            </div>
-          ) : fileFailed && video.kind === "file" && !record.videoFallbackUrl ? (
-            <div className="ul-video-ready" role="status">
-              <p>The video couldn’t load.</p>
-              <button className="ul-video-load" onClick={() => setFileFailed(false)}>Try video again</button>
-            </div>
-          ) : video.kind === "youtube" ? (
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${video.id}?start=${video.start}&rel=0`}
-              title={`${record.title} video guide`}
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          ) : (
-            <video
-              src={`${video.url.split("#")[0]}${video.start ? `#t=${video.start}` : ""}`}
-              controls
-              playsInline
-              preload="metadata"
-              onError={() => setFileFailed(true)}
-              aria-label={`${record.title} video guide`}
-            />
-          )}
-        </div>
-      )}
-      {mode === "photos" && photos.length > 0 && (
-        <div className="ul-photo-viewer" aria-label="Lineup photo slides">
-          <div className="ul-photo-stage">
-            <PhotoZoom
-              key={`${photos[index].image}:${index}`}
-              formats={formats}
-              photo={photos[index]}
-              title={`${record.title}, photo ${index + 1}`}
-              onSwipe={photos.length > 1 ? changePhoto : undefined}
-              onReady={()=>{const next=photos[(index+1)%photos.length];if(next&&next.image!==photos[index].image)preloadPhoto(next.image);}}
-            />
-            {photos.length > 1 && (
-              <>
-                <button
-                  className="ul-slide-prev"
-                  aria-label="Previous photo"
-                  onClick={() => changePhoto(-1)}
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button
-                  className="ul-slide-next"
-                  aria-label="Next photo"
-                  onClick={() => changePhoto(1)}
-                >
-                  <ChevronRight size={24} />
-                </button>
-              </>
-            )}
-          </div>
-          <div className="ul-photo-details">
-          <div className="ul-photo-caption" aria-live="polite">
-            <span>
-              {index + 1} / {photos.length}
-            </span>
-            <div>
-              {photos[index].kind && (
-                <strong className="ul-photo-kind">
-                  {photoStepName(
-                    photos[index].kind,
-                    index,
-                    photos[index].caption,
-                  )}
-                </strong>
-              )}
-              <p>
-                {!record.userCreated &&
-                index === 0 &&
-                (photos[index].kind === "position" ||
-                  /^Position & aim/i.test(photos[index].caption))
-                  ? record.steps[0] || photos[index].caption
-                  : photos[index].caption || `Photo ${index + 1}`}
-              </p>
-            </div>
-          </div>
-          {(photos[index].creator ||
-            photos[index].source ||
-            photos[index].license ||
-            photos[index].capturedAt ||
-            photos[index].gameBuild) && (
-            <div className="ul-photo-credit">
-              {photos[index].region && <span>Source panel</span>}
-              {photos[index].creator && (
-                <span>Photo: {photos[index].creator}</span>
-              )}
-              {photos[index].source && (
-                <a href={photos[index].source} target="_blank" rel="noreferrer">
-                  Photo source
-                </a>
-              )}
-              {photos[index].license &&
-                (photos[index].licenseUrl ? (
-                  <a
-                    href={photos[index].licenseUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {photos[index].license}
-                  </a>
-                ) : (
-                  <span>{photos[index].license}</span>
-                ))}
-              {photos[index].gameBuild && (
-                <span>CS2 build {photos[index].gameBuild}</span>
-              )}
-              {photos[index].capturedAt && (
-                <span>Captured {photos[index].capturedAt}</span>
-              )}
-            </div>
-          )}
-          </div>
-          {photos.length > 1 && (
-            <div
-              className="ul-photo-dots"
-              role="group"
-              aria-label="Choose lineup photo"
-            >
-              {photos.map((photo, photoIndex) => (
-                <button
-                  key={photoIndex}
-                  className={index === photoIndex ? "is-active" : ""}
-                  aria-label={`Photo ${photoIndex + 1}${photo.caption ? `: ${photo.caption}` : ""}`}
-                  aria-pressed={index === photoIndex}
-                  onClick={() => setIndex(photoIndex)}
-                >
-                  <span className="ul-photo-step-number">{photoIndex + 1}</span>
-                  <span>
-                    {photoStepName(photo.kind, photoIndex, photo.caption)}
-                  </span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      {mode === "video" && videoPlayer}
+      {mode === "photos" && steps.length > 0 && <LineupGallery record={record} steps={steps}
+        stepIndex={stepIndex} viewIndex={viewIndex} select={select} advance={changePhoto}
+        formats={formats} sourceVideo={videoPlayer}/>}
       <div className="ul-media-footer">
         <div className="ul-viewer-keys">
           <h3>Keys</h3>
           <ThrowInputs method={record.throwType} />
         </div>
-        {source && (mode === "video" || !photos[index]?.source) && (
+        {source && (mode === "video" || !current?.photo?.source) && (
           <a href={source} target="_blank" rel="noreferrer">
             Open original {video ? "video" : "source"}{" "}
             <ArrowUpRight size={16} />
@@ -1497,6 +1404,7 @@ export default function Utilities({
           <LineupSuggestions map={map} side={side} onNotify={onNotify} />
         </div>
       </header>
+      <div className="ul-filter-dock">
       <div className="ul-filterbar">
         <div className="ul-types" role="group" aria-label="Utility type">
           {(["All", ...UTILITY_TYPES] as const).map((item) => (
@@ -1554,6 +1462,8 @@ export default function Utilities({
             }
           </small>
         </button>
+      </div>
+      {!editing && sideSelector}
       </div>
       </div>
       <div className="ul-workspace-body">
@@ -1784,7 +1694,6 @@ export default function Utilities({
               <Info size={14} />
               <span>{landingSelection ? "Choose the exact landing spot." : originSelection ? "Choose where to throw from." : "Choose a target, then utility."}</span>
             </p>
-            {!editing && sideSelector}
             <div className="ul-zoom">
               <button
                 className={navigation.hand ? "is-active" : ""}

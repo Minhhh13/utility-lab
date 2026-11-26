@@ -88,6 +88,32 @@ test("online reference photos appear in our own gallery with source credits", as
   ).toHaveAttribute("href", /^https:\/\/gonade.app\/nade\/anubis-/);
 });
 
+test("an offline photo-pack download can exceed a minute while files keep arriving", async ({ page }) => {
+  await page.goto("/#utilities");
+  await page.getByRole("button", { name: "Workspace settings", exact: true }).click();
+  await page.clock.install();
+  await page.evaluate(() => {
+    Object.defineProperty(navigator.serviceWorker, "getRegistration", { value: async () => ({
+      active: { postMessage: ({ urls }: { urls: string[] }, [port]: MessagePort[]) => {
+        setTimeout(() => port.postMessage({ completed: 1, total: urls.length }), 40_000);
+        setTimeout(() => port.postMessage({ done: true }), 80_000);
+      } },
+    }) });
+  });
+  const download = page.getByRole("button", { name: "Download photo guides", exact: true });
+  await download.click();
+  await expect(download).toBeDisabled();
+  await page.clock.fastForward(40_000);
+  const status = page.getByRole("status").filter({ hasText: /^1 of \d+ assets$/ });
+  await expect(status).toBeVisible();
+  const total = Number((await status.innerText()).split(" ")[2]);
+  const inventory = await page.getByText(/Save [\d,.\s]+ bundled guide images for offline viewing/).innerText();
+  expect(Number(inventory.match(/Save ([\d,.\s]+) bundled/)![1].replace(/\D/g, ""))).toBe(total);
+  await page.clock.fastForward(40_000);
+  await expect(page.getByText("All bundled photo guides are ready offline.", { exact: true })).toBeVisible();
+  await expect(download).toBeEnabled();
+});
+
 test("the explicit photo pack opens an original guide after the network is disconnected", async ({
   page,
   context,

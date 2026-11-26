@@ -4,6 +4,10 @@ export default defineConfig({
   testDir: "./e2e",
   testMatch: [
     "webkit.spec.ts",
+    "aim-placement.spec.ts",
+    "four-stage-guide.spec.ts",
+    "crosshair-settings.spec.ts",
+    "map-picker-scroll.spec.ts",
     "map-focus.spec.ts",
     "board-edge-controls.spec.ts",
     "edge-controls.spec.ts",

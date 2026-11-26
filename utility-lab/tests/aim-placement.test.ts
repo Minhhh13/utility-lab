@@ -3,6 +3,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { photoAimPosition, withAimPlacement } from "../src/aim-placement.ts";
 import { utilityPhotos, validateUtility, type UtilityPhoto, type UtilityReference } from "../src/utility-data.ts";
+import { PHOTO_GUIDE_LIBRARY } from "../src/guide-library.ts";
+import { mergePhotoGuides } from "../src/expanded-guide-model.ts";
+import { MAPS } from "../src/maps.ts";
 
 const rows: UtilityReference[] = ["mirage", "dust2", "inferno", "ancient", "anubis", "cache", "nuke", "vertigo"].flatMap(map =>
   JSON.parse(readFileSync(new URL(`../src/data/expanded/${map}.json`, import.meta.url), "utf8")));
@@ -66,6 +69,32 @@ test("every current publisher camera Aim keeps its verified overlay across all e
     for (const photo of utilityPhotos(withAimPlacement(row)).filter(photo => photo.kind === "aim"))
       assert.deepEqual(photo.aimPoint, { x: .5, y: .5 }, `${row.id}: missing original publisher overlay on ${photo.image}`);
   }
+});
+
+test("every published guide offers a registered first-person aim photo", () => {
+  for (const map of MAPS) {
+    const guides = mergePhotoGuides(PHOTO_GUIDE_LIBRARY.filter(g => g.mapId === map.id), rows.filter(g => g.mapId === map.id));
+    assert.ok(guides.length, map.name);
+    for (const guide of guides) {
+      const photos = utilityPhotos(withAimPlacement(guide));
+      assert.ok(photos.some(photo => photo.kind === "position"), guide.id);
+      assert.ok(photos.some(photo => photo.kind === "aim"), guide.id);
+      for (const photo of photos.filter(photo => photo.kind === "aim")) {
+        assert.ok(photo.aimPoint, `${guide.id}: ${photo.image}`);
+        const dimensions = photo.region ? { width: photo.region.sourceWidth, height: photo.region.sourceHeight } : { width: 1, height: 1 };
+        assert.ok(photoAimPosition(photo, { width: 320, height: 480 }, dimensions), guide.id);
+      }
+    }
+  }
+});
+
+test("an edited Nuke camera frame keeps its visible offset reticle in portable copies", () => {
+  const row = rows.find(r => r.id.includes("f83f1ca67510"))!;
+  const original = utilityPhotos(row).find(p => p.kind === "aim")!;
+  const registered = withAimPlacement({ ...row, photos: [withoutPoint(original)], remotePhotos: [] });
+  assert.deepEqual(registered.photos?.[0].aimPoint, {x: 975 / 1920, y: 561 / 1080});
+  const imported = validateUtility(JSON.parse(JSON.stringify({ ...registered, userCreated: true })));
+  assert.deepEqual(imported?.photos?.[0].aimPoint, registered.photos?.[0].aimPoint);
 });
 
 test("contain placement respects letterboxes, source aspect and proportional zoom", () => {

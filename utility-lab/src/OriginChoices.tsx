@@ -1,11 +1,10 @@
-import {useEffect,useId,useLayoutEffect,useRef,useState,type KeyboardEvent} from 'react';
+import {useEffect,useId,useLayoutEffect,useMemo,useRef,useState,type KeyboardEvent} from 'react';
 import {createPortal} from 'react-dom';
 import {ChevronLeft,ChevronRight,Crosshair,UserRound,X} from 'lucide-react';
-import {spawnInsetLayout,type OriginChoiceGroup} from './origin-options';
+import type {OriginChoiceGroup} from './origin-options';
+import {originChoiceLayout,ORIGIN_PAGE_SIZE} from './origin-choice-layout';
 import type {UtilityReference} from './utility-data';
 import './origin-choices.css';
-
-const PAGE_SIZE=8;
 
 /** A map-anchored visual choice for recipes sharing a small standing area. The
  * spokes are menu choices; the map's published standing coordinates stay put. */
@@ -20,31 +19,17 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
   const [page,setPage]=useState(0);
   const personal=group.kind==='personal';
   const [position,setPosition]=useState({left:0,top:0,width:328,ready:false});
-  const pages=Math.ceil(group.options.length/PAGE_SIZE);
-  const options=group.options.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
-  const direct=spawnInsetLayout(group,position.width);
-  const span=position.width-88;
-  const slots=options.length===2?[{x:0,y:.5},{x:1,y:.5}]
-    :options.length===3?[{x:.5,y:0},{x:1,y:.85},{x:0,y:.85}]
-    :options.length===4?[{x:.5,y:0},{x:1,y:.5},{x:.5,y:1},{x:0,y:.5}]
-    :[{x:.5,y:0},{x:1,y:0},{x:1,y:.5},{x:1,y:1},{x:.5,y:1},{x:0,y:1},{x:0,y:.5},{x:0,y:0}];
-  const points=direct?.points ?? slots
-    .map(point=>({x:44+span*point.x,y:44+span*point.y}));
-  const coordinates=group.options.map(option=>'target' in option?option.target:option.point);
-  const minX=Math.min(...coordinates.map(point=>point.x)),maxX=Math.max(...coordinates.map(point=>point.x));
-  const minY=Math.min(...coordinates.map(point=>point.y)),maxY=Math.max(...coordinates.map(point=>point.y));
-  const previewSpan=direct?.span ?? Math.max(80,maxX-minX,maxY-minY)*1.5;
-  const preview=direct?{x:direct.x,y:direct.y,size:position.width}:{x:(minX+maxX-previewSpan)/2,y:(minY+maxY-previewSpan)/2,size:Math.min(168,position.width-120)};
-  const previewStart=(position.width-preview.size)/2;
-  const sourcePoint=(point:{x:number;y:number})=>({x:previewStart+(point.x-preview.x)/previewSpan*preview.size,y:previewStart+(point.y-preview.y)/previewSpan*preview.size});
+  const pages=Math.ceil(group.options.length/ORIGIN_PAGE_SIZE);
+  const {direct,options,points,sources,preview}=useMemo(()=>originChoiceLayout(group,position.width,page),[group,position.width,page]);
+  const {start:previewStart,span:previewSpan}=preview;
   useLayoutEffect(()=>{
     function place(){
       if(!panel.current)return;
       const width=Math.min(328,innerWidth-24);
       panel.current.style.width=`${width}px`;
-      const height=panel.current.getBoundingClientRect().height;
-      const next={left:Math.max(12,Math.min(anchor.x-width/2,innerWidth-width-12)),
-        top:Math.max(12,Math.min(anchor.y-height/2,innerHeight-height-12)),width,ready:true};
+      const box=panel.current.getBoundingClientRect();
+      const next={left:Math.max(12,Math.min(anchor.x-box.width/2,innerWidth-box.width-12)),
+        top:Math.max(12,Math.min(anchor.y-box.height/2,innerHeight-box.height-12)),width:panel.current.clientWidth,ready:true};
       setPosition(old=>old.left===next.left&&old.top===next.top&&old.width===next.width&&old.ready?old:next);
     }
     place();const observer=new ResizeObserver(place);if(panel.current)observer.observe(panel.current);
@@ -91,13 +76,16 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
         </svg>
         </g>
         <rect className="ul-origin-choice-preview-frame" x={previewStart} y={previewStart} width={preview.size} height={preview.size} rx="10"/>
-        {!direct&&options.map((option,index)=>{const source=sourcePoint('target' in option?option.target:option.point);return <g key={option.record.id}>
-          <line x1={source.x} y1={source.y} x2={points[index].x} y2={points[index].y}/>
-          <circle className="ul-origin-choice-source" cx={source.x} cy={source.y} r="3"/>
-        </g>;})}
+        {!direct&&options.map((option,index)=><line key={option.record.id} data-recipe-id={option.record.id}
+          x1={sources[index].x} y1={sources[index].y} x2={points[index].x} y2={points[index].y}/>)}
+        {!direct&&sources.map((point,index)=>sources.findIndex(other=>other.x===point.x&&other.y===point.y)===index&&
+          <circle key={options[index].record.id} className="ul-origin-choice-source" cx={point.x} cy={point.y} r="3"/>)}
       </svg>
-      {options.map((option,index)=>{const {record}=option;const approximate='point' in option && option.point.precision!=='world';return <button key={record.id} className="ul-origin-choice-option"
-        style={{left:points[index].x-(direct?22:28),top:points[index].y-22}} data-lineup-id={record.id} data-spawn-slot={personal?undefined:record.spawn?.slot} data-approximate={approximate||undefined}
+      {options.map((option,index)=>{const {record}=option;const approximate='point' in option && option.point.precision!=='world';
+        const point=points[index];
+        const labelSide=point.y<position.width*.4?'top':point.y>position.width*.6?'bottom':point.x<position.width/2?'left':'right';
+        return <button key={record.id} className="ul-origin-choice-option"
+        style={{left:point.x-(direct?22:28),top:point.y-22}} data-label-side={direct?undefined:labelSide} data-lineup-id={record.id} data-spawn-slot={personal?undefined:record.spawn?.slot} data-approximate={approximate||undefined}
         title={personal?`${record.title} · your saved target`:`${record.from} · ${approximate?'Approximate area. Match the Position photo.':'Recorded start.'} ${record.throwType} · ${record.creator||'Original source'}`}
         aria-label={personal?`Open your lineup: ${record.title}`:`${record.from} — ${record.throwType}${record.spawn?` (${record.creator||'source'} numbering)`:''}`}
         onClick={()=>onChoose(record)}>
@@ -106,7 +94,7 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
       </button>;})}
     </div>
     <div className="ul-origin-choice-footer">
-      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*PAGE_SIZE+1}–{Math.min((page+1)*PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
+      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*ORIGIN_PAGE_SIZE+1}–{Math.min((page+1)*ORIGIN_PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
     </div>
   </div>,document.body);
 }

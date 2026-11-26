@@ -1,6 +1,7 @@
 import type {UtilityReference} from './utility-data.ts';
 import type {OriginPoint} from './lineup-origins.ts';
 import {normalizeOriginLabel} from './lineup-curation.ts';
+export {layoutOriginSpokes} from './origin-spokes.ts';
 
 export type OriginOption={record:UtilityReference;point:OriginPoint};
 export type OriginGroup={kind?:'origin';id:string;label:string;point:OriginPoint;options:OriginOption[]};

@@ -4,6 +4,8 @@ import {MAPS} from '../src/maps.ts';
 import {GUIDE_LIBRARY} from '../src/guide-library.ts';
 import {normalizeExpandedGuides} from '../src/expanded-guide-model.ts';
 import {isBundledPhoto,utilityPhotos} from '../src/utility-data.ts';
+import {cs2tricksStagePhotos} from '../src/data/cs2tricks-stage-photos.ts';
+import {otherStagePhotos} from '../src/data/other-stage-photos.ts';
 const sources=[
  ['../src/data/precise-mirage-ancient.ts','PRECISE_MIRAGE_ANCIENT'],
  ['../src/data/precise-other-maps.ts','PRECISE_OTHER_MAPS'],
@@ -37,6 +39,12 @@ for(const [file,name] of sources){
  rows.push(...module[name]);
 }
 const ids={},maps={},bundledPhotos=new Set(),sourcesSeen=new Set(),generated=[];
+function collectStagePhotos(record) {
+  for (const photo of Object.values({...cs2tricksStagePhotos(record), ...otherStagePhotos(record)})) {
+    if (photo && isBundledPhoto(photo.image)) bundledPhotos.add(photo.image);
+  }
+}
+GUIDE_LIBRARY.forEach(collectStagePhotos);
 await mkdir('src/data/expanded',{recursive:true});
 for(const map of MAPS){
  const values=[];
@@ -79,6 +87,7 @@ for(const map of MAPS){
   values.push(record);
  }
  const records=normalizeExpandedGuides(values,map.id);
+ records.forEach(collectStagePhotos);
  for(const record of records){if(ids[record.id])throw Error(`Duplicate guide ID: ${record.id}`);ids[record.id]=map.id;for(const photo of utilityPhotos(record))if(isBundledPhoto(photo.image))bundledPhotos.add(photo.image);}
  generated.push([`src/data/expanded/${map.id}.json`,JSON.stringify(records)+'\n']);
  maps[map.id]={records:records.length,T:{},CT:{},pinned:records.filter(record=>record.showMarker).length};

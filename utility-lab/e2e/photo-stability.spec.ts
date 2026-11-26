@@ -128,7 +128,8 @@ for (const guide of guides) {
     await page.addStyleTag({ content: ".ul-photo-viewport::-webkit-scrollbar{width:17px;height:17px}" });
     for (const [index, size] of sizes.entries()) {
       await page.setViewportSize(size);
-      await viewer.getByRole("group", { name: "Choose lineup photo", exact: true }).getByRole("button").nth(index % 2).click();
+      const name = index % 2 ? "Step 3: First-person aim" : "Step 1: Where to stand";
+      await viewer.getByRole("button", { name, exact: true }).click();
       await decoded(viewer);
       await stable(viewer, 1);
       await viewer.getByRole("button", { name: "Zoom in photo", exact: true }).click();
@@ -186,6 +187,8 @@ test("a late original-image decode cannot resize or reload the photo frame; swip
     const viewport = viewer.locator(".ul-photo-viewport"), box = (await viewport.boundingBox())!;
     await viewport.dispatchEvent("pointerdown", { pointerType: "touch", pointerId: 7, isPrimary: true, clientX: box.x + 240, clientY: box.y + 50 });
     await viewport.dispatchEvent("pointerup", { pointerType: "touch", pointerId: 7, isPrimary: true, clientX: box.x + 100, clientY: box.y + 50 });
+    await expect(viewer.getByRole("button", { name: "Step 2: First-person standing view", exact: true })).toHaveAttribute("aria-pressed", "true");
+    await viewer.getByRole("button", { name: "Next photo", exact: true }).click();
     await expect(viewer.locator(".ul-photo-kind")).toHaveText("Aim");
     await decoded(viewer);
     await stable(viewer, 1);

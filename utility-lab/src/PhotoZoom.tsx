@@ -2,6 +2,8 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "re
 import { Crosshair, Maximize, ZoomIn, ZoomOut } from "lucide-react";
 import MediaImage from "./MediaImage";
 import { photoAimPosition } from "./aim-placement";
+import CrosshairControls, { PhotoCrosshair } from "./PhotoCrosshair";
+import { CROSSHAIR_KEY, readCrosshairSettings, saveCrosshairSettings } from "./crosshair-settings";
 import "./aim-placement.css";
 import "./photo-zoom.css";
 import type { UtilityPhoto } from "./utility-data";
@@ -22,6 +24,14 @@ export default function PhotoZoom({
   const [scale, setScale] = useState(1);
   const [dragging, setDragging] = useState(false);
   const [showAim, setShowAim] = useState(true);
+  const [crosshair, setCrosshair] = useState(readCrosshairSettings);
+  useEffect(() => {
+    const refresh = (event: StorageEvent) => {
+      if (event.key === CROSSHAIR_KEY || event.key === null) setCrosshair(readCrosshairSettings());
+    };
+    window.addEventListener("storage", refresh);
+    return () => window.removeEventListener("storage", refresh);
+  }, []);
   const [loaded, setLoaded] = useState({ image: "", width: 0, height: 0 });
   const frame = useRef<HTMLDivElement>(null);
   const viewport = useRef<HTMLDivElement>(null);
@@ -256,19 +266,7 @@ export default function PhotoZoom({
             } : undefined}
           />
           </div>
-          {aim && (
-            <svg className="ul-aim-point" viewBox="-17 -17 34 34"
-              role="img" aria-label="Aim here" style={{ left: aim.x, top: aim.y }}>
-              <g className="ul-aim-point-outline">
-                <path d="M-15 0H-8M8 0H15M0-15V-8M0 8V15" />
-                <circle r="5" />
-              </g>
-              <g className="ul-aim-point-color">
-                <path d="M-15 0H-8M8 0H15M0-15V-8M0 8V15" />
-                <circle r="5" />
-              </g>
-            </svg>
-          )}
+          {aim && <PhotoCrosshair settings={crosshair} point={aim}/>}
         </div>
       </div>
       </div>
@@ -276,11 +274,14 @@ export default function PhotoZoom({
       {formats}
       <div className="ul-photo-zoom ul-photo-zoom-compact" role="group" aria-label="Photo zoom">
         {photo.kind === "aim" && photo.aimPoint && (
-          <button className="ul-aim-toggle" aria-label={showAim ? "Hide aim point" : "Show aim point"}
+          <><button className="ul-aim-toggle" aria-label={showAim ? "Hide aim point" : "Show aim point"}
             aria-pressed={showAim} title={showAim ? "Hide aim point" : "Show aim point"}
             onClick={() => setShowAim(value => !value)}>
             <Crosshair size={17} />
-          </button>
+          </button><CrosshairControls settings={crosshair} onChange={next => {
+            setCrosshair(next);
+            return saveCrosshairSettings(next);
+          }}/></>
         )}
         <div className="ul-photo-zoom-pair">
         <button

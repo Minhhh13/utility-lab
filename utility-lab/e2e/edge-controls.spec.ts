@@ -24,15 +24,17 @@ for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1920,
     expect(zoom.x).toBeGreaterThan(canvas.x+canvas.width*.65);
     expect(filters.height).toBeGreaterThan(filters.width);
     expect(zoom.height).toBeGreaterThan(zoom.width);
-    expect(sideBox.x).toBeGreaterThan(canvas.x + canvas.width*.65);
-    expect(sideBox.y + sideBox.height).toBeLessThanOrEqual(zoom.y);
+    expect(sideBox.x).toBeGreaterThanOrEqual(filters.x + filters.width);
+    expect(sideBox.x + sideBox.width).toBeLessThan(canvas.x + canvas.width*.35);
+    expect(sideBox.y).toBeGreaterThanOrEqual(filters.y);
+    expect(sideBox.y + sideBox.height).toBeLessThanOrEqual(filters.y + filters.height);
    }else{
     expect(filters.y+filters.height).toBeLessThan(canvas.y+canvas.height*.3);
     expect(zoom.y).toBeGreaterThan(canvas.y+canvas.height*.7);
     expect(filters.width).toBeGreaterThan(filters.height);
     expect(zoom.width).toBeGreaterThan(zoom.height);
-    expect(sideBox.y).toBeGreaterThan(canvas.y + canvas.height*.7);
-    expect(sideBox.x + sideBox.width).toBeLessThanOrEqual(zoom.x);
+    expect(sideBox.x).toBeLessThan(canvas.x + canvas.width*.1);
+    expect(sideBox.y + sideBox.height).toBeLessThanOrEqual(filters.y);
    }
    const centerClear=await page.evaluate(({x,y})=>Boolean(document.elementFromPoint(x,y)?.closest('.ul-map-svg')),{x:canvas.x+canvas.width/2,y:canvas.y+canvas.height/2});
    expect(centerClear).toBe(true);
@@ -61,7 +63,7 @@ for(const [width,height] of [[740,360],[568,320]])test(`landscape phone puts all
  await page.setViewportSize({width,height});
  await page.goto('/#utilities?map=nuke&level=upper&side=T');
  await expect(page.locator('.utility-workspace')).toHaveAttribute('aria-busy','false');
- const buttons=page.locator('.ul-filterbar button,.ul-map-bottom button,.ul-map-top button');
+ const buttons=page.locator('.ul-filter-dock button,.ul-map-bottom button,.ul-map-top button');
  const blocked=await buttons.evaluateAll(nodes => nodes.filter(button => {
    const r=button.getBoundingClientRect();
    return r.width<44 || r.height<44 || !button.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));

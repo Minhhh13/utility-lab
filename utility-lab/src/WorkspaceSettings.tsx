@@ -156,23 +156,26 @@ export default function WorkspaceSettings({
           ];
       await new Promise<void>((resolve, reject) => {
         const channel = new MessageChannel();
-        const timeout = setTimeout(() => {
+        const onStall = () => {
           channel.port1.close();
           reject(
             new Error(
               "The offline install did not finish. Check the local server and try again.",
             ),
           );
-        }, 60_000);
+        };
+        let timeout = setTimeout(onStall, 60_000);
         channel.port1.onmessage = (event) => {
+          clearTimeout(timeout);
           if (event.data?.done) {
-            clearTimeout(timeout);
             channel.port1.close();
             event.data.error ? reject(new Error(event.data.error)) : resolve();
-          } else
+          } else {
+            timeout = setTimeout(onStall, 60_000);
             setOfflineProgress(
               `${event.data.completed} of ${event.data.total} assets`,
             );
+          }
         };
         registration.active!.postMessage({ type: "CACHE_OFFLINE", urls }, [
           channel.port2,
@@ -326,7 +329,7 @@ export default function WorkspaceSettings({
         </button>
         {offlineProgress && <p role="status">{offlineProgress}</p>}
         <p>
-          Save the bundled standing and aim photos for offline viewing.
+          Save {BUNDLED_GUIDE_PHOTOS.length.toLocaleString()} bundled guide images for offline viewing.
           Source-hosted galleries and videos need internet.
         </p>
         <button
