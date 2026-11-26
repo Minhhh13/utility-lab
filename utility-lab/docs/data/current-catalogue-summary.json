@@ -1,170 +1,170 @@
 {
-  "generatedAt": "2026-11-26T11:52:40.073Z",
+  "generatedAt": "2026-11-26T12:48:59.555Z",
   "generatedLocalDate": "2026-11-26",
   "timeZone": "Australia/Sydney",
   "method": "Normalize every generated per-map JSON, then mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded). Counts are side-specific browsing records; unique source pages and image/video resources are counted separately.",
   "generatedInputs": [
     {
       "path": "src/data/expanded/mirage.json",
-      "bytes": 408462,
-      "sha256": "08beaf05ffe0d658366b7b9b75ac5a1fe005fd251de2f55b795ef6038da79d11",
-      "rows": 234
+      "bytes": 432792,
+      "sha256": "11f0ce3e2bfb43863ca99b05b708f7cdf44df5cdc9127555f70e482162febc23",
+      "rows": 245
     },
     {
       "path": "src/data/expanded/dust2.json",
-      "bytes": 371114,
-      "sha256": "a80ed184f85109745f00c279a5023944725c4017c5b77eb6feb82f4538fb2c70",
-      "rows": 209
+      "bytes": 397626,
+      "sha256": "2bafe82643e59f0f168d71a9f784fd4e044bbf4bd02b52d8e369451de3d1eee4",
+      "rows": 221
     },
     {
       "path": "src/data/expanded/inferno.json",
-      "bytes": 424787,
-      "sha256": "43fd68dad628a30de7ed52974940eb122f4434925dd697cd6469a008eb108634",
-      "rows": 212
+      "bytes": 441852,
+      "sha256": "3bb3c1d426f002cc7966df629f3b8fdf7ea723ab4a2bacbd49ebeb49edd42628",
+      "rows": 220
     },
     {
       "path": "src/data/expanded/nuke.json",
-      "bytes": 297903,
-      "sha256": "3905a501fae1e37bd83187b36bed54aa4640b33199c8bbd018f847f395d17582",
-      "rows": 187
+      "bytes": 319699,
+      "sha256": "e6969c85fb073c677d6e7c0868669469e18bedd9f19a041eed2b72c800837963",
+      "rows": 195
     },
     {
       "path": "src/data/expanded/ancient.json",
-      "bytes": 288301,
-      "sha256": "8622d3bf8f0713792933aba9e53be613f3aa68e129661bcd83c6c6f04e35d002",
-      "rows": 166
+      "bytes": 314389,
+      "sha256": "dae92b193b5f2d5eef2f5d006f360cef087ddf168d35f1b162f1bfb207587b21",
+      "rows": 176
     },
     {
       "path": "src/data/expanded/anubis.json",
-      "bytes": 612568,
-      "sha256": "81206b58522322cf04e5b4ebdb0b489e589f7856b36d6bb62e832e996479f6c5",
-      "rows": 308
+      "bytes": 633209,
+      "sha256": "bc90691dc4ba547bb7fb5af675ca50bff1f0a8f48d66ba2c610f0bdb70ef307d",
+      "rows": 318
     },
     {
       "path": "src/data/expanded/cache.json",
-      "bytes": 241281,
-      "sha256": "61d94aa6f730fa25d4f8d3e76dabc360794288c18da6a88525cce7e2e7b26704",
-      "rows": 128
+      "bytes": 284503,
+      "sha256": "f713fdf37bc35a20ab57c948f95a942814513d23527613e048850d1049cbb4f8",
+      "rows": 144
     },
     {
       "path": "src/data/expanded/vertigo.json",
-      "bytes": 164063,
-      "sha256": "b52050d8b7d5056066a30fc6985ce99d2b1be0017bca8a040e8d9916aed8fe98",
-      "rows": 110
+      "bytes": 177787,
+      "sha256": "a34c8de340abb339833e9fdfb3f049441235fcd19fe66a4d5ff782238f8ec7fd",
+      "rows": 116
     }
   ],
   "generatedOrigins": [
     {
       "path": "src/data/lineup-origins/origins-mirage.json",
-      "bytes": 56164,
-      "sha256": "7435142630dcd197dda292f11ac3287bb6b426df7c21f5930fb416c9a478254b",
-      "sources": 213
+      "bytes": 58589,
+      "sha256": "88e5b8d7fe6e1f3e7d0e39db6a65725630ec441b4e85344d65658e47e9f7e556",
+      "sources": 224
     },
     {
       "path": "src/data/lineup-origins/origins-dust2.json",
-      "bytes": 49555,
-      "sha256": "a6c83b9c9743d38f417ade544439a58735c6c65944b0a509a04d8580f83fac79",
-      "sources": 191
+      "bytes": 52177,
+      "sha256": "792a45c8e2c92684669c2b5a64704a8696da11f144fb61dbede73bb5981aa99f",
+      "sources": 203
     },
     {
       "path": "src/data/lineup-origins/origins-inferno.json",
-      "bytes": 49333,
-      "sha256": "114dfafb9b9bbd2799c6ba139e61ea2d1ec13bad9544e4229acd8184a65319bf",
-      "sources": 189
+      "bytes": 51155,
+      "sha256": "746b078b62598e684b9bc1f237c09f6185c37c4a596a704781b1135e402175be",
+      "sources": 197
     },
     {
       "path": "src/data/lineup-origins/origins-nuke.json",
-      "bytes": 45233,
-      "sha256": "3711e2c82657f0b861ed8bd4e012c11809f0560a356f2b4abc58565945a5bb99",
-      "sources": 188
+      "bytes": 46916,
+      "sha256": "326418ba469072f131c9aa471f980242179b6091e5b5791a3e059b636e60c9bc",
+      "sources": 196
     },
     {
       "path": "src/data/lineup-origins/origins-ancient.json",
-      "bytes": 41016,
-      "sha256": "6229abfb9b1e421e9c226a5cca2399a06de024f6099d522acdba845baf65e392",
-      "sources": 157
+      "bytes": 43226,
+      "sha256": "1af9827276690358698daac255b994ca2066e343984598e46693fdb9d88eb370",
+      "sources": 167
     },
     {
       "path": "src/data/lineup-origins/origins-anubis.json",
-      "bytes": 77906,
-      "sha256": "f55b7139d0017b560fee6bbaa0de34b20e6ed8288b383906cda69408f148466e",
-      "sources": 306
+      "bytes": 80109,
+      "sha256": "b2c882181796dd12424d55df969c0b8b97770517fd1ee82a0add26cb3db617b0",
+      "sources": 316
     },
     {
       "path": "src/data/lineup-origins/origins-cache.json",
-      "bytes": 30242,
-      "sha256": "1d75bdab0481eca240390f06cd17a574b416e2b8defc8bd7a8658c232af38294",
-      "sources": 124
+      "bytes": 33750,
+      "sha256": "253b068701376291f9d05dd574353fbb68e73429091f0ccf63a22ddcdf6466c0",
+      "sources": 140
     },
     {
       "path": "src/data/lineup-origins/origins-vertigo.json",
-      "bytes": 29455,
-      "sha256": "876f307a4af675699e088c7f62e1898af317bb09ce926ba4fa32a066f5affe4a",
-      "sources": 110
+      "bytes": 30877,
+      "sha256": "df8f0478035a4cf601316e5f82a0e5b6879132ad48b272478ae4ea3bce65838c",
+      "sources": 116
     }
   ],
   "mainPublished": {
-    "rows": 1558,
-    "uniqueSources": 1478,
-    "completeMediaRows": 1558,
+    "rows": 1639,
+    "uniqueSources": 1559,
+    "completeMediaRows": 1639,
     "mapRows": {
-      "mirage": 234,
-      "dust2": 209,
-      "inferno": 212,
-      "nuke": 189,
-      "ancient": 166,
-      "anubis": 310,
-      "cache": 128,
-      "vertigo": 110
+      "mirage": 245,
+      "dust2": 221,
+      "inferno": 220,
+      "nuke": 197,
+      "ancient": 176,
+      "anubis": 320,
+      "cache": 144,
+      "vertigo": 116
     },
     "mapSideType": {
       "mirage": {
         "T": {
-          "Smoke": 107,
+          "Smoke": 113,
           "Flash": 24,
-          "Molotov": 25,
-          "HE": 9
+          "Molotov": 26,
+          "HE": 10
         },
         "CT": {
-          "Smoke": 25,
+          "Smoke": 26,
           "Flash": 24,
-          "Molotov": 8,
-          "HE": 12
+          "Molotov": 9,
+          "HE": 13
         }
       },
       "dust2": {
         "T": {
-          "Smoke": 88,
+          "Smoke": 96,
           "Flash": 22,
-          "Molotov": 17,
+          "Molotov": 18,
           "HE": 4
         },
         "CT": {
           "Smoke": 32,
           "Flash": 25,
-          "Molotov": 13,
-          "HE": 8
+          "Molotov": 14,
+          "HE": 10
         }
       },
       "inferno": {
         "T": {
           "Smoke": 65,
           "Flash": 19,
-          "Molotov": 31,
-          "HE": 6
+          "Molotov": 33,
+          "HE": 8
         },
         "CT": {
-          "Smoke": 42,
+          "Smoke": 45,
           "Flash": 20,
           "Molotov": 20,
-          "HE": 9
+          "HE": 10
         }
       },
       "nuke": {
         "T": {
-          "Smoke": 96,
+          "Smoke": 103,
           "Flash": 12,
-          "Molotov": 24,
+          "Molotov": 25,
           "HE": 5
         },
         "CT": {
@@ -176,13 +176,13 @@
       },
       "ancient": {
         "T": {
-          "Smoke": 64,
+          "Smoke": 67,
           "Flash": 12,
-          "Molotov": 24,
-          "HE": 2
+          "Molotov": 25,
+          "HE": 3
         },
         "CT": {
-          "Smoke": 32,
+          "Smoke": 37,
           "Flash": 16,
           "Molotov": 13,
           "HE": 3
@@ -192,27 +192,27 @@
         "T": {
           "Smoke": 112,
           "Flash": 45,
-          "Molotov": 46,
-          "HE": 7
+          "Molotov": 48,
+          "HE": 9
         },
         "CT": {
-          "Smoke": 41,
+          "Smoke": 46,
           "Flash": 27,
           "Molotov": 23,
-          "HE": 9
+          "HE": 10
         }
       },
       "cache": {
         "T": {
-          "Smoke": 69,
+          "Smoke": 80,
           "Flash": 4,
-          "Molotov": 20,
+          "Molotov": 22,
           "HE": 3
         },
         "CT": {
           "Smoke": 23,
           "Flash": 1,
-          "Molotov": 7,
+          "Molotov": 10,
           "HE": 1
         }
       },
@@ -221,10 +221,10 @@
           "Smoke": 52,
           "Flash": 7,
           "Molotov": 16,
-          "HE": 2
+          "HE": 3
         },
         "CT": {
-          "Smoke": 18,
+          "Smoke": 23,
           "Flash": 4,
           "Molotov": 5,
           "HE": 6
@@ -236,73 +236,73 @@
       "mirage": {
         "main": {
           "name": "Overview",
-          "rows": 234,
-          "uniqueSources": 213,
-          "registeredPins": 234,
+          "rows": 245,
+          "uniqueSources": 224,
+          "registeredPins": 245,
           "T": {
-            "Smoke": 107,
+            "Smoke": 113,
             "Flash": 24,
-            "Molotov": 25,
-            "HE": 9
+            "Molotov": 26,
+            "HE": 10
           },
           "CT": {
-            "Smoke": 25,
+            "Smoke": 26,
             "Flash": 24,
-            "Molotov": 8,
-            "HE": 12
+            "Molotov": 9,
+            "HE": 13
           }
         }
       },
       "dust2": {
         "main": {
           "name": "Overview",
-          "rows": 209,
-          "uniqueSources": 191,
-          "registeredPins": 209,
+          "rows": 221,
+          "uniqueSources": 203,
+          "registeredPins": 221,
           "T": {
-            "Smoke": 88,
+            "Smoke": 96,
             "Flash": 22,
-            "Molotov": 17,
+            "Molotov": 18,
             "HE": 4
           },
           "CT": {
             "Smoke": 32,
             "Flash": 25,
-            "Molotov": 13,
-            "HE": 8
+            "Molotov": 14,
+            "HE": 10
           }
         }
       },
       "inferno": {
         "main": {
           "name": "Overview",
-          "rows": 212,
-          "uniqueSources": 189,
-          "registeredPins": 212,
+          "rows": 220,
+          "uniqueSources": 197,
+          "registeredPins": 220,
           "T": {
             "Smoke": 65,
             "Flash": 19,
-            "Molotov": 31,
-            "HE": 6
+            "Molotov": 33,
+            "HE": 8
           },
           "CT": {
-            "Smoke": 42,
+            "Smoke": 45,
             "Flash": 20,
             "Molotov": 20,
-            "HE": 9
+            "HE": 10
           }
         }
       },
       "nuke": {
         "upper": {
           "name": "Upper",
-          "rows": 183,
-          "uniqueSources": 182,
-          "registeredPins": 183,
+          "rows": 191,
+          "uniqueSources": 190,
+          "registeredPins": 191,
           "T": {
-            "Smoke": 95,
+            "Smoke": 102,
             "Flash": 12,
-            "Molotov": 24,
+            "Molotov": 25,
             "HE": 5
           },
           "CT": {
@@ -334,17 +334,17 @@
       "ancient": {
         "main": {
           "name": "Overview",
-          "rows": 166,
-          "uniqueSources": 157,
-          "registeredPins": 166,
+          "rows": 176,
+          "uniqueSources": 167,
+          "registeredPins": 176,
           "T": {
-            "Smoke": 64,
+            "Smoke": 67,
             "Flash": 12,
-            "Molotov": 24,
-            "HE": 2
+            "Molotov": 25,
+            "HE": 3
           },
           "CT": {
-            "Smoke": 32,
+            "Smoke": 37,
             "Flash": 16,
             "Molotov": 13,
             "HE": 3
@@ -354,39 +354,39 @@
       "anubis": {
         "main": {
           "name": "Overview",
-          "rows": 310,
-          "uniqueSources": 306,
-          "registeredPins": 310,
+          "rows": 320,
+          "uniqueSources": 316,
+          "registeredPins": 320,
           "T": {
             "Smoke": 112,
             "Flash": 45,
-            "Molotov": 46,
-            "HE": 7
+            "Molotov": 48,
+            "HE": 9
           },
           "CT": {
-            "Smoke": 41,
+            "Smoke": 46,
             "Flash": 27,
             "Molotov": 23,
-            "HE": 9
+            "HE": 10
           }
         }
       },
       "cache": {
         "main": {
           "name": "Overview",
-          "rows": 128,
-          "uniqueSources": 124,
-          "registeredPins": 128,
+          "rows": 144,
+          "uniqueSources": 140,
+          "registeredPins": 144,
           "T": {
-            "Smoke": 69,
+            "Smoke": 80,
             "Flash": 4,
-            "Molotov": 20,
+            "Molotov": 22,
             "HE": 3
           },
           "CT": {
             "Smoke": 23,
             "Flash": 1,
-            "Molotov": 7,
+            "Molotov": 10,
             "HE": 1
           }
         }
@@ -394,14 +394,14 @@
       "vertigo": {
         "upper": {
           "name": "Upper",
-          "rows": 105,
-          "uniqueSources": 105,
-          "registeredPins": 105,
+          "rows": 106,
+          "uniqueSources": 106,
+          "registeredPins": 106,
           "T": {
             "Smoke": 52,
             "Flash": 7,
             "Molotov": 16,
-            "HE": 2
+            "HE": 3
           },
           "CT": {
             "Smoke": 13,
@@ -412,9 +412,9 @@
         },
         "lower": {
           "name": "Lower",
-          "rows": 5,
-          "uniqueSources": 5,
-          "registeredPins": 5,
+          "rows": 10,
+          "uniqueSources": 10,
+          "registeredPins": 10,
           "T": {
             "Smoke": 0,
             "Flash": 0,
@@ -422,7 +422,7 @@
             "HE": 0
           },
           "CT": {
-            "Smoke": 5,
+            "Smoke": 10,
             "Flash": 0,
             "Molotov": 0,
             "HE": 0
@@ -431,65 +431,65 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1558,
-      "rowsWithAim": 1558,
-      "rowsWithPositionAndAim": 1558,
-      "mediaReferences": 5067,
-      "uniqueImages": 4797,
-      "remoteReferences": 4685,
-      "uniqueRemoteImages": 4417,
-      "bundledReferences": 382,
-      "uniqueBundledImages": 380,
+      "rowsWithPosition": 1639,
+      "rowsWithAim": 1639,
+      "rowsWithPositionAndAim": 1639,
+      "mediaReferences": 5337,
+      "uniqueImages": 5063,
+      "remoteReferences": 4893,
+      "uniqueRemoteImages": 4625,
+      "bundledReferences": 444,
+      "uniqueBundledImages": 438,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2134,
-        "landing": 1350,
-        "position": 1558,
-        "release": 25
+        "aim": 2215,
+        "landing": 1431,
+        "position": 1639,
+        "release": 52
       },
       "kinds": {
         "aim": {
-          "references": 2134,
-          "uniqueImages": 2023,
-          "uniqueRemoteImages": 1994,
-          "uniqueBundledImages": 29
+          "references": 2215,
+          "uniqueImages": 2104,
+          "uniqueRemoteImages": 2069,
+          "uniqueBundledImages": 35
         },
         "landing": {
-          "references": 1350,
-          "uniqueImages": 1271,
-          "uniqueRemoteImages": 1264,
-          "uniqueBundledImages": 7
+          "references": 1431,
+          "uniqueImages": 1352,
+          "uniqueRemoteImages": 1322,
+          "uniqueBundledImages": 30
         },
         "position": {
-          "references": 1558,
-          "uniqueImages": 1478,
-          "uniqueRemoteImages": 1137,
-          "uniqueBundledImages": 341
+          "references": 1639,
+          "uniqueImages": 1555,
+          "uniqueRemoteImages": 1190,
+          "uniqueBundledImages": 365
         },
         "release": {
-          "references": 25,
-          "uniqueImages": 25,
-          "uniqueRemoteImages": 22,
-          "uniqueBundledImages": 3
+          "references": 52,
+          "uniqueImages": 52,
+          "uniqueRemoteImages": 44,
+          "uniqueBundledImages": 8
         }
       }
     },
     "videos": {
-      "playableSourceRows": 1558,
-      "nativePrimaryRows": 752,
-      "youtubePrimaryRows": 806,
-      "uniqueNativePrimaryClips": 714,
-      "uniqueYouTubePrimaryClips": 761,
-      "uniquePrimaryClips": 1475,
-      "uniquePrimarySegments": 1475,
-      "fallbackRows": 564,
-      "uniqueFallbackClips": 526,
-      "uniquePrimaryAndFallbackClips": 2001
+      "playableSourceRows": 1639,
+      "nativePrimaryRows": 828,
+      "youtubePrimaryRows": 811,
+      "uniqueNativePrimaryClips": 790,
+      "uniqueYouTubePrimaryClips": 762,
+      "uniquePrimaryClips": 1552,
+      "uniquePrimarySegments": 1556,
+      "fallbackRows": 633,
+      "uniqueFallbackClips": 595,
+      "uniquePrimaryAndFallbackClips": 2147
     },
     "pins": {
-      "registered": 1558,
-      "publisherDestinationRows": 1550,
-      "namedAnchorRows": 8,
+      "registered": 1639,
+      "publisherDestinationRows": 1626,
+      "namedAnchorRows": 13,
       "registrationRows": {
         "cs2tricks-ancient-main-20261109": 166,
         "cs2tricks-anubis-main-20261109": 282,
@@ -501,49 +501,57 @@
         "cs2tricks-nuke-upper-20261109": 83,
         "cs2tricks-vertigo-lower-20261109": 1,
         "cs2tricks-vertigo-upper-20261109": 37,
-        "csnades-anubis-main-20261124": 2,
+        "csnades-anubis-main-20261124": 7,
         "csnades-cache-main-20261109": 36,
-        "csnades-dust2-main-20261109": 4,
+        "csnades-dust2-main-20261109": 8,
+        "csnades-inferno-main-20261126": 5,
+        "csnades-mirage-main-20261126": 4,
         "csnades-nuke-lower-20261109": 4,
         "csnades-nuke-upper-20261109": 94,
         "csnades-vertigo-lower-20261109": 4,
         "csnades-vertigo-upper-20261109": 68,
-        "setpos-anubis-main-20261124": 23,
-        "setpos-cache-main-20261124": 10,
-        "setpos-dust2-main-20261124": 7,
-        "setpos-inferno-main-20261124": 6,
-        "setpos-nuke-upper-20261124": 4
+        "gonade-nuke-upper-20261126": 1,
+        "gonade-vertigo-upper-20261126": 1,
+        "nadesdb-ancient-main-20261126": 2,
+        "nadesdb-cache-main-20261126": 3,
+        "setpos-ancient-main-20261126": 8,
+        "setpos-anubis-main-20261124": 28,
+        "setpos-cache-main-20261124": 23,
+        "setpos-dust2-main-20261124": 15,
+        "setpos-inferno-main-20261124": 9,
+        "setpos-mirage-main-20261126": 7,
+        "setpos-nuke-upper-20261124": 11
       },
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1558,
-      "publisherStartRows": 1550,
-      "worldStartSources": 99,
+      "sourceBackedRows": 1639,
+      "publisherStartRows": 1631,
+      "worldStartSources": 173,
       "namedOriginAreaRows": 8,
       "alternateSourceFloorRows": 29,
-      "crossFloorRows": 24,
+      "crossFloorRows": 29,
       "missingIds": []
     },
     "sourceHosts": {
-      "app.nadesdb.com": 1,
+      "app.nadesdb.com": 6,
       "cs2tricks.com": 1288,
-      "csnades.gg": 212,
-      "gonade.app": 4,
-      "setpos.gg": 50,
-      "youtube.com": 3
+      "csnades.gg": 230,
+      "gonade.app": 6,
+      "setpos.gg": 101,
+      "youtube.com": 8
     }
   },
   "walkthroughCoverage": {
-    "completeFourStageRows": 1555,
+    "completeFourStageRows": 1636,
     "stillRowsByStage": {
-      "stand": 1558,
-      "setup": 1555,
-      "aim": 1558,
-      "landing": 1558
+      "stand": 1639,
+      "setup": 1636,
+      "aim": 1639,
+      "landing": 1639
     },
-    "uniqueImages": 6450,
-    "markedAimViews": 2134,
+    "uniqueImages": 6726,
+    "markedAimViews": 2215,
     "standingVideoIds": [
       "expanded-cs2tricks-inferno-banana-logs-from-b-entrance-c431-ct",
       "expanded-cs2tricks-inferno-top-banana-from-b-entrance-6c8c-ct",
@@ -554,65 +562,65 @@
     "policy": "Overview preference subset only: up to four preferred recipes per target, floor, side and utility determine ordering. Main browsing restores every matching catalogue record before grouping destinations and origins; all numbered spawns and other origin recipes remain available.",
     "preferenceSubsetMaxPerTargetSideType": 4,
     "actualOriginAvailability": "All matching records in mainPublished; this subset is not a browsing or standing-recipe limit.",
-    "rows": 1283,
-    "uniqueSources": 1209,
-    "completeMediaRows": 1283,
+    "rows": 1342,
+    "uniqueSources": 1268,
+    "completeMediaRows": 1342,
     "mapRows": {
-      "mirage": 173,
-      "dust2": 166,
-      "inferno": 182,
-      "nuke": 172,
-      "ancient": 126,
-      "anubis": 262,
-      "cache": 92,
-      "vertigo": 110
+      "mirage": 180,
+      "dust2": 172,
+      "inferno": 187,
+      "nuke": 178,
+      "ancient": 135,
+      "anubis": 272,
+      "cache": 103,
+      "vertigo": 115
     },
     "mapSideType": {
       "mirage": {
         "T": {
-          "Smoke": 53,
+          "Smoke": 55,
           "Flash": 24,
-          "Molotov": 24,
-          "HE": 9
+          "Molotov": 25,
+          "HE": 10
         },
         "CT": {
-          "Smoke": 21,
+          "Smoke": 22,
           "Flash": 22,
-          "Molotov": 8,
-          "HE": 12
+          "Molotov": 9,
+          "HE": 13
         }
       },
       "dust2": {
         "T": {
-          "Smoke": 56,
+          "Smoke": 58,
           "Flash": 21,
-          "Molotov": 17,
+          "Molotov": 18,
           "HE": 4
         },
         "CT": {
           "Smoke": 24,
           "Flash": 24,
-          "Molotov": 13,
-          "HE": 7
+          "Molotov": 14,
+          "HE": 9
         }
       },
       "inferno": {
         "T": {
           "Smoke": 53,
           "Flash": 18,
-          "Molotov": 29,
-          "HE": 6
+          "Molotov": 31,
+          "HE": 8
         },
         "CT": {
           "Smoke": 27,
           "Flash": 20,
           "Molotov": 20,
-          "HE": 9
+          "HE": 10
         }
       },
       "nuke": {
         "T": {
-          "Smoke": 82,
+          "Smoke": 88,
           "Flash": 12,
           "Molotov": 22,
           "HE": 5
@@ -626,13 +634,13 @@
       },
       "ancient": {
         "T": {
-          "Smoke": 36,
+          "Smoke": 39,
           "Flash": 12,
-          "Molotov": 21,
-          "HE": 2
+          "Molotov": 22,
+          "HE": 3
         },
         "CT": {
-          "Smoke": 23,
+          "Smoke": 27,
           "Flash": 16,
           "Molotov": 13,
           "HE": 3
@@ -642,27 +650,27 @@
         "T": {
           "Smoke": 74,
           "Flash": 44,
-          "Molotov": 43,
-          "HE": 7
+          "Molotov": 45,
+          "HE": 9
         },
         "CT": {
-          "Smoke": 37,
+          "Smoke": 42,
           "Flash": 25,
           "Molotov": 23,
-          "HE": 9
+          "HE": 10
         }
       },
       "cache": {
         "T": {
-          "Smoke": 44,
+          "Smoke": 51,
           "Flash": 4,
-          "Molotov": 20,
+          "Molotov": 22,
           "HE": 3
         },
         "CT": {
           "Smoke": 13,
           "Flash": 1,
-          "Molotov": 6,
+          "Molotov": 8,
           "HE": 1
         }
       },
@@ -671,10 +679,10 @@
           "Smoke": 52,
           "Flash": 7,
           "Molotov": 16,
-          "HE": 2
+          "HE": 3
         },
         "CT": {
-          "Smoke": 18,
+          "Smoke": 22,
           "Flash": 4,
           "Molotov": 5,
           "HE": 6
@@ -686,71 +694,71 @@
       "mirage": {
         "main": {
           "name": "Overview",
-          "rows": 173,
-          "uniqueSources": 153,
-          "registeredPins": 173,
+          "rows": 180,
+          "uniqueSources": 160,
+          "registeredPins": 180,
           "T": {
-            "Smoke": 53,
+            "Smoke": 55,
             "Flash": 24,
-            "Molotov": 24,
-            "HE": 9
+            "Molotov": 25,
+            "HE": 10
           },
           "CT": {
-            "Smoke": 21,
+            "Smoke": 22,
             "Flash": 22,
-            "Molotov": 8,
-            "HE": 12
+            "Molotov": 9,
+            "HE": 13
           }
         }
       },
       "dust2": {
         "main": {
           "name": "Overview",
-          "rows": 166,
-          "uniqueSources": 150,
-          "registeredPins": 166,
+          "rows": 172,
+          "uniqueSources": 156,
+          "registeredPins": 172,
           "T": {
-            "Smoke": 56,
+            "Smoke": 58,
             "Flash": 21,
-            "Molotov": 17,
+            "Molotov": 18,
             "HE": 4
           },
           "CT": {
             "Smoke": 24,
             "Flash": 24,
-            "Molotov": 13,
-            "HE": 7
+            "Molotov": 14,
+            "HE": 9
           }
         }
       },
       "inferno": {
         "main": {
           "name": "Overview",
-          "rows": 182,
-          "uniqueSources": 161,
-          "registeredPins": 182,
+          "rows": 187,
+          "uniqueSources": 166,
+          "registeredPins": 187,
           "T": {
             "Smoke": 53,
             "Flash": 18,
-            "Molotov": 29,
-            "HE": 6
+            "Molotov": 31,
+            "HE": 8
           },
           "CT": {
             "Smoke": 27,
             "Flash": 20,
             "Molotov": 20,
-            "HE": 9
+            "HE": 10
           }
         }
       },
       "nuke": {
         "upper": {
           "name": "Upper",
-          "rows": 166,
-          "uniqueSources": 165,
-          "registeredPins": 166,
+          "rows": 172,
+          "uniqueSources": 171,
+          "registeredPins": 172,
           "T": {
-            "Smoke": 81,
+            "Smoke": 87,
             "Flash": 12,
             "Molotov": 22,
             "HE": 5
@@ -784,17 +792,17 @@
       "ancient": {
         "main": {
           "name": "Overview",
-          "rows": 126,
-          "uniqueSources": 117,
-          "registeredPins": 126,
+          "rows": 135,
+          "uniqueSources": 126,
+          "registeredPins": 135,
           "T": {
-            "Smoke": 36,
+            "Smoke": 39,
             "Flash": 12,
-            "Molotov": 21,
-            "HE": 2
+            "Molotov": 22,
+            "HE": 3
           },
           "CT": {
-            "Smoke": 23,
+            "Smoke": 27,
             "Flash": 16,
             "Molotov": 13,
             "HE": 3
@@ -804,39 +812,39 @@
       "anubis": {
         "main": {
           "name": "Overview",
-          "rows": 262,
-          "uniqueSources": 258,
-          "registeredPins": 262,
+          "rows": 272,
+          "uniqueSources": 268,
+          "registeredPins": 272,
           "T": {
             "Smoke": 74,
             "Flash": 44,
-            "Molotov": 43,
-            "HE": 7
+            "Molotov": 45,
+            "HE": 9
           },
           "CT": {
-            "Smoke": 37,
+            "Smoke": 42,
             "Flash": 25,
             "Molotov": 23,
-            "HE": 9
+            "HE": 10
           }
         }
       },
       "cache": {
         "main": {
           "name": "Overview",
-          "rows": 92,
-          "uniqueSources": 89,
-          "registeredPins": 92,
+          "rows": 103,
+          "uniqueSources": 100,
+          "registeredPins": 103,
           "T": {
-            "Smoke": 44,
+            "Smoke": 51,
             "Flash": 4,
-            "Molotov": 20,
+            "Molotov": 22,
             "HE": 3
           },
           "CT": {
             "Smoke": 13,
             "Flash": 1,
-            "Molotov": 6,
+            "Molotov": 8,
             "HE": 1
           }
         }
@@ -844,14 +852,14 @@
       "vertigo": {
         "upper": {
           "name": "Upper",
-          "rows": 105,
-          "uniqueSources": 105,
-          "registeredPins": 105,
+          "rows": 106,
+          "uniqueSources": 106,
+          "registeredPins": 106,
           "T": {
             "Smoke": 52,
             "Flash": 7,
             "Molotov": 16,
-            "HE": 2
+            "HE": 3
           },
           "CT": {
             "Smoke": 13,
@@ -862,9 +870,9 @@
         },
         "lower": {
           "name": "Lower",
-          "rows": 5,
-          "uniqueSources": 5,
-          "registeredPins": 5,
+          "rows": 9,
+          "uniqueSources": 9,
+          "registeredPins": 9,
           "T": {
             "Smoke": 0,
             "Flash": 0,
@@ -872,7 +880,7 @@
             "HE": 0
           },
           "CT": {
-            "Smoke": 5,
+            "Smoke": 9,
             "Flash": 0,
             "Molotov": 0,
             "HE": 0
@@ -881,65 +889,65 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1283,
-      "rowsWithAim": 1283,
-      "rowsWithPositionAndAim": 1283,
-      "mediaReferences": 4152,
-      "uniqueImages": 3903,
-      "remoteReferences": 3843,
-      "uniqueRemoteImages": 3596,
-      "bundledReferences": 309,
-      "uniqueBundledImages": 307,
+      "rowsWithPosition": 1342,
+      "rowsWithAim": 1342,
+      "rowsWithPositionAndAim": 1342,
+      "mediaReferences": 4350,
+      "uniqueImages": 4098,
+      "remoteReferences": 3987,
+      "uniqueRemoteImages": 3740,
+      "bundledReferences": 363,
+      "uniqueBundledImages": 358,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 1767,
-        "landing": 1090,
-        "position": 1283,
-        "release": 12
+        "aim": 1826,
+        "landing": 1151,
+        "position": 1342,
+        "release": 31
       },
       "kinds": {
         "aim": {
-          "references": 1767,
-          "uniqueImages": 1665,
-          "uniqueRemoteImages": 1640,
-          "uniqueBundledImages": 25
+          "references": 1826,
+          "uniqueImages": 1724,
+          "uniqueRemoteImages": 1695,
+          "uniqueBundledImages": 29
         },
         "landing": {
-          "references": 1090,
-          "uniqueImages": 1017,
-          "uniqueRemoteImages": 1010,
-          "uniqueBundledImages": 7
+          "references": 1151,
+          "uniqueImages": 1078,
+          "uniqueRemoteImages": 1049,
+          "uniqueBundledImages": 29
         },
         "position": {
-          "references": 1283,
-          "uniqueImages": 1209,
-          "uniqueRemoteImages": 937,
-          "uniqueBundledImages": 272
+          "references": 1342,
+          "uniqueImages": 1265,
+          "uniqueRemoteImages": 972,
+          "uniqueBundledImages": 293
         },
         "release": {
-          "references": 12,
-          "uniqueImages": 12,
-          "uniqueRemoteImages": 9,
-          "uniqueBundledImages": 3
+          "references": 31,
+          "uniqueImages": 31,
+          "uniqueRemoteImages": 24,
+          "uniqueBundledImages": 7
         }
       }
     },
     "videos": {
-      "playableSourceRows": 1283,
-      "nativePrimaryRows": 585,
-      "youtubePrimaryRows": 698,
-      "uniqueNativePrimaryClips": 552,
-      "uniqueYouTubePrimaryClips": 657,
-      "uniquePrimaryClips": 1209,
-      "uniquePrimarySegments": 1209,
-      "fallbackRows": 408,
-      "uniqueFallbackClips": 375,
-      "uniquePrimaryAndFallbackClips": 1584
+      "playableSourceRows": 1342,
+      "nativePrimaryRows": 640,
+      "youtubePrimaryRows": 702,
+      "uniqueNativePrimaryClips": 607,
+      "uniqueYouTubePrimaryClips": 658,
+      "uniquePrimaryClips": 1265,
+      "uniquePrimarySegments": 1268,
+      "fallbackRows": 458,
+      "uniqueFallbackClips": 425,
+      "uniquePrimaryAndFallbackClips": 1690
     },
     "pins": {
-      "registered": 1283,
-      "publisherDestinationRows": 1275,
-      "namedAnchorRows": 8,
+      "registered": 1342,
+      "publisherDestinationRows": 1330,
+      "namedAnchorRows": 12,
       "registrationRows": {
         "cs2tricks-ancient-main-20261109": 126,
         "cs2tricks-anubis-main-20261109": 245,
@@ -951,100 +959,109 @@
         "cs2tricks-nuke-upper-20261109": 73,
         "cs2tricks-vertigo-lower-20261109": 1,
         "cs2tricks-vertigo-upper-20261109": 37,
-        "csnades-anubis-main-20261124": 2,
-        "csnades-cache-main-20261109": 28,
-        "csnades-dust2-main-20261109": 4,
+        "csnades-anubis-main-20261124": 7,
+        "csnades-cache-main-20261109": 27,
+        "csnades-dust2-main-20261109": 8,
+        "csnades-inferno-main-20261126": 5,
+        "csnades-mirage-main-20261126": 4,
         "csnades-nuke-lower-20261109": 4,
-        "csnades-nuke-upper-20261109": 87,
+        "csnades-nuke-upper-20261109": 86,
         "csnades-vertigo-lower-20261109": 4,
         "csnades-vertigo-upper-20261109": 68,
-        "setpos-anubis-main-20261124": 12,
-        "setpos-cache-main-20261124": 2,
+        "gonade-nuke-upper-20261126": 1,
+        "gonade-vertigo-upper-20261126": 1,
+        "nadesdb-ancient-main-20261126": 2,
+        "nadesdb-cache-main-20261126": 3,
+        "setpos-ancient-main-20261126": 7,
+        "setpos-anubis-main-20261124": 17,
+        "setpos-cache-main-20261124": 11,
+        "setpos-dust2-main-20261124": 2,
         "setpos-inferno-main-20261124": 4,
-        "setpos-nuke-upper-20261124": 4
+        "setpos-mirage-main-20261126": 3,
+        "setpos-nuke-upper-20261124": 10
       },
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1283,
-      "publisherStartRows": 1275,
-      "worldStartSources": 45,
+      "sourceBackedRows": 1342,
+      "publisherStartRows": 1334,
+      "worldStartSources": 99,
       "namedOriginAreaRows": 8,
       "alternateSourceFloorRows": 29,
-      "crossFloorRows": 24,
+      "crossFloorRows": 28,
       "missingIds": []
     },
     "sourceHosts": {
-      "app.nadesdb.com": 1,
+      "app.nadesdb.com": 6,
       "cs2tricks.com": 1056,
-      "csnades.gg": 197,
-      "gonade.app": 4,
-      "setpos.gg": 22,
-      "youtube.com": 3
+      "csnades.gg": 213,
+      "gonade.app": 6,
+      "setpos.gg": 54,
+      "youtube.com": 7
     }
   },
   "generatedExpanded": {
-    "rows": 1554,
-    "uniqueSources": 1474,
-    "completeMediaRows": 1554,
+    "rows": 1635,
+    "uniqueSources": 1555,
+    "completeMediaRows": 1635,
     "mapRows": {
-      "mirage": 234,
-      "dust2": 209,
-      "inferno": 212,
-      "nuke": 187,
-      "ancient": 166,
-      "anubis": 308,
-      "cache": 128,
-      "vertigo": 110
+      "mirage": 245,
+      "dust2": 221,
+      "inferno": 220,
+      "nuke": 195,
+      "ancient": 176,
+      "anubis": 318,
+      "cache": 144,
+      "vertigo": 116
     },
     "mapSideType": {
       "mirage": {
         "T": {
-          "Smoke": 107,
+          "Smoke": 113,
           "Flash": 24,
-          "Molotov": 25,
-          "HE": 9
+          "Molotov": 26,
+          "HE": 10
         },
         "CT": {
-          "Smoke": 25,
+          "Smoke": 26,
           "Flash": 24,
-          "Molotov": 8,
-          "HE": 12
+          "Molotov": 9,
+          "HE": 13
         }
       },
       "dust2": {
         "T": {
-          "Smoke": 88,
+          "Smoke": 96,
           "Flash": 22,
-          "Molotov": 17,
+          "Molotov": 18,
           "HE": 4
         },
         "CT": {
           "Smoke": 32,
           "Flash": 25,
-          "Molotov": 13,
-          "HE": 8
+          "Molotov": 14,
+          "HE": 10
         }
       },
       "inferno": {
         "T": {
           "Smoke": 65,
           "Flash": 19,
-          "Molotov": 31,
-          "HE": 6
+          "Molotov": 33,
+          "HE": 8
         },
         "CT": {
-          "Smoke": 42,
+          "Smoke": 45,
           "Flash": 20,
           "Molotov": 20,
-          "HE": 9
+          "HE": 10
         }
       },
       "nuke": {
         "T": {
-          "Smoke": 96,
+          "Smoke": 103,
           "Flash": 12,
-          "Molotov": 22,
+          "Molotov": 23,
           "HE": 5
         },
         "CT": {
@@ -1056,13 +1073,13 @@
       },
       "ancient": {
         "T": {
-          "Smoke": 64,
+          "Smoke": 67,
           "Flash": 12,
-          "Molotov": 24,
-          "HE": 2
+          "Molotov": 25,
+          "HE": 3
         },
         "CT": {
-          "Smoke": 32,
+          "Smoke": 37,
           "Flash": 16,
           "Molotov": 13,
           "HE": 3
@@ -1072,27 +1089,27 @@
         "T": {
           "Smoke": 112,
           "Flash": 45,
-          "Molotov": 45,
-          "HE": 7
+          "Molotov": 47,
+          "HE": 9
         },
         "CT": {
-          "Smoke": 41,
+          "Smoke": 46,
           "Flash": 27,
           "Molotov": 23,
-          "HE": 8
+          "HE": 9
         }
       },
       "cache": {
         "T": {
-          "Smoke": 69,
+          "Smoke": 80,
           "Flash": 4,
-          "Molotov": 20,
+          "Molotov": 22,
           "HE": 3
         },
         "CT": {
           "Smoke": 23,
           "Flash": 1,
-          "Molotov": 7,
+          "Molotov": 10,
           "HE": 1
         }
       },
@@ -1101,10 +1118,10 @@
           "Smoke": 52,
           "Flash": 7,
           "Molotov": 16,
-          "HE": 2
+          "HE": 3
         },
         "CT": {
-          "Smoke": 18,
+          "Smoke": 23,
           "Flash": 4,
           "Molotov": 5,
           "HE": 6
@@ -1116,73 +1133,73 @@
       "mirage": {
         "main": {
           "name": "Overview",
-          "rows": 234,
-          "uniqueSources": 213,
-          "registeredPins": 234,
+          "rows": 245,
+          "uniqueSources": 224,
+          "registeredPins": 245,
           "T": {
-            "Smoke": 107,
+            "Smoke": 113,
             "Flash": 24,
-            "Molotov": 25,
-            "HE": 9
+            "Molotov": 26,
+            "HE": 10
           },
           "CT": {
-            "Smoke": 25,
+            "Smoke": 26,
             "Flash": 24,
-            "Molotov": 8,
-            "HE": 12
+            "Molotov": 9,
+            "HE": 13
           }
         }
       },
       "dust2": {
         "main": {
           "name": "Overview",
-          "rows": 209,
-          "uniqueSources": 191,
-          "registeredPins": 209,
+          "rows": 221,
+          "uniqueSources": 203,
+          "registeredPins": 221,
           "T": {
-            "Smoke": 88,
+            "Smoke": 96,
             "Flash": 22,
-            "Molotov": 17,
+            "Molotov": 18,
             "HE": 4
           },
           "CT": {
             "Smoke": 32,
             "Flash": 25,
-            "Molotov": 13,
-            "HE": 8
+            "Molotov": 14,
+            "HE": 10
           }
         }
       },
       "inferno": {
         "main": {
           "name": "Overview",
-          "rows": 212,
-          "uniqueSources": 189,
-          "registeredPins": 212,
+          "rows": 220,
+          "uniqueSources": 197,
+          "registeredPins": 220,
           "T": {
             "Smoke": 65,
             "Flash": 19,
-            "Molotov": 31,
-            "HE": 6
+            "Molotov": 33,
+            "HE": 8
           },
           "CT": {
-            "Smoke": 42,
+            "Smoke": 45,
             "Flash": 20,
             "Molotov": 20,
-            "HE": 9
+            "HE": 10
           }
         }
       },
       "nuke": {
         "upper": {
           "name": "Upper",
-          "rows": 181,
-          "uniqueSources": 180,
-          "registeredPins": 181,
+          "rows": 189,
+          "uniqueSources": 188,
+          "registeredPins": 189,
           "T": {
-            "Smoke": 95,
+            "Smoke": 102,
             "Flash": 12,
-            "Molotov": 22,
+            "Molotov": 23,
             "HE": 5
           },
           "CT": {
@@ -1214,17 +1231,17 @@
       "ancient": {
         "main": {
           "name": "Overview",
-          "rows": 166,
-          "uniqueSources": 157,
-          "registeredPins": 166,
+          "rows": 176,
+          "uniqueSources": 167,
+          "registeredPins": 176,
           "T": {
-            "Smoke": 64,
+            "Smoke": 67,
             "Flash": 12,
-            "Molotov": 24,
-            "HE": 2
+            "Molotov": 25,
+            "HE": 3
           },
           "CT": {
-            "Smoke": 32,
+            "Smoke": 37,
             "Flash": 16,
             "Molotov": 13,
             "HE": 3
@@ -1234,39 +1251,39 @@
       "anubis": {
         "main": {
           "name": "Overview",
-          "rows": 308,
-          "uniqueSources": 304,
-          "registeredPins": 308,
+          "rows": 318,
+          "uniqueSources": 314,
+          "registeredPins": 318,
           "T": {
             "Smoke": 112,
             "Flash": 45,
-            "Molotov": 45,
-            "HE": 7
+            "Molotov": 47,
+            "HE": 9
           },
           "CT": {
-            "Smoke": 41,
+            "Smoke": 46,
             "Flash": 27,
             "Molotov": 23,
-            "HE": 8
+            "HE": 9
           }
         }
       },
       "cache": {
         "main": {
           "name": "Overview",
-          "rows": 128,
-          "uniqueSources": 124,
-          "registeredPins": 128,
+          "rows": 144,
+          "uniqueSources": 140,
+          "registeredPins": 144,
           "T": {
-            "Smoke": 69,
+            "Smoke": 80,
             "Flash": 4,
-            "Molotov": 20,
+            "Molotov": 22,
             "HE": 3
           },
           "CT": {
             "Smoke": 23,
             "Flash": 1,
-            "Molotov": 7,
+            "Molotov": 10,
             "HE": 1
           }
         }
@@ -1274,14 +1291,14 @@
       "vertigo": {
         "upper": {
           "name": "Upper",
-          "rows": 105,
-          "uniqueSources": 105,
-          "registeredPins": 105,
+          "rows": 106,
+          "uniqueSources": 106,
+          "registeredPins": 106,
           "T": {
             "Smoke": 52,
             "Flash": 7,
             "Molotov": 16,
-            "HE": 2
+            "HE": 3
           },
           "CT": {
             "Smoke": 13,
@@ -1292,9 +1309,9 @@
         },
         "lower": {
           "name": "Lower",
-          "rows": 5,
-          "uniqueSources": 5,
-          "registeredPins": 5,
+          "rows": 10,
+          "uniqueSources": 10,
+          "registeredPins": 10,
           "T": {
             "Smoke": 0,
             "Flash": 0,
@@ -1302,7 +1319,7 @@
             "HE": 0
           },
           "CT": {
-            "Smoke": 5,
+            "Smoke": 10,
             "Flash": 0,
             "Molotov": 0,
             "HE": 0
@@ -1311,65 +1328,65 @@
       }
     },
     "photos": {
-      "rowsWithPosition": 1554,
-      "rowsWithAim": 1554,
-      "rowsWithPositionAndAim": 1554,
-      "mediaReferences": 5052,
-      "uniqueImages": 4782,
-      "remoteReferences": 4670,
-      "uniqueRemoteImages": 4402,
-      "bundledReferences": 382,
-      "uniqueBundledImages": 380,
+      "rowsWithPosition": 1635,
+      "rowsWithAim": 1635,
+      "rowsWithPositionAndAim": 1635,
+      "mediaReferences": 5322,
+      "uniqueImages": 5048,
+      "remoteReferences": 4878,
+      "uniqueRemoteImages": 4610,
+      "bundledReferences": 444,
+      "uniqueBundledImages": 438,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2130,
-        "landing": 1346,
-        "position": 1554,
-        "release": 22
+        "aim": 2211,
+        "landing": 1427,
+        "position": 1635,
+        "release": 49
       },
       "kinds": {
         "aim": {
-          "references": 2130,
-          "uniqueImages": 2019,
-          "uniqueRemoteImages": 1990,
-          "uniqueBundledImages": 29
+          "references": 2211,
+          "uniqueImages": 2100,
+          "uniqueRemoteImages": 2065,
+          "uniqueBundledImages": 35
         },
         "landing": {
-          "references": 1346,
-          "uniqueImages": 1267,
-          "uniqueRemoteImages": 1260,
-          "uniqueBundledImages": 7
+          "references": 1427,
+          "uniqueImages": 1348,
+          "uniqueRemoteImages": 1318,
+          "uniqueBundledImages": 30
         },
         "position": {
-          "references": 1554,
-          "uniqueImages": 1474,
-          "uniqueRemoteImages": 1133,
-          "uniqueBundledImages": 341
+          "references": 1635,
+          "uniqueImages": 1551,
+          "uniqueRemoteImages": 1186,
+          "uniqueBundledImages": 365
         },
         "release": {
-          "references": 22,
-          "uniqueImages": 22,
-          "uniqueRemoteImages": 19,
-          "uniqueBundledImages": 3
+          "references": 49,
+          "uniqueImages": 49,
+          "uniqueRemoteImages": 41,
+          "uniqueBundledImages": 8
         }
       }
     },
     "videos": {
-      "playableSourceRows": 1554,
-      "nativePrimaryRows": 748,
-      "youtubePrimaryRows": 806,
-      "uniqueNativePrimaryClips": 710,
-      "uniqueYouTubePrimaryClips": 761,
-      "uniquePrimaryClips": 1471,
-      "uniquePrimarySegments": 1471,
-      "fallbackRows": 564,
-      "uniqueFallbackClips": 526,
-      "uniquePrimaryAndFallbackClips": 1997
+      "playableSourceRows": 1635,
+      "nativePrimaryRows": 824,
+      "youtubePrimaryRows": 811,
+      "uniqueNativePrimaryClips": 786,
+      "uniqueYouTubePrimaryClips": 762,
+      "uniquePrimaryClips": 1548,
+      "uniquePrimarySegments": 1552,
+      "fallbackRows": 633,
+      "uniqueFallbackClips": 595,
+      "uniquePrimaryAndFallbackClips": 2143
     },
     "pins": {
-      "registered": 1554,
-      "publisherDestinationRows": 1550,
-      "namedAnchorRows": 4,
+      "registered": 1635,
+      "publisherDestinationRows": 1626,
+      "namedAnchorRows": 9,
       "registrationRows": {
         "cs2tricks-ancient-main-20261109": 166,
         "cs2tricks-anubis-main-20261109": 282,
@@ -1381,44 +1398,53 @@
         "cs2tricks-nuke-upper-20261109": 83,
         "cs2tricks-vertigo-lower-20261109": 1,
         "cs2tricks-vertigo-upper-20261109": 37,
-        "csnades-anubis-main-20261124": 2,
+        "csnades-anubis-main-20261124": 7,
         "csnades-cache-main-20261109": 36,
-        "csnades-dust2-main-20261109": 4,
+        "csnades-dust2-main-20261109": 8,
+        "csnades-inferno-main-20261126": 5,
+        "csnades-mirage-main-20261126": 4,
         "csnades-nuke-lower-20261109": 4,
         "csnades-nuke-upper-20261109": 94,
         "csnades-vertigo-lower-20261109": 4,
         "csnades-vertigo-upper-20261109": 68,
-        "setpos-anubis-main-20261124": 23,
-        "setpos-cache-main-20261124": 10,
-        "setpos-dust2-main-20261124": 7,
-        "setpos-inferno-main-20261124": 6,
-        "setpos-nuke-upper-20261124": 4
+        "gonade-nuke-upper-20261126": 1,
+        "gonade-vertigo-upper-20261126": 1,
+        "nadesdb-ancient-main-20261126": 2,
+        "nadesdb-cache-main-20261126": 3,
+        "setpos-ancient-main-20261126": 8,
+        "setpos-anubis-main-20261124": 28,
+        "setpos-cache-main-20261124": 23,
+        "setpos-dust2-main-20261124": 15,
+        "setpos-inferno-main-20261124": 9,
+        "setpos-mirage-main-20261126": 7,
+        "setpos-nuke-upper-20261124": 11
       },
       "unregistered": []
     },
     "origins": {
-      "sourceBackedRows": 1554,
-      "publisherStartRows": 1550,
-      "worldStartSources": 99,
+      "sourceBackedRows": 1635,
+      "publisherStartRows": 1631,
+      "worldStartSources": 173,
       "namedOriginAreaRows": 4,
       "alternateSourceFloorRows": 29,
-      "crossFloorRows": 24,
+      "crossFloorRows": 29,
       "missingIds": []
     },
     "sourceHosts": {
-      "app.nadesdb.com": 1,
+      "app.nadesdb.com": 6,
       "cs2tricks.com": 1288,
-      "csnades.gg": 212,
-      "setpos.gg": 50,
-      "youtube.com": 3
+      "csnades.gg": 230,
+      "gonade.app": 2,
+      "setpos.gg": 101,
+      "youtube.com": 8
     }
   },
   "offlineBundledGuidePhotos": {
-    "count": 2069,
-    "existingCount": 2069,
-    "bytes": 171559750,
+    "count": 2137,
+    "existingCount": 2137,
+    "bytes": 179170094,
     "missingPaths": [],
-    "mainReferencedUniqueImages": 380,
+    "mainReferencedUniqueImages": 438,
     "assets": [
       {
         "path": "/lineup-media/kielson/cache/drzwi_1.webp",
@@ -1931,6 +1957,11 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/essential-nvca/gonade-nuke-top-hut-from-t-spawnroof-molotov-setup.webp",
+        "bytes": 261538,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/guide-stages/other/gonade-nuke-mustang-from-t-roof-molotov-setup.webp",
         "bytes": 97848,
         "exists": true
@@ -1983,6 +2014,46 @@
       {
         "path": "/lineup-media/first-person/cs2tricks/mirage/bench-from-b-apartments-a7b9.webp",
         "bytes": 17752,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-3624ea054e1c-setup.webp",
+        "bytes": 62072,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-3624ea054e1c-landing.webp",
+        "bytes": 97576,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-34587dc64c5b-setup.webp",
+        "bytes": 91158,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-34587dc64c5b-landing.webp",
+        "bytes": 91562,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-2b69a9ce94f8-setup.webp",
+        "bytes": 28356,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-2b69a9ce94f8-landing.webp",
+        "bytes": 129668,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-cfc334843eb3-setup.webp",
+        "bytes": 49400,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/mirage-cfc334843eb3-landing.webp",
+        "bytes": 62526,
         "exists": true
       },
       {
@@ -3071,6 +3142,51 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/essential-csnades/dust2-ae8a279b0fc1-setup.webp",
+        "bytes": 62082,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-ae8a279b0fc1-landing.webp",
+        "bytes": 120012,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-c810c0212a27-setup.webp",
+        "bytes": 44660,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-c810c0212a27-landing.webp",
+        "bytes": 111504,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-01dae2e90adc-setup.webp",
+        "bytes": 109042,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-01dae2e90adc-landing.webp",
+        "bytes": 43564,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-2288e8c0651f-setup.webp",
+        "bytes": 102230,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/dust2-2288e8c0651f-landing.webp",
+        "bytes": 158146,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/dust2-113-setup.webp",
+        "bytes": 199168,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/first-person/cs2tricks/dust2/car-from-long-barrels-6d24.webp",
         "bytes": 28768,
         "exists": true
@@ -3991,6 +4107,11 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/instant-spawns/dust2-113-aim.webp",
+        "bytes": 29734,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/precise-other-maps/dust2-69-position.jpg",
         "bytes": 239235,
         "exists": true
@@ -4068,6 +4189,56 @@
       {
         "path": "/lineup-media/source-video-stills/csnades/dust2/dust2-he-t27wNMjp7J.jpg",
         "bytes": 104035,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-a394cfcd58d1-setup.webp",
+        "bytes": 68344,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-a394cfcd58d1-landing.webp",
+        "bytes": 125846,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-9bba71a98920-setup.webp",
+        "bytes": 119832,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-9bba71a98920-landing.webp",
+        "bytes": 164170,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-da7e58fa94f1-setup.webp",
+        "bytes": 105702,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-da7e58fa94f1-landing.webp",
+        "bytes": 137822,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-c64fb706185e-setup.webp",
+        "bytes": 69834,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-c64fb706185e-landing.webp",
+        "bytes": 110218,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-55c9b4d609c1-setup.webp",
+        "bytes": 115612,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/inferno-55c9b4d609c1-landing.webp",
+        "bytes": 125548,
         "exists": true
       },
       {
@@ -5031,6 +5202,16 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/guide-stages/csnades/nuke/hegrenades/trophy-from-ramp-a-setup.webp",
+        "bytes": 45608,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/guide-stages/csnades/nuke/hegrenades/trophy-from-ramp-b-setup.webp",
+        "bytes": 64974,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/first-person/cs2tricks/nuke/a-site-from-ct-spawn-0fc1.webp",
         "bytes": 57170,
         "exists": true
@@ -5513,16 +5694,6 @@
       {
         "path": "/lineup-media/guide-stages/csnades/nuke/hegrenades/t-red-from-under-silo-landing.webp",
         "bytes": 83784,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/guide-stages/csnades/nuke/hegrenades/trophy-from-ramp-a-setup.webp",
-        "bytes": 45608,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/guide-stages/csnades/nuke/hegrenades/trophy-from-ramp-b-setup.webp",
-        "bytes": 64974,
         "exists": true
       },
       {
@@ -6306,6 +6477,16 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-a-position-2916ms.jpg",
+        "bytes": 128031,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-b-position-2350ms.jpg",
+        "bytes": 198893,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/precise-other-maps/nuke-107-position.jpg",
         "bytes": 257890,
         "exists": true
@@ -6403,16 +6584,6 @@
       {
         "path": "/lineup-media/source-video-stills/csnades/nuke/he-t-red-from-under-silo-position-3066ms.jpg",
         "bytes": 271400,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-a-position-2916ms.jpg",
-        "bytes": 128031,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/csnades/nuke/he-trophy-from-ramp-b-position-2350ms.jpg",
-        "bytes": 198893,
         "exists": true
       },
       {
@@ -6973,6 +7144,21 @@
       {
         "path": "/lineup-media/source-video-stills/csnades/nuke/community-he-bae7574f2486-silo-from-rafters-aim-7000ms.jpg",
         "bytes": 176358,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-nvca/essential-nadesdb-ancient-52a634a3-setup.webp",
+        "bytes": 189710,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-nvca/essential-nadesdb-ancient-3723f545-setup.webp",
+        "bytes": 182652,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/first-person/cs2tricks/ancient/lane-from-short-4528.webp",
+        "bytes": 30912,
         "exists": true
       },
       {
@@ -7556,11 +7742,6 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/first-person/cs2tricks/ancient/lane-from-short-4528.webp",
-        "bytes": 30912,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/first-person/cs2tricks/ancient/b-cubby-from-ruins-265b.webp",
         "bytes": 46290,
         "exists": true
@@ -7838,6 +8019,56 @@
       {
         "path": "/lineup-media/source-video-stills/cs2tricks/ancient/049d0b20-3dd0-4523-bd05-2c8b1f25f8b3.jpg",
         "bytes": 496418,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-b02c2a9aee77-setup.webp",
+        "bytes": 80818,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-b02c2a9aee77-landing.webp",
+        "bytes": 109858,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-bc975c22bad3-setup.webp",
+        "bytes": 60842,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-bc975c22bad3-landing.webp",
+        "bytes": 99318,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-1c8d8c0db6ab-setup.webp",
+        "bytes": 28688,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-1c8d8c0db6ab-landing.webp",
+        "bytes": 99136,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-98735d3c1cc3-setup.webp",
+        "bytes": 65590,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-98735d3c1cc3-landing.webp",
+        "bytes": 111610,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-001cea322a64-setup.webp",
+        "bytes": 46106,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-csnades/anubis-001cea322a64-landing.webp",
+        "bytes": 96688,
         "exists": true
       },
       {
@@ -9411,6 +9642,41 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/essential-nvca/essential-nadesdb-cache-1c91bbe2-setup.webp",
+        "bytes": 232538,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-nvca/essential-nadesdb-cache-7d0f7b9c-setup.webp",
+        "bytes": 177778,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-nvca/essential-nadesdb-cache-c46f7d8b-setup.webp",
+        "bytes": 204830,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-nvca/essential-setpos-cache-167-setup.webp",
+        "bytes": 125004,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/essential-nvca/essential-setpos-cache-135-setup.webp",
+        "bytes": 128414,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/first-person/cs2tricks/cache/new-boxes-from-sun-room-0842.webp",
+        "bytes": 45346,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/first-person/cs2tricks/cache/a-main-from-a-main-3c77.webp",
+        "bytes": 19554,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/first-person/cs2tricks/cache/ct-from-sun-room-6e09.webp",
         "bytes": 38416,
         "exists": true
@@ -9778,16 +10044,6 @@
       {
         "path": "/lineup-media/first-person/cs2tricks/cache/forklift-from-outside-blue-room-1735.webp",
         "bytes": 53046,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/first-person/cs2tricks/cache/new-boxes-from-sun-room-0842.webp",
-        "bytes": 45346,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/first-person/cs2tricks/cache/a-main-from-a-main-3c77.webp",
-        "bytes": 19554,
         "exists": true
       },
       {
@@ -10396,6 +10652,56 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/essential-nvca/essential-gonade-vertigo-deep-t-mid-he-setup.webp",
+        "bytes": 151110,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-connector-setup.webp",
+        "bytes": 50608,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-connector-landing.webp",
+        "bytes": 96056,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/sidewalk-from-ladder-setup.webp",
+        "bytes": 33236,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/sidewalk-from-ladder-landing.webp",
+        "bytes": 71440,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct1-stand.webp",
+        "bytes": 174144,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct2-stand.webp",
+        "bytes": 180120,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct3-stand.webp",
+        "bytes": 150788,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct4-stand.webp",
+        "bytes": 161998,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct5-stand.webp",
+        "bytes": 150406,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/first-person/cs2tricks/vertigo/ct-spawn-from-stairs-e997.webp",
         "bytes": 18108,
         "exists": true
@@ -10706,16 +11012,6 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-connector-setup.webp",
-        "bytes": 50608,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-connector-landing.webp",
-        "bytes": 96056,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-ct-spawn-setup.webp",
         "bytes": 51046,
         "exists": true
@@ -10783,16 +11079,6 @@
       {
         "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/ramp-from-crane-landing.webp",
         "bytes": 68474,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/sidewalk-from-ladder-setup.webp",
-        "bytes": 33236,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/guide-stages/csnades/vertigo/molotovs/sidewalk-from-ladder-landing.webp",
-        "bytes": 71440,
         "exists": true
       },
       {
@@ -11216,6 +11502,96 @@
         "exists": true
       },
       {
+        "path": "/lineup-media/source-video-stills/csnades/vertigo/molotov-default-b-from-connector-position-2350ms.jpg",
+        "bytes": 163325,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/source-video-stills/csnades/vertigo/molotov-sidewalk-from-ladder-position-5600ms.jpg",
+        "bytes": 112351,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/numbered-spawns.webp",
+        "bytes": 210554,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct1-aim.webp",
+        "bytes": 63072,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct1-run.webp",
+        "bytes": 183182,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct1-landing.webp",
+        "bytes": 123852,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct2-aim.webp",
+        "bytes": 79988,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct2-run.webp",
+        "bytes": 100898,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct2-landing.webp",
+        "bytes": 79306,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct3-aim.webp",
+        "bytes": 98088,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct3-run.webp",
+        "bytes": 79642,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct3-landing.webp",
+        "bytes": 87688,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct4-aim.webp",
+        "bytes": 79822,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct4-run.webp",
+        "bytes": 72244,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct4-landing.webp",
+        "bytes": 89100,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct5-aim.webp",
+        "bytes": 96590,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct5-run.webp",
+        "bytes": 72410,
+        "exists": true
+      },
+      {
+        "path": "/lineup-media/instant-spawns/vertigo/ct5-landing.webp",
+        "bytes": 88836,
+        "exists": true
+      },
+      {
         "path": "/lineup-media/source-video-stills/cs2tricks/vertigo/ct-spawn-from-stairs-e997-position-1500ms.jpg",
         "bytes": 169687,
         "exists": true
@@ -11511,11 +11887,6 @@
         "exists": true
       },
       {
-        "path": "/lineup-media/source-video-stills/csnades/vertigo/molotov-default-b-from-connector-position-2350ms.jpg",
-        "bytes": 163325,
-        "exists": true
-      },
-      {
         "path": "/lineup-media/source-video-stills/csnades/vertigo/molotov-default-b-from-ct-spawn-position-2350ms.jpg",
         "bytes": 148638,
         "exists": true
@@ -11548,11 +11919,6 @@
       {
         "path": "/lineup-media/source-video-stills/csnades/vertigo/molotov-ramp-from-crane-position-1508ms.jpg",
         "bytes": 159166,
-        "exists": true
-      },
-      {
-        "path": "/lineup-media/source-video-stills/csnades/vertigo/molotov-sidewalk-from-ladder-position-5600ms.jpg",
-        "bytes": 112351,
         "exists": true
       },
       {
@@ -14008,8 +14374,8 @@
         ]
       },
       "origins": {
-        "sourceBackedRows": 11,
-        "publisherStartRows": 7,
+        "sourceBackedRows": 12,
+        "publisherStartRows": 8,
         "worldStartSources": 0,
         "namedOriginAreaRows": 4,
         "alternateSourceFloorRows": 0,
@@ -14098,7 +14464,6 @@
           "gonade-nuke-t-outside-from-ct-outside-incendiary",
           "gonade-nuke-main-from-secret-flash",
           "gonade-nuke-squeaky-from-a-rafter-smoke",
-          "gonade-nuke-top-hut-from-t-spawnroof-molotov",
           "gonade-nuke-secret-cross-from-main-incendiary",
           "gonade-nuke-lobby-push-from-a-site-flash",
           "gonade-nuke-trophy-from-ramp-flash",

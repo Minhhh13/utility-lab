@@ -1,10 +1,18 @@
 import type {UtilityReference} from './utility-data.ts';
 import preciseRegistrations from './data/precise-map-registrations.json' with {type:'json'};
+import essentialRegistrations from './data/essential-csnades-registrations.json' with {type:'json'};
+import spawnRegistrations from './data/instant-spawn-registrations.json' with {type:'json'};
+import essentialNvcaRegistrations from './data/essential-nvca-registrations.json' with {type:'json'};
 import reviewedDestinationLinks from './data/reviewed-destination-links.json' with {type:'json'};
-export type PublisherProvider='cs2tricks'|'csnades'|'setpos'|'gonade';
+import vertigoDestinationLinks from './data/instant-vertigo-target-links.json' with {type:'json'};
+const linkedDestinations = [...reviewedDestinationLinks, ...vertigoDestinationLinks];
+export type PublisherProvider='cs2tricks'|'csnades'|'setpos'|'gonade'|'nadesdb';
 export interface PublisherMapRegistration {id:string;provider?:PublisherProvider;mapId:string;levelId:string;artwork:string;sourceImage:string;sourceImageSha256:string;artworkSha256:string;sourceImageWidth?:number;sourceImageHeight?:number;logicalWidth?:number;logicalHeight?:number;transform:{scaleX:number;scaleY:number;translateX:number;translateY:number};checkedAt:string;evidence:string;reviewImage:string}
 export const PUBLISHER_MAP_REGISTRATIONS: PublisherMapRegistration[] = [
   ...preciseRegistrations as PublisherMapRegistration[],
+  ...essentialRegistrations as PublisherMapRegistration[],
+  ...spawnRegistrations as PublisherMapRegistration[],
+  ...essentialNvcaRegistrations as PublisherMapRegistration[],
   {
     "id": "cs2tricks-mirage-main-20261109",
     "mapId": "mirage",
@@ -338,6 +346,9 @@ export function projectPublisherDestination(guide: UtilityReference): {x:number;
    if(url.origin!=='https://setpos.gg'||!url.pathname.startsWith(`/${guide.mapId}/`))return null;
   }else if(registration.provider==='gonade'){
    if(url.origin!=='https://gonade.app'||!url.pathname.startsWith(`/nade/${guide.mapId}-`))return null;
+  }else if(registration.provider==='nadesdb'){
+   if(url.origin!=='https://app.nadesdb.com'||url.pathname!==`/maps/${guide.mapId}`||
+    !/^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(url.searchParams.get('nade')||''))return null;
   }else if(url.origin!=='https://www.cs2tricks.com'||!url.pathname.startsWith(`/nades/${guide.mapId}/`))return null;
  }catch{return null;}
  const t=registration.transform;const x=point.x*t.scaleX+t.translateX,y=point.y*t.scaleY+t.translateY;
@@ -349,7 +360,7 @@ export function projectPublisherDestination(guide: UtilityReference): {x:number;
  * The reference still passes the publisher's unchanged URL and floor checks. */
 export function projectReviewedDestination(guide: UtilityReference): {x:number;y:number}|null {
  if(guide.userCreated)return null;
- const link=reviewedDestinationLinks.find(link=>link.guideId===guide.id &&
+ const link=linkedDestinations.find(link=>link.guideId===guide.id &&
   link.source===guide.source && link.mapId===guide.mapId &&
   link.levelId===guide.levelId && link.side===guide.side &&
   link.type===guide.type && link.target===guide.target);

@@ -16,12 +16,22 @@ const lookups = Object.fromEntries(maps.map(map => [map, {}]));
 const proof = [];
 const reject = [];
 const worldEvidence = await json('docs/data/reviewed-world-origins.json');
-const worldRows = new Map(worldEvidence.records.map(row => [row.source, row]));
-for (const radar of Object.values(worldEvidence.radars)) {
+const essentialEvidence = await json('docs/data/essential-csnades-four-maps-evidence.json');
+const vertigoSpawns = await json('docs/data/instant-vertigo-evidence.json');
+const worldRows = new Map([...worldEvidence.records, ...essentialEvidence.records].map(row => [row.source, row]));
+const worldRadars = { ...worldEvidence.radars, ...essentialEvidence.radars, vertigo: vertigoSpawns.radar };
+for (const radar of Object.values(worldRadars)) {
   const bytes = await readFile('public' + radar.artwork);
   if (createHash('sha256').update(bytes).digest('hex') !== radar.artworkSha256) {
     throw Error('Recheck world coordinates against the changed artwork: ' + radar.artwork);
   }
+}
+function worldPosition(world, radar) {
+  const span = radar.scale * radar.radarSize;
+  const x = Math.round((world.x - radar.posX) / span * 100000) / 100;
+  const y = Math.round((radar.posY - world.y) / span * 100000) / 100;
+  if (![x, y].every(value => Number.isFinite(value) && value >= 0 && value <= 1000)) throw Error('Invalid world start on ' + radar.artwork);
+  return { x, y };
 }
 function inside(point, polygon) {
   let yes = false;
@@ -49,15 +59,11 @@ function publisher(provider, source, mapId, label, rawPoint, rawLevels, sourceId
   if (points.some(point => !point)) {reject.push({source, reason:'Invalid or missing source-floor registration'}); return;}
   const world = worldRows.get(source);
   if (world) {
-    const radar = worldEvidence.radars[mapId];
+    const radar = worldRadars[mapId];
     if (!radar || world.mapId !== mapId || world.originId !== sourceId || points.length !== 1 || points[0].levelId !== radar.levelId) {
       throw Error('Mismatched world-origin reference: ' + source);
     }
-    const span = radar.scale * radar.radarSize;
-    const x = Math.round((world.world.x - radar.posX) / span * 100000) / 100;
-    const y = Math.round((radar.posY - world.world.y) / span * 100000) / 100;
-    if (![x,y].every(value => Number.isFinite(value) && value >= 0 && value <= 1000)) throw Error('Invalid world start: ' + source);
-    points[0] = {x, y, levelId:radar.levelId, registrationId:'world-' + mapId + '-' + radar.levelId};
+    points[0] = {...worldPosition(world.world,radar), levelId:radar.levelId, registrationId:'world-' + mapId + '-' + radar.levelId};
   }
   const [primary, ...alternateLevels] = points;
   lookups[mapId][originSourceKey(source)] = {...primary, label, basis:'publisher-origin', ...((world || isRecordedStart) ? {precision:'world'} : {}), ...(sourceId ? {sourceId} : {}), ...(alternateLevels.length ? {alternateLevels} : {})};
@@ -72,10 +78,10 @@ for (const file of ['csnades-publisher','csnades-cache','csnades-dust2','csnades
     publisher('csnades', row.source, row.mapId, row.titleFrom, row.throwFrom, row.throwFrom?.levels, row.sourceId);
   }
 }
-for(const file of ['precise-other-maps-evidence','precise-anubis-evidence']){
+for(const file of ['precise-other-maps-evidence','precise-anubis-evidence','essential-csnades-four-maps-evidence','essential-nvca-evidence','instant-spawn-smokes-evidence']){
  const evidence=await json(`docs/data/${file}.json`);
  for(const row of evidence.records||evidence){
-  if(!['setpos','gonade','csnades'].includes(row.provider)||!row.origin)continue;
+  if(row.reuseExistingOrigin || !['setpos','gonade','csnades','nadesdb'].includes(row.provider)||!row.origin)continue;
   publisher(row.provider,row.source,row.mapId,row.label||row.from||row.titleFrom||row.origin.label,
    row.origin,row.origin.levels||row.throwFrom?.levels,row.sourceId||row.publisherId,
    row.provider==='setpos' && Boolean(row.sourceOriginWorld || row.worldOrigin));
@@ -94,6 +100,16 @@ for (const row of namedOrigins) {
   proof.push({source:row.source,mapId:row.mapId,label:row.label,floorBasis:'reviewed-named-origin-area',basis:'callout-area',projected:[point],referenceSource:row.referenceSource});
 }
 
+for (const row of vertigoSpawns.records) {
+  const radar = vertigoSpawns.radar;
+  const point = {...row.origin, ...worldPosition(row.world, radar)};
+  if (point.x !== row.origin.x || point.y !== row.origin.y || point.levelId !== radar.levelId ||
+      !catalogue.some(guide => guide.id === row.id && guide.source === row.source && guide.mapId === 'vertigo'))
+    throw Error('Invalid recorded Vertigo spawn: ' + row.source);
+  lookups.vertigo[originSourceKey(row.source)] = point;
+  proof.push({source:row.source,mapId:'vertigo',sourceId:point.sourceId,label:point.label,
+    floorBasis:'recorded-world-position',originLevels:[radar.levelId],worldOrigin:row.world,projected:[point]});
+}
 const missing = catalogue.filter(row => !lookups[row.mapId][originSourceKey(row.source || '')]);
 for (const row of worldRows.values()) {
   if (lookups[row.mapId][row.source]?.precision !== 'world' || !catalogue.some(item => item.mapId === row.mapId && item.source === row.source))

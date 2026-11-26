@@ -1,5 +1,9 @@
 import type { UtilityPhoto, UtilityPhotoRegion, UtilityReference } from "../utility-data.ts";
 import reviewedSources from "./other-stage-sources.json" with { type: "json" };
+import essentialSources from "./essential-csnades-stage-sources.json" with { type: "json" };
+import spawnSources from "./instant-spawn-stage-sources.json" with { type: "json" };
+import essentialNvcaSources from "./essential-nvca-stage-sources.json" with { type: "json" };
+import vertigoSources from "./instant-vertigo-stage-sources.json" with { type: "json" };
 
 type SourceStill = { image: string; ms: number };
 type SourceRender = { image: string; tick: number };
@@ -7,7 +11,7 @@ type SourcePanel = { image: string; region: UtilityPhotoRegion };
 type StageSource = { setup: SourceStill | SourceRender; landing?: SourceStill | SourcePanel };
 type StagePhotos = { setup?: UtilityPhoto; landing?: UtilityPhoto };
 
-const sources: Record<string, StageSource> = reviewedSources;
+const sources: Record<string, StageSource> = { ...reviewedSources, ...essentialSources, ...essentialNvcaSources, ...spawnSources, ...vertigoSources };
 
 export function otherStagePhotos(record: UtilityReference): StagePhotos {
   if (record.userCreated || !record.source) return {};

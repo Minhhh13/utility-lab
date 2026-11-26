@@ -1,35 +1,67 @@
 export const LAUNCH_SCENES = [
   {
-    id: "dust-cs1999", name: "Dust · CS 1999", group: "Classic Dust",
-    src: "/art/launch-dust-cs1999.webp",
-    alt: "Original Dust in pixel art, with green crates below a sandstone tower.",
+    id: "neon-street", name: "Neon street", group: "City",
+    width: 384, height: 192, focus: .40,
+    src: "/art/ansimuz/neon-street.webp",
+    foreground: "/art/ansimuz/neon-street-front.webp",
+    source: "https://opengameart.org/content/cyberpunk-street-environment",
+    alt: "Neon restaurant signs frame an empty street beneath a blue city skyline.",
   },
   {
-    id: "dust-source", name: "Dust · Source", group: "Classic Dust",
-    src: "/art/launch-dust-source.webp",
-    alt: "Source-era Dust in pixel art, with wooden crates and wires over the bombsite arch.",
+    id: "old-town", name: "Old town", group: "City",
+    width: 800, height: 288, focus: .36,
+    src: "/art/ansimuz/old-town.webp",
+    source: "https://opengameart.org/content/gothicvania-town",
+    alt: "Stone houses and tiled roofs line a cobbled street under a rose-coloured sky.",
   },
   {
-    id: "dust-csgo", name: "Dust · CS:GO", group: "Classic Dust",
-    src: "/art/launch-dust-csgo.webp",
-    alt: "Early CS:GO Dust in pixel art, with blue domes above the underpass steps.",
+    id: "hangar", name: "Hangar", group: "Industrial",
+    width: 352, height: 224, focus: .55,
+    src: "/art/ansimuz/hangar.webp",
+    source: "https://opengameart.org/content/bulkhead-walls-hangar",
+    alt: "Steel columns, overhead pipes and turquoise lights inside a hangar.",
   },
   {
-    id: "dunes", name: "Dunes at sunset", group: "Landscapes",
-    src: "/art/launch-dunes.webp",
-    alt: "The last sunlight falls across a sandstone fortress above a desert canyon.",
+    id: "factory", name: "Factory skyline", group: "Industrial",
+    width: 272, height: 160, focus: .50,
+    src: "/art/ansimuz/factory.webp",
+    source: "https://opengameart.org/content/industrial-parallax-background",
+    alt: "Steam rises between factory chimneys beneath an overcast sky.",
   },
   {
-    id: "foundry", name: "Foundry at dusk", group: "Landscapes",
-    src: "/art/launch-foundry.webp",
-    alt: "Amber loading-bay lamps reflect in puddles in a blue-hour industrial yard.",
+    id: "mountain-pass", name: "Mountain pass", group: "Outdoors",
+    width: 272, height: 160, focus: .52,
+    src: "/art/ansimuz/mountain-pass.webp",
+    source: "https://opengameart.org/content/mountain-at-dusk-background",
+    alt: "Pine silhouettes and layered mountain ridges against the last light of dusk.",
   },
   {
-    id: "temple", name: "Temple gardens", group: "Landscapes",
-    src: "/art/launch-temple.webp",
-    alt: "Sunlit stone arches, hanging vines and fireflies surround a shaded temple pool.",
+    id: "cliffside", name: "Cliffside", group: "Outdoors",
+    width: 816, height: 304, focus: .30,
+    src: "/art/ansimuz/cliffside.webp",
+    source: "https://opengameart.org/content/magic-cliffs-environment",
+    alt: "A narrow bridge connects mossy cliffs high above a cloud-filled valley.",
   },
 ] as const;
 
-export type SceneId = (typeof LAUNCH_SCENES)[number]["id"];
-export const SMOKE_ART = "/art/pixel-smoke.png";
+export type Scene = (typeof LAUNCH_SCENES)[number];
+export type SceneId = Scene["id"];
+export const DEFAULT_SCENE = LAUNCH_SCENES[0].id;
+
+const previousPreferences: Record<string, SceneId> = {
+  "dust-cs1999": "neon-street",
+  "dust-source": "old-town",
+  "dust-csgo": "hangar",
+  dunes: "mountain-pass",
+  foundry: "factory",
+  temple: "cliffside",
+};
+
+export function resolveScene(value: string | null): SceneId {
+  return LAUNCH_SCENES.find(scene => scene.id === value)?.id
+    ?? (value && Object.prototype.hasOwnProperty.call(previousPreferences, value) ? previousPreferences[value] : DEFAULT_SCENE);
+}
+
+export function sceneAssets(scene: Scene): string[] {
+  return "foreground" in scene ? [scene.src, scene.foreground] : [scene.src];
+}

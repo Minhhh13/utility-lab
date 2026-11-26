@@ -83,6 +83,30 @@ async function choicesOnEveryPage(panel:Locator,personal=false,expectedSources=n
       });
       expect(rendered.wires.map(wire=>wire.id)).toEqual(actual.map(option=>option.id));
       expect(rendered.dots).toBe(new Set(rendered.wires.map(wire=>`${wire.source.x},${wire.source.y}`)).size);
+      if(await panel.getAttribute('data-leaders')==='active'){
+        const visible=panel.locator('line[data-recipe-id]:not([visibility="hidden"])');
+        for(const option of await options.all()){
+          await option.focus();
+          const id=(await option.getAttribute('data-lineup-id'))!;
+          await expect(visible).toHaveCount(1);
+          await expect(visible).toHaveAttribute('data-recipe-id',id);
+          const dot=panel.locator('.ul-origin-choice-active-dot');
+          await expect(dot).toHaveAttribute('cx',(await visible.getAttribute('x1'))!);
+          await expect(dot).toHaveAttribute('cy',(await visible.getAttribute('y1'))!);
+        }
+        const first=options.first();
+        await first.hover();
+        await expect(visible).toHaveAttribute('data-recipe-id',(await first.getAttribute('data-lineup-id'))!);
+        const last=panel.locator('line[data-recipe-id]').last();
+        const source=await last.evaluate((node:SVGLineElement)=>{
+          const {x,y}=new DOMPoint(node.x1.baseVal.value,node.y1.baseVal.value).matrixTransform(node.getScreenCTM()!);
+          return {x,y};
+        });
+        await panel.page().mouse.click(source.x,source.y);
+        await expect(panel).toBeVisible();
+        await expect(visible).toHaveAttribute('x1',(await last.getAttribute('x1'))!);
+        await expect(visible).toHaveAttribute('y1',(await last.getAttribute('y1'))!);
+      }
       for(const wire of rendered.wires){
         expect(wire.endError,wire.id).toBeLessThan(.75);
         expect(wire.captionHit,wire.id).toBe(true);
@@ -175,8 +199,8 @@ test("Dust II Mid Doors exposes every existing T recipe on source-backed non-ove
 
 test("five source-numbered Mirage and Ancient instant spawn recipes are reachable after choosing their existing landing",async({page})=>{
   await isolate(page);
-  for(const context of [{map:"mirage",side:"T",area:"mirage:main:mid-window"},{map:"ancient",side:"CT",area:"ancient:main:elbow"}]){
-    const spawnRows=PUBLISHED_LINEUPS.filter(row=>row.mapId===context.map&&row.side===context.side&&row.type==="Smoke"&&row.spawn?.total===5);
+  for(const context of [{map:"mirage",side:"T",area:"mirage:main:mid-window",family:"mirage-t-window-cs2tricks"},{map:"ancient",side:"CT",area:"ancient:main:elbow",family:"ancient-ct-elbow-cs2tricks"}]){
+    const spawnRows=PUBLISHED_LINEUPS.filter(row=>row.mapId===context.map&&row.side===context.side&&row.spawn?.family===context.family);
     expect(spawnRows).toHaveLength(5);
     await ready(page,context.map,context.side);
     const marker=mainMarkerGroupsForArea(page,context.area).first();
@@ -193,6 +217,34 @@ test("five source-numbered Mirage and Ancient instant spawn recipes are reachabl
     expect(spawnRows.map(row=>row.spawn!.slot).sort()).toEqual([1,2,3,4,5]);
     for(const record of spawnRows)expect(represented).toContain(record.id);
   }
+});
+
+test("tapping a Dust II spawn on the inset traces one exact standing dot, and one tap on its badge opens the guide",async({browser,baseURL})=>{
+  const context=await browser.newContext({baseURL,viewport:{width:390,height:844},hasTouch:true});
+  try{
+    const page=await context.newPage();await isolate(page);
+    const guide=dustRows.find(row=>row.spawn?.family==='dust2-t-mid-doors-stellaraqwq')!;
+    await page.goto(`/#utilities?map=dust2&side=T&level=main&lineup=${guide.id}`);
+    await page.getByRole('button',{name:'Show throw locations on map'}).tap();
+    const candidates=pins(page);await expect(candidates.first()).toBeVisible();
+    const index=await candidates.evaluateAll(nodes=>nodes.findIndex(pin=>JSON.parse(pin.getAttribute('data-origin-recipes')!).length>=4));
+    expect(index).toBeGreaterThanOrEqual(0);
+    const camera=await page.locator('.ul-map-svg').getAttribute('viewBox');
+    await candidates.nth(index).tap();
+    const panel=popup(page);await expect(panel).toHaveAttribute('data-leaders','active');
+    const single=panel.locator('line[data-recipe-id]:not([visibility="hidden"])');
+    const target=panel.locator('line[data-recipe-id]').last();
+    const screen=await target.evaluate((line:SVGLineElement)=>new DOMPoint(line.x1.baseVal.value,line.y1.baseVal.value).matrixTransform(line.getScreenCTM()!).toJSON());
+    await page.touchscreen.tap(screen.x,screen.y);
+    await expect(single).toHaveCount(1);
+    await expect(single).toHaveAttribute('x1',(await target.getAttribute('x1'))!);
+    await expect(single).toHaveAttribute('y1',(await target.getAttribute('y1'))!);
+    const recipe=(await single.getAttribute('data-recipe-id'))!;
+    await panel.locator(`button[data-lineup-id="${recipe}"]`).tap();
+    await expect(viewer(page)).toBeVisible();
+    expect(new URLSearchParams(page.url().split('?')[1]).get('lineup')).toBe(recipe);
+    await expect(page.locator('.ul-map-svg')).toHaveAttribute('viewBox',camera!);
+  }finally{await context.close();}
 });
 
 test("a singleton standing recipe opens photos in one click without an extra origin picker",async({page})=>{

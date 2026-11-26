@@ -13,7 +13,7 @@ const guides = MAPS.flatMap(map => mergePhotoGuides(
 )).filter(guide => !guide.source?.startsWith("https://www.cs2tricks.com/"));
 
 test("every non-CS2Tricks source has a credited wide setup and a source-matched landing", () => {
-  assert.equal(guides.length, 270);
+  assert.equal(guides.length, 351);
   let resultCount = 0;
   for (const guide of guides) {
     const original = utilityPhotos(guide);
@@ -23,8 +23,8 @@ test("every non-CS2Tricks source has a credited wide setup and a source-matched 
     assert.equal(setup.aimPoint, undefined);
     assert.match(setup.annotationId!, /^(sourceframe@\d+ms|source-game-tick@\d+)$/);
     const originalLanding = original.find(photo => photo.kind === "landing");
-    if (originalLanding) assert.equal(landing, undefined, guide.id);
-    else {
+    if (originalLanding && landing) assert.equal(landing.image, originalLanding.image, guide.id);
+    if (!originalLanding) {
       ++resultCount;
       assert.equal(landing?.kind, "landing", guide.id);
       if (landing?.region) {

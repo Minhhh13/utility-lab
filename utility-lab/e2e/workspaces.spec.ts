@@ -3,14 +3,14 @@ import { test, expect } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 
-test("full-screen pixel launch offers four destinations with continuous motion", async ({
+test("full-screen pixel launch offers four destinations with a brief entrance", async ({
   page,
 }) => {
   await page.goto("/");
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute(
     "src",
-    "/art/launch-dust-cs1999.webp",
+    "/art/ansimuz/neon-street.webp",
   );
   const box = await page.locator(".launch-screen").boundingBox();
   expect(box?.x).toBe(0);
@@ -21,7 +21,7 @@ test("full-screen pixel launch offers four destinations with continuous motion",
   await expect(
     page.getByRole("button", { name: /Pause scene|Play scene/ }),
   ).toHaveCount(0);
-  await expect(page.locator(".smoke-near")).toHaveCSS(
+  await expect(page.locator(".launch-foreground")).toHaveCSS(
     "animation-play-state",
     "running",
   );
@@ -46,7 +46,7 @@ test("full-screen pixel launch offers four destinations with continuous motion",
   }
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.reload();
-  await expect(page.locator(".smoke-near")).toHaveCSS("animation-name", "none");
+  await expect(page.locator(".launch-foreground")).toHaveCSS("animation-name", "none");
   await page.getByRole("button", { name: "Lineups", exact: true }).click();
   await expect(
     page.getByRole("region", { name: "Utility library", exact: true }),
@@ -62,14 +62,14 @@ test.describe("landscape network recovery", () => {
     const requestedArt = new Set<string>();
     page.on("request", (request) => {
       const path = new URL(request.url()).pathname;
-      if (path.startsWith("/art/launch-")) requestedArt.add(path);
+      if (path.startsWith("/art/ansimuz/")) requestedArt.add(path);
     });
     await page.goto("/");
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
-    expect([...requestedArt]).toEqual(["/art/launch-dust-cs1999.webp"]);
+    expect([...requestedArt].sort()).toEqual(["/art/ansimuz/neon-street-front.webp", "/art/ansimuz/neon-street.webp"]);
     const landscape = page.getByLabel("Landscape", { exact: true });
     await expect(landscape.locator("option")).toHaveCount(6);
-    for (const choice of ["dust-csgo"]) {
+    for (const choice of ["hangar"]) {
       await landscape.selectOption(choice);
       await expect(page.locator(".launch-screen")).toHaveAttribute(
         "data-scene",
@@ -77,27 +77,27 @@ test.describe("landscape network recovery", () => {
       );
       await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute(
         "src",
-        `/art/launch-${choice}.webp`,
+        `/art/ansimuz/${choice}.webp`,
       );
     }
     await page.reload();
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
-    await expect(landscape).toHaveValue("dust-csgo");
+    await expect(landscape).toHaveValue("hangar");
     await expect(page.locator(".launch-screen")).toHaveAttribute(
       "data-scene",
-      "dust-csgo",
+      "hangar",
     );
-    await page.route("**/art/launch-dust-source.webp", (route) =>
+    await page.route("**/art/ansimuz/old-town.webp", (route) =>
       route.abort(),
     );
-    await landscape.selectOption("dust-source");
+    await landscape.selectOption("old-town");
     await expect(page.locator(".launch-scene-error")).toContainText(
       "Landscape unavailable",
     );
-    await expect(landscape).toHaveValue("dust-csgo");
+    await expect(landscape).toHaveValue("hangar");
     await expect(page.locator(".launch-screen")).toHaveAttribute(
       "data-scene",
-      "dust-csgo",
+      "hangar",
     );
     await expect(
       page.getByRole("button", { name: "Lineups", exact: true }),

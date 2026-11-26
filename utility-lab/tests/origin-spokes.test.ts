@@ -1,11 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { layoutOriginSpokes } from "../src/origin-options.ts";
+import { focusOneOriginLeader } from "../src/origin-spokes.ts";
 
 type Point = { x: number; y: number };
 const p = (x: number, y: number): Point => ({ x, y });
 const ring = [p(164, 44), p(284, 44), p(284, 164), p(284, 284), p(164, 284), p(44, 284), p(44, 164), p(44, 44)];
 const cardinal = ring.filter((_, i) => i % 2 === 0);
+
+test("trace one option for crowded rims, coincident starts, crossings and near misses", () => {
+  assert.equal(focusOneOriginLeader([p(112,160),p(188,155)],[p(44,164),p(284,164)]),false);
+  assert.equal(focusOneOriginLeader([p(112,160),p(188,155)],[p(284,164),p(44,164)]),true);
+  assert.equal(focusOneOriginLeader([p(164,164),p(164,164)],[p(44,164),p(284,164)]),true);
+  assert.equal(focusOneOriginLeader([p(130,164),p(129,171)],[p(44,164),p(284,284)]),true);
+  // A page can have four nonintersecting lines yet still read as a tangle on a phone.
+  assert.equal(focusOneOriginLeader([p(164,125),p(205,164),p(164,202),p(125,164)],cardinal),true);
+});
 
 function verifyRouting(sources: Point[], destinations: Point[], candidates: Point[]) {
   assert.equal(destinations.length, sources.length);

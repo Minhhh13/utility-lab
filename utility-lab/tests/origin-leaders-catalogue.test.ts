@@ -37,8 +37,9 @@ test("personal chooser links coincident and distinct targets to their own origin
   const [group]=groupPersonalGuides(records,1);
   const ids: string[]=[];
   for(let page=0;page<3;page++){
-    const {options,sources,points,preview,direct}=originChoiceLayout(group,296,page);
+    const {options,sources,points,preview,direct,oneLeader}=originChoiceLayout(group,296,page);
     assert.equal(direct,false);
+    assert.equal(oneLeader,page<2);
     options.forEach((option,i)=>{
       ids.push(option.record.id);
       const source=sources[i];
@@ -72,6 +73,8 @@ test("published origin chooser pages preserve recipe anchors and have disjoint l
         counters.pages++;
         if (page) counters.splitPages++;
         if (layout.direct) counters.direct++;
+        if (layout.direct) assert.equal(layout.oneLeader,false);
+        else if (expected.length>=4) assert.equal(layout.oneLeader,true);
         const {span,size,start,x,y} = layout.preview;
         for (let i=0; i<expected.length; i++) {
           // Invert the displayed SVG viewBox independently, comparing it with
@@ -86,7 +89,10 @@ test("published origin chooser pages preserve recipe anchors and have disjoint l
           for (let j=0; j<i; j++) {
             assert.ok(!same(point,layout.points[j]), "Two recipes share an action target");
             if (layout.direct) continue;
-            if (same(source, layout.sources[j])) counters.sharedDots++;
+            if (same(source, layout.sources[j])) {
+              counters.sharedDots++;
+              assert.equal(layout.oneLeader,true,expected[i].record.id);
+            }
             if (leadersConflict(source,point,layout.sources[j],layout.points[j])) {
               assert.fail(`Intersecting leaders for ${expected[i].record.id} and ${expected[j].record.id}, width ${width}, page ${page+1} of ${key}`);
             }

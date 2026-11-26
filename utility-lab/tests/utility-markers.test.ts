@@ -72,7 +72,7 @@ test("nearby different callouts never combine; zoom only separates qualifiers of
 });
 
 test("every researched main area and every plotted guide remains represented across zoom on all maps", () => {
-  assert.equal(published.length, 1558);
+  assert.equal(published.length, 1639);
   for (const records of contexts) {
     const pinned = records.filter(record => record.showMarker !== false);
     const expectedAreas = [...new Set(pinned.map(record => utilityMarkerArea(record).id))].sort();

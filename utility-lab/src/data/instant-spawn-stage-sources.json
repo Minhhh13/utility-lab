@@ -1,0 +1,296 @@
+{
+  "https://setpos.gg/ancient/cave/t1": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/54cec585-8168-4293-820b-e35cb087451f/a006f1f0-48f2-4743-91a6-0b774e19172f/guide-aim-aim-35c26f9a9ae4e957d5b310e9e54a3864f0617ada83fd5eaa67e62b4d8c61c788.webp",
+      "tick": 133201
+    }
+  },
+  "https://setpos.gg/ancient/b-doors/ct4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/e4e4299c-aa75-4354-b19e-bbe7548fa5af/c769f5d5-e328-417d-9fe4-ac51fde7a516/guide-aim-aim-455703d3497473189cafbc55da44a1a74d7f209df868b4603af97422f384ab87.webp",
+      "tick": 68544
+    }
+  },
+  "https://setpos.gg/ancient/b-doors/ct3": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/33d4528e-55b5-4c84-bbc9-ce7e814d8bb1/4fd93eae-1f6c-46c8-aad4-cb6b81c788bd/guide-aim-aim-cff9bc5eda34d6a33cda8a71918a72e03bc86d0a1c5d1ec634495a42a5683d1b.webp",
+      "tick": 77974
+    }
+  },
+  "https://setpos.gg/ancient/b-doors/ct2": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/baa6a586-5f42-4aa7-854a-25d5da0a48aa/0eb40db0-b08c-43b3-909d-a15e96a690a6/guide-aim-aim-ab985792ca8af02493718ec5092c667d5c596c019d3c8a1a743f0eefc279be22.webp",
+      "tick": 137186
+    }
+  },
+  "https://setpos.gg/ancient/b-doors/ct5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/6ec5ad18-8995-46f8-b6ae-4e295fa1dc8c/16043830-1785-403e-ac1f-28c797580e79/guide-aim-aim-360bba552c4044b7bbd2845b349ee71713fba68db8afaeeb88be68e3295ed34c.webp",
+      "tick": 27343
+    }
+  },
+  "https://setpos.gg/ancient/cave/t5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/8c345608-fef2-4c18-8f02-a1358830eb3f/9f4292e9-f945-4289-a451-c2b6d07adbc1/guide-aim-aim-6cc9d297010804ab6badd2e3fb51a2fa9ab128ecaf5c783df3fdbba71b76a160.webp",
+      "tick": 35748
+    }
+  },
+  "https://setpos.gg/ancient/b-doors/ct1": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/dd318c72-2ccf-4861-96e7-52c12133399f/b5d25fea-10b5-4300-9523-ce685159e223/guide-aim-aim-bd8b8b1aece4cde5d0183c57e5aeeafe87ad1be77720d21914d7a2ec5583dc9f.webp",
+      "tick": 136712
+    }
+  },
+  "https://setpos.gg/ancient/cave/t4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/c66652a2-447a-4d6d-9fd0-cd9ddfaacae3/c2109698-8873-436e-bc02-8146c83cc82f/guide-aim-aim-ce62ce364cb741153a30c8f7bb38ed1e1ee42daffdeaf5cdefa3dadcf73c8f51.webp",
+      "tick": 104133
+    }
+  },
+  "https://setpos.gg/anubis/carpets/ct3": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/95cb9b22-8ad2-4383-b6d6-f45140777cca/203cd485-e253-4730-a9dc-319a184757ca/guide-aim-aim-b785d1c8305320434c4dd6defbf9161915a428ae13e9bd5dd3707eb30ede40d2.webp",
+      "tick": 50029
+    }
+  },
+  "https://setpos.gg/anubis/stairs/ct2": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/aec3cbc1-2822-4740-b6fa-7ff45dec86e4/19c819ad-7618-4fe0-aafd-16c2670bed22/guide-aim-aim-0cd8757a52128d595baa76dacdd5e589a408d78e6d4b0635652b8e8710840261.webp",
+      "tick": 163999
+    }
+  },
+  "https://setpos.gg/anubis/stairs/ct4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/fed5ecb1-f5a4-43e1-9b01-96330f867830/995d8cbd-d967-40d2-8729-66d6d5b30ae7/guide-aim-aim-d286d580abef41856c8d6c496805de946d22892e1fefcdfbd52f11e2d298e74a.webp",
+      "tick": 83530
+    }
+  },
+  "https://setpos.gg/anubis/stairs/ct3": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/3d733e6e-1aa5-4543-a634-36069a1d7541/0b07b67a-0d8b-4be9-94ac-b289b6a7969e/guide-aim-aim-0308534641e5d45e4720fec5db2d4816570a963ca70ab8d32eaebe453dc24c9e.webp",
+      "tick": 64734
+    }
+  },
+  "https://setpos.gg/anubis/stairs/ct5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/0f3689ea-0d6f-4f30-b41b-f8db057d2515/50d0cd6e-1f59-4bfb-bcfb-7309254e75ca/guide-aim-aim-35c8d0c1b5765cbd84e47d57b48cc81bdcb54318b9183a418c58e53b502c0cb8.webp",
+      "tick": 117562
+    }
+  },
+  "https://setpos.gg/cache/connector/t1": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/273e6e7b-9560-46c9-b79f-69aa7d9c170e/bb7a6b24-0e82-4e3b-9814-25b2e7b2bf71/guide-aim-aim-024fb4598b28c975c0ae0121c466ebfa84d8d67177ff7bd4e694fc0e154d0c4b.webp",
+      "tick": 26674
+    }
+  },
+  "https://setpos.gg/cache/connector/t10": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/467116a4-0258-4a59-89a4-26e91c5f2236/66064df9-c193-412f-91f0-29cb2e0bc370/guide-aim-aim-8a68a9afd69a23c3e4510e3a1774017be6353f5eeb53598cc3379d7531e23977.webp",
+      "tick": 77660
+    }
+  },
+  "https://setpos.gg/cache/boost/t2": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/7c0d3ec0-267d-431c-988f-39ed4e3b1932/48f08d9e-f3c9-4deb-b3e1-20f36144b4ce/guide-aim-aim-448ac948052f3402260ec1309c74821b589096900fb2170ce59795c26115e685.webp",
+      "tick": 188882
+    }
+  },
+  "https://setpos.gg/cache/connector/t5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/f1992cbd-8abd-443e-adac-82df447ad4b4/640829fb-6b9e-4889-9b58-12532449d2b5/guide-aim-aim-40de03c18fa2b7e069d87d3e16db95c2f444b218062f651e4affd5ab87c755d3.webp",
+      "tick": 5801
+    }
+  },
+  "https://setpos.gg/cache/connector/t9": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/4981c65b-6a24-485f-9af0-07d7504805bd/597db985-8666-44b8-b9e7-bd9653beb7ea/guide-aim-aim-24c77277098f974c1ccffd9a17a18428314306a42e9fb39112cd092bc2c528ad.webp",
+      "tick": 1791
+    }
+  },
+  "https://setpos.gg/cache/boost/t9": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/40b89d67-0e24-4ba3-8dcf-fe11a9fe6670/aac968f9-79df-4770-8e92-22d3fe7b0dfc/guide-aim-aim-ad43ce29fd30f59e1cdbbc62a74db52536d41df8e098cc47e2a2218b0f876366.webp",
+      "tick": 187479
+    }
+  },
+  "https://setpos.gg/cache/boost/t5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/185e2209-f117-46a0-925c-6e66775460ad/2480de99-ea55-4495-88ad-3b74564d58ed/guide-aim-aim-12aa69f295f719663a8d2eb7b5cda44f5fe9afbe0e53a3f9890f00cf37eacfc6.webp",
+      "tick": 158777
+    }
+  },
+  "https://setpos.gg/cache/connector/t8": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/62e17524-c68f-4250-a7d3-b71e5eb1df87/741b88a1-d0ec-4b2a-b3ce-aecd27e8f1df/guide-aim-aim-b585591451af442fb4e073721b7d0b0b18671379e03fb94088ce8b70631db184.webp",
+      "tick": 63537
+    }
+  },
+  "https://setpos.gg/cache/connector/t7": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/9fc371f7-4ee0-46ad-9297-69da3cdc547c/8c3617d3-9b2b-4088-87f7-a06672b83827/guide-aim-aim-b5e934e7e207ea7bf912132ef809303de39387e79ae5e71e200f24258639384a.webp",
+      "tick": 17586
+    }
+  },
+  "https://setpos.gg/cache/connector/t4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/d136c8aa-5e4f-4346-82f0-55796cdaeb8a/76a23ce1-0361-4e06-afda-f9915ed7797c/guide-aim-aim-bb1c91a865f35cfee92b5494d53e2352d56205c217d785d1d7333ac9c0b1c552.webp",
+      "tick": 78411
+    }
+  },
+  "https://setpos.gg/cache/connector/t2": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/a46cc8e1-1c8d-4859-b7de-cf32c945b756/b6cc57fc-0e74-4b81-8393-2ec37a92ef17/guide-aim-aim-a380bbbdbcf154a1f472fb5688d879594e133f3c4e564db4a71c2c1123316e7f.webp",
+      "tick": 55128
+    }
+  },
+  "https://setpos.gg/dust2/long-corner/t15": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/2b409db6-1efa-4c5e-9e48-7b0c045802bd/cd85cd5d-bbdd-407e-bd50-ec2ef427835c/guide-aim-aim-0af973d7744e1246013ecd30602618425c61b0dffc6bbf9ebc1e1bd316b19584.webp",
+      "tick": 130127
+    }
+  },
+  "https://setpos.gg/dust2/mid-doors/t1": {
+    "setup": {
+      "image": "/lineup-media/instant-spawns/dust2-113-setup.webp",
+      "ms": 200
+    }
+  },
+  "https://setpos.gg/dust2/xbox/t13": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/7728fe73-5951-4cb4-a21b-b0363c1ee636/08cdc1bd-aa65-4323-ba6c-5990b41a2d36/guide-aim-aim-75d8ec32130ae08503f0d00e83218ed73812ce14804442670b40823dc2e9e4c5.webp",
+      "tick": 67438
+    }
+  },
+  "https://setpos.gg/dust2/long-corner/t14": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/6b5b3fa4-2fe5-48b6-9a84-e5bd318195a4/9ae58e57-f9c5-463a-850e-5b93b3e4ffbe/guide-aim-aim-abf089ba8b91ae0824345541f95f62cec9ffac0cfa2e3da74edf46d79a6dd695.webp",
+      "tick": 161052
+    }
+  },
+  "https://setpos.gg/dust2/long-corner/t12": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/a251b283-bcc2-457e-9c53-8e1e2b363818/fa198091-89ce-4239-983a-47f963228658/guide-aim-aim-f33388ed805af1b09844e61bba0c90e0114ed8468433d2d1fe7aaabf8036807b.webp",
+      "tick": 95818
+    }
+  },
+  "https://setpos.gg/dust2/long-corner/t13": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/fdf6bfd8-a065-4b4d-b2d7-86d6dc5dc892/cd227702-b27f-4fca-a077-ecbd5cca4934/guide-aim-aim-46784d5748963950b8b32e42366200492e491982344e6ee470b489b138b9ebf0.webp",
+      "tick": 36617
+    }
+  },
+  "https://setpos.gg/dust2/xbox/t14": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/2463b87c-b8e7-4389-923e-2f4bdb8d2278/f74fe19d-29e6-4c46-820a-19c70bd905ea/guide-aim-aim-dacddfe780617ae789427fe7101a33b81ed285ecf845a6bd9c1c104deaa727d1.webp",
+      "tick": 36705
+    }
+  },
+  "https://setpos.gg/dust2/long-corner/t11": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/a5ef411b-204f-4b2a-8746-6f370665326d/6521d5ec-481b-4b0d-aff8-3eb1b995c28f/guide-aim-aim-3ec9e1d175a70545b74e81596009887cc8fafe0d41aef7ab97cd7817b2754137.webp",
+      "tick": 93921
+    }
+  },
+  "https://setpos.gg/inferno/banana/ct5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/a37427dd-80a5-4ca8-ade4-32df7a10f553/be3b51f6-c947-4ee6-a85c-c445595c0b42/guide-aim-aim-e43bc2b1ef5df02384057f69a2d909eaa0ee1d0634b00b45872e79df842af16e.webp",
+      "tick": 24773
+    }
+  },
+  "https://setpos.gg/inferno/banana/ct4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/317f823b-bdac-4b9f-9889-90b191192224/3f72e683-3483-4961-b2db-6dea872150f5/guide-aim-aim-3831f0879041f7cb0af6813bd41e948c56f88880d1db6aa65173a2b9306576cc.webp",
+      "tick": 88575
+    }
+  },
+  "https://setpos.gg/inferno/banana/ct2": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/9055a2c6-0f10-4e1b-aa28-f5bddd0e0705/bb887867-90be-492b-96f3-2a56c2bf2f31/guide-aim-aim-a872bdc3f1cbeac8c82d350772a4a5e63256a8b9a4a8946bbe65201a6a57e2a8.webp",
+      "tick": 76649
+    }
+  },
+  "https://setpos.gg/mirage/top-mid/ct5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/d7a78698-256b-4441-8198-4c317ff7d9df/d7c5c06c-9788-4736-a32c-6ad0efcb9782/guide-aim-aim-98673a0bdd6666f91fe19031372752d57252d7c5a99777366e0c8951df9b9c80.webp",
+      "tick": 16894
+    }
+  },
+  "https://setpos.gg/mirage/catwalk/t9": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/a1223a6c-f0f1-4460-ad61-3882c10e2fd0/d96a24cf-9976-4d2b-8b89-d5556471af79/guide-aim-aim-1f6037ccd56a24707960af16b19c640d8341fcf27dd971bf7869706414063be2.webp",
+      "tick": 127846
+    }
+  },
+  "https://setpos.gg/mirage/catwalk/t10": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/55a6d62b-f357-47e0-8e49-0a805a8d7507/f970e3da-697b-45a2-b973-152f8b79eda6/guide-aim-aim-a6e74b7ed9a1fba8c86999bee3e65cbeb54c2c0b8e342e9d14ac85452a9b740f.webp",
+      "tick": 80650
+    }
+  },
+  "https://setpos.gg/mirage/catwalk/t8": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/6c0f89c1-7d0d-46b0-be92-8859ab676d37/578ad6e2-99c1-4857-960b-a01bd83451de/guide-aim-aim-f50dda9786e9bcf7b4df59b760c7d18f18036c01b3004759eb53a7ee1b70e9df.webp",
+      "tick": 124811
+    }
+  },
+  "https://setpos.gg/mirage/catwalk/t6": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/b9546210-3687-4f4e-898e-61361eef446f/829f17e7-4631-4926-998a-ee3a19b790b3/guide-aim-aim-78de1af3bf2384536fa2137976f37f0722f2adc8766a247662aa12bca93bb521.webp",
+      "tick": 125113
+    }
+  },
+  "https://setpos.gg/mirage/catwalk/t4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/74ed517b-403a-4d18-ad1a-c05643b5a572/51c1f3eb-dfd6-40f3-b985-4e4adf3753f2/guide-aim-aim-ba98750b45bb4bc0f48a4dc3d356e29986f29046b9fd9181c0496d20966de8e7.webp",
+      "tick": 67404
+    }
+  },
+  "https://setpos.gg/mirage/catwalk/t1": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/deb510bf-b5a6-4bbc-9618-4bf2bf4ff71e/bddd706f-7668-4bfa-a308-f75a166fdb64/guide-aim-aim-ca5b681a9b27576e43329430901b1afe6c21aa5044714175cf8ad3e34418d97b.webp",
+      "tick": 132621
+    }
+  },
+  "https://setpos.gg/nuke/t-red/t1": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/35e31d89-2113-40d8-85fb-ae3f7f1d4f15/9695dcd7-8894-4f9a-887e-4897b7522386/guide-aim-aim-3d854c61cb992b739fa6f98910c840c71ab36f7e3aeb66dfd17f91683bc9499d.webp",
+      "tick": 316463
+    }
+  },
+  "https://setpos.gg/nuke/outside-main/t5": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/fb83d592-0f84-4f8c-ac57-43828fd2f861/ad194059-d309-42fa-ad40-9025ff74fea0/guide-aim-aim-ac116f5402dce4708d658bf25ca18db12bce28f590ee920f69dd25329f413650.webp",
+      "tick": 16900
+    }
+  },
+  "https://setpos.gg/nuke/outside-main/t6": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/c8cf65ef-2abf-4954-ae17-e10807c08361/fbded4f9-1f0f-4c38-b0a6-cb6ace258664/guide-aim-aim-239785d39a8cbe940e009112923b8d45dae1d8fc341d36fa3a72b95bcd93b3c8.webp",
+      "tick": 39063
+    }
+  },
+  "https://setpos.gg/nuke/t-red/t7": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/a722069c-5033-4f8c-aebd-1d4c3eaade32/f2180ae0-ec73-457f-8e76-30b5c97c9477/guide-aim-aim-454aa2fd5b8e35f8218119075ddea616bfd4a1cfbdca6293307b06a7395cf23d.webp",
+      "tick": 68380
+    }
+  },
+  "https://setpos.gg/nuke/t-red/t4": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/fe9beeb0-1f91-4110-a496-4dbcc4678900/4e8f6382-f414-4875-b17e-6d7e8f526332/guide-aim-aim-37a7d8aa8684854d71d8bd29716c1aa0c5b83eb959b39bf33b6851443cdd17c3.webp",
+      "tick": 58140
+    }
+  },
+  "https://setpos.gg/nuke/outside-main/t8": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/cc089e61-131a-4eb0-82ea-d00ee6781490/b876525a-55b7-483c-9a11-47876e3be661/guide-aim-aim-beffcd409e207712bd733f676beea92e16bf0f7e2e6e021b89962ed06064a959.webp",
+      "tick": 130919
+    }
+  },
+  "https://setpos.gg/nuke/outside-main/t7": {
+    "setup": {
+      "image": "https://media.setpos.gg/renders/480cb232-1b4f-4700-a8b8-a966e6c76f7b/282a2b35-4829-4cf4-9e9b-fe2372b8ec60/guide-aim-aim-714a3ed5fef19e4a60211a4f6c4e6268027b74967044205ffd9c031898d3b655.webp",
+      "tick": 44345
+    }
+  }
+}

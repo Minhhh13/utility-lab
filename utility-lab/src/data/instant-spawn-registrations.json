@@ -1,0 +1,48 @@
+[
+  {
+    "id": "setpos-mirage-main-20261126",
+    "provider": "setpos",
+    "mapId": "mirage",
+    "levelId": "main",
+    "artwork": "/maps/mirage.svg",
+    "sourceImage": "https://setpos.gg/radars/mirage/radar.svg?v=fd84771c40bd",
+    "sourceImageSha256": "fd84771c40bd3241f1bee943322cbac8f3e095a3c1f5a2656a6677caf12566ba",
+    "artworkSha256": "296afd4af266486cf19a81201f38d45091b5e6911a95be1a87330d6bd7ba8046",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-26",
+    "evidence": "The 187 distinct displayed SVG paths match the replay radar geometry. Use its world calibration from docs/data/reviewed-world-origins.json in the common 1000-unit frame.",
+    "reviewImage": "docs/data/reviewed-world-origins.json"
+  },
+  {
+    "id": "setpos-ancient-main-20261126",
+    "provider": "setpos",
+    "mapId": "ancient",
+    "levelId": "main",
+    "artwork": "/maps/ancient.svg",
+    "sourceImage": "https://setpos.gg/radars/ancient/radar.svg?v=9d932c8926c7",
+    "sourceImageSha256": "9d932c8926c764a673f2e4fec9679d2557767aa418dea3843743a7feca310270",
+    "artworkSha256": "20cd3ba00d5b63475c95da3056ed332fe0434762317967fb29c56bf054bb9e2b",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "checkedAt": "2026-11-26",
+    "evidence": "The 85 distinct displayed SVG paths match the replay radar geometry. Use its world calibration from docs/data/reviewed-world-origins.json in the common 1000-unit frame.",
+    "reviewImage": "docs/data/reviewed-world-origins.json"
+  }
+]

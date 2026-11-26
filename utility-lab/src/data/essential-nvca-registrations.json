@@ -1,0 +1,94 @@
+[
+  {
+    "id": "gonade-nuke-upper-20261126",
+    "provider": "gonade",
+    "artwork": "/maps/nuke.svg",
+    "sourceImage": "https://gonade.app/images/radars/nuke_radar.webp?v=1789062370",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "sourceImageSha256": "5d5dcd70d1e3b73a7e26b9ec8ef2cfd31b4c73e8a09a061b2c0fbb35b1a590ec",
+    "artworkSha256": "b5d7db39cc01e30dbc66f7697b2386de3538bc2d859e53a75ac8536b71ec5372",
+    "transform": {
+      "scaleX": 1.0025,
+      "scaleY": 1,
+      "translateX": 0.09765625,
+      "translateY": 0
+    },
+    "mapId": "nuke",
+    "levelId": "upper",
+    "checkedAt": "2026-11-26",
+    "reviewImage": "docs/map-registration-publisher/essential-gonade-nuke.png",
+    "evidence": "The original radar and its points use the same square image frame. The site boxes, exterior and connecting corridors line up on the reviewed overlay. Raster mask overlap was 0.948."
+  },
+  {
+    "id": "gonade-vertigo-upper-20261126",
+    "provider": "gonade",
+    "artwork": "/maps/de_vertigo_radar_psd.png",
+    "sourceImage": "https://gonade.app/images/radars/vertigo_radar.webp?v=1789062370",
+    "sourceImageWidth": 1024,
+    "sourceImageHeight": 1024,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "sourceImageSha256": "44fec34fd8e4186a938640686f6eada7037cef68a1ab0edc2bffcde48d7ae706",
+    "artworkSha256": "3cfa3f044ed5883098e78ab63939a3c9e39fc2c0c2100e59acf4e2c3fa09df43",
+    "transform": {
+      "scaleX": 1,
+      "scaleY": 1,
+      "translateX": 0,
+      "translateY": 0
+    },
+    "mapId": "vertigo",
+    "levelId": "upper",
+    "checkedAt": "2026-11-26",
+    "reviewImage": "docs/map-registration-publisher/essential-gonade-vertigo.png",
+    "evidence": "The original radar and its points use the same square image frame. The site boxes, exterior and connecting corridors line up on the reviewed overlay. Raster mask overlap was 0.925."
+  },
+  {
+    "id": "nadesdb-ancient-main-20261126",
+    "provider": "nadesdb",
+    "artwork": "/maps/ancient.svg",
+    "sourceImage": "https://app.nadesdb.com/maps/ancient/radar.webp",
+    "sourceImageWidth": 1290,
+    "sourceImageHeight": 1467,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "sourceImageSha256": "3c9f5c57c03c5df6f7e01eac9c2613359f4562895248049f8f4e913d72070f25",
+    "artworkSha256": "20cd3ba00d5b63475c95da3056ed332fe0434762317967fb29c56bf054bb9e2b",
+    "transform": {
+      "scaleX": 0.8969738372093021,
+      "scaleY": 0.89625,
+      "translateX": 37.29433139534885,
+      "translateY": 44.53125
+    },
+    "mapId": "ancient",
+    "levelId": "main",
+    "checkedAt": "2026-11-26",
+    "reviewImage": "docs/map-registration-publisher/essential-nadesdb-ancient.png",
+    "evidence": "NadesDB draws this non-square radar centered inside a square SVG using xMidYMid meet. The registration includes the letterbox margins. The site boxes, exterior and connecting corridors line up on the reviewed overlay. Raster mask overlap was 0.944."
+  },
+  {
+    "id": "nadesdb-cache-main-20261126",
+    "provider": "nadesdb",
+    "artwork": "/maps/cache.svg",
+    "sourceImage": "https://app.nadesdb.com/maps/cache/radar.webp",
+    "sourceImageWidth": 2048,
+    "sourceImageHeight": 1596,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "sourceImageSha256": "cd856a343a50ea78bb9a2737a08a2d9c07185b28683eec4279d172ce22130a58",
+    "artworkSha256": "8107ffb12c794832c689cf6cb8326fa8168b60b723c232064dc79bc8ca5a3a34",
+    "transform": {
+      "scaleX": 0.9671052631578947,
+      "scaleY": 0.964849411664755,
+      "translateX": 5.846525493421053,
+      "translateY": 28.945792048978404
+    },
+    "mapId": "cache",
+    "levelId": "main",
+    "checkedAt": "2026-11-26",
+    "reviewImage": "docs/map-registration-publisher/essential-nadesdb-cache.png",
+    "evidence": "NadesDB draws this non-square radar centered inside a square SVG using xMidYMid meet. The registration includes the letterbox margins. The site boxes, exterior and connecting corridors line up on the reviewed overlay. Raster mask overlap was 0.929."
+  }
+]

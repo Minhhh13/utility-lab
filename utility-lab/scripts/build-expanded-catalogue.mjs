@@ -7,6 +7,10 @@ import {isBundledPhoto,utilityPhotos} from '../src/utility-data.ts';
 import {cs2tricksStagePhotos} from '../src/data/cs2tricks-stage-photos.ts';
 import {otherStagePhotos} from '../src/data/other-stage-photos.ts';
 const sources=[
+ ['../src/data/essential-csnades-four-maps.ts','ESSENTIAL_CSNADES_FOUR_MAPS'],
+ ['../src/data/essential-nvca.ts','ESSENTIAL_NVCA'],
+ ['../src/data/instant-spawn-smokes.ts','INSTANT_SPAWN_SMOKES'],
+ ['../src/data/instant-vertigo.ts','INSTANT_VERTIGO'],
  ['../src/data/precise-mirage-ancient.ts','PRECISE_MIRAGE_ANCIENT'],
  ['../src/data/precise-other-maps.ts','PRECISE_OTHER_MAPS'],
  ['../src/data/precise-anubis.ts','PRECISE_ANUBIS'],
@@ -20,7 +24,7 @@ const sources=[
  ['../src/data/expanded-cache-completions.ts','EXPANDED_CACHE_COMPLETIONS'],
 ];
 const rows=[];
-const preciseEvidence=(await Promise.all(['docs/data/precise-other-maps-evidence.json','docs/data/precise-anubis-evidence.json']
+const preciseEvidence=(await Promise.all(['docs/data/precise-other-maps-evidence.json','docs/data/precise-anubis-evidence.json','docs/data/essential-csnades-four-maps-evidence.json','docs/data/essential-nvca-evidence.json','docs/data/instant-spawn-smokes-evidence.json']
  .map(async file=>{const data=JSON.parse(await readFile(file,'utf8'));return Array.isArray(data)?data:data.records;}))).flat();
 const preciseEndpoints=new Map(preciseEvidence.map(row=>[row.source,row]));
 const endpointEvidence=JSON.parse(await readFile('docs/data/publisher-destination-evidence.json','utf8'));

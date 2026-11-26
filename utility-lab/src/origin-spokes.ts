@@ -27,12 +27,27 @@ function conflictingLeaders(first: Segment, second: Segment) {
     (cda === 0 && inBounds(c, d, a)) || (cdb === 0 && inBounds(c, d, b));
 }
 
-function obscuresDot({ start, end }: Segment, dot: Point) {
-  if (samePoint(start, dot)) return false;
+function distanceToSegment({ start, end }: Segment, dot: Point) {
   const dx = end.x - start.x, dy = end.y - start.y;
-  const t = Math.max(0, Math.min(1,
-    ((dot.x - start.x) * dx + (dot.y - start.y) * dy) / (dx * dx + dy * dy)));
-  return Math.hypot(start.x + t * dx - dot.x, start.y + t * dy - dot.y) < 4.5;
+  const squared = dx * dx + dy * dy;
+  const t = squared ? Math.max(0, Math.min(1,
+    ((dot.x - start.x) * dx + (dot.y - start.y) * dy) / squared)) : 0;
+  return Math.hypot(start.x + t * dx - dot.x, start.y + t * dy - dot.y);
+}
+
+function obscuresDot(segment: Segment, dot: Point) {
+  return !samePoint(segment.start, dot) && distanceToSegment(segment, dot) < 4.5;
+}
+
+/** Layout can separate the mathematical lines while leaving too little
+ * visible space between a line and another recipe's dot. In that case, or
+ * on a crowded page, trace only the option the player is inspecting. */
+export function focusOneOriginLeader(sources: readonly Point[], badges: readonly Point[]): boolean {
+  if (sources.length >= 4) return true;
+  const edges = sources.map((start, i) => ({start, end: badges[i]}));
+  return edges.some((edge, i) => edges.slice(0, i).some(other =>
+    conflictingLeaders(edge, other) || distanceToSegment(edge, other.start) < 10 ||
+    distanceToSegment(other, edge.start) < 10));
 }
 
 // A segment and an axis-aligned rectangle are separated by an x/y edge

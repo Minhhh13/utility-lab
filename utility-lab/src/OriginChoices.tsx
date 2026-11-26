@@ -17,10 +17,14 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
   const previewClip=useId();
   const close=useRef(onClose);close.current=onClose;
   const [page,setPage]=useState(0);
+  const [inspected,setInspected]=useState('');
   const personal=group.kind==='personal';
   const [position,setPosition]=useState({left:0,top:0,width:328,ready:false});
   const pages=Math.ceil(group.options.length/ORIGIN_PAGE_SIZE);
-  const {direct,options,points,sources,preview}=useMemo(()=>originChoiceLayout(group,position.width,page),[group,position.width,page]);
+  const {direct,options,points,sources,preview,oneLeader}=useMemo(()=>originChoiceLayout(group,position.width,page),[group,position.width,page]);
+  const activeIndex=Math.max(0,options.findIndex(option=>option.record.id===inspected));
+  const active=options[activeIndex]?.record.id;
+  const activeSource=sources[activeIndex];
   const {start:previewStart,span:previewSpan}=preview;
   useLayoutEffect(()=>{
     function place(){
@@ -37,7 +41,10 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
     return()=>{observer.disconnect();window.removeEventListener('resize',place);};
   },[anchor.x,anchor.y]);
   useEffect(()=>{
-    const frame=requestAnimationFrame(()=>panel.current?.querySelector<HTMLButtonElement>('.ul-origin-choice-option')?.focus({preventScroll:true}));
+    const frame=requestAnimationFrame(()=>{
+      const chosen = panel.current?.querySelector('.ul-origin-choice-option:focus');
+      if (!chosen) panel.current?.querySelector<HTMLButtonElement>('.ul-origin-choice-option')?.focus({preventScroll:true});
+    });
     return()=>cancelAnimationFrame(frame);
   },[page]);
   useEffect(()=>{
@@ -60,7 +67,19 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
     const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+(['ArrowLeft','ArrowUp'].includes(event.key)?-1:1)+buttons.length)%buttons.length;
     buttons[next]?.focus({preventScroll:true});
   }
-  return createPortal(<div ref={panel} className="ul-origin-choices" role="dialog" data-choice-kind={personal?'personal':'origin'} data-inset={direct?'positions':'spokes'}
+  function traceFromInset(clientX:number,clientY:number,inset:SVGRectElement){
+    const matrix=inset.getScreenCTM();
+    if(!matrix)return;
+    const point=new DOMPoint(clientX,clientY).matrixTransform(matrix.inverse());
+    const distances=sources.map(source=>Math.hypot(source.x-point.x,source.y-point.y));
+    const nearest=Math.min(...distances);
+    // Repeated taps at one shared start cycle its recipes. The outer badges
+    // always open their own guide immediately, including on touchscreens.
+    const indices=distances.flatMap((distance,index)=>Math.abs(distance-nearest)<.001?[index]:[]);
+    const index=indices[(indices.indexOf(activeIndex)+1)%indices.length];
+    if(index!==undefined)setInspected(options[index].record.id);
+  }
+  return createPortal(<div ref={panel} className="ul-origin-choices" role="dialog" data-choice-kind={personal?'personal':'origin'} data-inset={direct?'positions':'spokes'} data-leaders={direct?'none':oneLeader?'active':'all'}
     aria-label={personal?'Choose your lineup':`Choose throw from ${group.label}`}
     style={{left:position.left,top:position.top,visibility:position.ready?'visible':'hidden',maxHeight:'calc(100svh - 24px)'}}>
     <div className="ul-origin-choices-heading"><h2>{group.label}<span>{group.options.length} {personal?'lineups':'throws'}</span></h2>
@@ -76,25 +95,32 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
         </svg>
         </g>
         <rect className="ul-origin-choice-preview-frame" x={previewStart} y={previewStart} width={preview.size} height={preview.size} rx="10"/>
+        {oneLeader&&<rect x={previewStart} y={previewStart} width={preview.size} height={preview.size}
+          className="ul-origin-choice-trace-surface" fill="transparent" pointerEvents="all"
+          onPointerDown={event=>{event.preventDefault();traceFromInset(event.clientX,event.clientY,event.currentTarget);}}/>}
         {!direct&&options.map((option,index)=><line key={option.record.id} data-recipe-id={option.record.id}
+          data-active={option.record.id===active||undefined} visibility={oneLeader&&option.record.id!==active?'hidden':undefined}
           x1={sources[index].x} y1={sources[index].y} x2={points[index].x} y2={points[index].y}/>)}
         {!direct&&sources.map((point,index)=>sources.findIndex(other=>other.x===point.x&&other.y===point.y)===index&&
           <circle key={options[index].record.id} className="ul-origin-choice-source" cx={point.x} cy={point.y} r="3"/>)}
+        {!direct&&activeSource&&<circle className="ul-origin-choice-active-dot" cx={activeSource.x} cy={activeSource.y} r="4.5"/>}
       </svg>
       {options.map((option,index)=>{const {record}=option;const approximate='point' in option && option.point.precision!=='world';
         const point=points[index];
         const labelSide=point.y<position.width*.4?'top':point.y>position.width*.6?'bottom':point.x<position.width/2?'left':'right';
         return <button key={record.id} className="ul-origin-choice-option"
+        data-traced={!direct&&record.id===active||undefined}
         style={{left:point.x-(direct?22:28),top:point.y-22}} data-label-side={direct?undefined:labelSide} data-lineup-id={record.id} data-spawn-slot={personal?undefined:record.spawn?.slot} data-approximate={approximate||undefined}
         title={personal?`${record.title} · your saved target`:`${record.from} · ${approximate?'Approximate area. Match the Position photo.':'Recorded start.'} ${record.throwType} · ${record.creator||'Original source'}`}
         aria-label={personal?`Open your lineup: ${record.title}`:`${record.from} — ${record.throwType}${record.spawn?` (${record.creator||'source'} numbering)`:''}`}
-        onClick={()=>onChoose(record)}>
+        onFocus={()=>setInspected(record.id)} onPointerEnter={()=>setInspected(record.id)}
+        onPointerDown={()=>setInspected(record.id)} onClick={()=>onChoose(record)}>
         <span className="ul-origin-choice-disc">{personal?<UserRound size={20}/>:record.spawn?<span>{record.spawn.slot}</span>:direct?<span>{/pillar/i.test(record.from)?'Pillar':'Area'}</span>:<Crosshair size={20}/>}</span>
         {!direct&&<span className="ul-origin-choice-label">{personal?record.title:record.spawn?record.spawn.label:record.from}</span>}
       </button>;})}
     </div>
     <div className="ul-origin-choice-footer">
-      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*ORIGIN_PAGE_SIZE+1}–{Math.min((page+1)*ORIGIN_PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
+      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*ORIGIN_PAGE_SIZE+1}–{Math.min((page+1)*ORIGIN_PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{oneLeader?'Tap the inset to trace a throw':personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
     </div>
   </div>,document.body);
 }

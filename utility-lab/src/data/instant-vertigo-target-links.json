@@ -1,0 +1,132 @@
+[
+  {
+    "id": "reviewed-viri-vertigo-a-ramp-ct1",
+    "guideId": "instant-viri-vertigo-ramp-ct1",
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=3",
+    "mapId": "vertigo",
+    "levelId": "lower",
+    "side": "CT",
+    "type": "Smoke",
+    "target": "A Ramp",
+    "destinationArea": "vertigo:lower:named:a ramp",
+    "reference": {
+      "guideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+      "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn",
+      "markerSource": {
+        "registrationId": "csnades-vertigo-lower-20261109",
+        "destinationId": "nade_b521e8a590cb:target",
+        "x": 690,
+        "y": 581
+      }
+    },
+    "referenceSourceSha256": "f5b275d7d9d0ce4958416035dfcdac065036037dea4fa903b9ab4b077722aade",
+    "referenceHashBasis": "SHA256 of JSON.stringify of the exact source-specific endpoint record in referenceEvidence",
+    "referenceEvidence": "docs/data/csnades-publisher-destination-evidence.json",
+    "checkedAt": "2026-11-26",
+    "review": "Each chapter result and the existing A Ramp guide show the same lower doorway beneath the exposed truss, next to the yellow fence and red A arrow. Reuses the labelled navigation area. The creator does not publish an impact coordinate."
+  },
+  {
+    "id": "reviewed-viri-vertigo-a-ramp-ct2",
+    "guideId": "instant-viri-vertigo-ramp-ct2",
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=32",
+    "mapId": "vertigo",
+    "levelId": "lower",
+    "side": "CT",
+    "type": "Smoke",
+    "target": "A Ramp",
+    "destinationArea": "vertigo:lower:named:a ramp",
+    "reference": {
+      "guideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+      "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn",
+      "markerSource": {
+        "registrationId": "csnades-vertigo-lower-20261109",
+        "destinationId": "nade_b521e8a590cb:target",
+        "x": 690,
+        "y": 581
+      }
+    },
+    "referenceSourceSha256": "f5b275d7d9d0ce4958416035dfcdac065036037dea4fa903b9ab4b077722aade",
+    "referenceHashBasis": "SHA256 of JSON.stringify of the exact source-specific endpoint record in referenceEvidence",
+    "referenceEvidence": "docs/data/csnades-publisher-destination-evidence.json",
+    "checkedAt": "2026-11-26",
+    "review": "Each chapter result and the existing A Ramp guide show the same lower doorway beneath the exposed truss, next to the yellow fence and red A arrow. Reuses the labelled navigation area. The creator does not publish an impact coordinate."
+  },
+  {
+    "id": "reviewed-viri-vertigo-a-ramp-ct3",
+    "guideId": "instant-viri-vertigo-ramp-ct3",
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=61",
+    "mapId": "vertigo",
+    "levelId": "lower",
+    "side": "CT",
+    "type": "Smoke",
+    "target": "A Ramp",
+    "destinationArea": "vertigo:lower:named:a ramp",
+    "reference": {
+      "guideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+      "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn",
+      "markerSource": {
+        "registrationId": "csnades-vertigo-lower-20261109",
+        "destinationId": "nade_b521e8a590cb:target",
+        "x": 690,
+        "y": 581
+      }
+    },
+    "referenceSourceSha256": "f5b275d7d9d0ce4958416035dfcdac065036037dea4fa903b9ab4b077722aade",
+    "referenceHashBasis": "SHA256 of JSON.stringify of the exact source-specific endpoint record in referenceEvidence",
+    "referenceEvidence": "docs/data/csnades-publisher-destination-evidence.json",
+    "checkedAt": "2026-11-26",
+    "review": "Each chapter result and the existing A Ramp guide show the same lower doorway beneath the exposed truss, next to the yellow fence and red A arrow. Reuses the labelled navigation area. The creator does not publish an impact coordinate."
+  },
+  {
+    "id": "reviewed-viri-vertigo-a-ramp-ct4",
+    "guideId": "instant-viri-vertigo-ramp-ct4",
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=93",
+    "mapId": "vertigo",
+    "levelId": "lower",
+    "side": "CT",
+    "type": "Smoke",
+    "target": "A Ramp",
+    "destinationArea": "vertigo:lower:named:a ramp",
+    "reference": {
+      "guideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+      "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn",
+      "markerSource": {
+        "registrationId": "csnades-vertigo-lower-20261109",
+        "destinationId": "nade_b521e8a590cb:target",
+        "x": 690,
+        "y": 581
+      }
+    },
+    "referenceSourceSha256": "f5b275d7d9d0ce4958416035dfcdac065036037dea4fa903b9ab4b077722aade",
+    "referenceHashBasis": "SHA256 of JSON.stringify of the exact source-specific endpoint record in referenceEvidence",
+    "referenceEvidence": "docs/data/csnades-publisher-destination-evidence.json",
+    "checkedAt": "2026-11-26",
+    "review": "Each chapter result and the existing A Ramp guide show the same lower doorway beneath the exposed truss, next to the yellow fence and red A arrow. Reuses the labelled navigation area. The creator does not publish an impact coordinate."
+  },
+  {
+    "id": "reviewed-viri-vertigo-a-ramp-ct5",
+    "guideId": "instant-viri-vertigo-ramp-ct5",
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=118",
+    "mapId": "vertigo",
+    "levelId": "lower",
+    "side": "CT",
+    "type": "Smoke",
+    "target": "A Ramp",
+    "destinationArea": "vertigo:lower:named:a ramp",
+    "reference": {
+      "guideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+      "source": "https://csnades.gg/vertigo/smokes/a-ramp-from-a-conn",
+      "markerSource": {
+        "registrationId": "csnades-vertigo-lower-20261109",
+        "destinationId": "nade_b521e8a590cb:target",
+        "x": 690,
+        "y": 581
+      }
+    },
+    "referenceSourceSha256": "f5b275d7d9d0ce4958416035dfcdac065036037dea4fa903b9ab4b077722aade",
+    "referenceHashBasis": "SHA256 of JSON.stringify of the exact source-specific endpoint record in referenceEvidence",
+    "referenceEvidence": "docs/data/csnades-publisher-destination-evidence.json",
+    "checkedAt": "2026-11-26",
+    "review": "Each chapter result and the existing A Ramp guide show the same lower doorway beneath the exposed truss, next to the yellow fence and red A arrow. Reuses the labelled navigation area. The creator does not publish an impact coordinate."
+  }
+]

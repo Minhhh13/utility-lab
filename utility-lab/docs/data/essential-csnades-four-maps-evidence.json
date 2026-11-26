@@ -1,0 +1,1655 @@
+{
+  "reviewDate": "2026-11-26",
+  "radars": {
+    "inferno": {
+      "page": "https://setpos.gg/inferno",
+      "radar": "https://setpos.gg/radars/inferno/radar.svg?v=120634a40963",
+      "sourceRadarSha256": "120634a409633b1cbb18642fdf64554f85b8ae7905a0bf0eaa47feb4f560b971",
+      "artwork": "/maps/inferno.svg",
+      "artworkSha256": "19c6def41e9ccc8bf1f8eb1af9ceab10c8839a2f29c88457ff295db6aa1c78d3",
+      "levelId": "main",
+      "posX": -2087,
+      "posY": 3870,
+      "scale": 4.9,
+      "radarSize": 1024
+    }
+  },
+  "records": [
+    {
+      "provider": "csnades",
+      "mapId": "mirage",
+      "levelId": "main",
+      "guideId": "essential-mirage-molotovs-van-from-b-apts",
+      "source": "https://csnades.gg/mirage/molotovs/van-from-b-apts",
+      "categorySource": "https://csnades.gg/mirage/molotovs",
+      "sourceId": "nade_3624ea054e1c",
+      "originId": "nade_3624ea054e1c",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-mirage-main-20261126",
+      "from": "B Apartments",
+      "titleFrom": "B Apts",
+      "titleTo": "Van",
+      "target": "Van",
+      "side": "T",
+      "type": "Molotov",
+      "origin": {
+        "x": 395,
+        "y": 90,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 134,
+        "y": 66,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -1042.112915,
+        "y": 641.823303,
+        "z": -15.939156
+      },
+      "angles": {
+        "pitch": -6.914647,
+        "yaw": 172.80748,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-02T22:37:15.644Z",
+      "sourceUpdatedAt": "2024-01-18T17:44:15.232Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/mirage-molotov-vDmQZouxb7/hq.mp4",
+      "sourceClipSha256": "9addabc02fc55a19f52223cd762568b63c0f090906e5611cc7d29bb0276a85bf",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/mirage-molotov-vDmQZouxb7/lineup.webp",
+        "sha256": "f26a129cfbde99e6591d0f01e6d0e44d5ddc87565717acc20d214c99d0c4be5a",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/mirage-3624ea054e1c-setup.webp",
+          "ms": 2317,
+          "sha256": "983977ffb8aaa7d6f05b639fca60f0b099f589a156e44730afd3f06a6fb231bf",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/mirage-3624ea054e1c-landing.webp",
+          "ms": 15133,
+          "sha256": "23e895ea13367035f32a18b254e4465e1142e2bfdbd768a340b128f73ebe4bcb",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.516,
+          "end": 2.516
+        },
+        {
+          "stage": "aim",
+          "start": 4.166,
+          "end": 6.666
+        },
+        {
+          "stage": "throw",
+          "start": 7.133,
+          "end": 9.133
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 10.011668,
+        "throwTime": 8.242323666666667,
+        "airTime": 1.8
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "mirage",
+      "levelId": "main",
+      "guideId": "essential-mirage-molotovs-tetris-from-behind-triple",
+      "source": "https://csnades.gg/mirage/molotovs/tetris-from-behind-triple",
+      "categorySource": "https://csnades.gg/mirage/molotovs",
+      "sourceId": "nade_34587dc64c5b",
+      "originId": "nade_34587dc64c5b",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-mirage-main-20261126",
+      "from": "Behind Triple",
+      "titleFrom": "Behind Triple",
+      "titleTo": "Tetris",
+      "target": "Tetris",
+      "side": "CT",
+      "type": "Molotov",
+      "origin": {
+        "x": 437,
+        "y": 885,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 629,
+        "y": 672,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -890.26123,
+        "y": -2308.118652,
+        "z": -106.337036
+      },
+      "angles": {
+        "pitch": -20.244852,
+        "yaw": 46.55938,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-03T17:48:38.122Z",
+      "sourceUpdatedAt": "2024-01-18T19:26:11.502Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/mirage-molotov-Wj1YfphDfX/hq.mp4",
+      "sourceClipSha256": "558c321900f66e71753da41aa38dbbf23a775054677156d4996bc682d8fb98c9",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/mirage-molotov-Wj1YfphDfX/lineup.webp",
+        "sha256": "b35de4103b71f92f0bc90567da8cbc6d02e89a770492e13a7859007af740f225",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/mirage-34587dc64c5b-setup.webp",
+          "ms": 2817,
+          "sha256": "c17ac5b408cd7cd7d655c22ef1d40199654fb836c7db6cc5148864afe3df6de0",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/mirage-34587dc64c5b-landing.webp",
+          "ms": 14183,
+          "sha256": "055e518fd421b477a668f7e538e9b10c44341ff5c5483a4feed431693e4cb4d5",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 1.016,
+          "end": 3.016
+        },
+        {
+          "stage": "aim",
+          "start": 4.166,
+          "end": 6.15
+        },
+        {
+          "stage": "throw",
+          "start": 7.216,
+          "end": 9.216
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 9.650474333333335,
+        "throwTime": 7.784677333333334,
+        "airTime": 1.9
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "mirage",
+      "levelId": "main",
+      "guideId": "essential-mirage-hegrenades-top-mid-boxes-from-window",
+      "source": "https://csnades.gg/mirage/hegrenades/top-mid-boxes-from-window",
+      "categorySource": "https://csnades.gg/mirage/hegrenades",
+      "sourceId": "nade_2b69a9ce94f8",
+      "originId": "nade_2b69a9ce94f8",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-mirage-main-20261126",
+      "from": "Window",
+      "titleFrom": "Window",
+      "titleTo": "Top Mid Boxes",
+      "target": "Top Mid",
+      "side": "CT",
+      "type": "HE",
+      "origin": {
+        "x": 362,
+        "y": 445,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 737,
+        "y": 447,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -1247.96875,
+        "y": -924.039368,
+        "z": -103.96875
+      },
+      "angles": {
+        "pitch": -15.733806,
+        "yaw": 0.706955,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-03T17:08:54.669Z",
+      "sourceUpdatedAt": "2024-01-18T20:43:20.551Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/mirage-he-qwyobfLj4Q/hq.mp4",
+      "sourceClipSha256": "940faf600cc83e3fef4982dfd46d863784b475b84cade7cda108d963f817c370",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/mirage-he-qwyobfLj4Q/lineup.webp",
+        "sha256": "0e7e1ba8a56769dd8dc1b62f780b0c17064dd5fe035dde168741d087fa3ec1d6",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/mirage-2b69a9ce94f8-setup.webp",
+          "ms": 2417,
+          "sha256": "73e6390caa0dcfa78681e3431f4d5ee5d1dd6aa8f451b1e54319fb8f07ab85f4",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/mirage-2b69a9ce94f8-landing.webp",
+          "ms": 14900,
+          "sha256": "a920022b001261e8279b077a16ff0c7668c09efa7d13bd9bf1c0165800ed2aab",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.616,
+          "end": 2.616
+        },
+        {
+          "stage": "aim",
+          "start": 3.516,
+          "end": 8.5
+        },
+        {
+          "stage": "throw",
+          "start": 9.483,
+          "end": 13.483
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "mirage",
+      "levelId": "main",
+      "guideId": "essential-mirage-hegrenades-window-from-top-mid-boxes",
+      "source": "https://csnades.gg/mirage/hegrenades/window-from-top-mid-boxes",
+      "categorySource": "https://csnades.gg/mirage/hegrenades",
+      "sourceId": "nade_cfc334843eb3",
+      "originId": "nade_cfc334843eb3",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-mirage-main-20261126",
+      "from": "Top Mid Boxes",
+      "titleFrom": "Top Mid Boxes",
+      "titleTo": "Window",
+      "target": "Window",
+      "side": "T",
+      "type": "HE",
+      "origin": {
+        "x": 740,
+        "y": 438,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 366,
+        "y": 444,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 502.96875,
+        "y": -626.643311,
+        "z": -96.524139
+      },
+      "angles": {
+        "pitch": -14.137868,
+        "yaw": -178.11348,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "running",
+      "sourcePrecision": "loose",
+      "sourcePublishedAt": "2023-09-03T17:13:34.747Z",
+      "sourceUpdatedAt": "2024-01-18T20:43:15.365Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/mirage-he-bCbx9FqC6S/hq.mp4",
+      "sourceClipSha256": "d1e3af9a0db95fdee19041182e6b2a55c5eb9f25bba98dbdaf9d4e54945f2a87",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/mirage-he-bCbx9FqC6S/lineup.webp",
+        "sha256": "8ef3bd5644081aca209831182813522104c780ebe90ecac321225c5610feaf2d",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/mirage-cfc334843eb3-setup.webp",
+          "ms": 2350,
+          "sha256": "6e3c9bdffff4c5869bedc9a2f076b9c8e13834667feda815b8b2726ef5b93aef",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/mirage-cfc334843eb3-landing.webp",
+          "ms": 15550,
+          "sha256": "0999b3ec0cfa0b3a349dbca10ad12fa89d1f43c4b8a42a3918564859f25a33cd",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.55,
+          "end": 2.549
+        },
+        {
+          "stage": "aim",
+          "start": 5.216,
+          "end": 7.533
+        },
+        {
+          "stage": "throw",
+          "start": 8.416,
+          "end": 10.983
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "inferno",
+      "levelId": "main",
+      "guideId": "essential-inferno-molotovs-car-from-bottom-banana",
+      "source": "https://csnades.gg/inferno/molotovs/car-from-bottom-banana",
+      "categorySource": "https://csnades.gg/inferno/molotovs",
+      "sourceId": "nade_a394cfcd58d1",
+      "originId": "nade_a394cfcd58d1",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-inferno-main-20261126",
+      "from": "Bottom Banana",
+      "titleFrom": "Bottom Banana",
+      "titleTo": "Car",
+      "target": "Car",
+      "side": "T",
+      "type": "Molotov",
+      "origin": {
+        "x": 439,
+        "y": 610,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 499,
+        "y": 370,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 153.885391,
+        "y": 942.91571,
+        "z": 144.966843
+      },
+      "angles": {
+        "pitch": -15.711576,
+        "yaw": 87.57354,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-23T04:13:30.908Z",
+      "sourceUpdatedAt": "2024-01-20T22:19:20.240Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/inferno-molotov-mr1vGyywxQ/hq.mp4",
+      "sourceClipSha256": "16d301c2bbf561df271f5023c82804d9727899fbb5df32ccf13527ad3f439245",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/inferno-molotov-mr1vGyywxQ/lineup.webp",
+        "sha256": "39b2223ac9c44661f04364355180968873aa1477d128b56c63b0ec4d50625f84",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/inferno-a394cfcd58d1-setup.webp",
+          "ms": 2350,
+          "sha256": "4951f150aa2e4f9b18ce8e28255401ba13e42ef1d7027baeef1e12298bb5565e",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/inferno-a394cfcd58d1-landing.webp",
+          "ms": 17467,
+          "sha256": "6fe52d1a55e04f5203838978ea4b4ad03ee2766e425505b1a039248e1c31bad7",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.55,
+          "end": 2.549
+        },
+        {
+          "stage": "aim",
+          "start": 3.166,
+          "end": 8.099
+        },
+        {
+          "stage": "throw",
+          "start": 8.916,
+          "end": 11.65
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 11.907637,
+        "throwTime": 10.196786,
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "inferno",
+      "levelId": "main",
+      "guideId": "essential-inferno-molotovs-pit-from-short",
+      "source": "https://csnades.gg/inferno/molotovs/pit-from-short",
+      "categorySource": "https://csnades.gg/inferno/molotovs",
+      "sourceId": "nade_9bba71a98920",
+      "originId": "nade_9bba71a98920",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-inferno-main-20261126",
+      "from": "Short",
+      "titleFrom": "Short",
+      "titleTo": "Pit",
+      "target": "Pit",
+      "side": "T",
+      "type": "Molotov",
+      "origin": {
+        "x": 709,
+        "y": 779,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 954,
+        "y": 839,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 1322.028442,
+        "y": 213.208298,
+        "z": 201.955109
+      },
+      "angles": {
+        "pitch": 12.51137,
+        "yaw": -23.254187,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2024-03-21T03:53:04.038Z",
+      "sourceUpdatedAt": "2024-03-22T17:57:48.992Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/inferno-molotov-IBIGUgU8Xr/hq.mp4",
+      "sourceClipSha256": "769d7523d3e98be1751bf2446c24c85144a57d80d843a7870a9902386dadc2ae",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/inferno-molotov-IBIGUgU8Xr/lineup.webp",
+        "sha256": "84046e0d7968f008f0a10ad3a7b2b1d9ee8ea055876681fbc8d4759d4abc55ef",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/inferno-9bba71a98920-setup.webp",
+          "ms": 2317,
+          "sha256": "39e844ff16bec397f9b5ee96fc0f37897c2b6e84b0e1b653307c07eff0f6f767",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/inferno-9bba71a98920-landing.webp",
+          "ms": 17267,
+          "sha256": "2313fc38fcf554bed52e3fce13b1dc6849c24a72dce209280393e2acc3bd31cb",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.5,
+          "end": 2.516
+        },
+        {
+          "stage": "aim",
+          "start": 4.133,
+          "end": 7.583
+        },
+        {
+          "stage": "throw",
+          "start": 8.05,
+          "end": 10.8
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 11.231131666666668,
+        "throwTime": 9.236266666666666,
+        "airTime": 2
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "inferno",
+      "levelId": "main",
+      "guideId": "essential-inferno-hegrenades-first-orange-from-car",
+      "source": "https://csnades.gg/inferno/hegrenades/first-orange-from-car",
+      "categorySource": "https://csnades.gg/inferno/hegrenades",
+      "sourceId": "nade_da7e58fa94f1",
+      "originId": "nade_da7e58fa94f1",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-inferno-main-20261126",
+      "from": "Car",
+      "titleFrom": "Car",
+      "titleTo": "First Orange",
+      "target": "First Orange",
+      "side": "T",
+      "type": "HE",
+      "origin": {
+        "x": 503,
+        "y": 373,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 502,
+        "y": 266,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 479.274414,
+        "y": 2017.96875,
+        "z": 200.031235
+      },
+      "angles": {
+        "pitch": -41.575798,
+        "yaw": 90.457634,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-20T15:30:22.321Z",
+      "sourceUpdatedAt": "2023-11-10T17:48:42.319Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/inferno-he-XLK5J11FzL/hq.mp4",
+      "sourceClipSha256": "99d000a2c3147ddcd702e5d190b07fd09947bb7ea147c2f54c894e9dbfdedf2e",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/inferno-he-XLK5J11FzL/lineup.webp",
+        "sha256": "56d5cede4381a3992f8b0543a301de1cf655552420917ca4db133c05df93e73c",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/inferno-da7e58fa94f1-setup.webp",
+          "ms": 1267,
+          "sha256": "e4e3dc993cd775af99932c236aa59c36933ee37b6bce9998b1feacb52e6cf580",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/inferno-da7e58fa94f1-landing.webp",
+          "ms": 11750,
+          "sha256": "b448eed237ea940429c8ce3afefa55d1027fc1de3eb151779a51e7a66acbf288",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.533,
+          "end": 2.533
+        },
+        {
+          "stage": "aim",
+          "start": 3.033,
+          "end": 5.116
+        },
+        {
+          "stage": "throw",
+          "start": 6,
+          "end": 8.533
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "inferno",
+      "levelId": "main",
+      "guideId": "essential-inferno-hegrenades-b-default-from-outside-church",
+      "source": "https://csnades.gg/inferno/hegrenades/b-default-from-outside-church",
+      "categorySource": "https://csnades.gg/inferno/hegrenades",
+      "sourceId": "nade_c64fb706185e",
+      "originId": "nade_c64fb706185e",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-inferno-main-20261126",
+      "from": "Outside Church",
+      "titleFrom": "Outside Church",
+      "titleTo": "B Default",
+      "target": "B-Default",
+      "side": "CT",
+      "type": "HE",
+      "origin": {
+        "x": 697,
+        "y": 159,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 527,
+        "y": 185,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 1342.079834,
+        "y": 2967.911865,
+        "z": 192.031662
+      },
+      "angles": {
+        "pitch": 4.305772,
+        "yaw": -139.822342,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-20T15:11:44.720Z",
+      "sourceUpdatedAt": "2023-11-10T17:48:42.278Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/inferno-he-n6FiLnvUmL/hq.mp4",
+      "sourceClipSha256": "a9f6e60667723bf5077a426da73d3e72f04f142b71f671156b10f2b23907eb7d",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/inferno-he-n6FiLnvUmL/lineup.webp",
+        "sha256": "6a2ed88f812537205f23de312f9523339270e4d714895b8248f1acfb90f3cb2e",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/inferno-c64fb706185e-setup.webp",
+          "ms": 1483,
+          "sha256": "f89c42cad5c6305a39266557916459791d4b97f406458b09f62f25be6ed2587b",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/inferno-c64fb706185e-landing.webp",
+          "ms": 12400,
+          "sha256": "a754d9342c3f1811a9fc4bcec976f010061c8cdfa59cb73e2217b1bf43b32df0",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.566,
+          "end": 2.95
+        },
+        {
+          "stage": "aim",
+          "start": 4.183,
+          "end": 6.183
+        },
+        {
+          "stage": "throw",
+          "start": 6.183,
+          "end": 8.683
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "inferno",
+      "levelId": "main",
+      "guideId": "essential-inferno-hegrenades-mini-pit-from-short",
+      "source": "https://csnades.gg/inferno/hegrenades/mini-pit-from-short",
+      "categorySource": "https://csnades.gg/inferno/hegrenades",
+      "sourceId": "nade_55c9b4d609c1",
+      "originId": "nade_55c9b4d609c1",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-inferno-main-20261126",
+      "from": "Short",
+      "titleFrom": "Short",
+      "titleTo": "Mini Pit",
+      "target": "MiniPit",
+      "side": "T",
+      "type": "HE",
+      "origin": {
+        "x": 777,
+        "y": 833,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 860,
+        "y": 862,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 1746.046387,
+        "y": -89.96875,
+        "z": 206.03125
+      },
+      "angles": {
+        "pitch": 12.530713,
+        "yaw": 55.720753,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "walking",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-20T15:33:51.809Z",
+      "sourceUpdatedAt": "2023-11-10T17:48:42.326Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/inferno-he-2O4mlXAgmJ/hq.mp4",
+      "sourceClipSha256": "fb9182ebf504b853eb301d7a6fbd13367bf680a746a2ed627ff11c70f05877b7",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/inferno-he-2O4mlXAgmJ/lineup.webp",
+        "sha256": "773254d40624974b8a326eccada5fc7d0c7187a4201acbac481568b88f852f34",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/inferno-55c9b4d609c1-setup.webp",
+          "ms": 3383,
+          "sha256": "52958dcda47811a8f46cc7eb337fa93618e5d4dde75125a83146ac1dda0b8713",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/inferno-55c9b4d609c1-landing.webp",
+          "ms": 14233,
+          "sha256": "5a1112598c124fda0b74059b52d937dfb509870d1c98344e5d43e7659e781535",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.733,
+          "end": 3.583
+        },
+        {
+          "stage": "aim",
+          "start": 5.433,
+          "end": 7.433
+        },
+        {
+          "stage": "throw",
+          "start": 7.966,
+          "end": 10.733
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "dust2",
+      "levelId": "main",
+      "guideId": "essential-dust2-molotovs-short-from-lower-tunnel",
+      "source": "https://csnades.gg/dust2/molotovs/short-from-lower-tunnel",
+      "categorySource": "https://csnades.gg/dust2/molotovs",
+      "sourceId": "nade_ae8a279b0fc1",
+      "originId": "nade_ae8a279b0fc1",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-dust2-main-20261109",
+      "from": "Lower Tunnels",
+      "titleFrom": "Lower Tunnel",
+      "titleTo": "Short",
+      "target": "Short",
+      "side": "T",
+      "type": "Molotov",
+      "origin": {
+        "x": 424,
+        "y": 409,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 640,
+        "y": 381,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -520.888062,
+        "y": 1382.02832,
+        "z": -48.270035
+      },
+      "angles": {
+        "pitch": -6.076642,
+        "yaw": -2.054506,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-09T18:20:26.025Z",
+      "sourceUpdatedAt": "2024-01-18T20:36:56.291Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/dust2-molotov-OgigK61NYl/hq.mp4",
+      "sourceClipSha256": "c6288a1ef0c01c6eb60ad56e448cef87ffc3b963467a40c6672b9b1efd13f386",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/dust2-molotov-OgigK61NYl/lineup.webp",
+        "sha256": "d4d5f424b8d056fe4cd09c1c2b6a846934934b7d31fdf76a356e8084ea72dc29",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/dust2-ae8a279b0fc1-setup.webp",
+          "ms": 1267,
+          "sha256": "7e2cc33e87f54a24b9397286058b0fcefbb582c05eba1dff7808064f0b66b5ed",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/dust2-ae8a279b0fc1-landing.webp",
+          "ms": 10800,
+          "sha256": "d3ac615c21d1814e9f7f4f31f99d7cc4be712f3c6ae85daec6b2b46e9cd9357c",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.533,
+          "end": 2.533
+        },
+        {
+          "stage": "aim",
+          "start": 3,
+          "end": 5
+        },
+        {
+          "stage": "throw",
+          "start": 5.383,
+          "end": 7.716
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 7.884984,
+        "throwTime": 6.097689666666667,
+        "airTime": 1.8
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "dust2",
+      "levelId": "main",
+      "guideId": "essential-dust2-molotovs-short-from-goose",
+      "source": "https://csnades.gg/dust2/molotovs/short-from-goose",
+      "categorySource": "https://csnades.gg/dust2/molotovs",
+      "sourceId": "nade_c810c0212a27",
+      "originId": "nade_c810c0212a27",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-dust2-main-20261109",
+      "from": "Goose",
+      "titleFrom": "Goose",
+      "titleTo": "Short",
+      "target": "Short",
+      "side": "CT",
+      "type": "Molotov",
+      "origin": {
+        "x": 823,
+        "y": 34,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 644,
+        "y": 250,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 1180.100708,
+        "y": 3059.96875,
+        "z": 192.252747
+      },
+      "angles": {
+        "pitch": 11.815347,
+        "yaw": -134.845688,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-09T18:29:46.982Z",
+      "sourceUpdatedAt": "2025-05-08T00:49:07.597Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/dust2-molotov-4rh5RIwuaq/hq.mp4",
+      "sourceClipSha256": "12a20c4c2e6f6b865bb964c66cbe3275380d140d8a7972923a344c01eef47a15",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/dust2-molotov-4rh5RIwuaq/lineup.webp",
+        "sha256": "0b475f0457dd3cd46e64f5eb1b9bd655476b1c1f9c9278d4733bcacad219236e",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/dust2-c810c0212a27-setup.webp",
+          "ms": 4717,
+          "sha256": "a13dca1ebb28af1c58f801d929c307129e7467e942d165703b819aff6e6d2e03",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/dust2-c810c0212a27-landing.webp",
+          "ms": 17233,
+          "sha256": "14fcd95538d1f87c52076317dc80e9e182c80c002375131f7d595c6a07218f4f",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 1.066,
+          "end": 4.916
+        },
+        {
+          "stage": "aim",
+          "start": 6.966,
+          "end": 8.966
+        },
+        {
+          "stage": "throw",
+          "start": 9.683,
+          "end": 12.016
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 12.266321333333336,
+        "throwTime": 10.386684333333333,
+        "airTime": 1.9
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "dust2",
+      "levelId": "main",
+      "guideId": "essential-dust2-hegrenades-b-main-from-b-site",
+      "source": "https://csnades.gg/dust2/hegrenades/b-main-from-b-site",
+      "categorySource": "https://csnades.gg/dust2/hegrenades",
+      "sourceId": "nade_01dae2e90adc",
+      "originId": "nade_01dae2e90adc",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-dust2-main-20261109",
+      "from": "B Site",
+      "titleFrom": "B Site",
+      "titleTo": "B Main",
+      "target": "Upper Tunnels",
+      "side": "CT",
+      "type": "HE",
+      "origin": {
+        "x": 149,
+        "y": 118,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 74,
+        "y": 385,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -1662.777588,
+        "y": 2737.276855,
+        "z": 74.789261
+      },
+      "angles": {
+        "pitch": -12.276122,
+        "yaw": -108.70636,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-09T18:13:39.371Z",
+      "sourceUpdatedAt": "2024-01-18T20:44:23.056Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/dust2-he-H8IQJi6tVb/hq.mp4",
+      "sourceClipSha256": "fcc7ff568e059b2da358ff2ce0ae0780af38e793f73a5882e43208d12afc7284",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/dust2-he-H8IQJi6tVb/lineup.webp",
+        "sha256": "e44873c022d48e5c13e4cfba6d802a2146b18a098a424b914751021b0c7048d7",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/dust2-01dae2e90adc-setup.webp",
+          "ms": 3717,
+          "sha256": "26cc5919126de2d56f3f36b77b44c96b03effb2345c53ae20026a1dd34d6eefa",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/dust2-01dae2e90adc-landing.webp",
+          "ms": 17833,
+          "sha256": "ced17d4c9e3b7658ccf10b61cda025eb7642ef3c27d048e12eb37c55d6b89626",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 1.483,
+          "end": 3.916
+        },
+        {
+          "stage": "aim",
+          "start": 6.483,
+          "end": 9.566
+        },
+        {
+          "stage": "throw",
+          "start": 11.116,
+          "end": 13.449
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "dust2",
+      "levelId": "main",
+      "guideId": "essential-dust2-hegrenades-under-b-window-from-outside-b",
+      "source": "https://csnades.gg/dust2/hegrenades/under-b-window-from-outside-b",
+      "categorySource": "https://csnades.gg/dust2/hegrenades",
+      "sourceId": "nade_2288e8c0651f",
+      "originId": "nade_2288e8c0651f",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-dust2-main-20261109",
+      "from": "Outside B",
+      "titleFrom": "Outside B",
+      "titleTo": "Under B Window",
+      "target": "B Window",
+      "side": "CT",
+      "type": "HE",
+      "origin": {
+        "x": 365,
+        "y": 260,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 205,
+        "y": 102,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -760.03125,
+        "y": 2066.03125,
+        "z": -47.626526
+      },
+      "angles": {
+        "pitch": 0.092217,
+        "yaw": 127.719986,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-09-09T19:02:48.699Z",
+      "sourceUpdatedAt": "2024-01-18T20:44:38.924Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/dust2-he-dEnBLozpin/hq.mp4",
+      "sourceClipSha256": "6328b478629bc1927ce494f52a884bfa2214e8c721c09179b5aef3dfc6a23ef7",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/dust2-he-dEnBLozpin/lineup.webp",
+        "sha256": "747b2dc960cdccbd67d15000d4f546d56f857abfebfbd5f036854e08ab4fdd80",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/dust2-2288e8c0651f-setup.webp",
+          "ms": 2683,
+          "sha256": "2f90a7ba0aff09c1e128ffc3a885f8dbe804f83aef5801b9ba17f885c8d33e81",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/dust2-2288e8c0651f-landing.webp",
+          "ms": 15133,
+          "sha256": "7060a1f1aad902f2fa8081d3f0c5b1684e980b69acabd3d8ede4122800b6356a",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.483,
+          "end": 2.883
+        },
+        {
+          "stage": "aim",
+          "start": 3.549,
+          "end": 7.233
+        },
+        {
+          "stage": "throw",
+          "start": 8.349,
+          "end": 10.683
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "anubis",
+      "levelId": "main",
+      "guideId": "essential-anubis-molotovs-top-mid-from-bridge",
+      "source": "https://csnades.gg/anubis/molotovs/top-mid-from-bridge",
+      "categorySource": "https://csnades.gg/anubis/molotovs",
+      "sourceId": "nade_b02c2a9aee77",
+      "originId": "nade_b02c2a9aee77",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-anubis-main-20261124",
+      "from": "Bridge",
+      "titleFrom": "Bridge",
+      "titleTo": "Top Mid",
+      "target": "Top Mid",
+      "side": "T",
+      "type": "Molotov",
+      "origin": {
+        "x": 418,
+        "y": 703,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 503,
+        "y": 484,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": -530.423828,
+        "y": -340.03125,
+        "z": 130.03125
+      },
+      "angles": {
+        "pitch": -16.368109,
+        "yaw": 63.634293,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "very_precise",
+      "sourcePublishedAt": "2023-11-18T18:26:59.649Z",
+      "sourceUpdatedAt": "2024-01-23T01:47:48.260Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-W9w4iMnVJQ/hq.mp4",
+      "sourceClipSha256": "8f52f9d5d1d7ab10c25c2ebb2b6cedf2221715744788cc064a3acc0b4fc29c19",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/anubis-molotov-W9w4iMnVJQ/lineup.webp",
+        "sha256": "ebd43c6753d8d2a539ceb46a852b454784fdf30800b4479204b833bf9f15c1c6",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/anubis-b02c2a9aee77-setup.webp",
+          "ms": 2300,
+          "sha256": "2b05872ed62f7092bc5b6ddde828500e1bef7903e484314d261da9b10062e702",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/anubis-b02c2a9aee77-landing.webp",
+          "ms": 19567,
+          "sha256": "884a982b68c9127df58e88ba193d52aaeab2c6563b99b993a831b4d73f7e4379",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.5,
+          "end": 2.5
+        },
+        {
+          "stage": "aim",
+          "start": 6.816,
+          "end": 9.333
+        },
+        {
+          "stage": "throw",
+          "start": 10.166,
+          "end": 12.849
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 12.883812,
+        "throwTime": 10.877499,
+        "airTime": 2
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "anubis",
+      "levelId": "main",
+      "guideId": "essential-anubis-molotovs-a-site-from-water",
+      "source": "https://csnades.gg/anubis/molotovs/a-site-from-water",
+      "categorySource": "https://csnades.gg/anubis/molotovs",
+      "sourceId": "nade_bc975c22bad3",
+      "originId": "nade_bc975c22bad3",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-anubis-main-20261124",
+      "from": "Water",
+      "titleFrom": "Water",
+      "titleTo": "A Site",
+      "target": "A Site",
+      "side": "T",
+      "type": "Molotov",
+      "origin": {
+        "x": 664,
+        "y": 500,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 721,
+        "y": 254,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 744.028442,
+        "y": 684.806702,
+        "z": -43.96875
+      },
+      "angles": {
+        "pitch": 8.470527,
+        "yaw": 76.739265,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-11-18T18:27:11.447Z",
+      "sourceUpdatedAt": "2024-05-05T07:00:50.986Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-molotov-LkUACC9n4X/hq.mp4",
+      "sourceClipSha256": "573f087a8f7f178a42cf6a34939c769bd47671805ab4dd6cda8cab90d48dc002",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/anubis-molotov-LkUACC9n4X/lineup.webp",
+        "sha256": "4ae51866015670222b6beb5e328a19781d4ac498573b18b55f9d6c38ca712847",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/anubis-bc975c22bad3-setup.webp",
+          "ms": 1250,
+          "sha256": "657bff2ad6fa2d78fa56a007d933ae4b1400848ff0454435c5c2968b4179bf3a",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/anubis-bc975c22bad3-landing.webp",
+          "ms": 15200,
+          "sha256": "7ea6fc8df4455d12bb8f73c2c3d15d83649fe2a33beb36c009e501125f327c54",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.5,
+          "end": 2.5
+        },
+        {
+          "stage": "aim",
+          "start": 3.016,
+          "end": 5.233
+        },
+        {
+          "stage": "throw",
+          "start": 5.9,
+          "end": 8.583
+        }
+      ],
+      "sourceTiming": {
+        "popTime": 8.573353,
+        "throwTime": 6.559106,
+        "airTime": 2
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "anubis",
+      "levelId": "main",
+      "guideId": "essential-anubis-hegrenades-fountain-from-a-main",
+      "source": "https://csnades.gg/anubis/hegrenades/fountain-from-a-main",
+      "categorySource": "https://csnades.gg/anubis/hegrenades",
+      "sourceId": "nade_1c8d8c0db6ab",
+      "originId": "nade_1c8d8c0db6ab",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-anubis-main-20261124",
+      "from": "A Main",
+      "titleFrom": "A Main",
+      "titleTo": "Fountain",
+      "target": "Fountain",
+      "side": "T",
+      "type": "HE",
+      "origin": {
+        "x": 789,
+        "y": 476,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 836,
+        "y": 267,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 1382.030518,
+        "y": 800.03125,
+        "z": -87.96875
+      },
+      "angles": {
+        "pitch": -13.166358,
+        "yaw": 60.64537,
+        "roll": 0
+      },
+      "sourceTechnique": "left",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-11-18T18:26:11.029Z",
+      "sourceUpdatedAt": "2023-11-18T18:26:11.037Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-he-fawnaWhYVK/hq.mp4",
+      "sourceClipSha256": "5fbd33242cbe0bfebdd9ad2bfa4ffdc35b49ed832ae98b0208d9bfe41906f6b6",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/anubis-he-fawnaWhYVK/lineup.webp",
+        "sha256": "48587fb69faddd7c514321e6c551cfc8bd2950d8354bcaa2e5ff5b688b660f29",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/anubis-1c8d8c0db6ab-setup.webp",
+          "ms": 1250,
+          "sha256": "0da30d0fd5175c997178c8c299ce3c2af55e8d66a613b84ba76bc11e6130d91f",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/anubis-1c8d8c0db6ab-landing.webp",
+          "ms": 12850,
+          "sha256": "b81c3f2e449954810eba4585879aafe1f19eca7701a88e931b2b805ee3836f3e",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.5,
+          "end": 2.5
+        },
+        {
+          "stage": "aim",
+          "start": 3.95,
+          "end": 6.2
+        },
+        {
+          "stage": "throw",
+          "start": 6.666,
+          "end": 9.349
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "anubis",
+      "levelId": "main",
+      "guideId": "essential-anubis-hegrenades-a-main-from-plat",
+      "source": "https://csnades.gg/anubis/hegrenades/a-main-from-plat",
+      "categorySource": "https://csnades.gg/anubis/hegrenades",
+      "sourceId": "nade_98735d3c1cc3",
+      "originId": "nade_98735d3c1cc3",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-anubis-main-20261124",
+      "from": "Plat",
+      "titleFrom": "Plat",
+      "titleTo": "A Main",
+      "target": "A-Main",
+      "side": "CT",
+      "type": "HE",
+      "origin": {
+        "x": 697,
+        "y": 317,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 758,
+        "y": 464,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 935.189697,
+        "y": 1566.768555,
+        "z": -23.96875
+      },
+      "angles": {
+        "pitch": -1.493908,
+        "yaw": -63.74147,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "stationary",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-11-18T18:26:08.507Z",
+      "sourceUpdatedAt": "2023-11-18T18:26:08.513Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-he-FnjVkoOTCC/hq.mp4",
+      "sourceClipSha256": "2ec96ebdb166b007d6f3edfb91750c7a30a108daa94d0d416ca3fed3317b07c4",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/anubis-he-FnjVkoOTCC/lineup.webp",
+        "sha256": "059cc1ca2ead3d49ebaad720c7f362d16afeac2ae5bcf7966dbe66e44d19ac68",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/anubis-98735d3c1cc3-setup.webp",
+          "ms": 4183,
+          "sha256": "9d4c27f95cd60a58d4b01b1f0c2d1dd3a8514ed27d9c114d8126a3af2d50426f",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/anubis-98735d3c1cc3-landing.webp",
+          "ms": 15800,
+          "sha256": "018ec33115a9c8c66bfdd1d548b4a6dcf181e2fd695ea45b3da94383a35f3ad3",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.5,
+          "end": 4.383
+        },
+        {
+          "stage": "aim",
+          "start": 6.566,
+          "end": 8.849
+        },
+        {
+          "stage": "throw",
+          "start": 9.516,
+          "end": 12.199
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    },
+    {
+      "provider": "csnades",
+      "mapId": "anubis",
+      "levelId": "main",
+      "guideId": "essential-anubis-hegrenades-top-mid-from-street",
+      "source": "https://csnades.gg/anubis/hegrenades/top-mid-from-street",
+      "categorySource": "https://csnades.gg/anubis/hegrenades",
+      "sourceId": "nade_001cea322a64",
+      "originId": "nade_001cea322a64",
+      "sourceMethod": "guide-standing-pose",
+      "registrationId": "csnades-anubis-main-20261124",
+      "from": "Street",
+      "titleFrom": "Street",
+      "titleTo": "Top Mid",
+      "target": "Top Mid",
+      "side": "T",
+      "type": "HE",
+      "origin": {
+        "x": 545,
+        "y": 726,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 504,
+        "y": 482,
+        "levels": [
+          1
+        ]
+      },
+      "world": {
+        "x": 112.738922,
+        "y": -468.697693,
+        "z": 64.266548
+      },
+      "angles": {
+        "pitch": 10.741092,
+        "yaw": 110.574165,
+        "roll": 0
+      },
+      "sourceTechnique": "left_jump",
+      "sourceMovement": "running",
+      "sourcePrecision": "precise",
+      "sourcePublishedAt": "2023-11-18T18:26:05.740Z",
+      "sourceUpdatedAt": "2023-11-18T18:26:05.745Z",
+      "sourceVideo": "https://assets.csnades.gg/nades/anubis-he-MaNFTlKbCl/hq.mp4",
+      "sourceClipSha256": "e17cce850e947b782fe335b33d1f4b2ce2f2e7530b2b28c4798d598230bd3568",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/anubis-he-MaNFTlKbCl/lineup.webp",
+        "sha256": "a6f9db98fbbe97d1ae7d61493511da53170cea44d325449ae781e62750aa618b",
+        "anchor": "publisher-centered-reticle"
+      },
+      "frames": {
+        "setup": {
+          "image": "/lineup-media/essential-csnades/anubis-001cea322a64-setup.webp",
+          "ms": 1250,
+          "sha256": "f6ea4749c63361a8182ae13dd4f5d1fd8eaca7b724d9605623df12ecc38c4aa1",
+          "width": 1280,
+          "height": 720
+        },
+        "landing": {
+          "image": "/lineup-media/essential-csnades/anubis-001cea322a64-landing.webp",
+          "ms": 13400,
+          "sha256": "47a07a9ce6711f47919ce65018ba7b9298552017004b4d7aa0912574b56002a7",
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "sourceSubtitleTimes": [
+        {
+          "stage": "setup",
+          "start": 0.5,
+          "end": 2.5
+        },
+        {
+          "stage": "aim",
+          "start": 4.166,
+          "end": 6.233
+        },
+        {
+          "stage": "throw",
+          "start": 6.716,
+          "end": 9.4
+        }
+      ],
+      "sourceTiming": {
+        "airTime": 1.7
+      }
+    }
+  ]
+}

@@ -12,8 +12,8 @@ const all = mergePhotoGuides(PHOTO_GUIDE_LIBRARY,maps.flatMap(map => normalizeEx
 const lookups = Object.fromEntries(maps.map(map => [map,parseOriginLookup(json(`src/data/lineup-origins/origins-${map}.json`))]));
 
 test('every complete guide has an independently recorded standing location', () => {
-  assert.equal(all.length,1558);
-  assert.equal(new Set(all.map(row => row.source)).size,1478);
+  assert.equal(all.length,1639);
+  assert.equal(new Set(all.map(row => row.source)).size,1559);
   let publisher = 0, area = 0;
   for (const record of all) {
     const point = findLineupOrigin(record,lookups[record.mapId]);
@@ -22,7 +22,7 @@ test('every complete guide has an independently recorded standing location', () 
     assert.ok(point.label);
     if (point.basis === 'publisher-origin') publisher++; else area++;
   }
-  assert.equal(publisher,1550); assert.equal(area,8);
+  assert.equal(publisher,1631); assert.equal(area,8);
 });
 
 test('standing pins use publisher origin coordinates and the origin floor registration, not target coordinates', () => {
@@ -142,11 +142,23 @@ test('cross-floor origins remain on their own floor and only explicit source lev
 
 test('every CSNADES standing point reprojects throwFrom on each source-supported floor, without bitmap-aspect assumptions', () => {
   let checked = 0;
+  const exact = json('docs/data/essential-csnades-four-maps-evidence.json');
+  const radars = {...json('docs/data/reviewed-world-origins.json').radars, ...exact.radars};
   for (const file of ['csnades-publisher','csnades-cache','csnades-dust2','csnades-nuke-community']) {
     for (const raw of json(`docs/data/${file}-destination-evidence.json`)) {
       const record = all.find(row => row.source === raw.source);
       if (!record) continue;
       const point = findLineupOrigin(record,lookups[raw.mapId])!;
+      if (point.precision === 'world') {
+        const reviewed = exact.records.find((row: {source:string}) => row.source === raw.source);
+        assert.ok(reviewed,raw.source);
+        const radar = radars[raw.mapId], span = radar.radarSize * radar.scale;
+        assert.equal(point.x, Math.round((reviewed.world.x-radar.posX)/span*100000)/100);
+        assert.equal(point.y, Math.round((radar.posY-reviewed.world.y)/span*100000)/100);
+        assert.equal(point.levelId,radar.levelId);
+        checked++;
+        continue;
+      }
       for (const floor of [point,...(point.alternateLevels || [])]) {
         const reg = PUBLISHER_MAP_REGISTRATIONS.find(item => item.id === floor.registrationId)!;
         assert.deepEqual({x:floor.x,y:floor.y,levelId:floor.levelId,registrationId:floor.registrationId},projectPublisherOrigin(raw.throwFrom,reg),raw.source);
@@ -155,7 +167,7 @@ test('every CSNADES standing point reprojects throwFrom on each source-supported
       checked++;
     }
   }
-  assert.equal(checked,209); // two earlier Dust II research-only sources are not primary records
+  assert.equal(checked,211);
 });
 
 test('all multi-floor public source origins have independent source-floor evidence; null levels never borrow the target floor', () => {
@@ -170,6 +182,12 @@ test('all multi-floor public source origins have independent source-floor eviden
       assert.ok(review?.positionPhoto || review?.originalPositionPhoto,row.source);
       assert.equal(review.sourceId,row.sourceId);
       assert.deepEqual(review.levelIds,row.originLevels);
+    } else if (row.floorBasis === 'recorded-world-position') {
+      assert.equal(row.mapId,'vertigo');
+      assert.ok(Number.isFinite(row.worldOrigin.z));
+      assert.deepEqual(row.originLevels,['upper']);
+      const source = all.find(guide => guide.source === row.source);
+      assert.equal(source?.levelId,'lower');
     } else assert.equal(row.basis,'callout-area');
   }
 });

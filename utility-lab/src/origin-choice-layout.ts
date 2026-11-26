@@ -1,4 +1,5 @@
 import {layoutOriginSpokes,spawnInsetLayout,type OriginChoiceGroup} from './origin-options.ts';
+import {focusOneOriginLeader} from './origin-spokes.ts';
 
 export const ORIGIN_PAGE_SIZE=8;
 const perimeter=[
@@ -31,5 +32,5 @@ export function originChoiceLayout(group:OriginChoiceGroup,width:number,page:num
     return{x:44+(width-88)*slot.x,y:44+(width-88)*slot.y};
   });
   const points=direct?.points??layoutOriginSpokes(sources,available,width);
-  return{options,sources,points,preview,direct:!!direct};
+  return{options,sources,points,preview,direct:!!direct,oneLeader:!direct && focusOneOriginLeader(sources,points)};
 }

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import {
   ArrowUpRight,
@@ -10,8 +10,7 @@ import {
   Layers2,
 } from "lucide-react";
 import "./launch.css";
-import { LAUNCH_SCENES, SMOKE_ART, type SceneId } from "./launch-scenes";
-import LandscapeDetails from "./LandscapeDetails";
+import { DEFAULT_SCENE, LAUNCH_SCENES, resolveScene, sceneAssets, type Scene, type SceneId } from "./launch-scenes";
 
 type Destination = "board" | "utilities" | "playbooks" | "stats";
 type Props = {
@@ -24,14 +23,38 @@ type Props = {
 const SCENE_KEY = "ul:launch-scene";
 function savedScene(): SceneId {
   try {
-    const value = localStorage.getItem(SCENE_KEY);
-    return (
-      LAUNCH_SCENES.find((scene) => scene.id === value)?.id || "dust-cs1999"
-    );
+    return resolveScene(localStorage.getItem(SCENE_KEY));
   } catch {
-    return "dust-cs1999";
+    return DEFAULT_SCENE;
   }
 }
+type Frame = { width: number; height: number; dpr: number };
+
+function ScenePicture({ scene, frame, loaded, previous = false }: {
+  scene: Scene; frame: Frame | null; loaded: boolean; previous?: boolean;
+}) {
+  let style: CSSProperties | undefined;
+  if (frame) {
+    // Align every source pixel and both cropped edges to physical display pixels.
+    const { width, height, dpr } = frame;
+    const scale = Math.max(1, Math.ceil(Math.max(width / scene.width, height / scene.height) * dpr));
+    const pixel = scale / dpr;
+    style = {
+      "--source-pixel": `${pixel}px`, width: scene.width * pixel, height: scene.height * pixel,
+      left: Math.round((width * dpr - scene.width * scale) * scene.focus) / dpr,
+      top: Math.round((height * dpr - scene.height * scale) / 2) / dpr,
+    } as CSSProperties;
+  }
+  return <div className={"launch-picture" + (loaded ? " is-loaded" : "") + (previous ? " is-previous" : "")}
+    style={style} aria-hidden={previous || undefined}>
+    <img className={"launch-art" + (previous ? " launch-art-previous" : "") + (loaded ? " is-loaded" : "")}
+      src={scene.src} data-scene={scene.id} alt={previous ? "" : scene.alt} width={scene.width}
+      height={scene.height} fetchPriority="high" decoding="async" />
+    {"foreground" in scene && <img className="launch-foreground" src={scene.foreground} alt=""
+      width={scene.width + 6} height={scene.height} decoding="async" />}
+  </div>;
+}
+
 const destinations = [
   {
     id: "board",
@@ -66,6 +89,23 @@ export default function LaunchScreen({
   landscapeHost,
   returning,
 }: Props) {
+  const artFrame = useRef<HTMLDivElement>(null);
+  const [frame, setFrame] = useState<Frame | null>(null);
+  useLayoutEffect(() => {
+    const element = artFrame.current;
+    if (!element) return;
+    function measure() {
+      const { width, height } = element!.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      setFrame(previous => previous?.width === width && previous.height === height && previous.dpr === dpr
+        ? previous : { width, height, dpr });
+    }
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    window.addEventListener("resize", measure);
+    measure();
+    return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
+  }, []);
   const returnButton = useRef<HTMLButtonElement>(null);
   const returnTo = returning?.from;
   useLayoutEffect(() => {
@@ -102,11 +142,14 @@ export default function LaunchScreen({
     const next =
       LAUNCH_SCENES.find((item) => item.id === selectedSceneId) ||
       LAUNCH_SCENES[0];
-    const image = new Image();
     setIsSelecting(true);
     setSceneMessage("");
-    image.onload = async () => {
-      await image.decode().catch(() => {});
+    const assets = sceneAssets(next);
+    Promise.all(assets.map(url => {
+      const image = new Image();
+      image.src = url;
+      return image.decode();
+    })).then(() => {
       if (!active) return;
       if (next.id !== visibleSceneId) setPreviousSceneId(visibleSceneId);
       setVisibleSceneId(next.id);
@@ -121,32 +164,26 @@ export default function LaunchScreen({
         void navigator.serviceWorker.ready.then((registration) =>
           registration.active?.postMessage({
             type: "CACHE_ART",
-            urls: next.group === "Classic Dust" ? [next.src, SMOKE_ART] : [next.src],
+            urls: assets,
           }),
         );
       }
-    };
-    image.onerror = () => {
+    }).catch(() => {
       if (!active) return;
       setIsSelecting(false);
       setSceneMessage("Landscape unavailable. Choose another.");
       if (artState === "loaded") setSelectedSceneId(visibleSceneId);
-      else if (next.id !== "dust-cs1999") setSelectedSceneId("dust-cs1999");
+      else if (next.id !== DEFAULT_SCENE) setSelectedSceneId(DEFAULT_SCENE);
       else setArtState("failed");
-    };
-    image.src = next.src;
-    return () => {
-      active = false;
-      image.onload = null;
-      image.onerror = null;
-    };
+    });
+    return () => { active = false; };
     // The previous decoded scene stays visible while a new selection loads.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSceneId]);
 
   useEffect(() => {
     if (!previousSceneId) return;
-    const timeout = window.setTimeout(() => setPreviousSceneId(null), 220);
+    const timeout = window.setTimeout(() => setPreviousSceneId(null), 340);
     return () => window.clearTimeout(timeout);
   }, [visibleSceneId, previousSceneId]);
 
@@ -179,80 +216,10 @@ export default function LaunchScreen({
           "launch-scene" + (artState === "failed" ? " art-failed" : "")
         }
       >
-        <div className="launch-art-frame">
-          {previousScene && (
-            <img
-              className="launch-art launch-art-previous is-loaded"
-              src={previousScene.src}
-              data-scene={previousScene.id}
-              alt=""
-              aria-hidden="true"
-              width="1672"
-              height="941"
-            />
-          )}
-          <img
-            key={scene.id}
-            className={"launch-art" + (artState === "loaded" ? " is-loaded" : "")}
-            src={scene.src}
-            data-scene={scene.id}
-            alt={scene.alt}
-            width="1672"
-            height="941"
-            fetchPriority="high"
-            decoding="async"
-            hidden={artState === "failed"}
-          />
-          {scene.group === "Landscapes" && artState === "loaded" && <LandscapeDetails scene={scene.id} />}
+        <div className="launch-art-frame" ref={artFrame}>
+          {previousScene && <ScenePicture key={previousScene.id} scene={previousScene} frame={frame} loaded previous />}
+          {artState !== "failed" && <ScenePicture key={scene.id} scene={scene} frame={frame} loaded={artState === "loaded"} />}
         </div>
-        {scene.group === "Classic Dust" && <>
-        <div className="launch-smoke-layers" aria-hidden="true">
-          <img
-            className="launch-smoke smoke-near"
-            src="/art/pixel-smoke.png"
-            alt=""
-            width="1122"
-            height="1402"
-          />
-          <img
-            className="launch-smoke smoke-far"
-            src="/art/pixel-smoke.png"
-            alt=""
-            width="1122"
-            height="1402"
-          />
-        </div>
-        <div className="launch-environment" aria-hidden="true">
-          <div className="launch-wisps">
-            {[0, 1, 2].map((index) => (
-              <span className={`launch-wisp wisp-${index + 1}`} key={index}>
-                <img src="/art/pixel-smoke.png" alt="" width="1122" height="1402" />
-              </span>
-            ))}
-          </div>
-          <div className="launch-ground-wind">
-            {[0, 1].map((index) => (
-              <span className={`launch-sand-gust gust-${index + 1}`} key={index}>
-                <img src="/art/pixel-smoke.png" alt="" width="1122" height="1402" />
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="launch-light" aria-hidden="true" />
-        <div className="launch-particles" aria-hidden="true">
-          {Array.from({ length: 14 }, (_, index) => (
-            <i
-              key={index}
-              style={{
-                left: `${8 + ((index * 19) % 84)}%`,
-                top: `${28 + ((index * 17) % 56)}%`,
-                animationDelay: `-${index * 0.83}s`,
-                animationDuration: `${8 + (index % 5)}s`,
-              }}
-            />
-          ))}
-        </div>
-        </>}
         <div className="launch-scene-shade" aria-hidden="true" />
       </div>
       {landscapeHost &&
@@ -274,7 +241,7 @@ export default function LaunchScreen({
                 setSelectedSceneId(event.target.value as SceneId);
               }}
             >
-              {(["Classic Dust", "Landscapes"] as const).map(group => (
+              {(["City", "Industrial", "Outdoors"] as const).map(group => (
                 <optgroup key={group} label={group}>
                   {LAUNCH_SCENES.filter(option => option.group === group).map(option => (
                     <option key={option.id} value={option.id}>{option.name}</option>
@@ -292,6 +259,14 @@ export default function LaunchScreen({
           : sceneMessage || `${scene.name} landscape`}
       </span>
       {sceneMessage && <p className="launch-scene-error">{sceneMessage}</p>}
+      {artState === "loaded" && <div className="launch-art-credit">
+        <a href={scene.source} target="_blank" rel="noopener noreferrer"
+          aria-label={`Art by Luis Zuno. View the original artwork for ${scene.name}`}>
+          Art by Luis Zuno <ArrowUpRight size={12} aria-hidden="true" />
+        </a>
+        <a href="/art/credits.txt" target="_blank" rel="noopener noreferrer"
+          aria-label="Open artwork credits and licenses">Credits</a>
+      </div>}
       <nav className="launch-destinations" aria-label="Choose your workspace">
         {destinations.map(({ id, title, description, icon: Icon }) => (
           <button

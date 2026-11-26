@@ -92,3 +92,18 @@
     font-size: 11px;
   }
 }
+@media (prefers-reduced-motion: no-preference) {
+  .ul-photo-canvas [data-image-ready="true"] > img {
+    animation: lineup-photo-arrive 170ms ease-out;
+  }
+}
+@keyframes lineup-photo-arrive {
+  from { opacity: .72; }
+  to { opacity: 1; }
+}
+.ul-native-photo-detail {
+  position: absolute;
+  inset: 0;
+  background: center / contain no-repeat;
+  pointer-events: none;
+}

@@ -2575,7 +2575,7 @@
   .ul-map-only .ul-favorites-filter { width: 44px; min-width: 44px; min-height: 44px; margin-left: 0; padding: 0; justify-content: center; }
   .ul-map-only .ul-favorites-filter > span, .ul-map-only .ul-favorites-filter > small { display: none; }
 }
-.ul-origin-pin:focus-visible .ul-origin-disc,.ul-personal-guide-pin:focus-visible .ul-origin-disc { stroke-width: 3px; stroke-dasharray: 4 3; }
+.ul-origin-pin:focus-visible .ul-origin-disc,.ul-personal-guide-pin:focus-visible .ul-origin-disc { stroke-width: 3px; }
 .ul-origin-pin:hover .ul-origin-disc,.ul-personal-guide-pin:hover .ul-origin-disc { fill: var(--accent-soft); }
 .ul-origin-pin[aria-current="location"] .ul-origin-disc { fill: var(--accent); }
 .ul-origin-pin[aria-current="location"] .ul-origin-glyph > svg { color: var(--on-accent, white); }

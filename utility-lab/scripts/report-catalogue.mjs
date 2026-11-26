@@ -6,6 +6,7 @@ import { readFile, writeFile, stat, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { MAPS } from '../src/maps.ts';
+import { lineupLink } from '../src/routes.ts';
 import { GUIDE_LIBRARY, PHOTO_GUIDE_LIBRARY, BUNDLED_GUIDE_PHOTOS } from '../src/guide-library.ts';
 import { mergePhotoGuides, hasCompleteGuideMedia, normalizeExpandedGuides } from '../src/expanded-guide-model.ts';
 import { parseUtilityVideo, utilityPhotos, isBundledPhoto } from '../src/utility-data.ts';
@@ -179,6 +180,18 @@ const matrix = [
   '| --- | ---: | --- | --- |',
   ...MAPS.map(map => `| ${map.name} | ${n(mainStats.mapRows[map.id])} | ${types.map(type => mainStats.mapSideType[map.id].T[type]).join(' / ')} | ${types.map(type => mainStats.mapSideType[map.id].CT[type]).join(' / ')} |`),
 ];
+const practiceMatrix = [
+  '| Map | Mollies | HE grenades | Numbered spawn smokes | Source pages with exact starting coordinates |',
+  '| --- | ---: | ---: | ---: | ---: |',
+  ...MAPS.map(map => {
+    const records = main.filter(record => record.mapId === map.id);
+    const spawns = records.filter(record => record.type === 'Smoke' && record.spawn);
+    const worldSources = new Set(records.filter(record =>
+      findLineupOrigin(record, originLookups[map.id])?.precision === 'world').map(record => record.source));
+    const spawnLink = spawns.length ? `[${spawns.length}](${lineupLink(spawns[0], 'https://utilitylab.au/')})` : '0';
+    return `| ${map.name} | ${count(records, record => record.type === 'Molotov')} | ${count(records, record => record.type === 'HE')} | ${spawnLink} | ${worldSources.size} |`;
+  }),
+];
 const researchLinks = '[Dust II / Mirage / Ancient](expanded-dma-sources.md), [Inferno / Anubis / Cache](expanded-iac-sources.md), [Nuke / Vertigo](expanded-nv-sources.md), [additional Nuke CSNADES](expanded-nuke-csnades-sources.md), [Cache completions](expanded-cache-completions.md), [Cache landing review](expanded-cache-pin-review.md), [independent publisher-map registration review](map-registration-publisher-independent-review.md), [Mirage / Ancient precision review](precise-mirage-ancient.md), [other-map spawn and origin review](precise-other-maps.md), and [Anubis precision review](precise-anubis.md)';
 const pinSentence = `${n(mainStats.pins.registered)} published rows have registered callout-area pins (${n(mainStats.pins.publisherDestinationRows)} publisher-destination registrations and ${n(mainStats.pins.namedAnchorRows)} named map anchors). ${mainStats.pins.unregistered.length ? `${n(mainStats.pins.unregistered.length)} rows remain browsable without a map pin; their IDs are listed in the JSON report.` : 'Every published row has a registered pin.'}`;
 const walkthroughText = `Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim** and **Landing**. **${n(walkthroughCoverage.completeFourStageRows)}** guides have stills or a registered standing map for all four steps. The other **${n(standingVideoIds.length)}** open their source video for the starting view. The walkthroughs use ${n(walkthroughCoverage.uniqueImages)} distinct images and ${n(walkthroughCoverage.markedAimViews)} source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.`;
@@ -209,6 +222,9 @@ const catalogue = [
   `Main browsing exposes all **${n(mainStats.rows)} guides**, including every matching origin recipe and numbered spawn. A **${n(summary.defaultCurated.rows)}-record preference subset** orders the quiet overview; its up-to-four preference per target, floor, side and utility does not limit landing or standing availability. The UI restores the complete matching catalogue before map grouping. Simpler throws and distinct standing areas rank first, while shared standing pins open a visual map chooser in pages of eight. Singleton standing recipes open directly.`, '',
   `All **${n(mainStats.origins.sourceBackedRows)}** published guides have standing locations. **${n(mainStats.origins.publisherStartRows)}** use publisher start points and **${n(mainStats.origins.namedOriginAreaRows)}** use named origin areas. **${n(mainStats.origins.worldStartSources)} distinct source pages** have starts verified in world coordinates. **${n(mainStats.origins.crossFloorRows)}** cross-floor throws retain the source floor independently of their landing floor. The Position step shows the starting location and links to the first-person setup. See [origin evidence and curation](lineup-origins.md).`, '',
   ...matrix, '',
+  '## Molly, HE and spawn smoke audit', '',
+  ...practiceMatrix, '',
+  'The first three columns count playable, side-specific recipes. Each linked spawn count opens an example on that map. In Lineups, select Smoke and switch on **Spawn smokes** to see the eligible landing spots. Numbered slots follow the original creator’s spawn sheet. Some starts include a step or run before release. The last column counts distinct source pages across all utility types with registered in-game coordinates. Other published starts use a radar point or a named area with a visual setup.', '',
   '## Floor coverage', '',
   ...floorTable, '',
   'A zero denotes a source gap for that floor, side and utility. The map-wide matrix and floor-specific coverage are reported separately.', '',

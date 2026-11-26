@@ -8,7 +8,7 @@ import {
   WifiOff,
 } from "lucide-react";
 import { MAPS } from "./maps";
-import { LAUNCH_SCENES, SMOKE_ART } from "./launch-scenes";
+import { LAUNCH_SCENES, sceneAssets } from "./launch-scenes";
 import { BUNDLED_GUIDE_PHOTOS } from "./guide-library";
 import {
   captureWorkspace,
@@ -151,8 +151,8 @@ export default function WorkspaceSettings({
                 ]),
               ),
             ),
-            ...LAUNCH_SCENES.map((scene) => scene.src),
-            SMOKE_ART,
+            ...LAUNCH_SCENES.flatMap(sceneAssets),
+            "/art/credits.txt",
           ];
       await new Promise<void>((resolve, reject) => {
         const channel = new MessageChannel();

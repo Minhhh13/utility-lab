@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 import { PUBLISHED_LINEUPS } from "./catalogue-fixtures";
-import { openOriginPhoto } from "./lineup-helpers";
+import { mainMarkerGroupsForArea, openOriginPhoto } from "./lineup-helpers";
 import { lineupLink } from "../src/routes";
+import { MAPS } from "../src/maps";
 
 test.use({serviceWorkers:"block"});
 test.beforeEach(async ({page}) => {
@@ -59,6 +60,16 @@ test("an upper-floor Nuke origin links back to its lower-floor landing", async (
   await expect(page).toHaveURL(/level=lower/);
 });
 
+test("the Dumpster standing pin keeps keyboard focus on the circle", async ({page,baseURL}) => {
+  const guide = PUBLISHED_LINEUPS.find(row => row.mapId === "cache" && row.from === "Dumpster")!;
+  await page.goto(lineupLink(guide,baseURL!));
+  await page.getByRole("button",{ name:"Show throw locations on map" }).press("Enter");
+  const pin = page.locator('.ul-origin-pin[aria-current="location"]');
+  await expect(pin).toBeFocused();
+  await expect(pin).toHaveCSS("outline-style","none");
+  await expect(pin.locator("circle").first()).not.toHaveCSS("stroke","none");
+});
+
 test("each supported map exposes the opened guide among its standing pins", async ({page,baseURL}) => {
   for (const mapId of new Set(PUBLISHED_LINEUPS.map(record => record.mapId))) {
     const record = PUBLISHED_LINEUPS.find(item => item.mapId === mapId && item.type === "Smoke")!;
@@ -71,4 +82,55 @@ test("each supported map exposes the opened guide among its standing pins", asyn
     expect(JSON.parse((await active.getAttribute("data-origin-recipes"))!)).toContain(record.id);
     await expect(page.getByRole("group",{name:"Throw-from locations"})).toHaveAttribute("data-target-utility","Smoke");
   }
+});
+
+test("spawn smoke mode matches the numbered recipes on each map, side and floor", async ({page}) => {
+  test.setTimeout(90000);
+  for (const map of MAPS) for (const floor of map.levels) for (const side of ["T","CT"]) {
+    const rows = PUBLISHED_LINEUPS.filter(row => row.mapId === map.id && row.levelId === floor.id && row.side === side);
+    const smokes = rows.filter(row => row.type === "Smoke");
+    const spawns = smokes.filter(row => row.spawn);
+    await page.goto(`/?audit=${map.id}-${floor.id}-${side}#utilities?map=${map.id}&level=${floor.id}&side=${side}`);
+    const library = page.locator(".utility-workspace");
+    await expect(library).toHaveAttribute("aria-busy","false");
+    await expect(page.getByRole("button",{name:`${side} side`,exact:true})).toHaveAttribute("aria-pressed","true");
+    const filters = page.getByRole("group",{name:"Utility type",exact:true});
+    const smoke = filters.locator('[data-utility="Smoke"]');
+    if (await smoke.getAttribute("aria-pressed") !== "true") await smoke.click();
+    const spawn = page.getByRole("button",{name:/^Spawn smokes/});
+    if (!spawns.length) { await expect(spawn).toHaveCount(0); continue; }
+    const svg = page.locator(".ul-map-svg");
+    const camera = await svg.getAttribute("viewBox");
+    await spawn.click();
+    await expect(spawn).toHaveAttribute("aria-pressed","true");
+    await expect(library).toHaveAttribute("data-reference-count",String(spawns.length));
+    await expect(svg).toHaveAttribute("viewBox",camera!);
+    await spawn.click();
+    await expect(library).toHaveAttribute("data-reference-count",String(smokes.length));
+    await filters.locator('[data-utility="All"]').click();
+  }
+});
+
+test("on a phone the spawn filter shows the recorded Mirage starts and yields to multi-select", async ({page}) => {
+  await page.setViewportSize({width:320,height:844});
+  await page.goto("/#utilities?map=mirage&level=main&side=T");
+  const filters = page.getByRole("group",{name:"Utility type",exact:true});
+  await filters.locator('[data-utility="Smoke"]').click();
+  const spawn = page.getByRole("button",{name:/^Spawn smokes/});
+  await spawn.click();
+  const windowGroup = mainMarkerGroupsForArea(page,"mirage:main:mid-window").first();
+  await windowGroup.locator(".ul-marker-hit").click();
+  const landing = page.locator(".ul-landing-pin").first();
+  await expect(landing.or(page.locator(".ul-origin-pin").first()).first()).toBeVisible();
+  if (await landing.count()) await landing.click();
+  const pins = page.locator(".ul-origin-pin");
+  await expect(pins.first()).toBeVisible();
+  const ids = await pins.evaluateAll(nodes => nodes.flatMap(node => JSON.parse(node.getAttribute("data-origin-recipes")!)));
+  expect(ids.length).toBeGreaterThan(0);
+  expect(ids.every(id => PUBLISHED_LINEUPS.some(row => row.id === id && row.spawn))).toBe(true);
+  await page.getByRole("button",{name:"Back to targets"}).click();
+  await expect(spawn).toHaveAttribute("aria-pressed","true");
+  await filters.locator('[data-utility="Flash"]').click();
+  await expect(spawn).toHaveCount(0);
+  await expect(filters.locator('[data-utility="Smoke"]')).toHaveAttribute("aria-pressed","true");
 });

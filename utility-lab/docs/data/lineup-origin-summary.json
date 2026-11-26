@@ -1,12 +1,17 @@
 {
   "checkedAt": "2026-11-26",
-  "completeGuides": 1558,
-  "withOrigins": 1558,
-  "uniqueSources": 1478,
-  "publisherOrigins": 1550,
+  "completeGuides": 1639,
+  "withOrigins": 1639,
+  "uniqueSources": 1559,
+  "publisherOrigins": 1631,
   "namedOriginAreas": 8,
   "crossFloorGuides": [
     "cs2tricks-nuke-new-end-he-from-ramp",
+    "instant-viri-vertigo-ramp-ct1",
+    "instant-viri-vertigo-ramp-ct2",
+    "instant-viri-vertigo-ramp-ct3",
+    "instant-viri-vertigo-ramp-ct4",
+    "instant-viri-vertigo-ramp-ct5",
     "expanded-cs2tricks-vertigo-ct-spawn-from-stairs-e997",
     "expanded-cs2tricks-vertigo-ebox-from-stairs-bc18",
     "expanded-cs2tricks-vertigo-ebox-from-t-spawn-4b77",
@@ -33,52 +38,52 @@
   ],
   "perMap": {
     "mirage": {
-      "entries": 234,
-      "uniqueSources": 213,
-      "bytes": 56164,
-      "sha256": "7435142630dcd197dda292f11ac3287bb6b426df7c21f5930fb416c9a478254b"
+      "entries": 245,
+      "uniqueSources": 224,
+      "bytes": 58589,
+      "sha256": "88e5b8d7fe6e1f3e7d0e39db6a65725630ec441b4e85344d65658e47e9f7e556"
     },
     "dust2": {
-      "entries": 209,
-      "uniqueSources": 191,
-      "bytes": 49555,
-      "sha256": "a6c83b9c9743d38f417ade544439a58735c6c65944b0a509a04d8580f83fac79"
+      "entries": 221,
+      "uniqueSources": 203,
+      "bytes": 52177,
+      "sha256": "792a45c8e2c92684669c2b5a64704a8696da11f144fb61dbede73bb5981aa99f"
     },
     "inferno": {
-      "entries": 212,
-      "uniqueSources": 189,
-      "bytes": 49333,
-      "sha256": "114dfafb9b9bbd2799c6ba139e61ea2d1ec13bad9544e4229acd8184a65319bf"
+      "entries": 220,
+      "uniqueSources": 197,
+      "bytes": 51155,
+      "sha256": "746b078b62598e684b9bc1f237c09f6185c37c4a596a704781b1135e402175be"
     },
     "nuke": {
-      "entries": 189,
-      "uniqueSources": 188,
-      "bytes": 45233,
-      "sha256": "3711e2c82657f0b861ed8bd4e012c11809f0560a356f2b4abc58565945a5bb99"
+      "entries": 197,
+      "uniqueSources": 196,
+      "bytes": 46916,
+      "sha256": "326418ba469072f131c9aa471f980242179b6091e5b5791a3e059b636e60c9bc"
     },
     "ancient": {
-      "entries": 166,
-      "uniqueSources": 157,
-      "bytes": 41016,
-      "sha256": "6229abfb9b1e421e9c226a5cca2399a06de024f6099d522acdba845baf65e392"
+      "entries": 176,
+      "uniqueSources": 167,
+      "bytes": 43226,
+      "sha256": "1af9827276690358698daac255b994ca2066e343984598e46693fdb9d88eb370"
     },
     "anubis": {
-      "entries": 310,
-      "uniqueSources": 306,
-      "bytes": 77906,
-      "sha256": "f55b7139d0017b560fee6bbaa0de34b20e6ed8288b383906cda69408f148466e"
+      "entries": 320,
+      "uniqueSources": 316,
+      "bytes": 80109,
+      "sha256": "b2c882181796dd12424d55df969c0b8b97770517fd1ee82a0add26cb3db617b0"
     },
     "cache": {
-      "entries": 128,
-      "uniqueSources": 124,
-      "bytes": 30242,
-      "sha256": "1d75bdab0481eca240390f06cd17a574b416e2b8defc8bd7a8658c232af38294"
+      "entries": 144,
+      "uniqueSources": 140,
+      "bytes": 33750,
+      "sha256": "253b068701376291f9d05dd574353fbb68e73429091f0ccf63a22ddcdf6466c0"
     },
     "vertigo": {
-      "entries": 110,
-      "uniqueSources": 110,
-      "bytes": 29455,
-      "sha256": "876f307a4af675699e088c7f62e1898af317bb09ce926ba4fa32a066f5affe4a"
+      "entries": 116,
+      "uniqueSources": 116,
+      "bytes": 30877,
+      "sha256": "df8f0478035a4cf601316e5f82a0e5b6879132ad48b272478ae4ea3bce65838c"
     }
   }
 }

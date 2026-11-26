@@ -1,5 +1,16 @@
 {
   "ids": {
+    "essential-mirage-molotovs-van-from-b-apts": "mirage",
+    "essential-mirage-molotovs-tetris-from-behind-triple": "mirage",
+    "essential-mirage-hegrenades-top-mid-boxes-from-window": "mirage",
+    "essential-mirage-hegrenades-window-from-top-mid-boxes": "mirage",
+    "instant-setpos-mirage-103": "mirage",
+    "instant-setpos-mirage-33": "mirage",
+    "instant-setpos-mirage-30": "mirage",
+    "instant-setpos-mirage-28": "mirage",
+    "instant-setpos-mirage-25": "mirage",
+    "instant-setpos-mirage-155": "mirage",
+    "instant-setpos-mirage-23": "mirage",
     "expanded-cs2tricks-mirage-window-from-t-spawn-1-d3bd-t": "mirage",
     "expanded-cs2tricks-mirage-window-from-t-spawn-2-e54c-t": "mirage",
     "expanded-cs2tricks-mirage-window-from-t-spawn-3-e1f4-t": "mirage",
@@ -234,6 +245,18 @@
     "cs2tricks-mirage-t-bench-he": "mirage",
     "expanded-cs2tricks-mirage-bench-from-b-apartments-a7b9-ct": "mirage",
     "expanded-cs2tricks-mirage-window-from-window-6b2c-ct": "mirage",
+    "essential-dust2-molotovs-short-from-lower-tunnel": "dust2",
+    "essential-dust2-molotovs-short-from-goose": "dust2",
+    "essential-dust2-hegrenades-b-main-from-b-site": "dust2",
+    "essential-dust2-hegrenades-under-b-window-from-outside-b": "dust2",
+    "instant-setpos-dust2-77": "dust2",
+    "instant-setpos-dust2-64": "dust2",
+    "instant-setpos-dust2-65": "dust2",
+    "instant-setpos-dust2-4": "dust2",
+    "instant-setpos-dust2-111": "dust2",
+    "instant-setpos-dust2-113": "dust2",
+    "instant-setpos-dust2-114": "dust2",
+    "instant-setpos-dust2-76": "dust2",
     "precise-setpos-dust2-69": "dust2",
     "precise-setpos-dust2-5": "dust2",
     "precise-setpos-dust2-6": "dust2",
@@ -443,6 +466,14 @@
     "expanded-csnades-dust2-short-from-lower-tunnels-t": "dust2",
     "expanded-csnades-dust2-short-stairs-corner-from-mid-t": "dust2",
     "expanded-csnades-dust2-back-plat-from-upper-tunnels-t": "dust2",
+    "essential-inferno-molotovs-car-from-bottom-banana": "inferno",
+    "essential-inferno-molotovs-pit-from-short": "inferno",
+    "essential-inferno-hegrenades-first-orange-from-car": "inferno",
+    "essential-inferno-hegrenades-b-default-from-outside-church": "inferno",
+    "essential-inferno-hegrenades-mini-pit-from-short": "inferno",
+    "instant-setpos-inferno-86": "inferno",
+    "instant-setpos-inferno-21": "inferno",
+    "instant-setpos-inferno-108": "inferno",
     "precise-setpos-inferno-85": "inferno",
     "precise-setpos-inferno-82": "inferno",
     "precise-setpos-inferno-84": "inferno",
@@ -655,6 +686,16 @@
     "expanded-cs2tricks-inferno-top-banana-from-dark-0279-ct": "inferno",
     "expanded-cs2tricks-inferno-b-entrance-from-banana-logs-3530-t": "inferno",
     "expanded-cs2tricks-inferno-ct-from-ct-0e91-ct": "inferno",
+    "gonade-nuke-top-hut-from-t-spawnroof-molotov": "nuke",
+    "expanded-csnades-nuke-he-trophy-from-ramp-a": "nuke",
+    "expanded-csnades-nuke-he-trophy-from-ramp-b": "nuke",
+    "instant-setpos-nuke-106": "nuke",
+    "instant-setpos-nuke-116": "nuke",
+    "instant-setpos-nuke-75": "nuke",
+    "instant-setpos-nuke-27": "nuke",
+    "instant-setpos-nuke-104": "nuke",
+    "instant-setpos-nuke-172": "nuke",
+    "instant-setpos-nuke-136": "nuke",
     "precise-setpos-nuke-107": "nuke",
     "precise-setpos-nuke-79": "nuke",
     "precise-setpos-nuke-80": "nuke",
@@ -758,8 +799,6 @@
     "expanded-csnades-nuke-he-silo-from-a-main": "nuke",
     "expanded-csnades-nuke-he-squeaky-door-from-lobby": "nuke",
     "expanded-csnades-nuke-he-t-red-from-under-silo": "nuke",
-    "expanded-csnades-nuke-he-trophy-from-ramp-a": "nuke",
-    "expanded-csnades-nuke-he-trophy-from-ramp-b": "nuke",
     "expanded-csnades-nuke-molotov-a-site-from-heaven": "nuke",
     "expanded-csnades-nuke-molotov-a-site-from-t-roof": "nuke",
     "expanded-csnades-nuke-molotov-a-site-from-t-roof-b": "nuke",
@@ -842,6 +881,17 @@
     "expanded-csnades-community-nuke-flashbang-f9e03cfe1f96-silooutside-from-a-site-t": "nuke",
     "expanded-csnades-community-nuke-flashbang-f9e03cfe1f96-silooutside-from-a-site-ct": "nuke",
     "expanded-csnades-community-nuke-he-bae7574f2486-silo-from-rafters": "nuke",
+    "essential-nadesdb-ancient-52a634a3": "ancient",
+    "essential-nadesdb-ancient-3723f545": "ancient",
+    "expanded-cs2tricks-ancient-lane-from-short-4528-ct": "ancient",
+    "instant-setpos-ancient-66": "ancient",
+    "instant-setpos-ancient-40": "ancient",
+    "instant-setpos-ancient-39": "ancient",
+    "instant-setpos-ancient-38": "ancient",
+    "instant-setpos-ancient-41": "ancient",
+    "instant-setpos-ancient-120": "ancient",
+    "instant-setpos-ancient-97": "ancient",
+    "instant-setpos-ancient-54": "ancient",
     "expanded-cs2tricks-ancient-elbow-from-ct-spawn-1-35af-ct": "ancient",
     "expanded-cs2tricks-ancient-elbow-from-ct-spawn-2-9550-ct": "ancient",
     "expanded-cs2tricks-ancient-elbow-from-ct-spawn-3-494a-ct": "ancient",
@@ -966,7 +1016,6 @@
     "expanded-cs2tricks-ancient-cave-from-b-long-b25f-ct": "ancient",
     "expanded-cs2tricks-ancient-mid-from-a-site-030e-ct": "ancient",
     "expanded-cs2tricks-ancient-lane-from-short-2c74-ct": "ancient",
-    "expanded-cs2tricks-ancient-lane-from-short-4528-ct": "ancient",
     "expanded-cs2tricks-ancient-b-cubby-from-ruins-265b-t": "ancient",
     "expanded-cs2tricks-ancient-ramp-from-short-4406-ct": "ancient",
     "expanded-cs2tricks-ancient-b-site-from-ruins-912e-t": "ancient",
@@ -1008,6 +1057,16 @@
     "expanded-cs2tricks-ancient-b-site-from-lane-aa64-t": "ancient",
     "expanded-cs2tricks-ancient-b-site-from-door-4208-t": "ancient",
     "expanded-cs2tricks-ancient-elbow-from-stairs-b0f4-ct": "ancient",
+    "essential-anubis-molotovs-top-mid-from-bridge": "anubis",
+    "essential-anubis-molotovs-a-site-from-water": "anubis",
+    "essential-anubis-hegrenades-fountain-from-a-main": "anubis",
+    "essential-anubis-hegrenades-a-main-from-plat": "anubis",
+    "essential-anubis-hegrenades-top-mid-from-street": "anubis",
+    "instant-setpos-anubis-149": "anubis",
+    "instant-setpos-anubis-150": "anubis",
+    "instant-setpos-anubis-73": "anubis",
+    "instant-setpos-anubis-176": "anubis",
+    "instant-setpos-anubis-91": "anubis",
     "precise-setpos-anubis-61-t": "anubis",
     "precise-setpos-anubis-130-t": "anubis",
     "precise-setpos-anubis-162-t": "anubis",
@@ -1316,6 +1375,24 @@
     "expanded-cs2tricks-anubis-b-connector-from-b-site-6154-ct": "anubis",
     "expanded-cs2tricks-anubis-b-connector-from-b-backsite-74cc-t": "anubis",
     "expanded-cs2tricks-anubis-b-connector-from-b-backsite-74cc-ct": "anubis",
+    "essential-nadesdb-cache-1c91bbe2": "cache",
+    "essential-nadesdb-cache-7d0f7b9c": "cache",
+    "essential-nadesdb-cache-c46f7d8b": "cache",
+    "essential-setpos-cache-167": "cache",
+    "essential-setpos-cache-135": "cache",
+    "expanded-cs2tricks-cache-new-boxes-from-sun-room-0842-t": "cache",
+    "expanded-cs2tricks-cache-a-main-from-a-main-3c77-t": "cache",
+    "instant-setpos-cache-123": "cache",
+    "instant-setpos-cache-88": "cache",
+    "instant-setpos-cache-87": "cache",
+    "instant-setpos-cache-100": "cache",
+    "instant-setpos-cache-99": "cache",
+    "instant-setpos-cache-98": "cache",
+    "instant-setpos-cache-124": "cache",
+    "instant-setpos-cache-90": "cache",
+    "instant-setpos-cache-89": "cache",
+    "instant-setpos-cache-126": "cache",
+    "instant-setpos-cache-121": "cache",
     "precise-setpos-cache-128": "cache",
     "precise-setpos-cache-166": "cache",
     "precise-setpos-cache-20": "cache",
@@ -1404,8 +1481,6 @@
     "expanded-cs2tricks-cache-checkers-from-b-main-2472-t": "cache",
     "expanded-cs2tricks-cache-quad-from-truck-9c4e-ct": "cache",
     "expanded-cs2tricks-cache-forklift-from-outside-blue-room-1735-t": "cache",
-    "expanded-cs2tricks-cache-new-boxes-from-sun-room-0842-t": "cache",
-    "expanded-cs2tricks-cache-a-main-from-a-main-3c77-t": "cache",
     "expanded-csnades-cache-molotov-newbox-from-sun-room": "cache",
     "expanded-csnades-cache-molotov-backsite-from-sun-room": "cache",
     "expanded-csnades-cache-smoke-b-main-from-b-halls": "cache",
@@ -1444,6 +1519,14 @@
     "expanded-csnades-cache-smoke-garage-from-ct-spawn-2": "cache",
     "expanded-nadesdb-cache-electro-a-main-ct-flash": "cache",
     "expanded-nart-cache-white-box-boost-ct-he": "cache",
+    "essential-gonade-vertigo-deep-t-mid-he": "vertigo",
+    "expanded-csnades-vertigo-molotov-default-b-from-connector": "vertigo",
+    "expanded-csnades-vertigo-molotov-sidewalk-from-ladder": "vertigo",
+    "instant-viri-vertigo-ramp-ct1": "vertigo",
+    "instant-viri-vertigo-ramp-ct2": "vertigo",
+    "instant-viri-vertigo-ramp-ct3": "vertigo",
+    "instant-viri-vertigo-ramp-ct4": "vertigo",
+    "instant-viri-vertigo-ramp-ct5": "vertigo",
     "expanded-cs2tricks-vertigo-ct-spawn-from-stairs-e997": "vertigo",
     "expanded-cs2tricks-vertigo-ebox-from-stairs-bc18": "vertigo",
     "expanded-cs2tricks-vertigo-ebox-from-t-spawn-4b77": "vertigo",
@@ -1503,7 +1586,6 @@
     "expanded-csnades-vertigo-molotov-connector-from-mid-iron": "vertigo",
     "expanded-csnades-vertigo-molotov-default-a-from-heaven": "vertigo",
     "expanded-csnades-vertigo-molotov-default-a-from-ramp": "vertigo",
-    "expanded-csnades-vertigo-molotov-default-b-from-connector": "vertigo",
     "expanded-csnades-vertigo-molotov-default-b-from-ct-spawn": "vertigo",
     "expanded-csnades-vertigo-molotov-headshot-from-area-51": "vertigo",
     "expanded-csnades-vertigo-molotov-headshot-from-ramp": "vertigo",
@@ -1511,7 +1593,6 @@
     "expanded-csnades-vertigo-molotov-headshot-from-sidewalk": "vertigo",
     "expanded-csnades-vertigo-molotov-pillar-from-b-stairs": "vertigo",
     "expanded-csnades-vertigo-molotov-ramp-from-crane": "vertigo",
-    "expanded-csnades-vertigo-molotov-sidewalk-from-ladder": "vertigo",
     "expanded-csnades-vertigo-molotov-t-mid-from-sandbags": "vertigo",
     "expanded-csnades-vertigo-molotov-triple-from-b-stairs": "vertigo",
     "expanded-csnades-vertigo-molotov-wood-from-b-stairs": "vertigo",
@@ -1557,59 +1638,59 @@
   },
   "maps": {
     "mirage": {
-      "records": 234,
+      "records": 245,
       "T": {
-        "Smoke": 107,
+        "Smoke": 113,
         "Flash": 24,
-        "Molotov": 25,
-        "HE": 9
+        "Molotov": 26,
+        "HE": 10
       },
       "CT": {
-        "Smoke": 25,
+        "Smoke": 26,
         "Flash": 24,
-        "Molotov": 8,
-        "HE": 12
+        "Molotov": 9,
+        "HE": 13
       },
-      "pinned": 234
+      "pinned": 245
     },
     "dust2": {
-      "records": 209,
+      "records": 221,
       "T": {
-        "Smoke": 88,
+        "Smoke": 96,
         "Flash": 22,
-        "Molotov": 17,
+        "Molotov": 18,
         "HE": 4
       },
       "CT": {
         "Smoke": 32,
         "Flash": 25,
-        "Molotov": 13,
-        "HE": 8
+        "Molotov": 14,
+        "HE": 10
       },
-      "pinned": 209
+      "pinned": 221
     },
     "inferno": {
-      "records": 212,
+      "records": 220,
       "T": {
         "Smoke": 65,
         "Flash": 19,
-        "Molotov": 31,
-        "HE": 6
+        "Molotov": 33,
+        "HE": 8
       },
       "CT": {
-        "Smoke": 42,
+        "Smoke": 45,
         "Flash": 20,
         "Molotov": 20,
-        "HE": 9
+        "HE": 10
       },
-      "pinned": 212
+      "pinned": 220
     },
     "nuke": {
-      "records": 187,
+      "records": 195,
       "T": {
-        "Smoke": 96,
+        "Smoke": 103,
         "Flash": 12,
-        "Molotov": 22,
+        "Molotov": 23,
         "HE": 5
       },
       "CT": {
@@ -1618,71 +1699,71 @@
         "Molotov": 14,
         "HE": 11
       },
-      "pinned": 187
+      "pinned": 195
     },
     "ancient": {
-      "records": 166,
+      "records": 176,
       "T": {
-        "Smoke": 64,
+        "Smoke": 67,
         "Flash": 12,
-        "Molotov": 24,
-        "HE": 2
+        "Molotov": 25,
+        "HE": 3
       },
       "CT": {
-        "Smoke": 32,
+        "Smoke": 37,
         "Flash": 16,
         "Molotov": 13,
         "HE": 3
       },
-      "pinned": 166
+      "pinned": 176
     },
     "anubis": {
-      "records": 308,
+      "records": 318,
       "T": {
         "Smoke": 112,
         "Flash": 45,
-        "Molotov": 45,
-        "HE": 7
+        "Molotov": 47,
+        "HE": 9
       },
       "CT": {
-        "Smoke": 41,
+        "Smoke": 46,
         "Flash": 27,
         "Molotov": 23,
-        "HE": 8
+        "HE": 9
       },
-      "pinned": 308
+      "pinned": 318
     },
     "cache": {
-      "records": 128,
+      "records": 144,
       "T": {
-        "Smoke": 69,
+        "Smoke": 80,
         "Flash": 4,
-        "Molotov": 20,
+        "Molotov": 22,
         "HE": 3
       },
       "CT": {
         "Smoke": 23,
         "Flash": 1,
-        "Molotov": 7,
+        "Molotov": 10,
         "HE": 1
       },
-      "pinned": 128
+      "pinned": 144
     },
     "vertigo": {
-      "records": 110,
+      "records": 116,
       "T": {
         "Smoke": 52,
         "Flash": 7,
         "Molotov": 16,
-        "HE": 2
+        "HE": 3
       },
       "CT": {
-        "Smoke": 18,
+        "Smoke": 23,
         "Flash": 4,
         "Molotov": 5,
         "HE": 6
       },
-      "pinned": 110
+      "pinned": 116
     }
   }
 }

@@ -1,0 +1,32 @@
+{
+  "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=3": {
+    "setup": {
+      "image": "/lineup-media/instant-spawns/vertigo/ct1-stand.webp",
+      "ms": 4400
+    }
+  },
+  "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=32": {
+    "setup": {
+      "image": "/lineup-media/instant-spawns/vertigo/ct2-stand.webp",
+      "ms": 34400
+    }
+  },
+  "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=61": {
+    "setup": {
+      "image": "/lineup-media/instant-spawns/vertigo/ct3-stand.webp",
+      "ms": 64457
+    }
+  },
+  "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=93": {
+    "setup": {
+      "image": "/lineup-media/instant-spawns/vertigo/ct4-stand.webp",
+      "ms": 96465
+    }
+  },
+  "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=118": {
+    "setup": {
+      "image": "/lineup-media/instant-spawns/vertigo/ct5-stand.webp",
+      "ms": 120505
+    }
+  }
+}

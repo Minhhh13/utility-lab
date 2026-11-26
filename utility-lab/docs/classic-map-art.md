@@ -1,4 +1,6 @@
-# Classic map landscapes
+# Classic map landscapes (archived)
+
+These earlier paintings were retired from the app and both release packages. See [current Home artwork](launch-art.md) for the licensed pixel-art collection.
 
 Updated 9 November 2026. The three decorative pixel-art recreations use public screenshots in original Dust designer [Dave Johnston’s illustrated history](https://www.johnsto.co.uk/design/making-dust/) as visual references. They depict original CS Dust, Source Dust and early CS:GO Dust. Dust joined CS in Beta 4 in November 1999; it was **not** in the first CS beta. The labels identify the version rather than claiming these were each game’s first map.
 

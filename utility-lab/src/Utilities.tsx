@@ -580,6 +580,7 @@ export default function Utilities({
       "main",
   );
   const [types, setTypes] = useState<UtilityType[]>([]);
+  const [spawnOnly, setSpawnOnly] = useState(false);
   const [origins, setOrigins] = useState<{mapId:string; lookup:OriginLookup; error:string}>({mapId:map.id,lookup:{},error:""});
   const [originSelection, setOriginSelection] = useState<MapSelection | null>(null);
   const [landingSelection, setLandingSelection] = useState<MapSelection | null>(null);
@@ -682,9 +683,13 @@ export default function Utilities({
   const contextRecords = useMemo(() => curateLineups(allContextRecords), [mapRecords,levelId]);
   const countContext = originSelection ? mapRecords.filter(item => item.levelId === originSelection.target.levelId) : allContextRecords;
   const filterCountRecords = savedOnly ? countContext.filter(item => favorites.includes(item.id)) : countContext;
+  const spawnSmokeCount = filterCountRecords.filter(record => record.type === "Smoke" && record.spawn && !record.userCreated).length;
+  const canFilterSpawns = types.length === 1 && types[0] === "Smoke" && spawnSmokeCount > 0;
+  const showingSpawns = spawnOnly && canFilterSpawns;
   const targetRecords = (savedOnly ? allContextRecords : contextRecords).filter(
     (item) =>
       (!types.length || types.includes(item.type)) &&
+      (!showingSpawns || (item.spawn && !item.userCreated)) &&
       (!savedOnly || favorites.includes(item.id)) &&
       (!markerFilter.length || markerFilter.includes(item.id)),
 
@@ -692,9 +697,10 @@ export default function Utilities({
   const mapMarkerRecords = useMemo(() => {
     const preferred = new Set(targetRecords.map(record => record.id));
     return [...targetRecords,...allContextRecords.filter(record => !preferred.has(record.id) &&
+      (!showingSpawns || (record.spawn && !record.userCreated)) &&
       (!types.length || types.includes(record.type)) && (!savedOnly || favorites.includes(record.id)) &&
       (!markerFilter.length || markerFilter.includes(record.id)))];
-  }, [contextRecords,mapRecords,levelId,types,savedOnly,favorites,markerFilter]);
+  }, [contextRecords,mapRecords,levelId,types,savedOnly,favorites,markerFilter,showingSpawns]);
   const landingGroups = useMemo(() => landingSelection ? splitUtilityDestinations(landingSelection.records.filter(record => !savedOnly || favorites.includes(record.id))) : [], [landingSelection,savedOnly,favorites]);
   const originRecords = originSelection?.records.filter(record => !savedOnly || favorites.includes(record.id)) || [];
   const visibleRecords = originSelection ? originRecords : mapMarkerRecords;
@@ -747,9 +753,10 @@ export default function Utilities({
         !findLineupOrigin(mediaRecord, origins.lookup)) return undefined;
     const candidates = mapRecords.filter(record =>
       record.levelId === mediaRecord.levelId && record.type === mediaRecord.type &&
+      (!showingSpawns || (record.spawn && !record.userCreated)) &&
       (!savedOnly || favorites.includes(record.id)));
     return splitUtilityDestinations(candidates).find(group => group.records.some(record => record.id === mediaRecord.id));
-  }, [catalogueReady, mediaRecord, mapRecords, origins.lookup, savedOnly, favorites]);
+  }, [catalogueReady, mediaRecord, mapRecords, origins.lookup, savedOnly, favorites, showingSpawns]);
   const markerGroups = useMemo(() => groupUtilityMarkers(catalogueReady ? mapMarkerRecords : [],mapUnit,zoom<=1.01), [catalogueReady,mapMarkerRecords,mapUnit,zoom]);
   const markerBounds = useMemo(() => {
     const [x,y,width,height] = navigation.viewBox.split(/\s+/).map(Number);
@@ -823,6 +830,7 @@ export default function Utilities({
     setMapFallback(false);
     setMapFailed(false);
   }, [map.id, levelId, theme]);
+  useEffect(() => { setSpawnOnly(false); }, [map.id, side]);
   useEffect(() => {
     if (!editing) return;
     recoveredDrafts.set(map.id, { draft, editingId });
@@ -1446,6 +1454,7 @@ export default function Utilities({
               className={(item === "All" ? !types.length : types.includes(item)) ? "is-active" : ""}
               onClick={() => {
                 if(originSelection || landingSelection) backToTargets();
+                setSpawnOnly(false);
                 setTypes(current => item === "All" ? [] : current.includes(item) ? current.filter(type => type !== item) : [...current,item]);
                 setMarkerFilter([]);
               }}
@@ -1484,7 +1493,7 @@ export default function Utilities({
           aria-pressed={savedOnly}
           onClick={() => {if(originSelection || landingSelection) backToTargets();setSavedOnly(!savedOnly);}}
         >
-          <Star size={15} fill={savedOnly ? "currentColor" : "none"} />
+          <Star size={20} aria-hidden="true" fill={savedOnly ? "currentColor" : "none"} />
           <span>Saved</span>
           <small>
             {
@@ -1521,7 +1530,15 @@ export default function Utilities({
                 <span>{level?.name || "Overview"}</span>
               )}
             </div>
-            {originSelection || landingSelection || loadingStanding ? <button className="ul-origin-back ul-text-button" onClick={returnToOverview}><ArrowLeft size={16}/>Back to targets</button> : <span className="ul-map-count">{visibleRecords.length} {visibleRecords.length === 1 ? "reference" : "references"}</span>}
+            {originSelection || landingSelection || loadingStanding
+              ? <button className="ul-origin-back ul-text-button" onClick={returnToOverview}><ArrowLeft size={16}/>Back to targets</button>
+              : canFilterSpawns && !editing
+                ? <button className="ul-spawn-filter ul-origin-back ul-text-button" type="button" aria-pressed={showingSpawns}
+                    title="Show only smoke lineups from a numbered spawn" onClick={() => {
+                      setMarkerChoice(null);
+                      setSpawnOnly(!showingSpawns);
+                    }}><Crosshair size={15} aria-hidden="true"/>Spawn smokes <small>{spawnSmokeCount}</small></button>
+                : <span className="ul-map-count">{visibleRecords.length} {visibleRecords.length === 1 ? "reference" : "references"}</span>}
           </div>
           <div className={`ul-map-stage${placing ? " is-placing" : ""}`}>
             <svg

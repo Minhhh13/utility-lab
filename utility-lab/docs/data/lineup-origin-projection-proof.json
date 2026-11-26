@@ -34373,6 +34373,12 @@
       "x": 149,
       "y": 118
     },
+    "worldOrigin": {
+      "x": -1662.777588,
+      "y": 2737.276855,
+      "z": 74.789261
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -34382,10 +34388,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 179.35,
-        "y": 126.58,
+        "x": 180.49,
+        "y": 111.36,
         "levelId": "main",
-        "registrationId": "csnades-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -34425,6 +34431,12 @@
       "x": 365,
       "y": 260
     },
+    "worldOrigin": {
+      "x": -760.03125,
+      "y": 2066.03125,
+      "z": -47.626526
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -34434,10 +34446,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 379.7,
-        "y": 266.31,
+        "x": 380.85,
+        "y": 260.34,
         "levelId": "main",
-        "registrationId": "csnades-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -36508,6 +36520,2090 @@
     ]
   },
   {
+    "source": "https://csnades.gg/mirage/molotovs/van-from-b-apts",
+    "mapId": "mirage",
+    "provider": "csnades",
+    "label": "B Apartments",
+    "sourceId": "nade_3624ea054e1c",
+    "rawOrigin": {
+      "x": 395,
+      "y": 90
+    },
+    "worldOrigin": {
+      "x": -1042.112915,
+      "y": 641.823303,
+      "z": -15.939156
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 427.32,
+        "y": 209.21,
+        "levelId": "main",
+        "registrationId": "world-mirage-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/mirage/molotovs/tetris-from-behind-triple",
+    "mapId": "mirage",
+    "provider": "csnades",
+    "label": "Behind Triple",
+    "sourceId": "nade_34587dc64c5b",
+    "rawOrigin": {
+      "x": 437,
+      "y": 885
+    },
+    "worldOrigin": {
+      "x": -890.26123,
+      "y": -2308.118652,
+      "z": -106.337036
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 456.98,
+        "y": 785.37,
+        "levelId": "main",
+        "registrationId": "world-mirage-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/mirage/hegrenades/top-mid-boxes-from-window",
+    "mapId": "mirage",
+    "provider": "csnades",
+    "label": "Window",
+    "sourceId": "nade_2b69a9ce94f8",
+    "rawOrigin": {
+      "x": 362,
+      "y": 445
+    },
+    "worldOrigin": {
+      "x": -1247.96875,
+      "y": -924.039368,
+      "z": -103.96875
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 387.12,
+        "y": 515.05,
+        "levelId": "main",
+        "registrationId": "world-mirage-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/mirage/hegrenades/window-from-top-mid-boxes",
+    "mapId": "mirage",
+    "provider": "csnades",
+    "label": "Top Mid Boxes",
+    "sourceId": "nade_cfc334843eb3",
+    "rawOrigin": {
+      "x": 740,
+      "y": 438
+    },
+    "worldOrigin": {
+      "x": 502.96875,
+      "y": -626.643311,
+      "z": -96.524139
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 729.1,
+        "y": 456.96,
+        "levelId": "main",
+        "registrationId": "world-mirage-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/inferno/molotovs/car-from-bottom-banana",
+    "mapId": "inferno",
+    "provider": "csnades",
+    "label": "Bottom Banana",
+    "sourceId": "nade_a394cfcd58d1",
+    "rawOrigin": {
+      "x": 439,
+      "y": 610
+    },
+    "worldOrigin": {
+      "x": 153.885391,
+      "y": 942.91571,
+      "z": 144.966843
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 446.61,
+        "y": 583.36,
+        "levelId": "main",
+        "registrationId": "world-inferno-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/inferno/molotovs/pit-from-short",
+    "mapId": "inferno",
+    "provider": "csnades",
+    "label": "Short",
+    "sourceId": "nade_9bba71a98920",
+    "rawOrigin": {
+      "x": 709,
+      "y": 779
+    },
+    "worldOrigin": {
+      "x": 1322.028442,
+      "y": 213.208298,
+      "z": 201.955109
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 679.41,
+        "y": 728.79,
+        "levelId": "main",
+        "registrationId": "world-inferno-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/inferno/hegrenades/first-orange-from-car",
+    "mapId": "inferno",
+    "provider": "csnades",
+    "label": "Car",
+    "sourceId": "nade_da7e58fa94f1",
+    "rawOrigin": {
+      "x": 503,
+      "y": 373
+    },
+    "worldOrigin": {
+      "x": 479.274414,
+      "y": 2017.96875,
+      "z": 200.031235
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 511.45,
+        "y": 369.11,
+        "levelId": "main",
+        "registrationId": "world-inferno-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/inferno/hegrenades/b-default-from-outside-church",
+    "mapId": "inferno",
+    "provider": "csnades",
+    "label": "Outside Church",
+    "sourceId": "nade_c64fb706185e",
+    "rawOrigin": {
+      "x": 697,
+      "y": 159
+    },
+    "worldOrigin": {
+      "x": 1342.079834,
+      "y": 2967.911865,
+      "z": 192.031662
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 683.41,
+        "y": 179.78,
+        "levelId": "main",
+        "registrationId": "world-inferno-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/inferno/hegrenades/mini-pit-from-short",
+    "mapId": "inferno",
+    "provider": "csnades",
+    "label": "Short",
+    "sourceId": "nade_55c9b4d609c1",
+    "rawOrigin": {
+      "x": 777,
+      "y": 833
+    },
+    "worldOrigin": {
+      "x": 1746.046387,
+      "y": -89.96875,
+      "z": 206.03125
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 763.92,
+        "y": 789.22,
+        "levelId": "main",
+        "registrationId": "world-inferno-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/molotovs/short-from-lower-tunnel",
+    "mapId": "dust2",
+    "provider": "csnades",
+    "label": "Lower Tunnels",
+    "sourceId": "nade_ae8a279b0fc1",
+    "rawOrigin": {
+      "x": 424,
+      "y": 409
+    },
+    "worldOrigin": {
+      "x": -520.888062,
+      "y": 1382.02832,
+      "z": -48.270035
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 433.93,
+        "y": 412.15,
+        "levelId": "main",
+        "registrationId": "world-dust2-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/molotovs/short-from-goose",
+    "mapId": "dust2",
+    "provider": "csnades",
+    "label": "Goose",
+    "sourceId": "nade_c810c0212a27",
+    "rawOrigin": {
+      "x": 823,
+      "y": 34
+    },
+    "worldOrigin": {
+      "x": 1180.100708,
+      "y": 3059.96875,
+      "z": 192.252747
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 811.46,
+        "y": 39.74,
+        "levelId": "main",
+        "registrationId": "world-dust2-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/b-main-from-b-site",
+    "mapId": "dust2",
+    "provider": "csnades",
+    "label": "B Site",
+    "sourceId": "nade_01dae2e90adc",
+    "rawOrigin": {
+      "x": 149,
+      "y": 118
+    },
+    "worldOrigin": {
+      "x": -1662.777588,
+      "y": 2737.276855,
+      "z": 74.789261
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 180.49,
+        "y": 111.36,
+        "levelId": "main",
+        "registrationId": "world-dust2-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/dust2/hegrenades/under-b-window-from-outside-b",
+    "mapId": "dust2",
+    "provider": "csnades",
+    "label": "Outside B",
+    "sourceId": "nade_2288e8c0651f",
+    "rawOrigin": {
+      "x": 365,
+      "y": 260
+    },
+    "worldOrigin": {
+      "x": -760.03125,
+      "y": 2066.03125,
+      "z": -47.626526
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 380.85,
+        "y": 260.34,
+        "levelId": "main",
+        "registrationId": "world-dust2-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/molotovs/top-mid-from-bridge",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "Bridge",
+    "sourceId": "nade_b02c2a9aee77",
+    "rawOrigin": {
+      "x": 418,
+      "y": 703
+    },
+    "worldOrigin": {
+      "x": -530.423828,
+      "y": -340.03125,
+      "z": 130.03125
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 423.85,
+        "y": 686.22,
+        "levelId": "main",
+        "registrationId": "world-anubis-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/molotovs/a-site-from-water",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "Water",
+    "sourceId": "nade_bc975c22bad3",
+    "rawOrigin": {
+      "x": 664,
+      "y": 500
+    },
+    "worldOrigin": {
+      "x": 744.028442,
+      "y": 684.806702,
+      "z": -43.96875
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 662.27,
+        "y": 494.49,
+        "levelId": "main",
+        "registrationId": "world-anubis-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/hegrenades/fountain-from-a-main",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "A Main",
+    "sourceId": "nade_1c8d8c0db6ab",
+    "rawOrigin": {
+      "x": 789,
+      "y": 476
+    },
+    "worldOrigin": {
+      "x": 1382.030518,
+      "y": 800.03125,
+      "z": -87.96875
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 781.63,
+        "y": 472.93,
+        "levelId": "main",
+        "registrationId": "world-anubis-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/hegrenades/a-main-from-plat",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "Plat",
+    "sourceId": "nade_98735d3c1cc3",
+    "rawOrigin": {
+      "x": 697,
+      "y": 317
+    },
+    "worldOrigin": {
+      "x": 935.189697,
+      "y": 1566.768555,
+      "z": -23.96875
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 698.03,
+        "y": 329.49,
+        "levelId": "main",
+        "registrationId": "world-anubis-main"
+      }
+    ]
+  },
+  {
+    "source": "https://csnades.gg/anubis/hegrenades/top-mid-from-street",
+    "mapId": "anubis",
+    "provider": "csnades",
+    "label": "Street",
+    "sourceId": "nade_001cea322a64",
+    "rawOrigin": {
+      "x": 545,
+      "y": 726
+    },
+    "worldOrigin": {
+      "x": 112.738922,
+      "y": -468.697693,
+      "z": 64.266548
+    },
+    "coordinateBasis": "guide-standing-pose",
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 544.17,
+        "y": 710.29,
+        "levelId": "main",
+        "registrationId": "world-anubis-main"
+      }
+    ]
+  },
+  {
+    "source": "https://app.nadesdb.com/maps/ancient?nade=52a634a3-9353-4f75-b1b8-0417f082098d",
+    "mapId": "ancient",
+    "provider": "nadesdb",
+    "label": "Split",
+    "sourceId": "52a634a3-9353-4f75-b1b8-0417f082098d",
+    "rawOrigin": {
+      "x": 334.26967,
+      "y": 653.0899
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 337.13,
+        "y": 629.86,
+        "levelId": "main",
+        "registrationId": "nadesdb-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://app.nadesdb.com/maps/ancient?nade=3723f545-9a5e-49ba-96ab-6ad32889d974",
+    "mapId": "ancient",
+    "provider": "nadesdb",
+    "label": "Elbow",
+    "sourceId": "3723f545-9a5e-49ba-96ab-6ad32889d974",
+    "rawOrigin": {
+      "x": 355.33708,
+      "y": 609.55054
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 356.02,
+        "y": 590.84,
+        "levelId": "main",
+        "registrationId": "nadesdb-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://app.nadesdb.com/maps/cache?nade=1c91bbe2-7191-46c6-b46c-1cd8b0313782",
+    "mapId": "cache",
+    "provider": "nadesdb",
+    "label": "T Truck",
+    "sourceId": "1c91bbe2-7191-46c6-b46c-1cd8b0313782",
+    "rawOrigin": {
+      "x": 674.1573,
+      "y": 403.08988
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 657.83,
+        "y": 417.87,
+        "levelId": "main",
+        "registrationId": "nadesdb-cache-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://app.nadesdb.com/maps/cache?nade=7d0f7b9c-df79-4e65-a29b-34973dd9a0b7",
+    "mapId": "cache",
+    "provider": "nadesdb",
+    "label": "Window",
+    "sourceId": "7d0f7b9c-df79-4e65-a29b-34973dd9a0b7",
+    "rawOrigin": {
+      "x": 303.37077,
+      "y": 584.26964
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 299.24,
+        "y": 592.68,
+        "levelId": "main",
+        "registrationId": "nadesdb-cache-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://app.nadesdb.com/maps/cache?nade=c46f7d8b-3637-4d0c-8126-ce5e7473bdce",
+    "mapId": "cache",
+    "provider": "nadesdb",
+    "label": "Outside A",
+    "sourceId": "c46f7d8b-3637-4d0c-8126-ce5e7473bdce",
+    "rawOrigin": {
+      "x": 586.3011,
+      "y": 470.08714
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 572.86,
+        "y": 482.51,
+        "levelId": "main",
+        "registrationId": "nadesdb-cache-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://gonade.app/nade/nuke-top-hut-from-t-spawnroof-molotov",
+    "mapId": "nuke",
+    "provider": "gonade",
+    "label": "T Spawn/Roof",
+    "sourceId": "3037",
+    "rawOrigin": {
+      "x": 317.81043,
+      "y": 566.99346
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 318.7,
+        "y": 566.99,
+        "levelId": "upper",
+        "registrationId": "gonade-nuke-upper-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://gonade.app/nade/vertigo-mid-from-deep-t-mid-he",
+    "mapId": "vertigo",
+    "provider": "gonade",
+    "label": "Deep T Mid",
+    "sourceId": "4015",
+    "rawOrigin": {
+      "x": 301.01567,
+      "y": 573.4072
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 301.02,
+        "y": 573.41,
+        "levelId": "upper",
+        "registrationId": "gonade-vertigo-upper-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/heaven/ct2-molotov",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "CT Spawn 2",
+    "sourceId": "167",
+    "rawOrigin": {
+      "x": 90.85881,
+      "y": 451.55907
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 90.86,
+        "y": 451.56,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/heaven/ct5-molotov",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "CT Spawn 5",
+    "sourceId": "135",
+    "rawOrigin": {
+      "x": 90.85881,
+      "y": 421.72952
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 90.86,
+        "y": 421.73,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/cave/t1",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "T Spawn 1",
+    "sourceId": "120",
+    "rawOrigin": {
+      "x": 462.7,
+      "y": 869.53
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 462.7,
+        "y": 869.53,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/b-doors/ct4",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "CT Spawn 4",
+    "sourceId": "38",
+    "rawOrigin": {
+      "x": 489.26,
+      "y": 85.16
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 489.26,
+        "y": 85.16,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/b-doors/ct3",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "CT Spawn 3",
+    "sourceId": "39",
+    "rawOrigin": {
+      "x": 508.01,
+      "y": 85.16
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 508.01,
+        "y": 85.16,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/b-doors/ct2",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "CT Spawn 2",
+    "sourceId": "40",
+    "rawOrigin": {
+      "x": 526.76,
+      "y": 85.16
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 526.76,
+        "y": 85.16,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/b-doors/ct5",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "CT Spawn 5",
+    "sourceId": "41",
+    "rawOrigin": {
+      "x": 476.76,
+      "y": 91.41
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 476.76,
+        "y": 91.41,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/cave/t5",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "T Spawn 5",
+    "sourceId": "54",
+    "rawOrigin": {
+      "x": 512.7,
+      "y": 869.53
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 512.7,
+        "y": 869.53,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/b-doors/ct1",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "CT Spawn 1",
+    "sourceId": "66",
+    "rawOrigin": {
+      "x": 539.26,
+      "y": 91.41
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 539.26,
+        "y": 91.41,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/ancient/cave/t4",
+    "mapId": "ancient",
+    "provider": "setpos",
+    "label": "T Spawn 4",
+    "sourceId": "97",
+    "rawOrigin": {
+      "x": 500.2,
+      "y": 857.03
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 500.2,
+        "y": 857.03,
+        "levelId": "main",
+        "registrationId": "setpos-ancient-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/carpets/ct3",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "CT Spawn 3",
+    "sourceId": "149",
+    "rawOrigin": {
+      "x": 434.03,
+      "y": 208.03
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 434.03,
+        "y": 208.03,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/stairs/ct2",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "CT Spawn 2",
+    "sourceId": "150",
+    "rawOrigin": {
+      "x": 448.25,
+      "y": 212.52
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 448.25,
+        "y": 212.52,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/stairs/ct4",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "CT Spawn 4",
+    "sourceId": "176",
+    "rawOrigin": {
+      "x": 418.31,
+      "y": 212.52
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 418.31,
+        "y": 212.52,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/stairs/ct3",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "CT Spawn 3",
+    "sourceId": "73",
+    "rawOrigin": {
+      "x": 434.03,
+      "y": 208.03
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 434.03,
+        "y": 208.03,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/anubis/stairs/ct5",
+    "mapId": "anubis",
+    "provider": "setpos",
+    "label": "CT Spawn 5",
+    "sourceId": "91",
+    "rawOrigin": {
+      "x": 409.33,
+      "y": 225.99
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 409.33,
+        "y": 225.99,
+        "levelId": "main",
+        "registrationId": "setpos-anubis-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t1",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 1",
+    "sourceId": "100",
+    "rawOrigin": {
+      "x": 887.05,
+      "y": 606.89
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 887.05,
+        "y": 606.89,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t10",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 10",
+    "sourceId": "121",
+    "rawOrigin": {
+      "x": 874.03,
+      "y": 547.64
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 874.03,
+        "y": 547.64,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/boost/t2",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 2",
+    "sourceId": "123",
+    "rawOrigin": {
+      "x": 904.52,
+      "y": 604.15
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 904.52,
+        "y": 604.15,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t5",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 5",
+    "sourceId": "124",
+    "rawOrigin": {
+      "x": 895.2,
+      "y": 580.8
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 895.2,
+        "y": 580.8,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t9",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 9",
+    "sourceId": "126",
+    "rawOrigin": {
+      "x": 901.59,
+      "y": 552.93
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 901.59,
+        "y": 552.93,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/boost/t9",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 9",
+    "sourceId": "87",
+    "rawOrigin": {
+      "x": 901.59,
+      "y": 552.93
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 901.59,
+        "y": 552.93,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/boost/t5",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 5",
+    "sourceId": "88",
+    "rawOrigin": {
+      "x": 895.2,
+      "y": 580.8
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 895.2,
+        "y": 580.8,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t8",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 8",
+    "sourceId": "89",
+    "rawOrigin": {
+      "x": 894.51,
+      "y": 565.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 894.51,
+        "y": 565.22,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t7",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 7",
+    "sourceId": "90",
+    "rawOrigin": {
+      "x": 873.01,
+      "y": 564.73
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 873.01,
+        "y": 564.73,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t4",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 4",
+    "sourceId": "98",
+    "rawOrigin": {
+      "x": 878.73,
+      "y": 585.4
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 878.73,
+        "y": 585.4,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/cache/connector/t2",
+    "mapId": "cache",
+    "provider": "setpos",
+    "label": "T Spawn 2",
+    "sourceId": "99",
+    "rawOrigin": {
+      "x": 904.52,
+      "y": 604.15
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 904.52,
+        "y": 604.15,
+        "levelId": "main",
+        "registrationId": "setpos-cache-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-corner/t15",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 15",
+    "sourceId": "111",
+    "rawOrigin": {
+      "x": 475.85,
+      "y": 886.23
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 475.85,
+        "y": 886.23,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/mid-doors/t1",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 1",
+    "sourceId": "113",
+    "rawOrigin": {
+      "x": 287.42,
+      "y": 886.23
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 287.42,
+        "y": 886.23,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/xbox/t13",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 13",
+    "sourceId": "114",
+    "rawOrigin": {
+      "x": 454.55,
+      "y": 905.98
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 454.55,
+        "y": 905.98,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-corner/t14",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 14",
+    "sourceId": "4",
+    "rawOrigin": {
+      "x": 468.08,
+      "y": 898.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 468.08,
+        "y": 898.22,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-corner/t12",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 12",
+    "sourceId": "64",
+    "rawOrigin": {
+      "x": 440.12,
+      "y": 898.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 440.12,
+        "y": 898.22,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-corner/t13",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 13",
+    "sourceId": "65",
+    "rawOrigin": {
+      "x": 454.55,
+      "y": 905.98
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 454.55,
+        "y": 905.98,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/xbox/t14",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 14",
+    "sourceId": "76",
+    "rawOrigin": {
+      "x": 468.08,
+      "y": 898.22
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 468.08,
+        "y": 898.22,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/dust2/long-corner/t11",
+    "mapId": "dust2",
+    "provider": "setpos",
+    "label": "T Spawn 11",
+    "sourceId": "77",
+    "rawOrigin": {
+      "x": 431.24,
+      "y": 886.23
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 431.24,
+        "y": 886.23,
+        "levelId": "main",
+        "registrationId": "setpos-dust2-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/banana/ct5",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 5",
+    "sourceId": "108",
+    "rawOrigin": {
+      "x": 912.79,
+      "y": 354.75
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 912.79,
+        "y": 354.75,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/banana/ct4",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 4",
+    "sourceId": "21",
+    "rawOrigin": {
+      "x": 908.67,
+      "y": 371.5
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 908.67,
+        "y": 371.5,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/inferno/banana/ct2",
+    "mapId": "inferno",
+    "provider": "setpos",
+    "label": "CT Spawn 2",
+    "sourceId": "86",
+    "rawOrigin": {
+      "x": 884.89,
+      "y": 377.27
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 884.89,
+        "y": 377.27,
+        "levelId": "main",
+        "registrationId": "setpos-inferno-main-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/top-mid/ct5",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "CT Spawn 5",
+    "sourceId": "103",
+    "rawOrigin": {
+      "x": 283.98,
+      "y": 720.51
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 283.98,
+        "y": 720.51,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/catwalk/t9",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "T Spawn 9",
+    "sourceId": "155",
+    "rawOrigin": {
+      "x": 852.73,
+      "y": 328.32
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 852.73,
+        "y": 328.32,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/catwalk/t10",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "T Spawn 10",
+    "sourceId": "23",
+    "rawOrigin": {
+      "x": 883.98,
+      "y": 328.32
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 883.98,
+        "y": 328.32,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/catwalk/t8",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "T Spawn 8",
+    "sourceId": "25",
+    "rawOrigin": {
+      "x": 868.36,
+      "y": 337.7
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 868.36,
+        "y": 337.7,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/catwalk/t6",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "T Spawn 6",
+    "sourceId": "28",
+    "rawOrigin": {
+      "x": 868.36,
+      "y": 357.03
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 868.36,
+        "y": 357.03,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/catwalk/t4",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "T Spawn 4",
+    "sourceId": "30",
+    "rawOrigin": {
+      "x": 868.36,
+      "y": 375.78
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 868.36,
+        "y": 375.78,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/mirage/catwalk/t1",
+    "mapId": "mirage",
+    "provider": "setpos",
+    "label": "T Spawn 1",
+    "sourceId": "33",
+    "rawOrigin": {
+      "x": 883.98,
+      "y": 403.32
+    },
+    "originLevels": [
+      "main"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "single-floor-map",
+    "projected": [
+      {
+        "x": 883.98,
+        "y": 403.32,
+        "levelId": "main",
+        "registrationId": "setpos-mirage-main-20261126"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/t-red/t1",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 1",
+    "sourceId": "104",
+    "rawOrigin": {
+      "x": 210.1,
+      "y": 537.4
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 210.1,
+        "y": 537.4,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/outside-main/t5",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 5",
+    "sourceId": "106",
+    "rawOrigin": {
+      "x": 220.28,
+      "y": 552.87
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 220.28,
+        "y": 552.87,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/outside-main/t6",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 6",
+    "sourceId": "116",
+    "rawOrigin": {
+      "x": 229.49,
+      "y": 554.69
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 229.49,
+        "y": 554.69,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/t-red/t7",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 7",
+    "sourceId": "136",
+    "rawOrigin": {
+      "x": 210.1,
+      "y": 556.52
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 210.1,
+        "y": 556.52,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/t-red/t4",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 4",
+    "sourceId": "172",
+    "rawOrigin": {
+      "x": 212.61,
+      "y": 545.76
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 212.61,
+        "y": 545.76,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/outside-main/t8",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 8",
+    "sourceId": "27",
+    "rawOrigin": {
+      "x": 226.14,
+      "y": 564.59
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 226.14,
+        "y": 564.59,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
+    "source": "https://setpos.gg/nuke/outside-main/t7",
+    "mapId": "nuke",
+    "provider": "setpos",
+    "label": "T Spawn 7",
+    "sourceId": "75",
+    "rawOrigin": {
+      "x": 210.1,
+      "y": 556.52
+    },
+    "originLevels": [
+      "upper"
+    ],
+    "rawSourceLevels": [
+      1
+    ],
+    "floorBasis": "publisher-throwFrom-levels",
+    "projected": [
+      {
+        "x": 210.1,
+        "y": 556.52,
+        "levelId": "upper",
+        "registrationId": "setpos-nuke-upper-20261124"
+      }
+    ]
+  },
+  {
     "source": "https://gonade.app/nade/nuke-mustang-from-t-roof-molotov",
     "mapId": "nuke",
     "label": "T Roof",
@@ -36658,5 +38754,155 @@
       }
     ],
     "referenceSource": "https://totalcsgo.com/callouts/anubis"
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=3",
+    "mapId": "vertigo",
+    "sourceId": "HGhSBNdWJEs:ct1",
+    "label": "CT Spawn 1",
+    "floorBasis": "recorded-world-position",
+    "originLevels": [
+      "upper"
+    ],
+    "worldOrigin": {
+      "x": -860.197205,
+      "y": 940.249817,
+      "z": 11839.871094
+    },
+    "projected": [
+      {
+        "x": 563.43,
+        "y": 200.62,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 1",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct1"
+      }
+    ]
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=32",
+    "mapId": "vertigo",
+    "sourceId": "HGhSBNdWJEs:ct2",
+    "label": "CT Spawn 2",
+    "floorBasis": "recorded-world-position",
+    "originLevels": [
+      "upper"
+    ],
+    "worldOrigin": {
+      "x": -929.663635,
+      "y": 918.584778,
+      "z": 11839.871094
+    },
+    "projected": [
+      {
+        "x": 546.47,
+        "y": 205.91,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 2",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct2"
+      }
+    ]
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=61",
+    "mapId": "vertigo",
+    "sourceId": "HGhSBNdWJEs:ct3",
+    "label": "CT Spawn 3",
+    "floorBasis": "recorded-world-position",
+    "originLevels": [
+      "upper"
+    ],
+    "worldOrigin": {
+      "x": -1044.098267,
+      "y": 924.356873,
+      "z": 11839.871094
+    },
+    "projected": [
+      {
+        "x": 518.53,
+        "y": 204.5,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 3",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct3"
+      }
+    ]
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=93",
+    "mapId": "vertigo",
+    "sourceId": "HGhSBNdWJEs:ct4",
+    "label": "CT Spawn 4",
+    "floorBasis": "recorded-world-position",
+    "originLevels": [
+      "upper"
+    ],
+    "worldOrigin": {
+      "x": -1127.208374,
+      "y": 924.746399,
+      "z": 11839.871094
+    },
+    "projected": [
+      {
+        "x": 498.24,
+        "y": 204.41,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 4",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct4"
+      }
+    ]
+  },
+  {
+    "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=118",
+    "mapId": "vertigo",
+    "sourceId": "HGhSBNdWJEs:ct5",
+    "label": "CT Spawn 5",
+    "floorBasis": "recorded-world-position",
+    "originLevels": [
+      "upper"
+    ],
+    "worldOrigin": {
+      "x": -1189.411743,
+      "y": 862.516418,
+      "z": 11839.871094
+    },
+    "projected": [
+      {
+        "x": 483.05,
+        "y": 219.6,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 5",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct5"
+      }
+    ]
   }
 ]

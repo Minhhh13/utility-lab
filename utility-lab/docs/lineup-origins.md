@@ -1,8 +1,12 @@
 # Throw-from map locations
 
-The origin catalogue checked on 26 November 2026 covers **1,558 complete guides from 1,478 original source pages**. Of these guide entries, **1,550** use a publisher start and **8** use a registered callout area. Across the catalogue, **99 distinct source pages** have starts verified in world coordinates. The Position photo gives the player a visual reference for the setup.
+The origin catalogue checked on 26 November 2026 covers **1,639 complete guides from 1,559 original source references**. Of these guide entries, **1,631** use a publisher start and **8** use a registered callout area. Across the catalogue, **173 distinct source references** have starts verified in world coordinates. The Position photo gives the player a visual reference for the setup. Source totals count separately timed chapters when a creator demonstrates multiple throws in one video.
 
 Only public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. The 24 November update added 53 recipes and refined 16 existing IDs. The 25 November review restored Ancient Top Mid spawn #2 from the creator’s clip and original photos, and corrected 20 guide starting positions. Media playback reviews do not establish independent throw accuracy on the current game build.
+
+## Numbered round-start smokes added on 26 November 2026
+
+The 54 additional smoke guides use published world starts for existing targets on all eight maps. Of these, 49 use the spawn from the original setpos.gg replay. The five Vertigo guides follow viri’s numbering for the upper CT spawns, and each has a separate chapter showing the smoke landing on lower A Ramp. The standing marker uses the upper radar. [Map-by-map coverage and original sources](round-start-smokes-2026-11-26.md)
 
 ## Anubis and Dust II starts reviewed on 26 November 2026
 
@@ -54,7 +58,7 @@ For multilevel maps the floor is resolved from the source, not the landing. All 
 
 CSNADES level `1` means upper and `2` lower. Its published `[1,2]` source points retain both supported overview views with a separate transform for each. `[null]` stays invalid without a reviewed source-floor record. Canonical ordering is the publisher order, independent of the destination. `findLineupOrigin(record, lookup, preferredLevel)` uses a preferred floor only if it is actually supported by that source. It does not relocate an unsupported lower origin onto the upper target floor.
 
-There are **24 guides** whose source's supported floor differs from the destination floor. UI integration must switch to the origin's source floor when showing the throw-from options. Source records with two publisher-supported views may use the current supported view. No connecting path is treated as a simulated grenade trajectory.
+There are **29 guides** whose source's supported floor differs from the destination floor. UI integration must switch to the origin's source floor when showing the throw-from options. Source records with two publisher-supported views may use the current supported view. No connecting path is treated as a simulated grenade trajectory.
 
 ## Runtime and regeneration
 
@@ -73,17 +77,17 @@ After generating the expanded catalogue, run:
 node --experimental-strip-types scripts/build-origin-catalogue.mjs
 ```
 
-The generator refuses missing origins, missing independent floor proof, invalid coordinates, missing floor registration, or any incomplete 1,558-guide origin join before writing runtime files. The eight runtime tables contain primary catalogue sources only. Reading or regenerating the documentation report does not rebuild those tables.
+The generator refuses missing origins, missing independent floor proof, invalid coordinates, missing floor registration, or any incomplete 1,639-guide origin join before writing runtime files. The eight runtime tables contain primary catalogue sources only. Reading or regenerating the documentation report does not rebuild those tables.
 
 ## Overview preferences and complete origin choices
 
-`src/lineup-curation.ts` exports `curateLineups(records, maxPerSpot = 4)`. Its **1,283-record preference subset** controls ordering in the quiet overview. The UI appends every other matching record before grouping map destinations. It therefore exposes all **1,558 published records** in normal browsing; the preference subset is not a landing, origin or numbered-spawn availability limit.
+`src/lineup-curation.ts` exports `curateLineups(records, maxPerSpot = 4)`. Its **1,342-record preference subset** controls ordering in the quiet overview. The UI appends every other matching record before grouping map destinations. It therefore exposes all **1,639 published records** in normal browsing; the preference subset is not a landing, origin or numbered-spawn availability limit.
 
 Preference grouping includes map, target floor, team side and utility type. A registered target callout is canonical; otherwise a valid publisher destination ID is used; otherwise the exact target name and point are kept. Simpler throws and distinct named approaches rank first, and numbered variants count as one family only for that preference calculation. No source array or saved ID is removed.
 
 Destination choices use the complete filtered catalogue. Public scopes containing a source-confirmed spawn family share a landing choice only when map, floor, side, utility, semantic area, exact normalized target name and coverage qualifier match. Provider impact variation then stays within that one named destination. Other point-specific destinations, neighbouring names, close/far/inside/outside variants and personal guides remain separate. Raw target coordinates are retained, with a real member as the representative anchor.
 
-Every standing recipe remains accessible. Near-overlapping source hit areas share a genuine source point and open a visual map chooser in pages of eight; a singleton opens its Position-first viewer directly. Standing points are not displaced to create spacing. The chooser's inset map links each option to its original start point, and source-confirmed spawn slots show their publisher's numbering. Mirage Window and Ancient Elbow each retain five explicit slots. Dust II Mid Doors exposes 18 T and two CT recipes. Anubis's new T-spawn families collectively cover 11 source slots without claiming that every destination supports every slot. See [the complete coverage review](catalogue-coverage-2026-11-24.md).
+Every standing recipe remains accessible. Near-overlapping source hit areas share a genuine source point and open a visual map chooser in pages of eight; a singleton opens its Position-first viewer directly. Standing points are not displaced to create spacing. The chooser's inset map links each option to its original start point, and source-confirmed spawn slots show their publisher's numbering. Mirage Window and Ancient Elbow each retain five explicit slots. Dust II Mid Doors exposes 19 T and two CT smoke recipes. Anubis's new T-spawn families collectively cover 11 source slots without claiming that every destination supports every slot. See the [24 November coverage review](catalogue-coverage-2026-11-24.md) and [26 November round-start additions](round-start-smokes-2026-11-26.md).
 
 Personal guides follow their own saved target. A lone personal guide opens directly from that target; several saved guides use a visual **Your lineups** target action. This is a guide-opening action, not a claimed standing coordinate. Copying a publisher URL does not give a personal record that publisher's standing location. An action badge may move slightly with a leader for tap clearance, while the owner's target and published source points remain unchanged; offscreen actions remain hidden during panning.
 

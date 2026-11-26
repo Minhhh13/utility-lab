@@ -1,0 +1,1239 @@
+{
+  "reviewDate": "2026-11-26",
+  "method": "Creator gallery, source controls, recorded clips and matching radar points. New Position and Aim stages checked at full resolution. Coverage and timing follow each publisher recording.",
+  "records": [
+    {
+      "id": "essential-nadesdb-ancient-52a634a3",
+      "guideId": "essential-nadesdb-ancient-52a634a3",
+      "provider": "nadesdb",
+      "mapId": "ancient",
+      "levelId": "main",
+      "registrationId": "nadesdb-ancient-main-20261126",
+      "side": "T",
+      "type": "HE",
+      "source": "https://app.nadesdb.com/maps/ancient?nade=52a634a3-9353-4f75-b1b8-0417f082098d",
+      "sourceId": "52a634a3-9353-4f75-b1b8-0417f082098d",
+      "publisherId": "52a634a3-9353-4f75-b1b8-0417f082098d",
+      "from": "Split",
+      "target": "Mid",
+      "origin": {
+        "x": 334.26967,
+        "y": 653.0899,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 466.29214,
+        "y": 485.95506,
+        "levels": [
+          1
+        ],
+        "id": "nadesdb:52a634a3-9353-4f75-b1b8-0417f082098d:target"
+      },
+      "sourceVideo": "https://media.nadesdb.com/media/1921d7ee-ff83-499f-a8a2-24995de02e0f-processed.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-nadesdb-ancient-52a634a3-setup.webp",
+        "ms": 1700,
+        "sha256": "db044a29bb77fcff47aefbbe4c66273ccb884dabe37da8a0cc88f724f604c596",
+        "bytes": 189710
+      },
+      "video": {
+        "url": "https://media.nadesdb.com/media/1921d7ee-ff83-499f-a8a2-24995de02e0f-processed.mp4",
+        "sourceBytes": 3952662,
+        "http": 200,
+        "duration": 6.099,
+        "width": 1440,
+        "height": 1080,
+        "playedTo": 0.198619
+      },
+      "photos": [
+        {
+          "url": "https://media.nadesdb.com/media/cb24521b-8a7f-4908-95f5-890a9fd19ef1.webp",
+          "bytes": 322440,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/a7687bd5-e8f4-4c7b-882a-81b9b7dedb04.webp",
+          "bytes": 235240,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/a33a2526-4b5c-48d1-afad-9fba24ad5e74.webp",
+          "bytes": 40474,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.nadesdb.com/media/cb24521b-8a7f-4908-95f5-890a9fd19ef1.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.nadesdb.com/media/a33a2526-4b5c-48d1-afad-9fba24ad5e74.webp"
+      },
+      "sourceMovement": "stationary",
+      "sourceTechnique": "left",
+      "jumpthrow": true,
+      "sourceUpdatedAt": "2026-08-08T16:39:04.583Z",
+      "sourceCategory": "https://app.nadesdb.com/maps/ancient",
+      "crosshairEvidence": "Green reticle centered in the original full-size Aim photo; native crop checked."
+    },
+    {
+      "id": "essential-nadesdb-ancient-3723f545",
+      "guideId": "essential-nadesdb-ancient-3723f545",
+      "provider": "nadesdb",
+      "mapId": "ancient",
+      "levelId": "main",
+      "registrationId": "nadesdb-ancient-main-20261126",
+      "side": "T",
+      "type": "Molotov",
+      "source": "https://app.nadesdb.com/maps/ancient?nade=3723f545-9a5e-49ba-96ab-6ad32889d974",
+      "sourceId": "3723f545-9a5e-49ba-96ab-6ad32889d974",
+      "publisherId": "3723f545-9a5e-49ba-96ab-6ad32889d974",
+      "from": "Elbow",
+      "target": "Heaven",
+      "origin": {
+        "x": 355.33708,
+        "y": 609.55054,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 554.07304,
+        "y": 587.7809,
+        "levels": [
+          1
+        ],
+        "id": "nadesdb:3723f545-9a5e-49ba-96ab-6ad32889d974:target"
+      },
+      "sourceVideo": "https://media.nadesdb.com/media/f478d0ab-9b44-4394-a1c3-f330d59faad4-processed.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-nadesdb-ancient-3723f545-setup.webp",
+        "ms": 2200,
+        "sha256": "5ebc0dc49ae0aa8d863a45fab8904e33221f5a671f9f504ede4491a70d78f632",
+        "bytes": 182652
+      },
+      "video": {
+        "url": "https://media.nadesdb.com/media/f478d0ab-9b44-4394-a1c3-f330d59faad4-processed.mp4",
+        "sourceBytes": 5786072,
+        "http": 200,
+        "duration": 11.456,
+        "width": 1440,
+        "height": 1080,
+        "playedTo": 0.194896
+      },
+      "photos": [
+        {
+          "url": "https://media.nadesdb.com/media/4a950ab7-1c73-4144-8500-6d8a02dd3841.webp",
+          "bytes": 268342,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/49710ab2-d89b-4a57-ab0f-320926efd073.webp",
+          "bytes": 233654,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/c693a88b-27ec-48fe-9fe8-4df208234f3e.webp",
+          "bytes": 346970,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.nadesdb.com/media/4a950ab7-1c73-4144-8500-6d8a02dd3841.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.nadesdb.com/media/c693a88b-27ec-48fe-9fe8-4df208234f3e.webp"
+      },
+      "sourceMovement": "stationary",
+      "sourceTechnique": "left",
+      "jumpthrow": false,
+      "sourceUpdatedAt": "2026-08-08T17:26:32.178Z",
+      "sourceCategory": "https://app.nadesdb.com/maps/ancient",
+      "crosshairEvidence": "Green reticle centered in the original full-size Aim photo; native crop checked."
+    },
+    {
+      "id": "essential-nadesdb-cache-1c91bbe2",
+      "guideId": "essential-nadesdb-cache-1c91bbe2",
+      "provider": "nadesdb",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "nadesdb-cache-main-20261126",
+      "side": "T",
+      "type": "Molotov",
+      "source": "https://app.nadesdb.com/maps/cache?nade=1c91bbe2-7191-46c6-b46c-1cd8b0313782",
+      "sourceId": "1c91bbe2-7191-46c6-b46c-1cd8b0313782",
+      "publisherId": "1c91bbe2-7191-46c6-b46c-1cd8b0313782",
+      "from": "T Truck",
+      "target": "Sandbags",
+      "origin": {
+        "x": 674.1573,
+        "y": 403.08988,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 363.42916,
+        "y": 578.5662,
+        "levels": [
+          1
+        ],
+        "id": "nadesdb:1c91bbe2-7191-46c6-b46c-1cd8b0313782:target"
+      },
+      "sourceVideo": "https://media.nadesdb.com/media/0087b15c-b764-46d0-a3df-10bda9e449de-processed.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-nadesdb-cache-1c91bbe2-setup.webp",
+        "ms": 2200,
+        "sha256": "143ddf17378e3ac33224955cbad6780a04ba8f20ee658235ddf2b333e18d4b08",
+        "bytes": 232538
+      },
+      "video": {
+        "url": "https://media.nadesdb.com/media/0087b15c-b764-46d0-a3df-10bda9e449de-processed.mp4",
+        "sourceBytes": 9055249,
+        "http": 200,
+        "duration": 13.44,
+        "width": 1440,
+        "height": 1080,
+        "playedTo": 0.193757
+      },
+      "photos": [
+        {
+          "url": "https://media.nadesdb.com/media/87f84356-03cf-47e6-bde6-7d60a37ccae8.webp",
+          "bytes": 410226,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/76e17063-7968-497f-b2de-e13691a3f0f1.webp",
+          "bytes": 127042,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/ad99c121-a589-41ae-9408-8955fba8937f.webp",
+          "bytes": 295516,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.nadesdb.com/media/87f84356-03cf-47e6-bde6-7d60a37ccae8.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.nadesdb.com/media/ad99c121-a589-41ae-9408-8955fba8937f.webp"
+      },
+      "sourceMovement": "running",
+      "sourceTechnique": "left",
+      "jumpthrow": true,
+      "sourceUpdatedAt": "2026-08-08T13:29:50.554Z",
+      "sourceCategory": "https://app.nadesdb.com/maps/cache",
+      "crosshairEvidence": "Green reticle centered in the original full-size Aim photo; native crop checked."
+    },
+    {
+      "id": "essential-nadesdb-cache-7d0f7b9c",
+      "guideId": "essential-nadesdb-cache-7d0f7b9c",
+      "provider": "nadesdb",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "nadesdb-cache-main-20261126",
+      "side": "CT",
+      "type": "Molotov",
+      "source": "https://app.nadesdb.com/maps/cache?nade=7d0f7b9c-df79-4e65-a29b-34973dd9a0b7",
+      "sourceId": "7d0f7b9c-df79-4e65-a29b-34973dd9a0b7",
+      "publisherId": "7d0f7b9c-df79-4e65-a29b-34973dd9a0b7",
+      "from": "Window",
+      "target": "Boost",
+      "origin": {
+        "x": 303.37077,
+        "y": 584.26964,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 530.89887,
+        "y": 463.48315,
+        "levels": [
+          1
+        ],
+        "id": "nadesdb:7d0f7b9c-df79-4e65-a29b-34973dd9a0b7:target"
+      },
+      "sourceVideo": "https://media.nadesdb.com/media/351351cf-61c0-4342-9763-35afa9cc8ace-processed.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-nadesdb-cache-7d0f7b9c-setup.webp",
+        "ms": 2200,
+        "sha256": "48f2cabfba1c018a1776871c7f2f252133b379a14094bbf12db79013dc135387",
+        "bytes": 177778
+      },
+      "video": {
+        "url": "https://media.nadesdb.com/media/351351cf-61c0-4342-9763-35afa9cc8ace-processed.mp4",
+        "sourceBytes": 7026968,
+        "http": 200,
+        "duration": 10.533333,
+        "width": 1440,
+        "height": 1080,
+        "playedTo": 0.200128
+      },
+      "photos": [
+        {
+          "url": "https://media.nadesdb.com/media/c7f06b95-5a3e-4002-be57-f83463cda819.webp",
+          "bytes": 266782,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/80f605f2-a559-4fa0-a24c-973a2eb7e939.webp",
+          "bytes": 219382,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/a0fe3974-5b76-4a79-9d78-9b6bb286201b.webp",
+          "bytes": 269856,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.nadesdb.com/media/c7f06b95-5a3e-4002-be57-f83463cda819.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.nadesdb.com/media/a0fe3974-5b76-4a79-9d78-9b6bb286201b.webp"
+      },
+      "sourceMovement": "stationary",
+      "sourceTechnique": "left",
+      "jumpthrow": true,
+      "sourceUpdatedAt": "2026-08-08T12:27:28.487Z",
+      "sourceCategory": "https://app.nadesdb.com/maps/cache",
+      "crosshairEvidence": "Green reticle centered in the original full-size Aim photo; native crop checked."
+    },
+    {
+      "id": "essential-nadesdb-cache-c46f7d8b",
+      "guideId": "essential-nadesdb-cache-c46f7d8b",
+      "provider": "nadesdb",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "nadesdb-cache-main-20261126",
+      "side": "T",
+      "type": "Molotov",
+      "source": "https://app.nadesdb.com/maps/cache?nade=c46f7d8b-3637-4d0c-8126-ce5e7473bdce",
+      "sourceId": "c46f7d8b-3637-4d0c-8126-ce5e7473bdce",
+      "publisherId": "c46f7d8b-3637-4d0c-8126-ce5e7473bdce",
+      "from": "Outside A",
+      "target": "White Box",
+      "origin": {
+        "x": 586.3011,
+        "y": 470.08714,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 356.75234,
+        "y": 489.31637,
+        "levels": [
+          1
+        ],
+        "id": "nadesdb:c46f7d8b-3637-4d0c-8126-ce5e7473bdce:target"
+      },
+      "sourceVideo": "https://media.nadesdb.com/media/4c3d8c43-d80d-48d9-bc26-92c57fbac2cc-processed.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-nadesdb-cache-c46f7d8b-setup.webp",
+        "ms": 3700,
+        "sha256": "b4ee114a0c4d6a9d89df5a29ff41887f123ae25f52939ce5b9f401d631d83907",
+        "bytes": 204830
+      },
+      "video": {
+        "url": "https://media.nadesdb.com/media/4c3d8c43-d80d-48d9-bc26-92c57fbac2cc-processed.mp4",
+        "sourceBytes": 7814349,
+        "http": 200,
+        "duration": 12.001333,
+        "width": 1440,
+        "height": 1080,
+        "playedTo": 0.194698
+      },
+      "photos": [
+        {
+          "url": "https://media.nadesdb.com/media/5f669f0b-bad4-44b1-810f-3ba7f3d449fa.webp",
+          "bytes": 351776,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/49a325ec-8e5a-4185-b5af-5a00954dd7a3.webp",
+          "bytes": 241628,
+          "status": 200
+        },
+        {
+          "url": "https://media.nadesdb.com/media/3944a437-cb61-443e-8cb7-e8175531b678.webp",
+          "bytes": 317714,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.nadesdb.com/media/5f669f0b-bad4-44b1-810f-3ba7f3d449fa.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.nadesdb.com/media/3944a437-cb61-443e-8cb7-e8175531b678.webp"
+      },
+      "sourceMovement": "stationary",
+      "sourceTechnique": "left",
+      "jumpthrow": true,
+      "sourceUpdatedAt": "2026-08-08T12:49:28.306Z",
+      "sourceCategory": "https://app.nadesdb.com/maps/cache",
+      "crosshairEvidence": "Green reticle centered in the original full-size Aim photo; native crop checked."
+    },
+    {
+      "id": "gonade-nuke-top-hut-from-t-spawnroof-molotov",
+      "guideId": "gonade-nuke-top-hut-from-t-spawnroof-molotov",
+      "provider": "gonade",
+      "mapId": "nuke",
+      "levelId": "upper",
+      "registrationId": "gonade-nuke-upper-20261126",
+      "side": "T",
+      "type": "Molotov",
+      "source": "https://gonade.app/nade/nuke-top-hut-from-t-spawnroof-molotov",
+      "sourceId": "3037",
+      "publisherId": "3037",
+      "from": "T Spawn/Roof",
+      "target": "Top Hut",
+      "origin": {
+        "x": 317.81043,
+        "y": 566.99346,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 542.0129,
+        "y": 542.32684,
+        "levels": [
+          1
+        ],
+        "id": "gonade:3037:target"
+      },
+      "sourceVideo": "https://gonade.app/videos/3037.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/gonade-nuke-top-hut-from-t-spawnroof-molotov-setup.webp",
+        "ms": 200,
+        "sha256": "170bf63620c3e0929b28c986ea96c04b7d91867b8e5de03829b8be2238150e7c",
+        "bytes": 261538
+      },
+      "video": {
+        "url": "https://gonade.app/videos/3037.mp4",
+        "sourceBytes": 14159882,
+        "http": 200,
+        "duration": 9.925,
+        "width": 1920,
+        "height": 1080,
+        "playedTo": 0.133073
+      },
+      "photos": [
+        {
+          "url": "https://gonade.app/images/maps/webp/3037/lineup0.webp?v=1784807956",
+          "bytes": 356844,
+          "status": 200
+        },
+        {
+          "url": "https://gonade.app/images/maps/webp/3037/lineup1.webp?v=1784807956",
+          "bytes": 333866,
+          "status": 200
+        },
+        {
+          "url": "https://gonade.app/images/maps/webp/3037/result.webp?v=1784807956",
+          "bytes": 367292,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://gonade.app/images/maps/webp/3037/lineup0.webp?v=1784807956",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://gonade.app/images/maps/webp/3037/result.webp?v=1784807956"
+      },
+      "sourceMovement": "Run + Jump",
+      "sourceTechnique": "Left",
+      "sourceFloor": "Upper original GO NADE radar, is_lower=0. Recording follows the outdoor T-side approach and then the ladder to the roof of upper A.",
+      "crosshairEvidence": "Original full-size lineup0 baked-in red crosshair centered in both axes."
+    },
+    {
+      "id": "essential-gonade-vertigo-deep-t-mid-he",
+      "guideId": "essential-gonade-vertigo-deep-t-mid-he",
+      "provider": "gonade",
+      "mapId": "vertigo",
+      "levelId": "upper",
+      "registrationId": "gonade-vertigo-upper-20261126",
+      "side": "T",
+      "type": "HE",
+      "source": "https://gonade.app/nade/vertigo-mid-from-deep-t-mid-he",
+      "sourceId": "4015",
+      "publisherId": "4015",
+      "from": "Deep T Mid",
+      "target": "Mid",
+      "origin": {
+        "x": 301.01567,
+        "y": 573.4072,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 324.09972,
+        "y": 427.51614,
+        "levels": [
+          1
+        ],
+        "id": "gonade:4015:target"
+      },
+      "sourceVideo": "https://gonade.app/videos/4015.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-gonade-vertigo-deep-t-mid-he-setup.webp",
+        "ms": 200,
+        "sha256": "91c8295d90b94a12fa3f75554142515900326fd3b9d16ad55c7658360de0a643",
+        "bytes": 151110
+      },
+      "video": {
+        "url": "https://gonade.app/videos/4015.mp4",
+        "sourceBytes": 6714776,
+        "http": 200,
+        "duration": 4.586667,
+        "width": 1920,
+        "height": 1080,
+        "playedTo": 0.21004
+      },
+      "photos": [
+        {
+          "url": "https://gonade.app/images/maps/webp/4015/lineup0.webp?v=1784807962",
+          "bytes": 228106,
+          "status": 200
+        },
+        {
+          "url": "https://gonade.app/images/maps/webp/4015/result.webp?v=1784807962",
+          "bytes": 349276,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://gonade.app/images/maps/webp/4015/lineup0.webp?v=1784807962",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://gonade.app/images/maps/webp/4015/result.webp?v=1784807962"
+      },
+      "sourceMovement": "Run + Jump",
+      "sourceTechnique": "Left",
+      "sourceFloor": "Upper original GO NADE radar, is_lower=0. Recording follows the interior Mid stairs up to the open upper Mid floor.",
+      "crosshairEvidence": "Original full-size lineup0 baked-in red crosshair centered in both axes."
+    },
+    {
+      "id": "essential-setpos-cache-167",
+      "guideId": "essential-setpos-cache-167",
+      "provider": "setpos",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "setpos-cache-main-20261124",
+      "side": "CT",
+      "type": "Molotov",
+      "source": "https://setpos.gg/cache/heaven/ct2-molotov",
+      "sourceId": "167",
+      "publisherId": "167",
+      "from": "CT Spawn 2",
+      "target": "Heaven",
+      "origin": {
+        "x": 90.85881,
+        "y": 451.55907,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 275.10764,
+        "y": 678.08949,
+        "levels": [
+          1
+        ],
+        "id": "setpos:135"
+      },
+      "sourceVideo": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/video-sd-2100d51c49c8ea7cc0bbe1efc1408a6b807d71359fd7f80821b7c903251d8a07.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-setpos-cache-167-setup.webp",
+        "ms": 200,
+        "sha256": "f7afd6cdb1d24051d111740b981c2b9b85db01f19b3cd8667a5702ffb925ead3",
+        "bytes": 125004
+      },
+      "video": {
+        "url": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/video-sd-2100d51c49c8ea7cc0bbe1efc1408a6b807d71359fd7f80821b7c903251d8a07.mp4",
+        "sourceBytes": 9686340,
+        "http": 200,
+        "duration": 22.566667,
+        "width": 1280,
+        "height": 720,
+        "playedTo": 0.2433
+      },
+      "photos": [
+        {
+          "url": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/display-aim-aim-6a4f95635a1f91a185209eefc83a00370a217fda25c87a60f10e7dacf2e28ea4.webp",
+          "bytes": 185756,
+          "status": 200
+        },
+        {
+          "url": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/display-pre-gesture-release-0c897342b9359abf8574db469c59f5ce2ca6c8198d35bbc2bcc16c3cb970eb0c.webp",
+          "bytes": 178546,
+          "status": 200
+        },
+        {
+          "url": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/landing-0cfbcffeeaf49d020dcdb53dc6e1f12d5adf10496cbdeb61fd2cbf6c4a870341.webp",
+          "bytes": 76592,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/display-aim-aim-6a4f95635a1f91a185209eefc83a00370a217fda25c87a60f10e7dacf2e28ea4.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.setpos.gg/renders/a5f02398-c860-4cc9-a88f-4adad99dbe6b/c2a94505-efe9-4440-a12d-25c6145b0220/landing-0cfbcffeeaf49d020dcdb53dc6e1f12d5adf10496cbdeb61fd2cbf6c4a870341.webp"
+      },
+      "spawn": {
+        "family": "setpos-cache-ct-molotov-heaven",
+        "slot": 2,
+        "total": 5,
+        "label": "CT Spawn 2 · setpos.gg"
+      },
+      "sourceOriginWorld": {
+        "x": -1488.283203125,
+        "y": 706.8193359375
+      },
+      "sourceImpactWorld": {
+        "x": -451.1875,
+        "y": -543.34375,
+        "z": 2390
+      },
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "tick": 62056,
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.203,
+          "tick": 62069,
+          "inputs": []
+        },
+        {
+          "type": "input-change",
+          "t": 0.203,
+          "tick": 62069,
+          "inputs": [
+            "d"
+          ]
+        },
+        {
+          "type": "throw",
+          "t": 2.449,
+          "tick": 62212,
+          "inputs": [
+            "d",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 2.449,
+              "kind": "jump",
+              "tick": 62212,
+              "inputs": [
+                "d",
+                "jump"
+              ],
+              "fraction": 0.75,
+              "description": "Jump.",
+              "command_number": 120281
+            },
+            {
+              "t": 2.464,
+              "kind": "mouse-release",
+              "tick": 62213,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.71875,
+              "description": "Release left mouse button.",
+              "command_number": 120282
+            },
+            {
+              "t": 2.565,
+              "kind": "movement",
+              "tick": 62220,
+              "inputs": [
+                "d"
+              ],
+              "fraction": 0.171875,
+              "description": "Release JUMP.",
+              "command_number": 120289
+            }
+          ]
+        }
+      ],
+      "registrationBasis": "Existing Cache setpos.gg radar registration and author map calibration.",
+      "calibration": {
+        "posX": -2000,
+        "posY": 3250,
+        "scale": 5.5,
+        "radarSize": 1024
+      },
+      "proReference": {
+        "player": "puuha",
+        "round": 10,
+        "event": "Urban Riga Open Season 7",
+        "eventId": "9339",
+        "eventLogo": null
+      },
+      "destinationId": "setpos:135",
+      "crosshairEvidence": "Published aim-aim view uses source center crosshair overlay. Source aim tick 62056."
+    },
+    {
+      "id": "essential-setpos-cache-135",
+      "guideId": "essential-setpos-cache-135",
+      "provider": "setpos",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "setpos-cache-main-20261124",
+      "side": "CT",
+      "type": "Molotov",
+      "source": "https://setpos.gg/cache/heaven/ct5-molotov",
+      "sourceId": "135",
+      "publisherId": "135",
+      "from": "CT Spawn 5",
+      "target": "Heaven",
+      "origin": {
+        "x": 90.85881,
+        "y": 421.72952,
+        "levels": [
+          1
+        ]
+      },
+      "destination": {
+        "x": 275.10764,
+        "y": 678.08949,
+        "levels": [
+          1
+        ],
+        "id": "setpos:135"
+      },
+      "sourceVideo": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/video-sd-8cae8b3d13b2df6e48b0d32bbd2bbbc0e3663502de41af9bd2ef0c0a0afea4c1.mp4",
+      "setup": {
+        "image": "/lineup-media/essential-nvca/essential-setpos-cache-135-setup.webp",
+        "ms": 200,
+        "sha256": "fb226eee6f7649b9918f533594a7c020b5073b101e2eb47da0dfaeb478bcd16f",
+        "bytes": 128414
+      },
+      "video": {
+        "url": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/video-sd-8cae8b3d13b2df6e48b0d32bbd2bbbc0e3663502de41af9bd2ef0c0a0afea4c1.mp4",
+        "sourceBytes": 10055097,
+        "http": 200,
+        "duration": 24.033333,
+        "width": 1280,
+        "height": 720,
+        "playedTo": 0.2472
+      },
+      "photos": [
+        {
+          "url": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/display-aim-aim-03f9858a7ebff1bc84efbaa7765c1c62e8cb7637911ed15b7162727946824811.webp",
+          "bytes": 191624,
+          "status": 200
+        },
+        {
+          "url": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/display-pre-gesture-release-deb54f38d3ab6a33f6496fee0dfa225665bacf9cd6830bddcf3a6a431a4528c2.webp",
+          "bytes": 173048,
+          "status": 200
+        },
+        {
+          "url": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/landing-835c08a52f13d68ed73b9ca1657b4abec29205144e0eb630049c0b277b07dfe9.webp",
+          "bytes": 69204,
+          "status": 200
+        }
+      ],
+      "aim": {
+        "image": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/display-aim-aim-03f9858a7ebff1bc84efbaa7765c1c62e8cb7637911ed15b7162727946824811.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://media.setpos.gg/renders/271d1418-bab0-497a-b0a1-ccc36b861610/7a6380bb-52de-4ff0-840e-254b1aa6b46c/landing-835c08a52f13d68ed73b9ca1657b4abec29205144e0eb630049c0b277b07dfe9.webp"
+      },
+      "spawn": {
+        "family": "setpos-cache-ct-molotov-heaven",
+        "slot": 5,
+        "total": 5,
+        "label": "CT Spawn 5 · setpos.gg"
+      },
+      "sourceOriginWorld": {
+        "x": -1488.283203125,
+        "y": 874.8193359375
+      },
+      "sourceImpactWorld": {
+        "x": -450,
+        "y": -594.65625,
+        "z": 2390
+      },
+      "sourceSteps": [
+        {
+          "type": "start",
+          "t": 0,
+          "tick": 122574,
+          "inputs": []
+        },
+        {
+          "type": "aim",
+          "t": 0.203,
+          "tick": 122587,
+          "inputs": []
+        },
+        {
+          "type": "input-change",
+          "t": 0.203,
+          "tick": 122587,
+          "inputs": [
+            "d"
+          ]
+        },
+        {
+          "type": "throw",
+          "t": 3.391,
+          "tick": 122791,
+          "inputs": [
+            "d",
+            "jump"
+          ],
+          "actions": [
+            {
+              "t": 3.391,
+              "kind": "jump",
+              "tick": 122791,
+              "inputs": [
+                "d",
+                "jump"
+              ],
+              "fraction": 0.03125,
+              "description": "Jump.",
+              "command_number": 137311
+            },
+            {
+              "t": 3.415,
+              "kind": "mouse-release",
+              "tick": 122792,
+              "button": "left",
+              "inputs": null,
+              "fraction": 0.53125,
+              "description": "Release left mouse button.",
+              "command_number": 137312
+            },
+            {
+              "t": 3.453,
+              "kind": "movement",
+              "tick": 122795,
+              "inputs": [
+                "d"
+              ],
+              "fraction": 0,
+              "description": "Release JUMP.",
+              "command_number": 137315
+            }
+          ]
+        }
+      ],
+      "registrationBasis": "Existing Cache setpos.gg radar registration and author map calibration.",
+      "calibration": {
+        "posX": -2000,
+        "posY": 3250,
+        "scale": 5.5,
+        "radarSize": 1024
+      },
+      "proReference": {
+        "player": "puuha",
+        "round": 17,
+        "event": "Stake Pulse Beat II",
+        "eventId": "9222",
+        "eventLogo": null
+      },
+      "destinationId": "setpos:135",
+      "crosshairEvidence": "Published aim-aim view uses source center crosshair overlay. Source aim tick 122574."
+    },
+    {
+      "guideId": "expanded-cs2tricks-ancient-lane-from-short-4528-ct",
+      "id": "expanded-cs2tricks-ancient-lane-from-short-4528-ct",
+      "source": "https://www.cs2tricks.com/nades/ancient/molotovs/lane-from-short-4528",
+      "provider": "cs2tricks",
+      "sourceId": "19fa75c0-b149-415d-bfe4-50072b616425",
+      "publisherId": "19fa75c0-b149-415d-bfe4-50072b616425",
+      "mapId": "ancient",
+      "levelId": "main",
+      "registrationId": "cs2tricks-ancient-main-20261109",
+      "side": "CT",
+      "type": "Molotov",
+      "from": "Short",
+      "target": "Lane",
+      "origin": {
+        "id": "19fa75c0-b149-415d-bfe4-50072b616425",
+        "x": 758,
+        "y": 250,
+        "sourceTeam": "counter_terrorist",
+        "levels": [
+          1
+        ]
+      },
+      "originLevelId": "main",
+      "destination": {
+        "id": "52ec11b3-3898-40fb-9221-890e7e014360",
+        "x": 747,
+        "y": 601,
+        "levels": [
+          1
+        ]
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "Run + Left click",
+      "setup": {
+        "image": "/lineup-media/first-person/cs2tricks/ancient/lane-from-short-4528.webp",
+        "ms": 1400
+      },
+      "sourceVideo": "https://www.youtube.com/watch?v=9ClZ1BI2xTQ",
+      "aim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/b096e865-78fd-45e8-8115-7ced6f3e67c0.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/0f79f414-b4fc-48b7-92ae-9144550539cf.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    },
+    {
+      "guideId": "expanded-cs2tricks-cache-new-boxes-from-sun-room-0842-t",
+      "id": "expanded-cs2tricks-cache-new-boxes-from-sun-room-0842-t",
+      "source": "https://www.cs2tricks.com/nades/cache/grenades/new-boxes-from-sun-room-0842",
+      "provider": "cs2tricks",
+      "sourceId": "b93229b1-b499-444c-b13a-c85b73ab784a",
+      "publisherId": "b93229b1-b499-444c-b13a-c85b73ab784a",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "cs2tricks-cache-main-20261109",
+      "side": "T",
+      "type": "HE",
+      "from": "Sun Room",
+      "target": "New Boxes",
+      "origin": {
+        "id": "b93229b1-b499-444c-b13a-c85b73ab784a",
+        "x": 452,
+        "y": 840,
+        "sourceTeam": "terrorist",
+        "levels": [
+          1
+        ]
+      },
+      "originLevelId": "main",
+      "destination": {
+        "id": "b5aa7e4c-e7e4-4d2e-9921-918b0081e152",
+        "x": 389,
+        "y": 809,
+        "levels": [
+          1
+        ]
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "Jump + LMB",
+      "setup": {
+        "image": "/lineup-media/first-person/cs2tricks/cache/new-boxes-from-sun-room-0842.webp",
+        "ms": 3300
+      },
+      "sourceVideo": "https://www.youtube.com/watch?v=LwXKYXWsQl4",
+      "aim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/ac72a34b-5d8b-45ad-ab77-564c5b0df66e.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/3bbdc4f3-9e11-4937-a785-b9fb9356efeb.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    },
+    {
+      "guideId": "expanded-cs2tricks-cache-a-main-from-a-main-3c77-t",
+      "id": "expanded-cs2tricks-cache-a-main-from-a-main-3c77-t",
+      "source": "https://www.cs2tricks.com/nades/cache/grenades/a-main-from-a-main-3c77",
+      "provider": "cs2tricks",
+      "sourceId": "e5b41c9a-93ca-492c-9f65-0c8d3d917a29",
+      "publisherId": "e5b41c9a-93ca-492c-9f65-0c8d3d917a29",
+      "mapId": "cache",
+      "levelId": "main",
+      "registrationId": "cs2tricks-cache-main-20261109",
+      "side": "T",
+      "type": "HE",
+      "from": "A Main",
+      "target": "A Main",
+      "origin": {
+        "id": "e5b41c9a-93ca-492c-9f65-0c8d3d917a29",
+        "x": 500,
+        "y": 338,
+        "sourceTeam": "terrorist",
+        "levels": [
+          1
+        ]
+      },
+      "originLevelId": "main",
+      "destination": {
+        "id": "3083a9b7-48cc-4345-8af5-a02df3b98e95",
+        "x": 452,
+        "y": 249,
+        "levels": [
+          1
+        ]
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "Both buttons (LMB + RMB)",
+      "setup": {
+        "image": "/lineup-media/first-person/cs2tricks/cache/a-main-from-a-main-3c77.webp",
+        "ms": 2317
+      },
+      "sourceVideo": "https://d1ntlvfrxziqo6.cloudfront.net/496c8943-988f-4d28-9a47-035749e46edf_CounterStrike_2_2026.04.3014.40_1.mp4",
+      "aim": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/b6dab964-38b9-4087-a16e-e105fa88b9e2.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/8f9e00ef-b501-407f-ad02-1dd13eade7e1.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    },
+    {
+      "guideId": "expanded-csnades-nuke-he-trophy-from-ramp-a",
+      "id": "expanded-csnades-nuke-he-trophy-from-ramp-a",
+      "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-a",
+      "provider": "csnades",
+      "sourceId": "nade_057f428bf738",
+      "publisherId": "nade_057f428bf738",
+      "mapId": "nuke",
+      "levelId": "upper",
+      "registrationId": "csnades-nuke-upper-20261109",
+      "side": "CT",
+      "type": "HE",
+      "from": "Ramp",
+      "target": "Trophy",
+      "origin": {
+        "x": 576,
+        "y": 292,
+        "levels": [
+          1
+        ]
+      },
+      "originLevelId": "upper",
+      "destination": {
+        "x": 490,
+        "y": 375,
+        "levels": [
+          1
+        ],
+        "id": "nade_057f428bf738:target"
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "Run + LMB",
+      "setup": {
+        "image": "/lineup-media/guide-stages/csnades/nuke/hegrenades/trophy-from-ramp-a-setup.webp",
+        "ms": 3417
+      },
+      "sourceVideo": "https://assets.csnades.gg/nades/nuke-he-epK6U2SmEl/hq.mp4",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/nuke-he-epK6U2SmEl/lineup.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://assets.csnades.gg/nades/nuke-he-epK6U2SmEl/thumbnail.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    },
+    {
+      "guideId": "expanded-csnades-nuke-he-trophy-from-ramp-b",
+      "id": "expanded-csnades-nuke-he-trophy-from-ramp-b",
+      "source": "https://csnades.gg/nuke/hegrenades/trophy-from-ramp-b",
+      "provider": "csnades",
+      "sourceId": "nade_f5cf2ebba98a",
+      "publisherId": "nade_f5cf2ebba98a",
+      "mapId": "nuke",
+      "levelId": "upper",
+      "registrationId": "csnades-nuke-upper-20261109",
+      "side": "CT",
+      "type": "HE",
+      "from": "Ramp",
+      "target": "Trophy",
+      "origin": {
+        "x": 557,
+        "y": 117,
+        "levels": [
+          null
+        ]
+      },
+      "originLevelId": "upper",
+      "destination": {
+        "x": 490,
+        "y": 375,
+        "levels": [
+          null
+        ],
+        "id": "nade_f5cf2ebba98a:target"
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "Walk + LMB",
+      "setup": {
+        "image": "/lineup-media/guide-stages/csnades/nuke/hegrenades/trophy-from-ramp-b-setup.webp",
+        "ms": 3283
+      },
+      "sourceVideo": "https://assets.csnades.gg/nades/nuke-he-PRtJ6ciQkq/hq.mp4",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/nuke-he-PRtJ6ciQkq/lineup.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "https://assets.csnades.gg/nades/nuke-he-PRtJ6ciQkq/thumbnail.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    },
+    {
+      "guideId": "expanded-csnades-vertigo-molotov-default-b-from-connector",
+      "id": "expanded-csnades-vertigo-molotov-default-b-from-connector",
+      "source": "https://csnades.gg/vertigo/molotovs/default-b-from-connector",
+      "provider": "csnades",
+      "sourceId": "nade_0eb8a93dfcd2",
+      "publisherId": "nade_0eb8a93dfcd2",
+      "mapId": "vertigo",
+      "levelId": "upper",
+      "registrationId": "csnades-vertigo-upper-20261109",
+      "side": "CT",
+      "type": "Molotov",
+      "from": "Connector",
+      "target": "Default B",
+      "origin": {
+        "x": 483,
+        "y": 234,
+        "levels": [
+          1
+        ]
+      },
+      "originLevelId": "upper",
+      "destination": {
+        "x": 162,
+        "y": 145,
+        "levels": [
+          1
+        ],
+        "id": "nade_0eb8a93dfcd2:target"
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "LMB",
+      "setup": {
+        "image": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-connector-setup.webp",
+        "ms": 1417
+      },
+      "sourceVideo": "https://assets.csnades.gg/nades/vertigo-molotov-5BeVdjmj4Q/hq.mp4",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/vertigo-molotov-5BeVdjmj4Q/lineup.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "/lineup-media/guide-stages/csnades/vertigo/molotovs/default-b-from-connector-landing.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    },
+    {
+      "guideId": "expanded-csnades-vertigo-molotov-sidewalk-from-ladder",
+      "id": "expanded-csnades-vertigo-molotov-sidewalk-from-ladder",
+      "source": "https://csnades.gg/vertigo/molotovs/sidewalk-from-ladder",
+      "provider": "csnades",
+      "sourceId": "nade_54d35aaf7c6c",
+      "publisherId": "nade_54d35aaf7c6c",
+      "mapId": "vertigo",
+      "levelId": "upper",
+      "registrationId": "csnades-vertigo-upper-20261109",
+      "side": "T",
+      "type": "Molotov",
+      "from": "Ladder",
+      "target": "Sidewalk",
+      "origin": {
+        "x": 544,
+        "y": 668,
+        "levels": [
+          1
+        ]
+      },
+      "originLevelId": "upper",
+      "destination": {
+        "x": 608,
+        "y": 800,
+        "levels": [
+          1
+        ],
+        "id": "nade_54d35aaf7c6c:target"
+      },
+      "reuseExistingOrigin": true,
+      "sourceTechnique": "Crouch + Jump + LMB",
+      "setup": {
+        "image": "/lineup-media/guide-stages/csnades/vertigo/molotovs/sidewalk-from-ladder-setup.webp",
+        "ms": 8217
+      },
+      "sourceVideo": "https://assets.csnades.gg/nades/vertigo-molotov-FaEdGwC7yV/hq.mp4",
+      "aim": {
+        "image": "https://assets.csnades.gg/nades/vertigo-molotov-FaEdGwC7yV/lineup.webp",
+        "point": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      "landing": {
+        "image": "/lineup-media/guide-stages/csnades/vertigo/molotovs/sidewalk-from-ladder-landing.webp"
+      },
+      "review": "Same-source original standing and aim images inspected with the creator description or on-screen instructions. Existing source ID and gallery retained."
+    }
+  ]
+}

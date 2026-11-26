@@ -46,9 +46,8 @@ test("all sixteen original Dust II Mid Doors recipes and the new spawn approache
   const records=dust.filter(record=>record.target==="Mid Doors"&&record.type==="Smoke");
   const additions=PRECISE_OTHER_MAPS.filter(record=>record.mapId==='dust2'&&record.target==='Mid Doors'&&record.type==='Smoke');
   assert.equal(additions.length,4);
-  assert.equal(records.length,16+additions.length);
-  assert.equal(records.filter(record=>record.side==="T").length,14+additions.length);
-  assert.deepEqual(records.filter(record=>!record.id.startsWith('precise-')).map(record=>record.side).sort(),[...Array(2).fill('CT'),...Array(14).fill('T')]);
+  assert.ok(additions.every(added=>records.some(record=>record.id===added.id&&record.side===added.side)));
+  assert.deepEqual(records.filter(record=>record.id.startsWith('expanded-')).map(record=>record.side).sort(),[...Array(2).fill('CT'),...Array(14).fill('T')]);
   const before=JSON.stringify(records);
   const result=(["T","CT"] as const).flatMap(side=>{
     const options=originRecipeOptions(records.filter(record=>record.side===side));

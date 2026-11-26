@@ -1,0 +1,48 @@
+[
+  {
+    "id": "csnades-mirage-main-20261126",
+    "provider": "csnades",
+    "mapId": "mirage",
+    "levelId": "main",
+    "artwork": "/maps/mirage.svg",
+    "sourceImage": "https://assets.csnades.gg/mirage_game_radar_dfb164f478.webp",
+    "sourceImageWidth": 1374,
+    "sourceImageHeight": 1196,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "sourceImageSha256": "91294b8d9b963c898cca18c774e4965b6fbe95244d2630e6e087c919433e348f",
+    "artworkSha256": "296afd4af266486cf19a81201f38d45091b5e6911a95be1a87330d6bd7ba8046",
+    "transform": {
+      "scaleX": 0.8392245989304812,
+      "scaleY": 0.73067793715847,
+      "translateX": 91.48919688614082,
+      "translateY": 131.97290528233154
+    },
+    "checkedAt": "2026-11-26",
+    "evidence": "Registered the original radar extent against the display SVG. Whole-radar intersection over union was 0.948 at 192 px. Checked site boxes, connectors, spawn outlines and perimeter on the overlay. Published landing pins identify an area.",
+    "reviewImage": "docs/map-registration-publisher/essential-csnades-mirage.png"
+  },
+  {
+    "id": "csnades-inferno-main-20261126",
+    "provider": "csnades",
+    "mapId": "inferno",
+    "levelId": "main",
+    "artwork": "/maps/inferno.svg",
+    "sourceImage": "https://assets.csnades.gg/inferno_game_radar_bbecda6217.webp",
+    "sourceImageWidth": 1500,
+    "sourceImageHeight": 1491,
+    "logicalWidth": 1000,
+    "logicalHeight": 1000,
+    "sourceImageSha256": "c954f27d3f7d01afc5bb98ceb28a570438af5014ccb56dcb273e57f51899cb26",
+    "artworkSha256": "19c6def41e9ccc8bf1f8eb1af9ceab10c8839a2f29c88457ff295db6aa1c78d3",
+    "transform": {
+      "scaleX": 0.9162907608695652,
+      "scaleY": 0.9028328804347826,
+      "translateX": 48.41060914855072,
+      "translateY": 35.67991394927536
+    },
+    "checkedAt": "2026-11-26",
+    "evidence": "Registered the original radar extent against the display SVG. Whole-radar intersection over union was 0.923 at 192 px. Checked site boxes, connectors, spawn outlines and perimeter on the overlay. Published landing pins identify an area.",
+    "reviewImage": "docs/map-registration-publisher/essential-csnades-inferno.png"
+  }
+]

@@ -1,0 +1,538 @@
+{
+  "checkedAt": "2026-11-26",
+  "radar": {
+    "page": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/main/data/radar_info/de_vertigo.txt",
+    "radar": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/main/images/radars/de_vertigo_radar_psd.png",
+    "sourceRadarSha256": "3cfa3f044ed5883098e78ab63939a3c9e39fc2c0c2100e59acf4e2c3fa09df43",
+    "artwork": "/maps/de_vertigo_radar_psd.png",
+    "artworkSha256": "3cfa3f044ed5883098e78ab63939a3c9e39fc2c0c2100e59acf4e2c3fa09df43",
+    "levelId": "upper",
+    "posX": -3168,
+    "posY": 1762,
+    "scale": 4,
+    "radarSize": 1024
+  },
+  "video": {
+    "canonical": "https://www.youtube.com/watch?v=HGhSBNdWJEs",
+    "title": "NEW Vertigo Fast A Ramp Smokes - CS2",
+    "creator": "viri",
+    "date": "2024-05-25T22:19:54-07:00",
+    "durationSeconds": 148,
+    "playability": "OK"
+  },
+  "secondaryCreatorPost": "https://www.reddit.com/r/GlobalOffensive/comments/1d0ief5/with_iem_dallas_using_the_new_vertigo_here_are/",
+  "method": "The exact YouTube video was played in Edge. Original frames acquired from each chapter were inspected for the numbered spawn, standing view, marked ceiling alignment, run-up and resulting smoke. Each numbered pose matches an independently published spawn XY within 1.5 world units. The game was not run.",
+  "galleryCredits": "Source stills from viri’s original clip with attribution to the creator. YouTube hosts the video.",
+  "records": [
+    {
+      "id": "instant-viri-vertigo-ramp-ct1",
+      "guideId": "instant-viri-vertigo-ramp-ct1",
+      "mapId": "vertigo",
+      "levelId": "lower",
+      "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=3",
+      "provider": "viri",
+      "sourceId": "HGhSBNdWJEs:ct1",
+      "spawn": {
+        "family": "viri-vertigo-ct-a-ramp",
+        "slot": 1,
+        "total": 5,
+        "label": "CT Spawn 1 · viri"
+      },
+      "sourceMethod": "Original creator’s numbered world pose in the YouTube description, independently matched by XY against the current decoded Vertigo spawn listing. Upper world-to-radar calibration is from the matching published Valve radar image.",
+      "origin": {
+        "x": 563.43,
+        "y": 200.62,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 1",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct1"
+      },
+      "sourceOriginWorld": {
+        "x": -860.197205,
+        "y": 940.249817,
+        "z": 11839.871094
+      },
+      "world": {
+        "x": -860.197205,
+        "y": 940.249817,
+        "z": 11839.871094
+      },
+      "sourceAngles": {
+        "pitch": -26.284283,
+        "yaw": -84.137077,
+        "roll": 0
+      },
+      "sourceCommand": "setpos -860.197205 940.249817 11839.871094;setang -26.284283 -84.137077 0.000000",
+      "independentSource": "https://nadesdb.com/vertigo/spawns/",
+      "independentSlot": 5,
+      "independentXY": [
+        -860.1,
+        940.3
+      ],
+      "distanceXY": 0.109,
+      "targetMatch": {
+        "existingGuideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+        "target": "A Ramp",
+        "areaId": "vertigo:lower:named:a ramp"
+      },
+      "chapterSeconds": 3,
+      "chapterEndSeconds": 32,
+      "setup": {
+        "image": "/lineup-media/instant-spawns/vertigo/ct1-stand.webp",
+        "ms": 4400
+      },
+      "mediaChecks": {
+        "position": {
+          "image": "/lineup-media/instant-spawns/vertigo/numbered-spawns.webp",
+          "ms": 2400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "eee7dc47c636944d3af203cfbf9adc10c1eb9a3c69fd1f7e87f0e8364a75c8a3"
+        },
+        "setup": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct1-stand.webp",
+          "ms": 4400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "fdbb40221cd5ddaae437083c5d91c91cf5a5fa8380a47f24ec19a595d25b83a7"
+        },
+        "aim": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct1-aim.webp",
+          "ms": 6400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "ef3e8eb95f4ac28453bf3abaecc7eca3576bcde86b2f22395989dd95c9c24da1"
+        },
+        "release": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct1-run.webp",
+          "ms": 18400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "ccbc04150f4c146d4befab4bba494eda0a895d2ec388e8d88b37d0d5693fa3b9"
+        },
+        "landing": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct1-landing.webp",
+          "ms": 30400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "db81bec24c2665e6aa6778f97f97ab8a71063cd4cfc78e9862dbe3afbf01caa1"
+        }
+      },
+      "releaseCue": "Run against the wall and use a running left-click throw before the far edge of the last ceiling tile. The annotated release is shown in the first chapter and repeated from each named spawn.",
+      "sourceAim": "Center on the triangular opening between the red support and the ceiling beam."
+    },
+    {
+      "id": "instant-viri-vertigo-ramp-ct2",
+      "guideId": "instant-viri-vertigo-ramp-ct2",
+      "mapId": "vertigo",
+      "levelId": "lower",
+      "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=32",
+      "provider": "viri",
+      "sourceId": "HGhSBNdWJEs:ct2",
+      "spawn": {
+        "family": "viri-vertigo-ct-a-ramp",
+        "slot": 2,
+        "total": 5,
+        "label": "CT Spawn 2 · viri"
+      },
+      "sourceMethod": "Original creator’s numbered world pose in the YouTube description, independently matched by XY against the current decoded Vertigo spawn listing. Upper world-to-radar calibration is from the matching published Valve radar image.",
+      "origin": {
+        "x": 546.47,
+        "y": 205.91,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 2",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct2"
+      },
+      "sourceOriginWorld": {
+        "x": -929.663635,
+        "y": 918.584778,
+        "z": 11839.871094
+      },
+      "world": {
+        "x": -929.663635,
+        "y": 918.584778,
+        "z": 11839.871094
+      },
+      "sourceAngles": {
+        "pitch": -25.907993,
+        "yaw": -84.304199,
+        "roll": 0
+      },
+      "sourceCommand": "setpos -929.663635 918.584778 11839.871094;setang -25.907993 -84.304199 0.000000",
+      "independentSource": "https://nadesdb.com/vertigo/spawns/",
+      "independentSlot": 4,
+      "independentXY": [
+        -929.6,
+        918.6
+      ],
+      "distanceXY": 0.065,
+      "targetMatch": {
+        "existingGuideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+        "target": "A Ramp",
+        "areaId": "vertigo:lower:named:a ramp"
+      },
+      "chapterSeconds": 32,
+      "chapterEndSeconds": 61,
+      "setup": {
+        "image": "/lineup-media/instant-spawns/vertigo/ct2-stand.webp",
+        "ms": 34400
+      },
+      "mediaChecks": {
+        "position": {
+          "image": "/lineup-media/instant-spawns/vertigo/numbered-spawns.webp",
+          "ms": 2400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "eee7dc47c636944d3af203cfbf9adc10c1eb9a3c69fd1f7e87f0e8364a75c8a3"
+        },
+        "setup": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct2-stand.webp",
+          "ms": 34400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "1a575c6b2d1f609de53295c57fcb52e236caf72ba48ea7452f69f7afca09f610"
+        },
+        "aim": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct2-aim.webp",
+          "ms": 40400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "0f4b5d23b959dd4ac4534e564dad1d89525400ce10db3afaad6bd71361004767"
+        },
+        "release": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct2-run.webp",
+          "ms": 48400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "ce9f77e73f2eb97a2329f3943ff35e1a760159e9e79eb1d33baa845c205bba45"
+        },
+        "landing": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct2-landing.webp",
+          "ms": 56400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "7e4a209f74975a78cf1f211929d4cda9e97ac811f4dfee7f1232b98e56234a92"
+        }
+      },
+      "releaseCue": "Run against the wall and use a running left-click throw before the far edge of the last ceiling tile. The annotated release is shown in the first chapter and repeated from each named spawn.",
+      "sourceAim": "Follow the ladder and vertical support upward. Aim at the beam corner marked in the close-up."
+    },
+    {
+      "id": "instant-viri-vertigo-ramp-ct3",
+      "guideId": "instant-viri-vertigo-ramp-ct3",
+      "mapId": "vertigo",
+      "levelId": "lower",
+      "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=61",
+      "provider": "viri",
+      "sourceId": "HGhSBNdWJEs:ct3",
+      "spawn": {
+        "family": "viri-vertigo-ct-a-ramp",
+        "slot": 3,
+        "total": 5,
+        "label": "CT Spawn 3 · viri"
+      },
+      "sourceMethod": "Original creator’s numbered world pose in the YouTube description, independently matched by XY against the current decoded Vertigo spawn listing. Upper world-to-radar calibration is from the matching published Valve radar image.",
+      "origin": {
+        "x": 518.53,
+        "y": 204.5,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 3",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct3"
+      },
+      "sourceOriginWorld": {
+        "x": -1044.098267,
+        "y": 924.356873,
+        "z": 11839.871094
+      },
+      "world": {
+        "x": -1044.098267,
+        "y": 924.356873,
+        "z": 11839.871094
+      },
+      "sourceAngles": {
+        "pitch": -25.531712,
+        "yaw": -84.011597,
+        "roll": 0
+      },
+      "sourceCommand": "setpos -1044.098267 924.356873 11839.871094;setang -25.531712 -84.011597 0.000000",
+      "independentSource": "https://nadesdb.com/vertigo/spawns/",
+      "independentSlot": 3,
+      "independentXY": [
+        -1044,
+        924.3
+      ],
+      "distanceXY": 0.114,
+      "targetMatch": {
+        "existingGuideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+        "target": "A Ramp",
+        "areaId": "vertigo:lower:named:a ramp"
+      },
+      "chapterSeconds": 61,
+      "chapterEndSeconds": 93,
+      "setup": {
+        "image": "/lineup-media/instant-spawns/vertigo/ct3-stand.webp",
+        "ms": 64457
+      },
+      "mediaChecks": {
+        "position": {
+          "image": "/lineup-media/instant-spawns/vertigo/numbered-spawns.webp",
+          "ms": 2400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "eee7dc47c636944d3af203cfbf9adc10c1eb9a3c69fd1f7e87f0e8364a75c8a3"
+        },
+        "setup": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct3-stand.webp",
+          "ms": 64457,
+          "width": 1280,
+          "height": 720,
+          "sha256": "e5c09e273fca08e09e46291a9e3f2a6c94ebdad29df89673455f098d8b809f40"
+        },
+        "aim": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct3-aim.webp",
+          "ms": 70400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "fde9a22289a64147b9a1131f268225c910eddabc2ac609f68f0ea5735d1a1bfc"
+        },
+        "release": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct3-run.webp",
+          "ms": 80401,
+          "width": 1280,
+          "height": 720,
+          "sha256": "66a7b7597244b64e81d669d3ae3e815a2d6c7fdf732ef662d1d07f016f134d98"
+        },
+        "landing": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct3-landing.webp",
+          "ms": 88463,
+          "width": 1280,
+          "height": 720,
+          "sha256": "edc6637b04b48dbce3a5e071adfc7f6962dfd4fec41545899913ba38cd779ad0"
+        }
+      },
+      "releaseCue": "Run against the wall and use a running left-click throw before the far edge of the last ceiling tile. The annotated release is shown in the first chapter and repeated from each named spawn.",
+      "sourceAim": "Count three ceiling panels left from the long beam. Use the corner of the middle section shown by the crosshair."
+    },
+    {
+      "id": "instant-viri-vertigo-ramp-ct4",
+      "guideId": "instant-viri-vertigo-ramp-ct4",
+      "mapId": "vertigo",
+      "levelId": "lower",
+      "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=93",
+      "provider": "viri",
+      "sourceId": "HGhSBNdWJEs:ct4",
+      "spawn": {
+        "family": "viri-vertigo-ct-a-ramp",
+        "slot": 4,
+        "total": 5,
+        "label": "CT Spawn 4 · viri"
+      },
+      "sourceMethod": "Original creator’s numbered world pose in the YouTube description, independently matched by XY against the current decoded Vertigo spawn listing. Upper world-to-radar calibration is from the matching published Valve radar image.",
+      "origin": {
+        "x": 498.24,
+        "y": 204.41,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 4",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct4"
+      },
+      "sourceOriginWorld": {
+        "x": -1127.208374,
+        "y": 924.746399,
+        "z": 11839.871094
+      },
+      "world": {
+        "x": -1127.208374,
+        "y": 924.746399,
+        "z": 11839.871094
+      },
+      "sourceAngles": {
+        "pitch": -25.615225,
+        "yaw": -83.927902,
+        "roll": 0
+      },
+      "sourceCommand": "setpos -1127.208374 924.746399 11839.871094;setang -25.615225 -83.927902 0.000000",
+      "independentSource": "https://nadesdb.com/vertigo/spawns/",
+      "independentSlot": 2,
+      "independentXY": [
+        -1126.6,
+        925.9
+      ],
+      "distanceXY": 1.304,
+      "targetMatch": {
+        "existingGuideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+        "target": "A Ramp",
+        "areaId": "vertigo:lower:named:a ramp"
+      },
+      "chapterSeconds": 93,
+      "chapterEndSeconds": 118,
+      "setup": {
+        "image": "/lineup-media/instant-spawns/vertigo/ct4-stand.webp",
+        "ms": 96465
+      },
+      "mediaChecks": {
+        "position": {
+          "image": "/lineup-media/instant-spawns/vertigo/numbered-spawns.webp",
+          "ms": 2400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "eee7dc47c636944d3af203cfbf9adc10c1eb9a3c69fd1f7e87f0e8364a75c8a3"
+        },
+        "setup": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct4-stand.webp",
+          "ms": 96465,
+          "width": 1280,
+          "height": 720,
+          "sha256": "ea60b3e4fd122b598a27ea72b6a12ee1f20d9bdc77a26e89d2d858463dfd77d1"
+        },
+        "aim": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct4-aim.webp",
+          "ms": 98406,
+          "width": 1280,
+          "height": 720,
+          "sha256": "156d85234976391d18b3b3aa0ab122edb9a712a73d5af46da3c96e45f686794c"
+        },
+        "release": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct4-run.webp",
+          "ms": 104468,
+          "width": 1280,
+          "height": 720,
+          "sha256": "6f423629ad3336012c9cd1ff81746ec3346ac1b27af70146054c3bdfa5ea506a"
+        },
+        "landing": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct4-landing.webp",
+          "ms": 112461,
+          "width": 1280,
+          "height": 720,
+          "sha256": "b8a37fdce06ccf4d37659b0f6e5ba50c91f69033f44e4f28985c3f02ee7ebbce"
+        }
+      },
+      "releaseCue": "Run against the wall and use a running left-click throw before the far edge of the last ceiling tile. The annotated release is shown in the first chapter and repeated from each named spawn.",
+      "sourceAim": "Use the ceiling-beam junction above the doorway. Set the crosshair on the indicated corner."
+    },
+    {
+      "id": "instant-viri-vertigo-ramp-ct5",
+      "guideId": "instant-viri-vertigo-ramp-ct5",
+      "mapId": "vertigo",
+      "levelId": "lower",
+      "source": "https://www.youtube.com/watch?v=HGhSBNdWJEs&t=118",
+      "provider": "viri",
+      "sourceId": "HGhSBNdWJEs:ct5",
+      "spawn": {
+        "family": "viri-vertigo-ct-a-ramp",
+        "slot": 5,
+        "total": 5,
+        "label": "CT Spawn 5 · viri"
+      },
+      "sourceMethod": "Original creator’s numbered world pose in the YouTube description, independently matched by XY against the current decoded Vertigo spawn listing. Upper world-to-radar calibration is from the matching published Valve radar image.",
+      "origin": {
+        "x": 483.05,
+        "y": 219.6,
+        "levelId": "upper",
+        "levels": [
+          1
+        ],
+        "registrationId": "world-vertigo-upper",
+        "label": "CT Spawn 5",
+        "basis": "publisher-origin",
+        "precision": "world",
+        "sourceId": "HGhSBNdWJEs:ct5"
+      },
+      "sourceOriginWorld": {
+        "x": -1189.411743,
+        "y": 862.516418,
+        "z": 11839.871094
+      },
+      "world": {
+        "x": -1189.411743,
+        "y": 862.516418,
+        "z": 11839.871094
+      },
+      "sourceAngles": {
+        "pitch": -25.907993,
+        "yaw": -83.844383,
+        "roll": 0
+      },
+      "sourceCommand": "setpos -1189.411743 862.516418 11839.871094;setang -25.907993 -83.844383 0.000000",
+      "independentSource": "https://nadesdb.com/vertigo/spawns/",
+      "independentSlot": 1,
+      "independentXY": [
+        -1189.3,
+        862.2
+      ],
+      "distanceXY": 0.336,
+      "targetMatch": {
+        "existingGuideId": "expanded-csnades-vertigo-smoke-a-ramp-from-a-conn",
+        "target": "A Ramp",
+        "areaId": "vertigo:lower:named:a ramp"
+      },
+      "chapterSeconds": 118,
+      "chapterEndSeconds": 145,
+      "setup": {
+        "image": "/lineup-media/instant-spawns/vertigo/ct5-stand.webp",
+        "ms": 120505
+      },
+      "mediaChecks": {
+        "position": {
+          "image": "/lineup-media/instant-spawns/vertigo/numbered-spawns.webp",
+          "ms": 2400,
+          "width": 1280,
+          "height": 720,
+          "sha256": "eee7dc47c636944d3af203cfbf9adc10c1eb9a3c69fd1f7e87f0e8364a75c8a3"
+        },
+        "setup": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct5-stand.webp",
+          "ms": 120505,
+          "width": 1280,
+          "height": 720,
+          "sha256": "23150ada53c362cb5860afd305f89d57272c2d16ffc68235433b3e153f419308"
+        },
+        "aim": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct5-aim.webp",
+          "ms": 124445,
+          "width": 1280,
+          "height": 720,
+          "sha256": "497d51e125b8c5c43fafcfead2a938dcbe897a80c00f0c739e5648da6b7d7358"
+        },
+        "release": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct5-run.webp",
+          "ms": 132409,
+          "width": 1280,
+          "height": 720,
+          "sha256": "466a4c9e6adacbee00585be8785a5c8afb03469b5f1c4f8c144d2d40ae084056"
+        },
+        "landing": {
+          "image": "/lineup-media/instant-spawns/vertigo/ct5-landing.webp",
+          "ms": 140457,
+          "width": 1280,
+          "height": 720,
+          "sha256": "fd454993c750831c45f259564f1e8f65914929139f197eda345ce9f043bbe4f1"
+        }
+      },
+      "releaseCue": "Run against the wall and use a running left-click throw before the far edge of the last ceiling tile. The annotated release is shown in the first chapter and repeated from each named spawn.",
+      "sourceAim": "Count two panels right from the diagonal beam. Follow the indicated support upward to its meeting with the horizontal beam."
+    }
+  ]
+}

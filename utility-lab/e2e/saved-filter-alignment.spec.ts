@@ -5,7 +5,7 @@ import { FAVORITE_UTILITIES_KEY } from "../src/utility-data";
 const lineups = PUBLISHED_LINEUPS.filter(guide => guide.mapId === "dust2" && guide.side === "T" && guide.levelId === "main");
 const tenth = lineups[9];
 
-for (const width of [1440, 320]) {
+for (const width of [1440, 1280, 1024, 320]) {
   const phone = width === 320;
   test.describe(`Saved filter at ${width}px`, () => {
     test.use({ viewport: { width, height: 900 }, isMobile: phone, hasTouch: phone, serviceWorkers: "block" });
@@ -24,6 +24,7 @@ for (const width of [1440, 320]) {
         async function checkDock(count: number) {
           await expect(saved).toHaveAccessibleName(`Saved ${count}`);
           await expect(saved.locator("small")).toHaveText(String(count));
+          const compact = !await saved.locator("small").isVisible();
           const rows = await bar.getByRole("button").evaluateAll((buttons, compact) => buttons.map(button => {
             const [icon, label, badge] = Array.from(button.children, child => child.getBoundingClientRect());
             const bounds = button.getBoundingClientRect();
@@ -45,16 +46,17 @@ for (const width of [1440, 320]) {
               iconY: glyph.top + glyph.height / 2, labelX: label.left,
               badgeRight: badge.right, badgeWidth: badge.width, fontSize, fontWeight, baseline,
             };
-          }), phone);
+          }), compact);
           expect(rows).toHaveLength(6);
           for (const row of rows) {
             expect(row.height).toBeGreaterThanOrEqual(44);
             expect(Math.abs(row.iconY - row.centerY)).toBeLessThan(1);
-            if (phone) {
+            if (compact) {
               expect(row.width).toBeGreaterThanOrEqual(44);
               expect(Math.abs(row.iconX - (row.left + row.width / 2))).toBeLessThan(1);
               expect(row.badgeWidth).toBe(0);
-              expect(Math.abs(row.centerY - rows[0].centerY)).toBeLessThan(1);
+              if (phone) expect(Math.abs(row.centerY - rows[0].centerY)).toBeLessThan(1);
+              else expect(Math.abs(row.iconX - rows[0].iconX)).toBeLessThan(1);
               expect(row.right).toBeLessThanOrEqual(width);
             } else {
               expect(row.badgeWidth).toBeGreaterThan(0);

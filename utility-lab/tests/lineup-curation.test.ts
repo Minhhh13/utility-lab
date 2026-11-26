@@ -19,7 +19,7 @@ test('default curation caps every target, side and utility at four without chang
   assert.ok([...counts.values()].every(count => count <= 4));
   assert.ok(selected.length < all.length);
   assert.deepEqual(all.map(row => row.id),original);
-  assert.equal(all.length,1558);
+  assert.equal(all.length,1639);
   assert.deepEqual(curateLineups([...all].reverse()).map(row => row.id),selected.map(row => row.id));
 });
 

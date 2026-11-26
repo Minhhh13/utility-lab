@@ -40,7 +40,7 @@ test('shared standing references identify the exact predefined spawn, with origi
 test('source endpoints project through matching, unchanged radar artwork and never use the throw origin',()=>{
  const evidence=read('../docs/data/publisher-destination-evidence.json');
  const csnades=['csnades-publisher-destination-evidence','csnades-cache-destination-evidence','csnades-dust2-destination-evidence','csnades-nuke-community-destination-evidence'].flatMap(name=>read('../docs/data/'+name+'.json'));
- const precision=['precise-other-maps-evidence','precise-anubis-evidence'].flatMap(name=>read('../docs/data/'+name+'.json').records);
+ const precision=['precise-other-maps-evidence','precise-anubis-evidence','essential-csnades-four-maps-evidence','essential-nvca-evidence','instant-spawn-smokes-evidence'].flatMap(name=>read('../docs/data/'+name+'.json').records);
  const floorOverrides=read('../docs/data/physical-floor-overrides.json');
  for(const proof of floorOverrides){assert.equal(proof.manuallyReviewed,true);assert.equal(createHash('sha256').update(readFileSync(new URL('../public'+proof.evidence.photo,import.meta.url))).digest('hex'),proof.evidence.sha256);}
  for(const registration of PUBLISHER_MAP_REGISTRATIONS){

@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent, type R
 import { Crosshair, Maximize, ZoomIn, ZoomOut } from "lucide-react";
 import MediaImage from "./MediaImage";
 import { photoAimPosition } from "./aim-placement";
+import { highResolutionPhoto } from "./data/high-resolution-photos";
 import CrosshairControls, { PhotoCrosshair } from "./PhotoCrosshair";
 import { CROSSHAIR_KEY, readCrosshairSettings, saveCrosshairSettings } from "./crosshair-settings";
 import "./aim-placement.css";
@@ -32,6 +33,19 @@ export default function PhotoZoom({
   onReady?:()=>void;
 }) {
   const [scale, setScale] = useState(1);
+  const [decodedDetail, setDecodedDetail] = useState("");
+  const detail = scale > 1 && !photo.region ? highResolutionPhoto(photo.image) : undefined;
+  useEffect(() => {
+    if (!detail || detail.image === decodedDetail) return;
+    let current = true;
+    const original = new Image();
+    original.src = detail.image;
+    void original.decode().then(() => {
+      if (current && original.naturalWidth === detail.width && original.naturalHeight === detail.height)
+        setDecodedDetail(detail.image);
+    }).catch(() => { /* The lightweight source stays visible if detail is unavailable. */ });
+    return () => { current = false; };
+  }, [detail, decodedDetail]);
   const [dragging, setDragging] = useState(false);
   const [showAim, setShowAim] = useState(true);
   const [crosshair, setCrosshair] = useState(readCrosshairSettings);
@@ -306,6 +320,7 @@ export default function PhotoZoom({
         >
           <div
             className={region ? "ul-photo-region" : "ul-photo-image"}
+            data-image-ready={loaded.image === photo.image || undefined}
             data-photo-region={region ? "true" : undefined}
             style={region ? {
               width: region.width * panelScale,
@@ -335,6 +350,8 @@ export default function PhotoZoom({
               objectFit: "fill",
             } : undefined}
           />
+            {detail && decodedDetail === detail.image && <span className="ul-native-photo-detail" aria-hidden="true"
+              style={{ backgroundImage: `url("${detail.image}")` }} />}
           </div>
           {aim && <PhotoCrosshair settings={crosshair} point={aim}/>}
         </div>

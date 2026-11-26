@@ -1,4 +1,6 @@
-# Launch landscape artwork
+# Launch landscape artwork (archived)
+
+These earlier paintings were retired from the app and both release packages. See [current Home artwork](launch-art.md) for the licensed pixel-art collection.
 
 The Landscape selector includes three original environments alongside the three classic Dust scenes. Dust · CS 1999 is the default. The original environments were generated on 9 November 2026 and ship as optional WebP backgrounds.
 

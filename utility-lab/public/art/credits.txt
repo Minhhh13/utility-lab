@@ -1,0 +1,37 @@
+Utility Lab Home artwork
+Artist: Luis Zuno (ansimuz), https://opengameart.org/users/ansimuz
+
+Neon street
+Cyberpunk Street Environment, 2017. CC BY 3.0.
+https://opengameart.org/content/cyberpunk-street-environment
+Original skyline and street layers tiled, reframed and converted to lossless WebP.
+The street layer slides three original pixels when Home opens.
+
+Old town
+GothicVania Town, 2017. CC0 1.0.
+https://opengameart.org/content/gothicvania-town
+A crop of the artist's 1:1 environment preview, converted to lossless WebP.
+
+Hangar
+Bulkhead Walls Hangar, 2015. CC0 1.0.
+https://opengameart.org/content/bulkhead-walls-hangar
+Artist's 1:1 composite converted to lossless WebP.
+
+Factory skyline
+Industrial Parallax Background, 2015. CC0 1.0.
+https://opengameart.org/content/industrial-parallax-background
+Artist's merged PSD view converted to lossless WebP.
+
+Mountain pass
+Mountain at Dusk Background, 2015. CC0 1.0.
+https://opengameart.org/content/mountain-at-dusk-background
+Artist's merged PSD view converted to lossless WebP.
+
+Cliffside
+Magic Cliffs Environment, 2016. CC BY 3.0 in the artist's archive.
+https://opengameart.org/content/magic-cliffs-environment
+A crop of the artist's 1:1 environment preview, converted to lossless WebP.
+
+License links
+CC BY 3.0: https://creativecommons.org/licenses/by/3.0/
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/

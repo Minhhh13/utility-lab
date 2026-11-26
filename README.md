@@ -28,7 +28,7 @@ Public releases use a verified filtered static artifact uploaded to Cloudflare P
 ## Included
 
 - Eight maps and 10 floor views, with a full-canvas tactic editor, recoverable drafts, named tactics and JSON/PNG transfer. Smooth freehand strokes form one undo action each; text is edited directly on the board. Pen and arrow colours are selectable, and arrowheads follow their shaft colour.
-- **1,558 published lineups from 1,478 source pages** are available on eight maps. Choose a utility, destination and starting spot directly on the map. The chooser connects each recipe to its actual standing point and paginates groups of more than eight. Selections preserve your zoom and pan on the same floor.
+- **1,639 published lineups from 1,559 source references** are available on eight maps. Choose a utility, destination and starting spot directly on the map. The chooser connects each recipe to its actual standing point and paginates groups of more than eight. Selections preserve your zoom and pan on the same floor. [Explore 54 numbered round-start smoke setups across all eight maps](utility-lab/docs/round-start-smokes-2026-11-26.md).
 - Each published lineup has four labelled steps covering where to stand, the first-person starting view, where to aim and the landing. Pinch a photo or double-click a landmark to inspect it, then use Fit to resume swiping. The aim crosshair has adjustable colour, size and shape. Open **Throw locations** to see the current start and compare throws to the same landing on the map. Credited source footage is available from the guide.
 - The viewer's Save star and ellipsis menu preserve favorites, Copy lineup link, Download lineup and Make my own. Personal guides also expose Edit personal lineup and Delete your lineup; saving an edit reopens its viewer.
 - The T/CT switch sits beside the utility filters on the left. The map chooser fades its scrollable edges. Wheel and trackpad users can zoom a photo around the pointer from 100% to 400%.
@@ -43,7 +43,7 @@ Your browser keeps the workspace. The public site, `127.0.0.1:5180`, `localhost:
 
 The eight Compendium guides show three source-panel views plus the full original composite. These views preserve original floor boxes and annotations; they are not additional captures. The 223 older creator-video records remain available through existing deep links, outside the primary photo-map catalogue.
 
-All 1,558 published entries have source-backed target-area pins. Publisher destination coordinates are registered to the displayed artwork, with explicit floor reviews. Browser checks cover original media decoding and playback. Independent throw validation in the current game build, Steam-overlay testing and physical iPhone testing remain open.
+All 1,639 published entries have source-backed target-area pins. Publisher destination coordinates are registered to the displayed artwork, with explicit floor reviews. Browser checks cover original media decoding and playback. Independent throw validation in the current game build, Steam-overlay testing and physical iPhone testing remain open.
 
 This update uses online sources and project files only. Utility Lab does not launch CS2, access its installation or interact with gameplay.
 

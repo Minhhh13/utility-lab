@@ -5,7 +5,7 @@ const PHOTO_CACHE = "ul-viewed-photos-v1";
 const PHOTO_LIMIT = 12;
 const PHOTO_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
 const PHOTO_PENDING_AGE = 2 * 60 * 1000;
-const launchArt = /^\/art\/(?:pixel-smoke\.png|launch-(?:dust-(?:cs1999|source|csgo)|dunes|foundry|temple)\.webp)$/;
+const launchArt = /^\/art\/ansimuz\/(?:neon-street(?:-front)?|old-town|hangar|factory|mountain-pass|cliffside)\.webp$/;
 const pendingPhotos = new Map();
 const photoRetries = new Map();
 let photoWrites = Promise.resolve();
@@ -171,6 +171,11 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     Promise.all([
       self.clients.claim(),
+      // Retire the previous Home paintings without discarding offline map and guide downloads.
+      caches.open(CACHE).then(cache => Promise.all([
+        "launch-courtyard.webp", "launch-dunes.webp", "launch-dust-cs1999.webp", "launch-dust-source.webp",
+        "launch-dust-csgo.webp", "launch-foundry.webp", "launch-pixel.png", "launch-temple.webp", "pixel-smoke.png",
+      ].map(name => cache.delete("/art/" + name, { ignoreVary: true })))),
       caches
         .keys()
         .then((keys) =>
@@ -198,7 +203,7 @@ self.addEventListener("message", (event) => {
       (url) =>
         typeof url === "string" &&
         (/^\/(maps|map-thumbnails)\/[a-zA-Z0-9_.-]+\.(svg|png)$/.test(url) ||
-          launchArt.test(url) ||
+          (url === "/art/credits.txt" || launchArt.test(url)) ||
           /^\/lineup-media\/(?:[a-zA-Z0-9_-]+\/)+[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/.test(
             url,
           )),
@@ -271,7 +276,8 @@ self.addEventListener("fetch", (event) => {
   }
   if (event.request.method !== "GET" || url.origin !== self.location.origin)
     return;
-  if (event.request.mode === "navigate") {
+  if (url.pathname.startsWith("/art/") && url.pathname !== "/art/credits.txt" && !launchArt.test(url.pathname)) return;
+  if (event.request.mode === "navigate" && url.pathname !== "/art/credits.txt") {
     event.respondWith(
       fetch(event.request)
         .then((response) => {

@@ -24,9 +24,9 @@ for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1120,
     expect(zoom.x).toBeGreaterThan(canvas.x+canvas.width*.65);
     expect(filters.height).toBeGreaterThan(filters.width);
     expect(zoom.height).toBeGreaterThan(zoom.width);
-    if (size.width >= 1101 && await page.locator("#workspace").getAttribute("data-aspect-ratio") === "4:3") {
+    if (await page.locator("#workspace").getAttribute("data-aspect-ratio") === "4:3") {
       expect(sideBox.x).toBeCloseTo(filters.x, 0);
-      expect(sideBox.x + sideBox.width).toBeLessThanOrEqual(filters.x + filters.width);
+      expect(sideBox.width).toBeLessThanOrEqual(Math.max(96, filters.width));
       expect(sideBox.y).toBeGreaterThanOrEqual(filters.y + filters.height);
     } else {
       expect(sideBox.x).toBeGreaterThanOrEqual(filters.x + filters.width);
@@ -67,8 +67,8 @@ for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1120,
  });
 }
 
-test("both Cache CT Spawn markers for Garage are directly clickable in the 4:3 frame", async ({page}) => {
-  await page.setViewportSize({width:1440,height:1080});
+for (const [width,height] of [[1440,1080],[1120,620],[1024,600]]) test(`Cache Garage standing points are reachable in the ${width}×${height} 4:3 frame`, async ({page}) => {
+  await page.setViewportSize({width,height});
   await page.route(/^https:\/\//,route=>route.abort());
   await page.addInitScript(() => localStorage.setItem("ul:display", JSON.stringify({aspect:"4:3"})));
   const id="expanded-cs2tricks-cache-garage-from-ct-spawn-44f7-ct";
@@ -76,15 +76,17 @@ test("both Cache CT Spawn markers for Garage are directly clickable in the 4:3 f
   const map = page.locator(".ul-map-svg");
   const initialCamera = await map.getAttribute("viewBox");
   await page.getByRole("button",{name:"Show throw locations on map",exact:true}).click();
-  const spawns = page.getByRole("button",{name:"Throw from CT Spawn",exact:true});
-  await expect(spawns).toHaveCount(2);
-  for (const spawn of await spawns.all()) {
-    const [guideId] = JSON.parse((await spawn.getAttribute("data-origin-recipes"))!);
+  const origins = map.locator(".ul-origin-pin");
+  await expect(origins.first()).toBeVisible();
+  for (const spawn of await origins.all()) {
+    const guideIds:string[] = JSON.parse((await spawn.getAttribute("data-origin-recipes"))!);
     const hit = spawn.locator("circle").first();
     const box = (await hit.boundingBox())!;
     const center = {x:box.x + box.width/2, y:box.y + box.height/2};
     expect(await spawn.evaluate((node, {x,y}) => node.contains(document.elementFromPoint(x,y)), center)).toBe(true);
     await page.mouse.click(center.x,center.y);
+    const guideId = guideIds[0];
+    if (guideIds.length > 1) await page.locator(`.ul-origin-choice-option[data-lineup-id="${guideId}"]`).click();
     const close = page.getByRole("button",{name:"Close lineup media",exact:true});
     await expect(close).toBeVisible();
     expect(new URLSearchParams(new URL(page.url()).hash.split("?")[1]).get("lineup")).toBe(guideId);

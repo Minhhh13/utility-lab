@@ -220,7 +220,7 @@ test("lineup drafts recover after reload and the board stays free of artwork and
   expect(
     resources.some(
       (name) =>
-        name.includes("/art/launch-") || name.includes("youtube-nocookie"),
+        name.includes("/art/ansimuz/") || name.includes("youtube-nocookie"),
     ),
   ).toBe(false);
   await page.getByRole("tab", { name: "Tactic board", exact: true }).focus();

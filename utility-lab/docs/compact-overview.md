@@ -2,7 +2,9 @@
 
 The public website is [utilitylab.au](https://utilitylab.au), with local development available at http://127.0.0.1:5180.
 
-Normal Lineups browsing gives the map the full working area. Desktop utility filters sit on the left, with the team switch and zoom controls on the right. Portrait phones place both controls below the map. Tablet rails use smaller icon controls. There is no reference sidebar, location list or permanent detail panel. A personal editor can still open explicitly from the viewer's actions.
+The Lineups map fills the workspace. On desktop the utility filters and team selector sit on the left and zoom sits on the right. In the 4:3 frame the team buttons fit beneath the filters. Portrait phones place the team selector and filters at the top and zoom at the bottom. Narrow map frames use icon controls.
+
+Select Smoke to see the **Spawn smokes** shortcut on floors and sides with source-numbered throws. Switch it on to choose a landing and compare the available spawn slots, or press it again to browse every smoke. Adding another utility type returns to the combined selection. Spawn numbering follows each original guide.
 
 The main map uses neutral 36px circles with actual Smoke, Flash, Molly and HE glyphs and 46px hit areas. Nearby places share a fixed group marker at a real member coordinate. Panning moves it with the map; it never slides into an offset grid. Main markers have no pastel pie sectors or leader lines. Hover/focus and accessible labels retain group context. Zoom can refine nearby groups.
 

@@ -1,0 +1,56 @@
+{
+  "https://app.nadesdb.com/maps/ancient?nade=52a634a3-9353-4f75-b1b8-0417f082098d": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-nadesdb-ancient-52a634a3-setup.webp",
+      "ms": 1700
+    }
+  },
+  "https://app.nadesdb.com/maps/ancient?nade=3723f545-9a5e-49ba-96ab-6ad32889d974": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-nadesdb-ancient-3723f545-setup.webp",
+      "ms": 2200
+    }
+  },
+  "https://app.nadesdb.com/maps/cache?nade=1c91bbe2-7191-46c6-b46c-1cd8b0313782": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-nadesdb-cache-1c91bbe2-setup.webp",
+      "ms": 2200
+    }
+  },
+  "https://app.nadesdb.com/maps/cache?nade=7d0f7b9c-df79-4e65-a29b-34973dd9a0b7": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-nadesdb-cache-7d0f7b9c-setup.webp",
+      "ms": 2200
+    }
+  },
+  "https://app.nadesdb.com/maps/cache?nade=c46f7d8b-3637-4d0c-8126-ce5e7473bdce": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-nadesdb-cache-c46f7d8b-setup.webp",
+      "ms": 3700
+    }
+  },
+  "https://gonade.app/nade/nuke-top-hut-from-t-spawnroof-molotov": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/gonade-nuke-top-hut-from-t-spawnroof-molotov-setup.webp",
+      "ms": 200
+    }
+  },
+  "https://gonade.app/nade/vertigo-mid-from-deep-t-mid-he": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-gonade-vertigo-deep-t-mid-he-setup.webp",
+      "ms": 200
+    }
+  },
+  "https://setpos.gg/cache/heaven/ct2-molotov": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-setpos-cache-167-setup.webp",
+      "ms": 200
+    }
+  },
+  "https://setpos.gg/cache/heaven/ct5-molotov": {
+    "setup": {
+      "image": "/lineup-media/essential-nvca/essential-setpos-cache-135-setup.webp",
+      "ms": 200
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "https://csnades.gg/mirage/molotovs/van-from-b-apts": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/mirage-3624ea054e1c-setup.webp",
+      "ms": 2317
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/mirage-3624ea054e1c-landing.webp",
+      "ms": 15133
+    }
+  },
+  "https://csnades.gg/mirage/molotovs/tetris-from-behind-triple": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/mirage-34587dc64c5b-setup.webp",
+      "ms": 2817
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/mirage-34587dc64c5b-landing.webp",
+      "ms": 14183
+    }
+  },
+  "https://csnades.gg/mirage/hegrenades/top-mid-boxes-from-window": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/mirage-2b69a9ce94f8-setup.webp",
+      "ms": 2417
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/mirage-2b69a9ce94f8-landing.webp",
+      "ms": 14900
+    }
+  },
+  "https://csnades.gg/mirage/hegrenades/window-from-top-mid-boxes": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/mirage-cfc334843eb3-setup.webp",
+      "ms": 2350
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/mirage-cfc334843eb3-landing.webp",
+      "ms": 15550
+    }
+  },
+  "https://csnades.gg/inferno/molotovs/car-from-bottom-banana": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/inferno-a394cfcd58d1-setup.webp",
+      "ms": 2350
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/inferno-a394cfcd58d1-landing.webp",
+      "ms": 17467
+    }
+  },
+  "https://csnades.gg/inferno/molotovs/pit-from-short": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/inferno-9bba71a98920-setup.webp",
+      "ms": 2317
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/inferno-9bba71a98920-landing.webp",
+      "ms": 17267
+    }
+  },
+  "https://csnades.gg/inferno/hegrenades/first-orange-from-car": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/inferno-da7e58fa94f1-setup.webp",
+      "ms": 1267
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/inferno-da7e58fa94f1-landing.webp",
+      "ms": 11750
+    }
+  },
+  "https://csnades.gg/inferno/hegrenades/b-default-from-outside-church": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/inferno-c64fb706185e-setup.webp",
+      "ms": 1483
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/inferno-c64fb706185e-landing.webp",
+      "ms": 12400
+    }
+  },
+  "https://csnades.gg/inferno/hegrenades/mini-pit-from-short": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/inferno-55c9b4d609c1-setup.webp",
+      "ms": 3383
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/inferno-55c9b4d609c1-landing.webp",
+      "ms": 14233
+    }
+  },
+  "https://csnades.gg/dust2/molotovs/short-from-lower-tunnel": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/dust2-ae8a279b0fc1-setup.webp",
+      "ms": 1267
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/dust2-ae8a279b0fc1-landing.webp",
+      "ms": 10800
+    }
+  },
+  "https://csnades.gg/dust2/molotovs/short-from-goose": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/dust2-c810c0212a27-setup.webp",
+      "ms": 4717
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/dust2-c810c0212a27-landing.webp",
+      "ms": 17233
+    }
+  },
+  "https://csnades.gg/dust2/hegrenades/b-main-from-b-site": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/dust2-01dae2e90adc-setup.webp",
+      "ms": 3717
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/dust2-01dae2e90adc-landing.webp",
+      "ms": 17833
+    }
+  },
+  "https://csnades.gg/dust2/hegrenades/under-b-window-from-outside-b": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/dust2-2288e8c0651f-setup.webp",
+      "ms": 2683
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/dust2-2288e8c0651f-landing.webp",
+      "ms": 15133
+    }
+  },
+  "https://csnades.gg/anubis/molotovs/top-mid-from-bridge": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/anubis-b02c2a9aee77-setup.webp",
+      "ms": 2300
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/anubis-b02c2a9aee77-landing.webp",
+      "ms": 19567
+    }
+  },
+  "https://csnades.gg/anubis/molotovs/a-site-from-water": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/anubis-bc975c22bad3-setup.webp",
+      "ms": 1250
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/anubis-bc975c22bad3-landing.webp",
+      "ms": 15200
+    }
+  },
+  "https://csnades.gg/anubis/hegrenades/fountain-from-a-main": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/anubis-1c8d8c0db6ab-setup.webp",
+      "ms": 1250
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/anubis-1c8d8c0db6ab-landing.webp",
+      "ms": 12850
+    }
+  },
+  "https://csnades.gg/anubis/hegrenades/a-main-from-plat": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/anubis-98735d3c1cc3-setup.webp",
+      "ms": 4183
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/anubis-98735d3c1cc3-landing.webp",
+      "ms": 15800
+    }
+  },
+  "https://csnades.gg/anubis/hegrenades/top-mid-from-street": {
+    "setup": {
+      "image": "/lineup-media/essential-csnades/anubis-001cea322a64-setup.webp",
+      "ms": 1250
+    },
+    "landing": {
+      "image": "/lineup-media/essential-csnades/anubis-001cea322a64-landing.webp",
+      "ms": 13400
+    }
+  }
+}

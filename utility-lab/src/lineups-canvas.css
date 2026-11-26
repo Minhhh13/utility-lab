@@ -16,6 +16,7 @@
   inset: 0;
   z-index: 5;
   pointer-events: none;
+  container: lineup-controls / inline-size;
 }
 .utility-workspace.ul-map-only .ul-header,
 .utility-workspace.ul-map-only .ul-filterbar {
@@ -129,9 +130,9 @@
   max-width: none;
   overflow: auto;
 }
-/* The labelled desktop rail can extend into spawn points in the 4:3 frame.
-   Fit both team buttons beneath it, within the filters' existing width. */
-@media (min-width: 1101px) and (min-height: 581px) {
+/* The 4:3 player frame has less room beside the radar. A single row below
+   the filters keeps both teams clear of standing markers and the map credit. */
+@media (min-width: 861px) and (min-height: 581px) {
   [data-aspect-ratio="4:3"] .utility-workspace.ul-map-only .ul-filter-dock .ul-side-toggle {
     position: absolute;
     top: calc(100% + 8px);
@@ -173,23 +174,42 @@
   color: var(--accent);
 }
 @media (min-width: 1101px) and (min-height: 581px) {
+  .utility-workspace.ul-map-only .ul-filterbar { align-items: stretch; gap: 2px; }
   .utility-workspace.ul-map-only .ul-types { align-items: stretch; }
   .utility-workspace.ul-map-only .ul-types button,
   .utility-workspace.ul-map-only .ul-favorites-filter {
     display: grid;
-    grid-template-columns: 24px 1fr auto;
+    grid-template-columns: 24px minmax(0, 1fr) max-content;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-inline: 10px;
+    border: 1px solid transparent;
     align-items: center;
     column-gap: 6px;
     text-align: start;
     font-size: 12px;
     font-weight: 550;
   }
-  .utility-workspace.ul-map-only .ul-favorites-filter { border: 1px solid transparent; }
   .utility-workspace.ul-map-only .ul-filterbar button > :first-child { justify-self: center; }
   .utility-workspace.ul-map-only .ul-filterbar button > small {
-    min-width: calc(3ch + 10px);
+    width: calc(3ch + 10px);
+    box-sizing: content-box;
+    padding-inline: 0;
+    justify-self: end;
     text-align: end;
   }
+}
+.utility-workspace .ul-map-svg :is(.ul-origin-pin,.ul-personal-guide-pin,.ul-map-marker,.ul-landing-pin):focus {
+  outline: none;
+}
+.utility-workspace .ul-map-svg :is(.ul-origin-pin,.ul-personal-guide-pin):focus-visible > circle:first-of-type {
+  stroke: var(--accent);
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+:root[data-navigation-input="pointer"] .ul-map-svg :is(.ul-origin-pin,.ul-personal-guide-pin):focus > circle:first-of-type {
+  stroke: none;
 }
 .utility-workspace.ul-map-only .ul-map-area { position: relative; }
 .utility-workspace.ul-map-only .ul-map-stage {
@@ -223,6 +243,15 @@
   font-weight: 500;
   line-height: 1.25;
 }
+.utility-workspace.ul-map-only .ul-spawn-filter {
+  white-space: nowrap;
+  color: var(--muted);
+}
+.utility-workspace.ul-map-only .ul-spawn-filter[aria-pressed="true"] {
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+}
+.ul-spawn-filter small { font-size: inherit; font-variant-numeric: tabular-nums; }
 .utility-workspace.ul-map-only .ul-levels button.is-active {
   background: var(--accent-soft);
   color: var(--accent);
@@ -292,16 +321,22 @@
 .utility-workspace.ul-map-only .ul-zoom button:active {
   background: var(--accent-soft);
 }
-@media (min-width: 601px) and (max-width: 1100px) {
+/* A fitted player frame can be narrower than the browser window. Compact
+   the filters using the space available to the map controls themselves. */
+@media (min-width: 601px) {
+ @container lineup-controls (max-width: 1100px) {
   .utility-workspace.ul-map-only .ul-filter-dock {left:8px;}
   .utility-workspace.ul-map-only .ul-filterbar {max-width:54px;}
-  .utility-workspace.ul-map-only .ul-types button {justify-content:center;min-width:44px;padding:5px;}
+  .utility-workspace.ul-map-only .ul-types button {display:flex;justify-content:center;min-width:44px;padding:5px;}
   .utility-workspace.ul-map-only .ul-types button:not([data-utility="All"])>span,
   .utility-workspace.ul-map-only .ul-favorites-filter>span {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
   .utility-workspace.ul-map-only .ul-types button small,
   .utility-workspace.ul-map-only .ul-types .ul-all-icon,
   .utility-workspace.ul-map-only .ul-favorites-filter small {display:none;}
-  .utility-workspace.ul-map-only .ul-favorites-filter {justify-content:center;min-width:44px;padding:5px;}
+  .utility-workspace.ul-map-only .ul-favorites-filter {display:flex;justify-content:center;min-width:44px;padding:5px;}
+ }
+}
+@media (min-width: 601px) and (max-width: 1100px) {
   .utility-workspace.ul-map-only .ul-map-bottom {right:8px;}
   .utility-workspace.ul-map-only .ul-zoom button,
   .utility-workspace.ul-map-only .ul-zoom button[aria-label="Reset utility map zoom"] {width:44px;min-width:44px;font-size:11px;}
