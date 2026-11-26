@@ -6,8 +6,6 @@
   width: min(328px, calc(100vw - 24px));
   overflow: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
   color: var(--text);
   font: inherit;
   isolation: isolate;

@@ -1,5 +1,23 @@
 import {expect,test} from "@playwright/test";
 
+test("the workspace dialog hides its scrollbar while its last section stays reachable", async ({page}) => {
+  await page.setViewportSize({width:960,height:540});
+  await page.goto("/#utilities");
+  await page.getByRole("button",{name:"Workspace settings",exact:true}).click();
+  const dialog=page.getByRole("dialog",{name:"Your workspace"});
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toHaveCSS("scrollbar-width","none");
+  await expect(page.locator("html")).toHaveCSS("scrollbar-width","none");
+  expect(await dialog.evaluate(el=>el.scrollHeight>el.clientHeight)).toBe(true);
+  expect(await dialog.evaluate(el=>el.offsetWidth-el.clientWidth)).toBe(0);
+  await dialog.hover();
+  await page.mouse.wheel(0,900);
+  await expect.poll(()=>dialog.evaluate(el=>el.scrollTop)).toBeGreaterThan(0);
+  await expect(dialog.getByRole("heading",{name:"On this device"})).toBeInViewport();
+  await page.keyboard.press("Escape");
+  await expect(dialog).not.toBeVisible();
+});
+
 test("map chooser blends scroll edges into its surface and retains wheel and keyboard scrolling", async ({page}) => {
   await page.setViewportSize({width:1024,height:560});
   await page.goto("/#utilities");
@@ -22,7 +40,7 @@ test("map chooser blends scroll edges into its surface and retains wheel and key
   await page.getByRole("textbox",{name:"Search maps"}).fill("");
   await expect(grid).toHaveAttribute("data-scroll-after","");
   await page.emulateMedia({forcedColors:"active"});
-  await expect(grid).toHaveCSS("scrollbar-width","auto");
+  await expect(grid).toHaveCSS("scrollbar-width","none");
   await expect(grid).toHaveCSS("mask-image","none");
 });
 

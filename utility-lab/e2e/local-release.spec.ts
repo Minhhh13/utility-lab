@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 import { readFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { emptyPlan } from "../src/board-model";
+import { LAUNCH_SCENES } from "../src/launch-scenes";
 test.use({ baseURL: "http://127.0.0.1:5180" });
 
 test("workspace backups carry actual photos into a clean browser and preserve linked round steps", async ({
@@ -159,7 +160,7 @@ test("workspace backups carry actual photos into a clean browser and preserve li
   }
 });
 
-test("all supported map floors are available offline after explicit download", async ({
+test("all supported map floors and Home backgrounds are available offline after explicit download", async ({
   page,
   context,
 }) => {
@@ -196,6 +197,18 @@ test("all supported map floors are available offline after explicit download", a
       return response.ok && (await response.blob()).size > 1000;
     }),
   ).toBe(true);
+  await page.getByRole("link", { name: "Utility Lab home" }).click();
+  for (const scene of LAUNCH_SCENES) {
+    await page.getByRole("button", { name: /^Map background:/ }).click();
+    const option = page.getByRole("option", { name: scene.name, exact: true });
+    await expect.poll(() => option.locator("img").evaluate(image => image.naturalWidth)).toBe(96);
+    await option.click();
+    const art = page.locator(".launch-art.is-loaded:not(.launch-art-previous)");
+    await expect(art).toHaveAttribute("src", scene.src);
+    await expect.poll(() => art.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBe(640);
+  }
+  const credits = await page.evaluate(async () => (await fetch("/art/credits.txt")).text());
+  for (const scene of LAUNCH_SCENES) expect(credits).toContain(scene.name);
   await context.setOffline(false);
 });
 
@@ -220,7 +233,7 @@ test("lineup drafts recover after reload and the board stays free of artwork and
   expect(
     resources.some(
       (name) =>
-        name.includes("/art/ansimuz/") || name.includes("youtube-nocookie"),
+        name.includes("/art/") || name.includes("youtube-nocookie"),
     ),
   ).toBe(false);
   await page.getByRole("tab", { name: "Tactic board", exact: true }).focus();

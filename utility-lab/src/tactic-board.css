@@ -797,8 +797,6 @@
   overflow-y: auto;
   flex: 1;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
 }
 .tb-inspector-section {
   padding: 19px;

@@ -8,7 +8,7 @@ import {
   WifiOff,
 } from "lucide-react";
 import { MAPS } from "./maps";
-import { LAUNCH_SCENES, sceneAssets } from "./launch-scenes";
+import { LAUNCH_SCENES } from "./launch-scenes";
 import { BUNDLED_GUIDE_PHOTOS } from "./guide-library";
 import {
   captureWorkspace,
@@ -151,7 +151,7 @@ export default function WorkspaceSettings({
                 ]),
               ),
             ),
-            ...LAUNCH_SCENES.flatMap(sceneAssets),
+            ...LAUNCH_SCENES.flatMap(scene => [scene.src, scene.thumbnail]),
             "/art/credits.txt",
           ];
       await new Promise<void>((resolve, reject) => {

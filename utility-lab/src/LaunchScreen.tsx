@@ -4,13 +4,12 @@ import {
   ArrowUpRight,
   BarChart3,
   BookOpen,
-  ChevronDown,
   FlaskConical,
-  Image as LandscapeIcon,
   Layers2,
 } from "lucide-react";
 import "./launch.css";
-import { DEFAULT_SCENE, LAUNCH_SCENES, resolveScene, sceneAssets, type Scene, type SceneId } from "./launch-scenes";
+import HomeScenePicker from "./HomeScenePicker";
+import { DEFAULT_SCENE, LAUNCH_SCENES, resolveScene, type Scene, type SceneId } from "./launch-scenes";
 
 type Destination = "board" | "utilities" | "playbooks" | "stats";
 type Props = {
@@ -30,28 +29,32 @@ function savedScene(): SceneId {
 }
 type Frame = { width: number; height: number; dpr: number };
 
-function ScenePicture({ scene, frame, loaded, previous = false }: {
-  scene: Scene; frame: Frame | null; loaded: boolean; previous?: boolean;
+type PixelSize = { width: number; height: number };
+
+function ScenePicture({ scene, frame, size, loaded, previous = false }: {
+  scene: Scene; frame: Frame | null; size?: PixelSize; loaded: boolean; previous?: boolean;
 }) {
   let style: CSSProperties | undefined;
-  if (frame) {
+  if (frame && size) {
     // Align every source pixel and both cropped edges to physical display pixels.
     const { width, height, dpr } = frame;
-    const scale = Math.max(1, Math.ceil(Math.max(width / scene.width, height / scene.height) * dpr));
+    const scale = Math.max(1, Math.ceil(Math.max(width / size.width, height / size.height) * dpr));
     const pixel = scale / dpr;
+    const left = Math.round((width * dpr - size.width * scale) * scene.focus);
+    const top = Math.round((height * dpr - size.height * scale) / 2);
+    // Only travel into available overscan. Native-size 16:9 holds perfectly still.
+    const travel = (edge: number) => edge <= -3 * scale ? 3 * pixel : 0;
     style = {
-      "--source-pixel": `${pixel}px`, width: scene.width * pixel, height: scene.height * pixel,
-      left: Math.round((width * dpr - scene.width * scale) * scene.focus) / dpr,
-      top: Math.round((height * dpr - scene.height * scale) / 2) / dpr,
+      width: size.width * pixel, height: size.height * pixel,
+      left: left / dpr, top: top / dpr,
+      "--entry-x": `${travel(left)}px`, "--entry-y": `${travel(left) ? 0 : travel(top)}px`,
     } as CSSProperties;
   }
   return <div className={"launch-picture" + (loaded ? " is-loaded" : "") + (previous ? " is-previous" : "")}
     style={style} aria-hidden={previous || undefined}>
     <img className={"launch-art" + (previous ? " launch-art-previous" : "") + (loaded ? " is-loaded" : "")}
-      src={scene.src} data-scene={scene.id} alt={previous ? "" : scene.alt} width={scene.width}
-      height={scene.height} fetchPriority="high" decoding="async" />
-    {"foreground" in scene && <img className="launch-foreground" src={scene.foreground} alt=""
-      width={scene.width + 6} height={scene.height} decoding="async" />}
+      src={scene.src} data-scene={scene.id} alt={previous ? "" : scene.alt} width={size?.width}
+      height={size?.height} fetchPriority="high" decoding="async" />
   </div>;
 }
 
@@ -89,6 +92,7 @@ export default function LaunchScreen({
   landscapeHost,
   returning,
 }: Props) {
+  const dimensions = useRef(new Map<SceneId, PixelSize>());
   const artFrame = useRef<HTMLDivElement>(null);
   const [frame, setFrame] = useState<Frame | null>(null);
   useLayoutEffect(() => {
@@ -144,14 +148,12 @@ export default function LaunchScreen({
       LAUNCH_SCENES[0];
     setIsSelecting(true);
     setSceneMessage("");
-    const assets = sceneAssets(next);
-    Promise.all(assets.map(url => {
-      const image = new Image();
-      image.src = url;
-      return image.decode();
-    })).then(() => {
+    const image = new Image();
+    image.src = next.src;
+    image.decode().then(() => {
       if (!active) return;
-      if (next.id !== visibleSceneId) setPreviousSceneId(visibleSceneId);
+      dimensions.current.set(next.id, { width: image.naturalWidth, height: image.naturalHeight });
+      if (next.id !== visibleSceneId && artState === "loaded") setPreviousSceneId(visibleSceneId);
       setVisibleSceneId(next.id);
       setArtState("loaded");
       setIsSelecting(false);
@@ -164,14 +166,14 @@ export default function LaunchScreen({
         void navigator.serviceWorker.ready.then((registration) =>
           registration.active?.postMessage({
             type: "CACHE_ART",
-            urls: assets,
+            urls: [next.src],
           }),
         );
       }
     }).catch(() => {
       if (!active) return;
       setIsSelecting(false);
-      setSceneMessage("Landscape unavailable. Choose another.");
+      setSceneMessage("Map background unavailable. Choose another.");
       if (artState === "loaded") setSelectedSceneId(visibleSceneId);
       else if (next.id !== DEFAULT_SCENE) setSelectedSceneId(DEFAULT_SCENE);
       else setArtState("failed");
@@ -217,55 +219,26 @@ export default function LaunchScreen({
         }
       >
         <div className="launch-art-frame" ref={artFrame}>
-          {previousScene && <ScenePicture key={previousScene.id} scene={previousScene} frame={frame} loaded previous />}
-          {artState !== "failed" && <ScenePicture key={scene.id} scene={scene} frame={frame} loaded={artState === "loaded"} />}
+          {previousScene && <ScenePicture key={previousScene.id} scene={previousScene} size={dimensions.current.get(previousScene.id)} frame={frame} loaded previous />}
+          {artState !== "failed" && <ScenePicture key={scene.id} scene={scene} size={dimensions.current.get(scene.id)} frame={frame} loaded={artState === "loaded"} />}
         </div>
         <div className="launch-scene-shade" aria-hidden="true" />
       </div>
       {landscapeHost &&
         createPortal(
-          <div
-            className="launch-header-choice"
-            title={`Landscape: ${scene.name}`}
-          >
-            <label htmlFor="launch-landscape">
-              <LandscapeIcon size={17} aria-hidden="true" />
-              <span className="sr-only">Landscape</span>
-            </label>
-            <select
-              id="launch-landscape"
-              value={selectedSceneId}
-              aria-busy={isSelecting}
-              onChange={(event) => {
-                setSceneMessage("");
-                setSelectedSceneId(event.target.value as SceneId);
-              }}
-            >
-              {(["City", "Industrial", "Outdoors"] as const).map(group => (
-                <optgroup key={group} label={group}>
-                  {LAUNCH_SCENES.filter(option => option.group === group).map(option => (
-                    <option key={option.id} value={option.id}>{option.name}</option>
-                  ))}
-                </optgroup>
-              ))}
-            </select>
-            <ChevronDown size={14} className="landscape-chevron" aria-hidden="true" />
-          </div>,
+          <HomeScenePicker scenes={LAUNCH_SCENES} value={selectedSceneId} busy={isSelecting}
+            onChange={id => { setSceneMessage(""); setSelectedSceneId(id); }} />,
           landscapeHost,
         )}
       <span className="sr-only" role="status" aria-live="polite">
         {isSelecting
-          ? "Loading landscape"
-          : sceneMessage || `${scene.name} landscape`}
+          ? "Loading map background"
+          : sceneMessage || `${scene.name} background`}
       </span>
       {sceneMessage && <p className="launch-scene-error">{sceneMessage}</p>}
       {artState === "loaded" && <div className="launch-art-credit">
-        <a href={scene.source} target="_blank" rel="noopener noreferrer"
-          aria-label={`Art by Luis Zuno. View the original artwork for ${scene.name}`}>
-          Art by Luis Zuno <ArrowUpRight size={12} aria-hidden="true" />
-        </a>
         <a href="/art/credits.txt" target="_blank" rel="noopener noreferrer"
-          aria-label="Open artwork credits and licenses">Credits</a>
+          aria-label={`Open map artwork credits for ${scene.name}`}>Map art credits <ArrowUpRight size={12} aria-hidden="true" /></a>
       </div>}
       <nav className="launch-destinations" aria-label="Choose your workspace">
         {destinations.map(({ id, title, description, icon: Icon }) => (

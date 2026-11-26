@@ -34,8 +34,6 @@
     padding: 6px;
     overflow-y: auto;
     overscroll-behavior: contain;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
   }
   .tactic-board .tb-toolbox .tb-tool-group {
     display: grid;

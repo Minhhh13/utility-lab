@@ -20,7 +20,6 @@
 }
 .launch-art-frame { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .launch-picture {
-  --source-pixel: 1px;
   position: absolute;
   inset: 0 auto auto 0;
   width: 100%;
@@ -29,7 +28,7 @@
   opacity: 0;
 }
 .launch-picture.is-loaded { opacity: 1; }
-.launch-art, .launch-foreground {
+.launch-art {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -37,11 +36,6 @@
   max-width: none;
   object-fit: fill;
   image-rendering: pixelated;
-}
-.launch-foreground {
-  /* Three original picture columns on either side keep the skyline covered while it moves. */
-  left: calc(-3 * var(--source-pixel));
-  width: calc(100% + 6 * var(--source-pixel));
 }
 .launch-art-credit {
   position: absolute;
@@ -143,57 +137,7 @@
 }
 .launch-destination:disabled { color: var(--muted); background: var(--surface); opacity: 1; cursor: default; }
 .launch-destination:disabled .launch-destination-title > svg { color: inherit; }
-.launch-header-slot,
-.launch-header-choice {
-  display: inline-flex;
-  flex: 0 0 auto;
-}
-.launch-header-choice {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 44px;
-  padding-inline: 10px;
-  border: 1px solid #ffffff40;
-  border-radius: 8px;
-  background: #14222c66;
-  color: #fffdf6;
-}
-.launch-header-choice label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: inherit;
-}
-.launch-header-choice label > svg {
-  flex: 0 0 auto;
-}
-.launch-header-choice select {
-  appearance: none;
-  -webkit-appearance: none;
-  max-width: 148px;
-  min-height: 44px;
-  padding: 0 18px 0 0;
-  border: 0;
-  border-radius: 5px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 550;
-  cursor: pointer;
-  touch-action: manipulation;
-}
-.landscape-chevron { position: absolute; right: 10px; pointer-events: none; }
-.launch-header-choice option {
-  background: var(--surface-raised);
-  color: var(--text);
-}
-.launch-header-choice select:focus-visible {
-  outline: 2px solid #fffdf6;
-  outline-offset: -4px;
-}
+.launch-header-slot { display: inline-flex; flex: 0 0 auto; }
 .launch-scene-error {
   position: absolute;
   z-index: 5;
@@ -261,11 +205,11 @@
   .launch-picture.is-loaded:not(.is-previous) {
     animation: landscape-enter 300ms ease-out both;
   }
-  .launch-picture.is-loaded:not(.is-previous) .launch-foreground {
-    animation: street-settles 620ms steps(3, end) both;
+  .launch-picture.is-loaded:not(.is-previous) .launch-art {
+    animation: map-scene-settles 540ms steps(3, end) both;
   }
   .scene-paused .launch-picture.is-loaded:not(.is-previous),
-  .scene-paused .launch-picture.is-loaded:not(.is-previous) .launch-foreground {
+  .scene-paused .launch-picture.is-loaded:not(.is-previous) .launch-art {
     animation-play-state: paused;
   }
   .launch-destination {
@@ -313,9 +257,9 @@
   60% { opacity: .7; }
   to { transform: scaleX(1); opacity: 0; }
 }
-@keyframes street-settles {
-  from { transform: translateX(calc(-3 * var(--source-pixel))); }
-  to { transform: translateX(0); }
+@keyframes map-scene-settles {
+  from { transform: translate(var(--entry-x, 0px), var(--entry-y, 0px)); }
+  to { transform: none; }
 }
 @media (max-width: 1100px) {
   .launch-screen {
@@ -419,27 +363,6 @@
   .launch-destination-arrow {
     display: none;
   }
-  .launch-header-choice {
-    width: 44px;
-    height: 44px;
-    justify-content: center;
-    border-radius: 8px;
-    padding: 0;
-  }
-  .landscape-chevron { display: none; }
-  .launch-header-choice select {
-    position: absolute;
-    inset: 0;
-    min-width: 44px;
-    width: 44px;
-    max-width: 44px;
-    font-size: 16px;
-    opacity: 0;
-  }
-  .launch-header-choice:focus-within {
-    outline: 2px solid #fffdf6;
-    outline-offset: -3px;
-  }
   .is-home .brand {
     font-size: 20px;
     gap: 7px;
@@ -509,7 +432,7 @@
   .launch-art-credit { top: 55px; bottom: auto; border-radius: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .launch-picture, .launch-foreground, .launch-destination, .launch-destination-arrow {
+  .launch-picture, .launch-art, .launch-destination, .launch-destination-arrow {
     transition: none !important;
     animation: none !important;
   }

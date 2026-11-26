@@ -43,8 +43,6 @@
   padding: 6px;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
   border-radius: 12px;
   background: var(--surface-raised);
   box-shadow: 0 10px 30px #00000026;

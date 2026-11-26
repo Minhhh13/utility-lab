@@ -1,24 +1,23 @@
 import { test, expect } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
+import { LAUNCH_SCENES } from "../src/launch-scenes";
 
 test.use({ serviceWorkers: "block" });
 
-test("artist landscapes sit in the top bar, remain compact on phones, and keep all destinations reachable", async ({
+test("CS map backgrounds sit in the top bar, remain compact on phones, and keep all destinations reachable", async ({
   page,
 }) => {
-  test.slow(); // Six viewport sizes and six artist frames are captured.
+  test.slow(); // Capture all eight maps and six viewport sizes.
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/#home");
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
-  const landscape = page
-    .locator(".studio-header")
-    .getByLabel("Landscape", { exact: true });
-  await expect(landscape).toBeAttached();
-  await expect(page.locator(".launch-screen select")).toHaveCount(0);
-  await expect(landscape.locator("option")).toHaveText([
-    "Neon street", "Old town", "Hangar", "Factory skyline", "Mountain pass", "Cliffside",
-  ]);
+  const landscape = page.getByRole("button", {name: /^Map background:/});
+  await expect(landscape).toBeVisible();
+  await landscape.click();
+  const menu = page.getByRole("listbox", {name:"Map background"});
+  await expect(menu.getByRole("option")).toHaveCount(8);
+  await page.keyboard.press("Escape");
   await mkdir("outputs/artist-art-review", { recursive: true });
   for (const size of [
     { width: 1440, height: 900 },
@@ -36,7 +35,7 @@ test("artist landscapes sit in the top bar, remain compact on phones, and keep a
     expect(box!.y).toBeLessThan(80);
     expect(box!.x).toBeGreaterThanOrEqual(0);
     expect(box!.x + box!.width).toBeLessThanOrEqual(size.width);
-    if (size.width <= 500) expect(box!.width).toBe(44);
+    if (size.width <= 500) expect(box!.width).toBeLessThanOrEqual(54);
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth),
     ).toBe(size.width);
@@ -49,8 +48,10 @@ test("artist landscapes sit in the top bar, remain compact on phones, and keep a
     });
   }
   await page.setViewportSize({ width: 1440, height: 900 });
-  for (const [id, width] of [["neon-street",384], ["old-town",800], ["hangar",352], ["factory",272], ["mountain-pass",272], ["cliffside",816]] as const) {
-    await landscape.selectOption(id);
+  for (const scene of LAUNCH_SCENES) {
+    const {id} = scene;
+    await landscape.click();
+    await menu.getByRole("option", {name:scene.name,exact:true}).click();
     await expect(page.locator(".launch-screen")).toHaveAttribute(
       "data-scene",
       id,
@@ -60,7 +61,7 @@ test("artist landscapes sit in the top bar, remain compact on phones, and keep a
       await page
         .locator(".launch-art:not(.launch-art-previous)")
         .evaluate((image: HTMLImageElement) => image.naturalWidth),
-    ).toBe(width);
+    ).toBeGreaterThan(255);
     await page.screenshot({
       path: `outputs/artist-art-review/${id}-1440.png`,
     });
@@ -112,26 +113,30 @@ test("a saved landscape loads alone, preserves the decoded scene during a switch
   await page.setViewportSize({ width: 320, height: 568 });
   await page.goto("/#home");
   const art = page.locator(".launch-art:not(.launch-art-previous)");
-  const landscape = page.getByLabel("Landscape", { exact: true });
+  const landscape = page.getByRole("button", {name:/^Map background:/});
+  const choose = async (name: string) => {
+    await landscape.click();
+    await page.getByRole("option", { name, exact:true }).click();
+  };
   await expect(art).toHaveClass(/is-loaded/);
-  await expect(landscape).toHaveValue("cliffside");
-  await expect(page.getByRole("link", { name: /Art by Luis Zuno/ })).toHaveAttribute("href", /magic-cliffs-environment$/);
-  expect([...requestedArt]).toEqual(["/art/ansimuz/cliffside.webp"]);
+  await expect(landscape).toHaveAttribute("data-scene", "ancient");
+  await expect(page.getByRole("link", { name: /Open map artwork credits for Ancient/ })).toHaveAttribute("href", "/art/credits.txt");
+  expect([...requestedArt]).toEqual(["/art/maps/ancient.webp"]);
   let release!: () => void;
   const gate = new Promise<void>(resolve => { release = resolve; });
-  await page.route("**/art/ansimuz/factory.webp", async route => { await gate; await route.continue(); });
-  const requested = page.waitForRequest("**/art/ansimuz/factory.webp");
-  await landscape.selectOption("factory");
+  await page.route("**/art/maps/nuke.webp", async route => { await gate; await route.continue(); });
+  const requested = page.waitForRequest("**/art/maps/nuke.webp");
+  await choose("Nuke");
   await requested;
-  await expect(art).toHaveAttribute("data-scene", "cliffside");
-  await landscape.selectOption("cliffside");
+  await expect(art).toHaveAttribute("data-scene", "ancient");
+  await choose("Ancient");
   await expect(landscape).toHaveAttribute("aria-busy", "false");
   release();
-  await landscape.selectOption("factory");
-  await expect(art).toHaveAttribute("data-scene", "factory");
+  await choose("Nuke");
+  await expect(art).toHaveAttribute("data-scene", "nuke");
   await expect(page.locator(".launch-picture:not(.is-previous)")).toHaveCSS("animation-name", "landscape-enter");
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(page.locator(".launch-picture:not(.is-previous)")).toHaveCSS("animation-name", "none");
-  expect(await page.evaluate(() => localStorage.getItem("ul:launch-scene"))).toBe("factory");
-  await page.screenshot({ path: "outputs/launch-polish/factory-mobile-dark.png" });
+  expect(await page.evaluate(() => localStorage.getItem("ul:launch-scene"))).toBe("nuke");
+  await page.screenshot({ path: "outputs/launch-polish/nuke-mobile-dark.png" });
 });

@@ -1,0 +1,125 @@
+{
+  "method": "Pixel treatment of Valve-distributed CS2 Panorama map selection views. Each scene uses a 640 by 360 grid, a map-specific shadow and light grade, edge accents and a 56-colour palette encoded as lossless WebP. Small 96 by 54 previews use separate files.",
+  "assets": [
+    {
+      "map": "dust2",
+      "panorama": "de_dust2_1_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_dust2_1_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "21b370251067263a3089704000f7bba1744c5a5afef0a261cf1eec2be325dff2",
+      "scene": "/art/maps/dust2.webp",
+      "sceneSha256": "20d6f0ebadc13fe355682b0d8fc4edcadd3ef435214b95f5ba576e6351c2ef03",
+      "bytes": 76530,
+      "thumbnail": "/art/map-thumbnails/dust2.webp",
+      "thumbnailBytes": 2762
+    },
+    {
+      "map": "mirage",
+      "panorama": "de_mirage_1_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_mirage_1_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "0bdf09e04135e22631192b0a31b88bdd2afbadf11d50745d19c0a1e31ae07fd4",
+      "scene": "/art/maps/mirage.webp",
+      "sceneSha256": "8854d1b6e84b643dbf12b02e53f111effe85d62cdd9505146c23798751c230c7",
+      "bytes": 82686,
+      "thumbnail": "/art/map-thumbnails/mirage.webp",
+      "thumbnailBytes": 2982
+    },
+    {
+      "map": "inferno",
+      "panorama": "de_inferno_2_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_inferno_2_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "5d93358cd91bee2497d9261f022d43231594e47ba649d409736fc1dc293c1be5",
+      "scene": "/art/maps/inferno.webp",
+      "sceneSha256": "8d6144e84fbb6b32e1d98087eb90bc1a71b14c3f3915d602320a49160821ca04",
+      "bytes": 70816,
+      "thumbnail": "/art/map-thumbnails/inferno.webp",
+      "thumbnailBytes": 2738
+    },
+    {
+      "map": "nuke",
+      "panorama": "de_nuke_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_nuke_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "2f6a12b25daa6bc7b993930c3d1e19d10ef8b05b57e8b039dcf5662cd024400a",
+      "scene": "/art/maps/nuke.webp",
+      "sceneSha256": "4567e45c1bb7c7679b50a678b915dec4ede18821977d754405799fd5e4063bbc",
+      "bytes": 69014,
+      "thumbnail": "/art/map-thumbnails/nuke.webp",
+      "thumbnailBytes": 2740
+    },
+    {
+      "map": "ancient",
+      "panorama": "de_ancient_2_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_ancient_2_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "cd0c523b7a4bfd875343df4ab86d522ea88dd22f10aaccf23fff2f9059447b68",
+      "scene": "/art/maps/ancient.webp",
+      "sceneSha256": "6d4ab5d6d0cd301c49e9d6c04f9307e3349fba880460fd74f7f59ba944287507",
+      "bytes": 109406,
+      "thumbnail": "/art/map-thumbnails/ancient.webp",
+      "thumbnailBytes": 3124
+    },
+    {
+      "map": "anubis",
+      "panorama": "de_anubis_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_anubis_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "de6cbf27b80ab2364d45245ab9d6baccdc839bec0558cff30f988a8967d81d26",
+      "scene": "/art/maps/anubis.webp",
+      "sceneSha256": "02a33d3667439869258cf93263d842699f42a375be910c0bd21ac313884ea0bd",
+      "bytes": 70334,
+      "thumbnail": "/art/map-thumbnails/anubis.webp",
+      "thumbnailBytes": 2750
+    },
+    {
+      "map": "cache",
+      "panorama": "de_cache_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_cache_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "2ba892d2a8461a6525eff97ec6c411b4f09bf9d8f240ec548551feaa7e1c6f2c",
+      "scene": "/art/maps/cache.webp",
+      "sceneSha256": "711e96e56e61afd5b2bfd3254054c259782975702e9f06abba99d54dc819991f",
+      "bytes": 72364,
+      "thumbnail": "/art/map-thumbnails/cache.webp",
+      "thumbnailBytes": 2520
+    },
+    {
+      "map": "vertigo",
+      "panorama": "de_vertigo_2_png.png",
+      "url": "https://raw.githubusercontent.com/MurkyYT/cs2-map-icons/59cd523b385a6d01b8bbd80fd450afbb61510041/images/thumbs/de_vertigo_2_png.png",
+      "sourceSize": [
+        1920,
+        1080
+      ],
+      "sourceSha256": "1da1ab44bceb9877f62c0cd87965e5b0965d2a6bee5b56be3a215213695f3031",
+      "scene": "/art/maps/vertigo.webp",
+      "sceneSha256": "b66c795261a4d784c2675e17eeeecd9d9cf077c7401f1c78318bec5c4b021d93",
+      "bytes": 63930,
+      "thumbnail": "/art/map-thumbnails/vertigo.webp",
+      "thumbnailBytes": 2630
+    }
+  ]
+}

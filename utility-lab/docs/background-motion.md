@@ -1,7 +1,5 @@
 # Home motion
 
-The artist’s original street foreground moves three source pixels on entry in three steps over 620 ms. Its skyline stays still. Each scene fades in over 300 ms, with the previously decoded scene visible underneath when changing landscapes. The workspace dock settles over 200 ms on entry or pointer return. Keyboard return restores focus immediately.
+Map changes crossfade for 300 ms. The previous picture stays visible while the selected map decodes. When the new frame extends past the viewport, it moves up to three original pixels in three steps over 540 ms. At an exact fit the map stays in place. The crop keeps the chosen landmark visible on a phone.
 
-The animation ends after one pass. Hidden tabs pause the artwork. Reduced motion immediately presents the final picture and dock. Only the selected art is requested during normal use. An explicit offline download includes the complete collection.
-
-See [current artwork and source dimensions](launch-art.md).
+The scene entrance runs once. Hidden tabs pause it. Reduced motion shows the selected picture and workspace controls immediately. Returning by keyboard restores focus to the last workspace. [Map artwork and credits](launch-art.md)

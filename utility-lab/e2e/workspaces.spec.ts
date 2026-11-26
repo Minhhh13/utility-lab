@@ -10,7 +10,7 @@ test("full-screen pixel launch offers four destinations with a brief entrance", 
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute(
     "src",
-    "/art/ansimuz/neon-street.webp",
+    "/art/maps/dust2.webp",
   );
   const box = await page.locator(".launch-screen").boundingBox();
   expect(box?.x).toBe(0);
@@ -21,7 +21,7 @@ test("full-screen pixel launch offers four destinations with a brief entrance", 
   await expect(
     page.getByRole("button", { name: /Pause scene|Play scene/ }),
   ).toHaveCount(0);
-  await expect(page.locator(".launch-foreground")).toHaveCSS(
+  await expect(page.locator(".launch-picture .launch-art")).toHaveCSS(
     "animation-play-state",
     "running",
   );
@@ -46,7 +46,7 @@ test("full-screen pixel launch offers four destinations with a brief entrance", 
   }
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.reload();
-  await expect(page.locator(".launch-foreground")).toHaveCSS("animation-name", "none");
+  await expect(page.locator(".launch-picture .launch-art")).toHaveCSS("animation-name", "none");
   await page.getByRole("button", { name: "Lineups", exact: true }).click();
   await expect(
     page.getByRole("region", { name: "Utility library", exact: true }),
@@ -62,42 +62,34 @@ test.describe("landscape network recovery", () => {
     const requestedArt = new Set<string>();
     page.on("request", (request) => {
       const path = new URL(request.url()).pathname;
-      if (path.startsWith("/art/ansimuz/")) requestedArt.add(path);
+      if (path.startsWith("/art/maps/")) requestedArt.add(path);
     });
     await page.goto("/");
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
-    expect([...requestedArt].sort()).toEqual(["/art/ansimuz/neon-street-front.webp", "/art/ansimuz/neon-street.webp"]);
-    const landscape = page.getByLabel("Landscape", { exact: true });
-    await expect(landscape.locator("option")).toHaveCount(6);
-    for (const choice of ["hangar"]) {
-      await landscape.selectOption(choice);
-      await expect(page.locator(".launch-screen")).toHaveAttribute(
-        "data-scene",
-        choice,
-      );
-      await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute(
-        "src",
-        `/art/ansimuz/${choice}.webp`,
-      );
-    }
+    expect([...requestedArt].sort()).toEqual(["/art/maps/dust2.webp"]);
+    const landscape = page.getByRole("button", {name:/^Map background:/});
+    const choose = async(name:string) => { await landscape.click(); await page.getByRole("option", {name,exact:true}).click(); };
+    await choose("Nuke");
+    await expect(page.locator(".launch-screen")).toHaveAttribute("data-scene", "nuke");
+    await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute("src", "/art/maps/nuke.webp");
     await page.reload();
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
-    await expect(landscape).toHaveValue("hangar");
+    await expect(landscape).toHaveAttribute("data-scene", "nuke");
     await expect(page.locator(".launch-screen")).toHaveAttribute(
       "data-scene",
-      "hangar",
+      "nuke",
     );
-    await page.route("**/art/ansimuz/old-town.webp", (route) =>
+    await page.route("**/art/maps/inferno.webp", (route) =>
       route.abort(),
     );
-    await landscape.selectOption("old-town");
+    await choose("Inferno");
     await expect(page.locator(".launch-scene-error")).toContainText(
-      "Landscape unavailable",
+      "Map background unavailable",
     );
-    await expect(landscape).toHaveValue("hangar");
+    await expect(landscape).toHaveAttribute("data-scene", "nuke");
     await expect(page.locator(".launch-screen")).toHaveAttribute(
       "data-scene",
-      "hangar",
+      "nuke",
     );
     await expect(
       page.getByRole("button", { name: "Lineups", exact: true }),

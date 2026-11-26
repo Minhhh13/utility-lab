@@ -4,7 +4,7 @@ Public website: **[utilitylab.au](https://utilitylab.au)**, hosted on Cloudflare
 
 A local-first Counter-Strike 2 planning app for desktop and phone-sized screens, with a compact in-game view, a fullscreen pixel-art entry, a tactic board, map-based lineups, five-player Playbooks and local statistics.
 
-Home offers six pixel-art scenes by Luis Zuno. The Landscape control remembers the scene, loads its original pixels on demand and scales them in whole physical pixels. The street foreground moves briefly on arrival. Returning to Home highlights the previous workspace and restores keyboard focus. See [art credits and source dimensions](docs/launch-art.md).
+Home opens on Dust II’s Mid Doors. Use **Map background** to choose a pixel-art treatment of one of eight Counter-Strike 2 maps. The site remembers the map on this device and loads the full scene when selected. Returning to Home highlights the previous workspace and restores keyboard focus. [Artwork credits and source dimensions](docs/launch-art.md)
 
 The former [pages.dev address](https://utility-lab-8b0.pages.dev) remains available for saved-work exports. See [domain setup and backup transfer](docs/custom-domain.md).
 

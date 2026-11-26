@@ -101,8 +101,13 @@ summary:focus-visible {
   color: #1f3f9f;
 }
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #bfc5cb transparent;
+  scrollbar-width: none;
+}
+/* Keep native wheel, touch and keyboard scrolling in every overflow container. */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 .sr-only {
   position: absolute;
@@ -538,12 +543,10 @@ dialog::backdrop {
   overflow-y: auto;
   overscroll-behavior: contain;
   min-height: 100px;
-  scrollbar-width: none;
   scroll-padding-block: 18px;
   --fade-start: 0px;
   --fade-end: 0px;
 }
-.map-grid::-webkit-scrollbar { display: none; }
 .map-grid[data-scroll-before] { --fade-start: 16px; }
 .map-grid[data-scroll-after] { --fade-end: 16px; }
 .map-grid:is([data-scroll-before], [data-scroll-after]) {
@@ -551,8 +554,6 @@ dialog::backdrop {
 }
 .map-grid:focus-visible { outline-offset: -3px; }
 @media (forced-colors: active) {
-  .map-grid { scrollbar-width: auto; }
-  .map-grid::-webkit-scrollbar { display: block; }
   .map-grid:is([data-scroll-before], [data-scroll-after]) { mask-image: none; }
 }
 .map-tile {

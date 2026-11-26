@@ -162,7 +162,6 @@
   min-width: 0;
   overflow-x: auto;
   padding: 3px;
-  scrollbar-width: thin;
 }
 .ul-types button {
   display: flex;
@@ -2165,7 +2164,6 @@
   inset: 0;
   overflow: hidden;
   overscroll-behavior: contain;
-  scrollbar-color: var(--muted) transparent;
   touch-action: pan-x pan-y;
 }
 .ul-reference-open strong {

@@ -5,7 +5,7 @@ const PHOTO_CACHE = "ul-viewed-photos-v1";
 const PHOTO_LIMIT = 12;
 const PHOTO_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
 const PHOTO_PENDING_AGE = 2 * 60 * 1000;
-const launchArt = /^\/art\/ansimuz\/(?:neon-street(?:-front)?|old-town|hangar|factory|mountain-pass|cliffside)\.webp$/;
+const launchArt = /^\/art\/(?:maps|map-thumbnails)\/(?:dust2|mirage|inferno|nuke|ancient|anubis|cache|vertigo)\.webp$/;
 const pendingPhotos = new Map();
 const photoRetries = new Map();
 let photoWrites = Promise.resolve();
@@ -160,6 +160,8 @@ self.addEventListener("install", (event) => {
         "/icons/icon-192.png?v=route20261110",
         "/icons/icon-512.png?v=route20261110",
         "/fonts/manrope-latin.woff2",
+        // The current art collection replaces the credits at this fixed URL.
+        new Request("/art/credits.txt", { cache: "reload" }),
         "/maps/mirage.svg",
         "/maps/mirage-light.svg",
         ...assets,
@@ -175,6 +177,8 @@ self.addEventListener("activate", (event) => {
       caches.open(CACHE).then(cache => Promise.all([
         "launch-courtyard.webp", "launch-dunes.webp", "launch-dust-cs1999.webp", "launch-dust-source.webp",
         "launch-dust-csgo.webp", "launch-foundry.webp", "launch-pixel.png", "launch-temple.webp", "pixel-smoke.png",
+        ...["neon-street", "neon-street-front", "old-town", "factory", "hangar", "cliffside", "mountain-pass"]
+          .map(name => "ansimuz/" + name + ".webp"),
       ].map(name => cache.delete("/art/" + name, { ignoreVary: true })))),
       caches
         .keys()

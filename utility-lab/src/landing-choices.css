@@ -30,8 +30,6 @@
   padding: 0 11px 16px;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
   list-style: none;
 }
 .ul-landing-list li { margin: 2px 0; }

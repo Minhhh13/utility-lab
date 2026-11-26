@@ -569,7 +569,10 @@ export default function Utilities({
   onOpenLineup,
 }: UtilitiesProps) {
   const initialLineup = useMemo(
-    () => (suppliedLineup ? nativePhotoRecord(suppliedLineup) : undefined),
+    // Published routes already resolve the current catalogue gallery. Applying
+    // an old gallery by ID here would prepend obsolete photos to its aim step.
+    () => suppliedLineup?.userCreated || suppliedLineup?.photoEmbed
+      ? nativePhotoRecord(suppliedLineup) : suppliedLineup,
     [suppliedLineup],
   );
   const [levelId, setLevelId] = useState(

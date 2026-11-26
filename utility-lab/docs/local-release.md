@@ -68,7 +68,7 @@ Saved metadata uses localStorage and saved photos use IndexedDB. Clearing site d
 
 ## Prepare offline maps
 
-Use the production localhost address above, open **Workspace settings** and run **Download all maps**. It caches supported radars and the three CS landscapes alongside the app shell. **Download photo guides** separately caches the 420 bundled images (90.4 MB). Uploaded photos remain local. Source-hosted images and videos still need internet. Each map catalogue is fetched only when used and then cached by the production worker; map downloads do not fetch every online gallery or clip. Original remote image bytes are not added to workspace backups.
+Open **Workspace settings** on the production localhost address and select **Download all maps**. The offline package includes supported radars, eight Home map scenes, picker previews and map art credits. **Download photo guides** separately caches bundled lineup photos. Map catalogues are cached when opened. Source-hosted media needs an internet connection unless a previously viewed photo is available in the browser cache. Uploaded photos stay on this device.
 
 Saved tactics can be shared through **Share tactic → Copy code**. Your friend opens the code in their own Utility Lab to preview it, then chooses **Edit a copy**. A code contains the board, notes, floor and optional custom radar; later edits are separate. Nothing is uploaded and no online short-code service is used. Local links work only where the app is running at their address.
 
