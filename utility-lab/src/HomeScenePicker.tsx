@@ -119,13 +119,18 @@ export default function HomeScenePicker({ scenes, value, onChange, busy }: Props
     {openedBy && <div className="home-scene-popup" data-opened-by={openedBy} ref={panel}>
       <div className="home-scene-heading" id={id + "-label"}>Map background</div>
       <div role="listbox" id={id} aria-labelledby={id + "-label"} className="home-scene-list" ref={list}>
-        {scenes.map((scene, index) => <button key={scene.id} type="button" role="option" aria-selected={scene.id === value}
-          tabIndex={-1} className="home-scene-option" ref={option => { optionRefs.current[index] = option; }}
-          onKeyDown={event => navigate(event, index)} onClick={() => { onChange(scene.id); dismiss(true); }}>
-          <img src={scene.thumbnail} alt="" width="64" height="36" decoding="async" />
-          <span>{scene.name}</span>
-          {scene.id === value && <Check className="home-scene-check" size={17} strokeWidth={2.4} aria-hidden="true" />}
-        </button>)}
+        {scenes.map((scene, index) => {
+          const [map, edition] = scene.name.split(" · ");
+          return (
+            <button key={scene.id} type="button" role="option" aria-label={scene.name} aria-selected={scene.id === value}
+              tabIndex={-1} className="home-scene-option" ref={option => { optionRefs.current[index] = option; }}
+              onKeyDown={event => navigate(event, index)} onClick={() => { onChange(scene.id); dismiss(true); }}>
+              <img src={scene.thumbnail} alt="" width="64" height="36" decoding="async" />
+              <span className="home-scene-label"><span>{map}</span><small>{edition}</small></span>
+              {scene.id === value && <Check className="home-scene-check" size={17} strokeWidth={2.4} aria-hidden="true" />}
+            </button>
+          );
+        })}
       </div>
     </div>}
   </span>;

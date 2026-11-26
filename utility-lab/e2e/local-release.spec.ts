@@ -1,10 +1,19 @@
 import { startPersonalLineup } from "./lineup-helpers";
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { readFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { emptyPlan } from "../src/board-model";
 import { LAUNCH_SCENES } from "../src/launch-scenes";
 test.use({ baseURL: "http://127.0.0.1:5180" });
+
+function cachedHomeArt(page: Page) {
+  return page.evaluate(async () => {
+    const cachesOnDevice = await Promise.all((await caches.keys()).map(name => caches.open(name)));
+    const requests = (await Promise.all(cachesOnDevice.map(cache => cache.keys()))).flat();
+    return [...new Set(requests.map(request => new URL(request.url).pathname)
+      .filter(path => path.startsWith("/art/")))].sort();
+  });
+}
 
 test("workspace backups carry actual photos into a clean browser and preserve linked round steps", async ({
   page,
@@ -177,6 +186,7 @@ test("all supported map floors and Home backgrounds are available offline after 
       exact: true,
     }),
   ).toBeVisible({ timeout: 30000 });
+  expect(await cachedHomeArt(page)).toEqual(LAUNCH_SCENES.flatMap(scene => [scene.src, scene.thumbnail]).sort());
   await page
     .getByRole("button", { name: "Close workspace settings", exact: true })
     .click();
@@ -201,16 +211,41 @@ test("all supported map floors and Home backgrounds are available offline after 
   for (const scene of LAUNCH_SCENES) {
     await page.getByRole("button", { name: /^Map background:/ }).click();
     const option = page.getByRole("option", { name: scene.name, exact: true });
-    await expect.poll(() => option.locator("img").evaluate(image => image.naturalWidth)).toBe(96);
+    const thumb = option.locator("img");
+    await expect(thumb).toHaveAttribute("src", scene.thumbnail);
+    await expect.poll(() => thumb.evaluate(image => [image.naturalWidth, image.naturalHeight])).toEqual([96, 54]);
     await option.click();
     const art = page.locator(".launch-art.is-loaded:not(.launch-art-previous)");
     await expect(art).toHaveAttribute("src", scene.src);
-    await expect.poll(() => art.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBe(640);
+    await expect.poll(() => art.evaluate((image: HTMLImageElement) => [image.naturalWidth, image.naturalHeight])).toEqual([768, 432]);
   }
-  const credits = await page.evaluate(async () => (await fetch("/art/credits.txt")).text());
-  for (const scene of LAUNCH_SCENES) expect(credits).toContain(scene.name);
   await context.setOffline(false);
 });
+
+for (const download of ["single", "complete"] as const) {
+  test(`a ${download} previous-generation Home download migrates and opens offline`, async ({ page, context }) => {
+    // Start on a same-origin file without app code so the old cache exists before installation.
+    await page.goto("/icon.svg");
+    const old = download === "single" ? ["cache"] : ["dust2", "mirage", "inferno", "nuke", "ancient", "anubis", "cache", "vertigo"];
+    await page.evaluate(async ({old, download}) => {
+      const cache = await caches.open("utility-lab-v17");
+      localStorage.setItem("ul:launch-scene", "cache");
+      const folders = download === "single" ? ["maps"] : ["maps", "map-thumbnails"];
+      for (const folder of folders) for (const id of old) {
+        await cache.put(`/art/${folder}/${id}.webp`, new Response("previous drawing"));
+      }
+    }, {old, download});
+    await page.goto("/#board");
+    await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
+    const expected = download === "single" ? ["/art/maps/train.webp"] : LAUNCH_SCENES.flatMap(scene => [scene.src, scene.thumbnail]).sort();
+    await expect.poll(() => cachedHomeArt(page)).toEqual(expected);
+    await context.setOffline(true);
+    await page.getByRole("link", { name: "Utility Lab home" }).click();
+    const art = page.locator(".launch-art.is-loaded");
+    await expect(art).toHaveAttribute("src", "/art/maps/train.webp");
+    await expect.poll(() => art.evaluate((img: HTMLImageElement) => [img.naturalWidth, img.naturalHeight])).toEqual([768, 432]);
+  });
+}
 
 test("lineup drafts recover after reload and the board stays free of artwork and video requests", async ({
   page,

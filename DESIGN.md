@@ -4,7 +4,7 @@ Utility Lab pairs a planning studio with a distinct pixel-art entry. Its name re
 
 ## Surface roles
 
-Home uses a pixel-art view from each of the eight supported CS2 maps. The top-bar picker shows a thumbnail and the map name for each choice. Keep the previous scene visible while the selected picture decodes, then crossfade. A brief entrance follows the source pixel grid. Reduced motion shows the scene immediately. Tactic board, Lineups, Playbooks and Stats remain accessible while the artwork loads. [Map views and artwork sources](utility-lab/docs/launch-art.md)
+Home opens on the 1999 Dust underpass. The top-bar picker pairs thumbnails with the map and its edition, including separate paintings of original and Source-era Dust. Keep the previous scene visible while the selected picture decodes, then crossfade. A brief entrance follows the source pixel grid. Reduced motion shows the scene immediately. Tactic board, Lineups, Playbooks and Stats remain accessible while the artwork loads. [Illustrations and drawing source](utility-lab/docs/launch-art.md)
 
 The workspaces are **Operate** surfaces. The map and the current task lead. Marketing heroes, decorative metrics, nested cards and tiny pseudo-technical labels do not belong in the editor.
 

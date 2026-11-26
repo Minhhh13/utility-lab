@@ -10,7 +10,7 @@ test("full-screen pixel launch offers four destinations with a brief entrance", 
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
   await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute(
     "src",
-    "/art/maps/dust2.webp",
+    "/art/maps/dust-1999.webp",
   );
   const box = await page.locator(".launch-screen").boundingBox();
   expect(box?.x).toBe(0);
@@ -66,12 +66,12 @@ test.describe("landscape network recovery", () => {
     });
     await page.goto("/");
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
-    expect([...requestedArt].sort()).toEqual(["/art/maps/dust2.webp"]);
+    expect([...requestedArt]).toEqual(["/art/maps/dust-1999.webp"]);
     const landscape = page.getByRole("button", {name:/^Map background:/});
     const choose = async(name:string) => { await landscape.click(); await page.getByRole("option", {name,exact:true}).click(); };
-    await choose("Nuke");
+    await choose("Nuke · Source");
     await expect(page.locator(".launch-screen")).toHaveAttribute("data-scene", "nuke");
-    await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute("src", "/art/maps/nuke.webp");
+    await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveAttribute("src", "/art/maps/nuke-source.webp");
     await page.reload();
     await expect(page.locator(".launch-art:not(.launch-art-previous)")).toHaveClass(/is-loaded/);
     await expect(landscape).toHaveAttribute("data-scene", "nuke");
@@ -79,10 +79,10 @@ test.describe("landscape network recovery", () => {
       "data-scene",
       "nuke",
     );
-    await page.route("**/art/maps/inferno.webp", (route) =>
+    await page.route("**/art/maps/inferno-source.webp", (route) =>
       route.abort(),
     );
-    await choose("Inferno");
+    await choose("Inferno · Source");
     await expect(page.locator(".launch-scene-error")).toContainText(
       "Map background unavailable",
     );

@@ -5,7 +5,13 @@ const PHOTO_CACHE = "ul-viewed-photos-v1";
 const PHOTO_LIMIT = 12;
 const PHOTO_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
 const PHOTO_PENDING_AGE = 2 * 60 * 1000;
-const launchArt = /^\/art\/(?:maps|map-thumbnails)\/(?:dust2|mirage|inferno|nuke|ancient|anubis|cache|vertigo)\.webp$/;
+const classicScenes = ["dust-1999", "dust-source", "dust2-16", "aztec", "inferno-source", "nuke-source", "train", "office"];
+const launchArt = new RegExp("^/art/(?:maps|map-thumbnails)/(?:" + classicScenes.join("|") + ")\\.webp$");
+const replacedScenes = {
+  dust2: "dust2-16", mirage: "inferno-source", inferno: "inferno-source", nuke: "nuke-source",
+  ancient: "aztec", anubis: "dust-1999", cache: "train", vertigo: "office",
+};
+const sceneFolders = ["/art/maps/", "/art/map-thumbnails/"];
 const pendingPhotos = new Map();
 const photoRetries = new Map();
 let photoWrites = Promise.resolve();
@@ -140,6 +146,21 @@ async function fetchPhoto(event,url) {
   }
   return response;
 }
+// Preserve the extent of an existing offline art download through the change
+// of collection. An opened picture costs one replacement, a full pack stays full.
+async function migrateDownloadedScenes(cache) {
+  const paths = new Set((await cache.keys()).map(request => new URL(request.url).pathname));
+  const replacements = [];
+  for (const folder of sceneFolders) {
+    const old = Object.keys(replacedScenes).filter(id => paths.has(folder + id + ".webp"));
+    const next = old.length === Object.keys(replacedScenes).length ? classicScenes : old.map(id => replacedScenes[id]);
+    for (const id of new Set(next)) {
+      const path = folder + id + ".webp";
+      if (!paths.has(path)) replacements.push(path);
+    }
+  }
+  if (replacements.length) await cache.addAll(replacements);
+}
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
@@ -150,6 +171,7 @@ self.addEventListener("install", (event) => {
         throw new Error("App assets unavailable for offline use");
       const assets = await response.json();
       const cache = await caches.open(CACHE);
+      await migrateDownloadedScenes(cache);
       await cache.addAll([
         "/",
         "/icon.svg",
@@ -160,8 +182,6 @@ self.addEventListener("install", (event) => {
         "/icons/icon-192.png?v=route20261110",
         "/icons/icon-512.png?v=route20261110",
         "/fonts/manrope-latin.woff2",
-        // The current art collection replaces the credits at this fixed URL.
-        new Request("/art/credits.txt", { cache: "reload" }),
         "/maps/mirage.svg",
         "/maps/mirage-light.svg",
         ...assets,
@@ -175,6 +195,8 @@ self.addEventListener("activate", (event) => {
       self.clients.claim(),
       // Retire the previous Home paintings without discarding offline map and guide downloads.
       caches.open(CACHE).then(cache => Promise.all([
+        "credits.txt",
+        ...sceneFolders.flatMap(folder => Object.keys(replacedScenes).map(id => folder.slice("/art/".length) + id + ".webp")),
         "launch-courtyard.webp", "launch-dunes.webp", "launch-dust-cs1999.webp", "launch-dust-source.webp",
         "launch-dust-csgo.webp", "launch-foundry.webp", "launch-pixel.png", "launch-temple.webp", "pixel-smoke.png",
         ...["neon-street", "neon-street-front", "old-town", "factory", "hangar", "cliffside", "mountain-pass"]
@@ -207,7 +229,7 @@ self.addEventListener("message", (event) => {
       (url) =>
         typeof url === "string" &&
         (/^\/(maps|map-thumbnails)\/[a-zA-Z0-9_.-]+\.(svg|png)$/.test(url) ||
-          (url === "/art/credits.txt" || launchArt.test(url)) ||
+          launchArt.test(url) ||
           /^\/lineup-media\/(?:[a-zA-Z0-9_-]+\/)+[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/.test(
             url,
           )),
@@ -280,8 +302,8 @@ self.addEventListener("fetch", (event) => {
   }
   if (event.request.method !== "GET" || url.origin !== self.location.origin)
     return;
-  if (url.pathname.startsWith("/art/") && url.pathname !== "/art/credits.txt" && !launchArt.test(url.pathname)) return;
-  if (event.request.mode === "navigate" && url.pathname !== "/art/credits.txt") {
+  if (url.pathname.startsWith("/art/") && !launchArt.test(url.pathname)) return;
+  if (event.request.mode === "navigate") {
     event.respondWith(
       fetch(event.request)
         .then((response) => {

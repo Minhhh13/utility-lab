@@ -27,9 +27,20 @@ function savedScene(): SceneId {
     return DEFAULT_SCENE;
   }
 }
-type Frame = { width: number; height: number; dpr: number };
+type Frame = { width: number; height: number; dpr: number; dockSpace: number };
 
 type PixelSize = { width: number; height: number };
+
+// Anchor weather to the painting's native pixels so it follows the same crop on phones.
+const ambient: Partial<Record<SceneId, [number, number][]>> = {
+  "dust-1999": [[339,347], [389,323], [353,340]],
+  aztec: [[312,357], [423,330], [484,285]],
+  office: [[80,100], [253,85], [418,112], [680,127], [174,190], [558,199]],
+};
+const portraitLandmarks: Partial<Record<SceneId, { focus: number; y: number }>> = {
+  "dust-source": { focus: .80, y: 285 }, // Parked car below the domed hall.
+  inferno: { focus: .52, y: 301 }, // Fountain in front of the chapel.
+};
 
 function ScenePicture({ scene, frame, size, loaded, previous = false }: {
   scene: Scene; frame: Frame | null; size?: PixelSize; loaded: boolean; previous?: boolean;
@@ -37,16 +48,25 @@ function ScenePicture({ scene, frame, size, loaded, previous = false }: {
   let style: CSSProperties | undefined;
   if (frame && size) {
     // Align every source pixel and both cropped edges to physical display pixels.
-    const { width, height, dpr } = frame;
-    const scale = Math.max(1, Math.ceil(Math.max(width / size.width, height / size.height) * dpr));
+    const { width, height, dpr, dockSpace } = frame;
+    const landmark = width < height ? portraitLandmarks[scene.id] : undefined;
+    // Reserve enough foreground below the landmark to fill the area behind the controls.
+    const foregroundScale = landmark ? (dockSpace + 24) / (size.height - landmark.y) : 0;
+    const scale = Math.max(1, Math.ceil(Math.max(width / size.width, height / size.height, foregroundScale) * dpr));
     const pixel = scale / dpr;
-    const left = Math.round((width * dpr - size.width * scale) * scene.focus);
-    const top = Math.round((height * dpr - size.height * scale) / 2);
+    const left = Math.round((width * dpr - size.width * scale) * (landmark?.focus ?? scene.focus));
+    // The skylines begin near the top of the drawing. On wide displays crop the
+    // foreground first to retain the distant architecture and skyline.
+    const verticalOverflow = size.height * scale - height * dpr;
+    const skylineCrop = Math.min(verticalOverflow * .25, size.height * scale * .05);
+    const foregroundCrop = landmark ? landmark.y * scale - (height - dockSpace - 24) * dpr : 0;
+    const top = -Math.round(Math.min(verticalOverflow, Math.max(skylineCrop, foregroundCrop)));
     // Only travel into available overscan. Native-size 16:9 holds perfectly still.
     const travel = (edge: number) => edge <= -3 * scale ? 3 * pixel : 0;
     style = {
       width: size.width * pixel, height: size.height * pixel,
       left: left / dpr, top: top / dpr,
+      "--art-pixel": `${pixel}px`,
       "--entry-x": `${travel(left)}px`, "--entry-y": `${travel(left) ? 0 : travel(top)}px`,
     } as CSSProperties;
   }
@@ -55,6 +75,12 @@ function ScenePicture({ scene, frame, size, loaded, previous = false }: {
     <img className={"launch-art" + (previous ? " launch-art-previous" : "") + (loaded ? " is-loaded" : "")}
       src={scene.src} data-scene={scene.id} alt={previous ? "" : scene.alt} width={size?.width}
       height={size?.height} fetchPriority="high" decoding="async" />
+    {!previous && loaded && size && ambient[scene.id] &&
+      <span className="launch-ambient" data-weather={scene.id} aria-hidden="true">
+        {ambient[scene.id]!.map(([x,y], i) => <i key={x} style={{
+          left: `${100*x/size.width}%`, top: `${100*y/size.height}%`, animationDelay: `${-1.67*i}s`,
+        }} />)}
+      </span>}
   </div>;
 }
 
@@ -94,6 +120,7 @@ export default function LaunchScreen({
 }: Props) {
   const dimensions = useRef(new Map<SceneId, PixelSize>());
   const artFrame = useRef<HTMLDivElement>(null);
+  const dock = useRef<HTMLElement>(null);
   const [frame, setFrame] = useState<Frame | null>(null);
   useLayoutEffect(() => {
     const element = artFrame.current;
@@ -101,11 +128,13 @@ export default function LaunchScreen({
     function measure() {
       const { width, height } = element!.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
-      setFrame(previous => previous?.width === width && previous.height === height && previous.dpr === dpr
-        ? previous : { width, height, dpr });
+      const dockSpace = dock.current ? height - dock.current.offsetTop : 0;
+      setFrame(previous => previous?.width === width && previous.height === height && previous.dpr === dpr && previous.dockSpace === dockSpace
+        ? previous : { width, height, dpr, dockSpace });
     }
     const observer = new ResizeObserver(measure);
     observer.observe(element);
+    if (dock.current) observer.observe(dock.current);
     window.addEventListener("resize", measure);
     measure();
     return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
@@ -236,11 +265,7 @@ export default function LaunchScreen({
           : sceneMessage || `${scene.name} background`}
       </span>
       {sceneMessage && <p className="launch-scene-error">{sceneMessage}</p>}
-      {artState === "loaded" && <div className="launch-art-credit">
-        <a href="/art/credits.txt" target="_blank" rel="noopener noreferrer"
-          aria-label={`Open map artwork credits for ${scene.name}`}>Map art credits <ArrowUpRight size={12} aria-hidden="true" /></a>
-      </div>}
-      <nav className="launch-destinations" aria-label="Choose your workspace">
+      <nav ref={dock} className="launch-destinations" aria-label="Choose your workspace">
         {destinations.map(({ id, title, description, icon: Icon }) => (
           <button
             type="button"

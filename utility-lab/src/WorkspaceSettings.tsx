@@ -152,7 +152,6 @@ export default function WorkspaceSettings({
               ),
             ),
             ...LAUNCH_SCENES.flatMap(scene => [scene.src, scene.thumbnail]),
-            "/art/credits.txt",
           ];
       await new Promise<void>((resolve, reject) => {
         const channel = new MessageChannel();

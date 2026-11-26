@@ -4,6 +4,17 @@ import { LAUNCH_SCENES } from "../src/launch-scenes";
 
 test.use({ serviceWorkers: "block" });
 
+async function sampleColours(image: HTMLImageElement) {
+  await image.decode();
+  const canvas = document.createElement("canvas");
+  canvas.width = 24;
+  canvas.height = 14;
+  const ctx = canvas.getContext("2d")!;
+  ctx.imageSmoothingQuality = "high";
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  return Array.from(ctx.getImageData(0, 0, canvas.width, canvas.height).data);
+}
+
 test("CS map backgrounds sit in the top bar, remain compact on phones, and keep all destinations reachable", async ({
   page,
 }) => {
@@ -17,6 +28,8 @@ test("CS map backgrounds sit in the top bar, remain compact on phones, and keep 
   await landscape.click();
   const menu = page.getByRole("listbox", {name:"Map background"});
   await expect(menu.getByRole("option")).toHaveCount(8);
+  const previewColours = await Promise.all((await menu.locator("img").all())
+    .map(image => image.evaluate(sampleColours)));
   await page.keyboard.press("Escape");
   await mkdir("outputs/artist-art-review", { recursive: true });
   for (const size of [
@@ -57,11 +70,14 @@ test("CS map backgrounds sit in the top bar, remain compact on phones, and keep 
       id,
     );
     await expect(page.locator(".launch-art-previous")).toHaveCount(0);
-    expect(
-      await page
-        .locator(".launch-art:not(.launch-art-previous)")
-        .evaluate((image: HTMLImageElement) => image.naturalWidth),
-    ).toBeGreaterThan(255);
+    const art = page.locator(".launch-art:not(.launch-art-previous)");
+    await expect(art).toHaveAttribute("src", scene.src);
+    await expect(art).toHaveAttribute("alt", scene.alt);
+    expect(await art.evaluate((image: HTMLImageElement) => [image.naturalWidth, image.naturalHeight])).toEqual([768, 432]);
+    // A valid thumbnail URL can still contain another map's drawing.
+    const colours = await art.evaluate(sampleColours);
+    const differences = previewColours.map(preview => preview.reduce((sum, value, i) => sum + Math.abs(value - colours[i]), 0));
+    expect(differences.indexOf(Math.min(...differences)), `Matching picker artwork for ${scene.name}`).toBe(LAUNCH_SCENES.indexOf(scene));
     await page.screenshot({
       path: `outputs/artist-art-review/${id}-1440.png`,
     });
@@ -119,20 +135,20 @@ test("a saved landscape loads alone, preserves the decoded scene during a switch
     await page.getByRole("option", { name, exact:true }).click();
   };
   await expect(art).toHaveClass(/is-loaded/);
-  await expect(landscape).toHaveAttribute("data-scene", "ancient");
-  await expect(page.getByRole("link", { name: /Open map artwork credits for Ancient/ })).toHaveAttribute("href", "/art/credits.txt");
-  expect([...requestedArt]).toEqual(["/art/maps/ancient.webp"]);
+  await expect(landscape).toHaveAttribute("data-scene", "aztec");
+  await expect(page.getByRole("link", { name: /map art(work)? credits/i })).toHaveCount(0);
+  expect([...requestedArt]).toEqual(["/art/maps/aztec.webp"]);
   let release!: () => void;
   const gate = new Promise<void>(resolve => { release = resolve; });
-  await page.route("**/art/maps/nuke.webp", async route => { await gate; await route.continue(); });
-  const requested = page.waitForRequest("**/art/maps/nuke.webp");
-  await choose("Nuke");
+  await page.route("**/art/maps/nuke-source.webp", async route => { await gate; await route.continue(); });
+  const requested = page.waitForRequest("**/art/maps/nuke-source.webp");
+  await choose("Nuke · Source");
   await requested;
-  await expect(art).toHaveAttribute("data-scene", "ancient");
-  await choose("Ancient");
+  await expect(art).toHaveAttribute("data-scene", "aztec");
+  await choose("Aztec · CS 1.6");
   await expect(landscape).toHaveAttribute("aria-busy", "false");
   release();
-  await choose("Nuke");
+  await choose("Nuke · Source");
   await expect(art).toHaveAttribute("data-scene", "nuke");
   await expect(page.locator(".launch-picture:not(.is-previous)")).toHaveCSS("animation-name", "landscape-enter");
   await page.emulateMedia({ reducedMotion: "reduce" });

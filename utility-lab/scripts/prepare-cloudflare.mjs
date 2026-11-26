@@ -54,8 +54,8 @@ const policy=localServer.match(/const csp\s*=\s*"([^\"]+)"/s)?.[1];
 assert.ok(policy,'Expected local CSP declaration');
 assert.ok(headers.includes(`Content-Security-Policy: ${policy}`),'Hosted CSP must match the verified local policy');
 assert.ok(headers.split(/\r?\n/).every(line=>line.length<=2000),'Cloudflare header-line limit');
-const homeArt = [...LAUNCH_SCENES.flatMap(scene => [scene.src, scene.thumbnail]).map(url=>url.slice(1)), 'art/credits.txt'].sort();
-assert.deepEqual([...copiedSizes.keys()].filter(key=>key.startsWith('art/')).sort(), homeArt, 'Home must contain all map scenes, previews and credits');
+const homeArt = LAUNCH_SCENES.flatMap(scene => [scene.src, scene.thumbnail]).map(url=>url.slice(1)).sort();
+assert.deepEqual([...copiedSizes.keys()].filter(key=>key.startsWith('art/')).sort(), homeArt, 'Home must contain all map scenes and previews');
 for(const removed of ['maps/cs_office.png']) {
   const entries=await readdir(path.join(directory,path.dirname(removed)));
   assert.ok(!entries.includes(path.basename(removed)),`Removed content must stay excluded: ${removed}`);
