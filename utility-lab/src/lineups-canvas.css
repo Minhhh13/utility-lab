@@ -129,6 +129,23 @@
   max-width: none;
   overflow: auto;
 }
+/* The labelled desktop rail can extend into spawn points in the 4:3 frame.
+   Fit both team buttons beneath it, within the filters' existing width. */
+@media (min-width: 1101px) and (min-height: 581px) {
+  [data-aspect-ratio="4:3"] .utility-workspace.ul-map-only .ul-filter-dock .ul-side-toggle {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    grid-template: 44px / repeat(2, 44px);
+  }
+  [data-aspect-ratio="4:3"] .utility-workspace.ul-map-only .ul-side-toggle::before {
+    width: 44px;
+    right: auto;
+  }
+  [data-aspect-ratio="4:3"] .utility-workspace.ul-map-only .ul-side-toggle[data-side="CT"]::before {
+    transform: translateX(100%);
+  }
+}
 .utility-workspace.ul-map-only .ul-types {
   display: flex;
   flex: 0 0 auto;

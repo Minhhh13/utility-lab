@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import {PUBLISHED_LINEUPS} from './catalogue-fixtures';
 
-for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1920,height:1080},{width:320,height:844},{width:390,height:844}]){
+for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1120,height:620},{width:1024,height:600},{width:1920,height:1080},{width:320,height:844},{width:390,height:844}]){
  test.describe(`${size.width}x${size.height} edge controls`,()=>{
   test.use({viewport:size,isMobile:size.width<600,hasTouch:size.width<600,serviceWorkers:'block'});
   test('keeps desktop controls left/right and phone controls top/bottom, with a clear map center',async({page})=>{
@@ -24,10 +24,16 @@ for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1920,
     expect(zoom.x).toBeGreaterThan(canvas.x+canvas.width*.65);
     expect(filters.height).toBeGreaterThan(filters.width);
     expect(zoom.height).toBeGreaterThan(zoom.width);
-    expect(sideBox.x).toBeGreaterThanOrEqual(filters.x + filters.width);
-    expect(sideBox.x + sideBox.width).toBeLessThan(canvas.x + canvas.width*.35);
-    expect(sideBox.y).toBeGreaterThanOrEqual(filters.y);
-    expect(sideBox.y + sideBox.height).toBeLessThanOrEqual(filters.y + filters.height);
+    if (size.width >= 1101 && await page.locator("#workspace").getAttribute("data-aspect-ratio") === "4:3") {
+      expect(sideBox.x).toBeCloseTo(filters.x, 0);
+      expect(sideBox.x + sideBox.width).toBeLessThanOrEqual(filters.x + filters.width);
+      expect(sideBox.y).toBeGreaterThanOrEqual(filters.y + filters.height);
+    } else {
+      expect(sideBox.x).toBeGreaterThanOrEqual(filters.x + filters.width);
+      expect(sideBox.x + sideBox.width).toBeLessThan(canvas.x + canvas.width*.35);
+      expect(sideBox.y).toBeGreaterThanOrEqual(filters.y);
+      expect(sideBox.y + sideBox.height).toBeLessThanOrEqual(filters.y + filters.height);
+    }
    }else{
     expect(filters.y+filters.height).toBeLessThan(canvas.y+canvas.height*.3);
     expect(zoom.y).toBeGreaterThan(canvas.y+canvas.height*.7);
@@ -38,10 +44,12 @@ for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1920,
    }
    const centerClear=await page.evaluate(({x,y})=>Boolean(document.elementFromPoint(x,y)?.closest('.ul-map-svg')),{x:canvas.x+canvas.width/2,y:canvas.y+canvas.height/2});
    expect(centerClear).toBe(true);
-   const blocked=await page.locator('.ul-map-controls button,.ul-zoom button,.ul-side-toggle button').evaluateAll(buttons=>buttons.flatMap(button=>{
+   const blocked=await page.locator('.ul-map-controls button,.ul-zoom button,.ul-levels button,.ul-map-credit a').evaluateAll(buttons=>buttons.flatMap(button=>{
     const r=button.getBoundingClientRect();if(!r.width||!r.height)return[];
     const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
-    return hit?.closest('button')===button?[]:[button.getAttribute('aria-label')||button.textContent];
+    const bounds=button.closest('.utility-workspace')!.getBoundingClientRect();
+    const fits=r.x>=bounds.left-1&&r.y>=bounds.top-1&&r.right<=bounds.right+1&&r.bottom<=bounds.bottom+1;
+    return fits&&hit?.closest('button,a')===button?[]:[button.getAttribute('aria-label')||button.textContent];
    }));expect(blocked).toEqual([]);
    await page.getByRole('button',{name:'Zoom utility map in',exact:true}).click();
    const svg = page.locator('.ul-map-svg');
@@ -58,6 +66,32 @@ for(const size of [{width:1440,height:1080},{width:1280,height:960},{width:1920,
   });
  });
 }
+
+test("both Cache CT Spawn markers for Garage are directly clickable in the 4:3 frame", async ({page}) => {
+  await page.setViewportSize({width:1440,height:1080});
+  await page.route(/^https:\/\//,route=>route.abort());
+  await page.addInitScript(() => localStorage.setItem("ul:display", JSON.stringify({aspect:"4:3"})));
+  const id="expanded-cs2tricks-cache-garage-from-ct-spawn-44f7-ct";
+  await page.goto(`/#utilities?map=cache&side=CT&level=main&lineup=${id}`);
+  const map = page.locator(".ul-map-svg");
+  const initialCamera = await map.getAttribute("viewBox");
+  await page.getByRole("button",{name:"Show throw locations on map",exact:true}).click();
+  const spawns = page.getByRole("button",{name:"Throw from CT Spawn",exact:true});
+  await expect(spawns).toHaveCount(2);
+  for (const spawn of await spawns.all()) {
+    const [guideId] = JSON.parse((await spawn.getAttribute("data-origin-recipes"))!);
+    const hit = spawn.locator("circle").first();
+    const box = (await hit.boundingBox())!;
+    const center = {x:box.x + box.width/2, y:box.y + box.height/2};
+    expect(await spawn.evaluate((node, {x,y}) => node.contains(document.elementFromPoint(x,y)), center)).toBe(true);
+    await page.mouse.click(center.x,center.y);
+    const close = page.getByRole("button",{name:"Close lineup media",exact:true});
+    await expect(close).toBeVisible();
+    expect(new URLSearchParams(new URL(page.url()).hash.split("?")[1]).get("lineup")).toBe(guideId);
+    await close.click();
+    await expect(map).toHaveAttribute("viewBox",initialCamera!);
+  }
+});
 
 for(const [width,height] of [[740,360],[568,320]])test(`landscape phone puts all map tools within reach on both edges at ${width}px`, async ({page}) => {
  await page.setViewportSize({width,height});
