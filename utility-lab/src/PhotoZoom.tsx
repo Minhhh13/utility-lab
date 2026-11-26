@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import { Crosshair, Maximize, ZoomIn, ZoomOut } from "lucide-react";
 import MediaImage from "./MediaImage";
 import { photoAimPosition } from "./aim-placement";
@@ -7,6 +7,16 @@ import { CROSSHAIR_KEY, readCrosshairSettings, saveCrosshairSettings } from "./c
 import "./aim-placement.css";
 import "./photo-zoom.css";
 import type { UtilityPhoto } from "./utility-data";
+
+type Point = { x: number; y: number };
+
+function touchPair(points: Map<number, Point>) {
+  const [a, b] = points.values();
+  return {
+    span: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)),
+    center: { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 },
+  };
+}
 
 export default function PhotoZoom({
   photo,
@@ -35,6 +45,8 @@ export default function PhotoZoom({
   const [loaded, setLoaded] = useState({ image: "", width: 0, height: 0 });
   const frame = useRef<HTMLDivElement>(null);
   const viewport = useRef<HTMLDivElement>(null);
+  const fingers = useRef(new Map<number, Point>());
+  const pinch = useRef<{ span: number; scale: number; source: Point } | null>(null);
   const displayedScale = useRef(1);
   const pendingZoom = useRef<{ scale: number; left: number; top: number } | null>(null);
   const zoomAt = useRef<(next: number, point?: { x: number; y: number }) => void>(() => {});
@@ -80,6 +92,8 @@ export default function PhotoZoom({
     setShowAim(true);
     gesture.current = null;
     swipe.current = null;
+    fingers.current.clear();
+    pinch.current = null;
     setDragging(false);
     viewport.current?.scrollTo(0, 0);
   }, [photo.image]);
@@ -107,33 +121,43 @@ export default function PhotoZoom({
         y: Math.max(0, Math.min(element.clientHeight, event.clientY - rect.top)),
       });
     };
+    // These gestures already move the photo. A native fling can otherwise
+    // consume the next tap on Fit or Next immediately after a drag.
+    const touchStart = (event: TouchEvent) => {
+      if ((event.touches.length > 1 || displayedScale.current > 1) &&
+          !(event.target instanceof Element && event.target.closest("button, a"))) event.preventDefault();
+    };
     // React's root wheel listener can be passive. Keep the image gesture local
     // and prevent the dialog, page or browser from also zooming/scrolling.
     element.addEventListener("wheel", wheel, { passive: false });
-    return () => element.removeEventListener("wheel", wheel);
+    element.addEventListener("touchstart", touchStart, { passive: false });
+    return () => {
+      element.removeEventListener("wheel", wheel);
+      element.removeEventListener("touchstart", touchStart);
+    };
   }, []);
-  function zoom(next: number, point?: { x: number; y: number }) {
+  function zoom(next: number, point?: Point, source?: Point) {
     const target = Math.min(4, Math.max(1, Math.round(next * 10000) / 10000));
     const element = viewport.current;
     if (!element) return;
     const previous = pendingZoom.current;
     const current = previous?.scale ?? displayedScale.current;
-    if (target === current) return;
+    if (target === current && !source) return;
     const x = point?.x ?? element.clientWidth / 2;
     const y = point?.y ?? element.clientHeight / 2;
-    const left = ((previous?.left ?? element.scrollLeft) + x) / current * target - x;
-    const top = ((previous?.top ?? element.scrollTop) + y) / current * target - y;
+    const sourceX = source?.x ?? ((previous?.left ?? element.scrollLeft) + x) / current;
+    const sourceY = source?.y ?? ((previous?.top ?? element.scrollTop) + y) / current;
     const intent = {
       scale: target,
-      left: target === 1 ? 0 : Math.max(0, Math.min(size.width * target - element.clientWidth, left)),
-      top: target === 1 ? 0 : Math.max(0, Math.min(size.height * target - element.clientHeight, top)),
+      left: target === 1 ? 0 : Math.max(0, Math.min(size.width * target - element.clientWidth, sourceX * target - x)),
+      top: target === 1 ? 0 : Math.max(0, Math.min(size.height * target - element.clientHeight, sourceY * target - y)),
     };
     pendingZoom.current = intent;
-    const pointerId = gesture.current?.id;
+    const dragId = gesture.current?.id;
     gesture.current = null;
     swipe.current = null;
     setDragging(false);
-    if (pointerId !== undefined && element.hasPointerCapture(pointerId)) element.releasePointerCapture(pointerId);
+    if (dragId !== undefined && element.hasPointerCapture(dragId)) element.releasePointerCapture(dragId);
     setScale(target);
     // A rapid opposite gesture may return to the already-rendered scale and
     // React can skip that render; its scroll intent still needs to apply.
@@ -143,6 +167,49 @@ export default function PhotoZoom({
     }
   }
   zoomAt.current = zoom;
+
+  function localPoint(event: PointerEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+  }
+
+  // Rebase when a finger joins or leaves. The original photo detail under the
+  // midpoint stays beneath both fingers as their distance and position change.
+  function startTouchGesture(element: HTMLDivElement) {
+    const points = fingers.current;
+    const camera = pendingZoom.current;
+    const activeScale = camera?.scale ?? displayedScale.current;
+    const left = camera?.left ?? element.scrollLeft;
+    const top = camera?.top ?? element.scrollTop;
+    pinch.current = null;
+    gesture.current = null;
+    swipe.current = null;
+    if (points.size >= 2) {
+      const { span, center } = touchPair(points);
+      pinch.current = { span, scale: activeScale, source: {
+        x: (left + center.x) / activeScale, y: (top + center.y) / activeScale,
+      } };
+    } else if (points.size === 1 && activeScale > 1) {
+      const [[id, point]] = points;
+      gesture.current = { id, ...point, left, top };
+    }
+    setDragging(!!gesture.current);
+  }
+
+  function releasePointer(event: PointerEvent<HTMLDivElement>, cancelled = false) {
+    if (event.pointerType === "touch" && fingers.current.delete(event.pointerId)) {
+      const slide = swipe.current;
+      startTouchGesture(event.currentTarget);
+      if (!cancelled && slide?.id === event.pointerId) {
+        const dx = event.clientX - slide.x, dy = event.clientY - slide.y;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) onSwipe?.(dx < 0 ? 1 : -1);
+      }
+    } else if (gesture.current?.id === event.pointerId) {
+      gesture.current = null;
+      setDragging(false);
+    }
+  }
+
   return (
     <>
       <div className="ul-photo-frame" ref={frame}>
@@ -151,9 +218,23 @@ export default function PhotoZoom({
         className={`ul-photo-viewport${scale > 1 ? " is-zoomed" : ""}${dragging ? " is-dragging" : ""}`}
         tabIndex={0}
         role="region"
-        aria-label="Photo detail. Scroll to zoom; drag or use arrow keys to move the enlarged image."
-        style={{ touchAction: scale > 1 ? "pan-x pan-y" : "pan-y pinch-zoom" }}
+        aria-label="Photo detail. Pinch, scroll, or use + and − to zoom. Double-click for detail or press 0 to fit. Drag or use arrow keys to pan."
+        style={{ touchAction: "none" }}
+        onDoubleClick={event => {
+          if ((event.target as Element).closest("button, a")) return;
+          const rect = event.currentTarget.getBoundingClientRect();
+          zoom((pendingZoom.current?.scale ?? displayedScale.current) > 1 ? 1 : 2,
+            { x: event.clientX - rect.left, y: event.clientY - rect.top });
+        }}
         onKeyDown={(event) => {
+          if (event.target !== event.currentTarget || event.altKey || event.ctrlKey || event.metaKey) return;
+          if (["+", "=", "-", "0"].includes(event.key)) {
+            event.preventDefault();
+            event.stopPropagation();
+            const current = pendingZoom.current?.scale ?? displayedScale.current;
+            zoom(event.key === "0" ? 1 : current + (event.key === "-" ? -0.5 : 0.5));
+            return;
+          }
           if (
             scale <= 1 ||
             !["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(
@@ -175,18 +256,18 @@ export default function PhotoZoom({
         onPointerDown={(event) => {
           if ((event.target as Element).closest("button, a")) return;
           if (event.pointerType === "touch") {
-            swipe.current =
-              event.isPrimary && scale === 1 && onSwipe
-                ? { id: event.pointerId, x: event.clientX, y: event.clientY }
-                : null;
+            fingers.current.set(event.pointerId, localPoint(event));
+            startTouchGesture(event.currentTarget);
+            if (fingers.current.size === 1 && event.isPrimary && displayedScale.current === 1 && onSwipe)
+              swipe.current = { id: event.pointerId, x: event.clientX, y: event.clientY };
+            return;
           }
           if (scale <= 1 || event.pointerType !== "mouse" || event.button !== 0)
             return;
           event.preventDefault();
           gesture.current = {
             id: event.pointerId,
-            x: event.clientX,
-            y: event.clientY,
+            ...localPoint(event),
             left: event.currentTarget.scrollLeft,
             top: event.currentTarget.scrollTop,
           };
@@ -194,38 +275,27 @@ export default function PhotoZoom({
           setDragging(true);
         }}
         onPointerMove={(event) => {
+          if (!gesture.current && !fingers.current.has(event.pointerId)) return;
+          const point = localPoint(event);
+          if (fingers.current.has(event.pointerId)) {
+            fingers.current.set(event.pointerId, point);
+            const start = pinch.current;
+            if (start) {
+              const { span, center } = touchPair(fingers.current);
+              zoom(start.scale * span / start.span, center, start.source);
+              return;
+            }
+          }
           const drag = gesture.current;
           if (!drag || drag.id !== event.pointerId) return;
           event.currentTarget.scrollTo(
-            drag.left - event.clientX + drag.x,
-            drag.top - event.clientY + drag.y,
+            drag.left - point.x + drag.x,
+            drag.top - point.y + drag.y,
           );
         }}
-        onPointerUp={(event) => {
-          const slide = swipe.current;
-          swipe.current = null;
-          if (slide?.id === event.pointerId && scale === 1) {
-            const dx = event.clientX - slide.x,
-              dy = event.clientY - slide.y;
-            if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4)
-              onSwipe?.(dx < 0 ? 1 : -1);
-          }
-          if (gesture.current?.id !== event.pointerId) return;
-          gesture.current = null;
-          setDragging(false);
-          if (event.currentTarget.hasPointerCapture(event.pointerId))
-            event.currentTarget.releasePointerCapture(event.pointerId);
-        }}
-        onLostPointerCapture={() => {
-          gesture.current = null;
-          swipe.current = null;
-          setDragging(false);
-        }}
-        onPointerCancel={() => {
-          gesture.current = null;
-          swipe.current = null;
-          setDragging(false);
-        }}
+        onPointerUp={event => releasePointer(event)}
+        onLostPointerCapture={event => releasePointer(event, true)}
+        onPointerCancel={event => releasePointer(event, true)}
       >
         <div
           className="ul-photo-canvas"

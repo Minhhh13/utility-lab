@@ -1,5 +1,5 @@
 {
-  "reviewDate": "2026-11-25",
+  "reviewDate": "2026-11-26",
   "radars": {
     "ancient": {
       "page": "https://setpos.gg/ancient",
@@ -35,6 +35,18 @@
       "posX": -2476,
       "posY": 3239,
       "scale": 4.4,
+      "radarSize": 1024
+    },
+    "anubis": {
+      "page": "https://setpos.gg/anubis",
+      "radar": "https://setpos.gg/radars/anubis/radar.svg?v=43192fdef65d",
+      "sourceRadarSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+      "artwork": "/maps/anubis-v22.svg",
+      "artworkSha256": "43192fdef65da5f94d5b8b137f5f2116129fa7e9c0b12d6c256610e4a9da5333",
+      "levelId": "main",
+      "posX": -2796,
+      "posY": 3328,
+      "scale": 5.22,
       "radarSize": 1024
     }
   },
@@ -419,6 +431,418 @@
         "y": -1042.761841
       },
       "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://csnades.gg/anubis/molotovs/window-from-alley",
+      "mapId": "anubis",
+      "guideId": "nade_5570f9514ea9",
+      "originId": "nade_5570f9514ea9",
+      "world": {
+        "x": 1063.957031,
+        "y": -519.620422,
+        "z": 37.88311
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://csnades.gg/anubis/molotovs/window-from-ruins",
+      "mapId": "anubis",
+      "guideId": "nade_ef1740113445",
+      "originId": "nade_ef1740113445",
+      "world": {
+        "x": -1151.926025,
+        "y": -1143.983887,
+        "z": 128.03125
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/flashbangs/a-connector-from-a-main-8995",
+      "mapId": "anubis",
+      "guideId": "bf882624-7223-46df-9a11-6a81b167c1fb",
+      "originId": "f0e8bf1a-a6e2-4727-9d19-d9a165350b1a",
+      "world": {
+        "x": 1253.96875,
+        "y": 802.03125,
+        "z": -88.128754
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/flashbangs/a-connector-from-upper-03a7",
+      "mapId": "anubis",
+      "guideId": "fa49a240-ba0a-4aa8-86ce-8bc7ed2d34d6",
+      "originId": "e544b86c-51ad-438e-b661-4634dcb69131",
+      "world": {
+        "x": 1279.501587,
+        "y": 571.964722,
+        "z": 65.871246
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/flashbangs/a-connector-from-upper-787e",
+      "mapId": "anubis",
+      "guideId": "bc036c11-10e4-4c03-9c20-310b5bc42a2e",
+      "originId": "e544b86c-51ad-438e-b661-4634dcb69131",
+      "world": {
+        "x": 1259.968262,
+        "y": 600.03125,
+        "z": -52.128754
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/flashbangs/mid-window-from-top-mid-2eff",
+      "mapId": "anubis",
+      "guideId": "637d1f04-f8fb-45df-96bd-d0426a062cc2",
+      "originId": "2d636172-c553-403f-9572-32c0fc554c16",
+      "world": {
+        "x": -240.831238,
+        "y": -245.45105,
+        "z": 64.105576
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/flashbangs/mid-window-from-top-mid-3e89",
+      "mapId": "anubis",
+      "guideId": "67747f57-ba12-4f46-92d9-07a0c05702e6",
+      "originId": "2d636172-c553-403f-9572-32c0fc554c16",
+      "world": {
+        "x": -250.040161,
+        "y": -276.675659,
+        "z": 64.105247
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/molotovs/mid-window-from-ruins-63e6",
+      "mapId": "anubis",
+      "guideId": "e61cd173-e5d1-4496-84b4-fcb95661fe91",
+      "originId": "7b32a17d-da7f-4c72-97be-80384a72254a",
+      "world": {
+        "x": -686.772949,
+        "y": -609.071289,
+        "z": 133.157074
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/molotovs/mid-window-from-top-mid-4389",
+      "mapId": "anubis",
+      "guideId": "c3a7c8fe-78c7-4aff-b73b-ebe1a94ec221",
+      "originId": "8095eec9-72ab-4fe9-9427-fa30bd70b643",
+      "world": {
+        "x": 178.785812,
+        "y": -534.739502,
+        "z": 64.96711
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-a-main-6d77",
+      "mapId": "anubis",
+      "guideId": "ce28ac17-c469-4f28-ab13-f99a59ffb6b8",
+      "originId": "f0e8bf1a-a6e2-4727-9d19-d9a165350b1a",
+      "world": {
+        "x": 1253.96875,
+        "y": 802.032593,
+        "z": -88.128754
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-ruins-b01d",
+      "mapId": "anubis",
+      "guideId": "2d49dfb0-d152-4a32-9194-7a595056a016",
+      "originId": "7b32a17d-da7f-4c72-97be-80384a72254a",
+      "world": {
+        "x": -605.021606,
+        "y": -630.977417,
+        "z": 127.871246
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-ruins-ee30",
+      "mapId": "anubis",
+      "guideId": "67495239-87f7-4508-9aff-13a464cf4c37",
+      "originId": "7b32a17d-da7f-4c72-97be-80384a72254a",
+      "world": {
+        "x": -605,
+        "y": -630.95,
+        "z": 128.03
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-stairs-fba7",
+      "mapId": "anubis",
+      "guideId": "aa774bbb-71c8-4e50-9ace-1592941cfb01",
+      "originId": "aafa4ddd-3a70-436f-851d-7072b5db5e6d",
+      "world": {
+        "x": 836.968994,
+        "y": -164.711273,
+        "z": -32.128746
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667",
+      "mapId": "anubis",
+      "guideId": "247c0582-e1e0-41cc-abd7-d58a63bc4e32",
+      "originId": "e544b86c-51ad-438e-b661-4634dcb69131",
+      "world": {
+        "x": 1279.9349365234375,
+        "y": 571.9703369140625,
+        "z": 2.03125
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-c593",
+      "mapId": "anubis",
+      "guideId": "522add98-e05e-42da-b4f0-de66035b849a",
+      "originId": "52e317f3-4714-4cec-a777-8df631f7e0fa",
+      "world": {
+        "x": 1063.968506,
+        "y": -519.620361,
+        "z": 37.728851
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-heaven-ec21",
+      "mapId": "anubis",
+      "guideId": "c2525649-af0c-4a01-a5f2-8e17c1bc4c2d",
+      "originId": "f59db8e3-9f0c-4aaf-9136-2fe68da9b65e",
+      "world": {
+        "x": 952.9110717773438,
+        "y": 2020.9649658203125,
+        "z": -151.96875
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-ruins-9cae",
+      "mapId": "anubis",
+      "guideId": "bae696a3-21d2-4b82-96c4-d33ccb4d2a07",
+      "originId": "880dd7b8-3848-4d2a-8a2e-d29a00fef946",
+      "world": {
+        "x": -966.514404,
+        "y": -990.470093,
+        "z": 127.871246
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-ruins-b12b",
+      "mapId": "anubis",
+      "guideId": "220acbab-f520-4077-8e21-26d24d6c91d5",
+      "originId": "02da0804-258f-44c9-8f74-f1072a11fe5a",
+      "world": {
+        "x": -412.399841,
+        "y": -438.452881,
+        "z": 80.280121
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-t-spawn-6638",
+      "mapId": "anubis",
+      "guideId": "c106b42f-95c2-46b6-af5a-61dc1acf662f",
+      "originId": "6459af61-dd19-40e7-a613-ed719240915c",
+      "world": {
+        "x": 699.967468,
+        "y": -1108.03125,
+        "z": 51.87125
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-t-spawn-92ad",
+      "mapId": "anubis",
+      "guideId": "27f7e470-fbe4-42aa-9b42-fc65fb8246c0",
+      "originId": "97246b33-a3c9-4076-82b6-27190cbcca6a",
+      "world": {
+        "x": 23.97,
+        "y": -1744.94,
+        "z": 68.37
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-upper-92f8",
+      "mapId": "anubis",
+      "guideId": "a5e33526-ec4f-4b28-9f0d-182bee062ac0",
+      "originId": "be9aac5c-133e-4a9d-a22b-0f98b0ae72a7",
+      "world": {
+        "x": 1409.96875,
+        "y": -518.308289,
+        "z": 39.871223
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-wood-35b8",
+      "mapId": "anubis",
+      "guideId": "cf38cade-04c8-4165-b4ca-8fd98cec5ec4",
+      "originId": "88e6fa6a-b7c6-4894-ab26-dbd043a53c9b",
+      "world": {
+        "x": 1251.96875,
+        "y": 136.031372,
+        "z": -82.128754
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-outside-long-82d5",
+      "mapId": "dust2",
+      "guideId": "4d795b22-3789-4fd4-b0b9-be7a5f734d20",
+      "originId": "caf01642-0c14-43b8-9632-6784acb08ede",
+      "world": {
+        "x": 572.033569,
+        "y": -395.96875,
+        "z": 8.030186
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-9ed7",
+      "mapId": "dust2",
+      "guideId": "cfe8fc81-6a76-4ba5-a80a-5f784ea224ea",
+      "originId": "08a899ba-a1e9-47a3-9a3b-26260ae462dd",
+      "world": {
+        "x": 363.931946,
+        "y": -625.049072,
+        "z": 113.62867
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-xbox-50cb",
+      "mapId": "dust2",
+      "guideId": "06c8082e-69ad-4e81-9319-26666d9d1407",
+      "originId": "e025e892-ea6b-4475-9df7-0551bdf6f3fa",
+      "world": {
+        "x": -275.042114,
+        "y": 1345.366089,
+        "z": -122.765503
+      },
+      "sourceMethod": "guide-standing-pose"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460",
+      "mapId": "dust2",
+      "guideId": "266e19c9-49b5-4881-a9cd-0f800aae72dd",
+      "originId": "7c841e1b-83b2-49bb-8970-9c5917080ee4",
+      "creatorSlot": 2,
+      "world": {
+        "x": -493,
+        "y": -808
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/3fd58eeb-ac1a-4554-92cd-f77084ca928e_0918(2).mp4",
+      "frameSeconds": 2.5,
+      "frameSha256": "2dda540275c6861d766547cb6caf44f650639a41bea947496bac930dd897cd6c",
+      "reference": "https://setpos.gg/dust2/mid-doors/t12",
+      "referenceSlot": 12,
+      "referenceLineupId": 2,
+      "referenceFrame": "https://media.setpos.gg/renders/f5f6b486-3824-4999-b904-66bdd3e19823/2699a13d-c5d0-4206-bd38-90b40c73ade8/guide-aim-aim-8f12481b887b308017d3def535b8d3b64711bdcc28d16aaf0ac223f38b2dc3e0.webp",
+      "referenceFrameSha256": "8f12481b887b308017d3def535b8d3b64711bdcc28d16aaf0ac223f38b2dc3e0",
+      "viewMatch": {
+        "descriptorMatches": 451,
+        "rotationInliers": 409,
+        "frameCoverage": 0.59,
+        "medianBearingErrorDegrees": 0.05,
+        "highestOtherSpawnInliers": 22
+      },
+      "creatorTechniqueNote": "w + jumpthrow | instant mid door smoke"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-3-b56e",
+      "mapId": "dust2",
+      "guideId": "43bff920-6b58-4928-9b3c-81b644a077ed",
+      "originId": "81933cee-55d8-4f06-8f35-d46e899b9cc5",
+      "creatorSlot": 3,
+      "world": {
+        "x": -428,
+        "y": -843
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/fb53eed3-ef50-493c-8321-86d04cb2efbf_0918(3).mp4",
+      "frameSeconds": 1.75,
+      "frameSha256": "dd05764070f080ba65bfd1ed6fcbc0ca7cffed8eec3e26e6052724e2113055b2",
+      "reference": "https://setpos.gg/dust2/xbox/t13",
+      "referenceSlot": 13,
+      "referenceLineupId": 114,
+      "referenceFrame": "https://media.setpos.gg/renders/7728fe73-5951-4cb4-a21b-b0363c1ee636/08cdc1bd-aa65-4323-ba6c-5990b41a2d36/guide-aim-aim-75d8ec32130ae08503f0d00e83218ed73812ce14804442670b40823dc2e9e4c5.webp",
+      "referenceFrameSha256": "75d8ec32130ae08503f0d00e83218ed73812ce14804442670b40823dc2e9e4c5",
+      "viewMatch": {
+        "descriptorMatches": 370,
+        "rotationInliers": 348,
+        "frameCoverage": 0.5,
+        "medianBearingErrorDegrees": 0.053,
+        "highestOtherSpawnInliers": 19
+      },
+      "creatorTechniqueNote": "crouch jumpthrow | instant mid smoke"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-4-44e9",
+      "mapId": "dust2",
+      "guideId": "455773f2-5f1d-46aa-b2de-ebdf02812188",
+      "originId": "b3bf7c5f-e38e-4a38-b2bd-f13dd1f244a2",
+      "creatorSlot": 4,
+      "world": {
+        "x": -367,
+        "y": -808
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/44343ef4-a601-4625-8549-7980a358cf70_0918(4).mp4",
+      "frameSeconds": 3.5,
+      "frameSha256": "ab1273e981b4ff8dcbe928cc5a535adfa69b5aa6bf9f5dfa9b6c2d5fae6e223a",
+      "reference": "https://setpos.gg/dust2/mid-doors/t14",
+      "referenceSlot": 14,
+      "referenceLineupId": 1,
+      "referenceFrame": "https://media.setpos.gg/renders/154747f4-ec2d-47f5-86e0-b6f8fa310992/4e7d144b-79c8-430c-b78a-f9373da051a7/guide-aim-aim-e6a4b2e403b2b73d699154c0d605cb1f4ac85b2829ba81ae119fe26c292cb1fd.webp",
+      "referenceFrameSha256": "e6a4b2e403b2b73d699154c0d605cb1f4ac85b2829ba81ae119fe26c292cb1fd",
+      "viewMatch": {
+        "descriptorMatches": 395,
+        "rotationInliers": 372,
+        "frameCoverage": 0.57,
+        "medianBearingErrorDegrees": 0.053,
+        "highestOtherSpawnInliers": 17
+      },
+      "creatorTechniqueNote": "instant mid smoke | jumpthrow"
+    },
+    {
+      "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314",
+      "mapId": "dust2",
+      "guideId": "b74201cc-15c3-403e-a587-b2d6bb057799",
+      "originId": "95ace15c-305a-44ed-ad0e-facd5305e9f8",
+      "creatorSlot": 5,
+      "world": {
+        "x": -332,
+        "y": -754
+      },
+      "sourceMethod": "matched-start-frame",
+      "video": "https://d1ntlvfrxziqo6.cloudfront.net/c8b5f9a2-7e71-424b-a251-c514e659aa96_0918(5).mp4",
+      "frameSeconds": 2.5,
+      "frameSha256": "8adc3818e824130bcf904ddf7a5e5b08065765f5a19c99f5b243d9147c3ea0c1",
+      "reference": "https://setpos.gg/dust2/mid-doors/t15",
+      "referenceSlot": 15,
+      "referenceLineupId": 110,
+      "referenceFrame": "https://media.setpos.gg/renders/ed6ab58a-49bc-495a-b0b0-bc8414f49f7a/ee3e10bf-1b25-4b6e-8916-e003d46f1cbc/guide-aim-aim-c9f6db786836c7a422f120d0766498d88c239c89dda2e5fb6a8c0820b2a79626.webp",
+      "referenceFrameSha256": "c9f6db786836c7a422f120d0766498d88c239c89dda2e5fb6a8c0820b2a79626",
+      "viewMatch": {
+        "descriptorMatches": 179,
+        "rotationInliers": 157,
+        "frameCoverage": 0.35,
+        "medianBearingErrorDegrees": 0.071,
+        "highestOtherSpawnInliers": 17
+      },
+      "creatorTechniqueNote": "instant mid smoke | W + jumpthrow"
     }
   ]
 }

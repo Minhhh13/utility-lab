@@ -2488,6 +2488,43 @@
 .ul-group-stack { fill: var(--surface-raised); stroke: var(--border); }
 .ul-origin-pin,.ul-personal-guide-pin { cursor: pointer; color: var(--accent); outline: none; }
 .ul-origin-disc { fill: var(--surface-raised); stroke: var(--accent); }
+.ul-photo-details.has-map-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: start;
+}
+.ul-photo-details.has-map-link > .ul-photo-credit { grid-column: 1; }
+.ul-guide-map-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ul-photo-details > .ul-guide-map-link {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  margin-inline-end: 4px;
+}
+.ul-guide-map-link:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+@media (hover: hover) {
+  .ul-guide-map-link:hover { background: var(--accent-soft); }
+}
+@media (max-width: 600px) {
+  .ul-photo-details .ul-guide-map-link > span { display: none; }
+  .ul-photo-details > .ul-guide-map-link { margin-inline-end: 0; }
+}
 .ul-origin-label { fill: var(--text); stroke: var(--surface-raised); paint-order: stroke; stroke-linejoin: round; font-weight: 600; pointer-events: none; }
 .utility-workspace.ul-map-only .ul-workspace-body {
   display: grid;
@@ -2540,6 +2577,8 @@
 }
 .ul-origin-pin:focus-visible .ul-origin-disc,.ul-personal-guide-pin:focus-visible .ul-origin-disc { stroke-width: 3px; stroke-dasharray: 4 3; }
 .ul-origin-pin:hover .ul-origin-disc,.ul-personal-guide-pin:hover .ul-origin-disc { fill: var(--accent-soft); }
+.ul-origin-pin[aria-current="location"] .ul-origin-disc { fill: var(--accent); }
+.ul-origin-pin[aria-current="location"] .ul-origin-glyph > svg { color: var(--on-accent, white); }
 .ul-origin-glyph { transform-box: fill-box; transform-origin: center; }
 .ul-origin-glyph.can-animate { animation: ul-origin-arrive 200ms cubic-bezier(.16, 1, .3, 1) backwards; }
 @keyframes ul-origin-arrive { from { opacity: 0; transform: scale(.78); } to { opacity: 1; transform: scale(1); } }

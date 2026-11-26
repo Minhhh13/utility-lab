@@ -1113,6 +1113,12 @@
       "x": 676,
       "y": 805
     },
+    "worldOrigin": {
+      "x": 572.033569,
+      "y": -395.96875,
+      "z": 8.030186
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -1120,10 +1126,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 675.72,
-        "y": 798.01,
+        "x": 676.5,
+        "y": 806.77,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -1502,6 +1508,12 @@
       "x": 620,
       "y": 841
     },
+    "worldOrigin": {
+      "x": 363.931946,
+      "y": -625.049072,
+      "z": 113.62867
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -1509,10 +1521,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 620.17,
-        "y": 833.45,
+        "x": 630.31,
+        "y": 857.61,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -1694,6 +1706,12 @@
       "x": 482,
       "y": 420
     },
+    "worldOrigin": {
+      "x": -275.042114,
+      "y": 1345.366089,
+      "z": -122.765503
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -1701,10 +1719,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 483.29,
-        "y": 419.05,
+        "x": 488.49,
+        "y": 420.28,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -2102,6 +2120,11 @@
       "x": 448,
       "y": 930
     },
+    "worldOrigin": {
+      "x": -428,
+      "y": -843
+    },
+    "coordinateBasis": "matched-start-frame",
     "originLevels": [
       "main"
     ],
@@ -2109,10 +2132,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 449.57,
-        "y": 921.05,
+        "x": 454.55,
+        "y": 905.98,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -2150,6 +2173,11 @@
       "x": 461,
       "y": 906
     },
+    "worldOrigin": {
+      "x": -367,
+      "y": -808
+    },
+    "coordinateBasis": "matched-start-frame",
     "originLevels": [
       "main"
     ],
@@ -2157,10 +2185,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 462.46,
-        "y": 897.43,
+        "x": 468.08,
+        "y": 898.22,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -2342,6 +2370,11 @@
       "x": 479,
       "y": 886
     },
+    "worldOrigin": {
+      "x": -332,
+      "y": -754
+    },
+    "coordinateBasis": "matched-start-frame",
     "originLevels": [
       "main"
     ],
@@ -2349,10 +2382,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 480.32,
-        "y": 877.74,
+        "x": 475.85,
+        "y": 886.23,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -2558,6 +2591,11 @@
       "x": 435,
       "y": 906
     },
+    "worldOrigin": {
+      "x": -493,
+      "y": -808
+    },
+    "coordinateBasis": "matched-start-frame",
     "originLevels": [
       "main"
     ],
@@ -2565,10 +2603,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 436.67,
-        "y": 897.43,
+        "x": 440.12,
+        "y": 898.22,
         "levelId": "main",
-        "registrationId": "cs2tricks-dust2-main-20261109"
+        "registrationId": "world-dust2-main"
       }
     ]
   },
@@ -17845,6 +17883,12 @@
       "x": 530,
       "y": 965
     },
+    "worldOrigin": {
+      "x": 23.97,
+      "y": -1744.94,
+      "z": 68.37
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -17852,10 +17896,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 531.08,
-        "y": 960.51,
+        "x": 527.56,
+        "y": 949.05,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -17965,6 +18009,12 @@
       "x": 778,
       "y": 435
     },
+    "worldOrigin": {
+      "x": 1253.96875,
+      "y": 802.032593,
+      "z": -88.128754
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -17972,10 +18022,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 755.52,
-        "y": 466.94,
+        "x": 757.67,
+        "y": 472.56,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -18205,6 +18255,12 @@
       "x": 785,
       "y": 487
     },
+    "worldOrigin": {
+      "x": 1279.9349365234375,
+      "y": 571.9703369140625,
+      "z": 2.03125
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -18212,10 +18268,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 761.86,
-        "y": 515.37,
+        "x": 762.53,
+        "y": 515.6,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -18925,6 +18981,12 @@
       "x": 319,
       "y": 790
     },
+    "worldOrigin": {
+      "x": -966.514404,
+      "y": -990.470093,
+      "z": 127.871246
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -18932,10 +18994,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 340.13,
-        "y": 797.54,
+        "x": 342.26,
+        "y": 807.9,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -19021,6 +19083,12 @@
       "x": 395,
       "y": 725
     },
+    "worldOrigin": {
+      "x": -605,
+      "y": -630.95,
+      "z": 128.03
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -19028,10 +19096,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 408.91,
-        "y": 737.01,
+        "x": 409.89,
+        "y": 740.64,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -19045,6 +19113,12 @@
       "x": 395,
       "y": 725
     },
+    "worldOrigin": {
+      "x": -605.021606,
+      "y": -630.977417,
+      "z": 127.871246
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -19052,10 +19126,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 408.91,
-        "y": 737.01,
+        "x": 409.89,
+        "y": 740.65,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -19189,6 +19263,12 @@
       "x": 712,
       "y": 191
     },
+    "worldOrigin": {
+      "x": 952.9110717773438,
+      "y": 2020.9649658203125,
+      "z": -151.96875
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -19196,10 +19276,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 695.79,
-        "y": 239.72,
+        "x": 701.35,
+        "y": 244.52,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -19357,6 +19437,12 @@
       "x": 425,
       "y": 693
     },
+    "worldOrigin": {
+      "x": -412.399841,
+      "y": -438.452881,
+      "z": 80.280121
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -19364,10 +19450,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 436.06,
-        "y": 707.21,
+        "x": 445.93,
+        "y": 704.63,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -19453,6 +19539,12 @@
       "x": 726,
       "y": 705
     },
+    "worldOrigin": {
+      "x": 1063.968506,
+      "y": -519.620361,
+      "z": 37.728851
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -19460,10 +19552,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 708.46,
-        "y": 718.38,
+        "x": 722.13,
+        "y": 719.82,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -19645,6 +19737,12 @@
       "x": 692,
       "y": 624
     },
+    "worldOrigin": {
+      "x": 836.968994,
+      "y": -164.711273,
+      "z": -32.128746
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -19652,10 +19750,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 677.69,
-        "y": 642.95,
+        "x": 679.66,
+        "y": 653.42,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -20245,6 +20343,12 @@
       "x": 659,
       "y": 830
     },
+    "worldOrigin": {
+      "x": 699.967468,
+      "y": -1108.03125,
+      "z": 51.87125
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -20252,10 +20356,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 647.83,
-        "y": 834.79,
+        "x": 654.03,
+        "y": 829.9,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -20533,6 +20637,12 @@
       "x": 809,
       "y": 702
     },
+    "worldOrigin": {
+      "x": 1409.96875,
+      "y": -518.308289,
+      "z": 39.871223
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -20540,10 +20650,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 783.58,
-        "y": 715.59,
+        "x": 786.86,
+        "y": 719.57,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -20581,6 +20691,12 @@
       "x": 772,
       "y": 569
     },
+    "worldOrigin": {
+      "x": 1251.96875,
+      "y": 136.031372,
+      "z": -82.128754
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -20588,10 +20704,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 750.09,
-        "y": 591.73,
+        "x": 757.3,
+        "y": 597.16,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -21781,6 +21897,12 @@
       "x": 484,
       "y": 679
     },
+    "worldOrigin": {
+      "x": -240.831238,
+      "y": -245.45105,
+      "z": 64.105576
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -21788,10 +21910,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 489.45,
-        "y": 694.17,
+        "x": 478.02,
+        "y": 668.52,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -22021,6 +22143,12 @@
       "x": 484,
       "y": 679
     },
+    "worldOrigin": {
+      "x": -250.040161,
+      "y": -276.675659,
+      "z": 64.105247
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -22028,10 +22156,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 489.45,
-        "y": 694.17,
+        "x": 476.3,
+        "y": 674.37,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -22285,6 +22413,12 @@
       "x": 778,
       "y": 435
     },
+    "worldOrigin": {
+      "x": 1253.96875,
+      "y": 802.03125,
+      "z": -88.128754
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -22292,10 +22426,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 755.52,
-        "y": 466.94,
+        "x": 757.67,
+        "y": 472.56,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -22333,6 +22467,12 @@
       "x": 785,
       "y": 487
     },
+    "worldOrigin": {
+      "x": 1259.968262,
+      "y": 600.03125,
+      "z": -52.128754
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -22340,10 +22480,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 761.86,
-        "y": 515.37,
+        "x": 758.79,
+        "y": 510.35,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -22405,6 +22545,12 @@
       "x": 785,
       "y": 487
     },
+    "worldOrigin": {
+      "x": 1279.501587,
+      "y": 571.964722,
+      "z": 65.871246
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -22412,10 +22558,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 761.86,
-        "y": 515.37,
+        "x": 762.45,
+        "y": 515.6,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -23509,6 +23655,12 @@
       "x": 395,
       "y": 725
     },
+    "worldOrigin": {
+      "x": -686.772949,
+      "y": -609.071289,
+      "z": 133.157074
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -23516,10 +23668,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 408.91,
-        "y": 737.01,
+        "x": 394.6,
+        "y": 736.55,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -23581,6 +23733,12 @@
       "x": 543,
       "y": 699
     },
+    "worldOrigin": {
+      "x": 178.785812,
+      "y": -534.739502,
+      "z": 64.96711
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -23588,10 +23746,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 542.85,
-        "y": 712.79,
+        "x": 556.53,
+        "y": 722.64,
         "levelId": "main",
-        "registrationId": "cs2tricks-anubis-main-20261109"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -36269,6 +36427,12 @@
       "x": 725,
       "y": 730
     },
+    "worldOrigin": {
+      "x": 1063.957031,
+      "y": -519.620422,
+      "z": 37.88311
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -36278,10 +36442,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 721.67,
-        "y": 717.7,
+        "x": 722.12,
+        "y": 719.82,
         "levelId": "main",
-        "registrationId": "csnades-anubis-main-20261124"
+        "registrationId": "world-anubis-main"
       }
     ]
   },
@@ -36295,6 +36459,12 @@
       "x": 299,
       "y": 858
     },
+    "worldOrigin": {
+      "x": -1151.926025,
+      "y": -1143.983887,
+      "z": 128.03125
+    },
+    "coordinateBasis": "guide-standing-pose",
     "originLevels": [
       "main"
     ],
@@ -36304,10 +36474,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 308.79,
-        "y": 841.42,
+        "x": 307.57,
+        "y": 836.62,
         "levelId": "main",
-        "registrationId": "csnades-anubis-main-20261124"
+        "registrationId": "world-anubis-main"
       }
     ]
   },

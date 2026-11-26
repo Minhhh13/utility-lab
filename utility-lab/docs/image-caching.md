@@ -1,5 +1,7 @@
 # Viewed-photo caching
 
+The production package includes the local first-person and landing stills selected by each guide’s four-step walkthrough. These photos load on demand. The packager checks that every referenced local still was copied before publication. The optional offline photo download has its own inventory, so opening the site doesn’t fetch the full collection.
+
 Utility Lab uses browser storage and the existing static CDN. No server-side image proxy, database, scheduled scraping or video download is added.
 
 The app shell, hashed map catalogues, maps, fonts and bundled photos already use the service worker's same-origin asset cache. Only the chosen map catalogue loads; it also stays in memory during navigation. Publisher images retain their normal HTTP cache behavior. A sampled CS2Tricks CloudFront WebP advertises a one-year immutable cache; a sampled CSNADES image has no Cache-Control header. Both samples lack cross-origin read permission for utilitylab.au, so fetching their image bytes into the app with CORS is not a reliable option.

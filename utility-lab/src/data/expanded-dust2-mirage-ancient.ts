@@ -4691,7 +4691,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "purpose": "Cover Mid Doors from T Spawn #3.",
     "throwType": "Crouch + Jump + left click",
     "steps": [
-      "Stand at T Spawn #3. Match the Position photo.",
+      "Start on StellaraQwQღ’s marked spawn #3. The same square is T13 on setpos.gg.",
       "Match the crosshair in the Aim photo.",
       "Crouch. Jump + left click."
     ],
@@ -4727,7 +4727,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/fb53eed3-ef50-493c-8321-86d04cb2efbf_0918(3).mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=-9-Yocm6n8E"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=-9-Yocm6n8E",
+    "spawn": {
+      "family": "dust2-t-mid-doors-stellaraqwq",
+      "slot": 3,
+      "total": 5,
+      "label": "T Spawn #3 · CS2Tricks"
+    }
   },
   {
     "id": "expanded-cs2tricks-dust2-ct-spawn-from-xbox-1f77-t",
@@ -4789,7 +4795,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "purpose": "Cover Mid Doors from T Spawn #4.",
     "throwType": "Stand still + Jump + left click",
     "steps": [
-      "Stand at T Spawn #4. Match the Position photo.",
+      "Start on StellaraQwQღ’s marked spawn #4. The same square is T14 on setpos.gg.",
       "Match the crosshair in the Aim photo.",
       "Stand still. Jump + left click."
     ],
@@ -4825,7 +4831,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/44343ef4-a601-4625-8549-7980a358cf70_0918(4).mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=kCS5isoQ-Nc"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=kCS5isoQ-Nc",
+    "spawn": {
+      "family": "dust2-t-mid-doors-stellaraqwq",
+      "slot": 4,
+      "total": 5,
+      "label": "T Spawn #4 · CS2Tricks"
+    }
   },
   {
     "id": "expanded-cs2tricks-dust2-tunnels-from-b-site-9f70-ct",
@@ -5177,11 +5189,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "T Spawn #5",
     "target": "Mid Doors",
     "purpose": "Cover Mid Doors from T Spawn #5.",
-    "throwType": "Stand still + Jump + left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn #5. Match the Position photo.",
+      "Start on StellaraQwQღ’s marked spawn #5. The same square is T15 on setpos.gg.",
       "Match the crosshair in the Aim photo.",
-      "Stand still. Jump + left click."
+      "Tap W as you jump and release LMB, following the creator’s timing."
     ],
     "x": 0,
     "y": 0,
@@ -5215,7 +5227,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/c8b5f9a2-7e71-424b-a251-c514e659aa96_0918(5).mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=DeGsElg2RFQ"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=DeGsElg2RFQ",
+    "spawn": {
+      "family": "dust2-t-mid-doors-stellaraqwq",
+      "slot": 5,
+      "total": 5,
+      "label": "T Spawn #5 · CS2Tricks"
+    }
   },
   {
     "id": "expanded-cs2tricks-dust2-ct-cross-from-taxi-87d1-t",
@@ -5664,11 +5682,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "T Spawn #2",
     "target": "Mid Doors",
     "purpose": "Cover Mid Doors from T Spawn #2.",
-    "throwType": "Stand still + Jump + left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn #2. Match the Position photo.",
+      "Start on StellaraQwQღ’s marked spawn #2. The same square is T12 on setpos.gg.",
       "Match the crosshair in the Aim photo.",
-      "Stand still. Jump + left click."
+      "Tap W as you jump and release LMB, following the creator’s timing."
     ],
     "x": 0,
     "y": 0,
@@ -5702,7 +5720,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     ],
     "videoUrl": "https://d1ntlvfrxziqo6.cloudfront.net/3fd58eeb-ac1a-4554-92cd-f77084ca928e_0918(2).mp4",
     "videoStart": 0,
-    "videoFallbackUrl": "https://www.youtube.com/watch?v=j0d0iIyiISo"
+    "videoFallbackUrl": "https://www.youtube.com/watch?v=j0d0iIyiISo",
+    "spawn": {
+      "family": "dust2-t-mid-doors-stellaraqwq",
+      "slot": 2,
+      "total": 5,
+      "label": "T Spawn #2 · CS2Tricks"
+    }
   },
   {
     "id": "expanded-cs2tricks-dust2-mid-doors-from-mid-doors-e6fa-ct",

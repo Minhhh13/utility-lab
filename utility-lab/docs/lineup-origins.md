@@ -1,8 +1,23 @@
 # Throw-from map locations
 
-The origin catalogue checked on 25 November 2026 resolves all **1,558 complete guides / 1,478 original source pages**. Of these entries, **1,550** use the original publisher's distinct start/throwFrom coordinate, and **8** use an explicitly named, registered origin area. The Position photo remains the exact standing reference; a map pin is a navigation aid, not a claim of centimetre-level foot placement. Counts describe side-specific published guides, not personal records.
+The origin catalogue checked on 26 November 2026 covers **1,558 complete guides from 1,478 original source pages**. Of these guide entries, **1,550** use a publisher start and **8** use a registered callout area. Across the catalogue, **99 distinct source pages** have starts verified in world coordinates. The Position photo gives the player a visual reference for the setup.
 
 Only public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. The 24 November update added 53 recipes and refined 16 existing IDs. The 25 November review restored Ancient Top Mid spawn #2 from the creator’s clip and original photos, and corrected 20 guide starting positions. Media playback reviews do not establish independent throw accuracy on the current game build.
+
+## Anubis and Dust II starts reviewed on 26 November 2026
+
+Twenty-two Anubis guides now use the original creator’s published standing pose, including both Window mollies and the stationary Camera smoke. They use the calibration published with the displayed v22 radar. The public radar and bundled SVG have the same SHA-256. The running Camera guide continues to show its moving setup on the Upper steps. [Window from Alley](https://csnades.gg/anubis/molotovs/window-from-alley) · [Window from Ruins](https://csnades.gg/anubis/molotovs/window-from-ruins) · [Stationary Camera from Upper](https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667)
+
+On Dust II, three Mid Doors guides from Outside Long, T Spawn and Xbox now use their published standing poses. Four more use StellaraQwQღ’s numbered spawn recordings. Each of the four videos shows the player aligning to a marked square. We matched a first-person frame at that square to an independent recorded spawn using the image comparison described below. The winning matches covered 35–59% of the frame with 157–409 inliers. The best different physical spawn had 17–22 inliers. [Creator guide for #2](https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460) · [Replay spawn coordinates](https://setpos.gg/dust2/spawns) · [Frames, coordinates and match scores](data/reviewed-world-origins.json)
+
+| Creator’s square | Replay spawn | Throw input |
+| --- | --- | --- |
+| #2 | T12 | Tap W and jump, release LMB |
+| #3 | T13 | Crouch, jump and release LMB |
+| #4 | T14 | Jump from standing and release LMB |
+| #5 | T15 | Tap W and jump, release LMB |
+
+StellaraQwQღ describes squares #2 and #5 as “W + jumpthrow”. Utility Lab displays this input as Tap W. The clips show when to release. [Square #2](https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460) · [Square #5](https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314)
 
 ## Spawn coordinates reviewed on 25 November 2026
 

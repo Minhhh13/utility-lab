@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPinned } from "lucide-react";
 import type { ReactNode } from "react";
 import PhotoZoom from "./PhotoZoom";
 import LineupStandingMap from "./LineupStandingMap";
@@ -21,10 +21,11 @@ function PhotoCredit({ photo }: { photo: UtilityPhoto }) {
   </div>;
 }
 
-export default function LineupGallery({ record, steps, stepIndex, viewIndex, select, advance, formats, sourceVideo }: {
+export default function LineupGallery({ record, steps, stepIndex, viewIndex, select, advance, formats, sourceVideo, onShowThrows }: {
   record: UtilityReference; steps: GalleryStep[]; stepIndex: number; viewIndex: number;
   select: (step: number, view?: number) => void; advance: (direction: number) => void;
   formats: ReactNode; sourceVideo: ReactNode;
+  onShowThrows?: () => void;
 }) {
   const step = steps[stepIndex];
   const view = step.views[viewIndex];
@@ -50,12 +51,16 @@ export default function LineupGallery({ record, steps, stepIndex, viewIndex, sel
         <button className="ul-slide-next" aria-label="Next photo" onClick={() => advance(1)}><ChevronRight size={24}/></button>
       </>}
     </div>
-    <div className="ul-photo-details">
+    <div className={`ul-photo-details${onShowThrows ? " has-map-link" : ""}`}>
       <div className="ul-photo-caption" aria-live="polite">
         <span>{stepIndex + 1} / {steps.length}</span>
         <div><strong className="ul-photo-kind">{label}</strong><p>{caption}</p></div>
       </div>
       {photo && <PhotoCredit photo={photo}/>}
+      {onShowThrows && <button type="button" className="ul-guide-map-link" onClick={onShowThrows}
+        aria-label="Show throw locations on map" title="Show throw locations on map">
+        <MapPinned size={17} aria-hidden="true"/><span>Throw locations</span>
+      </button>}
     </div>
     {step.views.length > 1 && <div className="ul-step-views" role="group" aria-label={`${step.label} photos`}>
       {step.views.map(({ photo: p }, i) => <button key={i} aria-pressed={i === viewIndex} onClick={() => select(stepIndex, i)}>

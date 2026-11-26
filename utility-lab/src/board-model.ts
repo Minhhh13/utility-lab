@@ -1,4 +1,5 @@
 export type XY = { x: number; y: number };
+export type RouteEnd = "start" | "end";
 export type ObjectKind =
   "t" | "ct" | "route" | "pen" | "smoke" | "flash" | "molotov" | "he" | "text";
 export type BoardObject = {
@@ -203,25 +204,33 @@ export function translated(
   }
   return { ...object, x: clamp(object.x + dx), y: clamp(object.y + dy) };
 }
+function updateRouteEnd(
+  object: BoardObject,
+  endpoint: RouteEnd,
+  update: (point: XY) => XY,
+): BoardObject {
+  const points = object.points;
+  if (object.kind !== "route" || !points?.length) return object;
+  const index = endpoint === "start" ? 0 : points.length - 1;
+  const point = points[index];
+  const next = update(point);
+  if (next.x === point.x && next.y === point.y) return object;
+  const updated = [...points];
+  updated[index] = next;
+  return { ...object, points: updated };
+}
+export function translateRouteEnd(object: BoardObject, endpoint: RouteEnd, dx: number, dy: number): BoardObject {
+  if (!Number.isFinite(dx) || !Number.isFinite(dy)) return object;
+  return updateRouteEnd(object, endpoint, point => ({x:clamp(point.x + dx), y:clamp(point.y + dy)}));
+}
 export function endpointChanged(
   object: BoardObject,
-  endpoint: "start" | "end",
+  endpoint: RouteEnd,
   axis: "x" | "y",
   value: number,
 ): BoardObject {
-  if (
-    object.kind !== "route" ||
-    !object.points?.length ||
-    !Number.isFinite(value)
-  )
-    return object;
-  const index = endpoint === "start" ? 0 : object.points.length - 1;
-  return {
-    ...object,
-    points: object.points.map((point, pointIndex) =>
-      pointIndex === index ? { ...point, [axis]: clamp(value) } : point,
-    ),
-  };
+  if (!Number.isFinite(value)) return object;
+  return updateRouteEnd(object, endpoint, point => ({ ...point, [axis]: clamp(value) }));
 }
 export function objectLabel(object: BoardObject): string {
   const labels: Record<ObjectKind, string> = {

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25",
+  "checkedAt": "2026-11-26",
   "completeGuides": 1558,
   "withOrigins": 1558,
   "uniqueSources": 1478,
@@ -41,8 +41,8 @@
     "dust2": {
       "entries": 209,
       "uniqueSources": 191,
-      "bytes": 49507,
-      "sha256": "8de329fdc612cb072a75021c30c3931d88bc7210104a5cb964052f54d5416b33"
+      "bytes": 49555,
+      "sha256": "a6c83b9c9743d38f417ade544439a58735c6c65944b0a509a04d8580f83fac79"
     },
     "inferno": {
       "entries": 212,
@@ -65,8 +65,8 @@
     "anubis": {
       "entries": 310,
       "uniqueSources": 306,
-      "bytes": 77754,
-      "sha256": "c8fd817d6e510d6527c0d381a1d8ab454caf9f70729c133516419869aecb3241"
+      "bytes": 77906,
+      "sha256": "f55b7139d0017b560fee6bbaa0de34b20e6ed8288b383906cda69408f148466e"
     },
     "cache": {
       "entries": 128,

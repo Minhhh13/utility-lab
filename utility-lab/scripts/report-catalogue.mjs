@@ -12,7 +12,7 @@ import { parseUtilityVideo, utilityPhotos, isBundledPhoto } from '../src/utility
 import { lineupWalkthrough } from '../src/lineup-walkthrough.ts';
 import { withAimPlacement } from '../src/aim-placement.ts';
 import {curateLineups} from '../src/lineup-curation.ts';
-import {findLineupOrigin, parseOriginLookup} from '../src/lineup-origins.ts';
+import {findLineupOrigin, originSourceKey, parseOriginLookup} from '../src/lineup-origins.ts';
 
 const project = new URL('../', import.meta.url);
 const file = path => new URL(path, project);
@@ -112,6 +112,7 @@ function inventory(rows) {
     origins: {
       sourceBackedRows: count(origins,item => Boolean(item.point)),
       publisherStartRows: count(origins,item => item.point?.basis === 'publisher-origin'),
+      worldStartSources: unique(origins.filter(({row,point}) => row.source && point?.precision === 'world').map(({row}) => originSourceKey(row.source))).length,
       namedOriginAreaRows: count(origins,item => item.point?.basis === 'callout-area'),
       alternateSourceFloorRows: count(origins,item => Boolean(item.point?.alternateLevels?.length)),
       crossFloorRows: count(origins,item => Boolean(item.point) && ![item.point.levelId,...(item.point.alternateLevels || []).map(point => point.levelId)].includes(item.row.levelId)),
@@ -206,7 +207,7 @@ const catalogue = [
   '# Expanded lineup catalogue', '',
   `Generated **${date}**. The app lazy-loads a local JSON catalogue for the selected map, normalizes its records, then runs \`mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded)\`. Current generated files contribute **${n(summary.generatedExpanded.rows)} rows**; after the same merge, the complete catalogue contains **${n(mainStats.rows)} rows / ${n(mainStats.uniqueSources)} unique source pages**. Exact source-and-side matches preserve established lineup IDs.`, '',
   `Main browsing exposes all **${n(mainStats.rows)} guides**, including every matching origin recipe and numbered spawn. A **${n(summary.defaultCurated.rows)}-record preference subset** orders the quiet overview; its up-to-four preference per target, floor, side and utility does not limit landing or standing availability. The UI restores the complete matching catalogue before map grouping. Simpler throws and distinct standing areas rank first, while shared standing pins open a visual map chooser in pages of eight. Singleton standing recipes open directly.`, '',
-  `All **${n(mainStats.origins.sourceBackedRows)}** published guides have source-backed throw-from map locations: **${n(mainStats.origins.publisherStartRows)}** publisher start points and **${n(mainStats.origins.namedOriginAreaRows)}** registered named origin areas. **${n(mainStats.origins.crossFloorRows)}** cross-floor throws retain the source floor independently of their landing floor; source-published alternate floor views remain available. These map pins lead to the Position photo for the exact standing reference. See [origin evidence and curation](lineup-origins.md).`, '',
+  `All **${n(mainStats.origins.sourceBackedRows)}** published guides have standing locations. **${n(mainStats.origins.publisherStartRows)}** use publisher start points and **${n(mainStats.origins.namedOriginAreaRows)}** use named origin areas. **${n(mainStats.origins.worldStartSources)} distinct source pages** have starts verified in world coordinates. **${n(mainStats.origins.crossFloorRows)}** cross-floor throws retain the source floor independently of their landing floor. The Position step shows the starting location and links to the first-person setup. See [origin evidence and curation](lineup-origins.md).`, '',
   ...matrix, '',
   '## Floor coverage', '',
   ...floorTable, '',
@@ -228,7 +229,7 @@ const catalogue = [
   `The compatibility archive retains ${n(archive.rows)} older records, including the historical ${n(archive.legacyPhotoBackedRows)}-guide photo list and ${n(archive.legacyCreatorVideoOnlyRows)} creator-video-only rows. Only records satisfying the current complete-media rule enter the main merge. Archive deep links remain available.`, '',
   '## Source evidence', '',
   researchLinks + '.', '',
-  'Mirage Window, Ancient CT Elbow and Ancient T Top Mid each have five source-numbered spawn guides. The Ancient Top Mid review restored spawn #2 and matched all five creator labels to recorded world positions. Anubis instant smokes cover 11 source slots across several destinations on the v22 radar. See [reviewed spawn coordinates and original sources](lineup-origins.md) and the [previous coverage audit](catalogue-coverage-2026-11-24.md).', '',
+  'Mirage Window, Ancient CT Elbow and Ancient T Top Mid each have five source-numbered spawn guides. Dust II Mid Doors includes four numbered T Spawn squares matched to independently recorded starts. Anubis instant smokes cover 11 source slots across several destinations on the v22 radar. Both Anubis Window mollies and the stationary Upper-to-Camera smoke use creator-published standing poses. See [reviewed spawn coordinates and original sources](lineup-origins.md).', '',
   'Counts, per-map/floor matrices, generated-input hashes, source hosts, image references, video resources, pin registrations and exact offline byte sizes are in [current-catalogue-summary.json](data/current-catalogue-summary.json). The [local UI media audit](expanded-final-ui-media-audit.md) is a 16-guide functional sample, rather than a replay of every published clip. Map-update/gameplay validation and actual Steam-browser/iPhone/Xcode testing are outside that sample.', '',
   'Regenerate with `node --experimental-strip-types scripts/report-catalogue.mjs`. The reporter uses no network, build or game access.', '',
 ];

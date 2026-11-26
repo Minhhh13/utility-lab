@@ -1798,3 +1798,7 @@
   outline: 2px solid var(--accent);
   outline-offset: -3px;
 }
+.tb-route-handle { cursor: grab; outline: none; transform: scale(var(--route-grip-scale, 1)); }
+.tb-route-handle:active { cursor: grabbing; }
+.tb-route-grip-focus { stroke: var(--text); stroke-width: 1.5px; fill: none; opacity: 0; }
+.tb-route-handle:focus-visible .tb-route-grip-focus { opacity: 1; }

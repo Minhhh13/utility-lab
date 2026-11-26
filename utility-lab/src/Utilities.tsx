@@ -418,7 +418,7 @@ function ThrowInputs({ method }: { method: string }) {
   );
 }
 
-function LineupMedia({ record }: { record: UtilityReference }) {
+function LineupMedia({ record, onShowThrows }: { record: UtilityReference; onShowThrows?: () => void }) {
   const photos = useMemo(() => utilityPhotos(withAimPlacement(record)), [record]);
   const [fileFailed, setFileFailed] = useState(false);
   let video = null;
@@ -536,12 +536,15 @@ function LineupMedia({ record }: { record: UtilityReference }) {
       {mode === "video" && videoPlayer}
       {mode === "photos" && steps.length > 0 && <LineupGallery record={record} steps={steps}
         stepIndex={stepIndex} viewIndex={viewIndex} select={select} advance={changePhoto}
-        formats={formats} sourceVideo={videoPlayer}/>}
+        formats={formats} sourceVideo={videoPlayer} onShowThrows={onShowThrows}/>}
       <div className="ul-media-footer">
         <div className="ul-viewer-keys">
           <h3>Keys</h3>
           <ThrowInputs method={record.throwType} />
         </div>
+        {mode === "video" && onShowThrows && <button type="button" className="ul-guide-map-link" onClick={onShowThrows}>
+          <MapPinned size={17} aria-hidden="true"/>Throw locations
+        </button>}
         {source && (mode === "video" || !current?.photo?.source) && (
           <a href={source} target="_blank" rel="noreferrer">
             Open original {video ? "video" : "source"}{" "}
@@ -719,7 +722,14 @@ export default function Utilities({
     if(savedOnly && landingSelection && !landingGroups.length) backToTargets();
   }, [savedOnly, originSelection, landingSelection, favorites]);
   useEffect(() => {
-    if(originSelection && !originSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-origin-pin,.ul-personal-guide-pin")?.focus({preventScroll:true}));
+    if (!originSelection || originSelection.animate) return;
+    const frame = requestAnimationFrame(() => {
+      const svg = svgRef.current;
+      const pin = svg?.querySelector<SVGGElement>('.ul-origin-pin[aria-current="location"]') ??
+        svg?.querySelector<SVGGElement>(".ul-origin-pin,.ul-personal-guide-pin");
+      pin?.focus({preventScroll:true});
+    });
+    return () => cancelAnimationFrame(frame);
   }, [originSelection, levelId, origins.lookup]);
   useEffect(() => {
     if(landingSelection && !landingSelection.animate) requestAnimationFrame(() => svgRef.current?.querySelector<SVGGElement>(".ul-landing-pin")?.focus({preventScroll:true}));
@@ -732,6 +742,14 @@ export default function Utilities({
     (!originSelection ? visibleRecords[0] : null) ||
     null;
   const catalogueReady = !catalogue.loading && catalogue.mapId === map.id && !catalogue.error;
+  const guideDestination = useMemo(() => {
+    if (!catalogueReady || !mediaRecord || mediaRecord.userCreated ||
+        !findLineupOrigin(mediaRecord, origins.lookup)) return undefined;
+    const candidates = mapRecords.filter(record =>
+      record.levelId === mediaRecord.levelId && record.type === mediaRecord.type &&
+      (!savedOnly || favorites.includes(record.id)));
+    return splitUtilityDestinations(candidates).find(group => group.records.some(record => record.id === mediaRecord.id));
+  }, [catalogueReady, mediaRecord, mapRecords, origins.lookup, savedOnly, favorites]);
   const markerGroups = useMemo(() => groupUtilityMarkers(catalogueReady ? mapMarkerRecords : [],mapUnit,zoom<=1.01), [catalogueReady,mapMarkerRecords,mapUnit,zoom]);
   const markerBounds = useMemo(() => {
     const [x,y,width,height] = navigation.viewBox.split(/\s+/).map(Number);
@@ -896,7 +914,7 @@ export default function Utilities({
       x:group.x,y:group.y,levelId:landingSelection.target.levelId,label:group.label,name:group.records[0]?.target,variant:group.variant,
     },landingSelection.animate && !keyboard && !document.activeElement?.matches(":focus-visible"));
   }
-  async function openThrowFrom(input: UtilityReference[], type: UtilityType, target: MapSelection["target"], animate: boolean) {
+  async function openThrowFrom(input: UtilityReference[], type: UtilityType, target: MapSelection["target"], animate: boolean, viewedGuide?: UtilityReference) {
     const request = ++selectionRequest.current;
     const choices=originRecipeOptions(input);
     if(!choices.length)return;
@@ -922,15 +940,28 @@ export default function Utilities({
     }
     // All source recipes remain available. Nearby hit areas form an expandable
     // map choice instead of deleting numbered spawns or limiting origins to four.
-    const first = choices.find(record=>!record.userCreated&&findLineupOrigin(record,lookup));
+    const first = viewedGuide ?? choices.find(record=>!record.userCreated&&findLineupOrigin(record,lookup));
     const point = first?findLineupOrigin(first,lookup,levelId):undefined;
     setOriginSelection({records:choices,type,target,animate});
     setLoadingStanding(false);
     setLandingSelection(null);
     setMarkerChoice(null);
-    setSelectedId(null);
+    setSelectedId(viewedGuide?.id ?? null);
     setMarkerFilter([]);
     if(point) setLevelId(point.levelId);
+    if (viewedGuide) {
+      mediaTrigger.current = null;
+      dismissGuide(point?.levelId ?? levelId);
+    }
+  }
+  function dismissGuide(floor: string) {
+    setMediaRecord(null);
+    history.replaceState(null, "", `#utilities?${new URLSearchParams({map:map.id,level:floor,side})}`);
+  }
+  function showGuideThrows() {
+    if (!guideDestination || !mediaRecord) return;
+    const {x,y,label,variant,records} = guideDestination;
+    void openThrowFrom(records, mediaRecord.type, {x,y,label,variant,levelId:mediaRecord.levelId,name:mediaRecord.target}, false, mediaRecord);
   }
   function backToTargets() {
     selectionRequest.current++;
@@ -1595,6 +1626,7 @@ export default function Utilities({
                 {originGroups.map((group,index) => <g key={group.id}
                   visibility={originChoice?"hidden":undefined} aria-hidden={originChoice?true:undefined}
                   className="ul-origin-pin" transform={`translate(${group.point.x} ${group.point.y})`}
+                  aria-current={group.options.some(option => option.record.id === selectedId) ? "location" : undefined}
                   role="button" tabIndex={originChoice?-1:0} aria-label={`Throw from ${group.label}${group.options.length>1?`, ${group.options.length} options`:''}`}
                   data-origin-x={group.point.x} data-origin-y={group.point.y} data-origin-level={group.point.levelId}
                   data-origin-recipes={JSON.stringify(group.options.map(option=>option.record.id))}
@@ -2233,11 +2265,11 @@ export default function Utilities({
         className="ul-media-dialog"
         ref={mediaDialog}
         aria-labelledby="lineup-media-title"
-        onCancel={event => { event.preventDefault(); setMediaRecord(null); }}
+        onCancel={event => { event.preventDefault(); dismissGuide(levelId); }}
         onClose={event => { if (!event.currentTarget.open) setMediaRecord(null); }}
         onClick={(event) => {
           if (event.target === event.currentTarget)
-            setMediaRecord(null);
+            dismissGuide(levelId);
         }}
       >
         <div className="ul-media-dialog-heading">
@@ -2266,14 +2298,14 @@ export default function Utilities({
           <button
             className="ul-icon-button"
             aria-label="Close lineup media"
-            onClick={() => setMediaRecord(null)}
+            onClick={() => dismissGuide(levelId)}
           >
             <X size={22} />
           </button>
           </div>
         </div>
         {mediaRecord && (
-          <LineupMedia key={mediaRecord.id} record={mediaRecord} />
+          <LineupMedia key={mediaRecord.id} record={mediaRecord} onShowThrows={guideDestination ? showGuideThrows : undefined} />
         )}
       </dialog>
     </section>

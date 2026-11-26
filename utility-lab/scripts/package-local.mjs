@@ -9,7 +9,11 @@ import { fileURLToPath } from "node:url";
 import { join, basename, relative, sep } from "node:path";
 import { MAPS } from "../src/maps.ts";
 import { LAUNCH_SCENES } from "../src/launch-scenes.ts";
-import { BUNDLED_GUIDE_PHOTOS } from "../src/guide-library.ts";
+import { BUNDLED_GUIDE_PHOTOS, PHOTO_GUIDE_LIBRARY } from "../src/guide-library.ts";
+import { mergePhotoGuides, normalizeExpandedGuides } from "../src/expanded-guide-model.ts";
+import { lineupWalkthrough } from "../src/lineup-walkthrough.ts";
+import { withAimPlacement } from "../src/aim-placement.ts";
+import { utilityPhotos } from "../src/utility-data.ts";
 
 const project = fileURLToPath(new URL("../", import.meta.url));
 const version = JSON.parse(
@@ -34,6 +38,19 @@ const mapFiles = new Set(
   ),
 );
 const photoFiles = new Set(BUNDLED_GUIDE_PHOTOS);
+// The optional offline pack and the photos a player can open on demand have
+// different inventories. Publish the exact stills chosen by the live viewer.
+for (const map of MAPS) {
+  const raw = await readFile(join(project, "src", "data", "expanded", map.id + ".json"), "utf8");
+  const guides = mergePhotoGuides(PHOTO_GUIDE_LIBRARY.filter(guide => guide.mapId === map.id), normalizeExpandedGuides(JSON.parse(raw), map.id));
+  for (const guide of guides) {
+    const steps = lineupWalkthrough(guide, utilityPhotos(withAimPlacement(guide)));
+    for (const step of steps) for (const {photo} of step.views) {
+      if (photo?.image.startsWith("/lineup-media/")) photoFiles.add(photo.image);
+    }
+  }
+}
+const missingPhotos = new Set(photoFiles);
 const landscapeFiles = new Set(LAUNCH_SCENES.map((scene) => scene.src));
 let files = 0,
   bytes = 0;
@@ -70,11 +87,15 @@ async function copyTree(source, destination) {
     )
       continue;
     await copyFile(from, to);
+    missingPhotos.delete("/" + path);
     files++;
     bytes += (await readFile(from)).length;
   }
 }
 await copyTree(join(project, "dist"), join(target, "dist"));
+if (missingPhotos.size) {
+  throw new Error(`Release is missing ${missingPhotos.size} referenced photos: ${[...missingPhotos].slice(0, 10).join(", ")}`);
+}
 await mkdir(join(target, "scripts"), { recursive: true });
 await copyFile(
   join(project, "scripts", "serve-local.mjs"),

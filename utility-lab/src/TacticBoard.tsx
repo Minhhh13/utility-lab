@@ -64,6 +64,7 @@ import {
   objectLabel,
   redo,
   samplePlan,
+  translateRouteEnd,
   translated,
   uid,
   undo,
@@ -74,6 +75,7 @@ import {
   type BoardObject,
   type BoardPlan,
   type ObjectKind,
+  type RouteEnd,
   type SavedTactic,
   type TacticFile,
   type XY,
@@ -89,6 +91,7 @@ type Tool = "select" | "hand" | "erase" | ObjectKind;
 type Gesture = {
   pointerId: number;
   mode: "draw" | "move";
+  endpoint?: RouteEnd;
   start: XY;
   original: BoardHistory;
   objectId: string;
@@ -236,6 +239,36 @@ function createObject(
     ];
   }
   return object;
+}
+function RouteHandles({points, zoom}: {points: XY[]; zoom: number}) {
+  const group = useRef<SVGGElement>(null);
+  useLayoutEffect(() => {
+    const node = group.current, svg = node?.ownerSVGElement;
+    if (!node || !svg) return;
+    const measure = () => {
+      const scale = svg.getScreenCTM()?.a;
+      if (scale && scale > 0) node.style.setProperty("--route-grip-scale", String(1 / scale));
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(svg);
+    return () => observer.disconnect();
+  }, [zoom]);
+  const ends = { start: points[0], end: points[points.length - 1] };
+  return <g ref={group} data-selection="true" role="group" aria-label="Route endpoints">
+    {(["start", "end"] as const).map(end => <g key={end} transform={`translate(${ends[end].x} ${ends[end].y})`}>
+      <g className="tb-route-handle" data-route-endpoint={end}
+        tabIndex={0} role="group" aria-label={`Route ${end} handle`}
+        aria-description="Drag or use the arrow keys to move this endpoint. Hold Shift to move farther."
+        aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight">
+        <title>{`Move route ${end}`}</title>
+        <circle r="22" fill="transparent" />
+        <circle className="tb-route-grip-focus" r="9" />
+        <circle r="6" fill="var(--surface-raised)" stroke="var(--accent)" strokeWidth="2" />
+        {end === "end" && <circle r="2" fill="var(--accent)" />}
+      </g>
+    </g>)}
+  </g>;
 }
 function Selection({ object }: { object: BoardObject }) {
   const points = object.points || [
@@ -504,7 +537,14 @@ export default function TacticBoard({
       setView(current => zoomView(current, current.zoom * Math.exp(-Math.max(-300, Math.min(300, delta)) * .0015), anchor));
     };
     canvas.addEventListener("wheel", wheel, { passive: false });
-    return () => canvas.removeEventListener("wheel", wheel);
+    // Pointer events already implement tap, drag and pinch on this SVG. Stop
+    // the native gesture recognizer swallowing the next toolbar tap after a drag.
+    const nativeTouch = (event: TouchEvent) => event.preventDefault();
+    canvas.addEventListener("touchstart", nativeTouch, { passive: false });
+    return () => {
+      canvas.removeEventListener("wheel", wheel);
+      canvas.removeEventListener("touchstart", nativeTouch);
+    };
   }, []);
 
   function changePlan(update: (current: BoardPlan) => BoardPlan) {
@@ -643,10 +683,10 @@ export default function TacticBoard({
     if ((event.button !== 0 && event.button !== 1) || gesture.current || panGesture.current) return;
     event.preventDefault();
     event.currentTarget.focus({ preventScroll: true });
-    const point = canvasPoint(event),
-      objectId = (event.target as Element)
-        .closest("[data-object-id]")
-        ?.getAttribute("data-object-id");
+    const point = canvasPoint(event);
+    const target = event.target as Element;
+    const grip = target.closest<SVGGElement>("[data-route-endpoint]");
+    const objectId = grip ? selectedId : target.closest("[data-object-id]")?.getAttribute("data-object-id");
     if (event.button === 1 || spaceHeld.current || tool === "hand" || (tool === "select" && !objectId)) {
       if (tool === "select" && !spaceHeld.current && event.button === 0) setSelectedId(null);
       panGesture.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, view: viewRef.current, scale: event.currentTarget.getScreenCTM()?.a || 1 };
@@ -666,9 +706,25 @@ export default function TacticBoard({
       setSelectedId(objectId || null);
       if (objectId) setInspectorTab("plan");
       if (objectId) {
+        let endpoint: RouteEnd | undefined;
+        if (grip && selected?.points?.length) {
+          const start = selected.points[0], end = selected.points[selected.points.length - 1];
+          const toStart = Math.hypot(point.x - start.x, point.y - start.y);
+          const toEnd = Math.hypot(point.x - end.x, point.y - end.y);
+          const span = Math.hypot(end.x - start.x, end.y - start.y);
+          // On short arrows the touch rings overlap. Keep the shaft draggable
+          // between the ends and let each tip keep the nearest side of the hit area.
+          const onShortShaft = selected.points.length === 2 && span > 0
+            && Math.min(toStart, toEnd) >= span * .35 && toStart + toEnd <= span * 1.1;
+          if (!onShortShaft) {
+            endpoint = toStart < toEnd ? "start" : "end";
+            event.currentTarget.querySelector<SVGGElement>(`[data-route-endpoint="${endpoint}"]`)?.focus({ preventScroll: true });
+          }
+        }
         gesture.current = {
           pointerId: event.pointerId,
           mode: "move",
+          endpoint,
           start: point,
           original: historyRef.current,
           objectId,
@@ -752,11 +808,8 @@ export default function TacticBoard({
         (object) => object.id === active.objectId,
       );
       if (!source) return;
-      const moved = translated(
-        source,
-        point.x - active.start.x,
-        point.y - active.start.y,
-      );
+      const dx = point.x - active.start.x, dy = point.y - active.start.y;
+      const moved = active.endpoint ? translateRouteEnd(source, active.endpoint, dx, dy) : translated(source, dx, dy);
       setHistory((current) => ({
         ...current,
         present: {
@@ -804,7 +857,7 @@ export default function TacticBoard({
     }
     const active = gesture.current;
     if (!active || active.pointerId !== event.pointerId) return;
-    if (active.mode === "draw") pointerMove(event);
+    if (active.mode === "draw" || active.endpoint) pointerMove(event);
     gesture.current = null;
     setHistory((current) => {
       let next = current.present;
@@ -900,6 +953,7 @@ export default function TacticBoard({
       }
     }
     if (event.key === "Escape") {
+      if (target.closest("[data-route-endpoint]")) svgRef.current?.focus({ preventScroll: true });
       cancelGesture();
       setSelectedId(null);
       chooseTool("select");
@@ -921,26 +975,16 @@ export default function TacticBoard({
     }
     if (
       selected &&
-      event.target === svgRef.current &&
+      (event.target === svgRef.current || target.hasAttribute("data-route-endpoint")) &&
       ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)
     ) {
       event.preventDefault();
-      const amount = event.shiftKey ? 20 : 5;
-      changeObject(selected.id, (object) =>
-        translated(
-          object,
-          event.key === "ArrowLeft"
-            ? -amount
-            : event.key === "ArrowRight"
-              ? amount
-              : 0,
-          event.key === "ArrowUp"
-            ? -amount
-            : event.key === "ArrowDown"
-              ? amount
-              : 0,
-        ),
-      );
+      const endpoint = target.getAttribute("data-route-endpoint");
+      const amount = event.shiftKey ? 20 : endpoint ? 1 : 5;
+      const dx = event.key === "ArrowLeft" ? -amount : event.key === "ArrowRight" ? amount : 0;
+      const dy = event.key === "ArrowUp" ? -amount : event.key === "ArrowDown" ? amount : 0;
+      changeObject(selected.id, object => endpoint === "start" || endpoint === "end"
+        ? translateRouteEnd(object, endpoint, dx, dy) : translated(object, dx, dy));
       return;
     }
     if (
@@ -1576,7 +1620,7 @@ export default function TacticBoard({
               ref={svgRef}
               className={"tb-map tb-cursor-" + tool + (panning ? " is-panning" : spacePan ? " is-space-pan" : "")}
               viewBox={viewBox(view)}
-              role="img"
+              role={tool === "select" && selected?.kind === "route" ? "group" : "img"}
               aria-label={
                 map.name +
                 " " +
@@ -1620,7 +1664,11 @@ export default function TacticBoard({
                   object={object}
                 />
               ))}
-              {selected && tool !== "pen" && !textEditor && <Selection object={selected} />}
+              {selected && tool !== "pen" && !textEditor && (
+                tool === "select" && selected.kind === "route" && selected.points?.length
+                  ? <RouteHandles points={selected.points} zoom={view.zoom} />
+                  : <Selection object={selected} />
+              )}
             </svg>
             {textEditor && <div
               className="tb-inline-text-editor"
@@ -1788,7 +1836,7 @@ export default function TacticBoard({
               <MousePointer2 size={14} />
               <span>
                 {tool === "select"
-                  ? "Drag empty space to pan · wheel to zoom"
+                  ? selected?.kind === "route" ? "Drag a handle to adjust the route · drag the line to move it" : "Drag empty space to pan · wheel to zoom"
                   : tool === "hand" ? "Drag to pan · wheel to zoom"
                   : tool === "erase"
                     ? "Click an object to erase"

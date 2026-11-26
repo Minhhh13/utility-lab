@@ -81,6 +81,48 @@ test('Ancient Top Mid keeps the creator’s numbers on the five matched physical
   assert.equal(findLineupOrigin(pillar,lookups.ancient)?.precision,undefined);
 });
 
+test('Dust II Mid Doors keeps the creator’s four spawn recipes distinct from the replay numbering and uses each recorded input', () => {
+  const guides = all.filter(row => row.spawn?.family === 'dust2-t-mid-doors-stellaraqwq')
+    .sort((left,right) => left.spawn!.slot - right.spawn!.slot);
+  const expected = [
+    {slot:2, replay:12, x:440.12, y:898.22, keys:'Tap W + Jump + LMB'},
+    {slot:3, replay:13, x:454.55, y:905.98, keys:'Crouch + Jump + left click'},
+    {slot:4, replay:14, x:468.08, y:898.22, keys:'Stand still + Jump + left click'},
+    {slot:5, replay:15, x:475.85, y:886.23, keys:'Tap W + Jump + LMB'},
+  ];
+  assert.deepEqual(guides.map(guide=>guide.spawn!.slot),expected.map(entry=>entry.slot));
+  const evidence = json('docs/data/reviewed-world-origins.json').records;
+  for (const [index, guide] of guides.entries()) {
+    const match = expected[index], point = findLineupOrigin(guide,lookups.dust2)!;
+    assert.deepEqual([point.precision,point.x,point.y],['world',match.x,match.y]);
+    assert.equal(guide.throwType,match.keys);
+    assert.ok(guide.steps[0].includes('T'+match.replay+' on setpos.gg'));
+    const source = evidence.find((record:{source:string}) => record.source === guide.source);
+    assert.equal(source.creatorSlot,match.slot);
+    assert.equal(source.referenceSlot,match.replay);
+    assert.ok(source.viewMatch.rotationInliers >= 150);
+    assert.ok(source.viewMatch.rotationInliers > 5 * source.viewMatch.highestOtherSpawnInliers);
+  }
+});
+
+test('Anubis Window and Camera use original standing poses on v22, and the running Camera checkpoint stays an area', () => {
+  const urlsAndPoints = [
+    ['https://csnades.gg/anubis/molotovs/window-from-alley',722.12,719.82],
+    ['https://csnades.gg/anubis/molotovs/window-from-ruins',307.57,836.62],
+    ['https://www.cs2tricks.com/nades/anubis/smokes/a-connector-from-upper-7667',762.53,515.60],
+  ] as const;
+  for (const [url,x,y] of urlsAndPoints) {
+    const point = lookups.anubis[originSourceKey(url)];
+    assert.deepEqual([point.x,point.y,point.precision,point.registrationId],[x,y,'world','world-anubis-main']);
+  }
+  const radar = json('docs/data/reviewed-world-origins.json').radars.anubis;
+  assert.equal(radar.artwork,'/maps/anubis-v22.svg');
+  assert.equal(radar.artworkSha256,radar.sourceRadarSha256);
+  const running = all.find(row=>row.id==='precise-noctrl-anubis-camera-running-upper-t')!;
+  assert.equal(findLineupOrigin(running,lookups.anubis)?.basis,'callout-area');
+  assert.equal(findLineupOrigin(running,lookups.anubis)?.precision,undefined);
+});
+
 test('cross-floor origins remain on their own floor and only explicit source levels offer an alternate view', () => {
   const spawn = all.find(row => row.source === 'https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-t-spawn-b650')!;
   assert.equal(spawn.levelId,'upper');

@@ -74,6 +74,70 @@ test("wheel zoom keeps the pointed photo detail in place and the adjacent button
   expect(reset.scrollHeight).toBeLessThanOrEqual(reset.clientHeight+1);
 });
 
+test("double-click magnifies the selected detail and returns the same photo to Fit", async ({page}) => {
+  await page.setViewportSize({width:1440, height:1080});
+  const viewer = await openPhotos(page);
+  const viewport = viewer.locator(".ul-photo-viewport");
+  const box = (await viewport.boundingBox())!;
+  const detail = {x:box.x + box.width * .61, y:box.y + box.height * .4};
+  const before = await geometry(viewport, detail);
+  await page.mouse.dblclick(detail.x, detail.y);
+  await expect(viewer.getByRole("button",{name:"Fit photo",exact:true})).toContainText("200%");
+  const after = await geometry(viewport, detail);
+  expect(Math.abs(after.sourceX - before.sourceX)).toBeLessThan(2);
+  expect(Math.abs(after.sourceY - before.sourceY)).toBeLessThan(2);
+  await page.mouse.dblclick(detail.x, detail.y);
+  await expect(viewer.getByRole("button",{name:"Fit photo",exact:true})).toContainText("100%");
+  expect((await geometry(viewport)).left).toBe(0);
+  await viewport.focus();
+  await viewport.press("=");
+  await expect(viewer.getByRole("button",{name:"Fit photo",exact:true})).toContainText("150%");
+  await viewport.press("0");
+  await expect(viewer.getByRole("button",{name:"Fit photo",exact:true})).toContainText("100%");
+});
+
+test.describe("phone photo details", () => {
+  test.use({viewport:{width:320,height:844}, isMobile:true, hasTouch:true});
+  test("pinch follows moving fingers, keeps page zoom fixed and leaves swiping available at Fit", async ({page,browserName}) => {
+    test.skip(browserName !== "chromium", "This input test sends browser-level multitouch through CDP.");
+    const viewer = await openPhotos(page);
+    const viewport = viewer.locator(".ul-photo-viewport");
+    const fit = viewer.getByRole("button",{name:"Fit photo",exact:true});
+    const box = (await viewport.boundingBox())!;
+    const start = {x:box.x + box.width * .47, y:box.y + box.height * .48};
+    const end = {x:start.x + 16, y:start.y - 22};
+    const image = viewer.locator(".ul-photo-canvas img");
+    const src = await image.getAttribute("src");
+    const before = await geometry(viewport,start);
+    const client = await page.context().newCDPSession(page);
+    const gesture = (type:"touchStart"|"touchMove"|"touchEnd",touchPoints:{x:number;y:number;id:number}[]) =>
+      client.send("Input.dispatchTouchEvent",{type,touchPoints});
+    const fingers = (center:typeof start,halfSpan:number) => [
+      {id:1,x:center.x - halfSpan,y:center.y}, {id:2,x:center.x + halfSpan,y:center.y},
+    ];
+    await gesture("touchStart", fingers(start,22));
+    await gesture("touchMove", fingers(end,44));
+    await gesture("touchEnd", []);
+    await expect(fit).toContainText("200%");
+    const after = await geometry(viewport,end);
+    expect(Math.abs(after.sourceX - before.sourceX)).toBeLessThan(2);
+    expect(Math.abs(after.sourceY - before.sourceY)).toBeLessThan(2);
+    expect(await page.evaluate(() => window.visualViewport!.scale)).toBe(1);
+    const swipe = async () => {
+      await gesture("touchStart", [{id:1,...end}]);
+      await gesture("touchMove", [{id:1,x:end.x - 60,y:end.y}]);
+      await gesture("touchEnd", []);
+    };
+    await swipe();
+    expect((await geometry(viewport)).left).toBeGreaterThan(after.left + 52);
+    await expect(image).toHaveAttribute("src",src!);
+    await fit.tap();
+    await expect(fit).toContainText("100%");
+    await swipe();
+    await expect(viewer.locator(".ul-photo-kind")).toContainText("Aim");
+  });
+});
+
 test("rapid wheel bursts, line/page deltas and photo changes stay bounded without photo-fit feedback",async({page})=>{
   const viewer=await openPhotos(page);
   const viewport=viewer.locator(".ul-photo-viewport");
