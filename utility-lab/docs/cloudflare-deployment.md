@@ -2,7 +2,13 @@
 
 Utility Lab is published at **[utilitylab.au](https://utilitylab.au)**. The existing Cloudflare Pages project is `utility-lab`, with production branch `main`. The Porkbun-registered custom domain is connected to this existing project; www redirects to the apex. See [domain setup](custom-domain.md). Local development remains available at http://127.0.0.1:5180.
 
-## Latest verified release — 25 November 2026
+## Latest verified release — 27 November 2026
+
+Cloudflare Pages published application commit `b11ebefe23cb109402013760221172c7c18e18e9` from a clean `main` checkout. The canonical deployment ID is `05f60fbc-3d62-42cc-a26c-f7e0a9628d17`. [Production website](https://utilitylab.au) · [Immutable deployment](https://05f60fbc.utility-lab-8b0.pages.dev) · [Application commit](https://github.com/Minhhh13/utility-lab/commit/b11ebefe23cb109402013760221172c7c18e18e9)
+
+The release contains 2,322 files totalling 201,889,254 bytes. Every packaged file matched its SHA-256 over local HTTP. On the custom domain, 120 file hashes matched the prepared release, including the entry HTML, application bundles, catalogues, maps, all eight Home scenes, their thumbnails and the sampled Ancient stills. The www host returned a 301 to the apex, and a missing image returned 404. Opening Home and the Dust II map in a clean browser requested zero walkthrough photos. [Browser and catalogue checks](verification.md)
+
+## Previous verified release — 25 November 2026
 
 Cloudflare Pages reports a successful production deployment on `main` for application commit `ca220422faf352c0c0300b6a9e8d67d64d702d1a`, with a clean source tree. The deployment ID is `2737877e-7863-4221-a4f7-7504158ccf53`. The prepared release contains 583 files totalling 117,863,404 bytes. [Production website](https://utilitylab.au) · [Immutable deployment](https://2737877e.utility-lab-8b0.pages.dev) · [Application commit](https://github.com/Minhhh13/utility-lab/commit/ca220422faf352c0c0300b6a9e8d67d64d702d1a)
 

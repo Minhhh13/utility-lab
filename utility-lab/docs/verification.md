@@ -1,6 +1,25 @@
 # Release verification
 
-## Current production release — 25 November 2026
+## Current production release — 27 November 2026
+
+[Utility Lab](https://utilitylab.au) serves application commit [b11ebefe](https://github.com/Minhhh13/utility-lab/commit/b11ebefe23cb109402013760221172c7c18e18e9) from [Cloudflare deployment 05f60fbc](https://05f60fbc.utility-lab-8b0.pages.dev).
+
+| Check | Result |
+| --- | --- |
+| Build and browser suites | TypeScript and the production build passed. All 199 model tests, 252 Edge tests and 110 WebKit tests passed. Three touch tests use Chromium's native input protocol and ran in Edge. |
+| Catalogue | The eight maps contain 1,639 published side-specific guides. This release adds 81 ways to reach existing destinations, including 54 numbered spawn smokes, 15 mollies and 12 HE guides. [Catalogue](expanded-catalogue.md) · [Spawn sources](round-start-smokes-2026-11-26.md) |
+| Map walkthrough | Opened every guide through map selection at both 1440×1080 and 320×844. Each walkthrough covered 20 side/floor contexts and made 6,672 slide visits, including alternate-floor paths. Third-party image requests used a fixture for this exhaustive navigation check. |
+| Labels and connections | Each viewport covered 800 throw-location views. Across 3,911 visible captions, none overlapped a caption, origin disc, destination disc or count badge. Checked 561 desktop and 914 phone connections from the recipe badge to its source point. |
+| Navigation, dialogs and photos | The underline matched the visible icon and text in 72 tab, size and theme combinations. The five workspaces passed 40 screen-size and theme checks for overflow and popover bounds. On the public domain we checked Saved alignment, circular marker focus, hidden scrollbar tracks and wheel, keyboard and touch scrolling. Thirteen published stills decoded across all eight maps and returned to their selected throw origins. |
+| Tactic Board and Stats on the custom domain | Checked all ten map floors with mouse and touch. In all 20 Board contexts, all 12 tools worked, the PNG exported, the JSON reimported, and shared drawings matched the editor. Stats filters, resets and saved-tactic reopening worked on desktop Edge and phone WebKit. |
+| Live lineup media and origins | All 51 priority recipes passed setup, aim and landing checks using 130 distinct published photos. The sample included five Mirage T Window spawns, five Ancient CT Elbow spawns, nine Dust II Mid Doors spawns, 23 Anubis T spawns, both Anubis A Camera variants and both Window mollies. Eighteen essential HE and molly guides passed on desktop and phone with 108 photo decodes. The eight public origin tables matched the release, including 173 sources with world coordinates. |
+| Zoom detail | All 67 higher-resolution files matched their source dimensions and SHA-256. Twenty-eight browser checks across the eight maps confirmed the higher-resolution image loaded on zoom, matched the frame and returned to Fit. |
+| Live round-start guides and Home | All 68 sampled instant-guide paths passed. The 49 native source clips decoded and played at their recorded aim, release and landing times. The five Vertigo guide chapters played from their chapter starts on desktop and phone. One mobile YouTube start required a retry. Ten public Home-picker and navigation scenarios passed across phone, short landscape, tablet and 4:3 desktop. |
+| Cache and delivery | The clean Home and Dust II map loaded zero walkthrough images. The previously missing Ancient A Donut still returned HTTP 200 and decoded to 960×540. All 2,322 local release file hashes and 120 sampled public file hashes matched. [Deployment records](cloudflare-deployment.md) |
+
+Lineup precision is based on publisher recordings, photographs and map coordinates. Independent reproduction in the current CS2 client is still outstanding.
+
+## Previous production release — 25 November 2026
 
 The custom domain serves application commit `ca220422faf352c0c0300b6a9e8d67d64d702d1a`. Cloudflare confirmed production deployment `2737877e-7863-4221-a4f7-7504158ccf53`. [Open Utility Lab](https://utilitylab.au) · [Immutable deployment](https://2737877e.utility-lab-8b0.pages.dev)
 
