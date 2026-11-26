@@ -70,6 +70,34 @@ test("the Dumpster standing pin keeps keyboard focus on the circle", async ({pag
   await expect(pin.locator("circle").first()).not.toHaveCSS("stroke","none");
 });
 
+for (const [width,height] of [[1280,800],[390,844]]) test(`Mid Doors captions clear grouped origin badges at ${width}px`, async ({page,baseURL}) => {
+  await page.setViewportSize({width,height});
+  const guide=PUBLISHED_LINEUPS.find(record=>record.id==="instant-setpos-dust2-113")!;
+  await page.goto(lineupLink(guide,baseURL!));
+  await page.getByRole("button",{name:"Show throw locations on map"}).click();
+  const stage=page.getByRole("group",{name:"Throw-from locations"});
+  await expect(stage.locator(".ul-origin-target .ul-origin-label")).toHaveText("Mid Doors");
+  await expect(stage.locator(".ul-origin-count").first()).toBeVisible();
+  await page.evaluate(()=>document.fonts.ready);
+  const collisions=await stage.evaluate(layer=>{
+    const labels=[...layer.querySelectorAll(".ul-origin-label")];
+    const marks=[...layer.querySelectorAll(".ul-origin-disc, .ul-origin-count circle, .ul-origin-target > circle:first-child")];
+    return labels.flatMap((label,index)=>{
+      const a=label.getBoundingClientRect();
+      return [...marks,...labels.slice(index+1)].filter(element=>{
+        const b=element.getBoundingClientRect();
+        return a.left<b.right+1 && a.right>b.left-1 && a.top<b.bottom+1 && a.bottom>b.top-1;
+      }).map(element=>[label.textContent,element.textContent||element.parentElement?.getAttribute("class")]);
+    });
+  });
+  expect(collisions).toEqual([]);
+  const svg=page.locator(".ul-map-svg"),camera=await svg.getAttribute("viewBox");
+  const nearby=stage.getByRole("button",{name:/^Throw from Nearby throws, \d+ options$/}).first();
+  await nearby.click();
+  await expect(page.locator(".ul-origin-choices")).toBeVisible();
+  await expect(svg).toHaveAttribute("viewBox",camera!);
+});
+
 test("each supported map exposes the opened guide among its standing pins", async ({page,baseURL}) => {
   for (const mapId of new Set(PUBLISHED_LINEUPS.map(record => record.mapId))) {
     const record = PUBLISHED_LINEUPS.find(item => item.mapId === mapId && item.type === "Smoke")!;

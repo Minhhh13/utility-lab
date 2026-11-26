@@ -61,6 +61,7 @@ import MarkerChoices from "./MarkerChoices";
 import LandingMapPins from "./LandingMapPins";
 import OriginChoices from "./OriginChoices";
 import {groupOriginOptions,groupPersonalGuides,layoutPersonalGuides,originRecipeOptions,type OriginChoiceGroup} from "./origin-options";
+import {layoutOriginMapLabels,shortOriginLabel,type OriginMapLabel} from "./origin-map-labels";
 import GuideActions from "./GuideActions";
 import UtilityTargetMarker from "./UtilityTargetMarker";
 import { loadMapOrigins, findLineupOrigin, type OriginLookup } from "./lineup-origins";
@@ -771,6 +772,21 @@ export default function Utilities({
     };
   }, [mapUnit,mapSize,navigation.viewBox]);
   const personalMarkers=layoutPersonalGuides(personalGroups,originGroups,mapUnit,markerBounds);
+  const [originFontLoaded,setOriginFontLoaded]=useState(()=>document.fonts.check("600 11px Manrope"));
+  useEffect(()=>{
+    if (!originSelection || originFontLoaded) return;
+    let active=true;
+    void document.fonts.ready.then(()=>{ if(active)setOriginFontLoaded(true); });
+    return ()=>{active=false;};
+  },[originSelection,originFontLoaded]);
+  const target=originSelection?.target;
+  const sourceCaptions:OriginMapLabel[]=[
+    ...originGroups.map(group=>({id:group.id,name:shortOriginLabel(group.label),x:group.point.x,y:group.point.y,count:group.options.length>1})),
+    ...personalMarkers.map(group=>({id:group.id,name:group.label,x:group.displayX,y:group.displayY})),
+  ];
+  const targetCaption=target?.levelId===levelId ? {id:"destination",name:target.label,x:target.x,y:target.y,target:true} : null;
+  const captionPositions=layoutOriginMapLabels(targetCaption?[targetCaption,...sourceCaptions]:sourceCaptions,markerBounds,mapUnit);
+  const targetText=captionPositions.get("destination");
   const mainClusters = useMemo(() => clusterUtilityAreas(markerGroups.filter(group =>
     group.x >= markerBounds.x && group.x <= markerBounds.x+markerBounds.width &&
     group.y >= markerBounds.y && group.y <= markerBounds.y+markerBounds.height),mapUnit), [markerGroups,markerBounds,mapUnit]);
@@ -1638,10 +1654,10 @@ export default function Utilities({
                 data-target-level={originSelection.target.levelId} data-target-label={originSelection.target.label}
                 data-target-name={originSelection.target.name||originSelection.target.label} data-target-variant={originSelection.target.variant}
                 data-target-utility={originSelection.type}>
-                {originSelection.target.levelId === levelId && <g className="ul-origin-target" transform={`translate(${originSelection.target.x} ${originSelection.target.y})`} aria-hidden="true">
-                  <circle r={13 * mapUnit} fill="var(--surface-raised)" stroke={utilityColor(originSelection.type)} strokeWidth={2 * mapUnit}/>
-                  <circle r={4 * mapUnit} fill={utilityColor(originSelection.type)}/>
-                  <text className="ul-origin-label" textAnchor="middle" y={25*mapUnit} fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{originSelection.target.label}</text>
+                {targetCaption && <g className="ul-origin-target" aria-hidden="true">
+                  <circle cx={targetCaption.x} cy={targetCaption.y} r={13 * mapUnit} fill="var(--surface-raised)" stroke={utilityColor(originSelection.type)} strokeWidth={2 * mapUnit}/>
+                  <circle cx={targetCaption.x} cy={targetCaption.y} r={4 * mapUnit} fill={utilityColor(originSelection.type)}/>
+                  {targetText&&<text className="ul-origin-label" textAnchor="middle" {...targetText} fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{targetCaption.name}</text>}
                 </g>}
                 {originGroups.map((group,index) => <g key={group.id}
                   visibility={originChoice?"hidden":undefined} aria-hidden={originChoice?true:undefined}
@@ -1659,7 +1675,6 @@ export default function Utilities({
                       strokeDasharray={group.options.length===1&&group.point.precision!=='world'?`${4*mapUnit} ${2*mapUnit}`:undefined}/>
                     <Crosshair x={-9 * mapUnit} y={-9 * mapUnit} size={18 * mapUnit} strokeWidth={2}/>
                     {group.options.length>1&&<g className="ul-origin-count"><circle cx={13*mapUnit} cy={-12*mapUnit} r={8*mapUnit}/><text x={13*mapUnit} y={-9*mapUnit} textAnchor="middle" fontSize={9*mapUnit}>{group.options.length}</text></g>}
-                    <text className="ul-origin-label" textAnchor="middle" y={-23 * mapUnit} fontSize={11 * mapUnit} strokeWidth={3 * mapUnit}>{group.label.length > 23 ? `${group.label.slice(0,22)}…` : group.label}</text>
                   </g>
                 </g>)}
                 {!originChoice&&personalMarkers.some(group=>group.displayX!==group.target.x||group.displayY!==group.target.y)&&<g aria-hidden="true" pointerEvents="none">
@@ -1680,8 +1695,12 @@ export default function Utilities({
                   <circle r={23*mapUnit} fill="transparent"/>
                   <circle className="ul-origin-disc" r={15*mapUnit} strokeWidth={1.5*mapUnit}/>
                   <UserRound x={-9*mapUnit} y={-9*mapUnit} size={18*mapUnit} strokeWidth={2}/>
-                  <text className="ul-origin-label" textAnchor="middle" y={-23*mapUnit} fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{group.label}</text>
                 </g>)}
+                {!originChoice&&sourceCaptions.map(label=>{
+                  const position=captionPositions.get(label.id);
+                  return position&&<text key={label.id} className="ul-origin-label" textAnchor="middle" {...position}
+                    aria-hidden="true" fontSize={11*mapUnit} strokeWidth={3*mapUnit}>{label.name}</text>;
+                })}
               </g>}
 
               {editing && (draft.showMarker !== false || placing) && (
