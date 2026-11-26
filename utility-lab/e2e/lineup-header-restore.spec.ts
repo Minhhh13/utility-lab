@@ -11,7 +11,7 @@ for (const viewport of [
   { width: 320, height: 640, compact: false },
   { width: 568, height: 320, compact: true },
 ]) {
-  test(`restore and lineup controls stay independently clickable at ${viewport.width}×${viewport.height}, compact=${viewport.compact}`, async ({ page }) => {
+  test(`restore and lineup controls stay independently clickable at ${viewport.width}×${viewport.height}, compact=${viewport.compact}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await page.addInitScript(compact => localStorage.setItem("ul:display", JSON.stringify({
       compact, aspect: "4:3", headerHidden: true,
@@ -38,9 +38,12 @@ for (const viewport of [
     await expect(back).toBeVisible();
     await expectCornersClear();
     const size = (await back.boundingBox())!;
-    await back.click({ position: { x: size.width - 3, y: size.height / 2 } });
+    const position = { x: size.width - 3, y: size.height / 2 };
+    if (testInfo.project.use.hasTouch) await back.tap({ position });
+    else await back.click({ position });
     await expect(back).toHaveCount(0);
-    await restore.click();
+    if (testInfo.project.use.hasTouch) await restore.tap();
+    else await restore.click();
     await expect(restore).toBeHidden();
     await expect(page.locator(".studio-header")).toBeVisible();
     await expect(page.getByLabel("Display settings", { exact: true })).toBeFocused();
