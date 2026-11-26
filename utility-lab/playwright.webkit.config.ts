@@ -13,6 +13,7 @@ export default defineConfig({
     "standing-map.spec.ts",
     "standing-video-fallback.spec.ts",
     "crosshair-settings.spec.ts",
+    "display-controls.spec.ts",
     "map-picker-scroll.spec.ts",
     "map-focus.spec.ts",
     "board-edge-controls.spec.ts",

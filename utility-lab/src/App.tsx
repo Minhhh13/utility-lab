@@ -671,7 +671,7 @@ export default function App() {
             className="appearance-menu"
             ref={appearanceMenu}
             onBlur={event => {
-              if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
+              if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
             }}
             onKeyDown={(event) => {
               if (event.key === "Escape") {
@@ -752,7 +752,7 @@ export default function App() {
             className="display-menu"
             ref={displayMenu}
             onBlur={event => {
-              if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
+              if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
             }}
             onKeyDown={(event) => {
               if (event.key === "Escape") {
