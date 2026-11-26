@@ -24,6 +24,11 @@ for (const {width,height,touch} of [{width:1440,height:1080,touch:false},{width:
       const camera = await svg.getAttribute("viewBox");
       const action = page.getByRole("button",{name:"Show throw locations on map",exact:true});
       await expect(action).toBeInViewport();
+      await expect(action).toHaveAccessibleDescription(/Stand: Lower Tunnels.*Land: Mid Doors/);
+      await expect(action.locator('svg[data-floor="main"] [data-pin="Stand"]')).toBeVisible();
+      await expect(action.locator('[data-pin="Land"]')).toHaveAttribute("transform",`translate(${first.x} ${first.y})`);
+      const dark = await page.locator("html").getAttribute("data-theme") === "dark";
+      await expect(action.locator("svg image")).toHaveAttribute("href",dark ? "/maps/dust2.svg" : "/maps/dust2-light.svg");
       if (touch) await action.tap(); else await action.press("Enter");
       await expect(page.locator(".ul-media-dialog")).not.toBeVisible();
       const pins = page.locator(".ul-origin-pin");
@@ -50,7 +55,10 @@ for (const {width,height,touch} of [{width:1440,height:1080,touch:false},{width:
 test("an upper-floor Nuke origin links back to its lower-floor landing", async ({page,baseURL}) => {
   const record = PUBLISHED_LINEUPS.find(item=>item.id==="cs2tricks-nuke-new-end-he-from-ramp")!;
   await page.goto(lineupLink(record,baseURL!));
-  await page.getByRole("button",{name:"Show throw locations on map"}).click();
+  const preview = page.getByRole("button",{name:"Show throw locations on map"});
+  await expect(preview.locator('svg[data-floor="upper"] [data-pin="Stand"]')).toBeVisible();
+  await expect(preview.locator('svg[data-floor="lower"] [data-pin="Land"]')).toBeVisible();
+  await preview.click();
   const active = page.locator('.ul-origin-pin[aria-current="location"]');
   await expect(active).toBeFocused();
   await expect(active).toHaveAttribute("data-origin-level","upper");

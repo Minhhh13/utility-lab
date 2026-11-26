@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import { Crosshair, Maximize, ZoomIn, ZoomOut } from "lucide-react";
 import MediaImage from "./MediaImage";
-import { photoAimPosition } from "./aim-placement";
+import { aimDetailRegion, photoAimPosition } from "./aim-placement";
 import { highResolutionPhoto } from "./data/high-resolution-photos";
 import CrosshairControls, { PhotoCrosshair } from "./PhotoCrosshair";
 import { CROSSHAIR_KEY, readCrosshairSettings, saveCrosshairSettings } from "./crosshair-settings";
@@ -21,12 +21,14 @@ function touchPair(points: Map<number, Point>) {
 
 export default function PhotoZoom({
   photo,
+  magnifyAim = false,
   title,
   onSwipe,
   formats,
   onReady,
 }: {
   photo: UtilityPhoto;
+  magnifyAim?: boolean;
   title: string;
   onSwipe?: (direction: number) => void;
   formats?: ReactNode;
@@ -34,7 +36,7 @@ export default function PhotoZoom({
 }) {
   const [scale, setScale] = useState(1);
   const [decodedDetail, setDecodedDetail] = useState("");
-  const detail = scale > 1 && !photo.region ? highResolutionPhoto(photo.image) : undefined;
+  const detail = (scale > 1 || magnifyAim) && !photo.region ? highResolutionPhoto(photo.image) : undefined;
   useEffect(() => {
     if (!detail || detail.image === decodedDetail) return;
     let current = true;
@@ -84,13 +86,15 @@ export default function PhotoZoom({
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  const region = photo.region;
-  const panelScale = region
-    ? Math.min(size.width / region.width, size.height / region.height) * scale
-    : 1;
+  const region = magnifyAim ? aimDetailRegion(photo, loaded) : photo.region;
+  const panelScale = region ? Math.min(size.width / region.width, size.height / region.height) * scale : 1;
   const aim = loaded.image === photo.image && showAim
-    ? photoAimPosition(photo, { width: size.width * scale, height: size.height * scale }, loaded)
+    ? photoAimPosition(region ? { ...photo, region } : photo, { width: size.width * scale, height: size.height * scale }, loaded)
     : null;
+  const panelImage = region && {
+    width: region.sourceWidth * panelScale, height: region.sourceHeight * panelScale,
+    left: -region.x * panelScale, top: -region.y * panelScale,
+  };
   const swipe = useRef<{ id: number; x: number; y: number } | null>(null);
   const gesture = useRef<{
     id: number;
@@ -314,8 +318,9 @@ export default function PhotoZoom({
         <div
           className="ul-photo-canvas"
           style={{
-            width: scale === 1 ? "100%" : size.width * scale,
-            height: scale === 1 ? "100%" : size.height * scale,
+            // Commit the image frame and its measured aim coordinates together on resize.
+            width: size.width ? size.width * scale : "100%",
+            height: size.height ? size.height * scale : "100%",
           }}
         >
           <div
@@ -341,17 +346,11 @@ export default function PhotoZoom({
               onReady?.();
             }}
             onError={() => setLoaded({ image: "", width: 0, height: 0 })}
-            style={region ? {
-              width: region.sourceWidth * panelScale,
-              height: region.sourceHeight * panelScale,
-              left: -region.x * panelScale,
-              top: -region.y * panelScale,
-              maxWidth: "none",
-              objectFit: "fill",
-            } : undefined}
+            style={panelImage ? { ...panelImage, maxWidth: "none", objectFit: "fill" } : undefined}
           />
             {detail && decodedDetail === detail.image && <span className="ul-native-photo-detail" aria-hidden="true"
-              style={{ backgroundImage: `url("${detail.image}")` }} />}
+              style={{ backgroundImage: `url("${detail.image}")`,
+                ...(panelImage && { ...panelImage, right: "auto", bottom: "auto", backgroundSize: "100% 100%" }) }} />}
           </div>
           {aim && <PhotoCrosshair settings={crosshair} point={aim}/>}
         </div>

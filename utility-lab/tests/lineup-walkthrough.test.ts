@@ -23,14 +23,23 @@ const runningSetups = new Set([
   "expanded-cs2tricks-inferno-banana-logs-from-b-entrance-467d-ct",
 ]);
 
-test("every published guide has four ordered stages, retaining original photos and video access when a still is missing", () => {
+test("every published guide has five ordered stages with a sourced or anchored aim detail", () => {
   for (const guide of guides) {
     const steps = gallery(guide);
-    assert.deepEqual(steps.map(s => s.stage), ["stand", "setup", "aim", "landing"], guide.id);
+    assert.deepEqual(steps.map(s => s.stage), ["stand", "setup", "aim", "detail", "landing"], guide.id);
     assert.ok(steps.every(s => s.views.length), guide.id);
     const originals = utilityPhotos(guide);
     for (const photo of originals) assert.ok(steps.some(s => s.views.some(v => v.photo?.image === photo.image)), guide.id);
     assert.ok(steps[2].views[0].photo?.aimPoint, guide.id);
+    for (const view of steps[3].views) {
+      assert.equal(view.photo?.kind, "aim", guide.id);
+      if (view.magnifyAim) {
+        assert.ok(view.photo.aimPoint, guide.id);
+        assert.ok(steps[2].views.some(wide => wide.photo === view.photo), guide.id);
+      } else {
+        assert.ok(!steps[2].views.some(wide => wide.photo === view.photo), guide.id);
+      }
+    }
     for (const view of steps[1].views) assert.equal(view.photo?.aimPoint, undefined, guide.id);
     for (const stage of steps) for (const view of stage.views) {
       if (!view.photo) assert.ok(stage.stage === "setup" && runningSetups.has(guide.id) && guide.videoUrl, guide.id);

@@ -2,6 +2,44 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 320, height: 640 }, serviceWorkers: "block" });
 
+test("A and D cycle the photo guide from the dialog and leave other controls alone", async ({ page }) => {
+  await page.goto("/#utilities?map=nuke&level=lower&side=CT&lineup=expanded-cs2nades-nuke-b-retake-flash-ambxvjoxmg8");
+  const viewer = page.locator(".ul-media-dialog[open]");
+  const stages = viewer.getByRole("group", { name: "Choose lineup photo" }).getByRole("button");
+  const position = stages.nth(0), setup = stages.nth(1), aim = stages.nth(2);
+  await expect(viewer.getByRole("button", { name: "Next photo" })).toHaveAttribute("aria-keyshortcuts", "D");
+  await viewer.getByRole("button", { name: "Close lineup media" }).focus();
+  await page.keyboard.press("a");
+  await expect(stages.last()).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("d");
+  await expect(position).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("Shift+D");
+  await expect(position).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("d");
+  await expect(setup).toHaveAttribute("aria-pressed", "true");
+  await viewer.locator(".ul-photo-viewport").focus();
+  await page.keyboard.press("d");
+  await expect(aim).toHaveAttribute("aria-pressed", "true");
+  await expect(aim).toBeFocused();
+  await page.keyboard.press("d");
+  await expect(stages.nth(3)).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("a");
+  await expect(aim).toHaveAttribute("aria-pressed", "true");
+  await viewer.getByRole("button", { name: "Crosshair settings" }).click();
+  const settings = page.getByRole("dialog", { name: "Crosshair settings" });
+  await settings.getByRole("combobox").focus();
+  await page.keyboard.press("a");
+  await settings.getByRole("button", { name: "Done" }).click();
+  await expect(aim).toHaveAttribute("aria-pressed", "true");
+  await viewer.getByRole("button", { name: "Video", exact: true }).click();
+  await page.keyboard.press("d");
+  await viewer.getByRole("button", { name: /^Photos/ }).click();
+  await expect(aim).toHaveAttribute("aria-pressed", "true");
+  await aim.press("a");
+  await expect(setup).toHaveAttribute("aria-pressed", "true");
+  await expect(setup).toBeFocused();
+});
+
 test("custom photo crosshair stays registered at zoom, persists, resets and fits a 320px phone", async ({ page }) => {
   await page.goto("/#utilities?map=nuke&level=lower&side=CT&lineup=expanded-cs2nades-nuke-b-retake-flash-ambxvjoxmg8");
   const viewer = page.locator(".ul-media-dialog");
@@ -60,6 +98,7 @@ test("custom photo crosshair stays registered at zoom, persists, resets and fits
   await expect(settings.getByLabel("Colour", { exact: true })).toHaveValue("#4dffd1");
   await expect(size).toHaveValue("34");
   await settings.getByRole("button", { name: "Done", exact: true }).click();
-  await expect(aim).toHaveAttribute("data-crosshair-shape", "reticle");
+  await expect(aim).toHaveAttribute("data-crosshair-shape", "cross");
+  await expect(aim.locator("circle")).toHaveCount(0);
   await expect(aim).toHaveCSS("width", "34px");
 });

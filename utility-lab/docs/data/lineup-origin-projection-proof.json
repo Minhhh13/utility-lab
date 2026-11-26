@@ -33931,6 +33931,11 @@
       "x": 121,
       "y": 425
     },
+    "worldOrigin": {
+      "x": -1400.283203,
+      "y": 706.819336
+    },
+    "coordinateBasis": "published-spawn-world-coordinates",
     "originLevels": [
       "main"
     ],
@@ -33940,10 +33945,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 124.23,
-        "y": 454.31,
+        "x": 106.48,
+        "y": 451.56,
         "levelId": "main",
-        "registrationId": "csnades-cache-main-20261109"
+        "registrationId": "world-cache-main"
       }
     ]
   },
@@ -33957,6 +33962,11 @@
       "x": 107,
       "y": 395
     },
+    "worldOrigin": {
+      "x": -1488.283203,
+      "y": 874.819336
+    },
+    "coordinateBasis": "published-spawn-world-coordinates",
     "originLevels": [
       "main"
     ],
@@ -33966,10 +33976,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 110.7,
-        "y": 431.92,
+        "x": 90.86,
+        "y": 421.73,
         "levelId": "main",
-        "registrationId": "csnades-cache-main-20261109"
+        "registrationId": "world-cache-main"
       }
     ]
   },
@@ -33983,6 +33993,11 @@
       "x": 121,
       "y": 395
     },
+    "worldOrigin": {
+      "x": -1400.283203,
+      "y": 874.819336
+    },
+    "coordinateBasis": "published-spawn-world-coordinates",
     "originLevels": [
       "main"
     ],
@@ -33992,10 +34007,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 124.23,
-        "y": 431.92,
+        "x": 106.48,
+        "y": 421.73,
         "levelId": "main",
-        "registrationId": "csnades-cache-main-20261109"
+        "registrationId": "world-cache-main"
       }
     ]
   },
@@ -34009,6 +34024,11 @@
       "x": 107,
       "y": 425
     },
+    "worldOrigin": {
+      "x": -1488.283203,
+      "y": 706.819336
+    },
+    "coordinateBasis": "published-spawn-world-coordinates",
     "originLevels": [
       "main"
     ],
@@ -34018,10 +34038,10 @@
     "floorBasis": "single-floor-map",
     "projected": [
       {
-        "x": 110.7,
-        "y": 454.31,
+        "x": 90.86,
+        "y": 451.56,
         "levelId": "main",
-        "registrationId": "csnades-cache-main-20261109"
+        "registrationId": "world-cache-main"
       }
     ]
   },

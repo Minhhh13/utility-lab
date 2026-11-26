@@ -74,8 +74,8 @@ test("saving a complete guide outside the curated four preserves its count, filt
   await expect(viewer.locator(".ul-photo-kind")).toHaveText("Position");
   await expect(viewer.getByRole("button", { name: /^Photos / })).toHaveAttribute("aria-pressed", "true");
   const steps = viewer.getByRole("group", { name: "Choose lineup photo", exact: true }).getByRole("button");
-  await expect(steps).toHaveCount(4);
-  for (const [index, label] of ["Where to stand", "First-person standing view", "First-person aim", "Landing"].entries()) {
+  await expect(steps).toHaveCount(5);
+  for (const [index, label] of ["Where to stand", "First-person standing view", "First-person aim", "Aim detail", "Landing"].entries()) {
     await expect(steps.nth(index)).toHaveAccessibleName(`Step ${index + 1}: ${label}`);
   }
   const aimIndex = photos.findIndex(photo => photo.kind === "aim");

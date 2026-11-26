@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-26",
+  "checkedAt": "2026-11-27",
   "completeGuides": 1639,
   "withOrigins": 1639,
   "uniqueSources": 1559,
@@ -76,8 +76,8 @@
     "cache": {
       "entries": 144,
       "uniqueSources": 140,
-      "bytes": 33750,
-      "sha256": "253b068701376291f9d05dd574353fbb68e73429091f0ccf63a22ddcdf6466c0"
+      "bytes": 33786,
+      "sha256": "462cf1b616305fe7060b623863fdc7146f3287055f6e77b63af215d9c22f40ec"
     },
     "vertigo": {
       "entries": 116,

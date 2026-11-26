@@ -49,6 +49,23 @@ function groupLabel(options:OriginOption[]):string {
   return first.spawn ? first.from.replace(/\s*#?\d+\s*$/,'').replace(/\b(CT|T)spawn\b/gi,'$1 Spawn') : first.from;
 }
 
+/** On a small map an entire numbered spawn family can share a hit area with
+ * unrelated starts. Give the family its own map crop so neighbors cannot
+ * displace numbered buttons from the published positions. */
+export function numberedSpawnSections(group:OriginChoiceGroup,width:number) {
+  if(group.kind==='personal')return;
+  const numbered=group.options.filter(option=>option.record.spawn);
+  const others=group.options.filter(option=>!option.record.spawn);
+  const family=numbered[0]?.record.spawn;
+  if(!family || !others.length || numbered.length!==family.total ||
+    new Set(numbered.map(option=>option.record.spawn!.slot)).size!==family.total ||
+    !numbered.every(option=>option.record.spawn!.family===family.family && option.point.precision==='world'))return;
+  if(spawnInsetLayout(group,width))return;
+  const spawns={...group,label:groupLabel(numbered),options:numbered};
+  if(!spawnInsetLayout(spawns,width))return;
+  return {spawns,nearby:{...group,label:'Nearby throws',options:others}};
+}
+
 /** Group overlapping hit areas, rather than deleting their source records or
  * moving a standing pin to a fabricated world position. Every anchor is real. */
 export function groupOriginOptions(options:readonly OriginOption[],mapUnit:number):OriginGroup[] {

@@ -42,6 +42,7 @@ import BrandMark from "./BrandMark";
 import AppNotice from "./AppNotice";
 import NavigationIndicator from "./NavigationIndicator";
 import "./interaction-motion.css";
+import { installPressFeedback } from "./press-feedback";
 import { parseRoute, lineupLink, type View } from "./routes";
 import {
   readUserUtilities,
@@ -138,6 +139,7 @@ export default function App() {
     null,
   );
   const [workspaceVersion, setWorkspaceVersion] = useState(0);
+  useEffect(installPressFeedback, []);
   const [appearance, setAppearance] = useState(readAppearance);
   const [systemDark, setSystemDark] = useState(
     () => matchMedia("(prefers-color-scheme: dark)").matches,
@@ -690,6 +692,7 @@ export default function App() {
             <div className="appearance-panel">
               <div
                 className="theme-choices"
+                data-mode={appearance.mode}
                 role="group"
                 aria-label="Color mode"
               >
@@ -1091,6 +1094,8 @@ export default function App() {
           <kbd>Ctrl / ⌘ Z</kbd>
           <span>Move selected board object</span>
           <kbd>Arrow keys</kbd>
+          <span>Previous / next lineup photo</span>
+          <kbd>A / D</kbd>
           <span>Delete selected board object</span>
           <kbd>Delete</kbd>
         </div>

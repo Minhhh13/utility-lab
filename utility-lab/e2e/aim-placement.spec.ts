@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { test, expect, type Locator, type Page } from "@playwright/test";
 import { utilityPhotos, type UtilityReference } from "../src/utility-data";
 import { withAimPlacement } from "../src/aim-placement";
+import { lineupWalkthrough } from "../src/lineup-walkthrough";
 
 test.use({ serviceWorkers: "block" });
 const generated: UtilityReference[] = ["ancient", "anubis", "cache", "mirage", "nuke"].flatMap(map =>
@@ -88,14 +89,15 @@ for (const guide of guides) {
     await decoded(viewer);
     await expect(viewer.locator(".ul-aim-point")).toHaveCount(0);
     const photos = utilityPhotos(withAimPlacement(guide));
+    const steps = lineupWalkthrough(guide, photos);
     for (const [index, photo] of photos.entries()) {
       if (!photo.aimPoint) continue;
       const chooser = viewer.getByRole("group", { name: "Choose lineup photo", exact: true });
-      await chooser.getByRole("button", { name: "Step 3: First-person aim", exact: true }).click();
-      const views = photos.filter(p => p.kind === "aim" || p.kind === "release");
-      const subview = views.indexOf(photo);
+      const stage = steps.findIndex(s => s.views.some(v => v.photo === photo));
+      await chooser.getByRole("button", { name: `Step ${stage + 1}: ${steps[stage].name}`, exact: true }).click();
+      const subview = steps[stage].views.findIndex(v => v.photo === photo);
       if (subview > 0) {
-        await viewer.getByRole("group", { name: "Where to aim photos", exact: true }).getByRole("button").nth(subview).click();
+        await viewer.getByRole("group", { name: `${steps[stage].label} photos`, exact: true }).getByRole("button").nth(subview).click();
       }
       await aligned(viewer, guide, index);
       await page.screenshot({ path: testInfo.outputPath(`aim-${index}-desktop.png`) });

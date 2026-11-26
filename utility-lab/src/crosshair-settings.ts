@@ -2,7 +2,7 @@ export const CROSSHAIR_KEY = "utility-lab:photo-crosshair:v1";
 export const CROSSHAIR_MIN_SIZE = 14;
 export const CROSSHAIR_MAX_SIZE = 56;
 export type CrosshairSettings = { shape: "reticle" | "cross" | "dot"; color: string; size: number };
-export const DEFAULT_CROSSHAIR: CrosshairSettings = { shape: "reticle", color: "#4dffd1", size: 34 };
+export const DEFAULT_CROSSHAIR: CrosshairSettings = { shape: "cross", color: "#4dffd1", size: 34 };
 
 export function readCrosshairSettings(storage?: Pick<Storage, "getItem">): CrosshairSettings {
   try {

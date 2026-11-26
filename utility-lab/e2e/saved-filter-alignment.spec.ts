@@ -30,6 +30,7 @@ for (const width of [1440, 1280, 1024, 320]) {
             const bounds = button.getBoundingClientRect();
             const glyph = icon.width ? icon : label; // Compact All uses its name as its glyph.
             const labelElement = button.children[1];
+            const countPaint = getComputedStyle(button.children[2]);
             const { fontSize, fontWeight } = getComputedStyle(labelElement);
             let baseline = 0;
             if (!compact) {
@@ -45,6 +46,8 @@ for (const width of [1440, 1280, 1024, 320]) {
               centerY: bounds.top + bounds.height / 2, iconX: glyph.left + glyph.width / 2,
               iconY: glyph.top + glyph.height / 2, labelX: label.left,
               badgeRight: badge.right, badgeWidth: badge.width, fontSize, fontWeight, baseline,
+              countBackground: countPaint.backgroundColor, countColor: countPaint.color,
+              labelColor: getComputedStyle(labelElement).color,
             };
           }), compact);
           expect(rows).toHaveLength(6);
@@ -60,6 +63,8 @@ for (const width of [1440, 1280, 1024, 320]) {
               expect(row.right).toBeLessThanOrEqual(width);
             } else {
               expect(row.badgeWidth).toBeGreaterThan(0);
+              expect(row.countBackground).toBe("rgba(0, 0, 0, 0)");
+              expect(row.countColor).toBe(row.labelColor);
               expect(row.fontSize).toBe(rows[0].fontSize);
               expect(row.fontWeight).toBe(rows[0].fontWeight);
               for (const column of ["left", "right", "iconX", "labelX", "badgeRight", "baseline"] as const)

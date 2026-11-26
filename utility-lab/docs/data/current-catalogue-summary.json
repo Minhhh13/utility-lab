@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-26T12:48:59.555Z",
-  "generatedLocalDate": "2026-11-26",
+  "generatedAt": "2026-11-26T14:19:00.406Z",
+  "generatedLocalDate": "2026-11-27",
   "timeZone": "Australia/Sydney",
   "method": "Normalize every generated per-map JSON, then mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded). Counts are side-specific browsing records; unique source pages and image/video resources are counted separately.",
   "generatedInputs": [
@@ -42,8 +42,8 @@
     },
     {
       "path": "src/data/expanded/cache.json",
-      "bytes": 284503,
-      "sha256": "f713fdf37bc35a20ab57c948f95a942814513d23527613e048850d1049cbb4f8",
+      "bytes": 285111,
+      "sha256": "4e436946204654bb18d8146269ae40d90235bcfd6c4f11f3e1b23bf635dd0ba5",
       "rows": 144
     },
     {
@@ -92,8 +92,8 @@
     },
     {
       "path": "src/data/lineup-origins/origins-cache.json",
-      "bytes": 33750,
-      "sha256": "253b068701376291f9d05dd574353fbb68e73429091f0ccf63a22ddcdf6466c0",
+      "bytes": 33786,
+      "sha256": "462cf1b616305fe7060b623863fdc7146f3287055f6e77b63af215d9c22f40ec",
       "sources": 140
     },
     {
@@ -527,7 +527,7 @@
     "origins": {
       "sourceBackedRows": 1639,
       "publisherStartRows": 1631,
-      "worldStartSources": 173,
+      "worldStartSources": 177,
       "namedOriginAreaRows": 8,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 29,
@@ -543,15 +543,18 @@
     }
   },
   "walkthroughCoverage": {
-    "completeFourStageRows": 1636,
+    "completeFiveStageRows": 1636,
     "stillRowsByStage": {
       "stand": 1639,
       "setup": 1636,
       "aim": 1639,
+      "detail": 1639,
       "landing": 1639
     },
+    "sourcedAimDetails": 576,
+    "magnifiedAimDetails": 1063,
     "uniqueImages": 6726,
-    "markedAimViews": 2215,
+    "markedAimViews": 3278,
     "standingVideoIds": [
       "expanded-cs2tricks-inferno-banana-logs-from-b-entrance-c431-ct",
       "expanded-cs2tricks-inferno-top-banana-from-b-entrance-6c8c-ct",
@@ -1424,7 +1427,7 @@
     "origins": {
       "sourceBackedRows": 1635,
       "publisherStartRows": 1631,
-      "worldStartSources": 173,
+      "worldStartSources": 177,
       "namedOriginAreaRows": 4,
       "alternateSourceFloorRows": 29,
       "crossFloorRows": 29,

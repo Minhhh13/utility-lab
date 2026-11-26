@@ -1,10 +1,10 @@
 # Expanded lineup catalogue
 
-Generated **2026-11-26**. The app lazy-loads a local JSON catalogue for the selected map, normalizes its records, then runs `mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded)`. Current generated files contribute **1,635 rows**; after the same merge, the complete catalogue contains **1,639 rows / 1,559 unique source pages**. Exact source-and-side matches preserve established lineup IDs.
+Generated **2026-11-27**. The app lazy-loads a local JSON catalogue for the selected map, normalizes its records, then runs `mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded)`. Current generated files contribute **1,635 rows**; after the same merge, the complete catalogue contains **1,639 rows / 1,559 unique source pages**. Exact source-and-side matches preserve established lineup IDs.
 
 Main browsing exposes all **1,639 guides**, including every matching origin recipe and numbered spawn. A **1,342-record preference subset** orders the quiet overview; its up-to-four preference per target, floor, side and utility does not limit landing or standing availability. The UI restores the complete matching catalogue before map grouping. Simpler throws and distinct standing areas rank first, while shared standing pins open a visual map chooser in pages of eight. Singleton standing recipes open directly.
 
-All **1,639** published guides have standing locations. **1,631** use publisher start points and **8** use named origin areas. **173 distinct source pages** have starts verified in world coordinates. **29** cross-floor throws retain the source floor independently of their landing floor. The Position step shows the starting location and links to the first-person setup. See [origin evidence and curation](lineup-origins.md).
+All **1,639** published guides have standing locations. **1,631** use publisher start points and **8** use named origin areas. **177 distinct source pages** have starts verified in world coordinates. **29** cross-floor throws retain the source floor independently of their landing floor. The Position step shows the starting location and links to the first-person setup. See [origin evidence and curation](lineup-origins.md).
 
 | Map | Guides | T: Smoke / Flash / Fire / HE | CT: Smoke / Flash / Fire / HE |
 | --- | ---: | --- | --- |
@@ -27,7 +27,7 @@ All **1,639** published guides have standing locations. **1,631** use publisher 
 | Nuke | 39 | 16 | [11](https://utilitylab.au/#utilities?map=nuke&level=upper&side=T&lineup=instant-setpos-nuke-106) | 11 |
 | Ancient | 38 | 6 | [18](https://utilitylab.au/#utilities?map=ancient&level=main&side=CT&lineup=instant-setpos-ancient-66) | 22 |
 | Anubis | 71 | 19 | [28](https://utilitylab.au/#utilities?map=anubis&level=main&side=CT&lineup=instant-setpos-anubis-149) | 55 |
-| Cache | 32 | 4 | [21](https://utilitylab.au/#utilities?map=cache&level=main&side=T&lineup=instant-setpos-cache-123) | 23 |
+| Cache | 32 | 4 | [25](https://utilitylab.au/#utilities?map=cache&level=main&side=T&lineup=instant-setpos-cache-123) | 27 |
 | Vertigo | 21 | 9 | [5](https://utilitylab.au/#utilities?map=vertigo&level=lower&side=CT&lineup=instant-viri-vertigo-ramp-ct1) | 5 |
 
 The first three columns count playable, side-specific recipes. Each linked spawn count opens an example on that map. In Lineups, select Smoke and switch on **Spawn smokes** to see the eligible landing spots. Numbered slots follow the original creator’s spawn sheet. Some starts include a step or run before release. The last column counts distinct source pages across all utility types with registered in-game coordinates. Other published starts use a radar point or a named area with a visual setup.
@@ -51,7 +51,7 @@ A zero denotes a source gap for that floor, side and utility. The map-wide matri
 
 ## Media inventory
 
-Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim** and **Landing**. **1,636** guides have stills or a registered standing map for all four steps. The other **3** open their source video for the starting view. The walkthroughs use 6,726 distinct images and 2,215 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
+Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim**, **Aim detail** and **Landing**. **1,636** guides have stills or a registered standing map for all five steps. The other **3** open their source video for the starting view. Aim detail uses a publisher close-up in 576 guides and a 2.5× crop centred on the recorded aim point in 1,063. Crops stay within the original source panel. The walkthroughs use 6,726 distinct images and 3,278 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
 
 - Position + Aim + matching video: 1,639 of 1,639 published rows.
 - Original gallery photo references: 5,337; unique image resources: 5,063 (4,625 remote, 438 local).

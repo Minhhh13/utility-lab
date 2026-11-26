@@ -1,5 +1,5 @@
 {
-  "reviewDate": "2026-11-26",
+  "reviewDate": "2026-11-27",
   "radars": {
     "ancient": {
       "page": "https://setpos.gg/ancient",
@@ -47,6 +47,16 @@
       "posX": -2796,
       "posY": 3328,
       "scale": 5.22,
+      "radarSize": 1024
+    },
+    "cache": {
+      "page": "https://setpos.gg/cache",
+      "artwork": "/maps/cache.svg",
+      "artworkSha256": "8107ffb12c794832c689cf6cb8326fa8168b60b723c232064dc79bc8ca5a3a34",
+      "levelId": "main",
+      "posX": -2000,
+      "posY": 3250,
+      "scale": 5.5,
       "radarSize": 1024
     }
   },
@@ -328,8 +338,8 @@
       "guideId": "7773422f-8c6b-4959-892b-40a00b1bbc4f",
       "originId": "d7007d90-3d8d-4aa2-ad37-098c116ad428",
       "world": {
-        "x": -512.0,
-        "y": 1696.0
+        "x": -512,
+        "y": 1696
       },
       "sourceMethod": "guide-standing-pose"
     },
@@ -372,8 +382,8 @@
       "guideId": "3bc7338a-a20b-4dfb-9b40-91afd3979b40",
       "originId": "cf348a96-3709-488d-8af8-7740bcca36ea",
       "world": {
-        "x": 1296.0,
-        "y": -352.0
+        "x": 1296,
+        "y": -352
       },
       "sourceMethod": "guide-standing-pose"
     },
@@ -383,8 +393,8 @@
       "guideId": "ca867623-b9fc-4efa-83e6-d6dcaa44d768",
       "originId": "7afa0115-d38d-4bfb-b51e-f4a7f00e8a9c",
       "world": {
-        "x": 1216.0,
-        "y": -211.0
+        "x": 1216,
+        "y": -211
       },
       "sourceMethod": "guide-standing-pose"
     },
@@ -394,8 +404,8 @@
       "guideId": "65af0eb3-4692-45bc-8288-3cc2a5c28ac1",
       "originId": "224ae3ad-380e-4491-89ac-da0726b6f844",
       "world": {
-        "x": 1216.0,
-        "y": -115.0
+        "x": 1216,
+        "y": -115
       },
       "sourceMethod": "guide-standing-pose"
     },
@@ -405,8 +415,8 @@
       "guideId": "7f5111a7-5fe7-468a-be99-97b40914ea65",
       "originId": "9ad26433-3371-4ffd-b3e8-14fe2e1062e5",
       "world": {
-        "x": 1216.0,
-        "y": -16.0
+        "x": 1216,
+        "y": -16
       },
       "sourceMethod": "guide-standing-pose"
     },
@@ -416,8 +426,8 @@
       "guideId": "2c379a31-66b1-438d-a9ef-adcaa115aac8",
       "originId": "fe3dd5fc-e89a-46e9-a43f-7eb5989382ec",
       "world": {
-        "x": 1296.0,
-        "y": 32.0
+        "x": 1296,
+        "y": 32
       },
       "sourceMethod": "guide-standing-pose"
     },
@@ -843,6 +853,58 @@
         "highestOtherSpawnInliers": 17
       },
       "creatorTechniqueNote": "instant mid smoke | W + jumpthrow"
+    },
+    {
+      "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-1",
+      "mapId": "cache",
+      "guideId": "expanded-csnades-cache-smoke-garage-from-ct-spawn-1",
+      "originId": "nade_c0214941f82a",
+      "world": {
+        "x": -1488.283203,
+        "y": 706.819336
+      },
+      "sourceMethod": "published-spawn-world-coordinates",
+      "reference": "https://astro.csnades.gg/guides/cache-ct-instant-garage-smokes",
+      "referenceSlot": 1
+    },
+    {
+      "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-2",
+      "mapId": "cache",
+      "guideId": "expanded-csnades-cache-smoke-garage-from-ct-spawn-2",
+      "originId": "nade_832b3b339b86",
+      "world": {
+        "x": -1400.283203,
+        "y": 706.819336
+      },
+      "sourceMethod": "published-spawn-world-coordinates",
+      "reference": "https://astro.csnades.gg/guides/cache-ct-instant-garage-smokes",
+      "referenceSlot": 2
+    },
+    {
+      "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-3",
+      "mapId": "cache",
+      "guideId": "expanded-csnades-cache-smoke-garage-from-ct-spawn-3",
+      "originId": "nade_40b419eebbad",
+      "world": {
+        "x": -1488.283203,
+        "y": 874.819336
+      },
+      "sourceMethod": "published-spawn-world-coordinates",
+      "reference": "https://astro.csnades.gg/guides/cache-ct-instant-garage-smokes",
+      "referenceSlot": 3
+    },
+    {
+      "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-4",
+      "mapId": "cache",
+      "guideId": "expanded-csnades-cache-smoke-garage-from-ct-spawn-4",
+      "originId": "nade_168014e2d434",
+      "world": {
+        "x": -1400.283203,
+        "y": 874.819336
+      },
+      "sourceMethod": "published-spawn-world-coordinates",
+      "reference": "https://astro.csnades.gg/guides/cache-ct-instant-garage-smokes",
+      "referenceSlot": 4
     }
   ]
 }

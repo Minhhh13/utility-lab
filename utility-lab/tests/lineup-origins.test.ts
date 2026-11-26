@@ -123,6 +123,35 @@ test('Anubis Window and Camera use original standing poses on v22, and the runni
   assert.equal(findLineupOrigin(running,lookups.anubis)?.precision,undefined);
 });
 
+test('all numbered Cache starts follow the published spawn table and the Garage guide’s own numbering', () => {
+  // World XY from the independent setpos.gg/cache/spawns table, in its slot order.
+  const spawns = {
+    T: [[2995.89,-168],[3094.27,-152.58],[3171.64,-100.83],[2949.02,-47],[3041.77,-21.08],
+      [3162.14,-5],[2916.77,69.42],[3037.89,66.67],[3077.77,135.92],[2922.52,165.67]],
+    CT: [[-1400.28,706.82],[-1488.28,706.82],[-1524.28,794.82],[-1400.28,874.82],[-1488.28,874.82]],
+  };
+  const garageSlots = [2,1,5,4];
+  const guides = all.filter(guide => guide.mapId === 'cache' && guide.spawn);
+  const garage = guides.filter(guide => guide.spawn!.family === 'csnades-cache-ct-garage');
+  assert.deepEqual(garage.map(guide => guide.spawn!.slot).sort(), [1,2,3,4]);
+  assert.deepEqual([...new Set(guides.filter(guide => guide.side === 'T').map(guide => guide.spawn!.slot))].sort((a,b)=>a-b), [1,2,3,4,5,6,7,8,9,10]);
+  for (const guide of guides) {
+    const {family,slot} = guide.spawn!;
+    const isGarage = family === 'csnades-cache-ct-garage';
+    const [x,y] = spawns[guide.side === 'CT' ? 'CT' : 'T'][(isGarage ? garageSlots[slot-1] : slot)-1];
+    const point = findLineupOrigin(guide,lookups.cache)!;
+    assert.equal(point.levelId,'main',guide.id);
+    if (isGarage) assert.equal(point.registrationId,'world-cache-main',guide.id);
+    assert.equal(point.precision,'world',guide.id);
+    assert.ok(Math.abs(point.x - (x+2000)*1000/5632)<.007,guide.id);
+    assert.ok(Math.abs(point.y - (3250-y)*1000/5632)<.007,guide.id);
+    if (isGarage) {
+      assert.equal(guide.target,'Garage');
+      assert.ok(guide.source?.endsWith('/garage-from-ct-spawn-'+slot));
+    }
+  }
+});
+
 test('cross-floor origins remain on their own floor and only explicit source levels offer an alternate view', () => {
   const spawn = all.find(row => row.source === 'https://www.cs2tricks.com/nades/vertigo/smokes/a-site-left-from-t-spawn-b650')!;
   assert.equal(spawn.levelId,'upper');
@@ -143,14 +172,18 @@ test('cross-floor origins remain on their own floor and only explicit source lev
 test('every CSNADES standing point reprojects throwFrom on each source-supported floor, without bitmap-aspect assumptions', () => {
   let checked = 0;
   const exact = json('docs/data/essential-csnades-four-maps-evidence.json');
-  const radars = {...json('docs/data/reviewed-world-origins.json').radars, ...exact.radars};
+  const world = json('docs/data/reviewed-world-origins.json');
+  const reviewedBySource = new Map<string, {world:{x:number;y:number}}>(
+    [...exact.records, ...world.records].map(record => [record.source, record]),
+  );
+  const radars = {...exact.radars, ...world.radars};
   for (const file of ['csnades-publisher','csnades-cache','csnades-dust2','csnades-nuke-community']) {
     for (const raw of json(`docs/data/${file}-destination-evidence.json`)) {
       const record = all.find(row => row.source === raw.source);
       if (!record) continue;
       const point = findLineupOrigin(record,lookups[raw.mapId])!;
       if (point.precision === 'world') {
-        const reviewed = exact.records.find((row: {source:string}) => row.source === raw.source);
+        const reviewed = reviewedBySource.get(raw.source);
         assert.ok(reviewed,raw.source);
         const radar = radars[raw.mapId], span = radar.radarSize * radar.scale;
         assert.equal(point.x, Math.round((reviewed.world.x-radar.posX)/span*100000)/100);

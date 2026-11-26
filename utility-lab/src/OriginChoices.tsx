@@ -1,7 +1,7 @@
 import {useEffect,useId,useLayoutEffect,useMemo,useRef,useState,type KeyboardEvent} from 'react';
 import {createPortal} from 'react-dom';
 import {ChevronLeft,ChevronRight,Crosshair,UserRound,X} from 'lucide-react';
-import type {OriginChoiceGroup} from './origin-options';
+import {numberedSpawnSections,type OriginChoiceGroup} from './origin-options';
 import {originChoiceLayout,ORIGIN_PAGE_SIZE} from './origin-choice-layout';
 import type {UtilityReference} from './utility-data';
 import './origin-choices.css';
@@ -20,8 +20,12 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
   const [inspected,setInspected]=useState('');
   const personal=group.kind==='personal';
   const [position,setPosition]=useState({left:0,top:0,width:328,ready:false});
-  const pages=Math.ceil(group.options.length/ORIGIN_PAGE_SIZE);
-  const {direct,options,points,sources,preview,oneLeader}=useMemo(()=>originChoiceLayout(group,position.width,page),[group,position.width,page]);
+  const sections=useMemo(()=>numberedSpawnSections(group,position.width),[group,position.width]);
+  const pages=sections?1+Math.ceil(sections.nearby.options.length/ORIGIN_PAGE_SIZE):Math.ceil(group.options.length/ORIGIN_PAGE_SIZE);
+  const visiblePage=Math.min(page,pages-1);
+  const section=sections?(visiblePage===0?sections.spawns:sections.nearby):group;
+  const sectionPage=sections?Math.max(0,visiblePage-1):visiblePage;
+  const {direct,options,points,sources,preview,oneLeader}=useMemo(()=>originChoiceLayout(section,position.width,sectionPage),[section,position.width,sectionPage]);
   const activeIndex=Math.max(0,options.findIndex(option=>option.record.id===inspected));
   const active=options[activeIndex]?.record.id;
   const activeSource=sources[activeIndex];
@@ -80,9 +84,9 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
     if(index!==undefined)setInspected(options[index].record.id);
   }
   return createPortal(<div ref={panel} className="ul-origin-choices" role="dialog" data-choice-kind={personal?'personal':'origin'} data-inset={direct?'positions':'spokes'} data-leaders={direct?'none':oneLeader?'active':'all'}
-    aria-label={personal?'Choose your lineup':`Choose throw from ${group.label}`}
+    aria-label={personal?'Choose your lineup':`Choose throw from ${section.label}`}
     style={{left:position.left,top:position.top,visibility:position.ready?'visible':'hidden',maxHeight:'calc(100svh - 24px)'}}>
-    <div className="ul-origin-choices-heading"><h2>{group.label}<span>{group.options.length} {personal?'lineups':'throws'}</span></h2>
+    <div className="ul-origin-choices-heading"><h2>{section.label}<span>{section.options.length} {personal?'lineups':'throws'}</span></h2>
       <button aria-label={personal?'Close your lineup choices':'Close throw choices'} onClick={()=>{onClose();requestAnimationFrame(()=>trigger.isConnected&&trigger.focus({preventScroll:true}));}}><X size={18}/></button></div>
     <div className="ul-origin-choice-options" role="group" aria-label={personal?'Your saved lineups':'Available throws'} style={{height:position.width}} onKeyDown={focusOption}>
       <svg className="ul-origin-choice-spokes" viewBox={`0 0 ${position.width} ${position.width}`} aria-hidden="true">
@@ -120,7 +124,13 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
       </button>;})}
     </div>
     <div className="ul-origin-choice-footer">
-      {pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!page} onClick={()=>setPage(value=>value-1)}><ChevronLeft size={18}/></button><span>{page*ORIGIN_PAGE_SIZE+1}–{Math.min((page+1)*ORIGIN_PAGE_SIZE,group.options.length)} of {group.options.length}</span><button aria-label={personal?'More lineups':'More throws'} disabled={page===pages-1} onClick={()=>setPage(value=>value+1)}><ChevronRight size={18}/></button></>:<span>{oneLeader?'Tap the inset to trace a throw':personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
+      {sections&&pages===2
+        ? <button className="ul-origin-section-switch" aria-label={visiblePage===0?'More throws':'Previous throws'} onClick={()=>setPage(visiblePage===0?1:0)}>
+            {visiblePage!==0&&<ChevronLeft size={16}/>}
+            {visiblePage===0?`Nearby throws (${sections.nearby.options.length})`:`Spawn positions (${sections.spawns.options.length})`}
+            {visiblePage===0&&<ChevronRight size={16}/>}
+          </button>
+        : pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!visiblePage} onClick={()=>setPage(visiblePage-1)}><ChevronLeft size={18}/></button><span>{sections&&visiblePage===0?'Spawn positions':`${sectionPage*ORIGIN_PAGE_SIZE+1}–${Math.min((sectionPage+1)*ORIGIN_PAGE_SIZE,section.options.length)} of ${section.options.length}`}</span><button aria-label={personal?'More lineups':'More throws'} disabled={visiblePage===pages-1} onClick={()=>setPage(visiblePage+1)}><ChevronRight size={18}/></button></>:<span>{oneLeader?'Tap the inset to trace a throw':personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
     </div>
   </div>,document.body);
 }

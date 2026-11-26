@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useEffectEvent,
   useLayoutEffect,
   useMemo,
   useRef,
@@ -38,9 +39,10 @@ import {
   Upload,
   Link2,
 } from "lucide-react";
-import { MAPS, type GameMap } from "./maps";
+import { MAPS, themedRadarImage, type GameMap } from "./maps";
 import MediaImage from "./MediaImage";
 import LineupGallery from "./LineupGallery";
+import GuideMapPreview from "./GuideMapPreview";
 import { lineupWalkthrough } from "./lineup-walkthrough";
 import useMapNavigation from "./useMapNavigation";
 import {lineupMapFrame} from "./lineup-map-layout";
@@ -419,8 +421,9 @@ function ThrowInputs({ method }: { method: string }) {
   );
 }
 
-function LineupMedia({ record, onShowThrows }: { record: UtilityReference; onShowThrows?: () => void }) {
+function LineupMedia({ record, theme, onShowThrows }: { record: UtilityReference; theme: "light" | "dark"; onShowThrows?: () => void }) {
   const photos = useMemo(() => utilityPhotos(withAimPlacement(record)), [record]);
+  const guideMap = <GuideMapPreview record={record} theme={theme} onOpen={onShowThrows} />;
   const [fileFailed, setFileFailed] = useState(false);
   let video = null;
   try {
@@ -448,11 +451,30 @@ function LineupMedia({ record, onShowThrows }: { record: UtilityReference; onSho
     setView([step, view]);
   }
   function changePhoto(direction: number) {
-    const view = viewIndex + direction;
-    if (view >= 0 && view < steps[stepIndex].views.length) return select(stepIndex, view);
-    const next = (stepIndex + direction + steps.length) % steps.length;
-    select(next, direction < 0 ? steps[next].views.length - 1 : 0);
+    select((stepIndex + direction + steps.length) % steps.length);
   }
+  const onPhotoKey = useEffectEvent((event: KeyboardEvent) => {
+    const media = mediaElement.current;
+    const target = event.target;
+    if (!media || !(target instanceof Element) || event.defaultPrevented || event.isComposing ||
+      event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    const dialog = media.closest("dialog[open]");
+    if (!dialog || target.closest("dialog") !== dialog ||
+      target.closest('input, textarea, select, video, [contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="menu"]')) return;
+    const key = event.key.toLowerCase();
+    if (key !== "a" && key !== "d") return;
+    event.preventDefault();
+    changePhoto(key === "a" ? -1 : 1);
+    requestAnimationFrame(() => {
+      if (target.closest(".ul-photo-dots") ||
+        (!target.isConnected && (document.activeElement === document.body || document.activeElement === dialog))) focusStep();
+    });
+  });
+  useLayoutEffect(() => {
+    if (mode !== "photos" || steps.length < 2) return;
+    document.addEventListener("keydown", onPhotoKey);
+    return () => document.removeEventListener("keydown", onPhotoKey);
+  }, [mode, steps.length]);
   const source = video
     ? video.kind === "youtube"
       ? `https://www.youtube.com/watch?v=${video.id}${video.start ? `&t=${video.start}s` : ""}`
@@ -515,17 +537,13 @@ function LineupMedia({ record, onShowThrows }: { record: UtilityReference; onSho
     <div
       className={`ul-lineup-media is-${mode}`}
       ref={mediaElement}
-      onKeyDown={(event) => {
-        if (
-          mode === "photos" &&
-          steps.length > 1 &&
-          !(event.target instanceof Element && event.target.closest("video, input, select, .ul-crosshair-dialog")) &&
-          ["ArrowLeft", "ArrowRight"].includes(event.key)
-        ) {
-          event.preventDefault();
-          changePhoto(event.key === "ArrowLeft" ? -1 : 1);
-          if (event.target instanceof Element && event.target.closest(".ul-photo-dots")) requestAnimationFrame(focusStep);
-        }
+      onKeyDown={event => {
+        if (mode !== "photos" || steps.length < 2 || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
+          (event.key !== "ArrowLeft" && event.key !== "ArrowRight") || !(event.target instanceof Element) ||
+          event.target.closest('video, input, select, textarea, [contenteditable]:not([contenteditable="false"]), .ul-crosshair-dialog')) return;
+        event.preventDefault();
+        changePhoto(event.key === "ArrowLeft" ? -1 : 1);
+        if (event.target.closest(".ul-photo-dots")) requestAnimationFrame(focusStep);
       }}
     >
       {mode === "video" && formats}
@@ -537,15 +555,13 @@ function LineupMedia({ record, onShowThrows }: { record: UtilityReference; onSho
       {mode === "video" && videoPlayer}
       {mode === "photos" && steps.length > 0 && <LineupGallery record={record} steps={steps}
         stepIndex={stepIndex} viewIndex={viewIndex} select={select} advance={changePhoto}
-        formats={formats} sourceVideo={videoPlayer} onShowThrows={onShowThrows}/>}
+        formats={formats} sourceVideo={videoPlayer} guideMap={guideMap}/>}
       <div className="ul-media-footer">
         <div className="ul-viewer-keys">
           <h3>Keys</h3>
           <ThrowInputs method={record.throwType} />
         </div>
-        {mode === "video" && onShowThrows && <button type="button" className="ul-guide-map-link" onClick={onShowThrows}>
-          <MapPinned size={17} aria-hidden="true"/>Throw locations
-        </button>}
+        {(mode === "video" || !steps.length) && guideMap}
         {source && (mode === "video" || !current?.photo?.source) && (
           <a href={source} target="_blank" rel="noreferrer">
             Open original {video ? "video" : "source"}{" "}
@@ -793,10 +809,7 @@ export default function Utilities({
   const destinationCounts = useMemo(() => new Map(mainClusters.map(group => [group.id,splitUtilityDestinations(group.records).length])), [mainClusters]);
   useEffect(() => setMarkerFilter([]), [side]);
   const sourceImage = level?.image || "";
-  const preferredImage =
-    theme === "light" && sourceImage.endsWith(".svg")
-      ? sourceImage.replace(/(?:-light)?\.svg$/, "-light.svg")
-      : sourceImage;
+  const preferredImage = themedRadarImage(sourceImage, theme);
   const mapImage = mapFallback ? sourceImage : preferredImage;
   const draftPhotos = draft.photos || [];
 
@@ -2344,7 +2357,7 @@ export default function Utilities({
           </div>
         </div>
         {mediaRecord && (
-          <LineupMedia key={mediaRecord.id} record={mediaRecord} onShowThrows={guideDestination ? showGuideThrows : undefined} />
+          <LineupMedia key={mediaRecord.id} record={mediaRecord} theme={theme} onShowThrows={guideDestination ? showGuideThrows : undefined} />
         )}
       </dialog>
     </section>

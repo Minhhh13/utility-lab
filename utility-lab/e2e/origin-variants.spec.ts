@@ -122,6 +122,66 @@ async function choicesOnEveryPage(panel:Locator,personal=false,expectedSources=n
   return ids;
 }
 
+// Recorded Cache CT slots project to two columns and two rows. A swapped slot
+// must fail even if its data attribute and guide title are swapped together.
+for(const [width,height] of [[1440,1080],[320,720]]) test.describe(`Cache Garage at ${width}px`,()=>{
+  const phone=width===320;
+  test.use({viewport:{width,height},hasTouch:phone,isMobile:phone});
+  test("Cache Garage's four spawn buttons open the guide at their recorded radar points",async({page},info)=>{
+    await isolate(page);
+    const idPrefix="expanded-csnades-cache-smoke-garage-from-ct-spawn-";
+    const radar=[[90.86,451.56],[106.48,451.56],[90.86,421.73],[106.48,421.73]];
+    const setposSlots=[2,1,5,4];
+    const panel=popup(page), guide=viewer(page);
+    const press=(control:Locator)=>phone?control.tap():control.click();
+    async function openSpawns(){
+      await press(guide.getByRole("button",{name:"Show throw locations on map"}));
+      const pin=page.locator('.ul-origin-pin[data-origin-recipes*="'+idPrefix+'1"]');
+      await press(pin.locator("circle").first());
+      await expect(panel).toHaveAttribute("data-inset","positions");
+      await expect(panel.locator("button[data-spawn-slot]")).toHaveCount(4);
+    }
+    await page.goto("/#utilities?map=cache&level=main&side=CT&lineup="+idPrefix+"1");
+    for(const [index,[x,y]] of radar.entries()){
+      await openSpawns();
+      const slot=index+1;
+      const button=panel.locator(`button[data-spawn-slot="${slot}"]`);
+      const location=await button.evaluate(el=>{
+        const crop=el.closest(".ul-origin-choices")!.querySelector<SVGSVGElement>(".ul-origin-choice-preview")!;
+        const b=el.getBoundingClientRect(), cx=b.x+b.width/2, cy=b.y+b.height/2;
+        const point=new DOMPoint(cx,cy).matrixTransform(crop.getScreenCTM()!.inverse());
+        return {x:point.x,y:point.y,hit:document.elementFromPoint(cx,cy)?.closest("button")===el};
+      });
+      expect(location.hit).toBe(true);
+      expect(location.x).toBeCloseTo(x,0);
+      expect(location.y).toBeCloseTo(y,0);
+      if(index===0)await panel.screenshot({path:info.outputPath("cache-garage-spawn-inset.png"),animations:"disabled"});
+      await press(button);
+      await expect(page).toHaveURL(new RegExp(idPrefix+slot+"$"));
+      await expect(guide.getByRole("heading",{name:`Garage smoke · CT Spawn ${slot}`,exact:true})).toBeVisible();
+      await expect(guide.locator(".ul-photo-caption p")).toHaveText(`CSNADES spawn #${slot} (CT${setposSlots[index]} on setpos.gg).`);
+      await expect(guide.locator(".ul-photo-canvas img")).toHaveAttribute("src",new RegExp(`garage-from-ct-spawn-${slot}-position.jpg$`));
+    }
+    if(phone){
+      // At phone scale unrelated guides also occupy this map pin. Each guide
+      // still opens from the neighboring group; back restores the spawn inset.
+      await openSpawns();
+      const nearby=panel.getByRole("button",{name:"More throws"});
+      await press(nearby);
+      await expect(panel.locator(".ul-origin-choice-option")).toHaveCount(3);
+      const others=await panel.locator(".ul-origin-choice-option").evaluateAll(items=>items.map(item=>item.getAttribute("data-lineup-id")!));
+      await press(panel.getByRole("button",{name:"Previous throws"}));
+      await expect(panel).toHaveAttribute("data-inset","positions");
+      for(const [index,id] of others.entries()){
+        if(index)await openSpawns();
+        await press(nearby);
+        await press(panel.locator(`[data-lineup-id="${id}"]`));
+        await expect(page).toHaveURL(new RegExp(id+"$"));
+      }
+    }
+  });
+});
+
 test('Ancient Top Mid buttons sit over their actual creator-numbered spawn positions on desktop and phone',async({page})=>{
   await isolate(page);
   const guides=PUBLISHED_LINEUPS.filter(row=>row.spawn?.family==='ancient-t-top-mid-flockwglock');

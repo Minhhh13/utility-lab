@@ -1,6 +1,6 @@
 # Photo guide coverage
 
-Generated **2026-11-26** from local application data. Current main browsing contains **1,639 complete photo-and-video guide records**, representing **1,559 distinct original source pages**. Every published row has a separate Position reference, an Aim reference, recorded throw inputs and a matching source video. Counts are side-specific: a source explicitly marked for either team can appear on both sides.
+Generated **2026-11-27** from local application data. Current main browsing contains **1,639 complete photo-and-video guide records**, representing **1,559 distinct original source pages**. Every published row has a separate Position reference, an Aim reference, recorded throw inputs and a matching source video. Counts are side-specific: a source explicitly marked for either team can appear on both sides.
 
 | Map | Guides | T: Smoke / Flash / Fire / HE | CT: Smoke / Flash / Fire / HE |
 | --- | ---: | --- | --- |
@@ -17,7 +17,7 @@ All **64 of 64** map/side/utility combinations have published guides. Floor-spec
 
 The original galleries supply **5,337 photo references** to **5,063 unique image resources**: 4,893 references to 4,625 original remote images, plus 444 references to 438 bundled images. Reused source panels and T/CT rows count as references, not extra original captures.
 
-Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim** and **Landing**. **1,636** guides have stills or a registered standing map for all four steps. The other **3** open their source video for the starting view. The walkthroughs use 6,726 distinct images and 2,215 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
+Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim**, **Aim detail** and **Landing**. **1,636** guides have stills or a registered standing map for all five steps. The other **3** open their source video for the starting view. Aim detail uses a publisher close-up in 576 guides and a 2.5× crop centred on the recorded aim point in 1,063. Crops stay within the original source panel. The walkthroughs use 6,726 distinct images and 3,278 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
 
 1,639 published rows have registered callout-area pins (1,626 publisher-destination registrations and 13 named map anchors). Every published row has a registered pin.
 

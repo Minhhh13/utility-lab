@@ -32,6 +32,9 @@ const contentBounds: Record<string, NonNullable<MapLevel["contentBounds"]>> = {
   cache: { x: 13, y: 150, width: 950, height: 723 },
 };
 const vectorPath=(id:string)=>`/maps/${id}${id==='anubis'?'-v22':''}.svg`;
+export function themedRadarImage(image: string, theme: "light" | "dark") {
+  return theme === "light" ? image.replace(/(?:-light)?\.svg$/, "-light.svg") : image;
+}
 const vector = (id: string): MapLevel[] => [
   {
     id: "main",

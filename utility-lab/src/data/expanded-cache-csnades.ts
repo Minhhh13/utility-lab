@@ -1163,6 +1163,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
   },
   {
     "id": "expanded-csnades-cache-smoke-garage-from-ct-spawn-3",
+    "spawn": { "family": "csnades-cache-ct-garage", "slot": 3, "total": 4, "label": "CT Spawn 3 · CSNADES" },
     "mapId": "cache",
     "levelId": "main",
     "side": "CT",
@@ -1173,7 +1174,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
     "purpose": "Garage from CT Spawn 3.",
     "throwType": "D, then Run + Jump + LMB + RMB",
     "steps": [
-      "Spawn #3",
+      "CSNADES spawn #3 (CT5 on setpos.gg).",
       "Aim between 4 panels",
       "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
     ],
@@ -1188,7 +1189,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
       {
         "kind": "position",
         "image": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-3-position.jpg",
-        "caption": "Spawn #3",
+        "caption": "CSNADES spawn #3 (CT5 on setpos.gg).",
         "creator": "CSNADES.gg",
         "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-3"
       },
@@ -1203,6 +1204,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
   },
   {
     "id": "expanded-csnades-cache-smoke-garage-from-ct-spawn-1",
+    "spawn": { "family": "csnades-cache-ct-garage", "slot": 1, "total": 4, "label": "CT Spawn 1 · CSNADES" },
     "mapId": "cache",
     "levelId": "main",
     "side": "CT",
@@ -1213,7 +1215,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
     "purpose": "Garage from CT Spawn 1.",
     "throwType": "D, then Run + Jump + LMB + RMB",
     "steps": [
-      "Spawn #1",
+      "CSNADES spawn #1 (CT2 on setpos.gg).",
       "Aim at edge above the the dark square",
       "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
     ],
@@ -1228,7 +1230,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
       {
         "kind": "position",
         "image": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-1-position.jpg",
-        "caption": "Spawn #1",
+        "caption": "CSNADES spawn #1 (CT2 on setpos.gg).",
         "creator": "CSNADES.gg",
         "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-1"
       },
@@ -1323,6 +1325,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
   },
   {
     "id": "expanded-csnades-cache-smoke-garage-from-ct-spawn-4",
+    "spawn": { "family": "csnades-cache-ct-garage", "slot": 4, "total": 4, "label": "CT Spawn 4 · CSNADES" },
     "mapId": "cache",
     "levelId": "main",
     "side": "CT",
@@ -1333,7 +1336,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
     "purpose": "Garage from CT Spawn 4.",
     "throwType": "D, then Run + Jump + LMB + RMB",
     "steps": [
-      "Spawn #4",
+      "CSNADES spawn #4 (CT4 on setpos.gg).",
       "Align vertical smudge on beam, up to line",
       "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
     ],
@@ -1348,7 +1351,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
       {
         "kind": "position",
         "image": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-4-position.jpg",
-        "caption": "Spawn #4",
+        "caption": "CSNADES spawn #4 (CT4 on setpos.gg).",
         "creator": "CSNADES.gg",
         "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-4"
       },
@@ -1403,6 +1406,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
   },
   {
     "id": "expanded-csnades-cache-smoke-garage-from-ct-spawn-2",
+    "spawn": { "family": "csnades-cache-ct-garage", "slot": 2, "total": 4, "label": "CT Spawn 2 · CSNADES" },
     "mapId": "cache",
     "levelId": "main",
     "side": "CT",
@@ -1413,7 +1417,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
     "purpose": "Garage from CT Spawn 2.",
     "throwType": "D, then Run + Jump + LMB + RMB",
     "steps": [
-      "Spawn #2",
+      "CSNADES spawn #2 (CT1 on setpos.gg).",
       "Align vertical line, down speck at middle of beam",
       "Hold \"D\" until aiming at sky, then Run + Jump + Left+Right click throw, release at the height of the corner of the building on left"
     ],
@@ -1428,7 +1432,7 @@ export const EXPANDED_CACHE_CSNADES: UtilityReference[] = [
       {
         "kind": "position",
         "image": "/lineup-media/source-video-stills/csnades/cache/smoke--garage-from-ct-spawn-2-position.jpg",
-        "caption": "Spawn #2",
+        "caption": "CSNADES spawn #2 (CT1 on setpos.gg).",
         "creator": "CSNADES.gg",
         "source": "https://csnades.gg/cache/smokes/garage-from-ct-spawn-2"
       },

@@ -4,8 +4,8 @@ import { cs2tricksStagePhotos } from "./data/cs2tricks-stage-photos.ts";
 import { otherStagePhotos } from "./data/other-stage-photos.ts";
 import type { UtilityPhoto, UtilityReference } from "./utility-data.ts";
 
-export type GalleryView = { photo?: UtilityPhoto; standingMap?: boolean };
-export type GalleryStep = { stage?: "stand" | "setup" | "aim" | "landing"; label: string; name: string; views: GalleryView[] };
+export type GalleryView = { photo?: UtilityPhoto; standingMap?: boolean; magnifyAim?: boolean };
+export type GalleryStep = { stage?: "stand" | "setup" | "aim" | "detail" | "landing"; label: string; name: string; views: GalleryView[] };
 
 // For stationary CS2Tricks throws, the original wide camera shot is also a
 // standing POV. The publisher draws its crosshair separately on the aim step.
@@ -19,8 +19,8 @@ function stationaryCamera(record: UtilityReference, aim: UtilityPhoto | undefine
   return { ...wide, kind: "position", caption: `Wide first-person view from ${record.from}. The aim step marks the same photo.` };
 }
 
-/** Preserve personal gallery order. In a published walkthrough, extra aim and
- * release frames belong to step three; a missing still opens the source video. */
+/** Preserve personal gallery order. Published guides keep alternate release
+ * frames alongside the wide aim, and give the close view its own step. */
 export function lineupWalkthrough(record: UtilityReference, photos: UtilityPhoto[]): GalleryStep[] {
   if (record.userCreated || !hasCompleteGuideMedia(record) || !photos.some(p => p.kind === "aim" && p.aimPoint)) {
     return photos.map((photo, index) => ({
@@ -32,7 +32,10 @@ export function lineupWalkthrough(record: UtilityReference, photos: UtilityPhoto
     ? cs2tricksStagePhotos(record) : otherStagePhotos(record);
   const positions = photos.filter(p => p.kind === "position");
   const context = photos.filter(p => !p.kind || p.kind === "context");
-  const aims = photos.filter(p => p.kind === "aim" || p.kind === "release");
+  const aims = photos.filter(p => p.kind === "aim");
+  const closeups = aims.slice(1).filter(p => /^(?:Aim detail\b|Close view\b)/i.test(p.caption));
+  const wide = photos.filter(p => p.kind === "release" || (p.kind === "aim" && !closeups.includes(p)));
+  const detail = closeups.length ? closeups.map(photo => ({ photo })) : [{ photo: aims.find(p => p.aimPoint), magnifyAim: true }];
   const setup = source.setup ?? stationaryCamera(record, aims[0]);
   const results = photos.filter(p => p.kind === "landing");
   const landing = results.length || !source.landing ? results : [source.landing];
@@ -41,7 +44,8 @@ export function lineupWalkthrough(record: UtilityReference, photos: UtilityPhoto
       photo, standingMap: source.setup?.image === photo.image,
     })) },
     { stage: "setup", label: "First-person view", name: "First-person standing view", views: [{ photo: setup }] },
-    { stage: "aim", label: "Where to aim", name: "First-person aim", views: aims.map(photo => ({ photo })) },
+    { stage: "aim", label: "Where to aim", name: "First-person aim", views: wide.map(photo => ({ photo })) },
+    { stage: "detail", label: "Aim detail", name: "Aim detail", views: detail },
     { stage: "landing", label: "Landing", name: "Landing", views: landing.length ? landing.map(photo => ({ photo })) : [{}] },
   ];
 }

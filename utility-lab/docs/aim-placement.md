@@ -1,6 +1,6 @@
 # Source-confirmed aim markers
 
-Open **Where to aim**, the third step of a published lineup, to see the marked first-person view. The second step shows the player’s starting view or links to the creator’s setup footage. The default hollow reticle leaves the exact aiming pixel visible. The crosshair icon shows or hides the overlay. **Crosshair settings** (the sliders icon on phones) changes its colour, size and shape, with a preview and reset. These choices persist in the current browser. Original publisher images and their baked-in crosshairs are preserved.
+Open **Where to aim** for the marked first-person view, then press **D** for **Aim detail**. This fourth step shows the publisher’s close-up when available. Otherwise it magnifies the verified aiming point in the same photo by 2.5×. **D** continues to Landing and **A** moves back one step. The default cyan crosshair has a dark outline and an open center so the aiming pixel stays visible. The crosshair icon toggles the overlay. **Crosshair settings** changes its colour, size and shape and saves those choices in the current browser.
 
 `UtilityPhoto.aimPoint` stores normalized coordinates against the **full original image**, before any selected panel. The viewer maps that point through contain sizing, zoom, scrolling and panel selection. It never uses the centre of a cropped panel as a substitute for an aiming point. Metadata survives validation and portable copies.
 

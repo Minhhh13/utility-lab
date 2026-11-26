@@ -193,9 +193,7 @@
   }
   .utility-workspace.ul-map-only .ul-filterbar button > :first-child { justify-self: center; }
   .utility-workspace.ul-map-only .ul-filterbar button > small {
-    width: calc(3ch + 10px);
-    box-sizing: content-box;
-    padding-inline: 0;
+    min-inline-size: 3ch;
     justify-self: end;
     text-align: end;
   }

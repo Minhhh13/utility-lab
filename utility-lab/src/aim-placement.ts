@@ -84,6 +84,20 @@ export function withAimPlacement<T extends UtilityReference>(record: T): T {
 }
 
 type Dimensions = { width: number; height: number };
+/** A 2.5× view of the recorded aim point. Stay inside the source panel on
+ * composite images, even when the crosshair sits close to an edge. */
+export function aimDetailRegion(photo: UtilityPhoto, intrinsic: Dimensions) {
+  const panel = photo.region ?? { x: 0, y: 0, ...intrinsic, sourceWidth: intrinsic.width, sourceHeight: intrinsic.height };
+  const point = photo.aimPoint;
+  if (!point || panel.width <= 0 || panel.height <= 0) return photo.region;
+  const x = point.x * panel.sourceWidth, y = point.y * panel.sourceHeight;
+  if (x < panel.x || y < panel.y || x > panel.x + panel.width || y > panel.y + panel.height) return photo.region;
+  const width = panel.width / 2.5, height = panel.height / 2.5;
+  return { ...panel, width, height,
+    x: Math.max(panel.x, Math.min(x - width / 2, panel.x + panel.width - width)),
+    y: Math.max(panel.y, Math.min(y - height / 2, panel.y + panel.height - height)),
+  };
+}
 /** Point in the scrollable canvas, using the same contain/panel geometry as
  * PhotoZoom. The full original coordinate is retained through crop and zoom. */
 export function photoAimPosition(

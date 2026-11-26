@@ -45,3 +45,46 @@
 :root[data-navigation-input="keyboard"] :is(.nav-active-indicator,.nav-tab-content>svg,.nav-tab-icon>svg,.ul-media-tabs button>svg,.ul-origin-choices) {
   transition:none;
 }
+
+/* This segmented control slides its own surface. Its text, focus outline and
+   the surrounding popover keep their positions even on a rapid second choice. */
+.appearance-panel .theme-choices {
+  position:relative;
+  isolation:isolate;
+}
+.appearance-panel .theme-choices::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  inset:4px auto 4px 4px;
+  width:calc((100% - 16px) / 3);
+  border-radius:7px;
+  background:var(--surface-raised);
+  box-shadow:0 2px 6px #10203018;
+}
+.theme-choices[data-mode="dark"]::before {transform:translateX(calc(100% + 4px));}
+.theme-choices[data-mode="system"]::before {transform:translateX(calc(200% + 8px));}
+.appearance-panel .theme-choices button.is-selected {background:transparent; box-shadow:none;}
+
+@media (prefers-reduced-motion:no-preference) {
+  :root[data-navigation-input="pointer"] :where(button:enabled,summary,a[href],[role="button"],[role="option"]):active:not([aria-disabled="true"]) {
+    opacity:.78;
+  }
+  :root[data-navigation-input="pointer"] .theme-choices::before {
+    transition:transform var(--workspace-duration) var(--ease-out);
+  }
+  :root[data-navigation-input="pointer"] .palette-choices button > span {
+    transition:transform var(--workspace-duration) var(--ease-out);
+  }
+  :root[data-navigation-input="pointer"] .palette-choices button:active > span {
+    transform:scale(.9);
+  }
+  :root[data-navigation-input="pointer"] .palette-choices .is-selected > span svg {
+    animation:palette-check-in 160ms var(--ease-out);
+  }
+  @keyframes palette-check-in {
+    from {opacity:0; transform:scale(.65);}
+    to {opacity:1; transform:scale(1);}
+  }
+}

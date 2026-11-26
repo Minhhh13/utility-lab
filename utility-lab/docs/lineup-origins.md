@@ -1,8 +1,21 @@
 # Throw-from map locations
 
-The origin catalogue checked on 26 November 2026 covers **1,639 complete guides from 1,559 original source references**. Of these guide entries, **1,631** use a publisher start and **8** use a registered callout area. Across the catalogue, **173 distinct source references** have starts verified in world coordinates. The Position photo gives the player a visual reference for the setup. Source totals count separately timed chapters when a creator demonstrates multiple throws in one video.
+The origin catalogue checked on 27 November 2026 covers **1,639 complete guides from 1,559 original source references**. Of these guide entries, **1,631** use a publisher start and **8** use a registered callout area. Across the catalogue, **177 distinct source references** have published world coordinates for the start. The Position photo gives the player a visual reference for the setup. Source totals count separately timed chapters when a creator demonstrates multiple throws in one video.
 
-Only public online evidence and project files were used. No CS2/Steam process, installation, configuration or game file was accessed. The 24 November update added 53 recipes and refined 16 existing IDs. The 25 November review restored Ancient Top Mid spawn #2 from the creator’s clip and original photos, and corrected 20 guide starting positions. Media playback reviews do not establish independent throw accuracy on the current game build.
+The coordinate evidence comes from public creator references and project files. The 24 November update added 53 recipes and refined 16 existing IDs. The 25 November review restored Ancient Top Mid spawn #2 from the creator’s clip and original photos, and corrected 20 guide starting positions. Current-build throw accuracy has no independent gameplay verification here.
+
+## Cache Garage standing positions reviewed on 27 November 2026
+
+The four Garage guides use CSNADES’ published world positions and numbering. The same four physical positions appear in the setpos.gg spawn table under different numbers. Each guide now names both on its first slide. The fifth physical CT position on the current radar has no throw in this four-guide series. [CSNADES Garage guide](https://astro.csnades.gg/guides/cache-ct-instant-garage-smokes) · [Independent Cache spawn table](https://setpos.gg/cache/spawns)
+
+| Garage guide | setpos.gg spawn | Radar X | Radar Y |
+| --- | --- | ---: | ---: |
+| #1 | CT2 | 90.86 | 451.56 |
+| #2 | CT1 | 106.48 | 451.56 |
+| #3 | CT5 | 90.86 | 421.73 |
+| #4 | CT4 | 106.48 | 421.73 |
+
+Radar coordinates use the website’s 0–1000 grid. The build maps the published X and Y through the Cache radar origin (−2000, 3250) and a span of 5,632 world units. The catalogue regression checks every numbered Cache T and CT guide against the independent table.
 
 ## Numbered round-start smokes added on 26 November 2026
 

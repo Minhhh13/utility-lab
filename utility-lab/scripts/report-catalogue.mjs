@@ -47,9 +47,11 @@ const walkthroughs = main.map(row => ({ row, steps: lineupWalkthrough(row, utili
 const views = walkthroughs.flatMap(({ steps }) => steps.flatMap(step => step.views));
 const standingVideoIds = walkthroughs.filter(({ steps }) => !steps[1].views[0].photo).map(({ row }) => row.id);
 const walkthroughCoverage = {
-  completeFourStageRows: walkthroughs.filter(({ steps }) => steps.length === 4 && steps.every(step => step.views[0].photo)).length,
-  stillRowsByStage: Object.fromEntries(['stand', 'setup', 'aim', 'landing'].map((stage, i) =>
+  completeFiveStageRows: walkthroughs.filter(({ steps }) => steps.length === 5 && steps.every(step => step.views[0].photo)).length,
+  stillRowsByStage: Object.fromEntries(['stand', 'setup', 'aim', 'detail', 'landing'].map((stage, i) =>
     [stage, walkthroughs.filter(({ steps }) => steps[i].stage === stage && steps[i].views[0].photo).length])),
+  sourcedAimDetails: walkthroughs.filter(({ steps }) => !steps[3].views[0].magnifyAim).length,
+  magnifiedAimDetails: walkthroughs.filter(({ steps }) => steps[3].views[0].magnifyAim).length,
   uniqueImages: unique(views.flatMap(({ photo }) => photo ? [photo.image] : [])).length,
   markedAimViews: views.filter(({ photo }) => photo?.kind === 'aim' && photo.aimPoint).length,
   standingVideoIds,
@@ -194,7 +196,7 @@ const practiceMatrix = [
 ];
 const researchLinks = '[Dust II / Mirage / Ancient](expanded-dma-sources.md), [Inferno / Anubis / Cache](expanded-iac-sources.md), [Nuke / Vertigo](expanded-nv-sources.md), [additional Nuke CSNADES](expanded-nuke-csnades-sources.md), [Cache completions](expanded-cache-completions.md), [Cache landing review](expanded-cache-pin-review.md), [independent publisher-map registration review](map-registration-publisher-independent-review.md), [Mirage / Ancient precision review](precise-mirage-ancient.md), [other-map spawn and origin review](precise-other-maps.md), and [Anubis precision review](precise-anubis.md)';
 const pinSentence = `${n(mainStats.pins.registered)} published rows have registered callout-area pins (${n(mainStats.pins.publisherDestinationRows)} publisher-destination registrations and ${n(mainStats.pins.namedAnchorRows)} named map anchors). ${mainStats.pins.unregistered.length ? `${n(mainStats.pins.unregistered.length)} rows remain browsable without a map pin; their IDs are listed in the JSON report.` : 'Every published row has a registered pin.'}`;
-const walkthroughText = `Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim** and **Landing**. **${n(walkthroughCoverage.completeFourStageRows)}** guides have stills or a registered standing map for all four steps. The other **${n(standingVideoIds.length)}** open their source video for the starting view. The walkthroughs use ${n(walkthroughCoverage.uniqueImages)} distinct images and ${n(walkthroughCoverage.markedAimViews)} source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.`;
+const walkthroughText = `Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim**, **Aim detail** and **Landing**. **${n(walkthroughCoverage.completeFiveStageRows)}** guides have stills or a registered standing map for all five steps. The other **${n(standingVideoIds.length)}** open their source video for the starting view. Aim detail uses a publisher close-up in ${n(walkthroughCoverage.sourcedAimDetails)} guides and a 2.5× crop centred on the recorded aim point in ${n(walkthroughCoverage.magnifiedAimDetails)}. Crops stay within the original source panel. The walkthroughs use ${n(walkthroughCoverage.uniqueImages)} distinct images and ${n(walkthroughCoverage.markedAimViews)} source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.`;
 const coverage = [
   '# Photo guide coverage', '',
   `Generated **${date}** from local application data. Current main browsing contains **${n(mainStats.rows)} complete photo-and-video guide records**, representing **${n(mainStats.uniqueSources)} distinct original source pages**. Every published row has a separate Position reference, an Aim reference, recorded throw inputs and a matching source video. Counts are side-specific: a source explicitly marked for either team can appear on both sides.`, '',

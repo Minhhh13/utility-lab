@@ -1,6 +1,6 @@
 # Viewed-photo caching
 
-The production package includes the local first-person and landing stills selected by each guide’s four-step walkthrough. These photos load on demand. The packager checks that every referenced local still was copied before publication. The optional offline photo download has its own inventory, so opening the site doesn’t fetch the full collection.
+The production package includes the local stills used by the five-step walkthrough. They load on demand. When Aim detail magnifies the existing aim photo, the browser reuses that image. The packager checks that every referenced local still was copied before publication. Players can download the optional offline photo pack from workspace settings.
 
 Zooming into a supported photo loads a higher-resolution frame from the same recording. The collection covers 47 first-person standing views and 20 landing views across all eight maps. The gallery keeps the displayed image in place until the browser decodes the matching original and confirms its dimensions. Fit returns to the lightweight view. Existing high-resolution publisher photos, including the two 2560×1440 Anubis Window molly aim shots, open at their supplied resolution. [Frame and resolution evidence](data/source-photo-resolution.json)
 

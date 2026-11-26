@@ -59,7 +59,10 @@ async function open(page: Page, guide: UtilityReference) {
 }
 async function decoded(viewer: Locator) {
   const image = viewer.locator(".ul-photo-canvas img");
-  await image.evaluate(async (img: HTMLImageElement) => { await img.decode(); });
+  await image.evaluate((img: HTMLImageElement) => img.decode());
+  // decode() can finish before React marks the image ready and starts its fade.
+  await expect(viewer.locator(".ul-photo-canvas [data-image-ready]")).toHaveAttribute("data-image-ready", "true");
+  await image.evaluate(img => Promise.all(img.getAnimations().map(animation => animation.finished)).then(() => {}));
   await expect(image).toHaveCSS("opacity", "1");
 }
 async function samples(viewer: Locator) {

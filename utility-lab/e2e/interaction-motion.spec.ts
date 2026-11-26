@@ -2,6 +2,95 @@ import {test,expect,type Page,type Locator} from "@playwright/test";
 
 test.use({serviceWorkers:"block"});
 
+async function observePress(page:Page) {
+  await page.evaluate(()=>{
+    const activations:{label:string; properties:string[]}[]=[];
+    Object.assign(window,{pressObservations:activations});
+    document.addEventListener("click",event=>{
+      if (!(event.target instanceof Element)) return;
+      const target=event.target.closest("button,summary,a,[role=button],[role=option],label");
+      if (!target) return;
+      const motion=target.getAnimations().find(item=>item.id==="control-press");
+      if (!(motion?.effect instanceof KeyframeEffect)) return;
+      const properties=motion.effect.getKeyframes().flatMap(frame=>Object.keys(frame))
+        .filter(key=>!["offset","computedOffset","composite","easing"].includes(key));
+      activations.push({label:target.getAttribute("aria-label")||target.textContent?.trim()||"",properties});
+    },true);
+  });
+}
+
+const pressLogs=(page:Page)=>page.evaluate(()=>(window as unknown as {
+  pressObservations:{label:string;properties:string[]}[];
+}).pressObservations);
+
+test("pointer presses reach each appearance choice and repeated presses without moving the map",async({page})=>{
+  await page.goto("/#board");
+  await expect(page.locator("svg.tb-map")).toBeVisible();
+  await observePress(page);
+  const before=await geometry(page);
+  await page.getByLabel("Appearance",{exact:true}).click();
+  for(const mode of ["Dark","System","Light"]){
+    await page.getByRole("button",{name:mode+" mode",exact:true}).click();
+    await expect(page.locator(".theme-choices")).toHaveAttribute("data-mode",mode.toLowerCase());
+  }
+  for(const palette of ["Ember","Rose","Mint","Cobalt","Cobalt"]){
+    await page.getByRole("button",{name:palette+" palette",exact:true}).click();
+  }
+  const logs=await pressLogs(page);
+  expect(logs.map(item=>item.label)).toEqual(["Appearance","Dark mode","System mode","Light mode",
+    "Ember palette","Rose palette","Mint palette","Cobalt palette","Cobalt palette"]);
+  expect(logs.every(item=>item.properties.includes("opacity")&&!item.properties.includes("transform"))).toBe(true);
+  expect(await geometry(page)).toEqual(before);
+
+  await page.getByLabel("Appearance",{exact:true}).press("Escape");
+  await page.getByRole("button",{name:"Workspace settings",exact:true}).click();
+  await page.getByRole("button",{name:"Close workspace settings",exact:true}).click();
+  expect((await pressLogs(page)).slice(-2).map(item=>item.label)).toEqual(["Workspace settings","Close workspace settings"]);
+});
+
+test("keyboard and reduced-motion settings skip press and palette animations",async({page})=>{
+  await page.goto("/#board");
+  await expect(page.locator("svg.tb-map")).toBeVisible();
+  await observePress(page);
+  await page.getByLabel("Appearance",{exact:true}).press("Enter");
+  const mint=page.getByRole("button",{name:"Mint palette"});
+  await mint.press("Space");
+  await expect(mint).toHaveAttribute("aria-pressed","true");
+  expect(await mint.locator("svg").evaluate(el=>el.getAnimations().length)).toBe(0);
+  await page.emulateMedia({reducedMotion:"reduce"});
+  const rose=page.getByRole("button",{name:"Rose palette"});
+  await rose.click();
+  await expect(rose).toHaveAttribute("aria-pressed","true");
+  expect(await rose.locator("svg").evaluate(el=>el.getAnimations().length)).toBe(0);
+  expect(await pressLogs(page)).toEqual([]);
+});
+
+test("pointer feedback follows actual actions across all five workspaces and preserves the lineup camera",async({page})=>{
+  await page.setViewportSize({width:1440,height:1080});
+  await page.goto("/#home");
+  const board=page.getByRole("button",{name:"Tactic board",exact:true});
+  await expect(board).toBeVisible();
+  await observePress(page);
+  async function press(action:Locator,hit=action) {
+    const before=(await pressLogs(page)).length;
+    await hit.click();
+    expect((await pressLogs(page)).length).toBe(before+1);
+  }
+  await press(board);
+  await press(page.getByRole("group",{name:"Drawing tools",exact:true}).locator("button:enabled").first());
+  const tabs=page.getByRole("tablist",{name:"Main navigation"});
+  await press(tabs.getByRole("tab",{name:"Lineups",exact:true}));
+  await expect(page.locator(".utility-workspace")).toHaveAttribute("aria-busy","false");
+  const map=page.locator(".ul-map-svg"),oldView=await map.getAttribute("viewBox");
+  const pin=page.locator(".ul-map-marker").first();
+  await press(pin,pin.locator(".ul-marker-hit"));
+  expect(await map.getAttribute("viewBox")).toBe(oldView);
+  await press(tabs.getByRole("tab",{name:"Playbooks",exact:true}));
+  await press(page.getByRole("button",{name:"New playbook",exact:true}));
+  await press(tabs.getByRole("tab",{name:"Stats",exact:true}));
+  await press(page.getByRole("button",{name:"Filter statistics to Mirage",exact:true}));
+});
+
 async function observeMotion(page:Page) {
   await page.evaluate(()=>{
     const events:{property:string;input:string|undefined}[]=[];

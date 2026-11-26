@@ -1,9 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { photoAimPosition, withAimPlacement } from "../src/aim-placement.ts";
+import { aimDetailRegion, photoAimPosition, withAimPlacement } from "../src/aim-placement.ts";
 import { utilityPhotos, validateUtility, type UtilityPhoto, type UtilityReference } from "../src/utility-data.ts";
 import { PHOTO_GUIDE_LIBRARY } from "../src/guide-library.ts";
+
+test("the magnified aim stays within the source panel and at its verified full-image coordinate", () => {
+  const source = { width: 1000, height: 1000 };
+  const region = { sourceWidth: 1000, sourceHeight: 1000, x: 0, y: 500, width: 1000, height: 500 };
+  const base: UtilityPhoto = { kind: "aim", image: "source.webp", caption: "Aim", region };
+  assert.deepEqual(aimDetailRegion(base, source), region);
+  assert.deepEqual(aimDetailRegion({ ...base, aimPoint: {x: .5, y: .1} }, source), region);
+  const photo = { ...base, aimPoint: {x: .95, y: .75} };
+  const cropped = aimDetailRegion(photo, source)!;
+  assert.deepEqual(cropped, {...region, x: 600, y: 650, width: 400, height: 200});
+  assert.deepEqual(photoAimPosition({...photo, region: cropped}, {width: 800, height: 400}, source), {x: 700, y: 200});
+});
 import { mergePhotoGuides } from "../src/expanded-guide-model.ts";
 import { MAPS } from "../src/maps.ts";
 
