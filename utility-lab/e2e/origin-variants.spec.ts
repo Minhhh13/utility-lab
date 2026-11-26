@@ -2,7 +2,7 @@ import {test,expect,type Page,type Locator} from "@playwright/test";
 import {readFile} from "node:fs/promises";
 import {PUBLISHED_LINEUPS} from "./catalogue-fixtures";
 import {FAVORITE_UTILITIES_KEY,USER_UTILITIES_KEY,utilityPhotos,type UtilityReference} from "../src/utility-data";
-import {findLineupOrigin,parseOriginLookup} from "../src/lineup-origins";
+import {findLineupOrigin,parseOriginLookup,type OriginPoint} from "../src/lineup-origins";
 import {mainMarkerGroupsForArea,mainMarkers,chooseUtilityType,chooseLandingSpot,waitForUtilityChoice} from "./lineup-helpers";
 
 test.use({serviceWorkers:"block"});
@@ -27,11 +27,21 @@ async function openMidDoors(page:Page){
   await chooseLandingSpot(page,{areaId:"dust2:main:mid-doors"});
   await expect(pins(page).first()).toBeVisible();
 }
-async function verifyPhoto(page:Page,record:UtilityReference,camera:string){
+async function verifyPhoto(page:Page,record:UtilityReference,camera:string,standingMap?:OriginPoint){
   await expect(viewer(page)).toBeVisible();
   await expect(viewer(page).getByRole("button",{name:/^Photos/})).toHaveAttribute("aria-pressed","true");
-  await expect(viewer(page).locator(".ul-photo-canvas img")).toHaveAttribute("src",utilityPhotos(record)[0].image);
   await expect(viewer(page).locator(".ul-photo-kind")).toHaveText("Position");
+  if(standingMap){
+    const map=viewer(page).locator(".ul-standing-map");
+    await expect(viewer(page).getByRole("button",{name:"Step 1: Where to stand",exact:true})).toHaveAttribute("aria-pressed","true");
+    await expect(map).toHaveAttribute("data-lineup-id",record.id);
+    await expect(map).toHaveAttribute("data-origin-registration",standingMap.registrationId);
+    await expect(map).toHaveAttribute("data-origin-level",standingMap.levelId);
+    await expect(map.locator(".ul-standing-map-pin")).toHaveAttribute("transform",`translate(${standingMap.x} ${standingMap.y})`);
+    await viewer(page).getByRole("button",{name:"Step 2: First-person standing view",exact:true}).click();
+    await expect(viewer(page).locator(".ul-photo-kind")).toHaveText("First-person standing view");
+  }
+  await expect(viewer(page).locator(".ul-photo-canvas img")).toHaveAttribute("src",utilityPhotos(record)[0].image);
   expect(await page.evaluate(()=>new URLSearchParams(location.hash.split("?")[1]).get("lineup"))).toBe(record.id);
   await expect(page.locator(".ul-map-svg")).toHaveAttribute("viewBox",camera);
 }
@@ -128,7 +138,9 @@ test('Ancient Top Mid buttons sit over their actual creator-numbered spawn posit
       expect(marker.y).toBeCloseTo(point.y,0);
     }
     await popup(page).locator('[data-spawn-slot="2"]').click();
-    await verifyPhoto(page,selected,camera!);
+    const selectedPoint=findLineupOrigin(selected,lookup);
+    expect(selectedPoint).toMatchObject({precision:"world",registrationId:"world-ancient-main",levelId:"main"});
+    await verifyPhoto(page,selected,camera!,selectedPoint);
     await page.keyboard.press('Escape');
   }
 });
