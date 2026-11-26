@@ -51,27 +51,29 @@ export default function LineupGallery({ record, steps, stepIndex, viewIndex, sel
         <button className="ul-slide-next" aria-label="Next photo" onClick={() => advance(1)}><ChevronRight size={24}/></button>
       </>}
     </div>
-    <div className={`ul-photo-details${onShowThrows ? " has-map-link" : ""}`}>
-      <div className="ul-photo-caption" aria-live="polite">
-        <span>{stepIndex + 1} / {steps.length}</span>
-        <div><strong className="ul-photo-kind">{label}</strong><p>{caption}</p></div>
+    <div className="ul-gallery-guide">
+      <div className={`ul-photo-details${onShowThrows ? " has-map-link" : ""}`}>
+        <div className="ul-photo-caption" aria-live="polite">
+          <span>{stepIndex + 1} / {steps.length}</span>
+          <div><strong className="ul-photo-kind">{label}</strong><p>{caption}</p></div>
+        </div>
+        {photo && <PhotoCredit photo={photo}/>}
+        {onShowThrows && <button type="button" className="ul-guide-map-link" onClick={onShowThrows}
+          aria-label="Show throw locations on map" title="Show throw locations on map">
+          <MapPinned size={17} aria-hidden="true"/><span>Throw locations</span>
+        </button>}
       </div>
-      {photo && <PhotoCredit photo={photo}/>}
-      {onShowThrows && <button type="button" className="ul-guide-map-link" onClick={onShowThrows}
-        aria-label="Show throw locations on map" title="Show throw locations on map">
-        <MapPinned size={17} aria-hidden="true"/><span>Throw locations</span>
-      </button>}
+      {step.views.length > 1 && <div className="ul-step-views" role="group" aria-label={`${step.label} photos`}>
+        {step.views.map(({ photo: p }, i) => <button key={i} aria-pressed={i === viewIndex} onClick={() => select(stepIndex, i)}>
+          {p?.kind === "release" ? "Throw" : i === 0 ? "Full view" : p?.caption === "Aim detail" ? "Aim detail" : `View ${i + 1}`}
+        </button>)}
+      </div>}
+      {steps.length > 1 && <div className={`ul-photo-dots${step.stage ? " ul-guide-steps" : ""}`} role="group" aria-label="Choose lineup photo">
+        {steps.map((s, i) => <button key={i} className={i === stepIndex ? "is-active" : ""} aria-pressed={i === stepIndex}
+          aria-label={`${s.stage ? "Step" : "Photo"} ${i + 1}: ${s.name}`} onClick={() => select(i)}>
+          <span className="ul-photo-step-number">{i + 1}</span><span>{s.label}</span>
+        </button>)}
+      </div>}
     </div>
-    {step.views.length > 1 && <div className="ul-step-views" role="group" aria-label={`${step.label} photos`}>
-      {step.views.map(({ photo: p }, i) => <button key={i} aria-pressed={i === viewIndex} onClick={() => select(stepIndex, i)}>
-        {p?.kind === "release" ? "Throw" : i === 0 ? "Full view" : p?.caption === "Aim detail" ? "Aim detail" : `View ${i + 1}`}
-      </button>)}
-    </div>}
-    {steps.length > 1 && <div className={`ul-photo-dots${step.stage ? " ul-guide-steps" : ""}`} role="group" aria-label="Choose lineup photo">
-      {steps.map((s, i) => <button key={i} className={i === stepIndex ? "is-active" : ""} aria-pressed={i === stepIndex}
-        aria-label={`${s.stage ? "Step" : "Photo"} ${i + 1}: ${s.name}`} onClick={() => select(i)}>
-        <span className="ul-photo-step-number">{i + 1}</span><span>{s.label}</span>
-      </button>)}
-    </div>}
   </div>;
 }

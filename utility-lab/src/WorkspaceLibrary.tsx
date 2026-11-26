@@ -574,13 +574,9 @@ export default function WorkspaceLibrary({
       <section className="workspace-library stats-page">
         <header className="library-heading">
           <div>
-            <h2>Your workspace, in numbers.</h2>
+            <h2>Workspace stats</h2>
             <p>Saved plans and utility coverage on this device.</p>
           </div>
-          <span className="local-data-label">
-            <span />
-            Local data
-          </span>
         </header>
         <div
           className="library-filters"
@@ -716,10 +712,6 @@ export default function WorkspaceLibrary({
                 ))}
             </div>
             <div className="stats-note">
-              <p>
-                These are workspace stats, not Steam match or FACEIT performance
-                stats. Zero means nothing saved in this scope.
-              </p>
               <button onClick={() => onNavigate("board")}>
                 Open the tactic board <ArrowRight size={16} />
               </button>
@@ -847,21 +839,19 @@ export default function WorkspaceLibrary({
       )}
       {(linksError || catalogueError) && <p className="library-error" role="alert">{linksError || catalogueError} <button className="library-text-link" onClick={() => setLinksRetry(attempt => attempt + 1)}>Try again</button></p>}
       <div className="playbook-layout">
-        <aside className="playbook-list" aria-label="Your playbooks">
+        {books.length > 0 && <aside className="playbook-list" aria-label="Your playbooks">
           <div className="playbook-list-heading">
             Your playbooks <span>{books.length}</span>
           </div>
-          {books.length > 0 && (
-            <label className="library-search">
-              <Search size={16} />
-              <input
-                aria-label="Search playbooks"
-                value={bookSearch}
-                onChange={(event) => setBookSearch(event.target.value)}
-                placeholder="Find a playbook"
-              />
-            </label>
-          )}
+          <label className="library-search">
+            <Search size={16} />
+            <input
+              aria-label="Search playbooks"
+              value={bookSearch}
+              onChange={(event) => setBookSearch(event.target.value)}
+              placeholder="Find a playbook"
+            />
+          </label>
           {visibleBooks.map((book) => (
             <button
               key={book.id}
@@ -884,16 +874,15 @@ export default function WorkspaceLibrary({
               <ChevronRight size={16} />
             </button>
           ))}
-          {!books.length && <p>Your playbooks will appear here.</p>}
-          {books.length > 0 && !visibleBooks.length && (
+          {!visibleBooks.length && (
             <p>No playbooks match “{bookSearch}”.</p>
           )}
-          {books.length > 0 && !editing && !books.some(book => book.name === MIRAGE_EXAMPLE_NAME &&
+          {!editing && !books.some(book => book.name === MIRAGE_EXAMPLE_NAME &&
             book.lineupIds.includes(MIRAGE_EXAMPLE_LINEUP)) &&
             <button className="planner-example-link" onClick={addExample} disabled={busy}>
               <Plus size={15} />Add Mirage example
             </button>}
-        </aside>
+        </aside>}
         <div className="playbook-content">
           {draft ? (
             <form className="playbook-form" onSubmit={save}>

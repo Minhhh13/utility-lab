@@ -2400,6 +2400,48 @@
 .ul-media-dialog-heading > div > span {font-size:11px;line-height:1.4;margin-top:0;margin-bottom:2px}
 .ul-lineup-media {display:flex;flex-direction:column;flex:1;min-height:0}
 .ul-photo-viewer {display:flex;flex-direction:column;flex:1;min-height:0}
+.ul-gallery-guide { display: contents; }
+@media (orientation: landscape) and (min-width: 520px) and (max-height: 460px) {
+  .ul-lineup-media .ul-photo-viewer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(152px, 29%, 236px);
+    grid-template-rows: minmax(0, 1fr);
+  }
+  .ul-photo-viewer .ul-gallery-guide {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border-inline-start: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .ul-gallery-guide .ul-photo-details {
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    overflow: visible;
+  }
+  .ul-gallery-guide .ul-photo-caption { padding: 6px; }
+  .ul-gallery-guide .ul-photo-credit { padding-inline: 6px; }
+  .ul-gallery-guide .ul-guide-map-link { margin: 0; align-self: start; }
+  .ul-gallery-guide .ul-photo-dots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    order: -1;
+  }
+  .ul-gallery-guide .ul-photo-dots button {
+    min-width: 0;
+    min-height: 44px;
+    flex-direction: column;
+    gap: 2px;
+    white-space: normal;
+  }
+  .ul-gallery-guide .ul-step-views {
+    flex-wrap: wrap;
+    padding: 3px 6px;
+  }
+}
 .ul-photo-stage {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);justify-content:stretch;align-items:stretch;flex:1;min-height:0;aspect-ratio:auto;overflow:hidden}
 .ul-photo-toolbar {grid-row:1;display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;height:52px;padding:4px 8px;box-sizing:border-box;background:var(--surface-raised);border-bottom:1px solid var(--border);z-index:2}
 .ul-photo-frame {position:relative;grid-row:2;min-height:0;min-width:0;overflow:hidden}

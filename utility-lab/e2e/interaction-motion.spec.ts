@@ -1,4 +1,4 @@
-import {test,expect,type Page} from "@playwright/test";
+import {test,expect,type Page,type Locator} from "@playwright/test";
 
 test.use({serviceWorkers:"block"});
 
@@ -23,6 +23,18 @@ async function geometry(page:Page) {
   });
 }
 
+async function expectTabUnderline(nav:Locator,phone=false) {
+  const tab=nav.getByRole("tab",{selected:true});
+  const button=(await tab.boundingBox())!;
+  const icon=(await tab.locator("svg").boundingBox())!;
+  const last=phone?icon:(await tab.locator(".nav-tab-content > span").boundingBox())!;
+  const underline=(await nav.locator(".nav-active-indicator").boundingBox())!;
+  expect(Math.abs(underline.x-icon.x)).toBeLessThan(.6);
+  expect(Math.abs((underline.x+underline.width)-(last.x+last.width))).toBeLessThan(.6);
+  expect(button.width).toBeGreaterThanOrEqual(44);
+  expect(button.height).toBeGreaterThanOrEqual(44);
+}
+
 test("pointer tab switching moves one underline without changing the map frame",async({page})=>{
   await page.goto("/#board");
   await expect(page.locator("svg.tb-map")).toBeVisible();
@@ -33,10 +45,7 @@ test("pointer tab switching moves one underline without changing the map frame",
   await expect(nav.getByRole("tab",{name:"Stats",exact:true})).toHaveAttribute("aria-selected","true");
   await expect.poll(()=>page.evaluate(()=>(window as unknown as {tabMotionEvents:{property:string}[]}).tabMotionEvents.some(event=>event.property==="transform"))).toBe(true);
   await settle(page);
-  const active=(await nav.getByRole("tab",{name:"Stats",exact:true}).boundingBox())!;
-  const indicator=(await nav.locator(".nav-active-indicator").boundingBox())!;
-  expect(Math.abs(active.x-indicator.x)).toBeLessThan(.5);
-  expect(Math.abs(active.width-indicator.width)).toBeLessThan(.5);
+  await expectTabUnderline(nav);
   await nav.getByRole("tab",{name:"Tactic board",exact:true}).click();
   await expect(page.locator("svg.tb-map")).toBeVisible();
   await settle(page);
@@ -81,9 +90,39 @@ test("phone tab feedback fits the selected tab without layout movement",async({p
   await expect(nav.getByRole("tab",{name:"Stats",exact:true})).toHaveAttribute("aria-selected","true");
   await expect.poll(()=>page.evaluate(()=>(window as unknown as {tabMotionEvents:{property:string}[]}).tabMotionEvents.some(event=>event.property==="transform"))).toBe(true);
   await settle(page);
-  const active=(await nav.getByRole("tab",{name:"Stats",exact:true}).boundingBox())!,indicator=(await nav.locator(".nav-active-indicator").boundingBox())!;
-  expect(Math.abs(indicator.x-active.x-12)).toBeLessThan(.5);
-  expect(Math.abs(indicator.width-active.width+24)).toBeLessThan(.5);
+  await expectTabUnderline(nav,true);
   expect(await nav.boundingBox()).toEqual(before);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(390);
+});
+
+for(const mode of ["light","dark"] as const) test(`all four tab underlines fit their content in ${mode} mode across header layouts`,async({page})=>{
+  test.slow(); // Three viewports, each with four complete workspace routes.
+  await page.addInitScript(mode=>{
+    localStorage.setItem("ul:appearance",JSON.stringify({mode,palette:"cobalt"}));
+    localStorage.setItem("ul:display",JSON.stringify({aspect:"4:3"}));
+  },mode);
+  await page.emulateMedia({reducedMotion:"reduce"});
+  for(const [width,height] of [[320,568],[721,900],[1440,1080]]){
+    await page.setViewportSize({width,height});
+    await page.goto("/#board");
+    await expect(page.locator("html")).toHaveAttribute("data-theme",mode);
+    await page.evaluate(()=>document.fonts.ready);
+    const phone=width<721;
+    const nav=page.getByRole("tablist",{name:phone?"Workspace tabs":"Main navigation",exact:true});
+    for(const name of ["Tactic board","Lineups","Playbooks","Stats"]){
+      const tab=nav.getByRole("tab",{name,exact:true});
+      await tab.click();
+      await expect(tab).toHaveAttribute("aria-selected","true");
+      await expectTabUnderline(nav,phone);
+    }
+    const header=page.locator(".studio-header");
+    expect(await header.evaluate(el=>el.scrollWidth)).toBeLessThanOrEqual(width);
+    if(!phone){
+      const brand=(await header.getByRole("link",{name:"Utility Lab home"}).boundingBox())!;
+      const firstIcon=(await nav.getByRole("tab").first().locator("svg").boundingBox())!;
+      const brandGap=firstIcon.x-(brand.x+brand.width);
+      expect(brandGap).toBeGreaterThanOrEqual(8);
+      expect(brandGap).toBeLessThanOrEqual(32);
+    }
+  }
 });

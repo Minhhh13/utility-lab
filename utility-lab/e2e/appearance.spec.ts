@@ -1,6 +1,28 @@
 import { test, expect } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 
+test("keyboard users can leave the header popovers and reopen shortcuts", async ({page}) => {
+  await page.goto("/#board");
+  const appearance = page.getByLabel("Appearance", {exact:true});
+  await appearance.press("Enter");
+  const rose = page.getByRole("button", {name:"Rose palette"});
+  await rose.focus();
+  await rose.press("Tab");
+  await expect(page.locator(".appearance-panel")).toBeHidden();
+  const display = page.getByLabel("Display settings", {exact:true});
+  await expect(display).toBeFocused();
+  await display.press("Enter");
+  const hide = page.locator(".display-panel").getByRole("button", {name:"Hide top bar"});
+  await hide.focus();
+  await hide.press("Tab");
+  await expect(page.locator(".display-panel")).toBeHidden();
+  await page.getByRole("button", {name:"Help and keyboard shortcuts"}).press("Enter");
+  const shortcuts = page.getByRole("dialog",{name:"Keyboard shortcuts"});
+  await expect(shortcuts).toBeVisible();
+  await shortcuts.getByRole("button",{name:"Close help"}).press("Escape");
+  await expect(shortcuts).toBeHidden();
+});
+
 test("theme and palette apply to the full board and survive reload", async ({
   page,
 }) => {

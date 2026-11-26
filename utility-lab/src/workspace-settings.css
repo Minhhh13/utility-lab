@@ -137,6 +137,12 @@
   }
 }
 
+@media (max-width: 400px) {
+  .workspace-settings > .dialog-heading { gap: 10px; padding-block: 16px; }
+  .workspace-settings .dialog-heading h2 { font-size: 21px; }
+  .workspace-settings .settings-actions > button { width: 100%; }
+}
+
 .workspace-loading,
 .workspace-recovery {
   display: grid;

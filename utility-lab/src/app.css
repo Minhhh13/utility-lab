@@ -274,7 +274,7 @@ kbd {
   right: 0;
   border-radius: 3px 3px 0 0;
 }
-.global-nav-item.is-active > svg {
+.global-nav-item.is-active svg {
   color: var(--blue);
 }
 .global-nav-item small {
@@ -673,27 +673,19 @@ dialog::backdrop {
   overflow: auto;
 }
 .help-dialog > .dialog-heading {
-  margin-bottom: 24px;
+  gap: 12px;
 }
-.help-dialog > h2 {
-  font-size: 27px;
-  font-weight: 750;
-  letter-spacing: -0.9px;
-  line-height: 1.25;
-  max-width: 16ch;
-  margin-bottom: 13px;
-}
-.help-dialog > p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: #68747e;
+.help-dialog > .dialog-heading .icon-button {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
 }
 .shortcut-list {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 14px;
-  margin: 27px 0;
+  margin: 20px 0;
   font-size: 13px;
   color: #4d5b68;
 }
@@ -1001,9 +993,6 @@ dialog::backdrop {
   }
   .shortcut-list kbd {
     font-size: 10px;
-  }
-  .help-dialog > h2 {
-    font-size: 26px;
   }
   .app-main {
     padding-bottom: env(safe-area-inset-bottom);

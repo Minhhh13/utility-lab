@@ -32,6 +32,9 @@
   gap: 24px;
   min-height: 540px;
 }
+.playbook-content:only-child {
+  grid-column: 1 / -1;
+}
 .playbook-list {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -346,20 +349,6 @@
   line-height: 1.8;
   border-radius: 8px;
 }
-.local-data-label {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--muted);
-  font-size: 12px;
-  white-space: nowrap;
-}
-.local-data-label > span {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-}
 .stats-summary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -370,7 +359,8 @@
 .stats-summary > div {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 10px;
 }
 .stats-summary span {
   font-size: 13px;
@@ -460,13 +450,7 @@
   font-variant-numeric: tabular-nums;
 }
 .stats-note {
-  padding-top: 28px;
-  max-width: 52ch;
-}
-.stats-note p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.9;
+  padding-top: 8px;
 }
 .stats-note button {
   display: flex;
@@ -744,6 +728,8 @@
   }
   .library-heading-actions > button {
     flex: 1;
+    gap: 6px;
+    padding-inline: 8px;
   }
   .round-step-pair {
     grid-template-columns: 1fr;
@@ -754,11 +740,15 @@
     font-size: 16px;
   }
   .library-filters {
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 8px;
   }
   .library-filters label {
-    flex: 1;
-    min-width: 130px;
+    min-width: 0;
+  }
+  .library-filters > button {
+    justify-self: start;
   }
   .round-sequence > li {
     grid-template-columns: 26px minmax(0, 1fr);
@@ -884,7 +874,12 @@
     grid-template-columns: minmax(0, 1fr) 52px 52px;
     gap: 12px;
   }
-  .local-data-label {
-    display: none;
-  }
+}
+@media (max-width: 400px) {
+  .library-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .library-heading-actions > button { white-space: nowrap; padding-inline: 6px; }
+  .playbook-empty { min-height: 0; gap: 12px; padding-block: 10px; }
+  .playbook-empty > span { width: 52px; height: 52px; border-radius: 12px; }
+  .playbook-empty > span svg { width: 26px; height: 26px; }
+  .playbook-empty-actions { display: grid; width: 100%; }
 }

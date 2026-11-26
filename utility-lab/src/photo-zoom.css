@@ -32,7 +32,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 540px), (orientation: landscape) and (max-height: 460px) and (max-width: 760px) {
   .ul-photo-toolbar .ul-photo-zoom-compact {
     gap: 2px;
   }
@@ -52,7 +52,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 360px), (orientation: landscape) and (max-height: 460px) and (min-width: 520px) and (max-width: 660px) {
   .ul-photo-toolbar-compact .ul-media-tabs {
     flex: 0 0 auto;
     gap: 0;

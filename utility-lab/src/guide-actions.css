@@ -14,6 +14,15 @@
   .ul-media-dialog-heading > div:first-child {flex: 1 0 100%; padding-right: 44px;}
   .ul-media-heading-actions {margin-left: auto;}
   .ul-media-heading-actions > .ul-icon-button {position: absolute; right: 10px; top: 8px;}
+  .ul-media-dialog-heading:not(:has(.ul-spawn-switch)) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .ul-media-dialog-heading:not(:has(.ul-spawn-switch)) > div:first-child { padding-right: 0; }
+  .ul-media-dialog-heading:not(:has(.ul-spawn-switch)) h2 { overflow-wrap: anywhere; }
+  .ul-media-dialog-heading:not(:has(.ul-spawn-switch)) .ul-media-heading-actions > .ul-icon-button {
+    position: static;
+  }
 }
 .ul-guide-actions .ul-guide-action-button {
   display: inline-flex;

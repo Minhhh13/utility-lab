@@ -5,7 +5,7 @@
   position:absolute;
   left:0;
   bottom:0;
-  width:1px;
+  width:64px;
   height:3px;
   border-radius:3px 3px 0 0;
   background:var(--accent);
@@ -18,16 +18,16 @@
   :root[data-navigation-input="pointer"] .nav-active-indicator {
     transition:transform var(--workspace-duration) var(--ease-out),opacity 120ms var(--ease-out);
   }
-  :root[data-navigation-input="pointer"] :is(.global-nav-item,.phone-tabs button,.ul-media-tabs button)>svg {
+  :root[data-navigation-input="pointer"] :is(.nav-tab-content,.nav-tab-icon,.ul-media-tabs button)>svg {
     transition:transform 120ms var(--ease-out),opacity 120ms var(--ease-out);
   }
-  :root[data-navigation-input="pointer"] :is(.global-nav-item,.phone-tabs button,.ul-media-tabs button):active:not(:disabled)>svg {
+  :root[data-navigation-input="pointer"] :is(.global-nav-item,.phone-tabs button,.ul-media-tabs button):active:not(:disabled) svg {
     transform:scale(.94);
   }
   :root[data-navigation-input="pointer"] .ul-media-tabs button:not([aria-pressed="true"])>svg {
     opacity:.75;
   }
-  .app-shell[data-entered-from-home="pointer"] :is(.global-nav-item,.phone-tabs button)[aria-selected="true"]>svg {
+  .app-shell[data-entered-from-home="pointer"] :is(.global-nav-item,.phone-tabs button)[aria-selected="true"] svg {
     animation:workspace-icon-arrives 180ms var(--ease-out);
   }
   :root[data-navigation-input="pointer"] .ul-origin-choices {
@@ -42,6 +42,6 @@
 }
 
 /* Keyboard input cancels any pointer feedback immediately, including release. */
-:root[data-navigation-input="keyboard"] :is(.nav-active-indicator,.global-nav-item>svg,.phone-tabs button>svg,.ul-media-tabs button>svg,.ul-origin-choices) {
+:root[data-navigation-input="keyboard"] :is(.nav-active-indicator,.nav-tab-content>svg,.nav-tab-icon>svg,.ul-media-tabs button>svg,.ul-origin-choices) {
   transition:none;
 }

@@ -135,7 +135,7 @@ body,
 .global-nav-item.is-active {
   color: var(--text);
 }
-.global-nav-item.is-active > svg {
+.global-nav-item.is-active svg {
   color: var(--accent);
 }
 .global-nav-item.is-active:after {
@@ -189,7 +189,6 @@ dialog {
   color: var(--accent);
 }
 .dialog-heading p,
-.help-dialog > p,
 .privacy-note p,
 .roadmap p,
 .shortcut-list {
@@ -482,10 +481,27 @@ dialog {
 .is-home .global-actions {
   margin-left: auto;
 }
-.global-nav {
-  gap: 25px;
-  margin-left: 25px;
+.app-shell:not(.is-home) > .studio-header {
+  column-gap: clamp(12px, 1.4vw, 22px);
 }
+.global-nav {
+  gap: 4px;
+  margin-left: 0;
+}
+.global-nav-item {
+  min-width: 44px;
+  min-height: 44px;
+  padding-inline: 8px;
+  justify-content: center;
+}
+.nav-tab-content,
+.nav-tab-icon {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+.nav-tab-content { gap: 6px; }
+.nav-tab-icon { justify-content: center; }
 .tb-tool-label {
   font-size: 12px;
 }
@@ -494,11 +510,11 @@ dialog {
 }
 @media (max-width: 1100px) {
   .global-nav {
-    gap: 18px;
-    margin-left: 10px;
+    gap: 2px;
   }
   .global-nav-item {
     font-size: 12px;
+    padding-inline: 5px;
   }
   .workspace-status {
     display: none;

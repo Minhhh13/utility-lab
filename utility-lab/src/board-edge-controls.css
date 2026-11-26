@@ -1,4 +1,33 @@
 /* Keep editing and navigation at opposite edges of the working map. */
+@media (max-width: 800px) {
+  .tactic-board .tb-titlebar {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px 14px;
+    padding: 9px 12px;
+  }
+  .tactic-board .tb-title-block { grid-column: 2; grid-row: 1; }
+  .tactic-board .tb-title-input { font-size: 19px !important; text-overflow: ellipsis; }
+  .tactic-board .tb-title-actions { grid-row: 2; }
+  /* The desktop inspector becomes an inline panel on phones. Put its heading
+     at the action that opened it, above the drawing surface and its tools. */
+  .tactic-board .tb-inspector.is-open { order: -1; }
+}
+@media (max-width: 440px) {
+  .tactic-board .tb-map-picker { gap: 5px; }
+  .tactic-board .tb-map-picker > svg { margin-left: 0; }
+  .tactic-board .tb-map-picker-name small { display: none; }
+  .tactic-board .tb-title-actions {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+  .tactic-board .tb-title-actions :is(.tb-new-button, .tb-share-button, .tb-export summary, .tb-plan-toggle) {
+    width: 44px;
+    min-width: 44px;
+    padding-inline: 0;
+  }
+  .tactic-board .tb-title-actions :is(.tb-new-button, .tb-share-button, .tb-export summary, .tb-plan-toggle) > span,
+  .tactic-board .tb-title-actions .tb-export summary > svg:last-child { display: none; }
+}
 .tactic-board .tb-toolbox .tb-tool,
 .tactic-board .tb-history .tb-icon-button,
 .tactic-board .tb-zoom .tb-icon-button,

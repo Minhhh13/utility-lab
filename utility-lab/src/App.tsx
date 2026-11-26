@@ -647,8 +647,10 @@ export default function App() {
               className={`global-nav-item${activeTab === id ? " is-active" : ""}`}
               onClick={() => navigate(id)}
             >
-              <Icon size={17} />
-              <span>{name}</span>
+              <span className="nav-tab-content" data-tab-ink="">
+                <Icon size={17} />
+                <span>{name}</span>
+              </span>
             </button>
           ))}
           <NavigationIndicator activeView={activeTab} />
@@ -668,6 +670,9 @@ export default function App() {
           <details
             className="appearance-menu"
             ref={appearanceMenu}
+            onBlur={event => {
+              if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
+            }}
             onKeyDown={(event) => {
               if (event.key === "Escape") {
                 appearanceMenu.current?.removeAttribute("open");
@@ -746,6 +751,9 @@ export default function App() {
           <details
             className="display-menu"
             ref={displayMenu}
+            onBlur={event => {
+              if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
+            }}
             onKeyDown={(event) => {
               if (event.key === "Escape") {
                 displayMenu.current?.removeAttribute("open");
@@ -827,7 +835,7 @@ export default function App() {
               onClick={() => navigate(id)}
               className={activeTab === id ? "is-active" : ""}
             >
-              <Icon size={16} />
+              <span className="nav-tab-icon" data-tab-ink=""><Icon size={16} /></span>
               <span>{name}</span>
             </button>
           ))}
@@ -1065,7 +1073,7 @@ export default function App() {
         }}
       >
         <div className="dialog-heading">
-          <BrandMark size={34} />
+          <h2 id="help-title">Keyboard shortcuts</h2>
           <button
             className="icon-button"
             aria-label="Close help"
@@ -1074,30 +1082,23 @@ export default function App() {
             <X size={20} />
           </button>
         </div>
-        <h2 id="help-title">Your next round starts here.</h2>
-        <p>
-          Choose a map, place your team, and draw the execute. Open Lineups to
-          choose your side and utility. Save tactics and lineups together in
-          Playbooks.
-        </p>
         <div className="shortcut-list">
           <span>Choose a map</span>
           <kbd>/</kbd>
-          <span>Show this guide</span>
+          <span>Show shortcuts</span>
           <kbd>?</kbd>
           <span>Undo an edit</span>
           <kbd>Ctrl / ⌘ Z</kbd>
-          <span>Move selected object</span>
+          <span>Move selected board object</span>
           <kbd>Arrow keys</kbd>
-          <span>Delete selected object</span>
+          <span>Delete selected board object</span>
           <kbd>Delete</kbd>
         </div>
         <div className="privacy-note">
           <ShieldCheck size={20} />
           <p>
-            Your plans stay in this browser. Export a tactic file to back it up
-            or move it to another device. Stats reflect the local workspace.
-            Clearing browser storage removes local saves.
+            To keep a copy of your tactics, lineups and playbooks, open
+            Workspace settings and choose Export workspace.
           </p>
         </div>
         <div className="dialog-bottom">

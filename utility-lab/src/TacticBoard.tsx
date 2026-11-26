@@ -1451,12 +1451,12 @@ export default function TacticBoard({
           </span>
         </div>
         <div className="tb-title-actions">
-          <button className="tb-button tb-new-button" onClick={newTactic}>
+          <button className="tb-button tb-new-button" aria-label="New" title="New tactic" onClick={newTactic}>
             <Plus size={17} />
             <span>New</span>
           </button>
           <details className="tb-export">
-            <summary className="tb-button">
+            <summary className="tb-button" aria-label="Export" title="Export and import tactics">
               <Download size={17} />
               <span>Export</span>
               <ChevronDown size={13} />
@@ -1515,7 +1515,7 @@ export default function TacticBoard({
               </button>
             </div>
           </details>
-          <button className="tb-button tb-share-button" onClick={() => setShareMode("share")}><Share2 size={17} /><span>Share</span></button>
+          <button className="tb-button tb-share-button" aria-label="Share" title="Share tactic" onClick={() => setShareMode("share")}><Share2 size={17} /><span>Share</span></button>
           <button
             ref={planToggleRef}
             className={
