@@ -41,16 +41,18 @@ for (const width of [1280, 320]) {
 }
 
 test("a guide with a single original aim image magnifies the crosshair by 2.5×", async ({ page }) => {
-  await page.goto("/#utilities?map=ancient&level=main&side=T&lineup=expanded-cs2tricks-ancient-b-alley-from-ruins-6af7-t");
-  const viewer = page.getByRole("dialog", { name: "B Alley smoke · Ruins" });
+  await page.goto("/#utilities?map=vertigo&level=lower&side=CT&lineup=instant-viri-vertigo-ramp-ct1");
+  const viewer = page.getByRole("dialog", { name: "A Ramp smoke · CT Spawn 1" });
   const image = viewer.locator(".ul-photo-canvas img");
   await viewer.getByRole("button", { name: "Step 3: First-person aim", exact: true }).click();
   await image.evaluate((el: HTMLImageElement) => el.decode());
-  const wideWidth = await image.evaluate((el: HTMLImageElement) => {
-    const box = el.getBoundingClientRect();
-    return Math.min(box.width, box.height * el.naturalWidth / el.naturalHeight);
-  });
+  const original = await image.getAttribute("src");
   await viewer.getByRole("button", { name: "Step 4: Aim detail", exact: true }).click();
-  await expect(viewer.locator(".ul-photo-region")).toBeVisible();
-  expect((await image.boundingBox())!.width / wideWidth).toBeCloseTo(2.5, 2);
+  const crop = viewer.locator(".ul-photo-region[data-image-ready=true]");
+  await expect(crop).toBeVisible();
+  await expect(image).toHaveAttribute("src", original!);
+  const frame = (await crop.boundingBox())!;
+  const source = (await image.boundingBox())!;
+  expect(source.width / frame.width).toBeCloseTo(2.5, 2);
+  expect(source.height / frame.height).toBeCloseTo(2.5, 2);
 });
