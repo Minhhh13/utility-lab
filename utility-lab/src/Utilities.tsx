@@ -2310,7 +2310,7 @@ export default function Utilities({
           onSelectType={chooseTargetUtility}
         />
       )}
-      {originChoice && <OriginChoices key={originChoice.group.id} {...originChoice} mapImage={mapImage}
+      {originChoice && <OriginChoices key={originChoice.group.id} {...originChoice} mapImage={mapImage} currentId={selectedId}
         onClose={()=>setOriginChoice(null)}
         onChoose={record=>{mediaTrigger.current=originChoice.trigger;setOriginChoice(null);selectRecord(record);}}/>}
       <dialog

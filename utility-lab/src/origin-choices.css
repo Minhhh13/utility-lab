@@ -33,3 +33,4 @@
 .ul-origin-choices[data-inset="positions"] .ul-origin-choice-option:where(:not([data-spawn-slot])) .ul-origin-choice-disc{width:40px;font-size:11px}
 .ul-origin-choice-option[data-approximate] .ul-origin-choice-disc{border-style:dashed}
 @media(hover:hover) and (pointer:fine){.ul-origin-choice-option:hover .ul-origin-choice-disc{background:var(--accent-soft)}.ul-origin-choices-heading>button:hover,.ul-origin-choice-footer>button:hover{background:var(--accent-soft)}}
+.ul-origin-choice-option[aria-current="true"] .ul-origin-choice-disc{background:var(--accent);color:var(--accent-ink)}

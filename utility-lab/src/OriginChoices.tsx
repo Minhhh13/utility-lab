@@ -8,23 +8,31 @@ import './origin-choices.css';
 
 /** A map-anchored visual choice for recipes sharing a small standing area. The
  * spokes are menu choices; the map's published standing coordinates stay put. */
-export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,onClose}:{
+export default function OriginChoices({group,anchor,trigger,mapImage,currentId,onChoose,onClose}:{
   group:OriginChoiceGroup;anchor:{x:number;y:number};trigger:SVGElement;
-  mapImage:string;
+  mapImage:string;currentId:string|null;
   onChoose:(record:UtilityReference)=>void;onClose:()=>void;
 }){
   const panel=useRef<HTMLDivElement>(null);
   const previewClip=useId();
   const close=useRef(onClose);close.current=onClose;
-  const [page,setPage]=useState(0);
-  const [inspected,setInspected]=useState('');
+  const [page,setPage]=useState<number|null>(null);
+  const [inspected,setInspected]=useState(currentId);
   const personal=group.kind==='personal';
   const [position,setPosition]=useState({left:0,top:0,width:328,ready:false});
   const sections=useMemo(()=>numberedSpawnSections(group,position.width),[group,position.width]);
   const pages=sections?1+Math.ceil(sections.nearby.options.length/ORIGIN_PAGE_SIZE):Math.ceil(group.options.length/ORIGIN_PAGE_SIZE);
-  const visiblePage=Math.min(page,pages-1);
+  // The phone layout may give numbered spawns their own first page. Resolve
+  // the current guide against the measured grouping until the player pages.
+  const currentOptions=sections?.nearby.options ?? group.options;
+  const currentIndex=currentOptions.findIndex(option=>option.record.id===currentId);
+  const currentPage=currentIndex<0?0:Math.floor(currentIndex/ORIGIN_PAGE_SIZE)+(sections?1:0);
+  const visiblePage=Math.min(page??currentPage,pages-1);
   const section=sections?(visiblePage===0?sections.spawns:sections.nearby):group;
   const sectionPage=sections?Math.max(0,visiblePage-1):visiblePage;
+  const first=sectionPage*ORIGIN_PAGE_SIZE+1;
+  const last=Math.min(first+ORIGIN_PAGE_SIZE-1,section.options.length);
+  const range=first===last?String(first):`${first}–${last}`;
   const {direct,options,points,sources,preview,oneLeader}=useMemo(()=>originChoiceLayout(section,position.width,sectionPage),[section,position.width,sectionPage]);
   const activeIndex=Math.max(0,options.findIndex(option=>option.record.id===inspected));
   const active=options[activeIndex]?.record.id;
@@ -45,12 +53,16 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
     return()=>{observer.disconnect();window.removeEventListener('resize',place);};
   },[anchor.x,anchor.y]);
   useEffect(()=>{
+    if(!position.ready)return;
     const frame=requestAnimationFrame(()=>{
-      const chosen = panel.current?.querySelector('.ul-origin-choice-option:focus');
-      if (!chosen) panel.current?.querySelector<HTMLButtonElement>('.ul-origin-choice-option')?.focus({preventScroll:true});
+      const choices=panel.current;
+      if(!choices || choices.querySelector('.ul-origin-choice-option:focus'))return;
+      const option=choices.querySelector<HTMLButtonElement>('.ul-origin-choice-option[aria-current="true"]')
+        ?? choices.querySelector<HTMLButtonElement>('.ul-origin-choice-option');
+      option?.focus({preventScroll:true});
     });
     return()=>cancelAnimationFrame(frame);
-  },[page]);
+  },[visiblePage,position.ready]);
   useEffect(()=>{
     function dismiss(){close.current();requestAnimationFrame(()=>trigger.isConnected&&trigger.focus({preventScroll:true}));}
     function outside(event:PointerEvent){
@@ -117,6 +129,7 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
         style={{left:point.x-(direct?22:28),top:point.y-22}} data-label-side={direct?undefined:labelSide} data-lineup-id={record.id} data-spawn-slot={personal?undefined:record.spawn?.slot} data-approximate={approximate||undefined}
         title={personal?`${record.title} · your saved target`:`${record.from} · ${approximate?'Approximate area. Match the Position photo.':'Recorded start.'} ${record.throwType} · ${record.creator||'Original source'}`}
         aria-label={personal?`Open your lineup: ${record.title}`:`${record.from} — ${record.throwType}${record.spawn?` (${record.creator||'source'} numbering)`:''}`}
+        aria-current={record.id===currentId?'true':undefined}
         onFocus={()=>setInspected(record.id)} onPointerEnter={()=>setInspected(record.id)}
         onPointerDown={()=>setInspected(record.id)} onClick={()=>onChoose(record)}>
         <span className="ul-origin-choice-disc">{personal?<UserRound size={20}/>:record.spawn?<span>{record.spawn.slot}</span>:direct?<span>{/pillar/i.test(record.from)?'Pillar':'Area'}</span>:<Crosshair size={20}/>}</span>
@@ -130,7 +143,7 @@ export default function OriginChoices({group,anchor,trigger,mapImage,onChoose,on
             {visiblePage===0?`Nearby throws (${sections.nearby.options.length})`:`Spawn positions (${sections.spawns.options.length})`}
             {visiblePage===0&&<ChevronRight size={16}/>}
           </button>
-        : pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!visiblePage} onClick={()=>setPage(visiblePage-1)}><ChevronLeft size={18}/></button><span>{sections&&visiblePage===0?'Spawn positions':`${sectionPage*ORIGIN_PAGE_SIZE+1}–${Math.min((sectionPage+1)*ORIGIN_PAGE_SIZE,section.options.length)} of ${section.options.length}`}</span><button aria-label={personal?'More lineups':'More throws'} disabled={visiblePage===pages-1} onClick={()=>setPage(visiblePage+1)}><ChevronRight size={18}/></button></>:<span>{oneLeader?'Tap the inset to trace a throw':personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
+        : pages>1?<><button aria-label={personal?'Previous lineups':'Previous throws'} disabled={!visiblePage} onClick={()=>setPage(visiblePage-1)}><ChevronLeft size={18}/></button><span>{sections&&visiblePage===0?'Spawn positions':`${range} of ${section.options.length}`}</span><button aria-label={personal?'More lineups':'More throws'} disabled={visiblePage===pages-1} onClick={()=>setPage(visiblePage+1)}><ChevronRight size={18}/></button></>:<span>{oneLeader?'Tap the inset to trace a throw':personal?'Open your lineup · target preview':direct?'Tap a spawn · numbers follow the creator':'Choose your standing position'}</span>}
     </div>
   </div>,document.body);
 }

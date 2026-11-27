@@ -1568,14 +1568,14 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Mid Doors smoke · T-Spawn",
-    "from": "T-Spawn",
+    "title": "Mid Doors smoke · T Spawn crack",
+    "from": "T Spawn crack",
     "target": "Mid Doors",
-    "purpose": "Cover Mid Doors from T-Spawn.",
+    "purpose": "Cover Mid Doors from T Spawn crack.",
     "throwType": "Stand still + Jump + left click",
     "steps": [
-      "Stand at T-Spawn. Match the Position photo.",
-      "Match the crosshair in the Aim photo.",
+      "Line up with the crack shown in the T Spawn position photo.",
+      "Place the crosshair on the circular mark on the wall above Suicide.",
       "Stand still. Jump + left click."
     ],
     "x": 0,
@@ -1588,14 +1588,21 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/28d24e28-b9db-4af5-bbae-9857fc8fbf8a.webp",
         "kind": "position",
-        "caption": "Stand at T-Spawn; match this position.",
+        "caption": "Line up with the crack shown in the T Spawn position photo.",
         "creator": "JKronic / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-7714"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/404e7df7-f01d-4175-a95c-604fc37cd521.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Place the crosshair on the circular mark on the wall above Suicide.",
+        "creator": "JKronic / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-7714"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/aefc6a41-6f44-43f7-8813-312022cf0b20.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "JKronic / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-7714"
       },
@@ -2381,6 +2388,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-suicide-810d"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/20a06a05-27b3-4899-9dfc-62be4e109d97.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "L1SSU / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-suicide-810d"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/795086cb-1abd-4244-b287-9b3570e199a9.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -2621,6 +2635,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/8f16ead4-4685-4bcd-9232-1626d5e94bae.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Gelnex / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-outside-long-82d5"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/02cf4491-1e2f-4413-b99a-1c4788b7c409.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Gelnex / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-outside-long-82d5"
       },
@@ -3257,6 +3278,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-lower-tunnels-7207"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/60acfa77-2c68-4dfd-addd-784544f24272.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "Kobrick / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-lower-tunnels-7207"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/e449e388-a86c-48df-a935-042cfc947861.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -3421,15 +3449,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Mid Doors smoke · T Spawn",
-    "from": "T Spawn",
+    "title": "Mid Doors smoke · T Spawn lamp",
+    "from": "T Spawn lamp",
     "target": "Mid Doors",
-    "purpose": "Cover Mid Doors from T Spawn.",
+    "purpose": "Cover Mid Doors from T Spawn lamp.",
     "throwType": "Crouch + Jump + left click",
     "steps": [
-      "Stand at T Spawn. Match the Position photo.",
+      "At T Spawn, jump against the lamp to settle into the starting spot.",
       "Match the crosshair in the Aim photo.",
-      "Crouch. Jump + left click."
+      "Once in position, crouch. Jump and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -3441,7 +3469,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/b334b70e-b0fa-46e0-b7ea-12a41e6e937c.webp",
         "kind": "position",
-        "caption": "Stand at T Spawn; match this position.",
+        "caption": "At T Spawn, jump against the lamp to settle into the starting spot.",
         "creator": "Gelnex / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-9ed7"
       },
@@ -3449,6 +3477,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/6e4605d3-e47f-429e-9f34-941c3b0d6d1e.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Gelnex / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-9ed7"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/9e616fec-ebc6-4f7a-b5eb-1f985600a7e3.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Gelnex / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-9ed7"
       },
@@ -3886,6 +3921,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/3ea5e618-125c-4250-ac6b-16ce0afd3ad3.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Gelnex / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-xbox-50cb"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/b41e600e-33cd-4b27-bead-5e4ae95c6576.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Gelnex / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-xbox-50cb"
       },
@@ -4718,6 +4760,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-3-b56e"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/e9570535-278d-4b3e-9787-0b767952d514.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-3-b56e"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/df462feb-bb63-44aa-a56f-0d10dd020990.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -4818,6 +4867,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/f39147ce-8ccc-4782-ac36-4eeae7f86236.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-4-44e9"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/2f97f097-aad1-48ea-b644-8b0b6e4b6c6c.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-4-44e9"
       },
@@ -5218,6 +5274,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/3c9065cd-78c7-4eb3-8d8c-7e9b998c0e61.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/8a52f322-a4f8-4ba0-929d-304383254d22.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -5415,6 +5478,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/3f204515-670b-444d-8501-419d44537dcd.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Kobrick / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-a-plat-b4ed"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/c1497d99-648f-4126-a5e8-ffc96639d687.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Kobrick / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-a-plat-b4ed"
       },
@@ -5711,6 +5781,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/6e5d18f8-e130-47ee-a6df-57f5f970f649.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/9f2a053a-4708-4ac7-a03f-75cae860e661.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -5883,11 +5960,11 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "from": "Top Mid",
     "target": "Mid Doors",
     "purpose": "Cover Mid Doors from Top Mid.",
-    "throwType": "Run + Jump + left click",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
       "Stand at Top Mid. Match the Position photo.",
       "Match the crosshair in the Aim photo.",
-      "Run. Jump + left click."
+      "Hold LMB, tap W once, then jump and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -5907,6 +5984,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/24a24110-0f56-4963-b42e-71306816fac5.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Vigil / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/x-box-from-top-mid-2bba"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/7d3e5389-81b7-4c03-b1b7-04d972450ffc.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Vigil / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/x-box-from-top-mid-2bba"
       },
@@ -6836,6 +6920,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-long-doors-8a7c"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/32925571-53fd-4b82-8d52-33b79fd92555.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "JKronic / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-long-doors-8a7c"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/277bf7a0-a428-480f-9c97-b05bd59fd921.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -6978,6 +7069,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/8a9d190c-0340-40db-9219-3cd9aaa868fc.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Vigil / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-outside-long-cee1"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/a735f148-ec94-470b-83d5-61c002f30229.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Vigil / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-outside-long-cee1"
       },
@@ -9761,14 +9859,14 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Window smoke · T Spawn",
-    "from": "T Spawn",
+    "title": "Window smoke · T Spawn door corner",
+    "from": "T Spawn door corner",
     "target": "Window",
-    "purpose": "Cover Window from T Spawn.",
+    "purpose": "Cover Window from T Spawn door corner.",
     "throwType": "Crouch + Jump + left click",
     "steps": [
-      "Stand at T Spawn. Match the Position photo.",
-      "Match the crosshair in the Aim photo.",
+      "Tuck into the corner beside the T Spawn door.",
+      "Count the carpet markings from the left. Place the crosshair on the second one.",
       "Crouch. Jump + left click."
     ],
     "x": 0,
@@ -9781,14 +9879,21 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/24aa8ab2-f99d-4566-845e-537f18111151.webp",
         "kind": "position",
-        "caption": "Stand at T Spawn; match this position.",
+        "caption": "Tuck into the corner beside the T Spawn door.",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-568d"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/7cb4cd50-6bac-4e32-9684-4bae6551fc5a.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Count the carpet markings from the left. Place the crosshair on the second one.",
+        "creator": "StellaraQwQღ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-568d"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/d92efb2f-194b-42a7-abbe-4ee1535483cf.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-568d"
       },
@@ -10051,14 +10156,14 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Window smoke · T Spawn",
-    "from": "T Spawn",
+    "title": "Window smoke · T Spawn bin top",
+    "from": "T Spawn bin top",
     "target": "Window",
-    "purpose": "Cover Window from T Spawn.",
+    "purpose": "Cover Window from T Spawn bin top.",
     "throwType": "Crouch + Jump + left click",
     "steps": [
-      "Stand at T Spawn. Match the Position photo.",
-      "Match the crosshair in the Aim photo.",
+      "Climb onto the bin at T Spawn and crouch for the throw.",
+      "Sight the midpoint of the edge in the photo, level with the doorframe on the left.",
       "Crouch. Jump + left click."
     ],
     "x": 0,
@@ -10071,14 +10176,21 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/874f7d13-6754-4180-b1c4-995ce3fb9113.webp",
         "kind": "position",
-        "caption": "Stand at T Spawn; match this position.",
+        "caption": "Climb onto the bin at T Spawn and crouch for the throw.",
         "creator": "TomatoTim / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2365"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/1efadd35-ec78-4242-99a5-5d4364eb35fd.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Sight the midpoint of the edge in the photo, level with the doorframe on the left.",
+        "creator": "TomatoTim / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2365"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/88cece2b-6481-4732-9283-d0b6b9b60359.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "TomatoTim / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-2365"
       },
@@ -11153,6 +11265,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-top-mid-56b8"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/e5bc86ad-f48c-4995-a760-ed88aceab29e.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "tec / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-top-mid-56b8"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/34624e73-99fe-4a17-bb5c-6340a2a418b9.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -11412,15 +11531,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Window smoke · T Spawn",
-    "from": "T Spawn",
+    "title": "Window smoke · T Spawn bin front",
+    "from": "T Spawn bin front",
     "target": "Window",
-    "purpose": "Cover Window from T Spawn.",
-    "throwType": "Stand still + Tap W + jump + left click",
+    "purpose": "Cover Window from T Spawn bin front.",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn. Match the Position photo.",
-      "Match the crosshair in the Aim photo.",
-      "Stand still. Tap W + jump + left click."
+      "Start on the ground in front of the T Spawn bin.",
+      "Aim at the roofline in the photo. Walk forward to the black line on the wall.",
+      "At the wall marking, tap W and jump as you release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -11432,14 +11551,21 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/794223bb-5b87-4466-abd6-367b559fcc7c.webp",
         "kind": "position",
-        "caption": "Stand at T Spawn; match this position.",
+        "caption": "Start on the ground in front of the T Spawn bin.",
         "creator": "Kobrick / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-50a0"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/cb5f7e33-35c5-4d8b-a940-7daa4a6994be.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Aim at the roofline in the photo. Walk forward to the black line on the wall.",
+        "creator": "Kobrick / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-50a0"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/02ea08e4-cdf6-4562-92b8-2ce3369c1762.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Kobrick / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-spawn-50a0"
       },
@@ -12048,15 +12174,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "levelId": "main",
     "side": "T",
     "type": "Smoke",
-    "title": "Window smoke · T Spawn",
-    "from": "T Spawn",
+    "title": "Window smoke · Deep ramp planks",
+    "from": "Deep ramp planks",
     "target": "Window",
-    "purpose": "Cover Window from T Spawn.",
-    "throwType": "Stand still + Tap W + jump + left click",
+    "purpose": "Cover Window from Deep ramp planks.",
+    "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Stand at T Spawn. Match the Position photo.",
-      "Match the crosshair in the Aim photo.",
-      "Stand still. Tap W + jump + left click."
+      "Stand beside the wooden planks deep in the ramp.",
+      "Aim at the upper corner where the lower wall meets the tower.",
+      "From the planks, tap W and jump as you release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -12068,14 +12194,21 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/43078fbf-9fe5-4d0c-9ff2-6355ddc6fdb1.webp",
         "kind": "position",
-        "caption": "Stand at T Spawn; match this position.",
+        "caption": "Stand beside the wooden planks deep in the ramp.",
         "creator": "15ak / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-a-ramp-4728"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/660e3506-9193-40b5-a48c-8b9c9a964490.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Aim at the upper corner where the lower wall meets the tower.",
+        "creator": "15ak / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-a-ramp-4728"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/4d077464-11c6-48a9-ae25-e40322b349fa.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "15ak / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-a-ramp-4728"
       },
@@ -12608,6 +12741,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/3686baa6-6d86-4bba-8ab4-ee55f61a310d.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "JKronic / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-back-alley-61ab"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/374c9cec-6d63-41eb-8f11-fd6cd6404903.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "JKronic / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-back-alley-61ab"
       },
@@ -13338,6 +13478,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/ba35dc60-7a42-448d-9414-b2df2f5c58d7.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "★ igraman4ik ★ / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-apps-ramp-4e25"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/ddf237c4-e593-4279-90bc-e5167a55dd0a.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "★ igraman4ik ★ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-apps-ramp-4e25"
       },
@@ -14122,6 +14269,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-top-mid-fdf8"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/82e22d4c-5cd1-42f7-8ced-fa989010d491.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "DatSpeed / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-top-mid-fdf8"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/ae60400b-9128-40c1-8966-75fb4e12669f.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -14412,6 +14566,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-underpass-1b04"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/f4bf7d00-0df8-4adc-9aca-ae394ef4846a.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "yippe / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-underpass-1b04"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/0493cd50-fe5d-4867-a445-282ff9511524.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -14457,6 +14618,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/e0f0dd0a-b061-4d9f-bb16-7fa1023b36c7.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "endrej / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-apps-ramp-2264"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/d800f005-cc22-42e2-b4d1-7d58e91727a1.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "endrej / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-apps-ramp-2264"
       },
@@ -14950,6 +15118,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-underpass-ec70"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/5dc2c5bb-84e0-4567-8fe5-18cc25683588.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "jeansRig  / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-underpass-ec70"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/86824cc0-cdd6-48aa-b12a-cccfae6c4419.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -15144,6 +15319,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-roof-f977"
       },
       {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/d06eaadd-2d79-455f-bd30-8af27dd5a8c4.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
+        "creator": "in_Dail / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-t-roof-f977"
+      },
+      {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/f7ae10c0-2adb-4e99-98a5-5ab2a7657df0.webp",
         "kind": "landing",
         "caption": "Landing result.",
@@ -15287,6 +15469,13 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/63e8454a-f0a6-497b-8be2-91084b1dd5a0.webp",
         "kind": "aim",
         "caption": "Match the crosshair shown.",
+        "creator": "Kobrick / CS2Tricks",
+        "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-underpass-13e5"
+      },
+      {
+        "image": "https://d1ntlvfrxziqo6.cloudfront.net/d5a83b35-2793-415f-8db4-174d8eea0d53.webp",
+        "kind": "aim",
+        "caption": "Aim detail",
         "creator": "Kobrick / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/mirage/smokes/window-from-underpass-13e5"
       },

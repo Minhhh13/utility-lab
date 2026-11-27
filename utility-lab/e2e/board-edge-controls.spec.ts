@@ -7,6 +7,40 @@ async function start(page:Page) {
   await expect(page.locator("svg.tb-map image")).toHaveAttribute("href",/mirage/);
 }
 
+test("keyboard and inspector place utility in the current map view", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1080 });
+  await start(page);
+  const canvas = page.locator("svg.tb-map");
+  await page.getByRole("button", { name: "Clear board", exact: true }).click();
+  await canvas.press("+");
+  await canvas.press("+");
+  await canvas.press("Shift+ArrowRight");
+  await canvas.press("Shift+ArrowDown");
+  const camera = await canvas.getAttribute("viewBox");
+  const [left, top, width, height] = camera!.split(" ").map(Number);
+  const center = { x: left + width / 2, y: top + height / 2 };
+  expect(center.x).toBeGreaterThan(550);
+  expect(center.y).toBeGreaterThan(550);
+  await page.getByRole("button", { name: "Smoke (S)", exact: true }).click();
+  await canvas.press("Enter");
+  await page.getByRole("button", { name: "Open round plan", exact: true }).click();
+  const marker = canvas.locator("[data-object-id]");
+  async function expectCentered(index: number) {
+    const position = await marker.nth(index).evaluate(element => {
+      const { e, f } = (element as SVGGElement).transform.baseVal.getItem(0).matrix;
+      return { x: e, y: f };
+    });
+    expect(position.x).toBeCloseTo(center.x, 2);
+    expect(position.y).toBeCloseTo(center.y, 2);
+  }
+  await expectCentered(0);
+  await page.getByRole("button", { name: "Place smoke at center", exact: true }).click();
+  await expectCentered(1);
+  await expect(canvas).toHaveAttribute("viewBox", camera!);
+  await page.getByRole("button", { name: "Undo", exact: true }).click();
+  await expect(marker).toHaveCount(1);
+});
+
 for(const viewport of [{width:1440,height:1080},{width:1280,height:960}]) {
   test(`board tools and zoom leave the 4:3 map clear at ${viewport.width}×${viewport.height}`,async({page},info)=>{
     await page.setViewportSize(viewport);

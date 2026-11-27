@@ -51,11 +51,11 @@ A zero denotes a source gap for that floor, side and utility. The map-wide matri
 
 ## Media inventory
 
-Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim**, **Aim detail** and **Landing**. **1,636** guides have stills or a registered standing map for all five steps. The other **3** open their source video for the starting view. Aim detail uses a publisher close-up in 576 guides and a 2.5× crop centred on the recorded aim point in 1,063. Crops stay within the original source panel. The walkthroughs use 6,726 distinct images and 3,278 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
+Walkthroughs open in the order **Where to stand**, **First-person view**, **Where to aim**, **Aim detail** and **Landing**. **1,636** guides have stills or a registered standing map for all five steps. The other **3** open their source video for the starting view. Aim detail uses a publisher close-up in 603 guides and a 2.5× crop centred on the recorded aim point in 1,036. Crops stay within the original source panel. The walkthroughs use 6,753 distinct images and 3,278 source-registered aim views. The marker stays aligned during zoom and pan, with adjustable colour, size and shape.
 
 - Position + Aim + matching video: 1,639 of 1,639 published rows.
-- Original gallery photo references: 5,337; unique image resources: 5,063 (4,625 remote, 438 local).
-- Position references: 1,639 / 1,555 unique images; Aim references: 2,215 / 2,104 unique images.
+- Original gallery photo references: 5,364; unique image resources: 5,090 (4,652 remote, 438 local).
+- Position references: 1,639 / 1,555 unique images; Aim references: 2,242 / 2,131 unique images.
 - Native primary videos: 828 rows / 790 unique files.
 - YouTube primary videos: 811 rows / 762 unique video IDs.
 - All primary videos: 1,552 unique clips / 1,556 distinct configured start segments.

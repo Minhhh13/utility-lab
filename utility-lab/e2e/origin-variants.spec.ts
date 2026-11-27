@@ -134,16 +134,20 @@ for(const [width,height] of [[1440,1080],[320,720]]) test.describe(`Cache Garage
     const setposSlots=[2,1,5,4];
     const panel=popup(page), guide=viewer(page);
     const press=(control:Locator)=>phone?control.tap():control.click();
-    async function openSpawns(){
+    async function reopenCurrent(){
+      const currentId=new URLSearchParams(page.url().split("?")[1]).get("lineup")!;
       await press(guide.getByRole("button",{name:"Show throw locations on map"}));
       const pin=page.locator('.ul-origin-pin[data-origin-recipes*="'+idPrefix+'1"]');
       await press(pin.locator("circle").first());
-      await expect(panel).toHaveAttribute("data-inset","positions");
-      await expect(panel.locator("button[data-spawn-slot]")).toHaveCount(4);
+      const current=panel.locator('button[aria-current="true"]');
+      await expect(current).toHaveAttribute("data-lineup-id",currentId);
+      await expect(current).toBeFocused();
     }
     await page.goto("/#utilities?map=cache&level=main&side=CT&lineup="+idPrefix+"1");
     for(const [index,[x,y]] of radar.entries()){
-      await openSpawns();
+      await reopenCurrent();
+      await expect(panel).toHaveAttribute("data-inset","positions");
+      await expect(panel.locator("button[data-spawn-slot]")).toHaveCount(4);
       const slot=index+1;
       const button=panel.locator(`button[data-spawn-slot="${slot}"]`);
       const location=await button.evaluate(el=>{
@@ -165,18 +169,19 @@ for(const [width,height] of [[1440,1080],[320,720]]) test.describe(`Cache Garage
     if(phone){
       // At phone scale unrelated guides also occupy this map pin. Each guide
       // still opens from the neighboring group; back restores the spawn inset.
-      await openSpawns();
+      await reopenCurrent();
       const nearby=panel.getByRole("button",{name:"More throws"});
       await press(nearby);
       await expect(panel.locator(".ul-origin-choice-option")).toHaveCount(3);
       const others=await panel.locator(".ul-origin-choice-option").evaluateAll(items=>items.map(item=>item.getAttribute("data-lineup-id")!));
       await press(panel.getByRole("button",{name:"Previous throws"}));
       await expect(panel).toHaveAttribute("data-inset","positions");
-      for(const [index,id] of others.entries()){
-        if(index)await openSpawns();
-        await press(nearby);
+      await press(nearby);
+      for(const id of others){
         await press(panel.locator(`[data-lineup-id="${id}"]`));
         await expect(page).toHaveURL(new RegExp(id+"$"));
+        await reopenCurrent();
+        await expect(panel).toHaveAttribute("data-inset","spokes");
       }
     }
   });
@@ -360,5 +365,12 @@ test.describe("320px origin recipe popup",()=>{
     const chosen=records.find(record=>record.id===chosenId)!;
     await popup(page).locator(`[data-lineup-id="${chosen.id}"]`).click();
     await verifyPhoto(page,chosen,camera);
+    await page.keyboard.press("Escape");
+    await pin.press("Enter");
+    const current=popup(page).locator('button[aria-current="true"]');
+    await expect(current).toHaveAttribute("data-lineup-id",chosen.id);
+    await expect(current).toBeFocused();
+    await expect(popup(page).getByText("17 of 17")).toBeVisible();
+    await expect(page.locator(".ul-map-svg")).toHaveAttribute("viewBox",camera);
   });
 });

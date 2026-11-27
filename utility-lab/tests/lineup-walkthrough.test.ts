@@ -50,12 +50,36 @@ test("every published guide has five ordered stages with a sourced or anchored a
   }
 });
 
-test("Mirage Back Alley shows four distinct credited photos and preserves personal galleries", () => {
+test("Mirage Back Alley shows five distinct credited photos and preserves personal galleries", () => {
   const steps = gallery(example);
-  assert.equal(new Set(steps.map(s => s.views[0].photo?.image)).size, 4);
+  assert.equal(new Set(steps.map(s => s.views[0].photo?.image)).size, 5);
   assert.ok(steps.every(s => s.views[0].photo?.source === example.source));
   assert.match(steps[1].views[0].photo!.image, /window-from-back-alley-61ab\.webp$/);
   assert.match(steps[2].views[0].photo!.image, /3686baa6-6d86-4bba-8ab4-ee55f61a310d/);
+  assert.match(steps[3].views[0].photo!.image, /374c9cec-6d63-41eb-8f11-fd6cd6404903/);
   const copy = { ...example, userCreated: true };
   assert.deepEqual(gallery(copy).flatMap(s => s.views.map(v => v.photo!.image)), utilityPhotos(copy).map(p => p.image));
+});
+
+test("source-specific spawn setups expose their landmarks and original close-ups", () => {
+  const landmarks = [
+    ["mirage-window-from-t-spawn-568d", "T Spawn door corner"],
+    ["mirage-window-from-t-spawn-2365", "T Spawn bin top"],
+    ["mirage-window-from-t-spawn-50a0", "T Spawn bin front"],
+    ["mirage-window-from-a-ramp-4728", "Deep ramp planks"],
+    ["dust2-mid-doors-from-t-spawn-7714", "T Spawn crack"],
+    ["dust2-mid-doors-from-t-spawn-9ed7", "T Spawn lamp"],
+    ["dust2-x-box-from-top-mid-2bba", "Top Mid"],
+  ];
+  for (const [slug, label] of landmarks) {
+    const guide = guides.find(g => g.id === `expanded-cs2tricks-${slug}-t`)!;
+    assert.equal(guide.from, label);
+    if (slug.endsWith("2bba")) assert.equal(guide.throwType, "Tap W + Jump + LMB");
+    const [, , aim, detail] = gallery(guide);
+    const photo = detail.views[0].photo!;
+    assert.ok(!detail.views[0].magnifyAim, guide.id);
+    assert.notEqual(photo.image, aim.views[0].photo!.image, guide.id);
+    assert.equal(photo.source, guide.source, guide.id);
+    assert.deepEqual(photo.aimPoint, {x: 0.5, y: 0.5}, guide.id);
+  }
 });

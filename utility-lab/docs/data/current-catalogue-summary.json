@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-11-26T14:19:00.406Z",
+  "generatedAt": "2026-11-27T01:56:56.814Z",
   "generatedLocalDate": "2026-11-27",
   "timeZone": "Australia/Sydney",
   "method": "Normalize every generated per-map JSON, then mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded). Counts are side-specific browsing records; unique source pages and image/video resources are counted separately.",
   "generatedInputs": [
     {
       "path": "src/data/expanded/mirage.json",
-      "bytes": 432792,
-      "sha256": "11f0ce3e2bfb43863ca99b05b708f7cdf44df5cdc9127555f70e482162febc23",
+      "bytes": 436856,
+      "sha256": "7258286f707ed38f24ac992825437dd3e62857e4ada94bb534c86d799d95d713",
       "rows": 245
     },
     {
       "path": "src/data/expanded/dust2.json",
-      "bytes": 397626,
-      "sha256": "2bafe82643e59f0f168d71a9f784fd4e044bbf4bd02b52d8e369451de3d1eee4",
+      "bytes": 401721,
+      "sha256": "c6d9af3afe17f8243ed3a475a970ac24d1a5a62a3300ae07660b4df298e6aece",
       "rows": 221
     },
     {
@@ -434,24 +434,24 @@
       "rowsWithPosition": 1639,
       "rowsWithAim": 1639,
       "rowsWithPositionAndAim": 1639,
-      "mediaReferences": 5337,
-      "uniqueImages": 5063,
-      "remoteReferences": 4893,
-      "uniqueRemoteImages": 4625,
+      "mediaReferences": 5364,
+      "uniqueImages": 5090,
+      "remoteReferences": 4920,
+      "uniqueRemoteImages": 4652,
       "bundledReferences": 444,
       "uniqueBundledImages": 438,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2215,
+        "aim": 2242,
         "landing": 1431,
         "position": 1639,
         "release": 52
       },
       "kinds": {
         "aim": {
-          "references": 2215,
-          "uniqueImages": 2104,
-          "uniqueRemoteImages": 2069,
+          "references": 2242,
+          "uniqueImages": 2131,
+          "uniqueRemoteImages": 2096,
           "uniqueBundledImages": 35
         },
         "landing": {
@@ -551,9 +551,9 @@
       "detail": 1639,
       "landing": 1639
     },
-    "sourcedAimDetails": 576,
-    "magnifiedAimDetails": 1063,
-    "uniqueImages": 6726,
+    "sourcedAimDetails": 603,
+    "magnifiedAimDetails": 1036,
+    "uniqueImages": 6753,
     "markedAimViews": 3278,
     "standingVideoIds": [
       "expanded-cs2tricks-inferno-banana-logs-from-b-entrance-c431-ct",
@@ -895,24 +895,24 @@
       "rowsWithPosition": 1342,
       "rowsWithAim": 1342,
       "rowsWithPositionAndAim": 1342,
-      "mediaReferences": 4350,
-      "uniqueImages": 4098,
-      "remoteReferences": 3987,
-      "uniqueRemoteImages": 3740,
+      "mediaReferences": 4358,
+      "uniqueImages": 4106,
+      "remoteReferences": 3995,
+      "uniqueRemoteImages": 3748,
       "bundledReferences": 363,
       "uniqueBundledImages": 358,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 1826,
+        "aim": 1834,
         "landing": 1151,
         "position": 1342,
         "release": 31
       },
       "kinds": {
         "aim": {
-          "references": 1826,
-          "uniqueImages": 1724,
-          "uniqueRemoteImages": 1695,
+          "references": 1834,
+          "uniqueImages": 1732,
+          "uniqueRemoteImages": 1703,
           "uniqueBundledImages": 29
         },
         "landing": {
@@ -1334,24 +1334,24 @@
       "rowsWithPosition": 1635,
       "rowsWithAim": 1635,
       "rowsWithPositionAndAim": 1635,
-      "mediaReferences": 5322,
-      "uniqueImages": 5048,
-      "remoteReferences": 4878,
-      "uniqueRemoteImages": 4610,
+      "mediaReferences": 5349,
+      "uniqueImages": 5075,
+      "remoteReferences": 4905,
+      "uniqueRemoteImages": 4637,
       "bundledReferences": 444,
       "uniqueBundledImages": 438,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2211,
+        "aim": 2238,
         "landing": 1427,
         "position": 1635,
         "release": 49
       },
       "kinds": {
         "aim": {
-          "references": 2211,
-          "uniqueImages": 2100,
-          "uniqueRemoteImages": 2065,
+          "references": 2238,
+          "uniqueImages": 2127,
+          "uniqueRemoteImages": 2092,
           "uniqueBundledImages": 35
         },
         "landing": {

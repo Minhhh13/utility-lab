@@ -39,8 +39,8 @@ export default function LineupGallery({ record, steps, stepIndex, viewIndex, sel
   const toolbar = <div className="ul-photo-toolbar ul-photo-toolbar-compact">{formats}</div>;
   const image = photo && <PhotoZoom key={`${stepIndex}:${viewIndex}:${photo.image}`} formats={formats} photo={photo} magnifyAim={view.magnifyAim}
     title={`${record.title}, ${step.name}`} onSwipe={steps.length > 1 ? advance : undefined} onReady={() => {
-      const next = step.views[viewIndex + 1] ?? steps[(stepIndex + 1) % steps.length].views[0];
-      if (next.photo && next.photo.image !== photo.image) preloadPhoto(next.photo.image);
+      const next = steps[(stepIndex + 1) % steps.length].views[0];
+      if (next.photo && !next.standingMap && next.photo.image !== photo.image) preloadPhoto(next.photo.image);
     }}/>;
   return <div className="ul-photo-viewer" aria-label="Lineup photo slides" data-stage={step.stage}>
     <div className="ul-photo-stage">

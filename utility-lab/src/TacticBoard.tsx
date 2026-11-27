@@ -628,7 +628,7 @@ export default function TacticBoard({
     setMapFailed(false);
     setView(FIT_VIEW);
   }
-  function addObject(kind: ObjectKind, point = { x: 500, y: 500 }) {
+  function addObject(kind: ObjectKind, point: XY = viewRef.current) {
     if (plan.objects.length >= MAX_OBJECTS) {
       notify.current(
         `This board is full (${MAX_OBJECTS} objects). Remove an object first.`,
@@ -1627,7 +1627,7 @@ export default function TacticBoard({
                 (level?.name || "") +
                 " tactic canvas. " +
                 plan.objects.length +
-                " objects. Select a tool and click to place, or press Enter to place at center. Drag empty space, hold Space and drag, or use the hand tool to pan. Wheel or plus/minus to zoom; 0 fits the map. Arrow keys move a selected object, otherwise pan."
+                " objects. Select a tool and click to place, or press Enter to place in the center of the current view. Drag empty space, hold Space and drag, or use the hand tool to pan. Wheel or plus/minus to zoom; 0 fits the map. Arrow keys move a selected object, otherwise pan."
               }
               tabIndex={0}
               onPointerDown={pointerDown}
