@@ -58,6 +58,10 @@ async function open(page: Page, guide: UtilityReference) {
   return viewer;
 }
 async function decoded(viewer: Locator) {
+  const positionPhoto = viewer.getByRole("button", { name: "Position photo", exact: true });
+  if (await positionPhoto.count() && await positionPhoto.getAttribute("aria-pressed") === "false") {
+    await positionPhoto.click();
+  }
   const image = viewer.locator(".ul-photo-canvas img");
   await image.evaluate((img: HTMLImageElement) => img.decode());
   // decode() can finish before React marks the image ready and starts its fade.

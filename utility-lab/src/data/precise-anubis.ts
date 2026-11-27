@@ -16,10 +16,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Begin at T spawn 1; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Hold W as you jump and release the LMB.",
-      "Tap W with the jump, release LMB immediately, then release W. Do not take a running approach."
+      "Use T spawn 1, the leftmost point in the three-spawn horizontal row, directly above T2 on the map.",
+      "Face the white building with two dark upper windows. Use the plaster below its curved roof.",
+      "Tap W once as you jump, release LMB and let go of W."
     ],
     "x": 0,
     "y": 0,
@@ -34,7 +33,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-61-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 1. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 1 before movement.",
         "creator": "setpos.gg · LNZ",
         "source": "https://setpos.gg/anubis/conn/t1",
         "capturedAt": "2026-11-24",
@@ -43,7 +42,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/2b596469-5dc1-4f01-8365-ec372ca4dd7c/12d20ec2-5e1e-461a-92b4-d41aa133fcab/guide-aim-aim-93c8d935ea35d34245e349f0452cfcd5943d65747f1db216a3bedfdf61dfc3ce.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Find the crest above the gap between the two windows. Aim on the pale plaster below the exposed stone band, a little right of the crest and the vertical row of worn patches.",
         "creator": "setpos.gg · LNZ",
         "source": "https://setpos.gg/anubis/conn/t1",
         "aimPoint": {
@@ -78,9 +77,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Outside Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 1; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 1, the leftmost point in the three-spawn horizontal row, directly above T2 on the map.",
+      "Use the roof trim above the right-hand window of the white building.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -95,7 +94,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-130-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 1. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 1 before movement.",
         "creator": "setpos.gg · m1QUSE",
         "source": "https://setpos.gg/anubis/outside-conn/t1",
         "capturedAt": "2026-11-24",
@@ -104,7 +103,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/9b756b9b-3cab-4b52-8d9e-c15049b34e6d/aba7ffc1-dbf7-4682-b5f4-21ce7ad05280/guide-aim-aim-33444dc947cdd13a6f017017f2703dca5edc01bd253f9f66dc12638cc8f671d6.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Follow the left edge of the right window’s stone surround straight up. Aim on the first exposed stone course under the scalloped roof trim, to the right of the roof’s crest.",
         "creator": "setpos.gg · m1QUSE",
         "source": "https://setpos.gg/anubis/outside-conn/t1",
         "aimPoint": {
@@ -139,10 +138,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Crouch + Tap W + Jump + LMB",
     "steps": [
-      "Begin at T spawn 10; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Crouch and hold W as you jump and release the LMB.",
-      "Tap W with the jump, release LMB immediately, then release W. Do not take a running approach."
+      "Use T spawn 10, the point just below T9 and above and to the left of T11 on the map.",
+      "Use the sloping roof above the lavender cloth as a reference for the sky aim.",
+      "Hold crouch. Tap W as you jump, release LMB and let go of W."
     ],
     "x": 0,
     "y": 0,
@@ -157,7 +155,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-162-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 10. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 10 before movement.",
         "creator": "setpos.gg · Ex1st",
         "source": "https://setpos.gg/anubis/conn/t10",
         "capturedAt": "2026-11-24",
@@ -166,7 +164,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/29abf096-cd86-435c-8912-293254b7bb43/fae9141d-5937-4945-84c6-49454b76ed4a/guide-aim-aim-3b1a1c7d74b38567e6228fedd28b710cd0cd888c8ebed17a5fec245d5a8c77b1.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Find the lavender cloth. Aim about a third of its width left of its left edge, in the sky about one and a half cloth widths above the sloping roof.",
         "creator": "setpos.gg · Ex1st",
         "source": "https://setpos.gg/anubis/conn/t10",
         "aimPoint": {
@@ -201,9 +199,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Outside Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 11; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 11, the easternmost point in the cluster, below and to the right of T10 on the map.",
+      "Face the tan wall with a small square opening and two projecting stones.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -218,7 +216,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-71-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 11. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 11 before movement.",
         "creator": "setpos.gg · kelieN",
         "source": "https://setpos.gg/anubis/outside-conn/t11",
         "capturedAt": "2026-11-24",
@@ -227,7 +225,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/1505d0bf-cf44-4fa8-a797-ba507cba9419/29e14d36-a35c-42a0-800c-12914d2aff0a/guide-aim-aim-563295c29d27a9985841af3ef0e63e0579abe0bd635860125dec1e3c32ee1735.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Use the projecting stone to the left of the square opening. Aim level with the stone’s center, about two stone widths past its right edge.",
         "creator": "setpos.gg · kelieN",
         "source": "https://setpos.gg/anubis/outside-conn/t11",
         "aimPoint": {
@@ -262,9 +260,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 11; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 11, the easternmost point in the cluster, below and to the right of T10 on the map.",
+      "Find the projecting stone on the tan wall immediately left of the arched gate.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -279,7 +277,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-151-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 11. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 11 before movement.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t11",
         "capturedAt": "2026-11-24",
@@ -288,7 +286,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/ad07125d-9adc-4173-908d-ab7e2dbb67ac/ab5642b3-e5a6-4f65-abae-261d17488767/guide-aim-aim-8c96f20f10c812cfbb92235cb9bfe1e83f325e1f52a02a2b4ddf9e64c55ab0f8.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Aim along the horizontal seam level with the center of the projecting stone nearest the arched gate. Leave about two stone widths between the crosshair and the stone’s left edge.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t11",
         "aimPoint": {
@@ -323,10 +321,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Begin at T spawn 11; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Hold W as you jump and release the LMB.",
-      "Tap W with the jump, release LMB immediately, then release W. Do not take a running approach."
+      "Use T spawn 11, the easternmost point in the cluster, below and to the right of T10 on the map.",
+      "Look above the low roof behind the lavender cloth. The aim point is in open sky.",
+      "Tap W once as you jump, release LMB and let go of W."
     ],
     "x": 0,
     "y": 0,
@@ -341,7 +338,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-161-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 11. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 11 before movement.",
         "creator": "setpos.gg · apEX",
         "source": "https://setpos.gg/anubis/conn/t11",
         "capturedAt": "2026-11-24",
@@ -350,7 +347,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/bbe2be54-4813-42a3-8dae-454f7093ec16/3d5d7fb1-61a6-4081-919a-e20bec27ff1c/guide-aim-aim-b0f183bc9f6259e2addca40a03c3e3ece6b315c90baed17cbce4fc6b84b9feeb.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Extend the left edge of the lavender cloth upward. Leave a vertical gap of roughly two cloth widths between the sloping roofline and your crosshair.",
         "creator": "setpos.gg · apEX",
         "source": "https://setpos.gg/anubis/conn/t11",
         "aimPoint": {
@@ -385,10 +382,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Begin at T spawn 2; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Hold W as you jump and release the LMB.",
-      "Tap W with the jump, release LMB immediately, then release W. Do not take a running approach."
+      "Use T spawn 2, the southernmost point in the cluster, directly below T1 on the map.",
+      "Find the small crest in the wavy roof above the two windows.",
+      "Tap W and jump as you release LMB. In this recording the release and jump are less than one tick apart."
     ],
     "x": 0,
     "y": 0,
@@ -403,7 +399,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-62-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 2. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 2 before movement.",
         "creator": "setpos.gg · MisteM",
         "source": "https://setpos.gg/anubis/conn/t2",
         "capturedAt": "2026-11-24",
@@ -412,7 +408,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/93bd3560-5ab0-4b51-b71a-bb93289e2155/6d7251d5-e9fc-4a22-8203-7f2314fbdd05/guide-aim-aim-52129ef68bcc0b3bff73b2b2d5c7fce9750f6379e76cc1b44bd1deddc9f4363b.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Center on the small crest between the windows, then lift straight into the sky. Leave a gap about as wide as one dark window opening above the roof.",
         "creator": "setpos.gg · MisteM",
         "source": "https://setpos.gg/anubis/conn/t2",
         "aimPoint": {
@@ -447,9 +443,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Outside Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 2; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 2, the southernmost point in the cluster, directly below T1 on the map.",
+      "Face the broad patterned double door beneath the upper windows.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -464,7 +460,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-72-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 2. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 2 before movement.",
         "creator": "setpos.gg · donk",
         "source": "https://setpos.gg/anubis/outside-conn/t2",
         "capturedAt": "2026-11-24",
@@ -473,7 +469,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/e7001d3f-5e53-40db-84a9-40d6d0a43a97/3f8f8a0e-061a-430e-9f19-06e55d04b17d/guide-aim-aim-464c7cf79ade116d40bbb4bfe0cee0e06e6c618ec1f035dfd12f4eb21bbe9c9c.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Trace the wooden lintel above the patterned double door to its right end. Place the crosshair on its lower-right corner, where the wood meets the tan wall.",
         "creator": "setpos.gg · donk",
         "source": "https://setpos.gg/anubis/outside-conn/t2",
         "aimPoint": {
@@ -508,9 +504,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 2; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 2, the southernmost point in the cluster, directly below T1 on the map.",
+      "Find the vertical corner just right of the patterned double door, below the yellow cloth.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -525,7 +521,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-145-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 2. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 2 before movement.",
         "creator": "setpos.gg · Damsi",
         "source": "https://setpos.gg/anubis/mid/t2",
         "capturedAt": "2026-11-24",
@@ -534,7 +530,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/05c056da-a5b5-4b8f-9e11-9f7bc2aab62e/23fcf623-1034-4f7c-b5f3-15d7f003d967/guide-aim-aim-814ab3a7ef6b9575b7c8912b10200eebd321d30e16c91bca244da583724a9230.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Aim on the left edge of the dark vertical strip where the white building meets the low tan wall, just below the top of that wall.",
         "creator": "setpos.gg · Damsi",
         "source": "https://setpos.gg/anubis/mid/t2",
         "aimPoint": {
@@ -569,9 +565,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 3; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 3, the point just above and to the right of T1, below and to the left of T4 on the map.",
+      "Use the right-hand upper window in the white building.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -586,7 +582,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-59-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 3. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 3 before movement.",
         "creator": "setpos.gg · Smash",
         "source": "https://setpos.gg/anubis/conn/t3",
         "capturedAt": "2026-11-24",
@@ -595,7 +591,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/90312eb8-48d8-4a3b-8fdf-92b5e3a701d0/e1fb88f9-e587-407b-b4ab-d1ff8d025b40/guide-aim-aim-d4ae9e63f503af7dd16823d2797e4cc8392b67c3baac3777afd14acb7798240c.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Center on the right-hand window. Place the crosshair on the top edge of its pale stone surround, above the wooden lintel.",
         "creator": "setpos.gg · Smash",
         "source": "https://setpos.gg/anubis/conn/t3",
         "aimPoint": {
@@ -630,9 +626,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 4; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 4, the point above and to the left of T5, between T3 and the northern pair on the map.",
+      "Follow the clothesline back to its anchor on the tall white building.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -647,7 +643,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-63-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 4. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 4 before movement.",
         "creator": "setpos.gg · Aleksib",
         "source": "https://setpos.gg/anubis/conn/t4",
         "capturedAt": "2026-11-24",
@@ -656,7 +652,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/2751c630-13cf-4ec4-b9df-b116fc8945b9/e9c0a9c8-3652-4e90-b48b-9474a09163c4/guide-aim-aim-b051ce52a6ee458ff8956e801b5308199f6a3f718c9faa5da3ad7685bbf78264.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "At the wall end of the line carrying the yellow cloth, aim on the left edge of the projecting anchor block, level with the upper half of its dark face.",
         "creator": "setpos.gg · Aleksib",
         "source": "https://setpos.gg/anubis/conn/t4",
         "aimPoint": {
@@ -691,9 +687,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 4; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 4, the point above and to the left of T5, between T3 and the northern pair on the map.",
+      "Use the top row of recessed squares on the narrow brown door.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -708,7 +704,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-142-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 4. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 4 before movement.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t4",
         "capturedAt": "2026-11-24",
@@ -717,7 +713,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/c45c2d95-9d90-4bc7-a240-0bf45e6e596e/9b8c140d-838e-4c1d-a1f8-d139d10421d9/guide-aim-aim-63d5e77d3e7219f67ada0775a68e78692e3e8fd9e3b136b36ef5b78ee1d3816e.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Find the two middle squares in the door’s top row. Aim between them, level with their upper edges.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t4",
         "aimPoint": {
@@ -752,9 +748,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Outside Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 5; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 5, the middle point of the horizontal row shared with T1 and T8 on the map.",
+      "Face the narrow door with four recessed squares across each row.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -769,7 +765,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-92-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 5. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 5 before movement.",
         "creator": "setpos.gg · snow",
         "source": "https://setpos.gg/anubis/outside-conn/t5",
         "capturedAt": "2026-11-24",
@@ -778,7 +774,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/f29482ad-0ca9-4421-a26f-29460be7a7c6/591f568c-08e6-45d2-ac26-6670ec551f95/guide-aim-aim-69001ad381161cbdc0b50fa18643a70cdbd0bc9f0867a18edad316bb3a0a36f1.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Place the crosshair in the center of the top-left recessed square on the narrow brown door.",
         "creator": "setpos.gg · snow",
         "source": "https://setpos.gg/anubis/outside-conn/t5",
         "aimPoint": {
@@ -811,12 +807,11 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "from": "T spawn 5",
     "target": "Conn",
     "purpose": "Block Conn from this exact T spawn.",
-    "throwType": "Walk + Jump + LMB",
+    "throwType": "Shift + Jump + LMB",
     "steps": [
-      "Begin at T spawn 5; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Walk while holding W + Shift, then jump and release the LMB.",
-      "Keep Shift held through the short forward walk and jump; follow the release timing in the clip."
+      "Use T spawn 5, the middle point of the horizontal row shared with T1 and T8 on the map.",
+      "Trace the sloped right edge of the tall white building above its clothesline anchor.",
+      "Hold Shift. Jump and release LMB together. In this recording the W press comes just after the release."
     ],
     "x": 0,
     "y": 0,
@@ -831,7 +826,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-93-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 5. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 5 before movement.",
         "creator": "setpos.gg · R4DYX",
         "source": "https://setpos.gg/anubis/conn/t5",
         "capturedAt": "2026-11-24",
@@ -840,7 +835,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/042e7f53-cb3b-45c3-863e-8fadd74cdac8/2a93e5c5-5af7-450c-8d93-30aca20b9cde/guide-aim-aim-3e9777530cda84e9b626709ef8de1fe2fc06707f14578ec9fe7d3ba4cff962d9.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Aim just into the sky to the right of the sloping roof edge. Set the height about two anchor-block heights above the wall anchor, between the anchor and the roof tip.",
         "creator": "setpos.gg · R4DYX",
         "source": "https://setpos.gg/anubis/conn/t5",
         "aimPoint": {
@@ -875,9 +870,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 5; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 5, the middle point of the horizontal row shared with T1 and T8 on the map.",
+      "Find the wooden lintel over the narrow brown door.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -892,7 +887,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-146-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 5. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 5 before movement.",
         "creator": "setpos.gg · jackasmo",
         "source": "https://setpos.gg/anubis/mid/t5",
         "capturedAt": "2026-11-24",
@@ -901,7 +896,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/3bc74206-5e52-42c4-93b4-16b4e11f8c33/37c87224-955a-47dd-a48c-fdf1cfeff203/guide-aim-aim-8ad0174935b673847d4a43d0e17c3676e0a5189460843e73b9b7f355cea68920.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Follow the lintel to its far-right tip. Keep the crosshair aligned with that tip and lower it onto the plaster about half a lintel thickness below the wood.",
         "creator": "setpos.gg · jackasmo",
         "source": "https://setpos.gg/anubis/mid/t5",
         "aimPoint": {
@@ -936,10 +931,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Crouch + Tap W + Jump + LMB",
     "steps": [
-      "Begin at T spawn 6; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Crouch and hold W as you jump and release the LMB.",
-      "Tap W with the jump, release LMB immediately, then release W. Do not take a running approach."
+      "Use T spawn 6, the point above and to the right of T5, below and to the left of T7 on the map.",
+      "Use the top-right corner of the yellow cloth on the clothesline.",
+      "After aiming, press crouch. Tap W as you jump, release LMB and let go of W."
     ],
     "x": 0,
     "y": 0,
@@ -954,7 +948,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-60-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 6. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 6 before movement.",
         "creator": "setpos.gg · LNZ",
         "source": "https://setpos.gg/anubis/conn/t6",
         "capturedAt": "2026-11-24",
@@ -963,7 +957,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/f97a2aae-3545-442e-bdfc-6eb2bb1bad7d/0bff760a-8fea-41bb-a1b9-387e75c0e1aa/guide-aim-aim-0a43115ba45707bbd4b63efab24055561a7bf946ee339444fe3c462e1785b366.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Set the crosshair at the upper hem of the yellow cloth, where its right edge meets the line. The narrow gap before the large pale sheet is immediately to the right.",
         "creator": "setpos.gg · LNZ",
         "source": "https://setpos.gg/anubis/conn/t6",
         "aimPoint": {
@@ -1005,9 +999,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Outside Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 6; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 6, the point above and to the right of T5, below and to the left of T7 on the map.",
+      "Use the small recessed panels across the top of the narrow brown door.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -1022,7 +1016,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-96-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 6. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 6 before movement.",
         "creator": "setpos.gg · d1Ledez",
         "source": "https://setpos.gg/anubis/outside-conn/t6",
         "capturedAt": "2026-11-24",
@@ -1031,7 +1025,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/e9f1fdde-5c34-424e-bb3f-ed3bdb172ee9/76887683-67b4-4583-9e80-a36e422bbd44/guide-aim-aim-2f48e0977db503ed85e1f338946ee0e43db6616909db4498d18fa435624da5fa.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Aim at the center of the rightmost square in the top row of the narrow brown door.",
         "creator": "setpos.gg · d1Ledez",
         "source": "https://setpos.gg/anubis/outside-conn/t6",
         "aimPoint": {
@@ -1066,9 +1060,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 6; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 6, the point above and to the right of T5, below and to the left of T7 on the map.",
+      "Find the projecting stone above and right of the narrow door.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -1083,7 +1077,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-143-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 6. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 6 before movement.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t6",
         "capturedAt": "2026-11-24",
@@ -1092,7 +1086,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/9b0076c5-218c-41c5-89df-cefe5963c6ea/befef624-c48a-4178-b685-2fd42b3e7c7b/guide-aim-aim-3b852aebdcc953c446e98a628dbeea343afebc99c24d1b3ef5bf79bdf838c748.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Use the projecting stone above and right of the doorway. Aim on the plaster about one stone width left of its left edge, level with the lower half of its face.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t6",
         "aimPoint": {
@@ -1127,10 +1121,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Walk + Jump + LMB",
     "steps": [
-      "Begin at T spawn 7; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Walk while holding W + Shift, then jump and release the LMB.",
-      "Keep Shift held through the short forward walk and jump; follow the release timing in the clip."
+      "Use T spawn 7, the left point of the two northernmost spawns, level with T9 on the map.",
+      "Find the large pale sheet hanging between the yellow and lavender cloths.",
+      "Hold Shift, move forward with W and jump. Release LMB as you rise, as in the source clip."
     ],
     "x": 0,
     "y": 0,
@@ -1145,7 +1138,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-57-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 7. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 7 before movement.",
         "creator": "setpos.gg · Demho",
         "source": "https://setpos.gg/anubis/conn/t7",
         "capturedAt": "2026-11-24",
@@ -1154,7 +1147,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/f5d355dc-12cf-4bef-ae15-499165415211/ecd5c96e-f221-46cf-a236-3a8db942c1a7/guide-aim-aim-fea366fdac3bc951a30b872df3554446f2f8bd341803166a430e38db74922737.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Aim on the top edge of the broad pale sheet, about a quarter of the way across from its left edge. The yellow cloth hangs to its left.",
         "creator": "setpos.gg · Demho",
         "source": "https://setpos.gg/anubis/conn/t7",
         "aimPoint": {
@@ -1196,9 +1189,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 7; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 7, the left point of the two northernmost spawns, level with T9 on the map.",
+      "Find the split-faced projecting stone above and right of the narrow door.",
+      "Release LMB as you jump in place. In this recording the release and first jump are less than one tick apart."
     ],
     "x": 0,
     "y": 0,
@@ -1213,7 +1206,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-138-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 7. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 7 before movement.",
         "creator": "setpos.gg · GeGo",
         "source": "https://setpos.gg/anubis/mid/t7",
         "capturedAt": "2026-11-24",
@@ -1222,7 +1215,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/165b3ba9-53ad-42fc-a54a-10b0452daa40/8ed8bb05-d5ca-4218-b94a-174f0f1004e7/guide-aim-aim-5315ce0bbd65a39e6baa55894a1b931af2ce9fba0aba29372741a8967362e195.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Place the crosshair at the lower-right edge of the projecting stone’s face, where the face meets its shadow on the wall.",
         "creator": "setpos.gg · GeGo",
         "source": "https://setpos.gg/anubis/mid/t7",
         "aimPoint": {
@@ -1257,9 +1250,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Outside Conn from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 8; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 8, the rightmost point in the horizontal row shared with T1 and T5 on the map.",
+      "Find the projecting stone above and left of the small square wall opening.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -1274,7 +1267,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-94-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 8. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 8 before movement.",
         "creator": "setpos.gg · Magnojez",
         "source": "https://setpos.gg/anubis/outside-conn/t8",
         "capturedAt": "2026-11-24",
@@ -1283,7 +1276,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/2755b20f-da0b-403f-8ef6-9f3fc3cc38e2/533451f0-007d-4d81-a169-c98be1a4296a/guide-aim-aim-3333eef091e6e03b5e4afb3ba83e68d9b672e023fde4c272f9ee27d6a5843748.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Follow the shadow of the projecting stone down the wall. Aim at the shadow’s lower edge, directly below the stone’s face.",
         "creator": "setpos.gg · Magnojez",
         "source": "https://setpos.gg/anubis/outside-conn/t8",
         "aimPoint": {
@@ -1318,9 +1311,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Mid from this exact T spawn.",
     "throwType": "Jump + LMB",
     "steps": [
-      "Begin at T spawn 8; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Jump and release the LMB."
+      "Use T spawn 8, the rightmost point in the horizontal row shared with T1 and T5 on the map.",
+      "Use the small square opening low on the tan wall as the fixed reference.",
+      "Hold LMB on the spawn, then jump in place and release LMB."
     ],
     "x": 0,
     "y": 0,
@@ -1335,7 +1328,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-139-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 8. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 8 before movement.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t8",
         "capturedAt": "2026-11-24",
@@ -1344,7 +1337,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/ab149284-43bc-405f-9f8b-4665c4fa6101/ea7a7d88-d167-4f31-b776-5047b3236dac/guide-aim-aim-613a5394adaf00bfb19d867df940d623c479fd5346948ffd68d3d0b750cfee3d.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Center over the small square opening. Raise the crosshair onto the plaster roughly half an opening width above its stone frame. Use the wall opening even if a teammate crosses it.",
         "creator": "setpos.gg · bonce",
         "source": "https://setpos.gg/anubis/mid/t8",
         "aimPoint": {
@@ -1379,10 +1372,9 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
     "purpose": "Block Conn from this exact T spawn.",
     "throwType": "Tap W + Jump + LMB",
     "steps": [
-      "Begin at T spawn 9; match the starting view.",
-      "Place the crosshair at the marked aim point before the round starts.",
-      "Hold W as you jump and release the LMB.",
-      "Tap W with the jump, release LMB immediately, then release W. Do not take a running approach."
+      "Use T spawn 9, the right point of the two northernmost spawns, level with T7 on the map.",
+      "Use the sloping roof above the lavender cloth at the right of the clothesline.",
+      "Tap W once as you jump, release LMB and let go of W."
     ],
     "x": 0,
     "y": 0,
@@ -1397,7 +1389,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "/lineup-media/precise-anubis/setpos-95-position.jpg",
         "kind": "position",
-        "caption": "Starting view at T spawn 9. Use this exact spawn; keep your starting position.",
+        "caption": "Starting view from T spawn 9 before movement.",
         "creator": "setpos.gg · DAN9ARMATURA",
         "source": "https://setpos.gg/anubis/conn/t9",
         "capturedAt": "2026-11-24",
@@ -1406,7 +1398,7 @@ export const PRECISE_ANUBIS:UtilityReference[] = [
       {
         "image": "https://media.setpos.gg/renders/3602e5da-42e1-4446-b1d7-ab8cf5c6c348/9d706e4f-5ed3-4c66-a9be-be2b14f935fc/guide-aim-aim-186a1cd170bee5b6ce135e98719489c0200231b1d25b158bdcc034d276df8811.webp",
         "kind": "aim",
-        "caption": "Set the crosshair at the marked point before the throw.",
+        "caption": "Align with the middle of the lavender cloth, then raise the crosshair to the top edge of the sloping roof behind it.",
         "creator": "setpos.gg · DAN9ARMATURA",
         "source": "https://setpos.gg/anubis/conn/t9",
         "aimPoint": {

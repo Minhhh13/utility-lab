@@ -40,6 +40,9 @@ async function verifyPhoto(page:Page,record:UtilityReference,camera:string,stand
     await expect(map.locator(".ul-standing-map-pin")).toHaveAttribute("transform",`translate(${standingMap.x} ${standingMap.y})`);
     await viewer(page).getByRole("button",{name:"Step 2: First-person standing view",exact:true}).click();
     await expect(viewer(page).locator(".ul-photo-kind")).toHaveText("First-person standing view");
+  } else if (record.spawn) {
+    await expect(viewer(page).locator(".ul-standing-map .is-current")).toHaveAttribute("data-spawn-slot", String(record.spawn.slot));
+    await viewer(page).getByRole("button",{name:"Position photo",exact:true}).click();
   }
   await expect(viewer(page).locator(".ul-photo-canvas img")).toHaveAttribute("src",utilityPhotos(record)[0].image);
   expect(await page.evaluate(()=>new URLSearchParams(location.hash.split("?")[1]).get("lineup"))).toBe(record.id);
@@ -164,6 +167,8 @@ for(const [width,height] of [[1440,1080],[320,720]]) test.describe(`Cache Garage
       await expect(page).toHaveURL(new RegExp(idPrefix+slot+"$"));
       await expect(guide.getByRole("heading",{name:`Garage smoke · CT Spawn ${slot}`,exact:true})).toBeVisible();
       await expect(guide.locator(".ul-photo-caption p")).toHaveText(`CSNADES spawn #${slot} (CT${setposSlots[index]} on setpos.gg).`);
+      await expect(guide.locator(".ul-standing-map .is-current")).toHaveAttribute("data-spawn-slot", String(slot));
+      await press(guide.getByRole("button",{name:"Position photo",exact:true}));
       await expect(guide.locator(".ul-photo-canvas img")).toHaveAttribute("src",new RegExp(`garage-from-ct-spawn-${slot}-position.jpg$`));
     }
     if(phone){

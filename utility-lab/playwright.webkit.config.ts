@@ -4,6 +4,7 @@ export default defineConfig({
   testDir: "./e2e",
   testMatch: [
     "webkit.spec.ts",
+    "all-map-photo-controls.spec.ts",
     "aim-placement.spec.ts",
     "four-stage-guide.spec.ts",
     "guide-throw-locations.spec.ts",

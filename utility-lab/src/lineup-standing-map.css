@@ -35,3 +35,44 @@
   font-weight: 400;
 }
 .ul-standing-map-credits a { color: inherit; text-underline-offset: 2px; }
+.ul-standing-map[data-numbered-spawns] {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+.ul-standing-map[data-numbered-spawns] > svg {
+  grid-row: 1;
+  min-height: 0;
+  justify-self: center;
+  width: calc(100% - 96px);
+}
+.ul-standing-map[data-numbered-spawns] .ul-standing-map-location {
+  position: static;
+  max-width: none;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 12px;
+  border-radius: 0;
+}
+.ul-standing-map [data-spawn-slot] text {
+  fill: white;
+  font-size: 3.8px;
+  font-weight: 700;
+  pointer-events: none;
+}
+.ul-standing-map-disc {
+  fill: #25343c;
+  stroke: #b6c4ca;
+  stroke-width: 1px;
+}
+.ul-standing-map .is-current .ul-standing-map-disc {
+  fill: #88f5df;
+  stroke: #102e2b;
+  stroke-width: 2px;
+}
+.ul-standing-map .is-current text { fill: #102e2b; }
+.ul-standing-map-ring { fill: none; stroke: white; stroke-width: 2px; }
+@media (max-width: 540px) {
+  .ul-standing-map [data-spawn-slot] text { font-size: 4.7px; }
+}

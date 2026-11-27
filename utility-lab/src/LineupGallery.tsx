@@ -34,7 +34,7 @@ export default function LineupGallery({ record, steps, stepIndex, viewIndex, sel
   const first = stepIndex === 0 && viewIndex === 0;
   const label = step.stage === "setup" || step.stage === "detail" ? step.name : photo ? photoStepName(photo.kind, stepIndex, photo.caption) : step.label;
   const caption = photo ? (first && !record.userCreated && (photo.kind === "position" || /^Position & aim/i.test(photo.caption))
-    ? record.steps[0] || photo.caption : photo.caption)
+    ? record.steps[0] || photo.caption : view.caption || photo.caption)
     : step.stage === "setup" ? "See the standing setup in the original guide video." : "See the landing in the original guide video.";
   const toolbar = <div className="ul-photo-toolbar ul-photo-toolbar-compact">{formats}</div>;
   const image = photo && <PhotoZoom key={`${stepIndex}:${viewIndex}:${photo.image}`} formats={formats} photo={photo} magnifyAim={view.magnifyAim}
@@ -48,8 +48,12 @@ export default function LineupGallery({ record, steps, stepIndex, viewIndex, sel
         ? <LineupStandingMap record={record} fallback={image}>{toolbar}</LineupStandingMap>
         : photo ? image : <>{toolbar}<div className="ul-stage-video">{sourceVideo}</div></>}
       {steps.length > 1 && <>
-        <button className="ul-slide-prev" aria-label="Previous photo" aria-keyshortcuts="A" title="Previous photo (A)" onClick={() => advance(-1)}><ChevronLeft size={24}/></button>
-        <button className="ul-slide-next" aria-label="Next photo" aria-keyshortcuts="D" title="Next photo (D)" onClick={() => advance(1)}><ChevronRight size={24}/></button>
+        <button className="ul-slide-prev" aria-label="Previous photo" aria-keyshortcuts="A" title="Previous photo (A)" onClick={() => advance(-1)}>
+          <ChevronLeft size={20}/><kbd aria-hidden="true">A</kbd>
+        </button>
+        <button className="ul-slide-next" aria-label="Next photo" aria-keyshortcuts="D" title="Next photo (D)" onClick={() => advance(1)}>
+          <ChevronRight size={20}/><kbd aria-hidden="true">D</kbd>
+        </button>
       </>}
     </div>
     <div className="ul-gallery-guide">
@@ -62,8 +66,8 @@ export default function LineupGallery({ record, steps, stepIndex, viewIndex, sel
         {guideMap}
       </div>
       {step.views.length > 1 && <div className="ul-step-views" role="group" aria-label={`${step.label} photos`}>
-        {step.views.map(({ photo: p }, i) => <button key={i} aria-pressed={i === viewIndex} onClick={() => select(stepIndex, i)}>
-          {p?.kind === "release" ? "Throw" : i === 0 ? "Full view" : p?.caption === "Aim detail" ? "Aim detail" : `View ${i + 1}`}
+        {step.views.map(({ photo: p, label: viewLabel }, i) => <button key={i} aria-pressed={i === viewIndex} onClick={() => select(stepIndex, i)}>
+          {viewLabel ?? (p?.kind === "release" ? "Throw" : i === 0 ? "Full view" : p?.caption === "Aim detail" ? "Aim detail" : `View ${i + 1}`)}
         </button>)}
       </div>}
       {steps.length > 1 && <div className={`ul-photo-dots${step.stage ? " ul-guide-steps" : ""}`} role="group" aria-label="Choose lineup photo">

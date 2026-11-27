@@ -6,6 +6,27 @@ import {normalizeExpandedGuides} from '../src/expanded-guide-model.ts';
 import {isBundledPhoto,utilityPhotos} from '../src/utility-data.ts';
 import {cs2tricksStagePhotos} from '../src/data/cs2tricks-stage-photos.ts';
 import {otherStagePhotos} from '../src/data/other-stage-photos.ts';
+import {withPublisherAimCloseup} from './publisher-aim-closeup.mjs';
+import {reviewedSpawnMap} from '../src/data/all-map-spawn-sheets.ts';
+import {NIC_AIM_LANDMARKS} from '../src/data/numbered-aim-landmarks-nic.ts';
+import {OTHER_AIM_LANDMARKS} from '../src/data/numbered-aim-landmarks-rest.ts';
+
+// Only embed each map's cues in its own catalogue. Browsers opening the map
+// never need to fetch a separate landmark table.
+const aimLandmarks = {...NIC_AIM_LANDMARKS, ...OTHER_AIM_LANDMARKS};
+function withNumberedAimLandmarks(record) {
+  const cue = aimLandmarks[record.id];
+  if (!cue) return record;
+  if (!reviewedSpawnMap(record)) throw Error(`Unmatched numbered aim guide: ${record.id}`);
+  const caption = (photo) => {
+    if (photo.kind !== 'aim' || photo.source !== record.source) return photo;
+    const nativeDetail = /^(Aim detail\b|Close view\b)/i.test(photo.caption);
+    return {...photo, caption: nativeDetail ? `Aim detail · ${cue.detail}` : cue.detail};
+  };
+  const steps = [...record.steps];
+  steps[1] = cue.wide;
+  return {...record, steps, photos: record.photos?.map(caption), remotePhotos: record.remotePhotos?.map(caption)};
+}
 const sources=[
  ['../src/data/essential-csnades-four-maps.ts','ESSENTIAL_CSNADES_FOUR_MAPS'],
  ['../src/data/essential-nvca.ts','ESSENTIAL_NVCA'],
@@ -88,7 +109,7 @@ for(const map of MAPS){
     destinationId:`${csnades.sourceId}:target`,x:csnades.throwTo.x,y:csnades.throwTo.y,
    }};
   }
-  values.push(record);
+  values.push(withNumberedAimLandmarks(withPublisherAimCloseup(record)));
  }
  const records=normalizeExpandedGuides(values,map.id);
  records.forEach(collectStagePhotos);

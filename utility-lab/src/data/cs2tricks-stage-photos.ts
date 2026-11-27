@@ -5,6 +5,10 @@ import youtubeFrames from "./cs2tricks-youtube-setup-frames.json" with { type: "
 
 const setupSeconds: Record<string, number> = { ...sourceFrames, ...youtubeFrames };
 const setupCaptions: Record<string, string> = {
+  "ancient/smokes/elbow-from-ct-spawn-1-35af": "Face the temple doors across the courtyard. From spawn 1 the tower and the long, pale wall are both on your left.",
+  "ancient/smokes/elbow-from-ct-spawn-2-9550": "Find the blue square directly below the recessed steps. The other two squares in this view sit to either side.",
+  "ancient/smokes/elbow-from-ct-spawn-3-494a": "Turn toward the temple doors. The blue B sign sits almost straight ahead, with the tower to the left and the yellow A sign to the right.",
+  "ancient/smokes/elbow-from-ct-spawn-5-0e13": "Look down at the shaded square beside the fern. The next square on the right reaches into the light.",
   "ancient/flashbangs/lane-from-lamp-183b": "Pre-throw view from behind the orange panel at Jaguar, facing the wooden cover.",
   "dust2/smokes/ct-cross-from-taxi-corner-f042": "Pre-throw view from Taxi Corner beside the wooden pole, with the wall on your right.",
   "mirage/flashbangs/b-stairs-from-underpass-2a39": "Look down Underpass from the starting spot. This is the player’s view just before the running jump.",

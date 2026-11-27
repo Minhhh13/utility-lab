@@ -4734,7 +4734,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "throwType": "Crouch + Jump + left click",
     "steps": [
       "Start on StellaraQwQღ’s marked spawn #3. The same square is T13 on setpos.gg.",
-      "Match the crosshair in the Aim photo.",
+      "Crouch on the marked spawn and locate the small square window behind the front sloping parapet. Look to the right of that window.",
       "Crouch. Jump + left click."
     ],
     "x": 0,
@@ -4755,14 +4755,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/1cd56d5a-3d8a-4b68-8819-7ace70ffb6e0.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Crouch on the marked spawn and locate the small square window behind the front sloping parapet. Look to the right of that window.",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-3-b56e"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/e9570535-278d-4b3e-9787-0b767952d514.webp",
         "kind": "aim",
-        "caption": "Aim detail",
+        "caption": "Aim detail · Follow the top outline of the front parapet. Place the crosshair on its edge, just left of the dark patch of worn plaster on the wall behind.",
+        "aimPoint": { "x": 0.5, "y": 0.5 },
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-3-b56e"
       },
@@ -4845,7 +4846,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "throwType": "Stand still + Jump + left click",
     "steps": [
       "Start on StellaraQwQღ’s marked spawn #4. The same square is T14 on setpos.gg.",
-      "Match the crosshair in the Aim photo.",
+      "Look past the pale foreground parapet to the recessed building corner right of the small square window.",
       "Stand still. Jump + left click."
     ],
     "x": 0,
@@ -4866,14 +4867,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/f39147ce-8ccc-4782-ac36-4eeae7f86236.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Look past the pale foreground parapet to the recessed building corner right of the small square window.",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-4-44e9"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/2f97f097-aad1-48ea-b644-8b0b6e4b6c6c.webp",
         "kind": "aim",
-        "caption": "Aim detail",
+        "caption": "Aim detail · Follow the dark vertical seam straight down. Aim at its intersection with the upper edge of the sloping parapet.",
+        "aimPoint": { "x": 0.5, "y": 0.5 },
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-4-44e9"
       },
@@ -5248,7 +5250,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "throwType": "Tap W + Jump + LMB",
     "steps": [
       "Start on StellaraQwQღ’s marked spawn #5. The same square is T15 on setpos.gg.",
-      "Match the crosshair in the Aim photo.",
+      "Look past the right end of the low parapet to the exposed cables fixed to the shaded wall.",
       "Tap W as you jump and release LMB, following the creator’s timing."
     ],
     "x": 0,
@@ -5269,14 +5271,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/b2c195d7-345d-4ee2-82bf-74103fbcbe9f.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Look past the right end of the low parapet to the exposed cables fixed to the shaded wall.",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/3c9065cd-78c7-4eb3-8d8c-7e9b998c0e61.webp",
         "kind": "aim",
-        "caption": "Aim detail",
+        "caption": "Aim detail · Trace the cables to the small dark fastening just right of the parapet’s end. Center the crosshair at its base on the cable.",
+        "aimPoint": { "x": 0.5, "y": 0.5 },
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314"
       },
@@ -5755,7 +5758,7 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
     "throwType": "Tap W + Jump + LMB",
     "steps": [
       "Start on StellaraQwQღ’s marked spawn #2. The same square is T12 on setpos.gg.",
-      "Match the crosshair in the Aim photo.",
+      "Find the flat roof above the small square window, and the thin sagging wires just left of the long diagonal cable.",
       "Tap W as you jump and release LMB, following the creator’s timing."
     ],
     "x": 0,
@@ -5776,14 +5779,15 @@ export const EXPANDED_DUST2_MIRAGE_ANCIENT: UtilityReference[] = [
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/34852911-60c1-4f44-875f-3c0039a410a0.webp",
         "kind": "aim",
-        "caption": "Match the crosshair shown.",
+        "caption": "Find the flat roof above the small square window, and the thin sagging wires just left of the long diagonal cable.",
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460"
       },
       {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/6e5d18f8-e130-47ee-a6df-57f5f970f649.webp",
         "kind": "aim",
-        "caption": "Aim detail",
+        "caption": "Aim detail · Line up vertically beneath the bent wire tip. Aim on the narrow grey front of the roof cap immediately below it.",
+        "aimPoint": { "x": 0.5, "y": 0.5 },
         "creator": "StellaraQwQღ / CS2Tricks",
         "source": "https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-2-d460"
       },

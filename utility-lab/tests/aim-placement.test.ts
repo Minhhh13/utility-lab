@@ -40,7 +40,12 @@ test("publisher overlays restore only verified source camera views, including it
   const restored = withAimPlacement(source);
   const photos = utilityPhotos(restored);
   assert.deepEqual(source, original, "keep original records and image pixels untouched");
-  assert.deepEqual(photos.filter(photo => photo.kind === "aim").map(photo => photo.aimPoint), [{ x: .5, y: .5 }]);
+  const aimPhotos = photos.filter(photo => photo.kind === "aim");
+  assert.deepEqual(aimPhotos.map(photo => photo.image.split("/").at(-1)), [
+    "96c03a6e-5f90-4634-92f0-566c3a96c074.webp",
+    "56095fce-c503-4e0a-aa01-86237fa69cb0.webp",
+  ]);
+  assert.deepEqual(aimPhotos.map(photo => photo.aimPoint), [{ x: .5, y: .5 }, { x: .5, y: .5 }]);
   assert.ok(photos.filter(photo => photo.kind !== "aim").every(photo => !photo.aimPoint));
   const detailed = rows.find(row => row.id === "expanded-cs2tricks-anubis-heaven-from-water-d678-t")!;
   assert.ok(detailed);

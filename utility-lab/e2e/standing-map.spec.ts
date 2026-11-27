@@ -7,6 +7,41 @@ const source = "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spa
 const original = "/lineup-media/source-video-stills/cs2tricks/ancient/8ee5a6fb-7370-4f53-b423-fb835ef2c990.jpg";
 test.use({ serviceWorkers: "block" });
 
+for (const width of [320, 1440]) {
+  test(`numbered spawn sheets show the selected standing point and keep the source photo at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: width === 320 ? 640 : 1080 });
+    for (const [href, slot, count] of [
+      [route, 4, 5],
+      ["/#utilities?map=anubis&level=main&side=T&lineup=precise-setpos-anubis-61-t", 1, 11],
+      ["/#utilities?map=dust2&level=main&side=T&lineup=instant-setpos-dust2-77", 11, 7],
+      ["/#utilities?map=cache&level=main&side=CT&lineup=essential-setpos-cache-167", 2, 5],
+      ["/#utilities?map=vertigo&level=lower&side=CT&lineup=instant-viri-vertigo-ramp-ct1", 1, 5],
+    ] as const) {
+      await page.goto(href);
+      const viewer = page.locator(".ul-media-dialog[open]");
+      const map = viewer.locator(".ul-standing-map");
+      const pins = map.locator("g[data-spawn-slot]");
+      await expect(pins).toHaveCount(count);
+      await expect(map.locator(".is-current")).toHaveAttribute("data-spawn-slot", String(slot));
+      await expect(map.getByRole("img")).toBeVisible();
+      if (href.includes("map=vertigo")) await expect(map).toHaveAttribute("data-origin-level", "upper");
+      const hidden = await pins.evaluateAll(markers => markers.filter(marker => {
+        const box = marker.getBoundingClientRect();
+        return !marker.contains(document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2));
+      }).map(marker => marker.getAttribute("data-spawn-slot")));
+      expect(hidden).toEqual([]);
+      const photo = viewer.getByRole("button", { name: "Position photo", exact: true });
+      await photo.click();
+      await expect(viewer.locator(".ul-photo-canvas img")).toBeVisible();
+      await expect(map).toHaveCount(0);
+      await viewer.getByRole("button", { name: "Spawn map", exact: true }).click();
+      await expect(pins).toHaveCount(count);
+      await page.keyboard.press("d");
+      await expect(viewer.getByRole("button", { name: "Step 2: First-person standing view" })).toHaveAttribute("aria-pressed", "true");
+    }
+  });
+}
+
 for (const width of [1280, 390]) {
   test(`the CT Spawn 4 pin and first-person standing frame keep their original source at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });

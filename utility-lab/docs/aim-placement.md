@@ -2,6 +2,28 @@
 
 Open **Where to aim** for the marked first-person view, then press **D** for **Aim detail**. This fourth step shows the publisher’s close-up when available. Otherwise it magnifies the verified aiming point in the same photo by 2.5×. **D** continues to Landing and **A** moves back one step. The default cyan crosshair has a dark outline and an open center so the aiming pixel stays visible. The crosshair icon toggles the overlay. **Crosshair settings** changes its colour, size and shape and saves those choices in the current browser.
 
+## Coverage checked on 27 November 2026
+
+| Map | Published guides | Original close-up | Marked photo enlarged | Numbered spawn guides | Archived video-only guides |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Mirage | 245 | 234 | 11 | 12 | 28 |
+| Dust II | 221 | 198 | 23 | 19 | 26 |
+| Inferno | 220 | 206 | 14 | 9 | 27 |
+| Nuke | 197 | 84 | 113 | 11 | 24 |
+| Ancient | 176 | 166 | 10 | 18 | 26 |
+| Anubis | 320 | 282 | 38 | 28 | 29 |
+| Cache | 144 | 80 | 64 | 27 | 36 |
+| Vertigo | 116 | 38 | 78 | 5 | 27 |
+| **Total** | **1,639** | **1,288** | **351** | **129** | **223** |
+
+Every published guide has an Aim detail and a Landing image. Three running Inferno throws from B Entrance use their creator video for the first-person standing view because their available stills show the player already moving. The archive column counts older video-only links outside the published galleries.
+
+The review recovered 638 distinct original close-up files for 685 published entries. Some entries share their creator page across the two teams. Each confirmed pair matches the exact page and original wide-camera URL in the public CS2Tricks guide data. The close-ups decoded at their native resolution and use the publisher’s centered reticle. The build reads the evidence once per guide and delivers only the small image reference. The original files stay on the creator’s CDN. [Image identities, native dimensions and SHA-256 hashes](data/cs2tricks-aim-closeups.json)
+
+The five numbered Mirage Window and nine numbered Dust II Mid Doors guides also received individually reviewed aim cues. Dust II illustrates why separate creator numbering matters. Stellara’s #5 and setpos T15 both start on the same square, but one aims at a fastening on a cable and the other uses the blank wall above it. Both keep their own recording and aim point. [Stellara’s #5](https://www.cs2tricks.com/nades/dust2/smokes/mid-doors-from-t-spawn-5-d314) · [setpos T15](https://setpos.gg/dust2/mid-doors/t15)
+
+## Source coordinates
+
 `UtilityPhoto.aimPoint` stores normalized coordinates against the **full original image**, before any selected panel. The viewer maps that point through contain sizing, zoom, scrolling and panel selection. It never uses the centre of a cropped panel as a substitute for an aiming point. Metadata survives validation and portable copies.
 
 Public UI evidence collected 10 November 2026, without launching or inspecting CS2, Steam, game processes or game files:

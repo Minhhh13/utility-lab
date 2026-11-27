@@ -42,6 +42,7 @@ import {
 import { MAPS, themedRadarImage, type GameMap } from "./maps";
 import MediaImage from "./MediaImage";
 import LineupGallery from "./LineupGallery";
+import { reviewedSpawnMap } from "./data/all-map-spawn-sheets";
 import GuideMapPreview from "./GuideMapPreview";
 import { lineupWalkthrough } from "./lineup-walkthrough";
 import useMapNavigation from "./useMapNavigation";
@@ -341,7 +342,7 @@ async function downloadLineup(item: UtilityReference) {
   );
 }
 
-function ThrowInputs({ method }: { method: string }) {
+function ThrowInputs({ method, cue }: { method: string; cue?: string }) {
   const label = method.replace(/\bmiddle[ -]?(?:click|throw)\b/gi, "LMB + RMB");
   const both = /both|middle[ -]?click/i.test(label) || (/LMB/i.test(label) && /RMB/i.test(label)),
     left = both || /LMB|left[ -]?click/i.test(label),
@@ -415,7 +416,7 @@ function ThrowInputs({ method }: { method: string }) {
         )}
       </div>
       <p>
-        {label || "Throw inputs not recorded"}
+        {cue || label || "Throw inputs not recorded"}
       </p>
     </div>
   );
@@ -483,7 +484,7 @@ function LineupMedia({ record, theme, onShowThrows }: { record: UtilityReference
   const formats = photos.length > 0 ? (
     <div className="ul-media-tabs" role="group" aria-label="Lineup media type">
       <button title="Photos" aria-pressed={mode === "photos"} onClick={() => { setMode("photos"); setLoaded(false); }}>
-        <Images size={16} />Photos <span>{steps.flatMap(step => step.views).filter(view => view.photo).length}</span>
+        <Images size={16} />Photos <span>{steps.flatMap(step => step.views).filter(view => view.photo && !view.standingMap).length}</span>
       </button>
       <button aria-pressed={mode === "video"} disabled={!video} title={video ? "Watch video" : "No video for this guide"} onClick={() => { setMode("video"); setLoaded(false); }}>
         <Video size={16} />Video
@@ -559,7 +560,7 @@ function LineupMedia({ record, theme, onShowThrows }: { record: UtilityReference
       <div className="ul-media-footer">
         <div className="ul-viewer-keys">
           <h3>Keys</h3>
-          <ThrowInputs method={record.throwType} />
+          <ThrowInputs method={record.throwType} cue={reviewedSpawnMap(record) ? record.steps.slice(2).join(" ") : undefined} />
         </div>
         {(mode === "video" || !steps.length) && guideMap}
         {source && (mode === "video" || !current?.photo?.source) && (

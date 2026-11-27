@@ -7,7 +7,12 @@ test("A and D cycle the photo guide from the dialog and leave other controls alo
   const viewer = page.locator(".ul-media-dialog[open]");
   const stages = viewer.getByRole("group", { name: "Choose lineup photo" }).getByRole("button");
   const position = stages.nth(0), setup = stages.nth(1), aim = stages.nth(2);
-  await expect(viewer.getByRole("button", { name: "Next photo" })).toHaveAttribute("aria-keyshortcuts", "D");
+  for (const [label, key] of [["Previous photo", "A"], ["Next photo", "D"]]) {
+    const button = viewer.getByRole("button", { name: label, exact: true });
+    await expect(button.locator("kbd")).toHaveText(key);
+    await expect(button.locator("kbd")).toBeVisible();
+    await expect(button).toHaveAttribute("aria-keyshortcuts", key);
+  }
   await viewer.getByRole("button", { name: "Close lineup media" }).focus();
   await page.keyboard.press("a");
   await expect(stages.last()).toHaveAttribute("aria-pressed", "true");

@@ -1,0 +1,133 @@
+{
+  "reviewedOn": "2026-11-27",
+  "setpos": [
+    {
+      "mapId": "mirage", "side": "CT", "source": "https://setpos.gg/mirage",
+      "calibration": {"posX":-3230,"posY":1713,"scale":5,"radarSize":1024}, "registration": "setpos-mirage-main-20261126",
+      "slots": [
+        {"slot":5,"spawnId":"mirage-ct-auto-4","world":[-1776,-1976],"exampleRecipe":103}
+      ]
+    },
+    {
+      "mapId": "mirage", "side": "T", "source": "https://setpos.gg/mirage",
+      "calibration": {"posX":-3230,"posY":1713,"scale":5,"radarSize":1024}, "registration": "setpos-mirage-main-20261126",
+      "slots": [
+        {"slot":1,"spawnId":"mirage-t-auto-6","world":[1296,-352],"exampleRecipe":32},
+        {"slot":2,"spawnId":"mirage-t-auto-5","world":[1216,-307],"exampleRecipe":31},
+        {"slot":4,"spawnId":"mirage-t-auto-4","world":[1216,-211],"exampleRecipe":29},
+        {"slot":6,"spawnId":"mirage-t-auto-3","world":[1216,-115],"exampleRecipe":28},
+        {"slot":8,"spawnId":"mirage-t-auto-2","world":[1216,-16],"exampleRecipe":25},
+        {"slot":9,"spawnId":"mirage-t-auto-7","world":[1136,32],"exampleRecipe":155},
+        {"slot":10,"spawnId":"mirage-t-auto-1","world":[1296,32],"exampleRecipe":22}
+      ]
+    },
+    {
+      "mapId": "dust2", "side": "T", "source": "https://setpos.gg/dust2",
+      "calibration": {"posX":-2476,"posY":3239,"scale":4.4,"radarSize":1024}, "registration": "setpos-dust2-main-20261124",
+      "slots": [
+        {"slot":1,"spawnId":"dust2-t-auto-2","world":[-1181,-754],"exampleRecipe":113},
+        {"slot":3,"spawnId":"dust2-t-auto-10","world":[-1076,-843],"exampleRecipe":169},
+        {"slot":11,"spawnId":"dust2-t-spawn-5","world":[-533,-754],"exampleRecipe":77},
+        {"slot":12,"spawnId":"dust2-t-spawn-4","world":[-493,-808],"exampleRecipe":2},
+        {"slot":13,"spawnId":"dust2-t-spawn-3","world":[-428,-843],"exampleRecipe":65},
+        {"slot":14,"spawnId":"dust2-t-spawn-2","world":[-367,-808],"exampleRecipe":1},
+        {"slot":15,"spawnId":"dust2-t-spawn-1","world":[-332,-754],"exampleRecipe":110}
+      ]
+    },
+    {
+      "mapId": "dust2", "side": "CT", "source": "https://setpos.gg/dust2",
+      "calibration": {"posX":-2476,"posY":3239,"scale":4.4,"radarSize":1024}, "registration": "setpos-dust2-main-20261124",
+      "slots": [
+        {"slot":1,"spawnId":"dust2-ct-spawn-1","world":[351.3921203613281,2352.9423828125],"exampleRecipe":69},
+        {"slot":2,"spawnId":"dust2-ct-spawn-2","world":[334.3687438964844,2433.733642578125],"exampleRecipe":5},
+        {"slot":3,"spawnId":"dust2-ct-spawn-3","world":[258.1593933105469,2480.5537109375],"exampleRecipe":6},
+        {"slot":4,"spawnId":"dust2-ct-spawn-4","world":[182.24990844726562,2439.01171875],"exampleRecipe":7},
+        {"slot":5,"spawnId":"dust2-ct-auto-1","world":[160.12274169921875,2369.67626953125],"exampleRecipe":109}
+      ]
+    },
+    {
+      "mapId": "inferno", "side": "CT", "source": "https://setpos.gg/inferno",
+      "calibration": {"posX":-2087,"posY":3870,"scale":4.9,"radarSize":1024}, "registration": "setpos-inferno-main-20261124",
+      "slots": [
+        {"slot":1,"spawnId":"inferno-ct-auto-6","world":[2292.06005859375,2027.68994140625],"exampleRecipe":85},
+        {"slot":2,"spawnId":"inferno-ct-auto-3","world":[2353,1977],"exampleRecipe":82},
+        {"slot":3,"spawnId":"inferno-ct-auto-5","world":[2397,2079],"exampleRecipe":84},
+        {"slot":4,"spawnId":"inferno-ct-auto-2","world":[2472.349853515625,2005.969970703125],"exampleRecipe":11},
+        {"slot":5,"spawnId":"inferno-ct-auto-1","world":[2493,2090],"exampleRecipe":10},
+        {"slot":6,"spawnId":"inferno-ct-auto-4","world":[2456.830078125,2153.159912109375],"exampleRecipe":83}
+      ]
+    },
+    {
+      "mapId": "nuke", "side": "T", "source": "https://setpos.gg/nuke",
+      "calibration": {"posX":-3453,"posY":2887,"scale":7,"radarSize":1024,"verticalSections":[{"id":"upper","label":"Upper","minZ":-495,"maxZ":10000},{"id":"lower","label":"Lower","minZ":-10000,"maxZ":-495}]}, "registration": "setpos-nuke-upper-20261124",
+      "slots": [
+        {"slot":1,"spawnId":"nuke-t-auto-2","world":[-1947.010009765625,-965.1099853515625],"exampleRecipe":104},
+        {"slot":3,"spawnId":"nuke-t-auto-5","world":[-1808,-1025],"exampleRecipe":115},
+        {"slot":4,"spawnId":"nuke-t-auto-4","world":[-1929,-1025],"exampleRecipe":172},
+        {"slot":5,"spawnId":"nuke-t-auto-6","world":[-1874,-1076],"exampleRecipe":106},
+        {"slot":6,"spawnId":"nuke-t-auto-7","world":[-1808,-1089],"exampleRecipe":79},
+        {"slot":7,"spawnId":"nuke-t-auto-8","world":[-1947.010009765625,-1102.1099853515625],"exampleRecipe":75},
+        {"slot":8,"spawnId":"nuke-t-auto-1","world":[-1832,-1160],"exampleRecipe":27}
+      ]
+    },
+    {
+      "mapId": "cache", "side": "CT", "source": "https://setpos.gg/cache",
+      "calibration": {"posX":-2000,"posY":3250,"scale":5.5,"radarSize":1024}, "registration": "setpos-cache-main-20261124",
+      "slots": [
+        {"slot":1,"spawnId":"cache-ct-auto-4","world":[-1400.283203125,706.8193359375],"exampleRecipe":16},
+        {"slot":2,"spawnId":"cache-ct-auto-3","world":[-1488.283203125,706.8193359375],"exampleRecipe":167},
+        {"slot":3,"spawnId":"cache-ct-auto-11","world":[-1524.283203125,794.8193359375],"exampleRecipe":78},
+        {"slot":4,"spawnId":"cache-ct-auto-2","world":[-1400.283203125,874.8193359375],"exampleRecipe":14},
+        {"slot":5,"spawnId":"cache-ct-auto-1","world":[-1488.283203125,874.8193359375],"exampleRecipe":135}
+      ]
+    },
+    {
+      "mapId": "cache", "side": "T", "source": "https://setpos.gg/cache",
+      "calibration": {"posX":-2000,"posY":3250,"scale":5.5,"radarSize":1024}, "registration": "setpos-cache-main-20261124",
+      "slots": [
+        {"slot":1,"spawnId":"cache-t-build25218825-9","world":[2995.8935546875,-168],"exampleRecipe":100},
+        {"slot":2,"spawnId":"cache-t-auto-5","world":[3094.2685546875,-152.58221435546875],"exampleRecipe":20},
+        {"slot":3,"spawnId":"cache-t-build25218825-11","world":[3171.6435546875,-100.83221435546875],"exampleRecipe":129},
+        {"slot":4,"spawnId":"cache-t-build25218825-8","world":[2949.0185546875,-47],"exampleRecipe":98},
+        {"slot":5,"spawnId":"cache-t-auto-4","world":[3041.7685546875,-21.08221435546875],"exampleRecipe":19},
+        {"slot":6,"spawnId":"cache-t-build25218825-6","world":[3162.1435546875,-5],"exampleRecipe":127},
+        {"slot":7,"spawnId":"cache-t-auto-3","world":[2916.7685546875,69.41778564453125],"exampleRecipe":18},
+        {"slot":8,"spawnId":"cache-t-build25218825-13","world":[3037.8935546875,66.66778564453125],"exampleRecipe":89},
+        {"slot":9,"spawnId":"cache-t-auto-2","world":[3077.7685546875,135.91778564453125],"exampleRecipe":17},
+        {"slot":10,"spawnId":"cache-t-build25218825-15","world":[2922.5185546875,165.66778564453125],"exampleRecipe":121}
+      ]
+    },
+    {
+      "mapId": "ancient", "side": "CT", "source": "https://setpos.gg/ancient",
+      "calibration": {"posX":-2953,"posY":2164,"scale":5,"radarSize":1024}, "registration": "setpos-ancient-main-20261126",
+      "slots": [
+        {"slot":1,"spawnId":"ancient-ct-auto-5","world":[-192,1696],"exampleRecipe":66},
+        {"slot":2,"spawnId":"ancient-ct-auto-3","world":[-256,1728],"exampleRecipe":40},
+        {"slot":3,"spawnId":"ancient-ct-auto-2","world":[-352,1728],"exampleRecipe":39},
+        {"slot":4,"spawnId":"ancient-ct-auto-1","world":[-448,1728],"exampleRecipe":38},
+        {"slot":5,"spawnId":"ancient-ct-auto-4","world":[-512,1696],"exampleRecipe":41}
+      ]
+    },
+    {
+      "mapId": "ancient", "side": "T", "source": "https://setpos.gg/ancient",
+      "calibration": {"posX":-2953,"posY":2164,"scale":5,"radarSize":1024}, "registration": "setpos-ancient-main-20261126",
+      "slots": [
+        {"slot":1,"spawnId":"ancient-t-auto-3","world":[-584,-2288],"exampleRecipe":50},
+        {"slot":2,"spawnId":"ancient-t-auto-1","world":[-520,-2224],"exampleRecipe":48},
+        {"slot":3,"spawnId":"ancient-t-auto-4","world":[-456,-2288],"exampleRecipe":51},
+        {"slot":4,"spawnId":"ancient-t-auto-2","world":[-392,-2224],"exampleRecipe":49},
+        {"slot":5,"spawnId":"ancient-t-auto-5","world":[-328,-2288],"exampleRecipe":55}
+      ]
+    },
+    {
+      "mapId": "anubis", "side": "CT", "source": "https://setpos.gg/anubis",
+      "calibration": {"posX":-2796,"posY":3328,"scale":5.22,"radarSize":1024}, "registration": "setpos-anubis-main-20261124",
+      "slots": [
+        {"slot":2,"spawnId":"anubis-ct-auto-3","world":[-400,2192],"exampleRecipe":36},
+        {"slot":3,"spawnId":"anubis-ct-auto-1","world":[-476,2216],"exampleRecipe":34},
+        {"slot":4,"spawnId":"anubis-ct-auto-2","world":[-560,2192],"exampleRecipe":35},
+        {"slot":5,"spawnId":"anubis-ct-auto-4","world":[-608,2120],"exampleRecipe":91}
+      ]
+    }
+  ]
+}

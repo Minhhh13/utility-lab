@@ -7,11 +7,29 @@ import { mergePhotoGuides, normalizeExpandedGuides } from "../src/expanded-guide
 import { PHOTO_GUIDE_LIBRARY } from "../src/guide-library.ts";
 import { MAPS } from "../src/maps.ts";
 import { utilityPhotos, isBundledPhoto } from "../src/utility-data.ts";
+import { NIC_AIM_LANDMARKS } from "../src/data/numbered-aim-landmarks-nic.ts";
+import { OTHER_AIM_LANDMARKS } from "../src/data/numbered-aim-landmarks-rest.ts";
 
 const guides = MAPS.flatMap(map => mergePhotoGuides(
   PHOTO_GUIDE_LIBRARY.filter(g => g.mapId === map.id),
   normalizeExpandedGuides(JSON.parse(readFileSync(new URL(`../src/data/expanded/${map.id}.json`, import.meta.url), "utf8")), map.id),
 ));
+
+test("numbered aim landmarks reach both the wide view and the close view of their own guide", () => {
+  for (const [id, cue] of Object.entries({...NIC_AIM_LANDMARKS, ...OTHER_AIM_LANDMARKS})) {
+    const record = guides.find(guide => guide.id === id);
+    assert.ok(record?.spawn, id);
+    const steps = lineupWalkthrough(record, utilityPhotos(record));
+    const wide = steps[2].views.find(view => view.photo?.kind === "aim");
+    assert.equal(wide?.caption, cue.wide, id);
+    assert.notEqual(cue.wide, cue.detail, id);
+    for (const view of steps[3].views) {
+      assert.equal(view.photo?.source, record.source, id);
+      assert.ok(view.photo?.caption.endsWith(cue.detail), id);
+      assert.ok(view.photo?.aimPoint, id);
+    }
+  }
+});
 const example = guides.find(g => g.id === "expanded-cs2tricks-mirage-window-from-back-alley-61ab-t")!;
 const gallery = (r: typeof example) => lineupWalkthrough(r, utilityPhotos(withAimPlacement(r)));
 

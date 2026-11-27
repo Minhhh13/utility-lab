@@ -2,9 +2,10 @@ import { hasCompleteGuideMedia } from "./expanded-guide-model.ts";
 import { photoStepName } from "./lineup-copy.ts";
 import { cs2tricksStagePhotos } from "./data/cs2tricks-stage-photos.ts";
 import { otherStagePhotos } from "./data/other-stage-photos.ts";
+import { reviewedSpawnMap } from "./data/all-map-spawn-sheets.ts";
 import type { UtilityPhoto, UtilityReference } from "./utility-data.ts";
 
-export type GalleryView = { photo?: UtilityPhoto; standingMap?: boolean; magnifyAim?: boolean };
+export type GalleryView = { photo?: UtilityPhoto; standingMap?: boolean; magnifyAim?: boolean; label?: string; caption?: string };
 export type GalleryStep = { stage?: "stand" | "setup" | "aim" | "detail" | "landing"; label: string; name: string; views: GalleryView[] };
 
 // For stationary CS2Tricks throws, the original wide camera shot is also a
@@ -39,12 +40,20 @@ export function lineupWalkthrough(record: UtilityReference, photos: UtilityPhoto
   const setup = source.setup ?? stationaryCamera(record, aims[0]);
   const results = photos.filter(p => p.kind === "landing");
   const landing = results.length || !source.landing ? results : [source.landing];
+  const stand: GalleryView[] = [...positions, ...context].map(photo => ({
+    photo, standingMap: source.setup?.image === photo.image,
+  }));
+  const spawnMap = reviewedSpawnMap(record);
+  if (positions[0] && spawnMap) {
+    stand[0] = { photo: positions[0], label: "Position photo" };
+    stand.unshift({ photo: positions[0], standingMap: true, label: "Spawn map" });
+  }
   return [
-    { stage: "stand", label: "Where to stand", name: "Where to stand", views: [...positions, ...context].map(photo => ({
-      photo, standingMap: source.setup?.image === photo.image,
-    })) },
+    { stage: "stand", label: "Where to stand", name: "Where to stand", views: stand },
     { stage: "setup", label: "First-person view", name: "First-person standing view", views: [{ photo: setup }] },
-    { stage: "aim", label: "Where to aim", name: "First-person aim", views: wide.map(photo => ({ photo })) },
+    { stage: "aim", label: "Where to aim", name: "First-person aim", views: wide.map(photo => ({
+      photo, caption: spawnMap && photo.kind === "aim" ? record.steps[1] : undefined,
+    })) },
     { stage: "detail", label: "Aim detail", name: "Aim detail", views: detail },
     { stage: "landing", label: "Landing", name: "Landing", views: landing.length ? landing.map(photo => ({ photo })) : [{}] },
   ];

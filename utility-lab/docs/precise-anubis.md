@@ -2,6 +2,20 @@
 
 This review uses public original publishers and their footage. It does not use a local game, game installation, configuration, demo playback or independent in-game throw testing. The accompanying machine-readable record is [precise-anubis-evidence.json](data/precise-anubis-evidence.json).
 
+## November 27 standing-position check
+
+All 23 T-side instant recipes on the publisher’s Anubis sheet resolve to 11 standing positions. For every recipe, the world position matches the first player-path sample and the publisher’s recorded starting command to within 0.000001 world units. The v22 radar delivered by the publisher also matches the website’s radar byte for byte. The numbered reference uses the publisher’s visible “T spawn” label. For example, T1 has internal ID `anubis-t-auto-5`, while T7 has internal ID `anubis-t-auto-1`. Each guide identifies its position relative to nearby spawns on the north-up map. [Publisher’s Anubis sheet](https://setpos.gg/anubis) · [Per-slot and per-recipe evidence](data/anubis-t-spawn-audit.json)
+
+Eight Conn throws move between standing and release. For example, T2 starts at world XY `(-416, -1696)` and releases at approximately `(-416.76, -1689.90)`. Its standing pin projects the first pair to `(445.25, 939.89)` on the 1000-unit map. Each standing photo comes from its own guide’s original video at 0.2 seconds, before that video’s first aiming cue at 3.50 or 3.52 seconds. The audit compares the rendered-video timestamps and the bundled frame hashes. [T2 Conn guide](https://setpos.gg/anubis/conn/t2)
+
+The 16 other published Anubis T-side smoke guides labelled “T Spawn” use setup areas such as a wall corner. Their creator pages specify no spawn number. They retain their own source locations. [Example setup by the table between T Spawn and Alley](https://www.cs2tricks.com/nades/anubis/smokes/mid-window-from-t-spawn-6638)
+
+## November 27 aim and release check
+
+All 23 original Aim frames decoded at 1920 × 1080. Each file’s SHA-256 matched the hash in its publisher URL. The wide view identifies the part of the courtyard to face. Aim detail enlarges the same centered frame 2.5× and describes the visible landmark or gap at the crosshair. Three Inside Connector throws aim into open sky. T2 uses the dark window opening below the roof crest as a ruler. T10 and T11 use the width of the lavender hanging cloth to show two different heights above the roof. [T2](https://setpos.gg/anubis/conn/t2) · [T10](https://setpos.gg/anubis/conn/t10) · [T11](https://setpos.gg/anubis/conn/t11)
+
+The T5 and T7 Inside Connector recordings use different inputs. For T5 the recorded jump and LMB release both occur at 0.457 seconds with Shift held. The first W press follows at 0.476 seconds. For T7, W and Shift are already held at the 0.315-second jump, and LMB releases at 0.385 seconds. The guides use those individual input events to explain when to move. The November 24 evidence retains the publisher’s original technique and its then-normalized walking label for T5. [T5](https://setpos.gg/anubis/conn/t5) · [T7](https://setpos.gg/anubis/conn/t7)
+
 ## Included references
 
 `src/data/precise-anubis.ts` contains 27 complete source records: 23 current T-spawn smokes from setpos.gg, two Window mollies from CSNADES, one improved existing Camera/A Connector source from Upper ledge, and one new running Camera reference from Upper steps. The evidence retains a 28th metadata/navigation review of the existing GO NADE Camera record. That source video's original URL is currently unavailable, so the GO NADE Camera override is withheld from the exported records.
@@ -14,7 +28,7 @@ This review uses public original publishers and their footage. It does not use a
 
 The combined recipes cover all 11 actual source-numbered T spawn positions. They do not claim that every target has a recipe for every spawn. Numbers belong to setpos.gg's sheet and must not be mixed with CSNADES or a different creator's numbering. The published source records were added in September and October 2026; the source radar is v22 dated 19 November 2026.
 
-Each setpos record preserves its exact original movement timeline, input events, world origin/destination/impact, console position and angles, pro-match provenance and source addition date in the evidence file. W-jump throws show **Tap W + Jump + LMB**. Walking variants preserve Shift+W; crouched variants preserve crouch. Generic stationary badges must not replace those instructions.
+Each setpos record preserves its original movement timeline, input events, world origin, destination, impact, console position and angles, match provenance and source addition date in the evidence file. W-jump throws show **Tap W + Jump + LMB**. The two Shift variants use the movement sequences above. The crouched throws retain their crouch input.
 
 The setpos standing reference is an unchanged frame at 0.2 seconds from that recipe's original HD clip. Its caption explicitly calls it the starting view. Some starting views already face the sky; these are not presented as separate third-person foot-placement photos. Matching original aim/checkpoint and landing photos remain linked to the same recipe. Primary small-tab videos use the publisher's SD clip, with the same recipe's HD clip as fallback.
 

@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { findLineupOrigin, loadMapOrigins, type OriginLookup } from "./lineup-origins";
 import { MAPS } from "./maps";
+import { reviewedSpawnMap } from "./data/all-map-spawn-sheets";
 import type { UtilityReference } from "./utility-data";
 import "./lineup-standing-map.css";
 
@@ -42,17 +43,44 @@ export default function LineupStandingMap({ record, fallback, children }: Props)
   const left = Math.max(0, Math.min(1000 - CROP_SIZE, origin.x - CROP_SIZE / 2));
   const top = Math.max(0, Math.min(1000 - CROP_SIZE, origin.y - CROP_SIZE / 2));
   const location = [map.name, ...(map.levels.length > 1 ? [floor.name] : []), origin.label].join(" · ");
+  const sheet = reviewedSpawnMap(record);
+  const selected = sheet?.points.find(p => p.slot === record.spawn?.slot);
+  const points = sheet?.registration === origin.registrationId && selected
+    && Math.hypot(selected.x - origin.x, selected.y - origin.y) < .02 ? sheet.points : undefined;
+  let viewBox = `${left} ${top} ${CROP_SIZE} ${CROP_SIZE}`;
+  let markerScale = 1;
+  if (points) {
+    const xs = points.map(p => p.x), ys = points.map(p => p.y);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const minY = Math.min(...ys), maxY = Math.max(...ys);
+    // A lone documented spawn still needs recognizable surroundings.
+    const width = Math.max(62, maxX - minX + 24);
+    const height = Math.max(46, maxY - minY + 24);
+    const x = Math.max(0, Math.min(1000 - width, (minX + maxX - width) / 2));
+    const y = Math.max(0, Math.min(1000 - height, (minY + maxY - height) / 2));
+    viewBox = `${x} ${y} ${width} ${height}`;
+    markerScale = Math.min(1.75, Math.max(1, Math.max(width, height) / 96));
+  }
   return <>{children}<div className="ul-photo-frame ul-standing-map" data-origin-registration={origin.registrationId}
+    data-numbered-spawns={points?.length}
     data-origin-level={floor.id} data-lineup-id={record.id}>
     {loading && pending}
-    <svg role="img" aria-label={`Recorded standing position: ${location}`} viewBox={`${left} ${top} ${CROP_SIZE} ${CROP_SIZE}`}
+    <svg role="img" aria-label={`Recorded standing position: ${location}`} viewBox={viewBox}
       style={loading ? { visibility: "hidden" } : undefined}>
       <image key={url} href={url} x="0" y="0" width="1000" height="1000"
         onLoad={() => setArtwork({ url, loaded: true })} onError={() => setArtwork({ url, loaded: false })} />
-      <g className="ul-standing-map-pin" transform={`translate(${origin.x} ${origin.y})`}>
+      {points ? points.map(p => <g key={p.slot} data-spawn-slot={p.slot}
+        className={p === selected ? "ul-standing-map-pin is-current" : "ul-standing-map-peer"}
+        transform={`translate(${p.x} ${p.y})`}>
+        <g transform={`scale(${markerScale})`}>
+          {p === selected && <circle className="ul-standing-map-ring" r="4.7" vectorEffect="non-scaling-stroke"/>}
+          <circle r="3.5" className="ul-standing-map-disc" vectorEffect="non-scaling-stroke"/>
+          <text textAnchor="middle" dy="0.34em">{p.slot}</text>
+        </g>
+      </g>) : <g className="ul-standing-map-pin" transform={`translate(${origin.x} ${origin.y})`}>
         <circle r="10" className="ul-standing-map-halo" vectorEffect="non-scaling-stroke" />
         <circle r="3.5" fill="currentColor" stroke="white" vectorEffect="non-scaling-stroke" />
-      </g>
+      </g>}
     </svg>
     {!loading && <div className="ul-standing-map-location">
       <strong>{location}</strong>

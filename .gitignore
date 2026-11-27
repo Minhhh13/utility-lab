@@ -28,6 +28,7 @@ utility-lab/vendor/
 utility-lab/worker/
 utility-lab/scripts/*
 !utility-lab/scripts/build-expanded-catalogue.mjs
+!utility-lab/scripts/publisher-aim-closeup.mjs
 !utility-lab/scripts/build-origin-catalogue.mjs
 !utility-lab/scripts/check-local.mjs
 !utility-lab/scripts/serve-local.mjs

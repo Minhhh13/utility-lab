@@ -6,7 +6,7 @@
       "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-1-35af-ct",
       "mapId": "ancient",
       "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
-      "checkedAt": "2026-11-24",
+      "checkedAt": "2026-11-27",
       "publisherId": "761c8da9-2110-4bbb-a815-e77b46adb59d",
       "publisherUpdatedAt": "2026-07-16T21:09:49.882916Z",
       "publisherStatus": "approved",
@@ -31,9 +31,10 @@
         "y": 609
       },
       "reviewedInstructions": {
-        "position": "CT Spawn 1 only. Use the original blue CT Spawn #1 square.",
-        "aim": "Match spawn 1’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
-        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+        "position": "Use CT Spawn 1, the rightmost dot on the radar. The starting square is on the cobbles beside loose stones, with the stair recess to its left.",
+        "aim": "Face the temple across the courtyard. Find the U-shaped fittings on the dark brick wall above the carved stone band.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip.",
+        "aimDetail": "From the fitting on the left of the close-up, follow the mortar joint right. Stop at the T where a short seam drops down from that joint."
       },
       "position": {
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
@@ -59,7 +60,7 @@
       },
       "originalAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/4d3cda89-e884-4380-abe4-e5597b030089.webp",
-        "caption": "Match spawn 1’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "caption": "Face the temple across the courtyard. Find the U-shaped fittings on the dark brick wall above the carved stone band.",
         "kind": "aim",
         "aimPoint": {
           "x": 0.5,
@@ -69,7 +70,8 @@
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-1-35af",
         "httpStatus": 200,
         "visuallyReviewed": true,
-        "review": "Original camera aim view; source-centered crosshair registration retained."
+        "review": "Original camera aim view; source-centered crosshair registration retained.",
+        "sha256": "780bcf984d6384ed7bcd8261d29f0a11bd891cd1532f1f230818ec9ad2fc14fd"
       },
       "detailAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/f2fe1f99-ef8f-4eda-b0a6-9c23a547ae86.webp",
@@ -77,7 +79,21 @@
         "sha256": "7224e3a60ca20d3d0287d530ce4d8cfbbeab213fb4f849f466c2bb0b577a7cc7",
         "bytes": 85314,
         "visuallyReviewed": true,
-        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset.",
+        "caption": "Aim detail · From the fitting on the left of the close-up, follow the mortar joint right. Stop at the T where a short seam drops down from that joint.",
+        "registrationCheck": {
+          "sourceResolution": [
+            1400,
+            788
+          ],
+          "measuredMagnification": 3.789,
+          "centerOffsetFullPixels": [
+            0.5,
+            1.0
+          ],
+          "intensityCorrelation": 0.9846,
+          "method": "Rescale the close image and match its brightness pattern to the full image around the shared camera center. Offsets are measured in full-image pixels."
+        }
       },
       "video": {
         "url": "https://d1ntlvfrxziqo6.cloudfront.net/0e7363fb-fac9-47f1-9aa3-f8d723641c05_0919(8).mp4",
@@ -101,7 +117,7 @@
       "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-2-9550-ct",
       "mapId": "ancient",
       "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
-      "checkedAt": "2026-11-24",
+      "checkedAt": "2026-11-27",
       "publisherId": "bc4f0d2e-fc7d-45e6-ad1f-ebfd49b3dabe",
       "publisherUpdatedAt": "2026-06-02T19:31:54.759926Z",
       "publisherStatus": "approved",
@@ -126,9 +142,10 @@
         "y": 609
       },
       "reviewedInstructions": {
-        "position": "CT Spawn 2 only. Use the blue-marked CT Spawn #2 position.",
-        "aim": "Match spawn 2’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
-        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+        "position": "Use CT Spawn 2, the second dot from the right on the radar. Match the square at the foot of the recessed stone steps.",
+        "aim": "Turn from the steps toward the temple and raise your aim to its uppermost row of dark capstones. Use the skyline as your height reference.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip.",
+        "aimDetail": "Find the long sloping capstone between the two notches. Set the crosshair halfway along its top edge, where stone meets sky."
       },
       "position": {
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
@@ -154,7 +171,7 @@
       },
       "originalAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/f0a6a904-be13-4749-9e35-e4edeaecda48.webp",
-        "caption": "Match spawn 2’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "caption": "Turn from the steps toward the temple and raise your aim to its uppermost row of dark capstones. Use the skyline as your height reference.",
         "kind": "aim",
         "aimPoint": {
           "x": 0.5,
@@ -164,7 +181,8 @@
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-2-9550",
         "httpStatus": 200,
         "visuallyReviewed": true,
-        "review": "Original camera aim view; source-centered crosshair registration retained."
+        "review": "Original camera aim view; source-centered crosshair registration retained.",
+        "sha256": "1897eea5d6a6b12c00a12a1b5dafabefa6e55895d65370a65b4904cde34865df"
       },
       "detailAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/6261e009-9bb3-4771-a09a-979fde5df1b7.webp",
@@ -172,7 +190,21 @@
         "sha256": "a321be9a66b6834aeaeaa3f8295ad0b6c8487050ed37807f9a27da32574514b5",
         "bytes": 58644,
         "visuallyReviewed": true,
-        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset.",
+        "caption": "Aim detail · Find the long sloping capstone between the two notches. Set the crosshair halfway along its top edge, where stone meets sky.",
+        "registrationCheck": {
+          "sourceResolution": [
+            1400,
+            788
+          ],
+          "measuredMagnification": 3.797,
+          "centerOffsetFullPixels": [
+            1.5,
+            0.0
+          ],
+          "intensityCorrelation": 0.9926,
+          "method": "Rescale the close image and match its brightness pattern to the full image around the shared camera center. Offsets are measured in full-image pixels."
+        }
       },
       "video": {
         "url": "https://d1ntlvfrxziqo6.cloudfront.net/174f2407-a14c-4b86-b3cc-de47a317b4da_0919(7).mp4",
@@ -196,7 +228,7 @@
       "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-3-494a-ct",
       "mapId": "ancient",
       "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
-      "checkedAt": "2026-11-24",
+      "checkedAt": "2026-11-27",
       "publisherId": "7cbf25f4-5710-4974-80f9-abd7a898ad48",
       "publisherUpdatedAt": "2026-06-02T19:31:52.305049Z",
       "publisherStatus": "approved",
@@ -221,9 +253,10 @@
         "y": 609
       },
       "reviewedInstructions": {
-        "position": "CT Spawn 3 only. Use the original blue CT Spawn #3 box.",
-        "aim": "Match spawn 3’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
-        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+        "position": "Use CT Spawn 3, the middle of the five dots. In the starting photo the blue square is against the pale wall, with the fern to its left and the steps to its right.",
+        "aim": "Look up to the roofline. Find the capstone immediately to the left of the tree that rises behind the roof.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip.",
+        "aimDetail": "Use the middle of that capstone for horizontal alignment. Leave the small gap of sky shown between the crosshair and the stone."
       },
       "position": {
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
@@ -249,7 +282,7 @@
       },
       "originalAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/ae9c5635-cc95-4652-bde9-f7b8df7dc048.webp",
-        "caption": "Match spawn 3’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "caption": "Look up to the roofline. Find the capstone immediately to the left of the tree that rises behind the roof.",
         "kind": "aim",
         "aimPoint": {
           "x": 0.5,
@@ -259,7 +292,8 @@
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-3-494a",
         "httpStatus": 200,
         "visuallyReviewed": true,
-        "review": "Original camera aim view; source-centered crosshair registration retained."
+        "review": "Original camera aim view; source-centered crosshair registration retained.",
+        "sha256": "67800341233200cab7a3d24d7cb594a88d70aee1b1df0743975b5f1cbec3e41e"
       },
       "detailAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/c82c5839-0062-418b-b023-2d7d4a9b35ef.webp",
@@ -267,7 +301,21 @@
         "sha256": "758e719e12faaa74bdb0f703c087204c30cf9ee3160f5859475b78ca946366aa",
         "bytes": 64606,
         "visuallyReviewed": true,
-        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset.",
+        "caption": "Aim detail · Use the middle of that capstone for horizontal alignment. Leave the small gap of sky shown between the crosshair and the stone.",
+        "registrationCheck": {
+          "sourceResolution": [
+            1400,
+            788
+          ],
+          "measuredMagnification": 3.717,
+          "centerOffsetFullPixels": [
+            1.5,
+            -1.0
+          ],
+          "intensityCorrelation": 0.9936,
+          "method": "Rescale the close image and match its brightness pattern to the full image around the shared camera center. Offsets are measured in full-image pixels."
+        }
       },
       "video": {
         "url": "https://d1ntlvfrxziqo6.cloudfront.net/8933dadc-c1c6-43f5-8ff1-538898e34eb1_0919(6).mp4",
@@ -291,7 +339,7 @@
       "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-4-8b27-ct",
       "mapId": "ancient",
       "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
-      "checkedAt": "2026-11-24",
+      "checkedAt": "2026-11-27",
       "publisherId": "8ee5a6fb-7370-4f53-b423-fb835ef2c990",
       "publisherUpdatedAt": "2026-07-16T21:10:06.666013Z",
       "publisherStatus": "approved",
@@ -316,9 +364,10 @@
         "y": 609
       },
       "reviewedInstructions": {
-        "position": "CT Spawn 4 only. Use CT Spawn #4 facing the temple doors.",
-        "aim": "Match spawn 4’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
-        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+        "position": "Use CT Spawn 4, the second dot from the left on the radar. Face the temple across the courtyard, with the blue B sign to the left of center and the yellow A sign to the right.",
+        "aim": "Find the pale horizontal lip below the dark roof capstones. Drop to the row of large rectangular stones directly beneath that lip.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip.",
+        "aimDetail": "On the broad stone in the center, place the crosshair just down and left of its upper-right corner, inside the stone face."
       },
       "position": {
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
@@ -344,7 +393,7 @@
       },
       "originalAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/01af94e8-0886-4e9b-9da5-0d22f1c5cfa7.webp",
-        "caption": "Match spawn 4’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "caption": "Find the pale horizontal lip below the dark roof capstones. Drop to the row of large rectangular stones directly beneath that lip.",
         "kind": "aim",
         "aimPoint": {
           "x": 0.5,
@@ -354,7 +403,8 @@
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-4-8b27",
         "httpStatus": 200,
         "visuallyReviewed": true,
-        "review": "Original camera aim view; source-centered crosshair registration retained."
+        "review": "Original camera aim view; source-centered crosshair registration retained.",
+        "sha256": "c4503579af93b25b455dcb0acd2f90ea90620f167b0910d185c8671aa3fa37e1"
       },
       "detailAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/619373b7-10d7-407a-8c7d-d5da1cb01b05.webp",
@@ -362,7 +412,21 @@
         "sha256": "614f04e908cb443570cc8200bd5ba32dd925b9f654991af0b2e4760b6507073e",
         "bytes": 77540,
         "visuallyReviewed": true,
-        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset.",
+        "caption": "Aim detail · On the broad stone in the center, place the crosshair just down and left of its upper-right corner, inside the stone face.",
+        "registrationCheck": {
+          "sourceResolution": [
+            1400,
+            788
+          ],
+          "measuredMagnification": 3.727,
+          "centerOffsetFullPixels": [
+            0.0,
+            -0.5
+          ],
+          "intensityCorrelation": 0.9953,
+          "method": "Rescale the close image and match its brightness pattern to the full image around the shared camera center. Offsets are measured in full-image pixels."
+        }
       },
       "video": {
         "url": "https://www.youtube.com/watch?v=C5maGnbNbPM",
@@ -393,7 +457,7 @@
       "id": "expanded-cs2tricks-ancient-elbow-from-ct-spawn-5-0e13-ct",
       "mapId": "ancient",
       "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
-      "checkedAt": "2026-11-24",
+      "checkedAt": "2026-11-27",
       "publisherId": "5172e456-1115-4de5-8768-c9d939610d45",
       "publisherUpdatedAt": "2026-06-02T19:31:16.983563Z",
       "publisherStatus": "approved",
@@ -418,9 +482,10 @@
         "y": 609
       },
       "reviewedInstructions": {
-        "position": "CT Spawn 5 only. Use the original blue CT Spawn #5 box.",
-        "aim": "Match spawn 5’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
-        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip."
+        "position": "Use CT Spawn 5, the leftmost dot on the radar. The starting square is in shadow by a fern, next to the brighter square on its right.",
+        "aim": "Face the dark brick wall and find the U-shaped stone fitting below the roof, just left of the large leaves in the wide photo.",
+        "release": "Hold LMB and walk forward with Shift + W, then jump and release LMB. Match this spawn’s short walking timing in its clip.",
+        "aimDetail": "Center horizontally between the two stone prongs. Place the crosshair near the top of the opening, level with the upper part of the prongs."
       },
       "position": {
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
@@ -446,7 +511,7 @@
       },
       "originalAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/1f16d949-b225-40b6-8339-5baed8e0b6b8.webp",
-        "caption": "Match spawn 5’s marked brick seam above the temple ledge; use the detail photo to distinguish the individual stone.",
+        "caption": "Face the dark brick wall and find the U-shaped stone fitting below the roof, just left of the large leaves in the wide photo.",
         "kind": "aim",
         "aimPoint": {
           "x": 0.5,
@@ -456,7 +521,8 @@
         "source": "https://www.cs2tricks.com/nades/ancient/smokes/elbow-from-ct-spawn-5-0e13",
         "httpStatus": 200,
         "visuallyReviewed": true,
-        "review": "Original camera aim view; source-centered crosshair registration retained."
+        "review": "Original camera aim view; source-centered crosshair registration retained.",
+        "sha256": "5175a54d94967d2425fc6f3711bf2e9d3ed37f9262e47241c2e16614d986b094"
       },
       "detailAim": {
         "image": "https://d1ntlvfrxziqo6.cloudfront.net/7f3424f1-0575-49fc-97ac-66a4a267c5cf.webp",
@@ -464,7 +530,21 @@
         "sha256": "1b885f05b38a187de8828a57dbedc1ceb6ec181a8f9c2ddd579e6cd098756449",
         "bytes": 104600,
         "visuallyReviewed": true,
-        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset."
+        "review": "Unchanged original publisher zoomed camera image; its center corresponds to the full aim image center. No invented point or generated asset.",
+        "caption": "Aim detail · Center horizontally between the two stone prongs. Place the crosshair near the top of the opening, level with the upper part of the prongs.",
+        "registrationCheck": {
+          "sourceResolution": [
+            1400,
+            788
+          ],
+          "measuredMagnification": 3.733,
+          "centerOffsetFullPixels": [
+            -0.5,
+            -0.5
+          ],
+          "intensityCorrelation": 0.9908,
+          "method": "Rescale the close image and match its brightness pattern to the full image around the shared camera center. Offsets are measured in full-image pixels."
+        }
       },
       "video": {
         "url": "https://d1ntlvfrxziqo6.cloudfront.net/b9e4e9ba-5592-49e8-aa3a-613955121b64_0919(4).mp4",

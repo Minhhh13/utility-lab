@@ -1,55 +1,55 @@
 {
-  "generatedAt": "2026-11-27T01:56:56.814Z",
+  "generatedAt": "2026-11-27T02:38:29.994Z",
   "generatedLocalDate": "2026-11-27",
   "timeZone": "Australia/Sydney",
   "method": "Normalize every generated per-map JSON, then mergePhotoGuides(PHOTO_GUIDE_LIBRARY, expanded). Counts are side-specific browsing records; unique source pages and image/video resources are counted separately.",
   "generatedInputs": [
     {
       "path": "src/data/expanded/mirage.json",
-      "bytes": 436856,
-      "sha256": "7258286f707ed38f24ac992825437dd3e62857e4ada94bb534c86d799d95d713",
+      "bytes": 497154,
+      "sha256": "b255d85ab53de0cd6b55773cdd679566795ebb59dd4d1ef96931c977f9291f7c",
       "rows": 245
     },
     {
       "path": "src/data/expanded/dust2.json",
-      "bytes": 401721,
-      "sha256": "c6d9af3afe17f8243ed3a475a970ac24d1a5a62a3300ae07660b4df298e6aece",
+      "bytes": 454242,
+      "sha256": "f0390d2bec309b668e2f6d27b463a7a986810722fe0c68fb47814fd0b7306b26",
       "rows": 221
     },
     {
       "path": "src/data/expanded/inferno.json",
-      "bytes": 441852,
-      "sha256": "3bb3c1d426f002cc7966df629f3b8fdf7ea723ab4a2bacbd49ebeb49edd42628",
+      "bytes": 444387,
+      "sha256": "d018aeceb43e85a036965924316e7246541078e9dea15db0ceccf8c39b8079b4",
       "rows": 220
     },
     {
       "path": "src/data/expanded/nuke.json",
-      "bytes": 319699,
-      "sha256": "e6969c85fb073c677d6e7c0868669469e18bedd9f19a041eed2b72c800837963",
+      "bytes": 343023,
+      "sha256": "3132b27f0d56772146880b789c252a7f36e881a7d4502896b043f1bbbd48d868",
       "rows": 195
     },
     {
       "path": "src/data/expanded/ancient.json",
-      "bytes": 314389,
-      "sha256": "dae92b193b5f2d5eef2f5d006f360cef087ddf168d35f1b162f1bfb207587b21",
+      "bytes": 360819,
+      "sha256": "a57ff189c87cbd0862d5df1a7167f2883865416ca8e035ba8712b3d72326e3ea",
       "rows": 176
     },
     {
       "path": "src/data/expanded/anubis.json",
-      "bytes": 633209,
-      "sha256": "bc90691dc4ba547bb7fb5af675ca50bff1f0a8f48d66ba2c610f0bdb70ef307d",
+      "bytes": 635893,
+      "sha256": "fadc76de0a7043d9cd7013b8e05f89806137d14b4a46935e8200712dd789ecbb",
       "rows": 318
     },
     {
       "path": "src/data/expanded/cache.json",
-      "bytes": 285111,
-      "sha256": "4e436946204654bb18d8146269ae40d90235bcfd6c4f11f3e1b23bf635dd0ba5",
+      "bytes": 287253,
+      "sha256": "f2da2f5ae37dcb41e384d84d8d20b0c09e9d17a5894a9d86affdc99cbbd759b4",
       "rows": 144
     },
     {
       "path": "src/data/expanded/vertigo.json",
-      "bytes": 177787,
-      "sha256": "a34c8de340abb339833e9fdfb3f049441235fcd19fe66a4d5ff782238f8ec7fd",
+      "bytes": 186667,
+      "sha256": "75c0421ae0a706a594fb3d945d3b2d867b9ecac789b5100621b6bc2f3dadadd0",
       "rows": 116
     }
   ],
@@ -434,24 +434,24 @@
       "rowsWithPosition": 1639,
       "rowsWithAim": 1639,
       "rowsWithPositionAndAim": 1639,
-      "mediaReferences": 5364,
-      "uniqueImages": 5090,
-      "remoteReferences": 4920,
-      "uniqueRemoteImages": 4652,
+      "mediaReferences": 6049,
+      "uniqueImages": 5727,
+      "remoteReferences": 5605,
+      "uniqueRemoteImages": 5289,
       "bundledReferences": 444,
       "uniqueBundledImages": 438,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2242,
+        "aim": 2927,
         "landing": 1431,
         "position": 1639,
         "release": 52
       },
       "kinds": {
         "aim": {
-          "references": 2242,
-          "uniqueImages": 2131,
-          "uniqueRemoteImages": 2096,
+          "references": 2927,
+          "uniqueImages": 2768,
+          "uniqueRemoteImages": 2733,
           "uniqueBundledImages": 35
         },
         "landing": {
@@ -551,9 +551,9 @@
       "detail": 1639,
       "landing": 1639
     },
-    "sourcedAimDetails": 603,
-    "magnifiedAimDetails": 1036,
-    "uniqueImages": 6753,
+    "sourcedAimDetails": 1288,
+    "magnifiedAimDetails": 351,
+    "uniqueImages": 7390,
     "markedAimViews": 3278,
     "standingVideoIds": [
       "expanded-cs2tricks-inferno-banana-logs-from-b-entrance-c431-ct",
@@ -895,24 +895,24 @@
       "rowsWithPosition": 1342,
       "rowsWithAim": 1342,
       "rowsWithPositionAndAim": 1342,
-      "mediaReferences": 4358,
-      "uniqueImages": 4106,
-      "remoteReferences": 3995,
-      "uniqueRemoteImages": 3748,
+      "mediaReferences": 4922,
+      "uniqueImages": 4625,
+      "remoteReferences": 4559,
+      "uniqueRemoteImages": 4267,
       "bundledReferences": 363,
       "uniqueBundledImages": 358,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 1834,
+        "aim": 2398,
         "landing": 1151,
         "position": 1342,
         "release": 31
       },
       "kinds": {
         "aim": {
-          "references": 1834,
-          "uniqueImages": 1732,
-          "uniqueRemoteImages": 1703,
+          "references": 2398,
+          "uniqueImages": 2251,
+          "uniqueRemoteImages": 2222,
           "uniqueBundledImages": 29
         },
         "landing": {
@@ -1334,24 +1334,24 @@
       "rowsWithPosition": 1635,
       "rowsWithAim": 1635,
       "rowsWithPositionAndAim": 1635,
-      "mediaReferences": 5349,
-      "uniqueImages": 5075,
-      "remoteReferences": 4905,
-      "uniqueRemoteImages": 4637,
+      "mediaReferences": 6034,
+      "uniqueImages": 5712,
+      "remoteReferences": 5590,
+      "uniqueRemoteImages": 5274,
       "bundledReferences": 444,
       "uniqueBundledImages": 438,
       "regionViewReferences": 1,
       "referencesByKind": {
-        "aim": 2238,
+        "aim": 2923,
         "landing": 1427,
         "position": 1635,
         "release": 49
       },
       "kinds": {
         "aim": {
-          "references": 2238,
-          "uniqueImages": 2127,
-          "uniqueRemoteImages": 2092,
+          "references": 2923,
+          "uniqueImages": 2764,
+          "uniqueRemoteImages": 2729,
           "uniqueBundledImages": 35
         },
         "landing": {

@@ -2034,7 +2034,7 @@ export const INSTANT_SPAWN_SMOKES: UtilityReference[] = [
     "throwType": "Jump + LMB",
     "steps": [
       "Find T Spawn 1 using the numbered map and first-person view.",
-      "Use the SSG 08 at its second zoom level. Center the scope on the indicated satellite dish mark, then switch to the smoke while holding that angle.",
+      "Locate the large satellite dish and use the second zoom of the SSG 08. After aligning, switch to the smoke without moving your aim.",
       "Stay on the spawn, hold LMB, then jump and release LMB."
     ],
     "x": 457.45,
@@ -2067,7 +2067,7 @@ export const INSTANT_SPAWN_SMOKES: UtilityReference[] = [
       {
         "kind": "aim",
         "image": "/lineup-media/instant-spawns/dust2-113-aim.webp",
-        "caption": "SSG 08 double zoom. Center on the small dark mark under the satellite dish lettering.",
+        "caption": "Use the lowest of the three dark chips on the face of the dish. It sits left of the diagonal metal brace and below the blue lettering.",
         "creator": "Kaide · round 12 / setpos.gg",
         "source": "https://setpos.gg/dust2/mid-doors/t1",
         "aimPoint": {

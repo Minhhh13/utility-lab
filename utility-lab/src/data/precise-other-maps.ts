@@ -244,7 +244,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
     "throwType": "Tap W + Jump + LMB",
     "steps": [
       "Use T Spawn 12 in the setpos.gg numbering. Match the Position photo and the spawn marker.",
-      "Match the center crosshair in the Aim photo before moving.",
+      "Look over the low wall toward the small square window. Follow the sagging wire above the flat roof to the left of the diagonal cable.",
       "Hold LMB, then jump, tap W once and release LMB together."
     ],
     "x": 457.45,
@@ -277,7 +277,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
       },
       {
         "image": "https://media.setpos.gg/renders/f5f6b486-3824-4999-b904-66bdd3e19823/2699a13d-c5d0-4206-bd38-90b40c73ade8/display-aim-aim-ca712b243e8db5d76bd496b1489c617aa84b6998802eb51477ffc8f649e20af7.webp",
-        "caption": "Exact T Spawn 12 aim · match the source-centered crosshair.",
+        "caption": "Place the crosshair at the tip of the thin sagging wire, one narrow strip of sky above the roof cap.",
         "kind": "aim",
         "creator": "z4KR · round 22 / setpos.gg",
         "source": "https://setpos.gg/dust2/mid-doors/t12",
@@ -311,7 +311,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
     "throwType": "Stand still + Jump + LMB",
     "steps": [
       "Use T Spawn 14 in the setpos.gg numbering. Match the Position photo and the spawn marker.",
-      "Match the center crosshair in the Aim photo before moving.",
+      "Face the sloping parapet and find the vertical inside corner of the taller building behind it.",
       "Stay on this spawn, jump and release LMB together."
     ],
     "x": 457.45,
@@ -344,7 +344,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
       },
       {
         "image": "https://media.setpos.gg/renders/154747f4-ec2d-47f5-86e0-b6f8fa310992/4e7d144b-79c8-430c-b78a-f9373da051a7/display-aim-aim-1ce7e20f6bd8761428ab25fa90200e0bb54950ab1769aa32eb651f7ebb3d4d62.webp",
-        "caption": "Exact T Spawn 14 aim · match the source-centered crosshair.",
+        "caption": "Follow the dark vertical corner down to the top outline of the pale sloping parapet. Aim exactly where the two edges meet.",
         "kind": "aim",
         "creator": "Brandstad · round 5 / setpos.gg",
         "source": "https://setpos.gg/dust2/mid-doors/t14",
@@ -378,7 +378,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
     "throwType": "Tap W + Jump + LMB",
     "steps": [
       "Use T Spawn 15 in the setpos.gg numbering. Match the Position photo and the spawn marker.",
-      "Match the center crosshair in the Aim photo before moving.",
+      "Find the tall wall face between the short building with the square window and the sunlit wall with two X-shaped vents.",
       "Hold LMB, then jump, tap W once and release LMB together."
     ],
     "x": 457.45,
@@ -411,7 +411,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
       },
       {
         "image": "https://media.setpos.gg/renders/ed6ab58a-49bc-495a-b0b0-bc8414f49f7a/ee3e10bf-1b25-4b6e-8916-e003d46f1cbc/display-aim-aim-2f27f49b8800e7546b9cd66697c5763819df1b2d3b5e6ac4730b3e812f8219dc.webp",
-        "caption": "Exact T Spawn 15 aim · match the source-centered crosshair.",
+        "caption": "Aim on the plain shaded panel, a little left of halfway across. Use the small square window’s lower sill to set the height.",
         "kind": "aim",
         "creator": "ayuki · round 6 / setpos.gg",
         "source": "https://setpos.gg/dust2/mid-doors/t15",
@@ -445,7 +445,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
     "throwType": "Stand still + Jump + LMB",
     "steps": [
       "Use T Spawn 3 in the setpos.gg numbering. Match the Position photo and the spawn marker.",
-      "Match the center crosshair in the Aim photo before moving.",
+      "Turn up toward the tall white building and locate the green shutter above the small projecting awning.",
       "Stay on this spawn, jump and release LMB together."
     ],
     "x": 457.45,
@@ -478,7 +478,7 @@ export const PRECISE_OTHER_MAPS:UtilityReference[] = [
       },
       {
         "image": "https://media.setpos.gg/renders/cfee394d-1435-49be-83bf-0ee60c63718f/61954f15-1f5a-4cb2-8f45-5bfae4d2acd9/display-aim-aim-d9c4b4b24b66042da85e13370d064cbe2a1b38eddf36307a4c566bf665386c33.webp",
-        "caption": "Exact T Spawn 3 aim · match the source-centered crosshair.",
+        "caption": "Place the crosshair at the foot of the darkest vertical gap in the shutter, just above the awning’s upper edge.",
         "kind": "aim",
         "creator": "dumau · round 6 / setpos.gg",
         "source": "https://setpos.gg/dust2/mid-doors/t3",

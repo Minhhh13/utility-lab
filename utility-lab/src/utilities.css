@@ -1828,12 +1828,24 @@
   place-items: center;
   min-width: 44px;
   min-height: 50px;
-  padding: 8px;
+  align-content: center;
+  gap: 2px;
+  padding: 5px 8px;
   background: var(--surface-raised);
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+.ul-slide-prev kbd,
+.ul-slide-next kbd {
+  min-width: 17px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
 }
 .ul-slide-prev {
   left: 14px;
